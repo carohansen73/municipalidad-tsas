@@ -7,8 +7,43 @@
 */
 
 
+colores{
+    /* BLANCOS */
+    color:#fff;
 
 
+    /* GRIS */
+    background:whitesmoke;
+    color: #ddd;
+    color: #aaaaaa;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+
+      /* NEGROS */
+      color: #444444;
+      color: #343a40;
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+       /* color: #151515 -->rgb(13, 116, 189); */
+
+    /* AZULES */
+    color: rgb(13, 116, 189);
+    background: rgba(13, 116, 189, 0.8);
+    /*hover*/ color: rgb(89, 152, 197);
+
+
+    /* AMARILLOS */
+    color: #ffd584;
+    color: #ffc451;
+    background: #ffbb38;
+
+    /* VERDE */
+     color: #3dab24;
+
+    /* ROJO */
+    color: #d03830;
+
+  }
 
 
 /*--------------------------------------------------------------
@@ -445,7 +480,7 @@ h6 {
 
 #hero .container {
   position: relative;
-  padding-top: 74px;
+  /* padding-top: 74px; */
   text-align: center;
 }
 
@@ -603,7 +638,7 @@ section {
 
 .section-title h2::after {
   content: "";
-  width: 120px;
+  width: 20px;
   height: 1px;
   display: inline-block;
   background: #ffde9e;
@@ -774,7 +809,11 @@ section {
   font-size: 24px;
 }
 
-
+.services .services-sm .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
 
 .services .icon-box h4 a {
   color: #343a40;
@@ -814,6 +853,8 @@ section {
 --------------------------------------------------------------*/
 .cta {
   background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/generals/wolrd-digital.jpg") fixed center center;
+  /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections/geom-2.jpg") fixed center center; */
+  /* background:url("../img/sections/fondo.jpg") fixed center center; */
   background-size: cover;
   padding: 60px 0;
 }
@@ -1486,7 +1527,7 @@ section {
 
 @media (max-width: 992px) {
   .breadcrumbs {
-    margin-top: 68px;
+    margin-top: 62px;
   }
 
   .breadcrumbs .d-flex {
@@ -1694,13 +1735,17 @@ section {
   visibility: hidden;
 }
 
+.display-none{
+    display: none;
+}
+
 .input-error{
   border-color: #d03830;
 }
 
-.portada-tadi{
+/* .portada-tadi{
   margin-top: 73px;
-}
+} */
 
 /*--------------------------------------------------------------
 # LOGIN TADI
@@ -1776,3 +1821,31 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] { -moz-appearance:textfield; }
 
 /*FIN Animacion inputs*/
+
+/*--------------------------------------------------------------
+# ESTILOS GENERALES
+--------------------------------------------------------------*/
+.margen-top-navbar{
+    margin-top: 73px;
+}
+@media (max-width: 991px) {
+    .margen-top-navbar{
+        margin-top: 62px;
+    }
+
+
+}
+
+/*--------------------------------------------------------------
+# ESTILOS A FORMS
+--------------------------------------------------------------*/
+
+.formularios{
+    display: flex !important;
+     justify-content: center;
+}
+
+.formularios .container{
+    display: flex !important;
+    justify-content: center;
+}

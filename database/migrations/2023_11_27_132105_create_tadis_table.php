@@ -37,6 +37,6 @@ class CreateTadisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tadis');
+        Schema::dropIfExists('usuario_tadi');
     }
 }

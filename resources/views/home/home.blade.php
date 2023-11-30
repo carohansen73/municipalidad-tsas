@@ -5,7 +5,7 @@
 @section('content')
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center justify-content-center">
+  <section id="hero" class="d-flex align-items-center justify-content-center ">
 
     <div class="container" data-aos="fade-up">
     {{-- {* <video class="video-portada">
@@ -29,13 +29,13 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-2">
           <i class="bi bi-chat-dots"></i>
-            <h3><a href="">Consultas o Reclamos</a></h3>
+            <h3><a href="reclamos">Consultas o Reclamos</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-3">
           <i class="bi bi-card-checklist"></i>
-            <h3><a href="">Guía de Trámites</a></h3>
+            <h3><a href="guia-de-tramites">Guía de Trámites</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">

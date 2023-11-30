@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReclamosController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +24,26 @@ Auth::routes();
 
 // Route::resource('tadi', 'TadiController');
 // Route::get('/tadi', 'TadiController@index')->name('tadi');
+
+/* TADi*/
 Route::get('/tadi', [App\Http\Controllers\TadiController::class, 'index'])->name('tadi');
 
+/*HOME Y SECCIONES DE LA PAGINA QUE VE EL CIUDADANO*/
+Route::controller(HomeController::class)->group(function () {
+    // Route::get('/orders/{id}', 'show');
+    Route::get('/', 'index');
+    Route::get('/guia-de-tramites', 'showGuiaTramites');
+    Route::get('/tramite/{id}', 'showTramite');
+});
+
+/* Reclamos / Consultas*/
+// Route::resource('/reclamos', [App\Http\Controllers\TadiController::class]);
+Route::controller(ReclamosController::class)->group(function () {
+    // Route::get('/orders/{id}', 'show');
+    Route::get('/reclamos', 'index');
+    Route::get('/nuevo-reclamo', 'create');
+    Route::post('/ingresar-reclamo', 'store');
+});
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

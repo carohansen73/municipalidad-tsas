@@ -5,7 +5,7 @@
 
 @section('content')
 
-<main id="main">
+<main id="main" class="margen-top-navbar">
 
 
 
@@ -51,7 +51,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box icon-4">
               <div class="icon"><i class="bi bi-chat-left-dots-fill"></i></div>
-              <h4><a href="">Ingresar una Consulta/reclamo</a></h4>
+              <h4><a href="nuevo-reclamo">Ingresar una Consulta/reclamo</a></h4>
               {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
             </div>
           </div>
@@ -75,7 +75,7 @@
       </div>
     </section>
 
-
+{{--
 
     <section class="inner-page">
       <div class="container">
@@ -83,10 +83,10 @@
         {{-- @if (isset($smarty.session.USER))
           <p> Bienvenido {($smarty.session.USER)}
         @endif --}}
-          Example inner page template
+          {{-- Example inner page template
         </p>
       </div>
-    </section>
+    </section>  --}}
 
 
 
