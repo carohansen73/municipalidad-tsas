@@ -28,8 +28,10 @@
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-2">
-          <i class="bi bi-chat-dots"></i>
-            <h3><a href="reclamos">Consultas o Reclamos</a></h3>
+          {{-- <i class="bi bi-chat-dots"></i> --}}
+          <i class="fas fa-hand-holding-usd"></i>
+            {{-- <h3><a href="reclamos">Consultas o Reclamos</a></h3> --}}
+            <h3><a href="">Gobierno Abierto</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
@@ -40,8 +42,10 @@
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-4">
-          <i class="bi bi-recycle"></i>
-            <h3><a href="">Gestión Ambiental</a></h3>
+            <i class="bi bi-chat-dots"></i>
+            {{-- <i class="fas fa-hand-holding-usd"></i> --}}
+            {{-- <h3><a href="">Gobierno Abierto</a></h3> --}}
+            <h3><a href="reclamos">Consultas o Reclamos</a></h3>
           </div>
         </div>
 

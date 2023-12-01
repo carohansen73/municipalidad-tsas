@@ -162,7 +162,7 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 #header.header-scrolled,
@@ -196,30 +196,80 @@ h6 {
 /*--------------------------------------------------------------
 #  Get Startet Button
 --------------------------------------------------------------*/
+
 .get-started-btn {
-  color: #fff;
-  border-radius: 4px;
-  padding: 7px 25px 8px 25px;
+   color: #fff;
+  /* border-radius: 4px; */
+  /* padding: 3px 0px 4px 0px; */
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 10px;
   display: inline-block;
-  border: 2px solid #ffc451;
+  line-height:1em;
 }
 
-.get-started-buttons  :nth-child(2),
-.get-started-buttons  :nth-child(3 ){
+.get-started-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 3px 10px 4px 10px;
+}
+
+.get-started-buttons a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid #ffc451;
+
+}
+
+.get-started-group i{
+    padding: 3px 15px 4px 15px;
+    font-size: 24px;
+}
+
+.get-started-buttons{
+    display: flex;
+    flex-direction: row;
+    /* padding: 12px 15px 9px 15px; */
+    justify-content: center;
+    justify-items: center;
+}
+
+.get-started-buttons  :nth-child(1) a{
+    font-size: 14px;
+}
+
+.get-started-buttons  :nth-child(2) a{
+    font-size: 12px;
+}
+
+/* .get-started-buttons  :nth-child(2),
+.get-started-buttons  :nth-child(3 ),
+.get-started-buttons  :nth-child(4){
   font-size: 10px;
-  padding: 12px 18px 9px 18px;
+
+}  */
+
+.get-started-buttons  :nth-child(3){
+    border-right: none;
 }
 
 /* .get-started-btn {
   font-size: 10px;
 } */
 
-.get-started-btn:hover {
+/* .get-started-group:hover {
   background: #ffbb38;
-  color: #343a40;
+  color: #343a40 !important;
+} */
+/* con group me deja margenes y con a no me toma el color de la letra */
+ .get-started-btn:hover{
+  background: #ffbb38;
+  color: #343a40 !important;
 }
 
 @media (max-width: 992px) {
@@ -1352,6 +1402,15 @@ section {
 .team .member:hover .social {
   opacity: 1;
   bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# seccion general
+--------------------------------------------------------------*/
+.team .member .seccion-gral-img  img{
+    position: relative;
+    overflow: hidden;
+    height: 200px;
 }
 
 /*--------------------------------------------------------------

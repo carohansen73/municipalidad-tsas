@@ -34,6 +34,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
+    Route::get('/municipio', 'showMunicipioSection');
+
 });
 
 /* Reclamos / Consultas*/
