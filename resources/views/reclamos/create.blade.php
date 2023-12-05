@@ -39,7 +39,7 @@
             <form action="ingresar-reclamo" method="POST" role="form" class="">
                 @csrf
                 <h2> Ingrese su consulta / reclamo</h2>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-6 form-group mt-3">
                         <label>Nombre:</label>
                         <input type="text" name="nombre" class="form-control" @if (isset($usuario)) value="{{$usuario->nombre}}"@endif placeholder="Nombre" required>
@@ -52,8 +52,29 @@
                 <div class="form-group mt-3 ">
                     <label>DNI:</label>
                     <input type="number" name="dni" class="form-control"  @if (isset($usuario)) value="{{$usuario->dni}}" @endif placeholder="DNI" required>
-                    {{-- {!! Field::text('dni', $usuario->dni, ['label' => 'DNI *','maxlength' => 80]) !!} --}}
+
                     <div class="form-error-message dni oculto"></div>
+                </div> --}}
+
+                <div class="form-group mt-3 ">
+                    <label>Elija una categoría: </label>
+
+                    <select name="area_id" class="form-control">
+                      <option value="">--Seleccione una opción--</option>
+                      @foreach($temas as $tema)
+                        <option value="{{$tema->id}}">{{$tema->nombre}}</option>
+                      @endforeach
+
+                      {{-- <option value="Desarrollo social">Desarrollo social</option>
+                      <option value="Gestion Ambiental">Gestión Ambiental</option>
+                      <option value="Obras publicas">Obras públicas</option>
+                      <option value="Salud y prevencion">Salud y prevención</option>
+                      <option value="Seguridad">Seguridad</option>
+                      <option value="Otro">Otro</option> --}}
+                    </select>
+                    {{-- {!! Field::select('area', ['' => 'Bromatologia', '' => 'Gestion Amniental', '' => 'Desarrollo social'
+                    , '' => 'Seguridad'  , '' => 'Obras publicas' , '' => 'Salud y prevencion' , 'Otro' => 'otro' ], null,
+                    ['empty' => 'Seleccione una opcion', 'label' => 'area *']) !!} --}}
                 </div>
                 <div class="form-group mt-3 ">
                     <label>Localidad:</label>
@@ -66,28 +87,30 @@
                     {{-- {!! Field::text('titulo', null, ['label' => 'Motivo del reclamo','maxlength' => 200]) !!} --}}
                 </div>
                 <div class="form-group mt-3 ">
-                    <label>Area:</label>
-
-                    <select name="area" class="form-control">
-                      <option value="">--Seleccione una opción--</option>
-                      <option value="Bromatologia">Bromatologia</option>
-                      <option value="Desarrollo social">Desarrollo social</option>
-                      <option value="Gestion Ambiental">Gestión Ambiental</option>
-                      <option value="Obras publicas">Obras públicas</option>
-                      <option value="Salud y prevencion">Salud y prevención</option>
-                      <option value="Seguridad">Seguridad</option>
-                      <option value="Otro">Otro</option>
-                    </select>
-                    {{-- {!! Field::select('area', ['' => 'Bromatologia', '' => 'Gestion Amniental', '' => 'Desarrollo social'
-                    , '' => 'Seguridad'  , '' => 'Obras publicas' , '' => 'Salud y prevencion' , 'Otro' => 'otro' ], null,
-                    ['empty' => 'Seleccione una opcion', 'label' => 'area *']) !!} --}}
-                </div>
-                <div class="form-group mt-3 ">
                     <label>Consulta/Reclamo:</label>
                     <input type="textarea" name="descripcion" class="form-control" placeholder="Ingrese el reclamo/consulta" required>
                     {{-- {!! Field::text('descripcion', null, ['label' => 'Reclamo/consulta','maxlength' => 800]) !!} --}}
                 </div>
+
+                        <!-- foto del reclamo -->
+                <div class="form-group col-sm-6">
+                    {!! Form::label('imagen', 'Adjuntar una foto ') !!}
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Seleccionar</span>
+                            <input name="imagen" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;" type="file" accept="image/png, image/jpg, image/jpeg, image/jfif" >
+                        </span>
+
+                        <span class="form-control"></span>
+
+                    </div>
+                    <p class="help-block">Los formatos permitidos son jpg, png, jpeg.</p>
+
+                </div>
+
                 <div class="text-center mt-3"><button class="register-button" id="tadi-register-button" type="submit">Confirmar</button></div>
+
+
             </form>
 
           </div>

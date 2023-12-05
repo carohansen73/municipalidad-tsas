@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
+use App\Models\SeccionPagina;
 
 
 use Illuminate\Http\Request;
@@ -81,10 +82,10 @@ class HomeController extends Controller
         //seccion interes ciudadano pertenece a tramites y servicios
         //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
         //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
+        $secciones = SeccionPagina::where('pertenece_a', 'Municipio')->get();
 
 
-
-        return view('sections.municipio');
+        return view('sections.municipio', compact('secciones'));
     }
 
 }

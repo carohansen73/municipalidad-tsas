@@ -1411,7 +1411,10 @@ section {
     position: relative;
     overflow: hidden;
     height: 200px;
+
 }
+
+
 
 /*--------------------------------------------------------------
 # Contact
@@ -1895,6 +1898,16 @@ input[type=number] { -moz-appearance:textfield; }
 
 }
 
+/*Portadas paraa las secciones*/
+.portada-seccion{
+    height: 200px;
+    width: 100%;
+    background: rgba(13, 116, 189, 0.82);
+
+    display: flex;
+    align-items: end;
+}
+
 /*--------------------------------------------------------------
 # ESTILOS A FORMS
 --------------------------------------------------------------*/
@@ -1908,3 +1921,5 @@ input[type=number] { -moz-appearance:textfield; }
     display: flex !important;
     justify-content: center;
 }
+
+
