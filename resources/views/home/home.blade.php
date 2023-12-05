@@ -15,7 +15,7 @@
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
           <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
-          <h2>We are team of talented digital marketers</h2>
+          {{-- <h2>We are team of talented digital marketers</h2> --}}
         </div>
       </div>
 
@@ -23,7 +23,7 @@
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-1">
           <i class="bi bi-laptop"></i>
-            <h3><a href="">Portal Autogestión</a></h3>
+            <h3><a href="portal" target="_blank">Portal Autogestión</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">

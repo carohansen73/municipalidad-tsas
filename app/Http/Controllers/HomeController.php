@@ -30,6 +30,12 @@ class HomeController extends Controller
         return view('home.home');
     }
 
+    public function portal()
+    {
+        // ...
+        return redirect()->away('https://autogestion.tresarroyos.gov.ar/inicio');
+    }
+
     /**
      * Muestra un listado de tramites ordenado por tema
      *

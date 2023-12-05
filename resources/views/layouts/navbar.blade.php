@@ -4,7 +4,7 @@
 
       <h1 class="logo me-auto me-lg-0"><a href="index.html"> Ts As<span>.</span></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -30,16 +30,16 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto " href="#portfolio">Fiesta del Trigo</a></li>
-          <li><a class="nav-link scrollto" href="#team">Plan Joven</a></li>
+          <li><a class="nav-link scrollto" href="https://www.planjoven.tresarroyos.gov.ar/login" target="_blank">Plan Joven</a></li>
 
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
       <div class="get-started-buttons">
-      <a  href="tadi" target="_blank" class="get-started-btn scrollto"> TaDi </a>
-      <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Guia Trámites</a>
-      <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Autogestión</a>
+        <a  href="tadi" target="_blank" class="get-started-btn scrollto"> TaDi </a>
+        <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Guia Trámites</a>
+        <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Autogestión</a>
       </div>
 
       {{-- {if isset($smarty.session.USER)}
