@@ -75,9 +75,9 @@
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <section class="content">
+        {{-- <section class="content"> --}}
             @yield('content')
-        </section>
+        {{-- </section> --}}
     </div>
 
 

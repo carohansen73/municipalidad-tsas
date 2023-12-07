@@ -7,59 +7,75 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center ">
 
+          <video  id="video" src="assets/img/video/Descubriendo.mp4" autoplay="autoplay" loop="loop" muted="muted">
+            Tu navegador no admite el elemento <code>video</code>.
+        </video>
+
     <div class="container" data-aos="fade-up">
-    {{-- {* <video class="video-portada">
-    <source src="assets/video/TresArroyos.mp4" type="video/webm">
-    <source src="assets/video/TresArroyos.mp4" type="video/mp4">
-  </video> *} --}}
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
-        <div class="col-xl-6 col-lg-8">
-          <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
-          {{-- <h2>We are team of talented digital marketers</h2> --}}
-        </div>
-      </div>
 
-      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box icon-1">
-          <i class="bi bi-laptop"></i>
-            <h3><a href="portal" target="_blank">Portal Autogestión</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box icon-2">
-          {{-- <i class="bi bi-chat-dots"></i> --}}
-          <i class="fas fa-hand-holding-usd"></i>
-            {{-- <h3><a href="reclamos">Consultas o Reclamos</a></h3> --}}
-            <h3><a href="">Gobierno Abierto</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box icon-3">
-          <i class="bi bi-card-checklist"></i>
-            <h3><a href="guia-de-tramites">Guía de Trámites</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4">
-          <div class="icon-box icon-4">
-            <i class="bi bi-chat-dots"></i>
-            {{-- <i class="fas fa-hand-holding-usd"></i> --}}
-            {{-- <h3><a href="">Gobierno Abierto</a></h3> --}}
-            <h3><a href="reclamos">Consultas o Reclamos</a></h3>
-          </div>
+        {{-- {* <video class="video-portada">
+        <source src="assets/video/TresArroyos.mp4" type="video/webm">
+        <source src="assets/video/TresArroyos.mp4" type="video/mp4">
+        </video> *} --}}
+
+
+        <div class="row justify-content-center portada-titulo" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-xl-6 col-lg-8">
+            <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
+            <h2>We are team of talented digital marketers</h2>
+            </div>
         </div>
 
-        {{-- {* <div class="col-xl-2 col-md-4">
-          <div class="icon-box">
-            <i class="ri-database-2-line"></i>
-            <h3><a href="">Nemos Enimade</a></h3>
-          </div>
-        </div> *} --}}
+        <div class="row gy-4 mt-5 justify-content-center menu-home" data-aos="zoom-in" data-aos-delay="250">
 
-      </div>
+            <div class="col-xl-2 col-md-2">
+                <div class="icon-box icon-1">
+                <i class="bi bi-laptop"></i>
+                    <h3><a href="">Tres Arroyos</a></h3>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-2">
+                <div class="icon-box icon-2">
+                {{-- <i class="bi bi-chat-dots"></i> --}}
+                <i class="fas fa-hand-holding-usd"></i>
+                    <h3><a href="">Atención al vecino</a></h3>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-md-2">
+                <div class="icon-box icon-3">
+                <i class="bi bi-card-checklist"></i>
+                    <h3><a href="guia-de-tramites">Ciudad productiva</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-2">
+                <div class="icon-box icon-4">
+                    <i class="bi bi-chat-dots"></i>
+                    {{-- <i class="fas fa-hand-holding-usd"></i> --}}
+                    {{-- <h3><a href="">Gobierno Abierto</a></h3> --}}
+                    <h3><a href="reclamos">Ciudad cultural</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-2">
+                <div class="icon-box icon-5">
+                <i class="bi bi-laptop"></i>
+                    <h3><a href="">Turismo </a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-2">
+                <div class="icon-box icon-6">
+                    <i class="ri-database-2-line"></i>
+                    <h3><a href="">Educación y deportes</a></h3>
+                </div>
+            </div>
+
+        </div>
 
     </div>
-  </section><!-- End Hero -->
+</section><!-- End Hero -->
+
+
 
   <main id="main">
 
