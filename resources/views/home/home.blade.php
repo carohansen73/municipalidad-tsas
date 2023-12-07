@@ -28,8 +28,10 @@
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-2">
-          <i class="bi bi-chat-dots"></i>
-            <h3><a href="reclamos">Consultas o Reclamos</a></h3>
+          {{-- <i class="bi bi-chat-dots"></i> --}}
+          <i class="fas fa-hand-holding-usd"></i>
+            {{-- <h3><a href="reclamos">Consultas o Reclamos</a></h3> --}}
+            <h3><a href="">Gobierno Abierto</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4">
@@ -40,8 +42,10 @@
         </div>
         <div class="col-xl-2 col-md-4">
           <div class="icon-box icon-4">
-          <i class="bi bi-recycle"></i>
-            <h3><a href="">Gestión Ambiental</a></h3>
+            <i class="bi bi-chat-dots"></i>
+            {{-- <i class="fas fa-hand-holding-usd"></i> --}}
+            {{-- <h3><a href="">Gobierno Abierto</a></h3> --}}
+            <h3><a href="reclamos">Consultas o Reclamos</a></h3>
           </div>
         </div>
 
@@ -275,17 +279,17 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Check our Portfolio</p>
+          <h2>Conoce los lugares mas atractivos de</h2>
+          <p>Tres Arroyos</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li data-filter="*" class="filter-active">Todos</li>
+              <li data-filter=".filter-app">Playas</li>
+              <li data-filter=".filter-card">Parque Cabaña</li>
+              <li data-filter=".filter-web">Atracciones</li>
             </ul>
           </div>
         </div>

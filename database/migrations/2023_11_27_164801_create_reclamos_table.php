@@ -17,17 +17,22 @@ class CreateReclamosTable extends Migration
             $table->id();
             $table->string('titulo')->nullable();
             $table->string('descripcion');
-            $table->string('area');
+
             $table->string('localidad');
+
+            $table->unsignedBigInteger('tema_id');
+            $table->foreign('tema_id')->references('id')->on('reclamo_tema');
             $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('users');
             $table->unsignedBigInteger('admin_id')->nullable();
             $table->foreign('admin_id')->references('id')->on('users');
             $table->enum('estado', ['IN', 'EP', 'CS', 'CN'])->default('IN');
+
             // IN:Nueva
             // EP:En Proceo
             // CS:cerrada Satistecha
             // CN:cerrada No Satistecha
+            $table->string('imagen')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
+use App\Models\SeccionPagina;
 
 
 use Illuminate\Http\Request;
@@ -71,4 +72,26 @@ class HomeController extends Controller
 
         return view('guiaDeTramites.show', compact('areas', 'tipo', 'tramite'));
     }
+
+
+    /**
+     * Muestra información sobre el trámite seleccionado
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showMunicipioSection()
+    {
+
+        // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
+        // seccion organigrama pertenece a municipio
+        //seccion educacion pertenece a municipio
+        //seccion interes ciudadano pertenece a tramites y servicios
+        //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
+        //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
+        $secciones = SeccionPagina::where('pertenece_a', 'Municipio')->get();
+
+
+        return view('sections.municipio', compact('secciones'));
+    }
+
 }
