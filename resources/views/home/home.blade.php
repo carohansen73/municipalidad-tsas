@@ -7,7 +7,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center ">
 
-          <video  id="video" src="assets/img/video/Descubriendo.mp4" autoplay="autoplay" loop="loop" muted="muted">
+          <video  id="video" src="assets/img/video/video-tsas.mp4" autoplay="autoplay" loop="loop" muted="muted">
             Tu navegador no admite el elemento <code>video</code>.
         </video>
 
@@ -75,7 +75,64 @@
     </div>
 </section><!-- End Hero -->
 
+    <!-- ======= Noticias/novedades Section ======= -->
+    <section id="novedades" class="novedades">
+        <div class="container" data-aos="fade-up">
 
+            <div class="section-title">
+                <h2>Noticias y novedades</h2>
+                <p>Novedades</p>
+              </div>
+            <div class="row">
+                <div class="container-image-1 col-lg-6"  data-aos="fade-right">
+                    <img src="assets/img/muni-sm/plaza-sm.jpg" class="image-1" alt="">
+                    <div class="novedad-1">
+                        <h4> CRESTA: LLAMADO A SELECCIÓN DOCENTE PARA LA FACULTAD DE CIENCIAS ECONÓMICAS DE LA UNLP</h4>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="image-2-box mt-5 mt-lg-0 " data-aos="zoom-in" data-aos-delay="150">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="assets/img/muni-sm/plaza-sm.jpg" class="image-2" alt="">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <h4>Cierre del Proyecto para la Infraestructura de Datos Espaciales del Parque Industrial</h4>
+                                    <div class="ver-mas-box">
+                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-2-box mt-5 mt-lg-4 " data-aos="zoom-in" data-aos-delay="150">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="assets/img/muni-sm/prevision-sm.jpg" class="image-2" alt="">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <h4> MUESTRA ANUAL DE LA E.E.E N.º 2 EN LA ESTACIÓN</h4>
+                                    <div class="ver-mas-box">
+                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        </section>
+    <!-- End Novedades Section -->
 
   <main id="main">
 
@@ -129,8 +186,9 @@
       </div>
     </section><!-- End Clients Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+
+
+    {{-- <section id="features" class="features">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -138,7 +196,7 @@
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
+              <h4> noticia 2</h4>
               <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
             </div>
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
@@ -160,7 +218,8 @@
         </div>
 
       </div>
-    </section><!-- End Features Section -->
+    </section> --}}
+    <!-- End Features Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">

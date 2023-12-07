@@ -910,6 +910,115 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Novedades (Reutilizo features)
+--------------------------------------------------------------*/
+.novedades .container-image-1 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+}
+
+.novedades .image-1{
+    width: 100%;
+    height: 400px;
+    /* height: 100%; */
+    /* position: relative; */
+}
+/* .novedad-1{
+    position: absolute;
+    top: 280px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ebebeb;
+    width: 546px;
+    height: 130px;
+} */
+.novedad-1 h4{
+    padding: 10px;
+}
+
+.novedades .image-2-box {
+    padding-left: 15px;
+    height: 50%;
+}
+
+.novedades .image-2-box img{
+    width: 100%;
+    height: 181px;
+}
+
+.novedades .image-2-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 5px 0 10px 6px;
+}
+
+.ver-mas-btn {
+    background: #ffbb38;
+    color: whitesmoke;
+    border-radius: 4px;
+    padding: 7px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.ver-mas-box a:hover {
+    background: #ffc451;
+    color: #ffffff;
+  }
+
+  @media (min-width: 1200px) {
+    .novedad-1{
+        position: absolute;
+        top: 280px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ebebeb;
+        width: 546px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .novedad-1{
+        top: 60%;
+        width: 455px;
+        height: 102px;
+    }
+
+    .novedades h4{
+        font-size: 18px;
+    }
+
+    .novedades .image-2-box h4 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 991px) {
+    .novedad-1{
+        width: 100%;
+    }
+
+    .novedades h4{
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .novedades .image-2-box h4 {
+        font-size: 20px;
+    }
+
+    .novedades .image-1 img{
+        width: 100%;
+        /* height: 100%; */
+        /* position: relative; */
+    }
+}
+
+/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
