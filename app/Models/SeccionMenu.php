@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SeccionPagina extends Model
+class SeccionMenu extends Model
 {
     use HasFactory;
-    public $table = 'seccion_pagina';
+    public $table = 'seccion_menu';
 
     protected $dates = ['deleted_at'];
 
     public $fillable = [
         'nombre',
-        'pertenece_a',
-        'portada',
+        'abreviatura'
     ];
 
-    public function seccionMenu()
-    {
-        return $this->belongsTo(SeccionMenu::class, 'pertenece_a');
-    }
 
 }

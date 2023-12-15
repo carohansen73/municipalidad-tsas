@@ -5,6 +5,9 @@ use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
 use App\Models\SeccionPagina;
+use App\Models\SeccionMenu;
+use Symfony\Component\Routing\Route;
+
 
 
 use Illuminate\Http\Request;
@@ -73,16 +76,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showMunicipioSection()
+    public function showSections()
     {
+        // $seccion = Route::getPath();
+       $pathSeccion = \Request::path();
 
+       $idSeccion = SeccionMenu::where('nombre', $pathSeccion)->pluck('id');
+    //    var_dump( $pathSeccion); die;
         // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
         // seccion organigrama pertenece a municipio
         //seccion educacion pertenece a municipio
         //seccion interes ciudadano pertenece a tramites y servicios
         //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
         //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
-        $secciones = SeccionPagina::where('pertenece_a', 'Municipio')->get();
+        $secciones = SeccionPagina::where('pertenece_a', $idSeccion)->get();
 
 
         return view('sections.municipio', compact('secciones'));
