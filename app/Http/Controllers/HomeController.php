@@ -80,6 +80,8 @@ class HomeController extends Controller
     {
         // $seccion = Route::getPath();
        $pathSeccion = \Request::path();
+       $nombreSeccion = str_replace("-"," ",$pathSeccion);
+
 
        $idSeccion = SeccionMenu::where('nombre', $pathSeccion)->pluck('id');
     //    var_dump( $pathSeccion); die;
@@ -92,7 +94,7 @@ class HomeController extends Controller
         $secciones = SeccionPagina::where('pertenece_a', $idSeccion)->get();
 
 
-        return view('sections.municipio', compact('secciones'));
+        return view('sections.municipio', compact('secciones', 'nombreSeccion'));
     }
 
 }

@@ -782,8 +782,9 @@ h6 {
   }
 }
 
-#services .icon-box{
-  width: 100%;
+#services .icon-box,
+#guia-tramites .icon-box{
+    width: 100%;
 }
 
 
@@ -1081,6 +1082,11 @@ section {
   background: #fff;
 }
 
+#services .icon-box {
+    padding: 24px 15px;
+    margin-bottom: 20px;
+}
+
 .services .icon-box .icon {
   margin: 0 auto;
   width: 64px;
@@ -1094,32 +1100,136 @@ section {
   transition: 0.3s;
 }
 
-.services .icon-1 .icon {
-  background: #ffc451;
+
+
+#services .icon,
+#services .icon-4 .icon
+ {
+    background: #ffffff;
 }
 
-.services .icon-2 .icon {
-  background:  #d03830;
+#services .icon-1 .icon i,
+#services .icon-1 h4 a{
+    color:#3aaa35;
 }
 
-.services .icon-3 .icon {
-  background: #3dab24;
+#services .icon-2 .icon i,
+#services .icon-2 h4 a{
+
+    color: #f4c000;
 }
+
+#services .icon-3 .icon i,
+#services .icon-3 h4 a{
+
+    color:#f07e07;
+}
+
+#services .icon-4 .icon i,
+#services .icon-4 h4 a{
+    color: #ce1537 ;
+}
+
+#services .icon-5 .icon i,
+#services .icon-5 h4 a{
+    color:#662483 ;
+}
+
+#services .icon-6 .icon i,
+#services .icon-6 h4 a{
+    color:#004f9f ;
+}
+
+#services .icon-1 h4 a:hover {
+color: #53c04d;
+}
+
+#services .icon-2 h4 a:hover {
+color: #ffd53f;
+}
+
+#services .icon-3 h4 a:hover {
+color: #ea8f2e;
+}
+
+#services .icon-4 h4 a:hover {
+color: #d63451 ;
+}
+
+#services .icon-5 h4 a:hover {
+    color: #703d86 ;
+}
+
+#services .icon-6 h4 a:hover {
+    color: #2464a3 ;
+}
+
+
 
 .services .icon-4 .icon {
-  background: rgb(13, 116, 189);
+    background: rgb(13, 116, 189);
 }
+
+.services .icon-4 h4 a:hover {
+color: rgb(13, 116, 189);
+}
+/*
+#hero .icon-1{
+    background-color: #3aaa35;
+    color: #ffffff;
+}
+
+#hero .icon-1:hover{
+    background-color: #53c04d;
+
+}
+
+#hero .icon-2 {
+    background-color: #f4c000;
+}
+#hero .icon-2:hover {
+  background-color: #ffd53f;
+}
+
+
+#hero .icon-3 {
+    background-color: #f07e07;
+}
+#hero .icon-3:hover {
+  background-color: #ea8f2e;
+}
+
+
+#hero .icon-4 {
+    background-color: #ce1537 ;
+}
+#hero .icon-4:hover {
+  background-color: #d63451 ;
+}
+
+#hero .icon-5 {
+    background-color: #662483 ;
+}
+#hero .icon-5:hover {
+  background-color: #703d86 ;
+}
+
+#hero .icon-6 {
+    background-color: #004f9f ;
+}
+#hero .icon-6:hover {
+  background-color: #2464a3 ;*/
 
 .services .icon-box .icon i {
   color: #ffffff;
-  font-size: 28px;
+  font-size: 32px;
   transition: ease-in-out 0.3s;
 }
 
 .services .icon-box h4 {
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .services .services-sm .icon-box h4 {
@@ -1133,21 +1243,7 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-1 h4 a:hover {
-  color: #ffc451;
-}
 
-.services .icon-2 h4 a:hover {
-  color: #d03830;
-}
-
-.services .icon-3 h4 a:hover {
-  color: #3dab24;
-}
-
-.services .icon-4 h4 a:hover {
-  color: rgb(13, 116, 189);
-}
 
 .services .icon-box p {
   line-height: 24px;

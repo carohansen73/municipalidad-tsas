@@ -38,7 +38,7 @@
 
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
+    <section id="guia-tramites" class="services">
         <div class="container services-sm" data-aos="fade-up">
 
             <div class="section-title">

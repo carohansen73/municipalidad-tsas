@@ -234,8 +234,8 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box icon-4">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch " data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-3">
                         <div class="icon"><i class="bi bi-laptop"></i></div>
                         <h4><a href="">Portal de Autogestión</a></h4>
                         {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
@@ -252,7 +252,7 @@
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                     <a href="guia-de-tramites">
-                          <div class="icon-box icon-4">
+                          <div class="icon-box icon-2">
                     <div class="icon"><i class="bi bi-card-checklist"></i></div>
                     <h4><a href="guia-de-tramites">Guía de Trámites</a></h4>
                     {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
@@ -261,7 +261,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box icon-4">
+                    <div class="icon-box icon-6">
                     <div class="icon"><i class="bi bi-chat-dots"></i></div>
                     <h4><a href="">Consultas o Reclamos</a></h4>
                     {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
@@ -271,7 +271,7 @@
                 {{-- {* /fila *} --}}
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-2">
                     <div class="icon"><i class="bi bi-clipboard-check"></i></div>
                     <h4><a href="">Boletín Oficial</a></h4>
                     {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
@@ -279,7 +279,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-6">
                     <div class="icon"><i class="bi bi-house-check-fill"></i></div>
                     <h4><a href="">Transparencia Fiscal</a></h4>
                     {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
@@ -287,7 +287,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-car-front"></i></div>
                     <h4><a href="">Licencia de Conducir</a></h4>
                     {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
@@ -295,7 +295,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-5">
                     <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
                     <h4><a href="">Descargas</a></h4>
                     {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
@@ -304,7 +304,7 @@
                 {{-- {* /fila *} --}}
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-1">
                 <div class="icon"><i class="bi bi-recycle"></i></div>
                 <h4><a href="">Gestión Ambiental</a></h4>
                 {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
@@ -312,7 +312,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-3">
                 <div class="icon"><i class="bi bi-egg-fried"></i></div>
                 <h4><a href="">Bromatología</a></h4>
                 {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
@@ -328,7 +328,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-4">
+                <div class="icon-box icon-6">
                 <div class="icon"><i class="bi bi-image"></i></div>
                 <h4><a href="">Imágenes</a></h4>
                 {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}

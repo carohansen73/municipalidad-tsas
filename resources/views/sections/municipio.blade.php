@@ -11,7 +11,7 @@
 
         <div class="portada-seccion ps-5">
             <div class="section-title">
-                <p style="color: rgb(140, 187, 221);">Municipio</p>
+                <p style="color: rgb(140, 187, 221);">{{$nombreSeccion}}</p>
             </div>
         </div>
         <img src="assets/img/sections-background/city-removebg-preview.png" alt="" srcset="">
@@ -19,16 +19,16 @@
     </div>
     <div class="container-border">
         <div class="row">
-        <div class="col-lg-4 border-1">
+            <div class="col-lg-4 border-1">
 
-        </div>
-        <div class="col-lg-4 border-2">
+            </div>
+            <div class="col-lg-4 border-2">
 
-        </div>
-        <div class="col-lg-4 border-3">
+            </div>
+            <div class="col-lg-4 border-3">
 
+            </div>
         </div>
-    </div>
     </div>
 
 
