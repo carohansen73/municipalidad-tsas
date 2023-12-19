@@ -22,7 +22,7 @@
         <div class="row justify-content-center portada-titulo" data-aos="fade-up" data-aos-delay="150">
             <div class="col-xl-6 col-lg-8">
             <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
-            <h2>We are team of talented digital marketers</h2>
+            <h2>Somos un equipo que trabajamos para el bienestar de todos los ciudadanos.</h2>
             </div>
         </div>
 
@@ -237,7 +237,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch " data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-3">
                         <div class="icon"><i class="bi bi-laptop"></i></div>
-                        <h4><a href="">Portal de Autogestión</a></h4>
+                        <h4><a href="https://autogestion.tresarroyos.gov.ar/inicio" target="_blank">Portal de Autogestión</a></h4>
                         {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
                     </div>
                 </div>
@@ -289,7 +289,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
                 <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-car-front"></i></div>
-                    <h4><a href="">Licencia de Conducir</a></h4>
+                    <h4><a href="https://tresarroyos.gobdigital.com.ar/web/turnoFecha?m=2" target="_blank">Licencia de Conducir</a></h4>
                     {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
                 </div>
                 </div>
