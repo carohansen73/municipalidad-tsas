@@ -7,7 +7,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center ">
 
-          <video  id="video" src="assets/img/video/Descubriendo.mp4" autoplay="autoplay" loop="loop" muted="muted">
+          <video  id="video" src="assets/img/video/video-tsas.mp4" autoplay="autoplay" loop="loop" muted="muted">
             Tu navegador no admite el elemento <code>video</code>.
         </video>
 
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="row gy-4 mt-5 justify-content-center menu-home" data-aos="zoom-in" data-aos-delay="250">
+        <div class="row gy-4 mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
             <div class="col-xl-2 col-md-2">
                 <div class="icon-box icon-1">
@@ -54,7 +54,7 @@
                     <i class="bi bi-chat-dots"></i>
                     {{-- <i class="fas fa-hand-holding-usd"></i> --}}
                     {{-- <h3><a href="">Gobierno Abierto</a></h3> --}}
-                    <h3><a href="reclamos">Ciudad cultural</a></h3>
+                    <h3><a href="reclamos">Cultura y educación</a></h3>
                 </div>
             </div>
             <div class="col-xl-2 col-md-2">
@@ -66,7 +66,7 @@
             <div class="col-xl-2 col-md-2">
                 <div class="icon-box icon-6">
                     <i class="ri-database-2-line"></i>
-                    <h3><a href="">Educación y deportes</a></h3>
+                    <h3><a href="">Deportes</a></h3>
                 </div>
             </div>
 
@@ -75,12 +75,70 @@
     </div>
 </section><!-- End Hero -->
 
+    <!-- ======= Noticias/novedades Section ======= -->
+    <section id="novedades" class="novedades">
+        <div class="container" data-aos="fade-up">
 
+            <div class="section-title">
+                <h2>Noticias y novedades</h2>
+                <p>Novedades</p>
+              </div>
+            <div class="row">
+                <div class="container-image-1 col-lg-6"  data-aos="fade-right">
+                    <img src="assets/img/muni-sm/plaza-sm.jpg" class="image-1" alt="">
+                    <div class="novedad-1">
+                        <h4> CRESTA: LLAMADO A SELECCIÓN DOCENTE PARA LA FACULTAD DE CIENCIAS ECONÓMICAS DE LA UNLP</h4>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="image-2-box mt-5 mt-lg-0 " data-aos="zoom-in" data-aos-delay="150">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="assets/img/muni-sm/plaza-sm.jpg" class="image-2" alt="">
+                                </div>
+
+                                <div class="col-lg-6 novedad-text-box">
+                                    <h4>Cierre del Proyecto para la Infraestructura de Datos Espaciales del Parque Industrial</h4>
+                                    <div class="ver-mas-box">
+                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image-2-box mt-lg-2  " data-aos="zoom-in" data-aos-delay="150">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <img src="assets/img/muni-sm/prevision-sm.jpg" class="image-2" alt="">
+                                </div>
+
+                                <div class="col-lg-6 novedad-text-box">
+                                    <h4> MUESTRA ANUAL DE LA E.E.E N.º 2 EN LA ESTACIÓN</h4>
+                                    <div class="ver-mas-box">
+                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        </section>
+    <!-- End Novedades Section -->
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    {{-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -106,10 +164,11 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section> --}}
+    <!-- End About Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
+    {{-- <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
 
         <div class="clients-slider swiper">
@@ -127,10 +186,12 @@
         </div>
 
       </div>
-    </section><!-- End Clients Section -->
+    </section> --}}
+    <!-- End Clients Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+
+
+    {{-- <section id="features" class="features">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -138,7 +199,7 @@
           <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
             <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
               <i class="bx bx-receipt"></i>
-              <h4>Est labore ad</h4>
+              <h4> noticia 2</h4>
               <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
             </div>
             <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
@@ -160,116 +221,119 @@
         </div>
 
       </div>
-    </section><!-- End Features Section -->
+    </section> --}}
+    <!-- End Features Section -->
 
-    <!-- ======= Services Section ======= -->
+    <!-- ======= Servicios mas consultados ======= -->
     <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Check our Services</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box icon-4">
-              <div class="icon"><i class="bi bi-laptop"></i></div>
-              <h4><a href="">Portal de Autogestión</a></h4>
-              {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+            <div class="section-title">
+                <h2>Servicios</h2>
+                <p>Servicios mas consultados</p>
             </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box icon-4">
-              <div class="icon"><i class="bi bi-calendar3"></i></div>
-              <h4><a href="">Calendario de Vencimientos</a></h4>
-              {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+            <div class="row">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch " data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-3">
+                        <div class="icon"><i class="bi bi-laptop"></i></div>
+                        <h4><a href="">Portal de Autogestión</a></h4>
+                        {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box icon-4">
+                    <div class="icon"><i class="bi bi-calendar3"></i></div>
+                    <h4><a href="">Calendario de Vencimientos</a></h4>
+                    {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="guia-de-tramites">
+                          <div class="icon-box icon-2">
+                    <div class="icon"><i class="bi bi-card-checklist"></i></div>
+                    <h4><a href="guia-de-tramites">Guía de Trámites</a></h4>
+                    {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-6">
+                    <div class="icon"><i class="bi bi-chat-dots"></i></div>
+                    <h4><a href="">Consultas o Reclamos</a></h4>
+                    {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+                    </div>
+                </div>
+
+                {{-- {* /fila *} --}}
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box icon-2">
+                    <div class="icon"><i class="bi bi-clipboard-check"></i></div>
+                    <h4><a href="">Boletín Oficial</a></h4>
+                    {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+                </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box icon-6">
+                    <div class="icon"><i class="bi bi-house-check-fill"></i></div>
+                    <h4><a href="">Transparencia Fiscal</a></h4>
+                    {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+                </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box icon-1">
+                    <div class="icon"><i class="bi bi-car-front"></i></div>
+                    <h4><a href="">Licencia de Conducir</a></h4>
+                    {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+                </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box icon-5">
+                    <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
+                    <h4><a href="">Descargas</a></h4>
+                    {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
+                </div>
+                </div>
+                {{-- {* /fila *} --}}
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box icon-1">
+                <div class="icon"><i class="bi bi-recycle"></i></div>
+                <h4><a href="">Gestión Ambiental</a></h4>
+                {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+                </div>
             </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box icon-4">
-              <div class="icon"><i class="bi bi-card-checklist"></i></div>
-              <h4><a href="">Guía de Trámites</a></h4>
-              {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
+                <div class="icon-box icon-3">
+                <div class="icon"><i class="bi bi-egg-fried"></i></div>
+                <h4><a href="">Bromatología</a></h4>
+                {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+                </div>
             </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box icon-4">
-              <div class="icon"><i class="bi bi-chat-dots"></i></div>
-              <h4><a href="">Consultas o Reclamos</a></h4>
-              {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box icon-4">
+                <div class="icon"><i class="bi bi-life-preserver"></i></div>
+                <h4><a href="">Guardavidas</a></h4>
+                {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+                </div>
             </div>
-          </div>
 
-          {{-- {* /fila *} --}}
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box icon-4">
-            <div class="icon"><i class="bi bi-clipboard-check"></i></div>
-            <h4><a href="">Boletín Oficial</a></h4>
-            {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box icon-4">
-            <div class="icon"><i class="bi bi-house-check-fill"></i></div>
-            <h4><a href="">Transparencia Fiscal</a></h4>
-            {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box icon-4">
-            <div class="icon"><i class="bi bi-car-front"></i></div>
-            <h4><a href="">Licencia de Conducir</a></h4>
-            {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-          <div class="icon-box icon-4">
-            <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
-            <h4><a href="">Descargas</a></h4>
-             {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
-          </div>
-        </div>
-        {{-- {* /fila *} --}}
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-        <div class="icon-box icon-4">
-          <div class="icon"><i class="bi bi-recycle"></i></div>
-          <h4><a href="">Gestión Ambiental</a></h4>
-          {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-        <div class="icon-box icon-4">
-          <div class="icon"><i class="bi bi-egg-fried"></i></div>
-          <h4><a href="">Bromatología</a></h4>
-          {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
-        <div class="icon-box icon-4">
-          <div class="icon"><i class="bi bi-life-preserver"></i></div>
-          <h4><a href="">Guardavidas</a></h4>
-          {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-        <div class="icon-box icon-4">
-          <div class="icon"><i class="bi bi-image"></i></div>
-          <h4><a href="">Imágenes</a></h4>
-          {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
-        </div>
-      </div>
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="icon-box icon-6">
+                <div class="icon"><i class="bi bi-image"></i></div>
+                <h4><a href="">Imágenes</a></h4>
+                {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+                </div>
+            </div>
       {{-- {* /fila *} --}}
 
         </div>
@@ -277,7 +341,7 @@
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Cta Section ======= -->
+    <!-- ======= TADI Section ======= -->
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
@@ -288,10 +352,11 @@
         </div>
 
       </div>
-    </section><!-- End Cta Section -->
+    </section>
+    <!-- End Cta Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    {{-- <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -441,10 +506,11 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section> --}}
+   <!-- End Portfolio Section -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
+    {{-- <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
 
         <div class="row no-gutters">
@@ -488,15 +554,16 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End .content-->
+            </div> <!-- End .content-->
           </div>
         </div>
 
       </div>
-    </section><!-- End Counts Section -->
+    </section> --}}
+    <!-- End Counts Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    {{-- <section id="testimonials" class="testimonials">
       <div class="container" data-aos="zoom-in">
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -571,10 +638,11 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->
+    </section> --}}
+    <!-- End Testimonials Section -->
 
     <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
+    {{-- <section id="team" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -659,7 +727,9 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section> --}}
+<!-- End Team Section -->
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

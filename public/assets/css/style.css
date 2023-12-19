@@ -43,22 +43,29 @@ colores{
     /* ROJO */
     color: #d03830;
 
-    /* cards coloridos */
+    /* cards coloridos y sus hover */
         background-color: #3aaa35;
+        background-color: #53c04d; /*hover*/
 
         background-color: #f4c000;
+        background-color: #ffd53f;
 
         background-color: #f07e07;
+        background-color: #ea8f2e;
 
         background-color: #ce1537 ;
+        background-color: #d63451 ;
 
         background-color: #662483 ;
+        background-color: #703d86 ;
 
         background-color: #004f9f ;
+        background-color: #2464a3 ;
 
 
+        color: #ffffff;
+    }
 
-  }
 
 
 /*--------------------------------------------------------------
@@ -183,7 +190,7 @@ h6 {
 #header.header-scrolled,
 #header.header-inner-pages {
   /* background: rgba(0, 0, 0, 0.8); */
-  background: rgba(13, 116, 189, 0.879);
+  background: rgba(13, 116, 189, 0.967);
 }
 
 #header .logo {
@@ -207,6 +214,15 @@ h6 {
 #header .logo img {
   max-height: 40px;
 }
+
+#header .navbar-links-disabled{
+    display: none;
+}
+
+.menu-home-disabled{
+    display: none;
+}
+
 
 /*--------------------------------------------------------------
 #  Get Startet Button
@@ -322,8 +338,8 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 400;
   color: #fff;
   white-space: nowrap;
   transition: 0.3s;
@@ -543,10 +559,6 @@ h6 {
     width: 100%;
 }
 
-.video-portada{
-
-}
-
 #hero:before {
   content: "";
   /* background: rgba(0, 0, 0, 0.3); */
@@ -637,21 +649,38 @@ h6 {
 #hero .icon-2 {
     background-color: #f4c000;
 }
+#hero .icon-2:hover {
+  background-color: #ffd53f;
+}
+
 
 #hero .icon-3 {
     background-color: #f07e07;
 }
+#hero .icon-3:hover {
+  background-color: #ea8f2e;
+}
+
 
 #hero .icon-4 {
     background-color: #ce1537 ;
+}
+#hero .icon-4:hover {
+  background-color: #d63451 ;
 }
 
 #hero .icon-5 {
     background-color: #662483 ;
 }
+#hero .icon-5:hover {
+  background-color: #703d86 ;
+}
 
 #hero .icon-6 {
     background-color: #004f9f ;
+}
+#hero .icon-6:hover {
+  background-color: #2464a3 ;
 }
 
 #hero .icon-box h3 {
@@ -753,8 +782,9 @@ h6 {
   }
 }
 
-#services .icon-box{
-  width: 100%;
+#services .icon-box,
+#guia-tramites .icon-box{
+    width: 100%;
 }
 
 
@@ -910,6 +940,138 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Novedades (Reutilizo features)
+--------------------------------------------------------------*/
+.novedades .container-image-1 {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    position: relative;
+    padding-right: 20px;
+}
+
+#novedades .row>*{
+    padding: 0px !important;
+}
+
+.novedades .image-1{
+    width: 95%;
+    height: 400px;
+    padding: 0px;
+    /* height: 100%; */
+    /* position: relative; */
+}
+/* .novedad-1{
+    position: absolute;
+    top: 280px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ebebeb;
+    width: 546px;
+    height: 130px;
+} */
+.novedad-1 h4{
+    padding: 10px;
+}
+
+.novedades .image-2-box {
+    padding-left: 15px;
+    height: 50%;
+}
+
+
+
+.novedades .image-2-box h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px 0 10px 12px;
+}
+
+.image-2-box .novedad-text-box .ver-mas-box{
+    padding-left: 12px;
+}
+
+.ver-mas-btn {
+    background: #ffbb38;
+    color: whitesmoke;
+    border-radius: 4px;
+    padding: 7px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.ver-mas-box a:hover {
+    background: #ffc451;
+    color: #ffffff;
+}
+
+  @media (min-width: 1200px) {
+    .novedad-1{
+        position: absolute;
+        top: 280px;
+        background: rgba(0, 0, 0, 0.6);
+        color: #ebebeb;
+        width: 95%;
+        height: 120px;
+    }
+
+
+}
+
+@media (max-width: 1200px) {
+    .novedad-1{
+        top: 60%;
+        width: 455px;
+        height: 102px;
+    }
+
+    .novedades h4{
+        font-size: 18px;
+    }
+
+    .novedades .image-2-box h4 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 991px) {
+    .novedades .image-2-box img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .novedad-1{
+        width: 100%;
+    }
+
+    .novedades h4{
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .novedades .image-2-box h4 {
+        font-size: 20px;
+        margin: 10px 0 12px 0px;
+    }
+
+    .novedades .image-1 img{
+        width: 100%;
+        height: 400px;
+        /* height: 100%; */
+        /* position: relative; */
+    }
+
+    .image-2-box .novedad-text-box .ver-mas-box{
+        padding-left: 0px;
+    }
+}
+
+/*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
 .services .icon-box {
@@ -918,6 +1080,11 @@ section {
   padding: 40px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
+}
+
+#services .icon-box {
+    padding: 24px 15px;
+    margin-bottom: 20px;
 }
 
 .services .icon-box .icon {
@@ -933,32 +1100,136 @@ section {
   transition: 0.3s;
 }
 
-.services .icon-1 .icon {
-  background: #ffc451;
+
+
+#services .icon,
+#services .icon-4 .icon
+ {
+    background: #ffffff;
 }
 
-.services .icon-2 .icon {
-  background:  #d03830;
+#services .icon-1 .icon i,
+#services .icon-1 h4 a{
+    color:#3aaa35;
 }
 
-.services .icon-3 .icon {
-  background: #3dab24;
+#services .icon-2 .icon i,
+#services .icon-2 h4 a{
+
+    color: #f4c000;
 }
+
+#services .icon-3 .icon i,
+#services .icon-3 h4 a{
+
+    color:#f07e07;
+}
+
+#services .icon-4 .icon i,
+#services .icon-4 h4 a{
+    color: #ce1537 ;
+}
+
+#services .icon-5 .icon i,
+#services .icon-5 h4 a{
+    color:#662483 ;
+}
+
+#services .icon-6 .icon i,
+#services .icon-6 h4 a{
+    color:#004f9f ;
+}
+
+#services .icon-1 h4 a:hover {
+color: #53c04d;
+}
+
+#services .icon-2 h4 a:hover {
+color: #ffd53f;
+}
+
+#services .icon-3 h4 a:hover {
+color: #ea8f2e;
+}
+
+#services .icon-4 h4 a:hover {
+color: #d63451 ;
+}
+
+#services .icon-5 h4 a:hover {
+    color: #703d86 ;
+}
+
+#services .icon-6 h4 a:hover {
+    color: #2464a3 ;
+}
+
+
 
 .services .icon-4 .icon {
-  background: rgb(13, 116, 189);
+    background: rgb(13, 116, 189);
 }
+
+.services .icon-4 h4 a:hover {
+color: rgb(13, 116, 189);
+}
+/*
+#hero .icon-1{
+    background-color: #3aaa35;
+    color: #ffffff;
+}
+
+#hero .icon-1:hover{
+    background-color: #53c04d;
+
+}
+
+#hero .icon-2 {
+    background-color: #f4c000;
+}
+#hero .icon-2:hover {
+  background-color: #ffd53f;
+}
+
+
+#hero .icon-3 {
+    background-color: #f07e07;
+}
+#hero .icon-3:hover {
+  background-color: #ea8f2e;
+}
+
+
+#hero .icon-4 {
+    background-color: #ce1537 ;
+}
+#hero .icon-4:hover {
+  background-color: #d63451 ;
+}
+
+#hero .icon-5 {
+    background-color: #662483 ;
+}
+#hero .icon-5:hover {
+  background-color: #703d86 ;
+}
+
+#hero .icon-6 {
+    background-color: #004f9f ;
+}
+#hero .icon-6:hover {
+  background-color: #2464a3 ;*/
 
 .services .icon-box .icon i {
   color: #ffffff;
-  font-size: 28px;
+  font-size: 32px;
   transition: ease-in-out 0.3s;
 }
 
 .services .icon-box h4 {
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .services .services-sm .icon-box h4 {
@@ -972,21 +1243,7 @@ section {
   transition: ease-in-out 0.3s;
 }
 
-.services .icon-1 h4 a:hover {
-  color: #ffc451;
-}
 
-.services .icon-2 h4 a:hover {
-  color: #d03830;
-}
-
-.services .icon-3 h4 a:hover {
-  color: #3dab24;
-}
-
-.services .icon-4 h4 a:hover {
-  color: rgb(13, 116, 189);
-}
 
 .services .icon-box p {
   line-height: 24px;
@@ -1512,10 +1769,23 @@ section {
 .team .member .seccion-gral-img  img{
     position: relative;
     overflow: hidden;
-    height: 200px;
-
+    /* height: 200px; */
+    width: 380px;
 }
+/*
+.container-section-gral{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
 
+
+@media (max-width: 992px) {
+    .team .member .seccion-gral-img  img{
+        /* height: 200px; */
+        width: 340px;
+    }
+}
 
 
 /*--------------------------------------------------------------
@@ -1992,22 +2262,83 @@ input[type=number] { -moz-appearance:textfield; }
 .margen-top-navbar{
     margin-top: 73px;
 }
+
 @media (max-width: 991px) {
     .margen-top-navbar{
         margin-top: 62px;
     }
+}
 
+.portada{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 18px;
+    padding: 0px;
+    background-color: rgba(13, 116, 189, 0.967);
 
 }
 
-/*Portadas paraa las secciones*/
-.portada-seccion{
-    height: 200px;
-    width: 100%;
-    background: rgba(13, 116, 189, 0.82);
+ .portada .section-title{
+  z-index: 2;
+}
 
+/*Portadas para las secciones*/
+.portada-seccion{
+    height: 40px;
+    width: 100%;
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portada-municipio.png") fixed center center; */
+     /* background: url("../img/sections-portadas/portada-municipio.png") center center no-repeat; */
+   /* background:  url("../img/sections-background/city-removebg-preview.png") bottom center no-repeat; */
+    background-size: cover;
     display: flex;
     align-items: end;
+    z-index: 1;
+}
+
+.portada img{
+    opacity: 0.19;
+}
+
+/* #municipio .container-border{
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+
+}
+
+#municipio .container-border .border-1{
+    background-color: #f4c000;
+    height: 10px;
+}
+
+#municipio .container-border .border-2{
+    background-color: #3aaa35;
+    height: 10px;
+}
+#municipio .container-border .border-3{
+    background-color: #ce1537;
+    height: 10px;
+} */
+
+
+
+
+/* background-color: #f07e07; */
+
+
+
+/*--------------------------------------------------------------
+# MUNICIPIO / TRES ARROYOS
+--------------------------------------------------------------*/
+
+#municipio .member .member-info {
+    padding: 20px 15px 15px 15px;
+}
+
+#municipio .team{
+    padding: 0px;
 }
 
 /*--------------------------------------------------------------

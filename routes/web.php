@@ -34,7 +34,12 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
-    Route::get('/municipio', 'showMunicipioSection');
+    Route::get('/municipio', 'showSections');
+    Route::get('/atencion-al-vecino', 'showSections');
+    Route::get('/ciudad-productiva', 'showSections');
+    Route::get('/cultura-y-educacion', 'showSections');
+    Route::get('/turismo', 'showSections');
+    Route::get('/deportes', 'showSections');
 
 });
 

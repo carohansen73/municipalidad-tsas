@@ -18,5 +18,9 @@ class SeccionPagina extends Model
         'portada',
     ];
 
+    public function seccionMenu()
+    {
+        return $this->belongsTo(SeccionMenu::class, 'pertenece_a');
+    }
 
 }

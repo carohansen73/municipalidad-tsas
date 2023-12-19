@@ -8,88 +8,131 @@
 (function() {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
+    /**
+     * Easy selector helper function
+    */
+    const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+        return [...document.querySelectorAll(el)]
+        } else {
+        return document.querySelector(el)
+        }
     }
-  }
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
+    /**
+     * Easy event listener function
+    */
+    const on = (type, el, listener, all = false) => {
+        let selectEl = select(el, all)
+        if (selectEl) {
+        if (all) {
+            selectEl.forEach(e => e.addEventListener(type, listener))
+        } else {
+            selectEl.addEventListener(type, listener)
+        }
+        }
     }
-  }
 
-  /**
-   * Easy on scroll event listener
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
-
-  /**
-   * Toggle .header-scrolled navbar sin fondo hasta que se hace scroll
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
+    /**
+     * Easy on scroll event listener
+     */
+    const onscroll = (el, listener) => {
+        el.addEventListener('scroll', listener)
     }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
+
+    /**
+     * Navbar links active state on scroll
+    */
+    let navbarlinks = select('#navbar .scrollto', true)
+    const navbarlinksActive = () => {
+        let position = window.scrollY + 200
+        navbarlinks.forEach(navbarlink => {
+        if (!navbarlink.hash) return
+        let section = select(navbarlink.hash)
+        if (!section) return
+        if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+            navbarlink.classList.add('active')
+        } else {
+            navbarlink.classList.remove('active')
+        }
+        })
+    }
+    window.addEventListener('load', navbarlinksActive)
+    onscroll(document, navbarlinksActive)
+
+    /**
+     * Scrolls to an element with header offset
+     */
+    const scrollto = (el) => {
+        let header = select('#header')
+        let offset = header.offsetHeight
+
+        let elementPos = select(el).offsetTop
+        window.scrollTo({
+        top: elementPos - offset,
+        behavior: 'smooth'
+        })
+    }
+
+    /**
+    * Toggle .header-scrolled navbar sin fondo hasta que se hace scroll
+    */
+    let selectHeader = select('#header')
+    let locationPath = window.location.pathname;
+    if (selectHeader && locationPath == '/') {
+
+        const headerScrolled = () => {
+        if (window.scrollY > 100) {
+            selectHeader.classList.add('header-scrolled')
+        } else {
+            selectHeader.classList.remove('header-scrolled')
+        }
+        }
+        window.addEventListener('load', headerScrolled)
+        onscroll(document, headerScrolled)
+    }
+
+
+    /**
+     * Toggle. Links del navbar aparecen cuando hace scroll
+    */
+    let selectLinksHeader = select('#navbar .nav-link', true)
+    if(locationPath == '/'){
+        const showNavbarLinks = () => {
+            selectLinksHeader.forEach(link => {
+                if (window.scrollY > 100) {
+                    link.classList.remove('navbar-links-disabled')
+                } else {
+                    link.classList.add('navbar-links-disabled')
+                }
+            })
+        }
+        window.addEventListener('load', showNavbarLinks)
+        onscroll(document, showNavbarLinks)
+    }
+
+    /**
+    * Toggle. Menu del home desaparece cuando hace scroll
+    */
+    let menuHome = select('.menu-home')
+    if(menuHome){
+        const hideMenuHome = () => {
+
+            if (window.scrollY > 200) {
+                menuHome.classList.add('menu-home-disabled')
+            } else {
+                menuHome.classList.remove('menu-home-disabled')
+            }
+
+        }
+        window.addEventListener('load', hideMenuHome)
+        onscroll(document, hideMenuHome)
+
+    }
+
+
+
 
   /**
    * Back to top button
