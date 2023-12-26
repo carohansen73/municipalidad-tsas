@@ -22,52 +22,62 @@
         <div class="row justify-content-center portada-titulo" data-aos="fade-up" data-aos-delay="150">
             <div class="col-xl-6 col-lg-8">
             <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
-            <h2>We are team of talented digital marketers</h2>
+            <h2>Municipio de Tres Arroyos</h2>
             </div>
         </div>
 
         <div class="row gy-4 mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
             <div class="col-xl-2 col-md-2">
-                <div class="icon-box icon-1">
-                <i class="bi bi-laptop"></i>
-                    <h3><a href="">Tres Arroyos</a></h3>
-                </div>
+                <a href="municipio">
+                    <div class="icon-box icon-1">
+                    <i class="bi bi-laptop"></i>
+                        <h3>Tres Arroyos</h3>
+                    </div>
+                </a>
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <div class="icon-box icon-2">
-                {{-- <i class="bi bi-chat-dots"></i> --}}
-                <i class="fas fa-hand-holding-usd"></i>
-                    <h3><a href="">Atención al vecino</a></h3>
-                </div>
+                <a href="atencion-al-vecino">
+                    <div class="icon-box icon-2">
+                    {{-- <i class="bi bi-chat-dots"></i> --}}
+                    <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Atención al vecino</h3>
+                    </div>
+                </a>
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <div class="icon-box icon-3">
-                <i class="bi bi-card-checklist"></i>
-                    <h3><a href="guia-de-tramites">Ciudad productiva</a></h3>
-                </div>
+                <a href="ciudad-productiva">
+                    <div class="icon-box icon-3">
+                        <i class="bi bi-card-checklist"></i>
+                        <h3>Ciudad productiva</h3>
+                    </div>
+                </a>
             </div>
             <div class="col-xl-2 col-md-2">
-                <div class="icon-box icon-4">
-                    <i class="bi bi-chat-dots"></i>
-                    {{-- <i class="fas fa-hand-holding-usd"></i> --}}
-                    {{-- <h3><a href="">Gobierno Abierto</a></h3> --}}
-                    <h3><a href="reclamos">Cultura y educación</a></h3>
-                </div>
+                <a href="cultura-y-educacion">
+                    <div class="icon-box icon-4">
+                        <i class="bi bi-chat-dots"></i>
+                        <h3>Cultura y educación</h3>
+                    </div>
+                </a>
             </div>
             <div class="col-xl-2 col-md-2">
-                <div class="icon-box icon-5">
-                <i class="bi bi-laptop"></i>
-                    <h3><a href="">Turismo </a></h3>
-                </div>
+                <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">
+                    <div class="icon-box icon-5">
+                        <i class="bi bi-laptop"></i>
+                        <h3>Turismo </h3>
+                    </div>
+                </a>
             </div>
             <div class="col-xl-2 col-md-2">
-                <div class="icon-box icon-6">
-                    <i class="ri-database-2-line"></i>
-                    <h3><a href="">Deportes</a></h3>
-                </div>
+                <a href="deportes">
+                    <div class="icon-box icon-6">
+                        <i class="ri-database-2-line"></i>
+                        <h3>Deportes</h3>
+                    </div>
+                </a>
             </div>
 
         </div>
@@ -261,7 +271,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box icon-6">
+                    <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-chat-dots"></i></div>
                     <h4><a href="">Consultas o Reclamos</a></h4>
                     {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
@@ -279,7 +289,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box icon-6">
+                <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-house-check-fill"></i></div>
                     <h4><a href="">Transparencia Fiscal</a></h4>
                     {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
@@ -287,7 +297,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box icon-1">
+                <div class="icon-box icon-3">
                     <div class="icon"><i class="bi bi-car-front"></i></div>
                     <h4><a href="">Licencia de Conducir</a></h4>
                     {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
@@ -295,7 +305,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-5">
+                <div class="icon-box icon-4">
                     <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
                     <h4><a href="">Descargas</a></h4>
                     {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
@@ -328,7 +338,7 @@
             </div>
 
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-6">
+                <div class="icon-box icon-2">
                 <div class="icon"><i class="bi bi-image"></i></div>
                 <h4><a href="">Imágenes</a></h4>
                 {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}

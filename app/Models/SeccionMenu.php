@@ -14,7 +14,7 @@ class SeccionMenu extends Model
 
     public $fillable = [
         'nombre',
-        'abreviatura'
+        'path'
     ];
 
 

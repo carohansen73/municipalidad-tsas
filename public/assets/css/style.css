@@ -53,8 +53,11 @@ colores{
         background-color: #f07e07;
         background-color: #ea8f2e;
 
+
         background-color: #ce1537 ;
         background-color: #d63451 ;
+       /* cambiar rojo x rosa: #d63384*/
+       /*ce1537 rojo*/
 
         background-color: #662483 ;
         background-color: #703d86 ;
@@ -617,6 +620,10 @@ h6 {
   line-height: 1;
 }
 
+#hero .portada-titulo{
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.826);
+}
+
 /* ---------------  CARDS CON FONDO DE COLORES  -------------------- */
 
 #hero .icon-box {
@@ -663,7 +670,7 @@ h6 {
 
 
 #hero .icon-4 {
-    background-color: #ce1537 ;
+    background-color: #d63384 ;
 }
 #hero .icon-4:hover {
   background-color: #d63451 ;
@@ -1103,122 +1110,24 @@ section {
 
 
 #services .icon,
-#services .icon-4 .icon
- {
+#services .icon-4 .icon{
     background: #ffffff;
 }
 
-#services .icon-1 .icon i,
-#services .icon-1 h4 a{
-    color:#3aaa35;
-}
 
-#services .icon-2 .icon i,
-#services .icon-2 h4 a{
+/* #services .icon:hover{
+  color: #f4c000;
+} */
 
-    color: #f4c000;
-}
-
-#services .icon-3 .icon i,
-#services .icon-3 h4 a{
-
-    color:#f07e07;
-}
-
-#services .icon-4 .icon i,
-#services .icon-4 h4 a{
-    color: #ce1537 ;
-}
-
-#services .icon-5 .icon i,
-#services .icon-5 h4 a{
-    color:#662483 ;
-}
-
-#services .icon-6 .icon i,
-#services .icon-6 h4 a{
+#services .icon i,
+#services h4 a{
     color:#004f9f ;
 }
-
-#services .icon-1 h4 a:hover {
-color: #53c04d;
-}
-
-#services .icon-2 h4 a:hover {
-color: #ffd53f;
-}
-
-#services .icon-3 h4 a:hover {
-color: #ea8f2e;
-}
-
-#services .icon-4 h4 a:hover {
-color: #d63451 ;
-}
-
-#services .icon-5 h4 a:hover {
-    color: #703d86 ;
-}
-
-#services .icon-6 h4 a:hover {
-    color: #2464a3 ;
-}
-
-
 
 .services .icon-4 .icon {
     background: rgb(13, 116, 189);
 }
 
-.services .icon-4 h4 a:hover {
-color: rgb(13, 116, 189);
-}
-/*
-#hero .icon-1{
-    background-color: #3aaa35;
-    color: #ffffff;
-}
-
-#hero .icon-1:hover{
-    background-color: #53c04d;
-
-}
-
-#hero .icon-2 {
-    background-color: #f4c000;
-}
-#hero .icon-2:hover {
-  background-color: #ffd53f;
-}
-
-
-#hero .icon-3 {
-    background-color: #f07e07;
-}
-#hero .icon-3:hover {
-  background-color: #ea8f2e;
-}
-
-
-#hero .icon-4 {
-    background-color: #ce1537 ;
-}
-#hero .icon-4:hover {
-  background-color: #d63451 ;
-}
-
-#hero .icon-5 {
-    background-color: #662483 ;
-}
-#hero .icon-5:hover {
-  background-color: #703d86 ;
-}
-
-#hero .icon-6 {
-    background-color: #004f9f ;
-}
-#hero .icon-6:hover {
-  background-color: #2464a3 ;*/
 
 .services .icon-box .icon i {
   color: #ffffff;
@@ -1243,8 +1152,6 @@ color: rgb(13, 116, 189);
   transition: ease-in-out 0.3s;
 }
 
-
-
 .services .icon-box p {
   line-height: 24px;
   font-size: 14px;
@@ -1256,6 +1163,29 @@ color: rgb(13, 116, 189);
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(-10px);
 }
+
+.services .icon-1:hover i,
+.services .icon-1:hover a{
+
+    color: #3aaa35 !important;
+}
+
+.services .icon-2:hover i,
+.services .icon-2:hover a{
+
+    color: #f4c000 !important;
+}
+.services .icon-3:hover i,
+.services .icon-3:hover a{
+
+    color:#f07e07 !important;
+}
+.services .icon-4:hover i,
+.services .icon-4:hover a{
+
+    color: #d63384 !important;
+}
+
 
 /*--------------------------------------------------------------
 # Cta
@@ -1762,6 +1692,60 @@ color: rgb(13, 116, 189);
   opacity: 1;
   bottom: 15px;
 }
+/*--------------------------------------------------------------
+# MUSEOS (reutilizo estilo Team)
+--------------------------------------------------------------*/
+#museo .member-img img{
+    width: 100%;
+    height: 40%;
+}
+
+.mapa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 70px 50px 70px;
+}
+
+.mapa iframe{
+    width: 100%;
+}
+
+/*--------------------------------------------------------------
+# CULTURA / EVENTOS (reutilizo estilo MUSEOS - Team)
+--------------------------------------------------------------*/
+section #cultura-eventos {
+    /* background-color: #d63384; */
+    /* background-color: #ce1537; */
+    background-color: #662483;
+
+}
+#cultura-eventos p{
+    color: #FFF;
+}
+
+#cultura-eventos .container{
+    padding: 50px  0px 80px 0px;
+}
+
+#cultura-eventos .member-info h4{
+    color: #ce1537;
+}
+
+#cultura-eventos .member-img img{
+    width: 267px;
+    height: 367px;
+    border-radius: 30px;
+}
+
+#cultura-eventos .member-img,
+#cultura-eventos .member{
+
+    border-radius: 30px;
+    box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.645);
+}
+
+
 
 /*--------------------------------------------------------------
 # seccion general
@@ -2301,32 +2285,80 @@ input[type=number] { -moz-appearance:textfield; }
     opacity: 0.19;
 }
 
-/* #municipio .container-border{
+
+/* background-color: #f07e07; */
+/*--------------------------------------------------------------
+# portada / foto
+--------------------------------------------------------------*/
+
+.portada-foto{
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    align-items: end;
+    z-index: 1;
+    top: 0 !important;
+}
+
+.portada-foto .background-portada{
+    position: absolute;
+    z-index: 3;
+    /* background: linear-gradient(#d634528b, #d634528b); */
+    background: linear-gradient(#67248366, #67248392);
+    width: 100%;
+    height: 350px;
+    top: 0;
+}
+
+.portada-foto .foto-portada{
+    position: relative;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.826);
+    background-color: #222222;
+}
+
+.portada-foto .logos-portada{
+    position: absolute;
+    z-index: 4;
+    top: 150px;
+    right: 100px;
+}
+
+.portada-foto h1{
+    position: absolute;
+    z-index: 4;
+    top: 200px;
+    padding: 40px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.826);
+}
+
+.container-border{
     width: 100%;
     height: 10px;
     background: rgba(0, 0, 0, 0.2);
+    top: 100px;
+    z-index: 2;
 
 }
 
-#municipio .container-border .border-1{
+.container-border .border-1{
     background-color: #f4c000;
     height: 10px;
 }
 
-#municipio .container-border .border-2{
-    background-color: #3aaa35;
+ .container-border .border-2{
+    background-color: #662483;
     height: 10px;
 }
-#municipio .container-border .border-3{
-    background-color: #ce1537;
+ .container-border .border-3{
+    background-color: #d63384;
     height: 10px;
-} */
-
-
-
-
-/* background-color: #f07e07; */
-
+}
 
 
 /*--------------------------------------------------------------
@@ -2339,6 +2371,10 @@ input[type=number] { -moz-appearance:textfield; }
 
 #municipio .team{
     padding: 0px;
+}
+
+#municipio{
+    padding-top: 0px;
 }
 
 /*--------------------------------------------------------------

@@ -6,6 +6,7 @@ use App\Models\Area;
 use App\Models\TramiteTipo;
 use App\Models\SeccionPagina;
 use App\Models\SeccionMenu;
+use App\Models\Museo;
 use Symfony\Component\Routing\Route;
 
 
@@ -78,23 +79,40 @@ class HomeController extends Controller
      */
     public function showSections()
     {
-        // $seccion = Route::getPath();
+        //busco la A LA Q INGRESÓ seccion con el path
        $pathSeccion = \Request::path();
        $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
+       //tomo los datos y las entidades que pertenecen a esa seccion
+       $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
-       $idSeccion = SeccionMenu::where('nombre', $pathSeccion)->pluck('id');
-    //    var_dump( $pathSeccion); die;
+
+
+
+    //    $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
+        // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
+
         // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
         // seccion organigrama pertenece a municipio
         //seccion educacion pertenece a municipio
         //seccion interes ciudadano pertenece a tramites y servicios
         //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
         //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
-        $secciones = SeccionPagina::where('pertenece_a', $idSeccion)->get();
 
 
-        return view('sections.municipio', compact('secciones', 'nombreSeccion'));
+
+        return view('sections.generales', compact('secciones', 'nombreSeccion'));
+    }
+
+      /**
+     * Muestra información sobre el trámite seleccionado
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showMuseos()
+    {
+        $museos = Museo::all();
+        return view('sections.museos', compact('museos'));
     }
 
 }

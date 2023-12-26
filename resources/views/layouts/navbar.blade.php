@@ -16,7 +16,7 @@
             <li><a class="nav-link scrollto" href="atencion-al-vecino">At. vecino</a></li>
             <li><a class="nav-link scrollto" href="ciudad-productiva">Productiva</a></li>
             <li><a class="nav-link scrollto" href="cultura-y-educacion">Cultura y educación</a></li>
-            <li><a class="nav-link scrollto" href="turismo">Turismo</a></li>
+            <li><a class="nav-link scrollto" href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li>
             <li><a class="nav-link scrollto" href="deportes">Deportes</a></li>
 
 
@@ -39,17 +39,7 @@
             </li> --}}
             {{-- <li><a class="nav-link scrollto " href="#portfolio">Conocé TsAs</a></li> --}}
 
-            {{-- <li class="pronostico">
-                {{-- buscar otro!!!! --}}
-                   <!-- www.tutiempo.net - Ancho:314px - Alto:77px -->
-                {{-- <div id="TT_FijAbxtBdhj9daFA7fSEEE11EWaAMEd2LYkY1ZCIKEz">El tiempo - Tutiempo.net</div>
-                <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_FijAbxtBdhj9daFA7fSEEE11EWaAMEd2LYkY1ZCIKEz"></script> --}}
 
-
-                {{-- <div id="cont_a40ed2a68dcfa273ba08b0ebe2295292"><script type="text/javascript" async src="https://www.meteored.com.ar/wid_loader/a40ed2a68dcfa273ba08b0ebe2295292"></script></div>
-
-
-            </li> --}}
 
 
             </ul>

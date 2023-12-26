@@ -32,14 +32,18 @@ Route::get('/tadi', [App\Http\Controllers\TadiController::class, 'index'])->name
 Route::controller(HomeController::class)->group(function () {
     // Route::get('/orders/{id}', 'show');
     Route::get('/', 'index');
-    Route::get('/guia-de-tramites', 'showGuiaTramites');
-    Route::get('/tramite/{id}', 'showTramite');
+/*SECCIONES GENERALES (que contienen otras secciones)*/
     Route::get('/municipio', 'showSections');
     Route::get('/atencion-al-vecino', 'showSections');
     Route::get('/ciudad-productiva', 'showSections');
     Route::get('/cultura-y-educacion', 'showSections');
     Route::get('/turismo', 'showSections');
     Route::get('/deportes', 'showSections');
+/*SECCIONES UNITARIAS */
+    Route::get('/guia-de-tramites', 'showGuiaTramites');
+    Route::get('/tramite/{id}', 'showTramite');
+    Route::get('/museos', 'showMuseos');
+
 
 });
 
