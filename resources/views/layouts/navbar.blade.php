@@ -1,12 +1,9 @@
   <!-- ======= Header ======= -->
-
-
-
   <header id="header" class="fixed-top  header-scrolled">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
       <h1 class="logo me-auto me-lg-0"><a href="/"> Ts As<span>.</span></a></h1>
-          <!--para usar logo en navbar -->
+      <!--para usar logo en navbar -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
         <nav id="navbar" class="navbar order-last order-lg-0">
@@ -25,11 +22,19 @@
                 <li><a href="#">Servicios</a></li>
                 <li class="dropdown"><a href="#"><span></span> Servicios<i class="bi bi-chevron-left"></i></a>
                     <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li class="dropdown"><a href="#"><span></span> Servicios<i class="bi bi-chevron-left"></i></a>
+                            <ul>
+                                <li><a href="#">Deep Drop Down 1</a></li>
+                                <li><a href="#">Deep Drop Down 2</a></li>
+                                <li><a href="#">Deep Drop Down 3</a></li>
+                                <li><a href="#">Deep Drop Down 4</a></li>
+                                <li><a href="#">Deep Drop Down 5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Drop Down 2</a></li>
+                        <li><a href="#">Drop Down 3</a></li>
+                        <li><a href="#">Drop Down 4</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Drop Down 2</a></li>
@@ -48,6 +53,11 @@
 
 
 
+      <!-- div class="get-started-buttons">
+        <a href="tadi" target="_blank" class="get-started-btn scrollto"> TaDi </a>
+        <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Guia Trámites</a>
+        <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Autogestión</a>
+      </div -->
         <div class="get-started-buttons">
             <a  href="tadi" target="_blank" class="get-started-btn scrollto">
                 <div class="get-started-group">

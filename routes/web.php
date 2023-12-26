@@ -58,3 +58,5 @@ Route::controller(ReclamosController::class)->group(function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->name('portal');
