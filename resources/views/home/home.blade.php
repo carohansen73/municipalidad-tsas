@@ -22,7 +22,7 @@
         <div class="row justify-content-center portada-titulo" data-aos="fade-up" data-aos-delay="150">
             <div class="col-xl-6 col-lg-8">
             <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
-            <h2>Somos un equipo que trabajamos para el bienestar de todos los ciudadanos.</h2>
+            <h2>Somos un equipo que trabaja para el bienestar de todos los ciudadanos.</h2>
             </div>
         </div>
 
@@ -747,7 +747,7 @@
 
         <div class="section-title">
           <h2>Contacto</h2>
-          <p>Contacte con nosotros...</p>
+          <p>Contactate con nosotros...</p>
         </div>
 
         <div>

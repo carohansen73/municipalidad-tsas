@@ -83,6 +83,18 @@
 
 
   <!-- ======= Footer ======= -->
+   <!-- ======= borde colorido ======= -->
+   <div class="container-border">
+    <div class="row">
+        <div class="col-4 border-1">
+        </div>
+        <div class="col-4 border-2">
+        </div>
+        <div class="col-4 border-3">
+        </div>
+
+    </div>
+</div><!-- ======= fin borde colorido ======= -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
