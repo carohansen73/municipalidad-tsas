@@ -56,7 +56,10 @@ colores{
 
         background-color: #ce1537 ;
         background-color: #d63451 ;
-       /* cambiar rojo x rosa: #d63384*/
+
+        background: #d63384;
+        background: #e64394;
+
        /*ce1537 rojo*/
 
         background-color: #662483 ;
@@ -1673,7 +1676,7 @@ section {
   color: rgb(13, 116, 189);
 }
 
-.team .member .member-info span {
+.team .member .member-info span{
   display: block;
   font-size: 13px;
   font-weight: 400;
@@ -1690,6 +1693,10 @@ section {
 .team .member:hover .social {
   opacity: 1;
   bottom: 15px;
+}
+
+.member-info a{
+    color: rgb(13, 116, 189);
 }
 /*--------------------------------------------------------------
 # MUSEOS (reutilizo estilo Team)
@@ -1713,7 +1720,7 @@ section {
 }
 
 #museo .videos{
-    background-color: #f8f8f8;
+    background-color: whitesmoke;
 
     padding-bottom: 100px!important;
 }
@@ -1751,25 +1758,76 @@ section #cultura-eventos {
     border-radius: 30px;
     box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.645);
 }
+/*--------------------------------------------------------------
+# otras secciones / NOTICIAS - EVENTOS (reutilizo estilo MUSEOS - Team)
+--------------------------------------------------------------*/
 
+#secciones-eventos{
+    background-color: whitesmoke;
+}
 
+#secciones-eventos .member-img img{
+    width: 267px;
+    height: 267px;
+}
 
+#secciones-galeria img{
+    width: 100%;
+}
 /*--------------------------------------------------------------
 # seccion general
 --------------------------------------------------------------*/
+#seccion-gral .seccion-gral-img{
+    background: rgba(141, 141, 141, 0.2);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+#seccion-gral .seccion-gral-img img{
+    opacity: 0.4;
+    height: 240px;
+}
+
+#seccion-gral .seccion-gral-titulo{
+    position: absolute;
+    z-index: 1;
+    bottom: 16;
+    color: #FFF;
+    filter:none;
+    padding-bottom: 0px;
+/* border-bottom: 1px solid #FFF; */
+    background-color: rgba(0, 0, 0, 0.300);
+    padding: 10px;
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.150);;
+
+}
+
+#seccion-gral .seccion-gral-titulo h4{
+    margin-bottom: 0px;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.959);
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+
+}
+
 .team .member .seccion-gral-img  img{
     position: relative;
     overflow: hidden;
     /* height: 200px; */
     width: 380px;
 }
+
 /*
 .container-section-gral{
     display: flex;
     align-items: center;
     justify-content: center;
 } */
-
 
 @media (max-width: 992px) {
     .team .member .seccion-gral-img  img{
@@ -1778,6 +1836,163 @@ section #cultura-eventos {
     }
 }
 
+/*--------------------------------------------------------------
+# NOTICIAS utilizo team
+--------------------------------------------------------------*/
+#noticias .member{
+    width: 100% ;
+}
+
+#noticias .member-img{
+    width: 100% ;
+    height: 267px;
+}
+
+#noticias .member-img img{
+    width:100%;
+  height: 267px;
+}
+
+/*noticias relacionadas (cards pequeños)*/
+#noticias .aside-lateral .member-img{
+    width: 100% ;
+    height: 167px;
+}
+
+#noticias .aside-lateral .member-img img{
+    width:100%;
+  height: 167px;
+}
+
+#noticias .aside-lateral .member-info{
+    padding: 10px;
+}
+
+#noticias .aside-lateral .member-info h4{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* fin noticias relacionadas (cards pequeños)*/
+
+#noticias  .aside-principal{
+    padding-right: 20px;
+}
+
+#noticias .aside-lateral{
+    border-left: 1px solid whitesmoke;
+    padding-left: 20px;
+}
+
+#noticias .aside-lateral .section-title{
+   padding-bottom: 0px;
+}
+
+#noticias .aside-lateral ul{
+    padding: 10px 0px 0px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#noticias .aside-lateral ul li{
+    list-style: none;
+    background-color: rgb(13, 116, 189);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-size: 14px;
+    margin: 10px 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#noticias .aside-lateral ul li p{
+    margin-bottom: 0px;
+}
+
+
+/*--------------------------------------------------------------
+# NOTICIA
+--------------------------------------------------------------*/
+
+#noticia{
+    padding-top: 0px;
+}
+
+#noticia .aside-principal .img-noticia,
+#noticia .aside-principal .img-noticia img{
+    width: 100%;
+    height: 540px;
+}
+
+#noticia .aside-principal .info-noticia{
+    padding: 30px;
+}
+
+#noticia .aside-principal .info-noticia h4{
+    color: rgb(13, 116, 189);
+    font-weight: 700;
+}
+
+#noticia .aside-principal .info-noticia .detalles-noticia,
+#noticia .aside-principal .info-noticia .detalles-noticia a{
+    color: #AAAAAA;
+}
+
+#noticia .aside-principal .info-noticia .detalles-noticia{
+    padding: 12px 10px;
+}
+
+#noticia .galeria-noticia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#noticia .galeria-noticia .carousel{
+    height: 420px;
+    width: 80%;
+}
+
+#noticia .galeria-noticia img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/*noticias relacionadas (cards pequeños)*/
+
+#noticia .noticias-relacionadas{
+    margin-top: 40px;
+    padding: 20px;
+    /* border-top: 1px solid #eee; */
+}
+
+#noticia .section-title{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+
+}
+#noticia  .member-img{
+    width: 100% ;
+    height: 167px;
+}
+
+#noticia  .member-img img{
+    width:100%;
+  height: 167px;
+}
+
+#noticia  .member-info{
+    padding: 10px;
+}
+
+#noticia  .member-info h4{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* fin noticias relacionadas (cards pequeños)*/
 
 /*--------------------------------------------------------------
 # Contact
@@ -1966,6 +2181,36 @@ section #cultura-eventos {
   .breadcrumbs ol li {
     display: inline-block;
   }
+}
+/*--------------------------------------------------------------
+# Sub-Footer
+--------------------------------------------------------------*/
+.telefonos-utiles{
+    padding: 30px;
+    margin-bottom: 60px;
+}
+.telefono-icono i{
+    background-color: #ddd;
+    border-radius: 50%;
+    padding: 30px;
+    font-size: 18px;
+}
+.telefonos-utiles .telefono{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: start; */
+}
+
+.telefonos-utiles p{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0px;
+    color: #aaa;
+}
+.telefonos-utiles span{
+    font-size: 18px;
+    font-weight: 800;
 }
 
 /*--------------------------------------------------------------
@@ -2412,7 +2657,7 @@ input[type=number] { -moz-appearance:textfield; }
 /*--------------------------------------------------------------
 # prueba background animado
 --------------------------------------------------------------*/
-bg-animated{
+.bg-animated{
     position: relative;
     width: 100%;
     min-height: 1px;
@@ -2449,6 +2694,108 @@ bg-animated{
         transform: translateX(25%);
     }
 }
+
+/*--------------------------------------------------------------
+# CARDS CON ICONO Y VER MAS (uso en servicios)
+--------------------------------------------------------------*/
+
+.team .card-icono {
+   padding: 20px;
+
+}
+
+.card-icono .member{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 400px;
+}
+
+.card-icono .member i{
+    font-size: 30px;
+}
+
+.team .card-icono .member-1 i{
+    color: #d63384;
+}
+
+.team .card-icono .member-1 .card-ver-mas a{
+    background-color: #d63384;
+}
+
+.team .card-icono .member-1 .card-ver-mas a:hover{
+    background-color: #e64394 ;
+    color: #fff;
+}
+
+.team .card-icono .member-2 i{
+    color: #3aaa35;
+}
+
+.team .card-icono .member-2 .card-ver-mas a{
+    background-color: #3aaa35;
+}
+
+.team .card-icono .member-2 .card-ver-mas a:hover{
+    background-color: #53c04d ;
+    color: #fff;
+}
+
+.team .card-icono .member-3 i{
+    color: #004f9f;
+}
+
+.team .card-icono .member-3 .card-ver-mas a{
+    background-color: #004f9f;
+}
+
+.team .card-icono .member-3 .card-ver-mas a:hover{
+    background-color: #2464a3 ;
+    color: #fff;
+}
+
+.team .card-icono .member-4 i{
+    color: #f07e07;
+}
+
+.team .card-icono .member-4 .card-ver-mas a{
+    background-color: #f07e07;
+}
+
+.team .card-icono .member-4 .card-ver-mas a:hover{
+    background-color: #ea8f2e ;
+    color: #fff;
+}
+
+.team .card-icono .member-5 i{
+    color: #662483;
+}
+
+.team .card-icono .member-5 .card-ver-mas a{
+    background-color: #662483;
+}
+
+.team .card-icono .member-5 .card-ver-mas a:hover{
+    background-color: #662483 ;
+    color: #fff;
+}
+
+
+.team .card-icono .member-6 i{
+    color: #f4c000;
+}
+
+.team .card-icono .member-6 .card-ver-mas a{
+    background-color: #f4c000;
+}
+
+.team .card-icono .member-6 .card-ver-mas a:hover{
+    background-color: #ffd53f ;
+    color: #fff;
+}
+
+
 
 /* HTML:
 

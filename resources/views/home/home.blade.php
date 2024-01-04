@@ -91,7 +91,8 @@
 
             <div class="section-title">
                 <h2>Noticias y novedades</h2>
-                <p>Novedades</p>
+                <p><a href="portal-de-noticias">Novedades</a> </p>
+
               </div>
             <div class="row">
                 <div class="container-image-1 col-lg-6"  data-aos="fade-right">

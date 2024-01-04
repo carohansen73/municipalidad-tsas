@@ -81,6 +81,50 @@
     </div>
 
 
+    {{-- Sub-footer --}}
+    <div class="container telefonos-utiles mt-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="row telefono">
+                    <div class="col-auto telefono-icono">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="col-auto">
+                        <p>Bomberos</p>
+                        <span>100</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="row telefono">
+                    <div class="col-auto telefono-icono">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="col-auto">
+                        <p>Policia</p>
+                        <span>101</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="row telefono">
+                    <div class="col-auto telefono-icono">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="col-auto">
+                        <p>Atención al vecino</p>
+                        <span>147</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{-- Fin Sub-footer  --}}
+
+
 
   <!-- ======= Footer ======= -->
    <!-- ======= borde colorido ======= -->

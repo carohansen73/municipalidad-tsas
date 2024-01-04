@@ -6,7 +6,12 @@ use App\Models\Area;
 use App\Models\TramiteTipo;
 use App\Models\SeccionPagina;
 use App\Models\SeccionMenu;
+use App\Models\SeccionTexto;
 use App\Models\Museo;
+use App\Models\Noticia;
+use App\Models\NoticiaImg;
+
+
 use Symfony\Component\Routing\Route;
 
 
@@ -40,6 +45,70 @@ class HomeController extends Controller
         // ...
         return redirect()->away('https://autogestion.tresarroyos.gov.ar/inicio');
     }
+
+
+    /**
+     * Muestra información sobre el trámite seleccionado
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showSections()
+    {
+        //busco la A LA Q INGRESÓ seccion con el path
+       $pathSeccion = \Request::path();
+       $nombreSeccion = str_replace("-"," ",$pathSeccion);
+
+       //tomo los datos y las entidades que pertenecen a esa seccion
+       $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+
+        //  $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
+        // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
+
+        // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
+        // seccion organigrama pertenece a municipio
+        //seccion educacion pertenece a municipio
+        //seccion interes ciudadano pertenece a tramites y servicios
+        //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
+        //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
+
+        return view('sections.generales', compact('secciones', 'nombreSeccion'));
+    }
+
+
+    /**
+     * Secciones que unicamente continenen informacion - fotos y eventos
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showSectionPlana(){
+        //busco la A LA Q INGRESÓ seccion con el path
+        $pathSeccion = \Request::path();
+
+        // $nombreSeccion = str_replace("-"," ",$pathSeccion);
+
+        //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
+        $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
+        return view('sections.secciones', compact('textos', 'noticias'));
+    }
+
+
+  /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
+
+    /**
+     * Muestra información sobre el trámite seleccionado
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showMuseos()
+    {
+        $museos = Museo::all();
+        return view('sections.museos', compact('museos'));
+    }
+
+    /***************** ------------------------------  ATENCION AL VECINO -------------------------- *****************/
 
     /**
      * Muestra un listado de tramites ordenado por tema
@@ -77,48 +146,69 @@ class HomeController extends Controller
         return view('guiaDeTramites.show', compact('areas', 'tipo', 'tramite'));
     }
 
+    /**
+     * Muestra el listado de servicios
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function showListServicios(){
+        $SERVICIOS = 'SERVICIOS';
+        return view('sections.servicios', compact('SERVICIOS'));
+    }
+
+
+    /*****************   ------------------------------  HOME -------------------------- *****************/
 
     /**
-     * Muestra información sobre el trámite seleccionado
+     * Muestra todas las noticias
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSections()
+    public function showNoticias() /*paginar? o x js hacer api*/
     {
-        //busco la A LA Q INGRESÓ seccion con el path
-       $pathSeccion = \Request::path();
-       $nombreSeccion = str_replace("-"," ",$pathSeccion);
+        $noticias = Noticia::with('imgs')->get();
+        // foreach($noticias as $noti){
+        //     foreach($noti->imgs as $imag){
+        //         var_dump($imag->img);die;
+        //     }
 
-       //tomo los datos y las entidades que pertenecen a esa seccion
-       $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
-
-
-
-
-    //    $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
-        // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
-
-        // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
-        // seccion organigrama pertenece a municipio
-        //seccion educacion pertenece a municipio
-        //seccion interes ciudadano pertenece a tramites y servicios
-        //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
-        //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
-
-
-
-        return view('sections.generales', compact('secciones', 'nombreSeccion'));
+        // }
+        return view('sections.noticias', compact('noticias'));
     }
 
-      /**
-     * Muestra información sobre el trámite seleccionado
+
+    /**
+     * Muestra la noticia seleccionada
      *
      * @return \Illuminate\Http\Response
      */
-    public function showMuseos()
+    public function showNoticia($titulo)
     {
-        $museos = Museo::all();
-        return view('sections.museos', compact('museos'));
+        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios x -!!!!!!*/
+
+        // var_dump($titulo);die;
+        $noticias = Noticia::with('imgs')->get();
+        $noticia = Noticia::where('pathname', $titulo)->with('imgs')->get();
+
+        foreach($noticias as $noti){
+            $categoria = $noti->categoria;
+        }
+
+        //  foreach($noticias as $noti){
+        //     //modifico el titulo para usarlo de path url
+        //     //pongo guiones en lugar de espacios
+        //     $cadena = strtolower($noti->titulo);
+        //     $cadenaConvert = strtr($cadena, " ", "-");
+        //     //SACO LOS CARACTERES ESPECIALES (PERO ME BORRA LETRAS CON ACENTOS Y Ñ, no saca . " :)->VER SI OTRO ME FUNCIONA MEJOR
+        //     $pathName = filter_var($cadenaConvert, FILTER_SANITIZE_URL);
+        //     var_dump($pathName);
+        //     foreach($noti->imgs as $imag){
+        //             var_dump($imag->img);die;
+        //     }
+        //  }
+
+        return view('sections.noticia', compact('noticias', 'noticia', 'categoria'));
     }
+
 
 }

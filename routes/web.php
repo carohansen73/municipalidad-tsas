@@ -32,7 +32,7 @@ Route::get('/tadi', [App\Http\Controllers\TadiController::class, 'index'])->name
 Route::controller(HomeController::class)->group(function () {
     // Route::get('/orders/{id}', 'show');
     Route::get('/', 'index');
-/*SECCIONES GENERALES (que contienen otras secciones)*/
+/*SECCIONES GENERALES (que contienen otras secciones) o hacer menu desplegable*/
     Route::get('/municipio', 'showSections');
     Route::get('/atencion-al-vecino', 'showSections');
     Route::get('/ciudad-productiva', 'showSections');
@@ -43,7 +43,15 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
     Route::get('/museos', 'showMuseos');
+    Route::get('/seccion/{nombre}', 'showSectionPlana');
 
+  /*SERVICIOS */
+  Route::get('/servicios', 'showListServicios');
+
+
+    /*NOTICIAS */
+    Route::get('/portal-de-noticias', 'showNoticias');
+    Route::get('/noticia/{titulo}', 'showNoticia');
 
 });
 

@@ -13,13 +13,13 @@
         <div id="cultura" class="portada-foto text-md-left text-sm-center ">
             <img class="foto-portada" src="assets/img/sections-portadas/cultura/cultura.jpg" alt="portada-de-la-seccion">
             <div class="background-portada">   </div>
-            <img class="logos-portada" src="assets/img/sections-portadas/logos/logos.png" alt="">
+            {{-- <img class="logos-portada" src="assets/img/sections-portadas/logos/logos.png" alt=""> --}}
             <h1>{{$nombreSeccion}}</h1>
         </div>
 
 {{-- OTROS --}}
     @else
-        <div  class="portada">
+        <div  class="portada pt-5 mt-5">
 
             <div class="portada-seccion ps-5">
                 <div class="section-title">
@@ -89,7 +89,7 @@
                                 @if($seccion->perteneceA->nombre == 'Educacion')
                                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4">
                                         <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                            <a href="{{$seccion->nombre}}">
+                                            <a href="{{$seccion->link}}" target="_blank">
                                             <div class="seccion-gral-img">
                                                 <img src="assets/img/sections-portadas/{{$seccion->portada}}" class="img-fluid" alt="">
                                             </div>
@@ -118,7 +118,7 @@
 
         {{-- OTRAS SECCIONES!! / entidades -----  (VER COMO ACOMODO EL CODIGO P NO REPETIR)--}}
         @if($nombreSeccion != "cultura y educacion")
-            <section class="team"> <!-- ======= Team Section ======= -->
+            <section id="seccion-gral" class="team"> <!-- ======= Team Section ======= -->
                 <div class="container" data-aos="fade-up">
                     <div class="section-title">
                         <p>{{$nombreSeccion}}</p>
@@ -130,11 +130,14 @@
                                     <a href="{{$seccion->link}}">
                                         <div class="seccion-gral-img">
                                                 <img src="assets/img/sections-portadas/{{$seccion->portada}}" class="img-fluid" alt="">
+                                                <div class="seccion-gral-titulo">
+                                                    <h4>{{$seccion->nombre}} </h4>
+                                                </div>
                                         </div>
                                     </a>
-                                    <div class="member-info">
+                                    {{-- <div class="member-info">
                                         <a href="{{$seccion->link}}"><h4>{{$seccion->nombre}}</h4>  </a>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         @endforeach
@@ -157,7 +160,7 @@
         <div class="row">
             <div class="col-4 border-1">
             </div>
-            <div class="col-4 border-4">
+            <div class="col-4 border-6">
             </div>
             <div class="col-4 border-3">
             </div>
@@ -259,22 +262,8 @@
         </div>
 
       </section>
-        <!-- ======= borde colorido ======= -->
-        <div class="container-border">
-            <div class="row">
-                <div class="col-4 border-1">
-                </div>
-                <div class="col-4 border-4">
-                </div>
-                <div class="col-4 border-3">
-                </div>
-            </div>
-        </div><!-- ======= fin borde colorido ======= -->
-  <!-- End cultura-eventos Section -->
-
-    {{-- Noticias correspondientes a cultura - educación --}}
+  <!-- End cultura-eventos/ Noticias  Section -->
     @endif
-
 
 
 

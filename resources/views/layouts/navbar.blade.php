@@ -9,12 +9,12 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
 
-            <li><a class="nav-link scrollto" href="municipio">Municipio</a></li>
-            <li><a class="nav-link scrollto" href="atencion-al-vecino">At. vecino</a></li>
-            <li><a class="nav-link scrollto" href="ciudad-productiva">Productiva</a></li>
-            <li><a class="nav-link scrollto" href="cultura-y-educacion">Cultura y educación</a></li>
+            <li><a class="nav-link scrollto" href="/municipio">Municipio</a></li>
+            <li><a class="nav-link scrollto" href="/atencion-al-vecino">At. vecino</a></li>
+            <li><a class="nav-link scrollto" href="/ciudad-productiva">Productiva</a></li>
+            <li><a class="nav-link scrollto" href="/cultura-y-educacion">Cultura y educación</a></li>
             <li><a class="nav-link scrollto" href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li>
-            <li><a class="nav-link scrollto" href="deportes">Deportes</a></li>
+            <li><a class="nav-link scrollto" href="/deportes">Deportes</a></li>
 
 
             {{-- <li class="dropdown"><a href="#"><span>Trámites y Servicios</span> <i class="bi bi-chevron-down"></i></a>
