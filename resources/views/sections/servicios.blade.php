@@ -55,7 +55,7 @@
                             <p >Servicios</p>
                         </div>
 
-                        <div class="row">
+                        <div class="row d-flex justify-content-center">
 
                             <div class="col-lg-6 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4 card-icono">
                                 <div class="member member-1" data-aos="fade-up" data-aos-delay="100">
@@ -67,7 +67,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="/seccion/estacionamiento-medido">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="https://planjoven.tresarroyos.gov.ar/" target="_blank">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="https://guardavidas.tresarroyos.gov.ar/" target="_blank">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="https://becas.tresarroyos.gov.ar/" target="_blank">Ver mas</a>
                                     </div>
                                 </div>
                             </div>

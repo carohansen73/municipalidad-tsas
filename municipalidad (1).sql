@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-12-2023 a las 11:25:57
+-- Tiempo de generación: 04-01-2024 a las 14:49:35
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `municipalidad`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `archivos`
+--
+
+CREATE TABLE `archivos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(191) NOT NULL,
+  `seccion_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -100,6 +114,104 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (32, '2023_11_28_133419_create_tramite_tipo_table', 1),
 (33, '2023_11_28_141236_create_areas_table', 1),
 (34, '2023_11_28_141442_create_tramite_guias_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `museo`
+--
+
+CREATE TABLE `museo` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `ig` varchar(100) DEFAULT NULL,
+  `fb` varchar(191) DEFAULT NULL,
+  `referente` varchar(191) DEFAULT NULL,
+  `wsp` varchar(191) DEFAULT NULL,
+  `email` varchar(191) DEFAULT NULL,
+  `direccion` varchar(191) DEFAULT NULL,
+  `portada` varchar(191) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `museo`
+--
+
+INSERT INTO `museo` (`id`, `nombre`, `ig`, `fb`, `referente`, `wsp`, `email`, `direccion`, `portada`) VALUES
+(1, 'CENTRO CULTURAL Y MUSEO HISTORICO DE ORENSE', 'museoorense', 'museo.orense.1', 'Marina', '02983420101', NULL, 'Av. San Martín 443 - Orense', 'orense.jpg'),
+(2, 'MUBATA - MUSEO DE BELLAS ARTES DE TRES ARROYOS', 'museoartetresarroyos', 'mubata.museobellasartes', NULL, '011-40891493', 'museomubata@gmail.com', 'Av. Moreno 232 - Tres Arroyos', 'mubata.jpg'),
+(3, 'MUSEO DE LA YERBA MATE RETA', 'museodelayerbamate', 'mundomatereta', 'Mabel y Pato', '02944-252408', NULL, 'Calle 44 y 47 - Reta', 'reta.jpg'),
+(4, 'MUSEO DEL AUTOMOVIL \"JOSE ABEL DEL VECCHIO\"', NULL, NULL, 'Héctor Sode', '+5492983642876', '', 'Sarratea 51 - Tres Arroyos', 'auto.jpg'),
+(5, 'MUSEO HISTORICO DE SAN MAYOL', 'museosanmayol', 'museosanmayol', 'Ezequiel Lanza', '2983511146', NULL, 'Planta urbana s/n/ - San Mayol', 'mayol.jpg'),
+(6, 'MUSEO MUNICIPAL JOSE A. MULAZZI', 'museomulazzi', 'museomulazzi', NULL, '02983-434555', 'museotarroyos@gmail.com', 'Av. San Martín 323 - Tres Arroyos', 'mulazzi.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `noticia`
+--
+
+CREATE TABLE `noticia` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(180) NOT NULL,
+  `descripcion` text NOT NULL,
+  `categoria` varchar(50) NOT NULL,
+  `destacada` tinyint(1) NOT NULL,
+  `fecha` date NOT NULL,
+  `seccion_id` int(11) DEFAULT NULL,
+  `pathname` varchar(191) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `noticia`
+--
+
+INSERT INTO `noticia` (`id`, `titulo`, `descripcion`, `categoria`, `destacada`, `fecha`, `seccion_id`, `pathname`, `created_at`, `updated_at`) VALUES
+(1, 'Tito Lemos encabezará una velada boxística solidaria junto al municipio este viernes', 'En una conferencia de prensa hoy al mediodía, el intendente Pablo Garate acompañado por el talentoso boxeador local apodado Tito \"el Eléctrico\" Lemos anunció que este viernes habrá una noche de boxeo solidario en el Polideportivo Municipal. <br><br>\r\n \r\nEl evento está pensado para toda la familia, los valores de las entradas oscilan entre los 3000 y los 10000 pesos y todo lo recaudado será destinado a la comunidad afectada por el temporal, familias e instituciones que sufrieron daños.<br>\r\nLas entradas podrán adquirirse ahí mismo y en la Dirección de Juventud, Brandsen 181. <br><br>\r\n\r\nLa cita deportiva es este viernes a las 21 hs. en La Rioja 150, Polideportivo Municipal. <br><br>\r\n\r\n\"Mucha gente quedó afectada por el temporal, se volaron techos, perdieron cosas y por eso queremos brindar un buen espectáculo y llamar a la gente a que sea solidaria\". Dijo Tito Lemos. <br><br>\r\n\r\nPablo Garate agregó \"Agradezco a Tito, que se ofreció a poder hacer esta actividad y es algo muy lindo. Lo vimos ganar el otro día por televisión y ahora lo podemos ver en Polideportivo Municipal, por primera vez va a pelear ahí. Hemos convocado a boxeadores de todos los gimnasios de Tres Arroyos\".<br>', 'generales', 1, '2023-12-26', 0, 'tito-lemos-encabezar-una-velada-boxstica-solidaria-junto-al-municipio-este-viernes', NULL, NULL),
+(2, 'Garate presentó a quien formará parte del equipo de dirección del Hospital Pirovano', 'Esta mañana, el intendente electo Pablo Garate presentó a Mónica Capellari, quien formara parte del equipo de dirección del hospital, junto a Emiliano Capandegui.  <br><br>\r\n\r\nCapellari, quien arribó a la ciudad en 1985 y llegó a ser Jefa de Obstetricia y Ginecología mediante concurso, vuelve a la salud pública de Tres Arroyos luego de ejercer su profesión en distritos vecinos como Chaves y San Cayetano, cumpliendo diferentes funciones, llegando a ser directora y secretaria de Salud. <br><br>\r\n\r\nCon 40 años de trayectoria y una vasta experiencia para compartir, la Doctora se suma a acompañar la gestión, a brindar su conocimiento con todo el equipo de salud del hospital local.  <br><br>\r\n\r\nCapellari se mostró agradecida con el intendente Garate “Quiero dar un agradecimiento especial al intendente por brindarme la oportunidad de volver al Pirovano, es una alegría muy grande poder acompañar y sumar desde mi lugar para construir una mejor salud para todos”.<br>', 'cultura', 1, '2023-12-26', 25, 'garate-present-a-quien-formar-parte-del-equipo-de-direccin-del-hospital-pirovano', NULL, NULL),
+(3, '\"JOJOJOLGORIO\" REPROGRAMADO', 'La Dirección de Juventud informa a la comunidad que debido al pronóstico de lluvia para hoy, se reprogramará el evento  “JoJoJolgorio” en el patio cervecero para la semana que viene, estarán brindando más información en sus redes sociales y teléfono @Direccionjuventudtsas o al 2983-456538 para consultas. <br>', 'cultura', 1, '2023-12-22', 25, 'jojojolgorio-reprogramado', NULL, NULL),
+(4, 'Navidad: como será el servicio de recolección de residuos domiciliarios en las localidades ', 'La Subsecretaría de Gestión Ambiental de la Municipalidad de Tres Arroyos informa a la población que el servicio de recolección de residuos domiciliarios en el Distrito NO se realizara durante el 24 a la noche y el 25 a la mañana. <br>\r\nAsimismo el servicio en la localidad de Claromeco será reforzado de domingo a domingo a partir del día hoy, no recolectando el día 25.<br>', 'la ciudad', 1, '2023-12-22', 0, 'navidad:-como-ser-el-servicio-de-recoleccin-de-residuos-domiciliarios-en-las-localidades-', NULL, NULL),
+(5, 'Centro Municipal de salud del Pdo. de Tres Arroyos  - Cronograma de atención por feriado del 25 de diciembre', 'Con motivo del asueto otorgado para el lunes 25 de diciembre,  la atención medico hospitalaria se realizará como es habitual todos los años, según cronograma dispuesto para sábados, domingos y feriados. <br>\r\n El servicio de emergencias atenderá las 24 horas y la guardia pediátrica de 8 a 12 y de 19 a 22 hs. <br>', 'salud', 1, '2023-12-22', 26, 'centro-municipal-de-salud-del-pdo.-de-tres-arroyos----cronograma-de-atencin-por-feriado-del-25-de-diciembre', NULL, NULL),
+(6, 'GESTÁNDONOS: La maternidad como un espacio construido en comunidad, en el final de su tercer año.', '\r\nEste dispositivo de acompañamiento que funciona desde hace 3 años, en el Barrio de Villa Italia y que  lleva adelante un equipo técnico y profesional del Centro Municipal de Salud y de la Secretaria de Salud; Reúne todos los jueves a  Jóvenes  en periodo de gestación y posteriormente con sus bebes,  que se encuentran para formar y gestar un espacio de confianza que les permite compartir lo que les pasa en este proceso de dar vida. <br><br>\r\nEste espacio está enmarcado en la Ley  27.611 conocida como de los 1000 días que tiene como objetivos proteger, fortalecer y acompañar el cuidado integral de la vida y la salud de las personas gestantes y las niñas y los niños en sus primeros 3 años  y que prevee estos dispositivos promo- preventivos. En Gestándonos  se abordan todas aquellas temáticas que necesita una infancia para crecer sano. El proceso de parto- post parto, lactancia, alimentación complementaria, el movimiento saludable, los vínculos sanos y los limites son algunas de las temáticas que se trabajan; haciendo hincapié en los controles de salud. En este marco también se hace entrega del kit Qunita Bonaerense a las familias que concurren. <br><br>\r\nEl espacio  es tan dinámico que Cada Jueves se va generando y creando con las inquietudes de  las integrantes y sus vivencias. Entonces esta información científica, los contenidos, procesos o procedimientos se adaptan a la vida cotidiana de ellas,  para que se cumpla el fin último del grupo que es alojar una crianza amorosa, respetuosa, respetada y empoderada. <br>\r\nSe comparte lo que cada una sabe, además de  las dudas y los miedos que se van deconstruyendo con información científica  guiada por profesionales en Obstetricia, Nutrición, Psicomotricidad, Trabajo Social y Psicología. “De esta manera  se van trazando lazos de confianza  y relaciones que hacen posible, a quienes maternan, crecer junto a las infancias en el día a día”. Detallan desde Gestándonos . <br><br>\r\n La crianza y los vínculos saludables compartidos<br><br>\r\nUn vínculo es una suma de elementos: amor, placer, disfrute, cuidado y respeto mutuo, confianza, y crecimiento personal.<br>\r\n“Cuando los vínculos se construyen de una forma saludable podemos actuar tal cual somos, hay confianza y autonomía,  se propicia un espacio para compartir saberes, experiencias y estrategias para afrontar la maternidad  en un  espacio de apoyo mutuo y lugar para el crecimiento personal, de las infancias y del entorno cercano, fortaleciendo las capacidades de crianza y estamos felices de compartir este cierre de año, en el que trabajamos con cuatro grupos de familias. Detallan las profesionales.<br>', 'salud', 1, '2023-12-22', 25, 'gestndonos:-la-maternidad-como-un-espacio-construido-en-comunidad,-en-el-final-de-su-tercer-ao', NULL, NULL),
+(7, 'NUESTRAS INFANCIAS, EL JUEGO Y LA NAVIDAD EN ATENCIÓN PRIMARIA - PAPA NOEL EN TU BARRIO', 'Recordamos a la comunidad que hoy viernes 22 de diciembre Papá Noel completara la visita por los CAPS de nuestra ciudad. <br>\r\nEsta intervención urbana fue organizada por el Área de Atención Primaria, sus equipos de salud y sus referentes de enfermería, con el objetivo de garantizar el juego como ejercicio fundamental del derecho a la salud. <br>\r\nEn este marco, desde el Centro Municipal de Salud, invita a cada una de las familias, a los niños y las niñas a compartir con Papá Noel, llevarle sus cartitas y sacarse fotitos.  <br><br>\r\nRecorrido: <br>\r\n• 10:00 – CAPS VILLA ITALIA – Víctor Manuel N°674<br>\r\n• 10:30 – CIC OLIMPO – Bolívar y San Luis<br>\r\n• 11:00 – CAPS 25 DE MAYO – Av. Libertad y 25 de Mayo<br>\r\n• 11:30 – CAPS BENITO MACHADO – 20 de abril 1180<br>\r\n• 12:00 – CAPS COLEGIALES – P.N. Carrera N° 1300<br>\r\n• 12:30– CAPS RANCHOS– Urquiza N° 1205<br>', 'generales', 1, '2023-12-22', 0, 'nuestras-infancias,-el-juego-y-la-navidad-en-atencin-primaria---papa-noel-en-tu-barrio', NULL, NULL),
+(8, 'Cronograma de recolección de residuos para navidad ', 'Transportes Malvinas Definió como funcionará el servicio de Recolección y Barrido en Tres Arroyos durante las Fiestas <br>\r\n\r\nLa Empresa Transportes Malvinas Informó a los vecinos de Tres Arroyos como se desarrollarán los servicios durante las Fiestas. El objetivo es reforzar la comunicación y dar a conocer los momentos de recolección ya que es una época donde el volumen de residuos crece considerablemente.<br>\r\nEl operativo especial de servicio contempla esta situación y el objetivo es que las calles y la ciudad estén limpias.<br>\r\nEl domingo 24 de diciembre no se prestarán servicios. El lunes 25 la recolección será nocturna con un camión de refuerzo especial. El martes 26 y miércoles 27 se prestarán normalmente todos los servicios y se adicionarán refuerzos en la recolección matutina.<br>\r\nPor todo esto la empresa solicita sacar los residuos recién el lunes 25 a la Noche, que es cuando comenzará la recolección con sus respectivos refuerzos.<br>', 'la ciudad', 1, '2023-12-21', 0, 'cronograma-de-recoleccin-de-residuos-para-navidad-', NULL, NULL),
+(9, 'Reapertura del Cementerio Municipal', 'El día de la fecha, se informa la reapertura del Cementerio Municipal después de un arduo trabajo destinado a garantizar su óptimo funcionamiento. A partir de este momento, el Cementerio retoma sus operaciones en su horario habitual.  <br>\r\nDurante este periodo, se llevaron a cabo labores exhaustivas para asegurar las condiciones adecuadas y ofrecer un espacio seguro y respetuoso para todos los visitantes. Agradecemos la comprensión de la comunidad durante el cierre temporal y valoramos la paciencia demostrada. <br>\r\nInvitamos a los ciudadanos a utilizar el Cementerio Municipal según su horario regular de Lunes a Viernes de 6:00 a 20:00, durante el fin de semana y feriados desde las 8:00 a 20:00 hs. <br>\r\nAgradecemos a todos por su colaboración y comprensión.<br>', 'generales', 1, '2023-12-21', 0, 'reapertura-del-cementerio-municipal', NULL, NULL),
+(10, 'Encefalomielitis Equina: prevención y cuidados', 'La Dirección de Bromatología de la Municipalidad de Tres Arroyos en comunicación con el Servicio Nacional de Sanidad y Calidad Agroalimentaria (SENASA) informa que ya arribaron las vacunas al distrito, donde son dos los casos confirmados de Encefalomielitis Equina, por este motivo es fundamental mantener los recaudos necesarios para prevenir los contagios que afectan tanto a equinos como a seres humanos. <br>\r\nEs importante destacar que ya se encuentran las vacunas en las veterinarias: El agrapecuario (Av. Moreno 798), Veterninaria Huinca (Av. Constituyentes 147), Veterinaria Don Hugo (Avenida Libertad 168,) , Veterinaria Kanino`s (9 de Julio 799), Zeusmi Vet (25 de Mayo 1077).<br><br>\r\n\r\nPara prevenir y cuidar la salud, el control de mosquitos es esencial para evitar la diseminación de la enfermedad, por tal motivo se recomienda eliminar la acumulación de agua estancada, cambiar el agua de bebederos frecuentemente, mantener los espacios limpios, pastizales cortados y utilizar  repelentes.<br>\r\nAnte el caso de muerte de un equino el responsable debe enterrar o incinerar los restos.<br><br>\r\n\r\nLos síntomas en equinos pueden caracterizarse por caminar en círculos, falta de apetito,  convulsiones, etc.<br>\r\nLos síntomas en humanos son fiebre, dolor de cabeza, vómito, convulsiones.<br>\r\nLos casos deben ser informados a SENASA en equinos y si existen síntomas en humanos a la Dirección de Bromatología y Zoonosis 2983 649994, con llamadas y whatsapp y al mail bromatologia@tresarroyos.gov.ar o presencialmente en Pedro N. Carrera 814 de 7 hs a 14 hs.<br>', 'salud', 1, '2023-12-21', 0, 'encefalomielitis-equina:-prevencin-y-cuidados', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `noticia_img`
+--
+
+CREATE TABLE `noticia_img` (
+  `id` int(11) NOT NULL,
+  `img` varchar(191) NOT NULL,
+  `noticia_id` int(11) NOT NULL,
+  `leyenda` varchar(191) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `noticia_img`
+--
+
+INSERT INTO `noticia_img` (`id`, `img`, `noticia_id`, `leyenda`, `created_at`, `updated_at`) VALUES
+(1, '1.jpg', 1, 'velada boxistica', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(2, '2.jpg', 1, 'velada boxistica 2', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(3, '3.jpg', 2, 'people', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(4, '4.jpg', 3, 'jojojolgorio en el patio cervecero', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(5, '5.jpg', 4, 'recoleccion de residuos', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(6, '6.jpg', 5, 'centro de salud', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(7, '7.jpg', 6, 'personal', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(8, '8.jpg', 7, 'navidad', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(9, '9.jpg', 7, 'papa noel', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(10, '10.jpg', 8, 'residuos', '2023-12-27 13:54:20', '2023-12-27 13:54:20'),
+(11, '11.jpg', 9, 'cementerio municipal', '2023-12-27 13:58:03', '2023-12-27 13:58:03'),
+(12, '12.jpg', 10, 'encefalomielitis', '2023-12-27 13:58:03', '2023-12-27 13:58:03');
 
 -- --------------------------------------------------------
 
@@ -203,20 +315,21 @@ INSERT INTO `reclamo_tema` (`id`, `nombre`, `area_id`) VALUES
 CREATE TABLE `seccion_menu` (
   `id` int(11) NOT NULL,
   `nombre` text NOT NULL,
-  `abreviatura` text NOT NULL
+  `path` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `seccion_menu`
 --
 
-INSERT INTO `seccion_menu` (`id`, `nombre`, `abreviatura`) VALUES
+INSERT INTO `seccion_menu` (`id`, `nombre`, `path`) VALUES
 (1, 'Municipio', 'Municipio'),
-(2, 'Atencion-al-vecino', 'Vecino'),
-(3, 'Ciudad-productiva', 'Producción'),
-(4, 'Cultura-y-educacion', 'Cultura y educación'),
+(2, 'Atencion-al-vecino', 'Atencion-al-vecino'),
+(3, 'Ciudad-productiva', 'ciudad-productiva'),
+(4, 'Cultura', 'Cultura-y-educacion'),
 (5, 'Turismo', 'Turismo'),
-(6, 'Deportes', 'Deportes');
+(6, 'Deportes', 'Deportes'),
+(7, 'Educacion', 'Cultura-y-educacion');
 
 -- --------------------------------------------------------
 
@@ -227,6 +340,7 @@ INSERT INTO `seccion_menu` (`id`, `nombre`, `abreviatura`) VALUES
 CREATE TABLE `seccion_pagina` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
+  `link` varchar(191) DEFAULT NULL,
   `pertenece_a` varchar(100) NOT NULL,
   `portada` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -235,53 +349,83 @@ CREATE TABLE `seccion_pagina` (
 -- Volcado de datos para la tabla `seccion_pagina`
 --
 
-INSERT INTO `seccion_pagina` (`id`, `nombre`, `pertenece_a`, `portada`) VALUES
-(1, 'Transparencia fiscal', 'Municipio', 'localidades.jpg'),
-(2, 'Boletin oficial', 'Municipio', 'deportes.jpg'),
-(3, 'Planeamiento urbano', 'Municipio', 'salud.jpg'),
-(4, 'Desarrollo económico', 'Municipio', 'educacion.jpg'),
-(5, 'Educacion', 'Municipio', 'educacion.jpg'),
-(6, 'Salud', '1', 'salud.png'),
-(7, 'Deportes', 'Municipio', 'deportes.jpg'),
-(8, 'Organigrama', '1', 'organigrama.png'),
-(9, 'Localidades', 'Municipio', 'localidades.jpg'),
-(10, 'Entes descentralizados', 'Municipio', 'salud.jpg'),
-(11, 'Gestion ambiental', 'Municipio', 'educacion.jpg'),
-(12, 'Bromatologia', 'Municipio', 'deportes.jpg'),
-(13, 'Guía de trámites', 'Trámites y servicios', 'localidades.jpg'),
-(14, 'Portal tributario', 'Trámites y servicios', 'salud.jpg'),
-(15, 'Interes ciudadano', 'Trámites y servicios', 'educacion.jpg'),
-(18, 'La ciudad', '1', 'la-ciudad.png'),
-(19, 'HCD', '1', 'hcd.png'),
-(20, 'Ente Vial', '1', 'ente-vial.png'),
-(21, 'Fiesta Provincial del Trigo', '1', 'fdt.png'),
-(22, 'Planeamiento Urbano', '1', 'planeamiento-urbano.png'),
-(24, 'Museos', '4', 'museos.png'),
-(25, 'Teatro', '4', 'teatro.png'),
-(26, 'Bibliotecas', '4', 'bibliotecas.png'),
-(27, 'Conservatorio Municipal de Música', '4', 'conservatorio.png'),
-(28, 'Centro Cultural La Estación', '4', 'cce.png'),
-(29, 'Ballet Municipal', '4', 'ballet.png'),
-(30, 'Colectividades', '4', 'colectividades.png'),
-(31, 'Guia de Trámites', '2', 'ente-vial.png'),
-(32, 'Servicios', '2', 'ente-vial.png'),
-(33, 'Gestión Ambiental', '2', 'ente-vial.png'),
-(34, 'Bromatologia', '2', 'ente-vial.png'),
-(35, 'Mascotas', '2', 'ente-vial.png'),
-(36, 'Discapacidad', '2', 'ente-vial.png'),
-(37, 'Niñez', '2', 'ente-vial.png'),
-(38, 'Género', '2', 'ente-vial.png'),
-(39, 'Parque industrial', '3', 'hcd.png'),
-(40, 'Prodesta', '3', 'hcd.png'),
-(41, 'Centros de Capacitación', '3', 'hcd.png'),
-(42, 'Emprendedores', '3', 'hcd.png'),
-(43, 'Comercios', '3', 'hcd.png'),
-(44, 'POLIDEPORTIVO', '6', 'la-ciudad.png'),
-(45, 'CLUBES', '6', 'la-ciudad.png'),
-(46, 'POLIDEPORTIVO', '6', 'la-ciudad.png'),
-(47, 'CLUBES', '6', 'la-ciudad.png'),
-(48, 'CRESTA', '4', 'fdt.png'),
-(49, 'CENTRO DE FORMACION PROFESIONAL', '4', 'fdt.png');
+INSERT INTO `seccion_pagina` (`id`, `nombre`, `link`, `pertenece_a`, `portada`) VALUES
+(1, 'Transparencia fiscal', NULL, 'Municipio', 'localidades.jpg'),
+(2, 'Boletin oficial', NULL, 'Municipio', 'deportes.jpg'),
+(3, 'Planeamiento urbano', NULL, 'Municipio', 'salud.jpg'),
+(4, 'Desarrollo económico', NULL, 'Municipio', 'educacion.jpg'),
+(5, 'Educacion', NULL, 'Municipio', 'educacion.jpg'),
+(6, 'Salud', 'https://centrodesaludtsas.com.ar/', '1', 'salud.png'),
+(7, 'Deportes', NULL, 'Municipio', 'deportes.jpg'),
+(8, 'Organigrama', NULL, '1', 'organigrama.png'),
+(9, 'Localidades', NULL, 'Municipio', 'localidades.jpg'),
+(10, 'Entes descentralizados', NULL, 'Municipio', 'salud.jpg'),
+(11, 'Gestion ambiental', NULL, 'Municipio', 'educacion.jpg'),
+(12, 'Bromatologia', NULL, 'Municipio', 'deportes.jpg'),
+(13, 'Guía de trámites', NULL, 'Trámites y servicios', 'localidades.jpg'),
+(14, 'Portal tributario', NULL, 'Trámites y servicios', 'salud.jpg'),
+(15, 'Interes ciudadano', NULL, 'Trámites y servicios', 'educacion.jpg'),
+(18, 'La ciudad', NULL, '1', 'la-ciudad.png'),
+(19, 'HCD', NULL, '1', 'hcd.png'),
+(20, 'Ente Vial', NULL, '1', 'ente-vial.png'),
+(21, 'Fiesta Provincial del Trigo', NULL, '1', 'fdt.png'),
+(22, 'Planeamiento Urbano', NULL, '1', 'planeamiento-urbano.png'),
+(24, 'museos', 'museos', '4', 'museos.png'),
+(25, 'Teatro', 'seccion/teatro', '4', 'teatro.png'),
+(26, 'Bibliotecas', 'seccion/bibliotecas', '4', 'bibliotecas.png'),
+(27, 'Conservatorio Municipal de Música', 'seccion/conservatorio', '7', 'conservatorio.png'),
+(28, 'Centro Cultural La Estación', 'seccion/cce', '4', 'cce.png'),
+(29, 'Ballet Municipal', 'seccion/ballet', '4', 'ballet.png'),
+(30, 'Colectividades', 'seccion/colectividades', '4', 'colectividades.png'),
+(31, 'Guia de Trámites', NULL, '2', 'ente-vial.png'),
+(32, 'Servicios', 'servicios', '2', 'urbano.jpg'),
+(33, 'Gestión Ambiental', 'seccion/gestion-ambiental', '2', 'localidades.jpg'),
+(34, 'Bromatologia', NULL, '2', 'urbano3.jpg'),
+(35, 'Mascotas', NULL, '2', 'vial2.jpg'),
+(36, 'Discapacidad', NULL, '2', 'urbano3.jpg'),
+(37, 'Niñez', NULL, '2', 'vial2.jpg'),
+(38, 'Género', NULL, '2', 'ente-vial.png'),
+(39, 'Parque industrial', NULL, '3', 'vial2.jpg'),
+(40, 'Prodesta', NULL, '3', 'localidades.jpg'),
+(41, 'Centros de Capacitación', NULL, '3', 'hcd.png'),
+(42, 'Emprendedores', NULL, '3', 'urbano3.jpg'),
+(43, 'Comercios', NULL, '3', 'urbano.jpg'),
+(44, 'POLIDEPORTIVO', NULL, '6', 'la-ciudad.png'),
+(45, 'CLUBES', NULL, '6', 'la-ciudad.png'),
+(48, 'CRESTA', 'http://www.cresta.edu.ar/', '7', 'cresta.png'),
+(49, 'CENTRO DE FORMACION PROFESIONAL', 'seccion/cfp', '7', 'cgt.png'),
+(50, 'Estacionamiento medido', 'seccion/estacionamiento-medido', '', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `seccion_textos`
+--
+
+CREATE TABLE `seccion_textos` (
+  `id` int(11) NOT NULL,
+  `seccion_id` int(11) NOT NULL,
+  `titulo` varchar(191) DEFAULT NULL,
+  `informacion` text,
+  `subtitulo` varchar(191) DEFAULT NULL,
+  `sub_informacion` text,
+  `img_portada` varchar(191) DEFAULT NULL,
+  `img_2` varchar(191) DEFAULT NULL,
+  `img_3` varchar(191) DEFAULT NULL,
+  `img_4` varchar(191) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `seccion_textos`
+--
+
+INSERT INTO `seccion_textos` (`id`, `seccion_id`, `titulo`, `informacion`, `subtitulo`, `sub_informacion`, `img_portada`, `img_2`, `img_3`, `img_4`, `created_at`, `deleted_at`) VALUES
+(3, 25, 'Teatro', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus pulvinar est, sollicitudin tempor sapien pretium eu. Sed euismod sollicitudin volutpat. Cras suscipit nec velit non rutrum. Integer bibendum magna vitae lectus bibendum finibus. Fusce aliquam, nulla ac egestas tincidunt, nibh odio sodales risus, at gravida velit risus at magna. Cras felis est, faucibus et est lacinia, lacinia viverra justo. Sed nisi sapien, bibendum eu nisi eu, tempus blandit libero.', 'Teatro Municipal de Tres Arroyos', 'Nullam in consectetur mi, et pretium libero. Nunc ac libero pretium, gravida mi et, maximus odio. Duis nec tempus tortor. Duis ultricies risus a fermentum cursus. Praesent tempor mollis justo ut malesuada. Aliquam risus leo, pharetra quis feugiat nec, rhoncus vitae tellus. Fusce consectetur dui ut est tempor ultricies.\r\n\r\nInteger faucibus condimentum ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent turpis augue, aliquet dictum placerat vitae, eleifend et metus. Mauris leo massa, faucibus eu consequat vel, consectetur vel augue. Donec a cursus nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec nec est malesuada, iaculis elit ac, laoreet turpis.', NULL, NULL, NULL, NULL, '2024-01-02 13:24:56', '2024-01-02 13:24:56'),
+(4, 26, 'Bibliotecas', NULL, 'Listado de Bibliotecas', '<ul>\n<li style=\"font-weight: 700;\">\nBiblioteca Publica Sarmiento\n</li>\n<li style=\"list-style: none;\">\nAv. Moreno 334 \n</li>\n<li style=\"list-style: none;\">\n 02983 43-0721\n</li>\n<li style=\"font-weight: 700;\">\nBiblioteca Vicente P. Cacuri\n</li>\n<li style=\"list-style: none;\">\nHipólito Yrigoyen 165 · 02983 43-4209\n</li>\n<li style=\"font-weight: 700;\">\nBiblioteca Jose Campano\n</li>\n<li style=\"list-style: none;\">\nHipólito Yrigoyen 252 · 02983 42-6802\n</li>\n<li style=\"font-weight: 700;\">\nBiblioteca Popular José Ingenieros\n</li>\n<li style=\"list-style: none;\">\nBolívar 132\n</li>\n\n</ul>\n\n', 'biblio3.jpg', 'biblio2.jpg', 'biblio4.jpg', NULL, '2024-01-02 13:24:56', '2024-01-02 13:24:56'),
+(5, 30, 'Colectividades de Tres Arroyos', 'Desde su inicio, la sede social ha sido un espacio de encuentro, donde la colectividad se congrega para celebrar sus tradiciones y rituales religiosos.\r\nEn este lugar, que ha sido testigo de tantos momentos significativos, la mayoría musulmana de los sirios en la zona ha celebrado bodas, ha despedido a sus seres queridos y ha forjado lazos que perduran en el tiempo.\r\nActualmente, la Sociedad Siria celebra tres festividades anuales: una a mitad de año, otra en conmemoración de su aniversario y la última para despedir el año. \r\nAdemás, el salón se abre para eventos particulares y clases de gimnasia. Participamos con alegría en las Ferias de Colectividades, llevando con orgullo la rica tradición de aquellos inmigrantes sirios que encontraron en estas tierras su hogar.\r\n La sede es ahora un emblema de la Sociedad Siria y un punto de referencia para los amantes de la gastronomía típica, presentando mes a mes su tradicional Feria del Plato Árabe.\r\nA pesar de ser una colonia relativamente pequeña, la Sociedad Siria ha dejado una huella imborrable, mostrando el espíritu noble y generoso de sus miembros. Han sido un factor crucial en el progreso de la ciudad, brindando apoyo y solidaridad en momentos difíciles. ¡Felicidades por estos 102 años de legado y contribución a nuestra comunidad! ', 'Listado de Colectividades y sus sedes', '<ul>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Italiana\r\n</li>\r\n<li style=\"list-style: none;\">\r\nAv. Moreno 334 \r\n</li>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Danesa\r\n</li>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Holandesa\r\n</li>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Siria\r\n</li>\r\n</ul>\r\n\r\n', 'colectividades.jpg', 'siria.jpg', 'holandesa.jpg', '2.jpg', '2024-01-02 13:24:56', '2024-01-02 13:24:56'),
+(6, 50, 'ADHERIRSE AL SISTEMA INTELIGENTE DE ESTACIONAMIENTO MEDIDO', 'El Estacionamiento Medido permite administrar de manera eficiente el uso del espacio público, así como ordenar y evitar situaciones en las que se pone en riesgo la seguridad vial.', 'Costos y horarios', '<ul> \n<li>DESDE EL 01/11 AL 28/02 de 9:30hs a 13hs y de 17hs a 20:30hs. </li>\n<li>DESDE EL 01/03 AL 31/10 de 9:30hs a 13hs y de 15:30hs a 19hs.</li>\n<li>SÁBADOS TODO EL AÑO de 9hs a 13hs.\n</li>\n</ul>\n<br>\n<strong>VALOR: $185,00.- LA HORA \n<br>\nLas excepciones de estacionamiento es solo para particulares que no posean garage ni cochera. Medida que no incluye a comercios ni industrias. </strong><br><br>\n\nPara adherirse acercate a cualquier comercio asociado y cargá dinero asociando todas sus patentes al Sistema Inteligente. Luego de esto los controladores, que se encuentran en la calle, se encargarán de debitarte cada vez que estacione sin necesidad que hagas nada. Cuando te quedes sin crédito te enviaremos un SMS sin costo para que vuelvas a cargar crédito.<br><br>\n\nPodes ver los comercios adheridos haciendo click aquí Y si necesitas saber mas info sobre este nuevo sistema podes ingresar a \n<a href=\"https://tresarroyos.movilparking.com/web/\" target=\"_blank\">https://tresarroyos.movilparking.com/web/ </a> <br>', NULL, NULL, NULL, NULL, '2024-01-04 13:40:58', '2024-01-04 13:40:58');
 
 -- --------------------------------------------------------
 
@@ -479,6 +623,12 @@ CREATE TABLE `usuario_tadi` (
 --
 
 --
+-- Indices de la tabla `archivos`
+--
+ALTER TABLE `archivos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `area`
 --
 ALTER TABLE `area`
@@ -495,6 +645,24 @@ ALTER TABLE `failed_jobs`
 -- Indices de la tabla `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `museo`
+--
+ALTER TABLE `museo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `noticia`
+--
+ALTER TABLE `noticia`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `noticia_img`
+--
+ALTER TABLE `noticia_img`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -538,6 +706,12 @@ ALTER TABLE `seccion_pagina`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `seccion_textos`
+--
+ALTER TABLE `seccion_textos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tramite_guia`
 --
 ALTER TABLE `tramite_guia`
@@ -569,6 +743,12 @@ ALTER TABLE `usuario_tadi`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `archivos`
+--
+ALTER TABLE `archivos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `area`
 --
 ALTER TABLE `area`
@@ -585,6 +765,24 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT de la tabla `museo`
+--
+ALTER TABLE `museo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `noticia`
+--
+ALTER TABLE `noticia`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `noticia_img`
+--
+ALTER TABLE `noticia_img`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `personal_access_tokens`
@@ -608,13 +806,19 @@ ALTER TABLE `reclamo_tema`
 -- AUTO_INCREMENT de la tabla `seccion_menu`
 --
 ALTER TABLE `seccion_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `seccion_pagina`
 --
 ALTER TABLE `seccion_pagina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+
+--
+-- AUTO_INCREMENT de la tabla `seccion_textos`
+--
+ALTER TABLE `seccion_textos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tramite_guia`

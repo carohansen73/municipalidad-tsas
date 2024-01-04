@@ -10,6 +10,7 @@ use App\Models\SeccionTexto;
 use App\Models\Museo;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
+use App\Models\Archivos;
 
 
 use Symfony\Component\Routing\Route;
@@ -91,7 +92,9 @@ class HomeController extends Controller
 
         $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
-        return view('sections.secciones', compact('textos', 'noticias'));
+        $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
+        return view('sections.secciones', compact('textos', 'noticias', 'archivos'));
     }
 
 
