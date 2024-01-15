@@ -93,8 +93,13 @@ class HomeController extends Controller
         $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
         $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
 
-        return view('sections.secciones', compact('textos', 'noticias', 'archivos'));
+        //despejo el nombre de la seccion
+        $seccionArray = explode("/", $pathSeccion);
+        $seccion = array_pop($seccionArray);
+
+        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion'));
     }
 
 

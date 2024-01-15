@@ -43,9 +43,11 @@
 </div><!-- ======= fin borde colorido ======= -->
 
 <!-- =======  INFORMACION GENERAL ======= -->
-<section>
-    <div class="container " data-aos="fade-up">
-        @foreach ($textos as $text)
+@foreach ($textos as $text)
+@if($text->informacion || $text->sub_informacion )
+    <section>
+        <div class="container " data-aos="fade-up">
+
             <div class="section-title">
                 <p style="color: #d63384">{{$text->titulo}}</p>
             </div>
@@ -58,9 +60,11 @@
             <div>
                 {!! $text->sub_informacion !!}
             </div>
-        @endforeach
-    </div>
-</section>
+
+        </div>
+    </section>
+    @endif
+@endforeach
 
 <!-- =======  FOTOS ======= -->
 @foreach ($textos as $text)
@@ -85,6 +89,34 @@
     </section>
 @endif
 @endforeach
+<!-- ======= ARCHIVOS(hacer un listadito similar al de la plata-guia de tramites)  ======= -->
+@if(isset($archivos) && (count($archivos) > 0))
+    <section id="secciones-archivos">
+        <div class="container " data-aos="fade-up">
+
+            <div class="section-title">
+                <p>Documentos</p>
+                <h2>PDF's</h2>
+            </div>
+
+            <div class="container-listado-archivos">
+                <p> <i class="fas fa-file-download"> <span>Descargas</span>  </i> </p>
+                @foreach ($archivos as $archivo)
+
+
+
+                {{-- ver como recorro para q muestre separado por sub_seccion --}}
+                    <div class="archivos-item">
+                    <a href="{{url('/storage/archivos/'.$seccion.'/'.$archivo->nombre)}}" target="_blank">  {{ $archivo->nombre_agradable}} </a>
+
+                </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+@endif
+
 <!-- ======= EVENTOS/NOVEDADES /NOTICIAS ======= -->
 @if(isset($noticias) && (count($noticias) > 0))
     <section id="secciones-eventos" class="team">

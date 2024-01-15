@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-01-2024 a las 14:49:35
+-- Tiempo de generación: 15-01-2024 a las 15:59:33
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -30,10 +30,36 @@ SET time_zone = "+00:00";
 CREATE TABLE `archivos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(191) NOT NULL,
+  `nombre_agradable` varchar(191) DEFAULT NULL,
   `seccion_id` int(11) DEFAULT NULL,
+  `sub_seccion` varchar(191) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `archivos`
+--
+
+INSERT INTO `archivos` (`id`, `nombre`, `nombre_agradable`, `seccion_id`, `sub_seccion`, `created_at`, `updated_at`) VALUES
+(1, '1697643447000_DIGESTO-DE_HABILITACION_PARA_CARNICERIAS.pdf', '1697643447000 DIGESTO  DE HABILITACION PARA CARNICERIAS.pdf', 34, NULL, '2024-01-05 17:25:03', '2024-01-05 17:25:03'),
+(2, '1697643470427_DIGESTO_DE_HABILITACION_DE_MERCADOS.pdf', '1697643470427 DIGESTO DE HABILITACION DE MERCADOS.pdf', 34, NULL, '2024-01-05 17:25:03', '2024-01-05 17:25:03'),
+(3, '1697643497598_DIGESTO_GENERAL_DE_HABILITACIONES.pdf', '1697643497598 DIGESTO GENERAL DE HABILITACIONES.pdf', 34, NULL, '2024-01-05 17:25:03', '2024-01-05 17:25:03'),
+(4, 'Digesto_de_hab_de_panaderias_y_afines.pdf', 'Digesto de hab de panaderias y afines.pdf', 34, NULL, '2024-01-05 17:25:03', '2024-01-05 17:25:03'),
+(5, 'Registro_municipal_de_maquinas_pulverizadoras_Tres_Arroyos.pdf', 'Registro municipal de maquinas pulverizadoras Tres Arroyos', 33, 'agroquimicos', '2024-01-15 13:26:35', '2024-01-15 13:26:35'),
+(6, 'Registro-de-Pulverizadoras.pdf', 'Registro de Pulverizadoras', 33, 'agroquimicos', '2024-01-15 13:26:35', '2024-01-15 13:26:35'),
+(7, 'ALACRANISMO.pdf', 'ALACRANISMO', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(8, 'Ampliacion-de-la-Planta-Urbana-de-Claromeco.pdf', 'Ampliación de la Planta Urbana de Claromecó', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(9, 'boletin_ofidismo.pdf', 'Ofidismo', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(10, 'boletin_ponzoñosos_rs1.pdf', 'Boletín ponzoñosos', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(11, 'EL_PUMA-Folleto.pdf', 'El Puma', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(12, 'FolletoInstructivoPoda.pdf', 'Instructivo Poda', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(13, 'Guía_Modelo_de_Observacion_de_Aves_Subsecretaria_de_Turismo_PBA.pdf', 'Observación de Aves', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(14, 'PautasTecnicasForestacion.pdf', 'Tecnicas de Forestación', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(15, 'san_francisco.pdf', 'San Francisco de Asis', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(16, 'secretaria.pdf', 'Secretaria', 33, 'documentos', '2024-01-15 13:27:51', '2024-01-15 13:27:51'),
+(17, 'tu_casa_recicla.pdf', 'Tu casa recicla', 33, 'documentos', '2024-01-15 13:37:47', '2024-01-15 13:37:47'),
+(18, 'Resultados_IGEI.pdf', 'informe', 33, 'gases', '2024-01-15 13:38:53', '2024-01-15 13:38:53');
 
 -- --------------------------------------------------------
 
@@ -377,14 +403,14 @@ INSERT INTO `seccion_pagina` (`id`, `nombre`, `link`, `pertenece_a`, `portada`) 
 (28, 'Centro Cultural La Estación', 'seccion/cce', '4', 'cce.png'),
 (29, 'Ballet Municipal', 'seccion/ballet', '4', 'ballet.png'),
 (30, 'Colectividades', 'seccion/colectividades', '4', 'colectividades.png'),
-(31, 'Guia de Trámites', NULL, '2', 'ente-vial.png'),
-(32, 'Servicios', 'servicios', '2', 'urbano.jpg'),
-(33, 'Gestión Ambiental', 'seccion/gestion-ambiental', '2', 'localidades.jpg'),
-(34, 'Bromatologia', NULL, '2', 'urbano3.jpg'),
-(35, 'Mascotas', NULL, '2', 'vial2.jpg'),
-(36, 'Discapacidad', NULL, '2', 'urbano3.jpg'),
-(37, 'Niñez', NULL, '2', 'vial2.jpg'),
-(38, 'Género', NULL, '2', 'ente-vial.png'),
+(31, 'Guia de Trámites', NULL, '2', 'tramites3.jpg'),
+(32, 'Servicios', 'servicios', '2', 'servicios.jpg'),
+(33, 'Gestión Ambiental', 'seccion/gestion-ambiental', '2', 'gestion-ambiental.jpg'),
+(34, 'Bromatologia', 'seccion/bromatologia', '2', 'bromatologia.jpg'),
+(35, 'Mascotas', NULL, '2', 'mascotas.jpg'),
+(36, 'Discapacidad', NULL, '2', 'discapacidad.jpg'),
+(37, 'Niñez', NULL, '2', 'niniez2.jpg'),
+(38, 'Género', NULL, '2', 'genero.jpg'),
 (39, 'Parque industrial', NULL, '3', 'vial2.jpg'),
 (40, 'Prodesta', NULL, '3', 'localidades.jpg'),
 (41, 'Centros de Capacitación', NULL, '3', 'hcd.png'),
@@ -394,7 +420,11 @@ INSERT INTO `seccion_pagina` (`id`, `nombre`, `link`, `pertenece_a`, `portada`) 
 (45, 'CLUBES', NULL, '6', 'la-ciudad.png'),
 (48, 'CRESTA', 'http://www.cresta.edu.ar/', '7', 'cresta.png'),
 (49, 'CENTRO DE FORMACION PROFESIONAL', 'seccion/cfp', '7', 'cgt.png'),
-(50, 'Estacionamiento medido', 'seccion/estacionamiento-medido', '', NULL);
+(50, 'Estacionamiento medido', 'seccion/estacionamiento-medido', '', NULL),
+(51, 'Instituto 33', 'seccion/instituto33', '7', '33.png'),
+(52, 'Instituto 167', 'seccion/instituto167', '7', '167.png'),
+(53, 'Siglo 21', 'seccion/siglo21', '7', 'siglo21.png'),
+(54, 'Centros de estudios virtuales', 'seccion/estudios-virtuales', '7', 'virtuales.png');
 
 -- --------------------------------------------------------
 
@@ -425,7 +455,9 @@ INSERT INTO `seccion_textos` (`id`, `seccion_id`, `titulo`, `informacion`, `subt
 (3, 25, 'Teatro', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus cursus pulvinar est, sollicitudin tempor sapien pretium eu. Sed euismod sollicitudin volutpat. Cras suscipit nec velit non rutrum. Integer bibendum magna vitae lectus bibendum finibus. Fusce aliquam, nulla ac egestas tincidunt, nibh odio sodales risus, at gravida velit risus at magna. Cras felis est, faucibus et est lacinia, lacinia viverra justo. Sed nisi sapien, bibendum eu nisi eu, tempus blandit libero.', 'Teatro Municipal de Tres Arroyos', 'Nullam in consectetur mi, et pretium libero. Nunc ac libero pretium, gravida mi et, maximus odio. Duis nec tempus tortor. Duis ultricies risus a fermentum cursus. Praesent tempor mollis justo ut malesuada. Aliquam risus leo, pharetra quis feugiat nec, rhoncus vitae tellus. Fusce consectetur dui ut est tempor ultricies.\r\n\r\nInteger faucibus condimentum ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent turpis augue, aliquet dictum placerat vitae, eleifend et metus. Mauris leo massa, faucibus eu consequat vel, consectetur vel augue. Donec a cursus nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec nec est malesuada, iaculis elit ac, laoreet turpis.', NULL, NULL, NULL, NULL, '2024-01-02 13:24:56', '2024-01-02 13:24:56'),
 (4, 26, 'Bibliotecas', NULL, 'Listado de Bibliotecas', '<ul>\n<li style=\"font-weight: 700;\">\nBiblioteca Publica Sarmiento\n</li>\n<li style=\"list-style: none;\">\nAv. Moreno 334 \n</li>\n<li style=\"list-style: none;\">\n 02983 43-0721\n</li>\n<li style=\"font-weight: 700;\">\nBiblioteca Vicente P. Cacuri\n</li>\n<li style=\"list-style: none;\">\nHipólito Yrigoyen 165 · 02983 43-4209\n</li>\n<li style=\"font-weight: 700;\">\nBiblioteca Jose Campano\n</li>\n<li style=\"list-style: none;\">\nHipólito Yrigoyen 252 · 02983 42-6802\n</li>\n<li style=\"font-weight: 700;\">\nBiblioteca Popular José Ingenieros\n</li>\n<li style=\"list-style: none;\">\nBolívar 132\n</li>\n\n</ul>\n\n', 'biblio3.jpg', 'biblio2.jpg', 'biblio4.jpg', NULL, '2024-01-02 13:24:56', '2024-01-02 13:24:56'),
 (5, 30, 'Colectividades de Tres Arroyos', 'Desde su inicio, la sede social ha sido un espacio de encuentro, donde la colectividad se congrega para celebrar sus tradiciones y rituales religiosos.\r\nEn este lugar, que ha sido testigo de tantos momentos significativos, la mayoría musulmana de los sirios en la zona ha celebrado bodas, ha despedido a sus seres queridos y ha forjado lazos que perduran en el tiempo.\r\nActualmente, la Sociedad Siria celebra tres festividades anuales: una a mitad de año, otra en conmemoración de su aniversario y la última para despedir el año. \r\nAdemás, el salón se abre para eventos particulares y clases de gimnasia. Participamos con alegría en las Ferias de Colectividades, llevando con orgullo la rica tradición de aquellos inmigrantes sirios que encontraron en estas tierras su hogar.\r\n La sede es ahora un emblema de la Sociedad Siria y un punto de referencia para los amantes de la gastronomía típica, presentando mes a mes su tradicional Feria del Plato Árabe.\r\nA pesar de ser una colonia relativamente pequeña, la Sociedad Siria ha dejado una huella imborrable, mostrando el espíritu noble y generoso de sus miembros. Han sido un factor crucial en el progreso de la ciudad, brindando apoyo y solidaridad en momentos difíciles. ¡Felicidades por estos 102 años de legado y contribución a nuestra comunidad! ', 'Listado de Colectividades y sus sedes', '<ul>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Italiana\r\n</li>\r\n<li style=\"list-style: none;\">\r\nAv. Moreno 334 \r\n</li>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Danesa\r\n</li>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Holandesa\r\n</li>\r\n<li style=\"font-weight: 700;\">\r\nColectividad Siria\r\n</li>\r\n</ul>\r\n\r\n', 'colectividades.jpg', 'siria.jpg', 'holandesa.jpg', '2.jpg', '2024-01-02 13:24:56', '2024-01-02 13:24:56'),
-(6, 50, 'ADHERIRSE AL SISTEMA INTELIGENTE DE ESTACIONAMIENTO MEDIDO', 'El Estacionamiento Medido permite administrar de manera eficiente el uso del espacio público, así como ordenar y evitar situaciones en las que se pone en riesgo la seguridad vial.', 'Costos y horarios', '<ul> \n<li>DESDE EL 01/11 AL 28/02 de 9:30hs a 13hs y de 17hs a 20:30hs. </li>\n<li>DESDE EL 01/03 AL 31/10 de 9:30hs a 13hs y de 15:30hs a 19hs.</li>\n<li>SÁBADOS TODO EL AÑO de 9hs a 13hs.\n</li>\n</ul>\n<br>\n<strong>VALOR: $185,00.- LA HORA \n<br>\nLas excepciones de estacionamiento es solo para particulares que no posean garage ni cochera. Medida que no incluye a comercios ni industrias. </strong><br><br>\n\nPara adherirse acercate a cualquier comercio asociado y cargá dinero asociando todas sus patentes al Sistema Inteligente. Luego de esto los controladores, que se encuentran en la calle, se encargarán de debitarte cada vez que estacione sin necesidad que hagas nada. Cuando te quedes sin crédito te enviaremos un SMS sin costo para que vuelvas a cargar crédito.<br><br>\n\nPodes ver los comercios adheridos haciendo click aquí Y si necesitas saber mas info sobre este nuevo sistema podes ingresar a \n<a href=\"https://tresarroyos.movilparking.com/web/\" target=\"_blank\">https://tresarroyos.movilparking.com/web/ </a> <br>', NULL, NULL, NULL, NULL, '2024-01-04 13:40:58', '2024-01-04 13:40:58');
+(6, 50, 'ADHERIRSE AL SISTEMA INTELIGENTE DE ESTACIONAMIENTO MEDIDO', 'El Estacionamiento Medido permite administrar de manera eficiente el uso del espacio público, así como ordenar y evitar situaciones en las que se pone en riesgo la seguridad vial.', 'Costos y horarios', '<ul> \n<li>DESDE EL 01/11 AL 28/02 de 9:30hs a 13hs y de 17hs a 20:30hs. </li>\n<li>DESDE EL 01/03 AL 31/10 de 9:30hs a 13hs y de 15:30hs a 19hs.</li>\n<li>SÁBADOS TODO EL AÑO de 9hs a 13hs.\n</li>\n</ul>\n<br>\n<strong>VALOR: $185,00.- LA HORA \n<br>\nLas excepciones de estacionamiento es solo para particulares que no posean garage ni cochera. Medida que no incluye a comercios ni industrias. </strong><br><br>\n\nPara adherirse acercate a cualquier comercio asociado y cargá dinero asociando todas sus patentes al Sistema Inteligente. Luego de esto los controladores, que se encuentran en la calle, se encargarán de debitarte cada vez que estacione sin necesidad que hagas nada. Cuando te quedes sin crédito te enviaremos un SMS sin costo para que vuelvas a cargar crédito.<br><br>\n\nPodes ver los comercios adheridos haciendo click aquí Y si necesitas saber mas info sobre este nuevo sistema podes ingresar a \n<a href=\"https://tresarroyos.movilparking.com/web/\" target=\"_blank\">https://tresarroyos.movilparking.com/web/ </a> <br>', NULL, NULL, NULL, NULL, '2024-01-04 13:40:58', '2024-01-04 13:40:58'),
+(7, 33, NULL, NULL, NULL, NULL, 'gestion-ambiental-portada.jpg', NULL, NULL, NULL, '2024-01-15 15:30:57', '2024-01-15 15:30:57'),
+(8, 34, NULL, NULL, NULL, NULL, 'bromatologia.jpg', NULL, NULL, NULL, '2024-01-15 15:30:57', '2024-01-15 15:30:57');
 
 -- --------------------------------------------------------
 
@@ -746,7 +778,7 @@ ALTER TABLE `usuario_tadi`
 -- AUTO_INCREMENT de la tabla `archivos`
 --
 ALTER TABLE `archivos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `area`
@@ -812,13 +844,13 @@ ALTER TABLE `seccion_menu`
 -- AUTO_INCREMENT de la tabla `seccion_pagina`
 --
 ALTER TABLE `seccion_pagina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `seccion_textos`
 --
 ALTER TABLE `seccion_textos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tramite_guia`

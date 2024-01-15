@@ -1774,6 +1774,30 @@ section #cultura-eventos {
 #secciones-galeria img{
     width: 100%;
 }
+
+#secciones-archivos .container-listado-archivos p span{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    padding-left: 5px;
+    color: #6c6c6c;
+    font-size: 16px;
+}
+
+#secciones-archivos .container-listado-archivos i{
+    color: #D63384;
+    font-size: 16px;
+}
+
+#secciones-archivos .archivos-item{
+    border-bottom: 1px solid whitesmoke;
+    padding: 10px;
+}
+
+#secciones-archivos .archivos-item a{
+    color: rgb(13, 116, 189);
+    font-size: 14px;
+}
+
 /*--------------------------------------------------------------
 # seccion general
 --------------------------------------------------------------*/
