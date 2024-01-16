@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-01-2024 a las 15:59:33
+-- Tiempo de generación: 16-01-2024 a las 15:18:50
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -97,6 +97,34 @@ INSERT INTO `area` (`id`, `nombre`, `email`, `created_at`, `updated_at`) VALUES
 (15, 'Bromatologia', 'bromatologia@tresarroyos.gov.ar', NULL, NULL),
 (16, 'Cultura', 'cultura@tresarroyos.gov.ar', '2023-12-05 14:56:13', NULL),
 (17, 'Turismo', 'turismo@tresarroyos.gov.ar', '2023-12-05 14:56:13', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `delegacion`
+--
+
+CREATE TABLE `delegacion` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(191) NOT NULL,
+  `descripcion` text,
+  `img` varchar(191) NOT NULL,
+  `link` varchar(191) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `delegacion`
+--
+
+INSERT INTO `delegacion` (`id`, `nombre`, `descripcion`, `img`, `link`) VALUES
+(1, 'Claromecó', NULL, 'claromeco.png', 'https://claromeco.tresarroyos.gov.ar/'),
+(2, 'Copetonas', NULL, 'copetonas.png', 'http://turismo.tresarroyos.gov.ar/lugares/copetonas'),
+(3, 'Micaela Cascallares', NULL, 'micaela-cascallares.png', 'http://turismo.tresarroyos.gov.ar/lugares/micaela-cascallares'),
+(4, 'Orense', NULL, 'orense.png', 'http://turismo.tresarroyos.gov.ar/lugares/balneario-orense'),
+(5, 'Reta', NULL, 'reta.png', 'https://www.puebloreta.com.ar/'),
+(6, 'San Mayol', NULL, 'san-mayol.png', 'http://turismo.tresarroyos.gov.ar/lugares/san-mayol'),
+(7, 'Tres Arroyos', NULL, 'tres-arroyos.png', 'http://turismo.tresarroyos.gov.ar/lugares/tres-arroyos'),
+(8, 'San Francisco de Bellocq', NULL, 'bellocq.png', 'http://turismo.tresarroyos.gov.ar/lugares/san-francisco-de-bellocq');
 
 -- --------------------------------------------------------
 
@@ -381,21 +409,20 @@ INSERT INTO `seccion_pagina` (`id`, `nombre`, `link`, `pertenece_a`, `portada`) 
 (3, 'Planeamiento urbano', NULL, 'Municipio', 'salud.jpg'),
 (4, 'Desarrollo económico', NULL, 'Municipio', 'educacion.jpg'),
 (5, 'Educacion', NULL, 'Municipio', 'educacion.jpg'),
-(6, 'Salud', 'https://centrodesaludtsas.com.ar/', '1', 'salud.png'),
+(6, 'Salud', 'https://centrodesaludtsas.com.ar/', '1', 'saludd.jpg'),
 (7, 'Deportes', NULL, 'Municipio', 'deportes.jpg'),
-(8, 'Organigrama', NULL, '1', 'organigrama.png'),
+(8, 'Organigrama', NULL, '1', 'organigr.jpg'),
 (9, 'Localidades', NULL, 'Municipio', 'localidades.jpg'),
 (10, 'Entes descentralizados', NULL, 'Municipio', 'salud.jpg'),
 (11, 'Gestion ambiental', NULL, 'Municipio', 'educacion.jpg'),
 (12, 'Bromatologia', NULL, 'Municipio', 'deportes.jpg'),
-(13, 'Guía de trámites', NULL, 'Trámites y servicios', 'localidades.jpg'),
 (14, 'Portal tributario', NULL, 'Trámites y servicios', 'salud.jpg'),
 (15, 'Interes ciudadano', NULL, 'Trámites y servicios', 'educacion.jpg'),
-(18, 'La ciudad', NULL, '1', 'la-ciudad.png'),
-(19, 'HCD', NULL, '1', 'hcd.png'),
-(20, 'Ente Vial', NULL, '1', 'ente-vial.png'),
-(21, 'Fiesta Provincial del Trigo', NULL, '1', 'fdt.png'),
-(22, 'Planeamiento Urbano', NULL, '1', 'planeamiento-urbano.png'),
+(18, 'La ciudad', NULL, '1', 'ciudad.jpg'),
+(19, 'HCD', 'https://hcd.tresarroyos.gov.ar/', '1', 'hcd.jpg'),
+(20, 'Ente Vial', NULL, '1', 'vial2.jpg'),
+(21, 'Fiesta Provincial del Trigo', NULL, '1', 'fdt.jpg'),
+(22, 'Planeamiento Urbano', NULL, '1', 'urbano3.jpg'),
 (24, 'museos', 'museos', '4', 'museos.png'),
 (25, 'Teatro', 'seccion/teatro', '4', 'teatro.png'),
 (26, 'Bibliotecas', 'seccion/bibliotecas', '4', 'bibliotecas.png'),
@@ -403,28 +430,28 @@ INSERT INTO `seccion_pagina` (`id`, `nombre`, `link`, `pertenece_a`, `portada`) 
 (28, 'Centro Cultural La Estación', 'seccion/cce', '4', 'cce.png'),
 (29, 'Ballet Municipal', 'seccion/ballet', '4', 'ballet.png'),
 (30, 'Colectividades', 'seccion/colectividades', '4', 'colectividades.png'),
-(31, 'Guia de Trámites', NULL, '2', 'tramites3.jpg'),
+(31, 'Guia de Trámites', '/guia-de-tramites', '2', 'tramites3.jpg'),
 (32, 'Servicios', 'servicios', '2', 'servicios.jpg'),
 (33, 'Gestión Ambiental', 'seccion/gestion-ambiental', '2', 'gestion-ambiental.jpg'),
 (34, 'Bromatologia', 'seccion/bromatologia', '2', 'bromatologia.jpg'),
-(35, 'Mascotas', NULL, '2', 'mascotas.jpg'),
-(36, 'Discapacidad', NULL, '2', 'discapacidad.jpg'),
-(37, 'Niñez', NULL, '2', 'niniez2.jpg'),
-(38, 'Género', NULL, '2', 'genero.jpg'),
-(39, 'Parque industrial', NULL, '3', 'vial2.jpg'),
-(40, 'Prodesta', NULL, '3', 'localidades.jpg'),
-(41, 'Centros de Capacitación', NULL, '3', 'hcd.png'),
-(42, 'Emprendedores', NULL, '3', 'urbano3.jpg'),
-(43, 'Comercios', NULL, '3', 'urbano.jpg'),
-(44, 'POLIDEPORTIVO', NULL, '6', 'la-ciudad.png'),
-(45, 'CLUBES', NULL, '6', 'la-ciudad.png'),
+(35, 'Mascotas', 'proximamente', '2', 'mascotas.jpg'),
+(36, 'Discapacidad', 'proximamente', '2', 'discapacidad.jpg'),
+(37, 'Niñez', 'proximamente', '2', 'niniez2.jpg'),
+(38, 'Género', 'proximamente', '2', 'genero.jpg'),
+(39, 'Parque industrial', 'https://parqueindustrial3a.tresarroyos.gov.ar/', '3', 'parqueindustrial.jpg'),
+(40, 'Prodesta', 'https://prodesta.tresarroyos.gov.ar/inicio', '3', 'prodesta.jpg'),
+(42, 'Emprendedores', 'proximamente', '3', 'emprendedores.jpg'),
+(43, 'Comercios', 'proximamente', '3', 'comercios.jpg'),
+(44, 'POLIDEPORTIVO', 'proximamente', '6', 'la-ciudad.png'),
+(45, 'CLUBES', 'proximamente', '6', 'la-ciudad.png'),
 (48, 'CRESTA', 'http://www.cresta.edu.ar/', '7', 'cresta.png'),
 (49, 'CENTRO DE FORMACION PROFESIONAL', 'seccion/cfp', '7', 'cgt.png'),
 (50, 'Estacionamiento medido', 'seccion/estacionamiento-medido', '', NULL),
 (51, 'Instituto 33', 'seccion/instituto33', '7', '33.png'),
 (52, 'Instituto 167', 'seccion/instituto167', '7', '167.png'),
 (53, 'Siglo 21', 'seccion/siglo21', '7', 'siglo21.png'),
-(54, 'Centros de estudios virtuales', 'seccion/estudios-virtuales', '7', 'virtuales.png');
+(54, 'Centros de estudios virtuales', 'seccion/estudios-virtuales', '7', 'virtuales.png'),
+(55, 'Delegaciones', 'delegaciones', '1', 'delegaciones.jpg');
 
 -- --------------------------------------------------------
 
@@ -667,6 +694,12 @@ ALTER TABLE `area`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `delegacion`
+--
+ALTER TABLE `delegacion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -787,6 +820,12 @@ ALTER TABLE `area`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
+-- AUTO_INCREMENT de la tabla `delegacion`
+--
+ALTER TABLE `delegacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -844,7 +883,7 @@ ALTER TABLE `seccion_menu`
 -- AUTO_INCREMENT de la tabla `seccion_pagina`
 --
 ALTER TABLE `seccion_pagina`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `seccion_textos`

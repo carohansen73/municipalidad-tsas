@@ -51,7 +51,7 @@
             <div class="row">
                 @foreach($tipos as $tipo)
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box icon-4">
+                    <div class="icon-box ">
                         <div class="icon"><i class="{{$tipo->icono}}"></i></div>
                         <h4><a href="tramite/{{$tipo->id}}">{{$tipo->tipo}}</a></h4>
                         {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}

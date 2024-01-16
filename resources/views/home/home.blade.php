@@ -31,7 +31,7 @@
             <div class="col-xl-2 col-md-2">
                 <a href="municipio">
                     <div class="icon-box icon-1">
-                    <i class="bi bi-laptop"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
                     </div>
                 </a>
@@ -40,8 +40,8 @@
             <div class="col-xl-2 col-md-2">
                 <a href="atencion-al-vecino">
                     <div class="icon-box icon-2">
-                    {{-- <i class="bi bi-chat-dots"></i> --}}
-                    <i class="fas fa-hand-holding-usd"></i>
+
+                    <i class="fas fa-phone"></i>
                         <h3>Atención al vecino</h3>
                     </div>
                 </a>
@@ -50,7 +50,8 @@
             <div class="col-xl-2 col-md-2">
                 <a href="ciudad-productiva">
                     <div class="icon-box icon-3">
-                        <i class="bi bi-card-checklist"></i>
+
+                        <i class="fas fa-city"></i>
                         <h3>Ciudad productiva</h3>
                     </div>
                 </a>
@@ -58,7 +59,14 @@
             <div class="col-xl-2 col-md-2">
                 <a href="cultura-y-educacion">
                     <div class="icon-box icon-4">
-                        <i class="bi bi-chat-dots"></i>
+
+                        {{-- <i class="fas fa-book-reader"></i> --}}
+                        {{-- <i class="fas fa-music"></i> --}}
+                        <i class="fas fa-theater-masks"></i>
+                        {{-- <i class="bi bi-chat-dots"></i> --}}
+                        {{-- <i class="bi bi-card-checklist"></i> --}}
+                          {{-- <i class="bi bi-chat-dots"></i> --}}
+                    {{-- <i class="fas fa-hand-holding-usd"></i> --}}
                         <h3>Cultura y educación</h3>
                     </div>
                 </a>
@@ -66,7 +74,9 @@
             <div class="col-xl-2 col-md-2">
                 <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">
                     <div class="icon-box icon-5">
-                        <i class="bi bi-laptop"></i>
+                        {{-- <i class="fas fa-map-marked-alt"></i> --}}
+                        <i class="fas fa-camera-retro"></i>
+                        {{-- <i class="bi bi-laptop"></i> --}}
                         <h3>Turismo </h3>
                     </div>
                 </a>
@@ -74,7 +84,7 @@
             <div class="col-xl-2 col-md-2">
                 <a href="deportes">
                     <div class="icon-box icon-6">
-                        <i class="ri-database-2-line"></i>
+                        <i class="fas fa-biking"></i>
                         <h3>Deportes</h3>
                     </div>
                 </a>
@@ -91,7 +101,7 @@
 
             <div class="section-title">
                 <h2>Noticias y novedades</h2>
-                <p><a href="portal-de-noticias">Novedades</a> </p>
+                <p>Novedades</p>
 
               </div>
             <div class="row">
@@ -141,6 +151,11 @@
 
                 </div>
             </div>
+
+            <div class="link-ver-todas">
+                <p><a href="portal-de-noticias">Ver todas</a></p>
+            </div>
+
 
         </div>
         </section>

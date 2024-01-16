@@ -11,6 +11,7 @@ use App\Models\Museo;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
 use App\Models\Archivos;
+use App\Models\Delegacion;
 
 
 use Symfony\Component\Routing\Route;
@@ -100,6 +101,19 @@ class HomeController extends Controller
         $seccion = array_pop($seccionArray);
 
         return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion'));
+    }
+
+     /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
+
+     /**
+     * Muestra LAS DISTINTAS DELEGACIONES QUE FORMAN PARTE DEL PARTIDO DE TSAS
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showDelegaciones()
+    {
+        $delegaciones = Delegacion::all();
+        return view('sections.delegaciones', compact('delegaciones'));
     }
 
 

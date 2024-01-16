@@ -43,6 +43,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
     Route::get('/museos', 'showMuseos');
+    Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
   /*SERVICIOS */

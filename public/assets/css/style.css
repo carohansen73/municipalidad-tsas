@@ -559,6 +559,13 @@ h6 {
   top: 0 !important;
 }
 
+@media (max-width: 991px) {
+    #hero {
+        width: 100%;
+        height: 250px;
+    }
+}
+
 #hero #video{
     position: absolute;
     z-index: 0;
@@ -774,6 +781,7 @@ h6 {
 
 @media (max-width: 768px) {
   #hero {
+    max-height: 250px;
     height: auto;
   }
 
@@ -1112,7 +1120,7 @@ section {
 
 
 #services .icon,
-#services .icon-4 .icon{
+#services .icon{
     background: #ffffff;
 }
 
@@ -1126,7 +1134,7 @@ section {
     color:#004f9f ;
 }
 
-.services .icon-4 .icon {
+.services .icon {
     background: rgb(13, 116, 189);
 }
 
@@ -1803,15 +1811,21 @@ section #cultura-eventos {
 --------------------------------------------------------------*/
 #seccion-gral .seccion-gral-img{
     background: rgba(141, 141, 141, 0.2);
-
     position: relative;
     display: flex;
     justify-content: center;
     z-index: 1;
 }
 
+#seccion-gral .seccion-gral-img img:hover{
+    opacity: 1;
+    transform: scale(1.20);
+    transition-duration: 3s;
+ }
+
+
 #seccion-gral .seccion-gral-img img{
-    opacity: 0.4;
+    opacity: 0.5;
     height: 240px;
 }
 
@@ -1859,6 +1873,26 @@ section #cultura-eventos {
         width: 340px;
     }
 }
+
+/*Cards en delegaciones modifico estilos*/
+#seccion-gral .delegaciones .seccion-gral-img img{
+    opacity: 1;
+}
+
+#seccion-gral .delegaciones .seccion-gral-titulo{
+    background-color: #f4bf00b5;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#seccion-gral .delegaciones div:hover{
+    background-color: #f4bf0000;
+ }
+
+
 
 /*--------------------------------------------------------------
 # NOTICIAS utilizo team
@@ -2212,6 +2246,7 @@ section #cultura-eventos {
 .telefonos-utiles{
     padding: 30px;
     margin-bottom: 60px;
+    background-color: #f5f5f5;
 }
 .telefono-icono i{
     background-color: #ddd;
@@ -2580,11 +2615,23 @@ input[type=number] { -moz-appearance:textfield; }
     position: absolute;
     z-index: 3;
     /* background: linear-gradient(#d634528b, #d634528b); */
-    background: linear-gradient(#67248366, #67248392);
+
     width: 100%;
     height: 350px;
     top: 0;
 }
+
+/*# color de blur segun cada seccion  */
+
+#cultura  .background-portada{
+    background: linear-gradient(#67248366, #67248392);
+}
+
+#delegaciones  .background-portada{
+    /* background: linear-gradient(#d634528b, #d634528b); */
+    background: linear-gradient(#ecdb3f66, #ecdb3f66);
+}
+/*fin color blur*/
 
 .portada-foto .foto-portada{
     position: relative;
@@ -2610,7 +2657,7 @@ input[type=number] { -moz-appearance:textfield; }
     padding: 40px;
     color: #fff;
     font-weight: 700;
-    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.826);
+    text-shadow: 10px 10px 30px rgb(0, 0, 0);
 }
 
 .container-border{
@@ -2645,6 +2692,8 @@ input[type=number] { -moz-appearance:textfield; }
     background-color: #2464a3;
     height: 10px;
 }
+
+
 
 
 /*--------------------------------------------------------------
@@ -2817,6 +2866,53 @@ input[type=number] { -moz-appearance:textfield; }
 .team .card-icono .member-6 .card-ver-mas a:hover{
     background-color: #ffd53f ;
     color: #fff;
+}
+
+/*--------------------------------------------------------------
+# BOTON VER TODAS
+--------------------------------------------------------------*/
+.link-ver-todas{
+    display:flex ;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.link-ver-todas p {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    font-family: "Poppins", sans-serif;
+}
+
+.link-ver-todas p a{
+    color: #aaaaaa;
+}
+
+.link-ver-todas p a:hover {
+    color: #bfbebe;
+}
+
+.link-ver-todas p::after,
+.link-ver-todas p::before {
+    content: "";
+    width: 180px;
+    height: 2px;
+    display: inline-block;
+    background: #ffde9e;
+    margin: 4px 18px;
+}
+
+@media (max-width: 991px) {
+    .link-ver-todas p::after,
+    .link-ver-todas p::before {
+        width: 60px;
+        height: 2px;
+        margin: 4px 16px;
+    }
 }
 
 

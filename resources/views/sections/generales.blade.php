@@ -127,7 +127,11 @@
                         @foreach($secciones as $seccion)
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4">
                                 <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                    @if($seccion->link == "proximamente")
+                                    <a >
+                                    @else
                                     <a href="{{$seccion->link}}">
+                                        @endif
                                         <div class="seccion-gral-img">
                                                 <img src="assets/img/sections-portadas/{{$seccion->portada}}" class="img-fluid" alt="">
                                                 <div class="seccion-gral-titulo">
