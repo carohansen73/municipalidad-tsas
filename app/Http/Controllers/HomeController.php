@@ -63,6 +63,7 @@ class HomeController extends Controller
        //tomo los datos y las entidades que pertenecen a esa seccion
        $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
+
         //  $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
         // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
 
@@ -158,7 +159,6 @@ class HomeController extends Controller
 
         // $tipos = TramiteTipo::orderBy('id_area', 'DESC')->get();
         // $tipos = TramiteTipo::orderBy('tipo')->get();
-
         // $tramites = TramiteGuia::all();
         $tipo = TramiteTipo::where('id', $id)->get();
 

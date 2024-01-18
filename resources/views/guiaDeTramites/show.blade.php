@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 <!-- barra de navegacion -->
-@include('layouts.tadi-navbar')
+@include('layouts.navbar')
 
 @section('content')
 {{-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs"  height="560" preserveAspectRatio="none" viewBox="0 0 1440 560">
@@ -16,14 +16,7 @@
         </mask>
     </defs>
 </svg> --}}
-<div class="portada-seccion ps-5">
-    <div class="section-title">
 
-        <p style="color: #fffdfd">Guía de Trámites</p>
-        <h2 style="color: #ebe9e9"> @foreach($tipo as $t)  {{$t->tipo}}@endforeach</h2>
-        {{-- <p><span style="font-size: 14px; color:#aaaaaa;">Buscá el trámite que deseas realizar por tema</span></p> --}}
-    </div>
-</div>
 {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" fill="rgba(13, 116, 189, 0.8)">
 	<path class="elementor-shape-fill" opacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"/>
 	<path class="elementor-shape-fill" opacity="0.66" d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"/>
@@ -35,28 +28,37 @@
 
 
 
-    <main id="main" class="margen-top-navbar">
+<main id="main" class="margen-top-navbar">
 
 
 
 
- <!-- ======= Features Section ======= -->
- <section id="features" class="features">
-    <div class="container" data-aos="fade-up">
-       {{-- aca --}}
+    <!-- ======= Features Section ======= -->
+    <section id="tramites" class="features">
+        <div class="container" data-aos="fade-up">
+            {{-- aca --}}
+            <div class="section-title">
 
-      <div class="row">
+                <p>Guía de Trámites</p>
+                <h2>  @foreach($tramite as $tram)  <i class="{{$tram->tipo->icono}}" style="font-size: 24px;"></i> @break @endforeach
+                    @foreach($tipo as $t)  {{$t->tipo}} @endforeach
+                </h2>
+                {{-- <p><span style="font-size: 14px; color:#aaaaaa;">Buscá el trámite que deseas realizar por tema</span></p> --}}
+            </div>
+            <div class="row">
+                @foreach($tramite as $tram)
+                <div class="col-lg-12 item-tramite" data-aos="fade-left" data-aos-delay="100">
 
-        <div class="col-lg-12" data-aos="fade-left" data-aos-delay="100">
-            @foreach($tramite as $tram)
-            <a>
-                <div id="{{$tram->id}}" class="icon-box  div-tramite" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="{{$tram->tipo->icono}}"></i>
+                    <a href="">
+                        <div id="{{$tram->id}}" class="icon-box  div-tramite" data-aos="zoom-in" data-aos-delay="150">
+                           <span class="icon-closed"><i class="fas fa-angle-right"></i></span>
+                           <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
 
-                    <h4>{{$tram->titulo}}</h4>
-                    <p>{{$tram->descripcion}}</p>
-                </div>
-            </a>
+
+                            <h4>{{$tram->titulo}}</h4>
+                            <p>{{$tram->descripcion}}</p>
+                        </div>
+                    </a>
 
                     <div id="informacion-{{$tram->id}}" class="informacion-tramite display-none ms-lg-5">
                         <h6 class="ms-5"><strong>Lugar donde se realiza</strong></h6><p class="ms-5">{{$tram->lugar}}</p>
@@ -69,18 +71,15 @@
                     </div>
 
 
+                </div>
+                @endforeach
+            </div>
 
-            @endforeach
         </div>
-      </div>
-
-    </div>
-  </section><!-- End Features Section -->
-
-
+    </section><!-- End Features Section -->
 
 </main><!-- End #main -->
 
-  <!-- Template ocultar-mostrar información JS File -->
-  <script src="{{ asset('assets/js/hide-show-information.js') }}"></script>
+<!-- Template ocultar-mostrar información JS File -->
+<script src="{{ asset('assets/js/hide-show-information.js') }}"></script>
 

@@ -3,12 +3,20 @@ document.addEventListener('DOMContentLoaded', e => {
 
     document.querySelectorAll(".div-tramite").forEach(div =>{
         div.addEventListener('click', e => {
-            // e.preventDefault();
+             e.preventDefault();
             // let elemento = boton.value;
 
+
+
+            let iconClosed = div.querySelector(".icon-closed");
+            let iconOpen = div.querySelector(".icon-open");
             let divId = 'informacion-'+div.id;
             let divMostrar = document.getElementById(divId);
+            //muestro la informacion
             divMostrar.classList.toggle("display-none");
+            //CAMBIO EL ICONO "ABIERTO/CERRADO"
+            iconClosed.classList.toggle("display-none");
+            iconOpen.classList.toggle("display-none");
             // divMostrar.classList.add("activo");
 
             // divMostrar.onmouseout = ocultarDiv(divMostrar)

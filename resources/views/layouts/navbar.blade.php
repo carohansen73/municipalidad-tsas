@@ -11,7 +11,7 @@
 
             <li><a class="nav-link scrollto" href="/municipio">Municipio</a></li>
             <li><a class="nav-link scrollto" href="/atencion-al-vecino">At. vecino</a></li>
-            <li><a class="nav-link scrollto" href="/ciudad-productiva">Productiva</a></li>
+            <li><a class="nav-link scrollto" href="/ciudad-productiva">Producción</a></li>
             <li><a class="nav-link scrollto" href="/cultura-y-educacion">Cultura y educación</a></li>
             <li><a class="nav-link scrollto" href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li>
             <li><a class="nav-link scrollto" href="/deportes">Deportes</a></li>
@@ -46,9 +46,36 @@
 
 
 
+            <div class="get-started-buttons">
+                <a  href="tadi" target="_blank" class="get-started-btn scrollto">
+                    <div class="get-started-group">
+                        <i class="fas fa-laptop-house"></i>
+                        TaDi
+                    </div>
+                </a>
+
+                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
+                    <div class="get-started-group">
+                        <i class="fas fa-laptop"></i>
+                        Autogestión
+                    </div>
+                </a>
+                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
+                    <div class="get-started-group">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    Gobierno <br> abierto
+                    </div>
+                </a>
+            </div>
 
             </ul>
+
+
             <i class="bi bi-list mobile-nav-toggle"></i>
+
+
+
+
         </nav>
 
 
@@ -58,27 +85,7 @@
         <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Guia Trámites</a>
         <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Autogestión</a>
       </div -->
-        <div class="get-started-buttons">
-            <a  href="tadi" target="_blank" class="get-started-btn scrollto">
-                <div class="get-started-group">
-                    <i class="fas fa-laptop-house"></i>
-                    TaDi
-                </div>
-            </a>
 
-            <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
-                <div class="get-started-group">
-                    <i class="fas fa-laptop"></i>
-                    Autogestión
-                </div>
-            </a>
-            <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
-                <div class="get-started-group">
-                    <i class="fas fa-hand-holding-usd"></i>
-                Gobierno <br> abierto
-                </div>
-            </a>
-        </div>
 
 
 

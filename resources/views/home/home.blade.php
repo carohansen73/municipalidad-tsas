@@ -57,7 +57,7 @@
                 </a>
             </div>
             <div class="col-xl-2 col-md-2">
-                <a href="cultura-y-educacion">
+                <a href="cultura">
                     <div class="icon-box icon-4">
 
                         {{-- <i class="fas fa-book-reader"></i> --}}

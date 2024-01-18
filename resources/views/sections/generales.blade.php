@@ -8,7 +8,7 @@
 
 {{-- PORTADA --}}
 {{-- CULTURA Y EDUCACION --}}
-    @if($nombreSeccion == "cultura y educacion")
+    @if($nombreSeccion == "cultura")
 
         <div id="cultura" class="portada-foto text-md-left text-sm-center ">
             <img class="foto-portada" src="assets/img/sections-portadas/cultura/cultura.jpg" alt="portada-de-la-seccion">
@@ -19,7 +19,7 @@
 
 {{-- OTROS --}}
     @else
-        <div  class="portada pt-5 mt-5">
+        {{-- <div  class="portada pt-5 mt-5">
 
             <div class="portada-seccion ps-5">
                 <div class="section-title">
@@ -28,6 +28,13 @@
             </div>
             <img src="assets/img/sections-background/city-removebg-preview.png" alt="" srcset="">
 
+        </div> --}}
+
+        <div id="generales" class="portada-foto text-md-left text-sm-center ">
+            {{-- <img class="foto-portada" src="assets/img/sections-portadas/tsas2.jpg" alt="portada-de-la-seccion"> --}}
+            <div class="background-portada">   </div>
+            {{-- <img class="logos-portada" src="assets/img/sections-portadas/logos/logos.png" alt=""> --}}
+            <h1>{{$nombreSeccion}}</h1>
         </div>
     @endif
 
@@ -157,7 +164,7 @@
 
 
 {{-- CULTURA Y EDUCACION --> PROXIMOS EVENTOS --}}
-    @if($nombreSeccion == "cultura y educacion")
+    @if($nombreSeccion == "cultura")
 
        <!-- ======= borde colorido ======= -->
        <div class="container-border">

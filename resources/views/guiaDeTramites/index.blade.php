@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 <!-- barra de navegacion -->
-@include('layouts.tadi-navbar')
+@include('layouts.navbar')
 
 @section('content')
 
@@ -52,8 +52,11 @@
                 @foreach($tipos as $tipo)
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box ">
+
+                        <a href="tramite/{{$tipo->id}}">
                         <div class="icon"><i class="{{$tipo->icono}}"></i></div>
-                        <h4><a href="tramite/{{$tipo->id}}">{{$tipo->tipo}}</a></h4>
+                        <h4>{{$tipo->tipo}}</h4>
+                        </a>
                         {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
                     </div>
                 </div>

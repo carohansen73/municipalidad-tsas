@@ -80,7 +80,7 @@
     */
     let selectHeader = select('#header')
     let locationPath = window.location.pathname;
-    if (selectHeader && (locationPath == '/' || locationPath == '/cultura-y-educacion' || locationPath == '/museos')) {
+    if (selectHeader && (locationPath == '/' || locationPath == '/cultura-y-educacion' || locationPath == '/museos' || locationPath == '/municipio')) {
 
         const headerScrolled = () => {
         if (window.scrollY > 100) {
