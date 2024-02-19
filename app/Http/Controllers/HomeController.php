@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
-use App\Models\SeccionPagina;
 use App\Models\SeccionMenu;
+use App\Models\Evento;
+use App\Models\SeccionPagina;
 use App\Models\SeccionTexto;
+use App\Models\Archivos;
 use App\Models\Museo;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
-use App\Models\Archivos;
+
 use App\Models\Delegacion;
 
 
@@ -63,6 +65,8 @@ class HomeController extends Controller
        //tomo los datos y las entidades que pertenecen a esa seccion
        $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
+       $eventos = Evento::whereIn('seccion_id', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+
 
         //  $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
         // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
@@ -74,7 +78,7 @@ class HomeController extends Controller
         //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
         //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
 
-        return view('sections.generales', compact('secciones', 'nombreSeccion'));
+        return view('sections.generales', compact('secciones', 'nombreSeccion', 'eventos', 'pathSeccion'));
     }
 
 

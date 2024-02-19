@@ -80,18 +80,57 @@
     */
     let selectHeader = select('#header')
     let locationPath = window.location.pathname;
-    if (selectHeader && (locationPath == '/' || locationPath == '/cultura-y-educacion' || locationPath == '/museos' || locationPath == '/municipio')) {
-
+    let itemsNavbar = select('#navbar .nav-link, .get-started-buttons a .get-started-group , .logo', true);
+    let portadaConImg = select('.portada-foto');
+    // if (selectHeader && (locationPath == '/' || locationPath == '/cultura' || locationPath == '/museos' || locationPath == '/municipio' || locationPath == '/ciudad-productiva' || locationPath == '/deportes' || locationPath == '/atencion-al-vecino')) {
+    if (selectHeader && (portadaConImg || locationPath == '/') ){
         const headerScrolled = () => {
         if (window.scrollY > 100) {
             selectHeader.classList.add('header-scrolled')
+
+            itemsNavbar.forEach(itemn => {
+                itemn.classList.add('font-color-bl')
+                itemn.classList.remove('font-color-wh')
+            })
+
+
+            // let selectedLetters = select('.navbar li a');
+
         } else {
+
+            itemsNavbar.forEach(itemn => {
+                itemn.classList.remove('font-color-bl')
+                itemn.classList.add('font-color-wh')
+            })
+
             selectHeader.classList.remove('header-scrolled')
+
+
+
+            // select('.navbar li a').classList.add('font-color-wh')
+            // select('.navbar li a').classList.remove('font-color-bl')
         }
         }
         window.addEventListener('load', headerScrolled)
         onscroll(document, headerScrolled)
     }
+    // if(selectHeader){
+
+    //     if(locationPath == '/municipio'){
+    //         borderHeader.classList.add('bg-1');
+    //     } else if(locationPath == '/atencion-al-vecino'){
+    //         borderHeader.classList.add('bg-2');
+    //     }
+    //     else if(locationPath == '/ciudad-productiva'){
+    //         borderHeader.classList.add('bg-3');
+    //     }
+    //     else if (locationPath == '/cultura'){
+    //         borderHeader.classList.add('bg-4')
+    //     }
+
+
+    // }
+
 
 
     /**

@@ -8,7 +8,7 @@
 
 {{-- PORTADA --}}
 
-    <div id="cultura" class="portada-foto text-md-left text-sm-center ">
+    <div id="portada-secciones" class="portada-foto text-md-left text-sm-center ">
         @foreach($textos as $text)
         <img class="foto-portada" src="{{asset("storage/secciones/".$text->img_portada)}}" alt="portada-de-la-seccion">
         @break

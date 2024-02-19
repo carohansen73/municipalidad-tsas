@@ -67,7 +67,7 @@
                         {{-- <i class="bi bi-card-checklist"></i> --}}
                           {{-- <i class="bi bi-chat-dots"></i> --}}
                     {{-- <i class="fas fa-hand-holding-usd"></i> --}}
-                        <h3>Cultura y educación</h3>
+                        <h3>Cultura</h3>
                     </div>
                 </a>
             </div>

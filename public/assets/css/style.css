@@ -196,22 +196,25 @@ h6 {
 #header.header-scrolled,
 #header.header-inner-pages {
   /* background: rgba(0, 0, 0, 0.8); */
-  background: rgba(13, 116, 189, 0.967);
+  /* background: rgba(13, 116, 189, 0.967); */
+  background: rgba(244, 244, 244, 0.967);
+  box-shadow:  0px 0px 6px 6px rgba(39, 39, 40, 0.394);
 }
 
 #header .logo {
-  font-size: 32px;
+  font-size: 18px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-#header .logo a {
-  color: #fff;
-}
+/* #header .logo a {
+    color: #373737;
+} */
 
 #header .logo a span {
   color: #ffc451;
@@ -235,7 +238,7 @@ h6 {
 --------------------------------------------------------------*/
 
 .get-started-btn {
-   color: #fff;
+   /* color: #fff; */
   /* border-radius: 4px; */
   /* padding: 3px 0px 4px 0px; */
   white-space: nowrap;
@@ -309,12 +312,12 @@ h6 {
 @media (min-width: 992px) {
 
     .get-started-btn {
-        color: #fff;
+        /* color: #fff; */
 
      }
     .get-started-group{
 
-        color: #fff;
+        /* color: #373737; */
         padding: 3px 10px 4px 10px;
     }
 
@@ -374,8 +377,8 @@ h6 {
       justify-content: space-between;
       padding: 10px 0 10px 30px;
       font-size: 14px;
-      font-weight: 400;
-      color: #fff;
+      font-weight: 500;
+      /* color: #373737; */
       white-space: nowrap;
       transition: 0.3s;
     }
@@ -888,6 +891,17 @@ section {
   font-family: "Poppins", sans-serif;
   color: rgb(13, 116, 189);
 }
+
+@media (max-width: 991px) {
+    .section-title {
+        padding-left: 16px;
+    }
+
+    .section-title p {
+        font-size: 26px;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # About
@@ -1773,20 +1787,21 @@ section {
 # CULTURA / EVENTOS (reutilizo estilo MUSEOS - Team)
 --------------------------------------------------------------*/
 section #cultura-eventos {
-    /* background-color: #d63384; */
+    background-color: #d63384;
     /* background-color: #ce1537; */
-    background-color: #662483;
+    /* background-color: #662483; */
+
 
 }
-#cultura-eventos p{
+.eventos p{
     color: #FFF;
 }
 
-#cultura-eventos .container{
+.eventos .container{
     padding: 50px  0px 80px 0px;
 }
 
-#cultura-eventos .member-info h4{
+.eventos .member-info h4{
     color: #ce1537;
 }
 
@@ -1796,12 +1811,18 @@ section #cultura-eventos {
     border-radius: 30px;
 }
 
-#cultura-eventos .member-img,
-#cultura-eventos .member{
+.eventos .member-img,
+.eventos .member{
 
     border-radius: 30px;
     box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.645);
 }
+
+section #deportes-eventos{
+    background-color: #2464a3;
+
+}
+
 /*--------------------------------------------------------------
 # otras secciones / NOTICIAS - EVENTOS (reutilizo estilo MUSEOS - Team)
 --------------------------------------------------------------*/
@@ -2300,6 +2321,25 @@ section #cultura-eventos {
     font-weight: 800;
 }
 
+@media (max-width: 992px) {
+    .telefono-icono i{
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .telefonos-utiles p{
+        font-size: 14px;
+    }
+
+    .telefonos-utiles .telefono{
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -2656,15 +2696,38 @@ background-image: url("../img/sections-portadas/tsas2.jpg");
 background-size: cover;
 }
 
+#municipio .background-portada{
+    background: linear-gradient(#3baa353f, #3baa353f);
+}
+
+#atencion-al-vecino  .background-portada{
+    /* background: linear-gradient(#d634528b, #d634528b); */
+    background: linear-gradient(#f4bf006f, #f4bf006f);
+}
+
+#ciudad-productiva .background-portada{
+    background: linear-gradient(#f07f076b, #f07f076b);
+}
 
 #cultura  .background-portada{
-    background: linear-gradient(#67248366, #67248392);
+    background: linear-gradient(#d633845f, #d633845f);
+}
+
+#deportes .background-portada{
+    background: linear-gradient(#2463a38d, #2463a38d);
 }
 
 #delegaciones  .background-portada{
     /* background: linear-gradient(#d634528b, #d634528b); */
     background: linear-gradient(#f4bf0031, #f4bf0031);
 }
+
+#portada-secciones .background-portada{
+    /* background: linear-gradient(#d634528b, #d634528b); */
+    background: linear-gradient(#2727274f, #2727274f);
+}
+
+
 /*fin color blur*/
 
 .portada-foto .foto-portada{
@@ -2695,6 +2758,17 @@ background-size: cover;
     text-transform: uppercase;
 }
 
+@media (max-width: 991px) {
+    .portada-foto h1{
+
+        top: 100px;
+        padding: 20px 50px;
+
+
+
+    }
+}
+
 .container-border{
     width: 100%;
     height: 10px;
@@ -2704,22 +2778,33 @@ background-size: cover;
 
 }
 
+.container-border .row>*{
+    padding: 0px;
+}
+
 .container-border .border-1{
-    background-color: #f4c000;
+
+    background-color: #53c04d;
     height: 10px;
 }
 
  .container-border .border-2{
-    background-color: #662483;
+
+    background-color: #f4c000;
     height: 10px;
 }
  .container-border .border-3{
-    background-color: #d63384;
+    background-color: #f07e07;
     height: 10px;
 }
 
 .container-border .border-4{
-    background-color: #53c04d;
+    background-color: #d63384;
+    height: 10px;
+}
+
+.container-border .border-5{
+    background-color: #662483;
     height: 10px;
 }
 
@@ -2951,6 +3036,10 @@ background-size: cover;
 }
 
 
+.modalimg{
+    width: 100%;
+}
+
 
 /* HTML:
 
@@ -2967,6 +3056,19 @@ background-size: cover;
     </div>
 </div>
 </div> */
+
+
+
+.font-color-wh{
+   color: #ffffff;
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.922);
+}
+
+.font-color-bl{
+    color: #343434;
+    text-shadow: 2px 2px 2px rgba(223, 223, 223, 0.922);
+    /* text-shadow: 1px #010101; */
+ }
 
 
 

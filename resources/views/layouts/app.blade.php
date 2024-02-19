@@ -84,7 +84,7 @@
     {{-- Sub-footer --}}
     <div class="container telefonos-utiles mt-5">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-4">
                 <div class="row telefono">
                     <div class="col-auto telefono-icono">
                         <i class="fas fa-phone"></i>
@@ -96,19 +96,20 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-4">
                 <div class="row telefono">
                     <div class="col-auto telefono-icono">
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="col-auto">
-                        <p>Policia</p>
-                        <span>101</span>
+                        <div><p>Policia</p></div>
+                        <div><span>101</span></div>
+
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-4">
                 <div class="row telefono">
                     <div class="col-auto telefono-icono">
                         <i class="fas fa-phone"></i>
@@ -129,12 +130,12 @@
   <!-- ======= Footer ======= -->
    <!-- ======= borde colorido ======= -->
    <div class="container-border">
-    <div class="row">
-        <div class="col-4 border-1">
-        </div>
+    <div class="row p-0">
         <div class="col-4 border-2">
         </div>
-        <div class="col-4 border-3">
+        <div class="col-4 border-5">
+        </div>
+        <div class="col-4 border-4">
         </div>
 
     </div>
@@ -225,6 +226,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
+
 
 
 </body>
