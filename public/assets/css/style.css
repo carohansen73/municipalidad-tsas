@@ -197,7 +197,9 @@ h6 {
 #header.header-inner-pages {
   /* background: rgba(0, 0, 0, 0.8); */
   /* background: rgba(13, 116, 189, 0.967); */
-  background: rgba(244, 244, 244, 0.967);
+  /* background: rgba(244, 244, 244, 0.967); */
+   background: rgba(255, 255, 255, 0.967);
+
   box-shadow:  0px 0px 6px 6px rgba(39, 39, 40, 0.394);
 }
 
@@ -1980,6 +1982,12 @@ section #deportes-eventos{
     font-weight: 500;
 }
 
+#noticias .aside-lateral button{
+   background: none;
+    border: none;
+    color: #FFFFFF;
+}
+
 /* fin noticias relacionadas (cards pequeños)*/
 
 #noticias  .aside-principal{
@@ -2673,11 +2681,50 @@ input[type=number] { -moz-appearance:textfield; }
 .portada-foto{
     height: 320px;
     width: 100%;
-    background-size: cover;
+    /* background-size: cover; */
     align-items: end;
     z-index: 1;
     top: 0 !important;
 }
+
+ #municipio .portada-foto{
+     background-image: url("../img/sections-portadas/portadas/municipio.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/municipio.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+}
+
+#atencion-al-vecino .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/atencion-al-vecino.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/atencion-al-vecino.jpg") fixed center center; */
+
+    height: 320px;
+    background-size: cover;
+}
+
+#ciudad-productiva .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/ciudad-productiva.jpg");
+    background-position: center;
+
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/ciudad-productiva.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+}
+
+#cultura .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/cultura.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/cultura.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+}
+
+#deportes .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/deportes.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/deportes.jpg") fixed center center; */
+    background-position: center;
+    background-size: cover;
+}
+
 
 .portada-foto .background-portada{
     position: absolute;

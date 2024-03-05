@@ -34,10 +34,11 @@
 
 
 
+
     <!-- ======= NOTICIAS Y LATERAL CON CATEGORIAS Y DESTACADAS O LAS QUE SIGUEN ======= -->
     {{-- <section id="noticias" class="team"> --}}
         <div class="container mb-5" data-aos="fade-up">
-
+            {{-- @csrf --}}
 
             <div class="row">
                 <!-- ======= ASIDE NOTICIAS ======= -->
@@ -79,18 +80,28 @@
                         <p >Categorias</p>
                     </div>
                         <ul>
-                            <li>
-                                <p>Generales</p>
-                            </li>
-                            <li>
-                                <p>Cultura</p>
-                            </li>
-                            <li>
-                                <p>Deportes</p>
-                            </li>
-                            <li>
-                                <p>La Ciudad</p>
-                            </li>
+                            @foreach($categorias as $cat)
+
+                                <li >
+
+                                        <div class="d-flex justify-content-between align-content-center" >
+                                            <div>
+                                                <p>
+                                                {{$cat->nombre}}
+                                                </p>
+                                            </div>
+
+                                            <button class="desplegable-categoria"  id="categoria_{{$cat->id}}" >
+                                                <i class="fas fa-angle-right"></i>
+
+                                            <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
+                                        </button>
+                                        </div>
+
+                                </li>
+                            @endforeach
+
+
                         </ul>
 
                 </aside>
@@ -148,3 +159,5 @@
 
 </section>
 
+  <!-- Template ocultar-mostrar información JS File -->
+  <script src="{{ asset('assets/js/filtroNoticias.js') }}"></script>

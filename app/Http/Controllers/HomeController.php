@@ -12,6 +12,7 @@ use App\Models\Archivos;
 use App\Models\Museo;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
+use App\Models\NoticiaCategoria;
 
 use App\Models\Delegacion;
 
@@ -193,13 +194,14 @@ class HomeController extends Controller
     public function showNoticias() /*paginar? o x js hacer api*/
     {
         $noticias = Noticia::with('imgs')->get();
+        $categorias = NoticiaCategoria::all();
         // foreach($noticias as $noti){
         //     foreach($noti->imgs as $imag){
         //         var_dump($imag->img);die;
         //     }
 
         // }
-        return view('sections.noticias', compact('noticias'));
+        return view('sections.noticias', compact('noticias', 'categorias'));
     }
 
 

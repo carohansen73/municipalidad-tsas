@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReclamosController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\NoticiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +63,14 @@ Route::controller(ReclamosController::class)->group(function () {
     Route::get('/reclamos', 'index');
     Route::get('/nuevo-reclamo', 'create');
     Route::post('/ingresar-reclamo', 'store');
+});
+
+/* Noticias*/
+Route::controller(NoticiaController::class)->group(function () {
+    // Route::get('/orders/{id}', 'show');
+    Route::get('/filtro-noticias/all', 'all');
+    Route::get('/filtro-noticias/categoria/{categoria}', 'getByCategory');
+    // Route::post('/ingresar-reclamo', 'store');
 });
 
 

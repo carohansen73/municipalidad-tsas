@@ -32,7 +32,7 @@
           <base href="{BASE_URL}">
           <meta charset="utf-8">
           <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+          <meta name="_token" content="{{ csrf_token() }}">
           <title>Municipalidad TsAs</title>
           <meta content="" name="description">
           <meta content="" name="keywords">

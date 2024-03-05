@@ -15,7 +15,7 @@ class Noticia extends Model
     public $fillable = [
         'titulo',
         'descripcion',
-        'categoria',
+        'categoria_id',
         'destacada',
         'fecha',
         'seccion_id'
@@ -26,9 +26,9 @@ class Noticia extends Model
         return $this->hasMany(NoticiaImg::class);
     }
 
-    // public function categoria() {
-    //     return $this->hasMany(NoticiaImg::class);
-    // }
+    public function categoria() {
+        return $this->belongsTo(NoticiaCategoria::class, 'categoria_id');
+    }
 
     public function seccion()
     {

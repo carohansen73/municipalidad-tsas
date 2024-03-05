@@ -9,9 +9,9 @@
 {{-- PORTADA --}}
 
 
-
-    <div id="{{$pathSeccion}}" class="portada-foto text-md-left text-sm-center ">
-        <img class="foto-portada" src="assets/img/sections-portadas/portadas/{{$pathSeccion}}.jpg" alt="portada-de-la-seccion">
+<div  id="{{$pathSeccion}}">
+    <div class="portada-foto text-md-left text-sm-center ">
+        {{-- <img class="foto-portada" src="assets/img/sections-portadas/portadas/{{$pathSeccion}}.jpg" alt="portada-de-la-seccion"> --}}
         <div class="background-portada">   </div>
         {{-- <img class="logos-portada" src="assets/img/sections-portadas/logos/logos.png" alt=""> --}}
          @foreach($secciones as $seccion)
@@ -21,6 +21,9 @@
             @break
         @endforeach
      </div>
+
+</div>
+
 
 
 

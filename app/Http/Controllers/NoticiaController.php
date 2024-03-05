@@ -13,11 +13,17 @@ use Symfony\Component\Routing\Route;
 
 class NoticiaController extends Controller
 {
-    public function index(){
-        return NoticiaResource::collection(Noticia::latest()->paginate());
+    public function all(){
+         return NoticiaResource::collection(Noticia::latest()->paginate());
+        // return $campana = 'hola';
     }
 
-    public function show(Noticia $noticia){
-        return new NoticiaResource($noticia);
+    public function getByCategory($categoria){
+        return NoticiaResource::collection(Noticia::where('categoria', $categoria)->latest()->take(2)->get());
+        $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
     }
+
+    // public function show(Noticia $noticia){
+    //     return new NoticiaResource($noticia);
+    // }
 }

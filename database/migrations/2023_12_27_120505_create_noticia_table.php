@@ -17,6 +17,8 @@ class CreateNoticiaTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->longText('descripcion');
+            $table->unsignedBigInteger('categoria_id')->nullable();
+            $table->foreign('categoria_id')->references('id')->on('noticia_categoria');
             $table->string('categoria');
             $table->boolean('destacada');
             $table->date('fecha');
