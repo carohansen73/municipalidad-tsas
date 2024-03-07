@@ -2011,6 +2011,10 @@ section #deportes-eventos{
 
 #noticias .aside-lateral ul li{
     list-style: none;
+}
+
+#noticias .aside-lateral ul li .desplegable-categoria-boton{
+
     background-color: rgb(13, 116, 189);
     color: #fff;
     padding: 10px 15px;
@@ -2023,6 +2027,18 @@ section #deportes-eventos{
 
 #noticias .aside-lateral ul li p{
     margin-bottom: 0px;
+}
+
+
+.noticias-categoria-item{
+    font-size: 14px;
+    padding-left: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.noticias-categoria-item a{
+   color: rgb(13, 116, 189);
+   font-size: 13px;
 }
 
 

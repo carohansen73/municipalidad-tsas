@@ -218,9 +218,15 @@ class HomeController extends Controller
         $noticias = Noticia::with('imgs')->get();
         $noticia = Noticia::where('pathname', $titulo)->with('imgs')->get();
 
-        foreach($noticias as $noti){
-            $categoria = $noti->categoria;
+        foreach($noticia as $noti){
+            $categoriaId = $noti->categoria->id;
         }
+
+        $categorias = NoticiaCategoria::all();
+        $ultimasNoticias = Noticia::latest()->take(3)->get();
+        $noticiasRelacionadas = Noticia::where('categoria_id', $categoriaId)->latest()->take(3)->get();
+
+
 
         //  foreach($noticias as $noti){
         //     //modifico el titulo para usarlo de path url
@@ -235,8 +241,29 @@ class HomeController extends Controller
         //     }
         //  }
 
-        return view('sections.noticia', compact('noticias', 'noticia', 'categoria'));
+        return view('sections.noticia', compact('noticias', 'noticia', 'categoriaId', 'ultimasNoticias', 'noticiasRelacionadas', 'categorias'));
     }
 
+
+    /**
+     * Muestra las noticias pertenecientes a la categoria seleccionada
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showNoticiasPorCategoria($categoriaNombre)
+    {
+        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios por - !!!!!!*/
+
+        // var_dump($titulo);die;
+        $noticias = Noticia::where('categoria_id', NoticiaCategoria::where('nombre', $categoriaNombre)->pluck('id'))->with('imgs')->get();
+
+        $categorias = NoticiaCategoria::all();
+
+        // $ultimasNoticias = Noticia::latest()->take(3)->get();
+        $ultimasNoticias = Noticia::orderBy('fecha', 'desc')->take(3)->get();
+
+
+        return view('sections.noticias', compact('noticias',  'categorias', 'categoriaNombre', 'ultimasNoticias'));
+    }
 
 }

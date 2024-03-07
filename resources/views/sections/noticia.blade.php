@@ -35,7 +35,7 @@
 
 
                 <div class="row">
-                    <!-- ======= ASIDE NOTICIA PRINCIPAL ======= -->
+                    <!-- =======  NOTICIA PRINCIPAL ======= -->
                     <aside class="col-md-9 aside-principal">
                         <div class="row">
                             @foreach($noticia as $noti)
@@ -53,7 +53,7 @@
                                                 <p><i class="fas fa-clock"></i>  {{$noti->fecha}}  </p>
                                             </div>
                                             <div class="col-lg-2">
-                                                <p><i class="fas fa-tags"></i> <a href="/noticias/{{$noti->categoria}}">  {{$noti->categoria}}  </a></p>
+                                                <p><i class="fas fa-tags"></i> <a href="/noticias-categoria/{{$noti->categoria->nombre}}">  {{$noti->categoria->nombre}}  </a></p>
                                             </div>
                                         </div>
 
@@ -92,8 +92,7 @@
                                         <p style="font-size: 18px">Noticias relacionadas</p>
                                     </div>
 
-                                    @foreach($noticias as $noti)
-                                    @if($noti->categoria == $categoria)
+                                    @foreach($noticiasRelacionadas as $noti)
 
                                         <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
                                             <div class="member" data-aos="fade-up" data-aos-delay="100">
@@ -109,28 +108,26 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    @endif
+
                                     @endforeach
 
                                 </div>
 
                                 </div>
-
-
                             @endforeach
                         </div>
                     </aside>
 
 
+
+
                     <!-- ======= ASIDE LATERAL CATEGORIAS /notis relacionadas ======= -->
                     <aside class="col-md-3 aside-lateral">
                         <div class="section-title mb-3">
-                            <p style="font-size: 18px">Noticias relacionadas</p>
+                            <p style="font-size: 18px">Últimas Noticias</p>
                         </div>
 
-                        @foreach($noticias as $noti)
-                        @if($noti->categoria == $categoria)
-
+                        @foreach($ultimasNoticias as $noti)
                             <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
                                 <div class="member" data-aos="fade-up" data-aos-delay="100">
                                     <div class="member-img">
@@ -145,31 +142,28 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif
                         @endforeach
-
-
-                        <div class="section-title mt-4">
+                        <div class="section-title mb-3 mt-3">
                             <p style="font-size: 18px">Categorias</p>
                         </div>
                         <ul>
-                            <li>
-                                <p>Generales</p>
+                        @foreach($categorias as $cat)
+                            <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
+                                <a href="/noticias-categoria/{{$cat->nombre}}">
+                                    <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
+                                        <div>
+                                            <p>  {{$cat->nombre}} </p>
+                                        </div>
+                                        <i class="fas fa-angle-right" ></i>
+                                    </div>
+                                </a>
                             </li>
-                            <li>
-                                <p>Cultura</p>
-                            </li>
-                            <li>
-                                <p>Deportes</p>
-                            </li>
-                            <li>
-                                <p>La Ciudad</p>
-                            </li>
+                        @endforeach
                         </ul>
+
                     </aside>
                 </div>
             </div>
-
         </section>
 
     </main>

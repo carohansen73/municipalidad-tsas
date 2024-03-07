@@ -18,9 +18,11 @@ class NoticiaController extends Controller
         // return $campana = 'hola';
     }
 
-    public function getByCategory($categoria){
-        return NoticiaResource::collection(Noticia::where('categoria', $categoria)->latest()->take(2)->get());
-        $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+    public function getByCategory($id){
+        // var_dump($categoria);die;
+         return NoticiaResource::collection(Noticia::where('categoria_id', $id)->latest()->take(2)->get());
+        // $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
     }
 
     // public function show(Noticia $noticia){

@@ -1,73 +1,3 @@
-// (function() {
-//     "use strict";
-
-    // console.log('entro');
-
-    // $.ajax({
-    //     url: '/filtro-noticias/all',
-    //     method: 'POST',
-    //     data:{
-    //         id:1
-    //     }
-    // }).done(function(res){
-
-    //     alert(res);
-
-    // })
-// })
-// document.addEventListener('DOMContentLoaded', e => {
-//     document.getElementById("boton").addEventListener("click", function(){
-//         console.log('btn');
-//         ajax();
-//     })
-
-//     console.log('entro');
-//     function ajax(){
-//         const http = new XMLHttpRequest();
-//         const url = 'http://municipalidad-tsas.test/portal-de-noticias/filtro-noticias/all';
-
-//         http.onreadystatechange = function(){
-//             if(this.readyState == 4 && this.status == 200){
-//                 console.log(this.responseText);
-//                 document.getElementById("response").innerHTML = this.responseText;
-//             }
-//         }
-
-//         http.open("GET", url);
-//         http.send();
-
-
-//     }
-// });
-
-
-// window.onload = function() {
-//     buscarOferta();
-// };
-// function buscarOferta(){
-//     var campana=document.getElementById('campana_id').value;
-//     var url = '/buscaCampana';
-//     $.ajax({
-//       headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-//       type: "GET",
-//       dataType: "json",
-//       url: url,
-//       data: {'campana': campana},
-//             beforeSend: function(){
-//               //$("#laGrafica").html("<div id='loader'></div>")
-//             },
-//             success: function (resultado){
-//                 console.log(resultado.campana);
-//                 //location.href = '/promocion';
-//                 var urlPara = "{{ route('web.verCampa',":id") }}";
-//                 urlPara = urlPara.replace(':id', resultado.campana);
-//                 window.location = urlPara;
-
-//             },
-//     });
-//   }
-
-
 "use strict"
 
 document.addEventListener('DOMContentLoaded', e => {
@@ -75,17 +5,14 @@ document.addEventListener('DOMContentLoaded', e => {
 
     getAll();
 
-    let btns = document.querySelectorAll('.desplegable-categoria').forEach(boton => {
+    //muestra 2 últimas noticias de la categoria donde clickea
+    let btns = document.querySelectorAll('.desplegable-categoria-2').forEach(boton => {
         boton.addEventListener('click', e => {
-        console.log(e.target.id);
-            getByCategory(e)
+            e.preventDefault;
+
+            getByCategory(e, boton)
         })
     })
-
-    // const contenedor = document.querySelector('.desplegable-categoria'); //variable contrante para la clase
-    // contenedor.addEventListener('click', (elemento) => {
-    //     console.log(elemento.target.id)
-    // })
 });
 
 
@@ -106,7 +33,7 @@ async function getAll() {
       const response = await fetch( url);
       const noticias = await response.json();
 
-      console.log(noticias);
+    //   console.log(noticias);
       //llamo a la funcion que muestra las tareas
     //   showNoticias(noticias);
 
@@ -115,33 +42,64 @@ async function getAll() {
   }
 }
 
-
-async function getByCategory(botonSeleccionado) {
+/*Busca ultimas 2 noticias de la categoria seleccionada*/
+async function getByCategory(e, boton) {
     try {
         //let idTour = window.location.pathname.substr(window.location.pathname.lastIndexOf('/') + 1);
-        const url = 'filtro-noticias/categoria';
+        const url = 'categoria';
+        let categoria = e.target.id;
 
-        let categoria = botonSeleccionado;
-        console.log(categoria);
-      //   var csrf =  document.querySelector('meta[name="csrf-token"]').content;
-      //   console.log(csrf);
+        let idCat = categoria.split("_");
+        let idCategoria = idCat[1];
+         console.log(idCategoria);
+
+        // var csrf =  document.querySelector('meta[name="csrf-token"]').content;
+        // console.log(csrf);
 
 
-      //   const options = {
-      //         method: "GET",
-      //         headers: csrf
-      //   }
-        // const response = await fetch( "/" + url + "/" + categoria);
-        // const noticias = await response.json();
+        // const options = {
+        //       method: "GET",
+        //       headers: csrf
+        // }
+        const response = await fetch(  url + "/" + idCategoria);
+        const noticias = await response.json();
 
-        // console.log(noticias);
-        //llamo a la funcion que muestra las tareas
-      //   showNoticias(noticias);
+
+        //llamo a la funcion que muestra las noticias
+        showDesplegableByCategory(noticias.data, idCategoria, boton);
 
     } catch (e) {
         console.log(e);
     }
 }
+
+/*Muestra las noticias de la categoria seleccionada*/
+function showDesplegableByCategory(noticias, idCategoria, boton){
+
+    let contenedorClass = ".noticias-por-categoria"+idCategoria;
+    let contenedor  = document.querySelector(contenedorClass);
+    let iconClosed = boton.querySelector(".icon-closed");
+    let iconOpen = boton.querySelector(".icon-open");
+
+    contenedor.classList.toggle("display-none");
+    iconClosed.classList.toggle("display-none");
+    iconOpen.classList.toggle("display-none");
+
+    console.log(noticias);
+
+    let respuesta = "";
+    if(noticias[0]){
+      respuesta += `<li class="noticias-categoria-item"> <a href="noticia/${noticias[0]['pathname']}">  ${noticias[0]['titulo'].substr(0, 40)}.. </a> </li>`;
+    }
+    if(noticias[1]){
+        respuesta += `<li class="noticias-categoria-item"> <a href="noticia/${noticias[1]['pathname']}">  ${noticias[1]['titulo'].substr(0, 40)}.. </a> </li>`;
+    }
+
+    contenedor.innerHTML = respuesta;
+    // contenedor += `<li class="noticias-categoria-item"> <a href="noticia/${noticias[1]['pathname']}">  ${noticias[1]['titulo']} </a> </li>`;
+
+}
+
 
 
 

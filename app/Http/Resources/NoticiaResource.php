@@ -19,6 +19,7 @@ class NoticiaResource extends JsonResource
         return[
             'titulo' => $this->titulo,
             'descripcion' => $this->descripcion,
+            'pathname' => $this->pathname,
         ];
     }
 }

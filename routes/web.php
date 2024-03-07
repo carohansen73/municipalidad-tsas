@@ -53,6 +53,7 @@ Route::controller(HomeController::class)->group(function () {
     /*NOTICIAS */
     Route::get('/portal-de-noticias', 'showNoticias');
     Route::get('/noticia/{titulo}', 'showNoticia');
+    Route::get('/noticias-categoria/{categoria}', 'showNoticiasPorCategoria');
 
 });
 
@@ -69,7 +70,7 @@ Route::controller(ReclamosController::class)->group(function () {
 Route::controller(NoticiaController::class)->group(function () {
     // Route::get('/orders/{id}', 'show');
     Route::get('/filtro-noticias/all', 'all');
-    Route::get('/filtro-noticias/categoria/{categoria}', 'getByCategory');
+    Route::get('/categoria/{id}', 'getByCategory');
     // Route::post('/ingresar-reclamo', 'store');
 });
 
