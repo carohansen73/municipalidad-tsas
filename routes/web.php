@@ -46,13 +46,17 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
-  /*SERVICIOS */
-  Route::get('/servicios', 'showListServicios');
+    /*SERVICIOS */
+    Route::get('/servicios', 'showListServicios');
+
+    /*EDUCACION */
+    Route::get('/educacion', 'showSeccionEducation');
+    Route::get('/educacion/{id}', 'showEducationByLevel');
 
 
     /*NOTICIAS */
-    Route::get('/portal-de-noticias', 'showNoticias');
-    Route::get('/noticia/{titulo}', 'showNoticia');
+    Route::get('/portal-de-noticias', 'showAllNews');
+    Route::get('/noticia/{titulo}', 'showNews');
     Route::get('/noticias-categoria/{categoria}', 'showNoticiasPorCategoria');
 
 });

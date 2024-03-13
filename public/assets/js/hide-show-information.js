@@ -24,27 +24,35 @@ document.addEventListener('DOMContentLoaded', e => {
         })
     })
 
+
+
+
+    document.querySelectorAll(".div-mas-info").forEach(div =>{
+        div.addEventListener('click', e => {
+             e.preventDefault();
+            mostrarMasInfo(div);
+        })
+    })
+
+
     function ocultarDiv(divActivo){
         console.log("llego");
         divActivo.classList.add("display-none");
     }
 
-    // document.addEventListener("click", e => {
-    //     console.log('click');
-    //     let elementoActivo = document.querySelector(".activo");
-    //     console.log(elementoActivo);
-    //     elementoActivo.classList.add("display-none");
-    //     elementoActivo.classList.remove("activo");
-    // })
-    // document.getElementsByTagName("section").forEach(seccion =>{
-    //     seccion.addEventListener('click', e=>{
-    //         console.log('click');
-    //     })
-    // })
+    function mostrarMasInfo(div){
+        let iconClosed = div.querySelector(".icon-closed");
+        let iconOpen = div.querySelector(".icon-open");
+        let divId = 'info-'+div.id;
+        console.log(divId);
+        let divMostrar = document.getElementById(divId);
+        //muestro la informacion
+        divMostrar.classList.toggle("display-none");
+        //CAMBIO EL ICONO "ABIERTO/CERRADO"
+        iconClosed.classList.toggle("display-none");
+        iconOpen.classList.toggle("display-none");
+    }
 
-    // $(document).on("click",".cerrarModal",function(){
-    //     $(".modal").fadeOut();
-    //     $(".cerrarModal").attr("class","")
-    //   })
+
 
 });

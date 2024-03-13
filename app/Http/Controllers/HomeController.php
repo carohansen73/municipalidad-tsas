@@ -13,6 +13,9 @@ use App\Models\Museo;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
 use App\Models\NoticiaCategoria;
+use App\Models\InstitucionEducativaNivel;
+use App\Models\InstitucionEducativa;
+use App\Models\PropuestaAcademica;
 
 use App\Models\Delegacion;
 
@@ -123,6 +126,33 @@ class HomeController extends Controller
     }
 
 
+    /**
+     * Muestra la seccion educacion, con los diferenets niveles educativos
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showSeccionEducation()
+    {
+        $niveles = InstitucionEducativaNivel::all();
+        return view('sections.educacion', compact('niveles'));
+    }
+
+
+    /**
+     * Muestra la seccion educacion inicial / primaria y secundaria / superior
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showEducationByLevel($id)
+    {
+        $niveles = InstitucionEducativaNivel::all();
+        $establecimientos = InstitucionEducativa::where('nivel_id', $id)->with('carreras')->get();
+
+        return view('sections.establecimientos-educativos', compact('niveles', 'establecimientos'));
+    }
+
+
+
   /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
 
     /**
@@ -191,7 +221,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showNoticias() /*paginar? o x js hacer api*/
+    public function showAllNews() /*paginar? o x js hacer api*/
     {
         $noticias = Noticia::with('imgs')->get();
         $categorias = NoticiaCategoria::all();
@@ -210,7 +240,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showNoticia($titulo)
+    public function showNews($titulo)
     {
         /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios x -!!!!!!*/
 
