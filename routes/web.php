@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReclamosController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\NoticiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,13 +46,18 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
-  /*SERVICIOS */
-  Route::get('/servicios', 'showListServicios');
+    /*SERVICIOS */
+    Route::get('/servicios', 'showListServicios');
+
+    /*EDUCACION */
+    Route::get('/educacion', 'showSeccionEducation');
+    Route::get('/educacion/{id}', 'showEducationByLevel');
 
 
     /*NOTICIAS */
-    Route::get('/portal-de-noticias', 'showNoticias');
-    Route::get('/noticia/{titulo}', 'showNoticia');
+    Route::get('/portal-de-noticias', 'showAllNews');
+    Route::get('/noticia/{titulo}', 'showNews');
+    Route::get('/noticias-categoria/{categoria}', 'showNoticiasPorCategoria');
 
 });
 
@@ -63,6 +68,14 @@ Route::controller(ReclamosController::class)->group(function () {
     Route::get('/reclamos', 'index');
     Route::get('/nuevo-reclamo', 'create');
     Route::post('/ingresar-reclamo', 'store');
+});
+
+/* Noticias*/
+Route::controller(NoticiaController::class)->group(function () {
+    // Route::get('/orders/{id}', 'show');
+    Route::get('/filtro-noticias/all', 'all');
+    Route::get('/categoria/{id}', 'getByCategory');
+    // Route::post('/ingresar-reclamo', 'store');
 });
 
 

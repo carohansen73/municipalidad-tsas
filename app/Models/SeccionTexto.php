@@ -18,12 +18,6 @@ class SeccionTexto extends Model
         'seccion_id',
         'titulo',
         'informacion',
-        'subtitulo',
-        'sub_informacion',
-        'img_portada',
-        'img_2',
-        'img_3',
-        'img_4'
     ];
 
     public function seccion()
@@ -31,4 +25,8 @@ class SeccionTexto extends Model
         return $this->belongsTo(SeccionPagina::class, 'seccion_id');
     }
 
+    public function imgs()
+    {
+        return $this->hasMany(Galeria::class);
+    }
 }

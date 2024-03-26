@@ -67,7 +67,7 @@
                         {{-- <i class="bi bi-card-checklist"></i> --}}
                           {{-- <i class="bi bi-chat-dots"></i> --}}
                     {{-- <i class="fas fa-hand-holding-usd"></i> --}}
-                        <h3>Cultura y educación</h3>
+                        <h3>Cultura</h3>
                     </div>
                 </a>
             </div>
@@ -271,7 +271,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="icon-box icon-4">
                     <div class="icon"><i class="bi bi-calendar3"></i></div>
-                    <h4><a href="">Calendario de Vencimientos</a></h4>
+                    <h4><a href="https://aplicaciones.tresarroyos.gov.ar/graficas/calendario.pdf" target="_blank" alt="Vencimientos 2023">Calendario de Vencimientos</a></h4>
                     {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
                     </div>
                 </div>
@@ -372,9 +372,9 @@
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-          <h3>Tres Arroyos Digital</h3>
-          <p> Ingresá a Tres Arroyos digital. Creá tu cuenta de TADi para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
-          <a class="cta-btn" href="http://municipalidad-tsas.test/tadi">Ingresá a TA-Di</a>
+          <h3>Mi Tresa</h3>
+          <p> Ingresá a MiTresa. Registrate para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
+          <a class="cta-btn" href="http://municipalidad-tsas.test/tadi">Ingresá a MiTresa</a>
         </div>
 
       </div>

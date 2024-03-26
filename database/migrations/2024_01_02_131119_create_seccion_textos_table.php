@@ -19,12 +19,6 @@ class CreateSeccionTextosTable extends Migration
             $table->foreign('seccion_id')->references('id')->on('seccion_pagina');
             $table->string('titulo');
             $table->string('informacion');
-            $table->string('subtitulo');
-            $table->string('sub_informacion');
-            $table->string('img');
-            $table->string('img_portada');
-            $table->string('img_3');
-            $table->string('img_4');
             $table->timestamps();
         });
     }

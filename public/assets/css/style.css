@@ -18,6 +18,7 @@ colores{
     color: #aaaaaa;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    color:#999999;
 
 
       /* NEGROS */
@@ -82,9 +83,26 @@ body {
   color: #444444;
 }
 
+.font-detail{
+    font-size: 14px;
+}
+
+.font-detail-minimalist{
+    font-size: 12px;
+    color: #999999;
+}
+
 a {
   color: #ffc451;
   text-decoration: none;
+}
+
+.a-blue{
+    color: rgb(13, 116, 189);
+}
+
+.a-blue:hover{
+    color: rgb(89, 152, 197);
 }
 
 a:hover {
@@ -196,22 +214,27 @@ h6 {
 #header.header-scrolled,
 #header.header-inner-pages {
   /* background: rgba(0, 0, 0, 0.8); */
-  background: rgba(13, 116, 189, 0.967);
+  /* background: rgba(13, 116, 189, 0.967); */
+  /* background: rgba(244, 244, 244, 0.967); */
+   background: rgba(255, 255, 255, 0.967);
+
+  box-shadow:  0px 0px 6px 6px rgba(39, 39, 40, 0.394);
 }
 
 #header .logo {
-  font-size: 32px;
+  font-size: 18px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-#header .logo a {
-  color: #fff;
-}
+/* #header .logo a {
+    color: #373737;
+} */
 
 #header .logo a span {
   color: #ffc451;
@@ -235,7 +258,7 @@ h6 {
 --------------------------------------------------------------*/
 
 .get-started-btn {
-   color: #fff;
+   /* color: #fff; */
   /* border-radius: 4px; */
   /* padding: 3px 0px 4px 0px; */
   white-space: nowrap;
@@ -309,12 +332,12 @@ h6 {
 @media (min-width: 992px) {
 
     .get-started-btn {
-        color: #fff;
+        /* color: #fff; */
 
      }
     .get-started-group{
 
-        color: #fff;
+        /* color: #373737; */
         padding: 3px 10px 4px 10px;
     }
 
@@ -374,8 +397,8 @@ h6 {
       justify-content: space-between;
       padding: 10px 0 10px 30px;
       font-size: 14px;
-      font-weight: 400;
-      color: #fff;
+      font-weight: 500;
+      /* color: #373737; */
       white-space: nowrap;
       transition: 0.3s;
     }
@@ -592,16 +615,27 @@ h6 {
 
 @media (max-width: 991px) {
     #hero {
-        width: 100%;
+         width: 100%;
         height: 250px;
+    }
+
+    #hero #video{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
     }
 }
 
-#hero #video{
-    position: absolute;
-    z-index: 0;
-    width: 100%;
+
+@media (min-width: 991px) {
+    #hero #video{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+    }
 }
+
+
 
 #hero:before {
   content: "";
@@ -810,7 +844,7 @@ h6 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   #hero {
     max-height: 250px;
     height: auto;
@@ -888,6 +922,17 @@ section {
   font-family: "Poppins", sans-serif;
   color: rgb(13, 116, 189);
 }
+
+@media (max-width: 991px) {
+    .section-title {
+        padding-left: 16px;
+    }
+
+    .section-title p {
+        font-size: 26px;
+    }
+}
+
 
 /*--------------------------------------------------------------
 # About
@@ -1237,9 +1282,10 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/generals/wolrd-digital.jpg") fixed center center;
+  /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/generals/blue.png") fixed center center; */
   /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections/geom-2.jpg") fixed center center; */
-  /* background:url("../img/sections/fondo.jpg") fixed center center; */
+   /* background:url("../img/generals/blue.png") fixed center center; */
+background-color: #004f9f;
   background-size: cover;
   padding: 60px 0;
 }
@@ -1773,20 +1819,21 @@ section {
 # CULTURA / EVENTOS (reutilizo estilo MUSEOS - Team)
 --------------------------------------------------------------*/
 section #cultura-eventos {
-    /* background-color: #d63384; */
+    background-color: #d63384;
     /* background-color: #ce1537; */
-    background-color: #662483;
+    /* background-color: #662483; */
+
 
 }
-#cultura-eventos p{
+.eventos p{
     color: #FFF;
 }
 
-#cultura-eventos .container{
+.eventos .container{
     padding: 50px  0px 80px 0px;
 }
 
-#cultura-eventos .member-info h4{
+.eventos .member-info h4{
     color: #ce1537;
 }
 
@@ -1796,12 +1843,18 @@ section #cultura-eventos {
     border-radius: 30px;
 }
 
-#cultura-eventos .member-img,
-#cultura-eventos .member{
+.eventos .member-img,
+.eventos .member{
 
     border-radius: 30px;
     box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.645);
 }
+
+section #deportes-eventos{
+    background-color: #2464a3;
+
+}
+
 /*--------------------------------------------------------------
 # otras secciones / NOTICIAS - EVENTOS (reutilizo estilo MUSEOS - Team)
 --------------------------------------------------------------*/
@@ -1959,16 +2012,31 @@ section #cultura-eventos {
     font-weight: 500;
 }
 
+#noticias .aside-lateral button{
+   background: none;
+    border: none;
+    color: #FFFFFF;
+}
+
 /* fin noticias relacionadas (cards pequeños)*/
 
 #noticias  .aside-principal{
     padding-right: 20px;
 }
-
-#noticias .aside-lateral{
-    border-left: 1px solid whitesmoke;
-    padding-left: 20px;
+@media (max-width: 992px) {
+    #noticias .aside-lateral{
+        border-left: none;
+    }
 }
+
+@media  (min-width: 992px) {
+    #noticias .aside-lateral{
+        border-left: 1px solid whitesmoke;
+        padding-left: 20px;
+    }
+}
+
+
 
 #noticias .aside-lateral .section-title{
    padding-bottom: 0px;
@@ -1982,6 +2050,10 @@ section #cultura-eventos {
 
 #noticias .aside-lateral ul li{
     list-style: none;
+}
+
+#noticias .aside-lateral ul li .desplegable-categoria-boton{
+
     background-color: rgb(13, 116, 189);
     color: #fff;
     padding: 10px 15px;
@@ -1994,6 +2066,18 @@ section #cultura-eventos {
 
 #noticias .aside-lateral ul li p{
     margin-bottom: 0px;
+}
+
+
+.noticias-categoria-item{
+    font-size: 14px;
+    padding-left: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.noticias-categoria-item a{
+   color: rgb(13, 116, 189);
+   font-size: 13px;
 }
 
 
@@ -2298,6 +2382,25 @@ section #cultura-eventos {
 .telefonos-utiles span{
     font-size: 18px;
     font-weight: 800;
+}
+
+@media (max-width: 992px) {
+    .telefono-icono i{
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .telefonos-utiles p{
+        font-size: 14px;
+    }
+
+    .telefonos-utiles .telefono{
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
 }
 
 /*--------------------------------------------------------------
@@ -2633,11 +2736,50 @@ input[type=number] { -moz-appearance:textfield; }
 .portada-foto{
     height: 320px;
     width: 100%;
-    background-size: cover;
+    /* background-size: cover; */
     align-items: end;
     z-index: 1;
     top: 0 !important;
 }
+
+ #municipio .portada-foto{
+     background-image: url("../img/sections-portadas/portadas/municipio.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/municipio.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+}
+
+#atencion-al-vecino .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/atencion-al-vecino.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/atencion-al-vecino.jpg") fixed center center; */
+
+    height: 320px;
+    background-size: cover;
+}
+
+#ciudad-productiva .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/ciudad-productiva.jpg");
+    background-position: center;
+
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/ciudad-productiva.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+}
+
+#cultura .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/cultura.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/cultura.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+}
+
+#deportes .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/deportes.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/deportes.jpg") fixed center center; */
+    background-position: center;
+    background-size: cover;
+}
+
 
 .portada-foto .background-portada{
     position: absolute;
@@ -2656,15 +2798,38 @@ background-image: url("../img/sections-portadas/tsas2.jpg");
 background-size: cover;
 }
 
+#municipio .background-portada{
+    background: linear-gradient(#3baa353f, #3baa353f);
+}
+
+#atencion-al-vecino  .background-portada{
+    /* background: linear-gradient(#d634528b, #d634528b); */
+    background: linear-gradient(#f4bf006f, #f4bf006f);
+}
+
+#ciudad-productiva .background-portada{
+    background: linear-gradient(#f07f076b, #f07f076b);
+}
 
 #cultura  .background-portada{
-    background: linear-gradient(#67248366, #67248392);
+    background: linear-gradient(#d633845f, #d633845f);
+}
+
+#deportes .background-portada{
+    background: linear-gradient(#2463a38d, #2463a38d);
 }
 
 #delegaciones  .background-portada{
     /* background: linear-gradient(#d634528b, #d634528b); */
     background: linear-gradient(#f4bf0031, #f4bf0031);
 }
+
+#portada-secciones .background-portada{
+    /* background: linear-gradient(#d634528b, #d634528b); */
+    background: linear-gradient(#2727274f, #2727274f);
+}
+
+
 /*fin color blur*/
 
 .portada-foto .foto-portada{
@@ -2695,6 +2860,17 @@ background-size: cover;
     text-transform: uppercase;
 }
 
+@media (max-width: 991px) {
+    .portada-foto h1{
+
+        top: 100px;
+        padding: 20px 50px;
+
+
+
+    }
+}
+
 .container-border{
     width: 100%;
     height: 10px;
@@ -2704,22 +2880,33 @@ background-size: cover;
 
 }
 
+.container-border .row>*{
+    padding: 0px;
+}
+
 .container-border .border-1{
-    background-color: #f4c000;
+
+    background-color: #53c04d;
     height: 10px;
 }
 
  .container-border .border-2{
-    background-color: #662483;
+
+    background-color: #f4c000;
     height: 10px;
 }
  .container-border .border-3{
-    background-color: #d63384;
+    background-color: #f07e07;
     height: 10px;
 }
 
 .container-border .border-4{
-    background-color: #53c04d;
+    background-color: #d63384;
+    height: 10px;
+}
+
+.container-border .border-5{
+    background-color: #662483;
     height: 10px;
 }
 
@@ -2825,54 +3012,54 @@ background-size: cover;
 }
 
 .team .card-icono .member-1 i{
-    color: #d63384;
-}
-
-.team .card-icono .member-1 .card-ver-mas a{
-    background-color: #d63384;
-}
-
-.team .card-icono .member-1 .card-ver-mas a:hover{
-    background-color: #e64394 ;
-    color: #fff;
-}
-
-.team .card-icono .member-2 i{
     color: #3aaa35;
 }
 
-.team .card-icono .member-2 .card-ver-mas a{
+.team .card-icono .member-1 .card-ver-mas a{
     background-color: #3aaa35;
 }
 
-.team .card-icono .member-2 .card-ver-mas a:hover{
+.team .card-icono .member-1 .card-ver-mas a:hover{
     background-color: #53c04d ;
     color: #fff;
 }
 
+.team .card-icono .member-2 i{
+    color: #f4c000;
+}
+
+.team .card-icono .member-2 .card-ver-mas a{
+    background-color: #f4c000;
+}
+
+.team .card-icono .member-2 .card-ver-mas a:hover{
+    background-color: #ffd53f ;
+    color: #fff;
+}
+
 .team .card-icono .member-3 i{
-    color: #004f9f;
+    color: #f07e07;
 }
 
 .team .card-icono .member-3 .card-ver-mas a{
-    background-color: #004f9f;
+    background-color: #f07e07;
 }
 
 .team .card-icono .member-3 .card-ver-mas a:hover{
-    background-color: #2464a3 ;
+    background-color: #ea8f2e ;
     color: #fff;
 }
 
 .team .card-icono .member-4 i{
-    color: #f07e07;
+    color: #d63384;
 }
 
 .team .card-icono .member-4 .card-ver-mas a{
-    background-color: #f07e07;
+    background-color: #d63384;
 }
 
 .team .card-icono .member-4 .card-ver-mas a:hover{
-    background-color: #ea8f2e ;
+    background-color: #e64394 ;
     color: #fff;
 }
 
@@ -2891,15 +3078,15 @@ background-size: cover;
 
 
 .team .card-icono .member-6 i{
-    color: #f4c000;
+    color: #004f9f;
 }
 
 .team .card-icono .member-6 .card-ver-mas a{
-    background-color: #f4c000;
+    background-color: #004f9f;
 }
 
 .team .card-icono .member-6 .card-ver-mas a:hover{
-    background-color: #ffd53f ;
+    background-color: #2464a3 ;
     color: #fff;
 }
 
@@ -2951,6 +3138,10 @@ background-size: cover;
 }
 
 
+.modalimg{
+    width: 100%;
+}
+
 
 /* HTML:
 
@@ -2967,6 +3158,19 @@ background-size: cover;
     </div>
 </div>
 </div> */
+
+
+
+.font-color-wh{
+   color: #ffffff;
+   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.922);
+}
+
+.font-color-bl{
+    color: #343434;
+    text-shadow: 2px 2px 2px rgba(223, 223, 223, 0.922);
+    /* text-shadow: 1px #010101; */
+ }
 
 
 

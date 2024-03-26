@@ -4,13 +4,21 @@ namespace App\Http\Controllers;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
-use App\Models\SeccionPagina;
 use App\Models\SeccionMenu;
+use App\Models\Evento;
+use App\Models\SeccionPagina;
 use App\Models\SeccionTexto;
+use App\Models\Galeria;
+use App\Models\GaleriaPortada;
+use App\Models\Archivos;
 use App\Models\Museo;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
-use App\Models\Archivos;
+use App\Models\NoticiaCategoria;
+use App\Models\InstitucionEducativaNivel;
+use App\Models\InstitucionEducativa;
+use App\Models\PropuestaAcademica;
+
 use App\Models\Delegacion;
 
 
@@ -63,6 +71,8 @@ class HomeController extends Controller
        //tomo los datos y las entidades que pertenecen a esa seccion
        $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
+       $eventos = Evento::whereIn('seccion_id', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+
 
         //  $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
         // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
@@ -74,7 +84,7 @@ class HomeController extends Controller
         //asi los traigo y recorro con foreach y puedo agregar nuevas secciones desde el cms
         //img con las mismas dimensiones para qeu queden bien y se puede sacar el height de css
 
-        return view('sections.generales', compact('secciones', 'nombreSeccion'));
+        return view('sections.generales', compact('secciones', 'nombreSeccion', 'eventos', 'pathSeccion'));
     }
 
 
@@ -90,18 +100,20 @@ class HomeController extends Controller
         // $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
         //tomo los datos y las entidades que pertenecen a esa seccion
-        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->with('imgs')->get();
 
         $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
         $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
+        $portada = GaleriaPortada::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
         //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
 
         //despejo el nombre de la seccion
         $seccionArray = explode("/", $pathSeccion);
         $seccion = array_pop($seccionArray);
 
-        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion'));
+        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion', 'portada'));
     }
 
      /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
@@ -116,6 +128,33 @@ class HomeController extends Controller
         $delegaciones = Delegacion::all();
         return view('sections.delegaciones', compact('delegaciones'));
     }
+
+
+    /**
+     * Muestra la seccion educacion, con los diferenets niveles educativos
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showSeccionEducation()
+    {
+        $niveles = InstitucionEducativaNivel::all();
+        return view('sections.educacion', compact('niveles'));
+    }
+
+
+    /**
+     * Muestra la seccion educacion inicial / primaria y secundaria / superior
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showEducationByLevel($id)
+    {
+        $niveles = InstitucionEducativaNivel::all();
+        $establecimientos = InstitucionEducativa::where('nivel_id', $id)->with('carreras')->get();
+
+        return view('sections.establecimientos-educativos', compact('niveles', 'establecimientos'));
+    }
+
 
 
   /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
@@ -186,16 +225,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showNoticias() /*paginar? o x js hacer api*/
+    public function showAllNews() /*paginar? o x js hacer api*/
     {
         $noticias = Noticia::with('imgs')->get();
+        $categorias = NoticiaCategoria::all();
         // foreach($noticias as $noti){
         //     foreach($noti->imgs as $imag){
         //         var_dump($imag->img);die;
         //     }
 
         // }
-        return view('sections.noticias', compact('noticias'));
+        return view('sections.noticias', compact('noticias', 'categorias'));
     }
 
 
@@ -204,7 +244,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showNoticia($titulo)
+    public function showNews($titulo)
     {
         /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios x -!!!!!!*/
 
@@ -212,9 +252,15 @@ class HomeController extends Controller
         $noticias = Noticia::with('imgs')->get();
         $noticia = Noticia::where('pathname', $titulo)->with('imgs')->get();
 
-        foreach($noticias as $noti){
-            $categoria = $noti->categoria;
+        foreach($noticia as $noti){
+            $categoriaId = $noti->categoria->id;
         }
+
+        $categorias = NoticiaCategoria::all();
+        $ultimasNoticias = Noticia::latest()->take(3)->get();
+        $noticiasRelacionadas = Noticia::where('categoria_id', $categoriaId)->latest()->take(3)->get();
+
+
 
         //  foreach($noticias as $noti){
         //     //modifico el titulo para usarlo de path url
@@ -229,8 +275,29 @@ class HomeController extends Controller
         //     }
         //  }
 
-        return view('sections.noticia', compact('noticias', 'noticia', 'categoria'));
+        return view('sections.noticia', compact('noticias', 'noticia', 'categoriaId', 'ultimasNoticias', 'noticiasRelacionadas', 'categorias'));
     }
 
+
+    /**
+     * Muestra las noticias pertenecientes a la categoria seleccionada
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showNoticiasPorCategoria($categoriaNombre)
+    {
+        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios por - !!!!!!*/
+
+        // var_dump($titulo);die;
+        $noticias = Noticia::where('categoria_id', NoticiaCategoria::where('nombre', $categoriaNombre)->pluck('id'))->with('imgs')->get();
+
+        $categorias = NoticiaCategoria::all();
+
+        // $ultimasNoticias = Noticia::latest()->take(3)->get();
+        $ultimasNoticias = Noticia::orderBy('fecha', 'desc')->take(3)->get();
+
+
+        return view('sections.noticias', compact('noticias',  'categorias', 'categoriaNombre', 'ultimasNoticias'));
+    }
 
 }

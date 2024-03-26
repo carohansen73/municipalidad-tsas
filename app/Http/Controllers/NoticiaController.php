@@ -1,12 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Noticia;
+use App\Models\NoticiaImg;
+use App\Http\Resources\NoticiaResource;
 
 use App\Http\Requests\CreatenoticiaRequest;
 use App\Http\Requests\UpdatenoticiaRequest;
 use App\Repositories\noticiaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+
+
+use Symfony\Component\Routing\Route;
+
 use Flash;
 use Response;
 use App\Models\Categoria;
@@ -170,4 +177,19 @@ class noticiaController extends AppBaseController
 
         return redirect(route('noticias.index'));
     }
+    public function all(){
+         return NoticiaResource::collection(Noticia::latest()->paginate());
+        // return $campana = 'hola';
+    }
+
+    public function getByCategory($id){
+        // var_dump($categoria);die;
+         return NoticiaResource::collection(Noticia::where('categoria_id', $id)->latest()->take(2)->get());
+        // $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
+    }
+
+    // public function show(Noticia $noticia){
+    //     return new NoticiaResource($noticia);
+    // }
 }
