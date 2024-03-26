@@ -152,9 +152,10 @@
         $(this).bootstrapSwitch('state', $(this).prop('checked'));
     });
 </script>
-
+1
 @stack('third_party_scripts')
-
+aca
 @stack('page_scripts')
+aca
 </body>
 </html>
