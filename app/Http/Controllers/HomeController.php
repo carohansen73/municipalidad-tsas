@@ -8,6 +8,8 @@ use App\Models\SeccionMenu;
 use App\Models\Evento;
 use App\Models\SeccionPagina;
 use App\Models\SeccionTexto;
+use App\Models\Galeria;
+use App\Models\GaleriaPortada;
 use App\Models\Archivos;
 use App\Models\Museo;
 use App\Models\Noticia;
@@ -98,18 +100,20 @@ class HomeController extends Controller
         // $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
         //tomo los datos y las entidades que pertenecen a esa seccion
-        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->with('imgs')->get();
 
         $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
         $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+
+        $portada = GaleriaPortada::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
         //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
 
         //despejo el nombre de la seccion
         $seccionArray = explode("/", $pathSeccion);
         $seccion = array_pop($seccionArray);
 
-        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion'));
+        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion', 'portada'));
     }
 
      /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/

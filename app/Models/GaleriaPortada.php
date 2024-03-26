@@ -5,28 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SeccionTexto extends Model
+class GaleriaPortada extends Model
 {
     use HasFactory;
-
-
-    public $table = 'seccion_textos';
+    public $table = 'galeria_portada';
 
     protected $dates = ['deleted_at'];
 
     public $fillable = [
+        'id',
+        'img',
         'seccion_id',
-        'titulo',
-        'informacion',
     ];
 
     public function seccion()
     {
-        return $this->belongsTo(SeccionPagina::class, 'seccion_id');
+        return $this->belongsTo(SeccionTexto::class, 'seccion_id');
     }
 
-    public function imgs()
-    {
-        return $this->hasMany(Galeria::class);
-    }
 }

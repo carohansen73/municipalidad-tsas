@@ -26,42 +26,58 @@
                 @foreach($establecimientos as $est)
                     <div class="col-lg-12 item-tramite" data-aos="fade-left" data-aos-delay="100">
 
-                        <a href="">
+                        <a href="" >
                             <div id="{{$est->id}}" class="icon-box  div-tramite" data-aos="zoom-in" data-aos-delay="150">
-                            <span class="icon-closed"><i class="fas fa-angle-right"></i></span>
-                            <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
-                                <h4>{{$est->nombre}}</h4>
+                                <div class="d-flex align-items-center">
+                                    <span class="icon-closed "><i class="fas fa-angle-right pb-2"></i></span>
+                                    <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
+                                    <h4 >{{$est->nombre}}</h4>
+                                </div>
+
                             </div>
                         </a>
 
                         <div id="informacion-{{$est->id}}" class="row col-lg-12 informacion-tramite display-none ms-lg-5">
 
- {{--  carreras  --}}
- <div  class="col-lg-6 ">
-    @foreach($est->carreras as $carrera)
-        @if ($carrera->id)
-            <h4>Propuesta académica </h4>
-            @break
-        @endif
-    @endforeach
-    @foreach($est->carreras as $carrera)
-        <a href="" class="a-blue">
-            <div id="carrera-{{$carrera->id}}" class="col-lg-12 div-mas-info " >
-                <span class="icon-closed"><i class="fas fa-angle-right"></i> {{$carrera->nombre}}</span>
-                <span class="icon-open display-none"><i class="fas fa-angle-down"></i> {{$carrera->nombre}}</span>
-            </div>
-        </a>
-        <div id="info-carrera-{{$carrera->id}}" class="display-none font-detail" >
-            <p class="font-detail-minimalist"> {!! $carrera->periodo_inscripcion !!}</p>
-            <p>{!! $carrera->informacion !!}</p>
-            <p>   <a href="" ><i class="fas fa-mouse-pointer"></i> {!! $carrera->links !!} </a></p>
-        </div>
-    @endforeach
-</div>
- {{--  fin carreras  --}}
+                            {{--  info del establecimiento  --}}
+                            @if($est->informacion)
+                                <p  class="font-detail mb-5">{!! $est->informacion !!}</p>
+                            @endif
+
+                            {{--  carreras  --}}
+                                @foreach($est->carreras as $carrera)
+                                    @if ($carrera->id)
+                                    <div  class="col-lg-6 mb-4">
+                                        <h4>Propuesta académica </h4>
+
+                                        <div class="ms-2">
+
+                                            @foreach($est->carreras as $carrera)
+                                                <a href="" class="a-blue">
+                                                    <div id="carrera-{{$carrera->id}}" class="col-lg-12 div-mas-info " >
+                                                        <span class="icon-closed"><i class="fas fa-angle-right"></i> {{$carrera->nombre}}</span>
+                                                        <span class="icon-open display-none"><i class="fas fa-angle-down"></i> {{$carrera->nombre}}</span>
+                                                    </div>
+                                                </a>
+                                                <div id="info-carrera-{{$carrera->id}}" class="display-none font-detail ms-2" >
+                                                    <p class="font-detail-minimalist"> {!! $carrera->periodo_inscripcion !!}</p>
+                                                    <p>{!! $carrera->informacion !!}</p>
+                                                    @if($carrera->links)
+                                                    <p>   <a href="{{$carrera->links}}" target="_blank"><i class="fas fa-mouse-pointer"></i> {!! $carrera->links !!} </a></p>
+                                                    @endif
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
+                                    @break
+                                    @endif
+                                @endforeach
+                            {{--  fin carreras  --}}
+
 
                             {{-- info del establecimiento --}}
-                            <div  class="col-lg-6 ps-5">
+                            <div  class="col-lg-6 ps-lg-5 mb-4">
                                 <h4 class="">Información del establecimiento </h4>
                                 <h6 class="d-flex align-items-center">
                                     <span style="font-size: 24px; padding-right:10px;"> <i class="fas fa-map-marker-alt"></i></span>

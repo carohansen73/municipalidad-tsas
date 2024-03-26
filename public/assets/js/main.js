@@ -75,12 +75,23 @@
         })
     }
 
+        /**
+     *add/remove class del menu para desktop/mobile - (ver que lo haga cuando cambio el tamaño de la pantalla,  xq1 solo lo hace cuando cargo la pantalla de un tamaño u otro )
+    */
+
+     let navbar1 = select('#navbar')
+     if(window.innerWidth > 991) {
+         console.log(window.innerWidth)
+         navbar1.classList.add('navbar-desktop')
+     }
+
+
     /**
     * Toggle .header-scrolled navbar sin fondo hasta que se hace scroll
     */
     let selectHeader = select('#header')
     let locationPath = window.location.pathname;
-    let itemsNavbar = select('#navbar .nav-link, .get-started-buttons a .get-started-group , .logo', true);
+    let itemsNavbar = select('.navbar-desktop .nav-link, .get-started-buttons a .get-started-group , .logo , .navbar .mobile-nav-toggle', true);
     let portadaConImg = select('.portada-foto');
     // if (selectHeader && (locationPath == '/' || locationPath == '/cultura' || locationPath == '/museos' || locationPath == '/municipio' || locationPath == '/ciudad-productiva' || locationPath == '/deportes' || locationPath == '/atencion-al-vecino')) {
     if (selectHeader && (portadaConImg || locationPath == '/') ){
@@ -133,10 +144,17 @@
 
 
 
+
+        // if(window.innerWidth < 991) {
+        //   select('.navbar').classList.remove('navbar-desktop');
+        // }
+
+
     /**
      * Toggle. Links del navbar aparecen cuando hace scroll
     */
-    let selectLinksHeader = select('#navbar .nav-link', true)
+
+    let selectLinksHeader = select('.navbar-desktop .nav-link', true)
     if(locationPath == '/'){
         const showNavbarLinks = () => {
             selectLinksHeader.forEach(link => {
@@ -171,23 +189,38 @@
     }
 
 
-
-
   /**
-   * Back to top button
+   * Back to top button - modifico la funcion para varios btns
    */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
+
+    let backtotops = select('.back-to-top', true)
+    if (backtotops) {
+        const toggleBacktotop = () => {
+            backtotops.forEach(btn => {
+                if (window.scrollY > 100) {
+                    btn.classList.add('active')
+                } else {
+                    btn.classList.remove('active')
+                }
+            })
+        }
+        window.addEventListener('load', toggleBacktotop)
+        onscroll(document, toggleBacktotop)
     }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
+
+//   let backtotop = select('.back-to-top')
+//   if (backtotop) {
+//     const toggleBacktotop = () => {
+//       if (window.scrollY > 100) {
+//         backtotop.classList.add('active')
+//       } else {
+//         backtotop.classList.remove('active')
+//       }
+//     }
+//     window.addEventListener('load', toggleBacktotop)
+//     onscroll(document, toggleBacktotop)
+//   }
+
 
   /**
    * Mobile nav toggle

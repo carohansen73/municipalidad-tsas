@@ -140,6 +140,8 @@
 
     </div>
 </div><!-- ======= fin borde colorido ======= -->
+
+
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -154,11 +156,11 @@
                 <strong>Email:</strong> reclamos@tresarroyos.gov.ar<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                {{-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> --}}
+                <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.youtube.com/c/municipalidaddetresarroyos" target="_blank" class="youtube"><i class="bx bxl-youtube"></i></a>
+                {{-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> --}}
               </div>
             </div>
           </div>
@@ -166,7 +168,7 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Links mas visitados</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
               <!--li><i class="bx bx-chevron-right"></i> <a href="#">Conocenos un poco</a></li-->
               <li><i class="bx bx-chevron-right"></i> <a href="https://centrodesaludtsas.com.ar/" target="_blank">Salud</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li>
@@ -177,7 +179,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Nuestros Servicios</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">TaDi</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">MiTresa</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Portal de Autogestion</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Gobierno Abierto</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Multas</a></li>
@@ -213,7 +215,9 @@
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  {{-- <a href="" class="back-to-top d-flex align-items-center justify-content-center" style="margin-bottom: 96px;"><i class="bi bi-arrow-up-short"></i></a> --}}
+  <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="back-to-top d-flex align-items-center justify-content-center mb-5"><i class="bx bxl-instagram"></i></a>
+  <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bxl-facebook"></i></a>
 
   <!-- Vendor JS Files -->
   <script  src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>

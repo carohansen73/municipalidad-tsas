@@ -9,8 +9,8 @@
 {{-- PORTADA --}}
 
     <div id="portada-secciones" class="portada-foto text-md-left text-sm-center ">
-        @foreach($textos as $text)
-        <img class="foto-portada" src="{{asset("storage/secciones/".$text->img_portada)}}" alt="portada-de-la-seccion">
+        @foreach($portada as $p)
+        <img class="foto-portada" src="{{asset("storage/secciones/".$p->img)}}" alt="portada-de-la-seccion">
         @break
         @endforeach
         <div class="background-portada">   </div>
@@ -45,50 +45,36 @@
 <!-- =======  INFORMACION GENERAL ======= -->
 @foreach ($textos as $text)
 @if($text->informacion || $text->sub_informacion )
-    <section>
-        <div class="container " data-aos="fade-up">
+    <section class="pb-0">
+        <div class="container ps-4" data-aos="fade-up">
 
-            <div class="section-title">
+            <div class="section-title ps-0">
                 <p style="color: #d63384">{{$text->titulo}}</p>
             </div>
             <p>
                 {!! $text->informacion !!}
             </p>
-            <div class="section-title mt-5">
-                <p style="color: #d63384">{{$text->subtitulo}}</p>
-            </div>
-            <div>
-                {!! $text->sub_informacion !!}
-            </div>
-
         </div>
     </section>
     @endif
+    @if(count($text->imgs) >0 )
+        <!-- =======  FOTOS REFERIDAS A ESE TEXTO======= -->
+        <section id="secciones-galeria" class="pt-0 mt-0" style="padding-top: 0px!important;">
+            <div class="container " data-aos="fade-up">
+                <div class="row">
+                    @foreach($text->imgs as $imag)
+
+                            <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$imag->img)}}" alt="foto-1"></div>
+
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 @endforeach
 
-<!-- =======  FOTOS ======= -->
-@foreach ($textos as $text)
-@if($text->img_2 || $text->img_3 || $text->img_4)
-    <section id="secciones-galeria" class="pt-0">
-        <div class="container " data-aos="fade-up">
-            <div class="section-title">
-                <p style="color: #d63384">Galeria</p>
-            </div>
-            <div class="row">
-                @if ($text->img_2)
-                    <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$text->img_2)}}" alt="foto-1"></div>
-                @endif
-                @if ($text->img_3)
-                    <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$text->img_3)}}" alt="foto-2"></div>
-                @endif
-                @if ($text->img_4)
-                    <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$text->img_4)}}" alt="foto-3"></div>
-                @endif
-            </div>
-        </div>
-    </section>
-@endif
-@endforeach
+
+
 <!-- ======= ARCHIVOS(hacer un listadito similar al de la plata-guia de tramites)  ======= -->
 @if(isset($archivos) && (count($archivos) > 0))
     <section id="secciones-archivos">
@@ -99,7 +85,7 @@
                 <h2>PDF's</h2>
             </div>
 
-            <div class="container-listado-archivos">
+            <div class="container-listado-archivos ps-3 ps-md-0">
                 <p> <i class="fas fa-file-download"> <span>Descargas</span>  </i> </p>
                 @foreach ($archivos as $archivo)
 
