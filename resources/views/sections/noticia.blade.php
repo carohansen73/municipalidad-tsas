@@ -6,6 +6,18 @@
 {{--NOTICIAS / PORTADA --}}
 <section id="noticias" class="team">
 
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- END FACEBOOK SHARE -->
+
     <div class="container" data-aos="fade-up">
         <main id="main" class="margen-top-navbar">
 
@@ -49,11 +61,20 @@
                                     <h4>{{$noti->titulo}} </h4>
                                     <div class="detalles-noticia">
                                         <div class="row">
-                                            <div class="col-lg-2">
+                                            <div class="col-auto">
                                                 <p><i class="fas fa-clock"></i>  {{$noti->fecha}}  </p>
                                             </div>
-                                            <div class="col-lg-2">
-                                                <p><i class="fas fa-tags"></i> <a href="/noticias-categoria/{{$noti->categoria->nombre}}">  {{$noti->categoria->nombre}}  </a></p>
+                                            @foreach($noti->categorias as $categ)
+                                            <div class="col-auto">
+                                                <p><i class="fas fa-tags"></i> <a href="/noticias-categoria/{{$categ->nombre}}">  {{$categ->nombre}}  </a></p>
+                                            </div>
+                                            @endforeach
+                                            <!-- Your share button code FB COMPARTIR -->
+                                            <div class="col">
+                                                <div class="fb-share-button"
+                                                    data-href="http://municipalidad-tsas.test/noticia/{{$noti->slug}}"
+                                                    data-layout="button">
+                                                </div>
                                             </div>
                                         </div>
 
@@ -87,32 +108,30 @@
 
 
                                 <div class="noticias-relacionadas">
-                                <div class="row">
-                                    <div class="section-title mb-3">
-                                        <p style="font-size: 18px">Noticias relacionadas</p>
-                                    </div>
-
-                                    @foreach($noticiasRelacionadas as $noti)
-
-                                        <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-                                            <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                                <div class="member-img">
-                                                    @foreach($noti->imgs as $imag)
-                                                        <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
-                                                        @break
-                                                    @endforeach
-                                                </div>
-                                                <div class="member-info">
-                                                    <a href="/noticia/{{$noti->pathname}}"><h4>{{$noti->titulo}} </h4></a>
-                                                    <span> {{$noti->fecha}}  </span>
-                                                </div>
-                                            </div>
+                                    <div class="row">
+                                        <div class="section-title mb-3">
+                                            <p style="font-size: 18px">Noticias relacionadas</p>
                                         </div>
 
-                                    @endforeach
+                                        @foreach($noticiasRelacionadas as $noti)
 
-                                </div>
+                                            <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                                                <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                                    <div class="member-img">
+                                                        @foreach($noti->imgs as $imag)
+                                                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
+                                                            @break
+                                                        @endforeach
+                                                    </div>
+                                                    <div class="member-info">
+                                                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
+                                                        <span> {{$noti->fecha}}  </span>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                        @endforeach
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
@@ -137,7 +156,7 @@
                                         @endforeach
                                     </div>
                                     <div class="member-info">
-                                        <a href="/noticia/{{$noti->pathname}}"><h4>{{$noti->titulo}} </h4></a>
+                                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
                                         <span> {{$noti->fecha}}  </span>
                                     </div>
                                 </div>
@@ -146,7 +165,7 @@
                         <div class="section-title mb-3 mt-3">
                             <p style="font-size: 18px">Categorias</p>
                         </div>
-                        <ul>
+                        <ul class="botonera-categorias">
                         @foreach($categorias as $cat)
                             <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
                                 <a href="/noticias-categoria/{{$cat->nombre}}">

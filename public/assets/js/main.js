@@ -75,15 +75,14 @@
         })
     }
 
-        /**
+    /**
      *add/remove class del menu para desktop/mobile - (ver que lo haga cuando cambio el tamaño de la pantalla,  xq1 solo lo hace cuando cargo la pantalla de un tamaño u otro )
     */
-
-     let navbar1 = select('#navbar')
-     if(window.innerWidth > 991) {
-         console.log(window.innerWidth)
-         navbar1.classList.add('navbar-desktop')
-     }
+    let navbar1 = select('#navbar')
+    if(window.innerWidth > 991) {
+        console.log(window.innerWidth)
+        navbar1.classList.add('navbar-desktop')
+    }
 
 
     /**
@@ -93,6 +92,7 @@
     let locationPath = window.location.pathname;
     let itemsNavbar = select('.navbar-desktop .nav-link, .get-started-buttons a .get-started-group , .logo , .navbar .mobile-nav-toggle', true);
     let portadaConImg = select('.portada-foto');
+
     // if (selectHeader && (locationPath == '/' || locationPath == '/cultura' || locationPath == '/museos' || locationPath == '/municipio' || locationPath == '/ciudad-productiva' || locationPath == '/deportes' || locationPath == '/atencion-al-vecino')) {
     if (selectHeader && (portadaConImg || locationPath == '/') ){
         const headerScrolled = () => {
@@ -102,7 +102,10 @@
             itemsNavbar.forEach(itemn => {
                 itemn.classList.add('font-color-bl')
                 itemn.classList.remove('font-color-wh')
+
             })
+
+
 
 
             // let selectedLetters = select('.navbar li a');
@@ -113,6 +116,7 @@
                 itemn.classList.remove('font-color-bl')
                 itemn.classList.add('font-color-wh')
             })
+
 
             selectHeader.classList.remove('header-scrolled')
 

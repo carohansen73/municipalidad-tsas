@@ -12,6 +12,7 @@ use App\Models\Galeria;
 use App\Models\GaleriaPortada;
 use App\Models\Archivos;
 use App\Models\Museo;
+use App\Models\Categoria;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
 use App\Models\NoticiaCategoria;
@@ -47,7 +48,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+        $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->take(1)->with('imgs')->get();
+        $noticias = Noticia::where('destacada', 1)->latest('fecha')->skip(1)->take(2)->with('imgs')->get();
+
+        return view('home.home', compact('noticias', 'noticiaPpal'));
     }
 
     public function portal()
@@ -74,10 +78,8 @@ class HomeController extends Controller
        $eventos = Evento::whereIn('seccion_id', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
 
-        //  $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
-        // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
 
-        // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
+        // hacer tabla con secciones y a cual seccion general pertenecen y con foto portada. EJ:
         // seccion organigrama pertenece a municipio
         //seccion educacion pertenece a municipio
         //seccion interes ciudadano pertenece a tramites y servicios
@@ -102,7 +104,7 @@ class HomeController extends Controller
         //tomo los datos y las entidades que pertenecen a esa seccion
         $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->with('imgs')->get();
 
-        $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        // $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
         $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
@@ -113,7 +115,7 @@ class HomeController extends Controller
         $seccionArray = explode("/", $pathSeccion);
         $seccion = array_pop($seccionArray);
 
-        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion', 'portada'));
+        return view('sections.secciones', compact('textos', 'archivos', 'seccion', 'portada'));
     }
 
      /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
@@ -225,55 +227,34 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showAllNews() /*paginar? o x js hacer api*/
+    public function showAllNews() /*paginar? */
     {
-        $noticias = Noticia::with('imgs')->get();
-        $categorias = NoticiaCategoria::all();
-        // foreach($noticias as $noti){
-        //     foreach($noti->imgs as $imag){
-        //         var_dump($imag->img);die;
-        //     }
+        $noticias = Noticia::with('imgs')->with('categorias')->get();
+        $categorias = Categoria::all();
 
-        // }
         return view('sections.noticias', compact('noticias', 'categorias'));
     }
 
 
     /**
-     * Muestra la noticia seleccionada
+     * Muestra una noticia
      *
      * @return \Illuminate\Http\Response
      */
     public function showNews($titulo)
     {
-        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios x -!!!!!!*/
-
-        // var_dump($titulo);die;
         $noticias = Noticia::with('imgs')->get();
-        $noticia = Noticia::where('pathname', $titulo)->with('imgs')->get();
+        $noticia = Noticia::where('slug', $titulo)->with('imgs')->with('categorias')->get();
 
         foreach($noticia as $noti){
-            $categoriaId = $noti->categoria->id;
+            foreach($noti->categorias as $cat){
+                $categoriaId = $cat->id;
+            }
         }
 
-        $categorias = NoticiaCategoria::all();
+        $categorias = Categoria::all();
         $ultimasNoticias = Noticia::latest()->take(3)->get();
-        $noticiasRelacionadas = Noticia::where('categoria_id', $categoriaId)->latest()->take(3)->get();
-
-
-
-        //  foreach($noticias as $noti){
-        //     //modifico el titulo para usarlo de path url
-        //     //pongo guiones en lugar de espacios
-        //     $cadena = strtolower($noti->titulo);
-        //     $cadenaConvert = strtr($cadena, " ", "-");
-        //     //SACO LOS CARACTERES ESPECIALES (PERO ME BORRA LETRAS CON ACENTOS Y Ñ, no saca . " :)->VER SI OTRO ME FUNCIONA MEJOR
-        //     $pathName = filter_var($cadenaConvert, FILTER_SANITIZE_URL);
-        //     var_dump($pathName);
-        //     foreach($noti->imgs as $imag){
-        //             var_dump($imag->img);die;
-        //     }
-        //  }
+        $noticiasRelacionadas = Noticia::whereIn('id', NoticiaCategoria::whereIn('categoria_id', [$categoriaId])->pluck('noticia_id'))->latest()->take(3)->get();
 
         return view('sections.noticia', compact('noticias', 'noticia', 'categoriaId', 'ultimasNoticias', 'noticiasRelacionadas', 'categorias'));
     }
@@ -286,12 +267,16 @@ class HomeController extends Controller
      */
     public function showNoticiasPorCategoria($categoriaNombre)
     {
-        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios por - !!!!!!*/
-
         // var_dump($titulo);die;
-        $noticias = Noticia::where('categoria_id', NoticiaCategoria::where('nombre', $categoriaNombre)->pluck('id'))->with('imgs')->get();
+        $noticias = Noticia::whereIn('id',
+            NoticiaCategoria::whereIn('categoria_id',
+            Categoria::whereIn('nombre', [$categoriaNombre])
+            ->pluck('id'))
+            ->pluck('noticia_id'))
+            ->with('imgs')
+            ->get();
 
-        $categorias = NoticiaCategoria::all();
+        $categorias = Categoria::all();
 
         // $ultimasNoticias = Noticia::latest()->take(3)->get();
         $ultimasNoticias = Noticia::orderBy('fecha', 'desc')->take(3)->get();

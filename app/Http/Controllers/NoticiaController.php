@@ -78,7 +78,6 @@ class noticiaController extends AppBaseController
         else { $noticia->categorias()->attach(null);}
 
         Flash::success('Noticia Guardada.');
-
         return redirect(route('noticias.index'));
     }
 

@@ -7,6 +7,8 @@
         {{-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{asset("assets/img/logos/logo-remove.png")}}" alt="" class="img-fluid"> Tres Arroyos</a> --}}
 
         <a href="/" class="logo me-auto me-lg-0 font-color-bl"><img src="{{asset("assets/img/logos/Untitled-remove.png")}}" alt="" class="img-fluid"> Tres Arroyos</a>
+        {{-- <img href="img/logos/.jpeg" alt="MiTresa" class="img-fluid"> --}}
+
 
 
 
@@ -54,7 +56,9 @@
             <div class="get-started-buttons">
                 <a  href="tadi" target="_blank" class="get-started-btn scrollto">
                     <div class="get-started-group font-color-bl">
-                        <i class="fas fa-laptop-house"></i>
+                        {{-- <img src="{{asset("assets/img/logos/MiTr-remove2.png")}}" alt="" class="img-fluid mb-1 mi-tresa-1"> --}}
+                        <img src="{{asset("assets/img/logos/MiTr-remove.png")}}" alt="" class="img-fluid mb-1 ">
+                        {{-- <i class="fas fa-laptop-house"></i> --}}
                         MiTresa
                     </div>
                 </a>

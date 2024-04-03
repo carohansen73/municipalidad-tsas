@@ -59,7 +59,8 @@ colores{
         background-color: #d63451 ;
 
         background: #d63384;
-        background: #e64394;
+        background: #d65395;
+        d65395
 
        /*ce1537 rojo*/
 
@@ -285,6 +286,12 @@ h6 {
 .get-started-buttons .get-started-group i{
     padding: 3px 15px 4px 15px;
     font-size: 24px;
+}
+
+.get-started-buttons .get-started-group img{
+    /* padding: 3px 3px 4px 3px; */
+    width: 46px;
+
 }
 
 /* .get-started-buttons{
@@ -748,7 +755,7 @@ h6 {
     background-color: #d63384 ;
 }
 #hero .icon-4:hover {
-  background-color: #d63451 ;
+  background-color: #d65395 ;
 }
 
 #hero .icon-5 {
@@ -1282,10 +1289,10 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/generals/blue.png") fixed center center; */
+   background: linear-gradient(rgba(82, 121, 199, 0.438), rgba(82, 121, 199, 0.438)), url("../img/generals/mi-tresa.jpg") fixed center center;
   /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections/geom-2.jpg") fixed center center; */
    /* background:url("../img/generals/blue.png") fixed center center; */
-background-color: #004f9f;
+/* background-color: #004f9f; */
   background-size: cover;
   padding: 60px 0;
 }
@@ -1294,10 +1301,12 @@ background-color: #004f9f;
   color: #fff;
   font-size: 28px;
   font-weight: 700;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.959);
 }
 
 .cta p {
   color: #fff;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.959);
 }
 
 .cta .cta-btn {
@@ -1820,11 +1829,13 @@ background-color: #004f9f;
 --------------------------------------------------------------*/
 section #cultura-eventos {
     background-color: #d63384;
-    /* background-color: #ce1537; */
+    /* background-color: whitesmoke; */
     /* background-color: #662483; */
-
-
 }
+
+
+
+
 .eventos p{
     color: #FFF;
 }
@@ -2109,6 +2120,11 @@ section #deportes-eventos{
     color: #AAAAAA;
 }
 
+#noticia .aside-principal .info-noticia .detalles-noticia a:hover{
+    color: rgb(89, 152, 197);
+}
+
+
 #noticia .aside-principal .info-noticia .detalles-noticia{
     padding: 12px 10px;
 }
@@ -2162,6 +2178,14 @@ section #deportes-eventos{
     font-weight: 500;
 }
 
+#noticia .member .member-info a:hover h4,
+#noticias .member .member-info a:hover h4{
+    color: rgb(89, 152, 197);
+}
+
+#noticias .aside-lateral ul li .desplegable-categoria-boton:hover{
+    background-color: rgb(89, 152, 197);
+}
 /* fin noticias relacionadas (cards pequeños)*/
 
 /*--------------------------------------------------------------
@@ -3059,7 +3083,7 @@ background-size: cover;
 }
 
 .team .card-icono .member-4 .card-ver-mas a:hover{
-    background-color: #e64394 ;
+    background-color: #d65395 ;
     color: #fff;
 }
 
