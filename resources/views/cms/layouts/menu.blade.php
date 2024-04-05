@@ -11,3 +11,11 @@
         <p>Categorias</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('seccionInformacions.index') }}"
+       class="nav-link {{ Request::is('seccionInformacions*') ? 'active' : '' }}">
+        <p>Sectores Municipio</p>
+    </a>
+</li>
+

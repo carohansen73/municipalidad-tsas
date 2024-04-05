@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSeccionPaginaTable extends Migration
+class CreateSeccionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSeccionPaginaTable extends Migration
      */
     public function up()
     {
-        Schema::create('seccion_pagina', function (Blueprint $table) {
+        Schema::create('seccion', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->enum('pertenece_a', ['Municipio', 'Tramites y servicios', 'Conoce TsAs'])->default('Municipio');
@@ -29,6 +29,6 @@ class CreateSeccionPaginaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seccion_pagina');
+        Schema::dropIfExists('seccion');
     }
 }

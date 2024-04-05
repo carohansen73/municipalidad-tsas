@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
-use App\Models\SeccionMenu;
+use App\Models\MenuSeccion;
 use App\Models\Evento;
-use App\Models\SeccionPagina;
-use App\Models\SeccionTexto;
+use App\Models\Seccion;
+use App\Models\SeccionInformacion;
 use App\Models\Galeria;
 use App\Models\GaleriaPortada;
 use App\Models\Archivos;
@@ -73,9 +73,9 @@ class HomeController extends Controller
        $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
        //tomo los datos y las entidades que pertenecen a esa seccion
-       $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+       $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
-       $eventos = Evento::whereIn('seccion_id', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+       $eventos = Evento::whereIn('seccion_id', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
 
 
@@ -102,13 +102,13 @@ class HomeController extends Controller
         // $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
         //tomo los datos y las entidades que pertenecen a esa seccion
-        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->with('imgs')->get();
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->with('galeria')->get();
 
-        // $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        // $noticias = Noticia::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
 
-        $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        $archivos = Archivos::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
 
-        $portada = GaleriaPortada::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
         //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
 
         //despejo el nombre de la seccion

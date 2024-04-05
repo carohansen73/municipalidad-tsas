@@ -17,7 +17,7 @@ class CreateArchivosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->unsignedBigInteger('seccion_id')->nullable();
-            $table->foreign('seccion_id')->references('id')->on('seccion_pagina');
+            $table->foreign('seccion_id')->references('id')->on('seccion');
             $table->timestamps();
         });
     }

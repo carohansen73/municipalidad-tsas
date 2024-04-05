@@ -16,13 +16,13 @@ class Galeria extends Model
     public $fillable = [
         'id',
         'img',
-        'seccion_texto_id',
+        'seccion_informacion_id',
         'tipo',
     ];
 
     public function seccion()
     {
-        return $this->belongsTo(SeccionTexto::class, 'seccion_texto_id');
+        return $this->belongsTo(SeccionInformacion::class, 'seccion_texto_id');
     }
 
 

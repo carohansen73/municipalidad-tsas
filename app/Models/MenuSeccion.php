@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SeccionMenu extends Model
+class MenuSeccion extends Model
 {
     use HasFactory;
-    public $table = 'seccion_menu';
+    public $table = 'menu_seccion';
 
     protected $dates = ['deleted_at'];
 

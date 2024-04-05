@@ -20,7 +20,7 @@ class GaleriaPortada extends Model
 
     public function seccion()
     {
-        return $this->belongsTo(SeccionTexto::class, 'seccion_id');
+        return $this->belongsTo(SeccionInformacion::class, 'seccion_id');
     }
 
 }

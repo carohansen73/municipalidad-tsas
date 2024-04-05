@@ -86,3 +86,6 @@ Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->n
 Route::resource('noticias', App\Http\Controllers\noticiaController::class);
 
 Route::resource('categorias', App\Http\Controllers\categoriaController::class);
+
+
+Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);

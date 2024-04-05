@@ -20,6 +20,6 @@ class Archivos extends Model
 
     public function seccion()
     {
-        return $this->belongsTo(SeccionPagina::class, 'seccion_id');
+        return $this->belongsTo(Seccion::class, 'seccion_id');
     }
 }

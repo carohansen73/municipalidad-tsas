@@ -23,7 +23,7 @@ class CreateNoticiaTable extends Migration
             $table->boolean('destacada');
             $table->date('fecha');
             $table->unsignedBigInteger('seccion_id');
-            $table->foreign('seccion_id')->references('id')->on('seccion_pagina');
+            $table->foreign('seccion_id')->references('id')->on('seccion');
             $table->timestamps();
         });
     }

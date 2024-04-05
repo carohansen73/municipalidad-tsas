@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SeccionPagina extends Model
+class Seccion extends Model
 {
     use HasFactory;
-    public $table = 'seccion_pagina';
+    public $table = 'seccion';
 
     protected $dates = ['deleted_at'];
 
@@ -20,7 +20,7 @@ class SeccionPagina extends Model
 
     public function perteneceA()
     {
-        return $this->belongsTo(SeccionMenu::class, 'pertenece_a');
+        return $this->belongsTo(MenuSeccion::class, 'pertenece_a');
     }
 
 }
