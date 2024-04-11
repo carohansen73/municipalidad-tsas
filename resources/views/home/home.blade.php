@@ -99,8 +99,9 @@
     <section id="novedades" class="novedades">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Noticias y novedades</h2>
-                <p>Novedades</p>
+
+                <p>Noticias</p>
+                <h2><a href="portal-de-noticias">Ver Todas</a></h2>
             </div>
             <div class="row">
                 @foreach($noticiaPpal as $noti)
@@ -144,6 +145,101 @@
         </div>
     </section>
 <!-- End Noticias Section -->
+
+
+
+
+
+ {{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
+ @if(isset($eventos) && (count($eventos) > 0))
+
+ <!-- ======= Team Section ======= -->
+ <section id="{{$nombreSeccion}}-eventos" class="team ">
+     <div class="container" data-aos="fade-up">
+         <div class="section-title">
+             <p> Próximos eventos</p>
+                 {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
+         </div>
+
+         <div class="row">
+             @foreach($eventos as $evento)
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center">
+
+
+                     <div class="member" data-aos="fade-up" data-aos-delay="200">
+                         <div class="member-img">
+                             <img src="{{asset("storage/eventos/".$evento->seccion->path."/".$evento->img)}}" class="img-fluid" alt="">
+                             <div class="social">
+                                 <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$evento->seccion->path}}"
+                                     data-bs-whatever="@mdo">Ver</button>
+                                 </a>
+                             </div>
+                         </div>
+                         {{-- <div class="member-info">
+                         <h4>Sarah Jhonson</h4>
+                         <span>Product Manager</span>
+                         </div> --}}
+                     </div>
+                 </div>
+             @endforeach
+         </div>
+     </div>
+
+ <!-- Modal Eventos -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+ <div class="modal-content">
+     <div class="modal-header">
+
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="modal-body">
+         <img src="{{asset('')}}" class="modalimg" alt="">
+             {{-- <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             </div> --}}
+     </div>
+ </div>
+</div>
+</div>
+
+ </section>
+
+@endif
+ <!-- End EVENTOS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <main id="main">
 
@@ -239,8 +335,9 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Servicios</h2>
-                <p>Servicios mas consultados</p>
+
+                <p>Servicios</p>
+                <h2>Servicios mas consultados</h2>
             </div>
 
             <div class="row">
@@ -283,7 +380,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-2">
                     <div class="icon"><i class="bi bi-clipboard-check"></i></div>
-                    <h4><a href="">Boletín Oficial</a></h4>
+                    <h4><a href="/boletin-oficial">Boletín Oficial</a></h4>
                     {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
                 </div>
                 </div>
@@ -291,7 +388,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
                 <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-house-check-fill"></i></div>
-                    <h4><a href="">Transparencia Fiscal</a></h4>
+                    <h4><a href="/transparencia-fiscal">Transparencia Fiscal</a></h4>
                     {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
                 </div>
                 </div>
@@ -814,5 +911,6 @@
 
   </main><!-- End #main -->
 
-
+  <!-- Modal para ver evento -->
+  <script src="{{ asset('assets/js/modalevento.js') }}"></script>
 @endsection

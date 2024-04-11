@@ -19,6 +19,8 @@ use App\Models\NoticiaCategoria;
 use App\Models\InstitucionEducativaNivel;
 use App\Models\InstitucionEducativa;
 use App\Models\PropuestaAcademica;
+use App\Models\SituacionEconomicoFinanciera;
+use App\Models\ReporteEconomicoFinanciero;
 
 use App\Models\Delegacion;
 
@@ -50,8 +52,10 @@ class HomeController extends Controller
     {
         $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->take(1)->with('imgs')->get();
         $noticias = Noticia::where('destacada', 1)->latest('fecha')->skip(1)->take(2)->with('imgs')->get();
+        $eventos = Evento::take(4)->with('seccion')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
 
-        return view('home.home', compact('noticias', 'noticiaPpal'));
+        $nombreSeccion = 'home';
+        return view('home.home', compact('noticias', 'noticiaPpal', 'eventos', 'nombreSeccion'));
     }
 
     public function portal()
@@ -283,6 +287,85 @@ class HomeController extends Controller
 
 
         return view('sections.noticias', compact('noticias',  'categorias', 'categoriaNombre', 'ultimasNoticias'));
+    }
+
+
+    /*****************   ------------------------------  TRANSPARENCIA FISCAL  -------------------------- *****************/
+
+    /**
+     * Muestra la Situación Económico Financiera y los Reportes Economico Financiero
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showTransparenciaFiscal()
+    {
+        // var_dump('lelgo');die;
+        /*SITUACION ECONOMICO FINANCIERA*/
+        //obtengo los anios para el filtro
+        $datosSituacion['anios'] = SituacionEconomicoFinanciera::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+
+        //anio a buscar segun si fue seleccionado un anio o el ultimo
+        if (isset($_POST['anio']) && (!empty($_POST['anio']))){
+			$anio=$_POST['anio']; // si definio anio a buscar
+		}else{
+			$anio=$datosSituacion['anios'][0]; // seria el anio actual
+		}
+
+
+        // aca obtengo las situacionesEconomicas separadas por cada ente descentralizado
+		$datosSituacion['anio']=$anio;
+		$datosSituacion['muni']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['muni'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['salud']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['salud'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['claro']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['claro'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['vial']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['vial'])->orderBy('periodo', 'desc')->get();
+
+        /*REPORTES ECONOMICOS*/
+
+        $reportes['generales']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre1']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [1])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre2']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [2])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre3']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [3])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre4']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [4])->orderBy('periodo', 'desc')->get();
+
+
+        return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes'));
+    }
+
+    /**
+     * Muestra los 4 ítems del boleín oficial: Avisos oficiales, Decretos, Ordenanzas, Resoluciones
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBoletinOficial()
+    {
+        $items['avisos']= [
+            "nombre"=>"Avisos Oficiales",
+            "slug" =>  "avisos-oficiales",
+            "icono" => "fas fa-info-circle"
+        ];
+        $items['decretos']= [
+            "nombre" => "Decretos",
+            "slug" => "avisos-oficiales",
+            "icono" => "bi bi-file-earmark-ruled-fill"
+        ];
+        $items['ordenanzas']= [
+            "nombre" => "Ordenanzas",
+            "slug" => "avisos-oficiales",
+            "icono" => "fas fa-gavel"
+        ];
+        $items['resoluciones']= [
+
+            "nombre" => "Resoluciones",
+            "slug" => "avisos-oficiales",
+            "icono" =>  "fas fa-file-alt"
+        ];
+
+
+
+
+
+
+        return view('transparenciaFiscal.boletin_oficial', compact('items'));
     }
 
 }

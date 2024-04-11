@@ -10,6 +10,10 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\Seccion;
+use App\Models\SeccionInformacion;
+use App\Models\Archivos;
+
+
 
 class SeccionInformacionController extends AppBaseController
 {
@@ -30,10 +34,35 @@ class SeccionInformacionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $seccionInformacions = $this->seccionInformacionRepository->all();
+        $secciones=Seccion::where('link', 'like', 'seccion/%')->orderBy('nombre')->get();
+
+        $title = 'Secciones';
 
         return view('cms.seccion_informacion.index')
-            ->with('seccionInformacions', $seccionInformacions);
+            ->with('secciones', $secciones)
+            ->with('title', $title);
+    }
+
+        /**
+     * Display a listing of the SeccionInformacion.
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function indexSection(Request $request, $seccion)
+    {
+
+        $seccionInformacions = SeccionInformacion::whereIn('seccion_id', Seccion::where('nombre', $seccion)->pluck('id'))->get();
+        $archivos=Archivos::whereIn('seccion_id', Seccion::where('nombre', $seccion)->pluck('id'))->get();
+        $title = 'Seccion: '.$seccion;
+
+
+        return view('cms.seccion_informacion.index')
+            ->with('seccionInformacions', $seccionInformacions)
+            ->with('seccion', $seccion)
+            ->with('archivos', $archivos)
+            ->with('title', $title);
     }
 
     /**
@@ -43,7 +72,8 @@ class SeccionInformacionController extends AppBaseController
      */
     public function create()
     {
-        $secciones=Seccion::orderBy('nombre')->pluck('nombre','id')->all();
+        // $secciones=Seccion::where('link', 'like', 'seccion/%')->orWhere('link', 'like', 'proximamente%')->orderBy('nombre')->pluck('nombre','id')->all();
+         $secciones=Seccion::where('link', 'like', 'seccion/%')->orderBy('nombre')->pluck('nombre','id')->all();
         return view('cms.seccion_informacion.create',compact('secciones'));
     }
 
@@ -64,7 +94,7 @@ class SeccionInformacionController extends AppBaseController
 
         // $request->avatar->storeAs('', 'imagen.jpg', 'avatars');
 
-        var_dump( $seccionInformacion, $request->img);die;
+
 
         Flash::success('Seccion Informacion saved successfully.');
 

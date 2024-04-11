@@ -1,3 +1,15 @@
+
+@push('third_party_stylesheets')
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endpush
+
+@push('third_party_scripts')
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+@endpush
+
 <!-- Seccion Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('seccion_id', 'Seccion:') !!}
@@ -16,11 +28,27 @@
 <!-- Informacion Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('informacion', 'Informacion:') !!}
-    {!! Form::textarea('informacion', null, ['class' => 'form-control']) !!}
+    {!! Form::textarea('informacion', null, ['class' => 'form-control','id'=>"informacion"]) !!}
 </div>
 
-<!-- Img 2 Field -->
+@push('page_scripts')
+    <script type="text/javascript">
 
+        //select2
+        $(document).ready(function() {
+            $('.js-example-basic-multiple').select2();
+            $('#informacion').summernote({
+                tabsize: 2,
+                height: 300
+            });
+        });
+        //summernote
+
+    </script>
+@endpush
+
+
+<!-- Img 2 Field -->
 @if(isset($seccionInformacion))
     @foreach ($seccionInformacion->galeria as $img )
         <div class="form-group col-sm-4">

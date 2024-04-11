@@ -59,6 +59,12 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/noticia/{titulo}', 'showNews');
     Route::get('/noticias-categoria/{categoria}', 'showNoticiasPorCategoria');
 
+     /*TRANSPARENCIA FISCAL */
+    Route::get('/transparencia-fiscal', 'showTransparenciaFiscal');
+    Route::post('/transparencia-fiscal-filtro', 'showTransparenciaFiscal');
+    Route::get('/boletin-oficial', 'showBoletinOficial');
+
+
 });
 
 /* Reclamos / Consultas*/
@@ -89,3 +95,8 @@ Route::resource('categorias', App\Http\Controllers\categoriaController::class);
 
 
 Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
+Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
+
+
+
+Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
