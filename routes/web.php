@@ -63,6 +63,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/transparencia-fiscal', 'showTransparenciaFiscal');
     Route::post('/transparencia-fiscal-filtro', 'showTransparenciaFiscal');
     Route::get('/boletin-oficial', 'showBoletinOficial');
+    Route::get('/boletin-oficial/{tipo}', 'showBusquedaBoletinOficial');
+    Route::post('/filtro-boletin-oficial/{tipo}', 'showBoletinOficialItem');
+    Route::get('/avisos-oficiales', 'showAvisosOficiales');
 
 
 });

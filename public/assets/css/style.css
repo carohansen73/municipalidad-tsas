@@ -2806,8 +2806,6 @@ input[type=number] { -moz-appearance:textfield; }
 #ciudad-productiva .portada-foto{
     background-image: url("../img/sections-portadas/portadas/ciudad-productiva.jpg");
     background-position: center;
-
-    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/ciudad-productiva.jpg") fixed center center; */
     height: 320px;
     background-size: cover;
 }
@@ -3134,6 +3132,24 @@ background-size: cover;
 .team .card-icono .member-6 .card-ver-mas a:hover{
     background-color: #2464a3 ;
     color: #fff;
+}
+
+
+.team .card-icono .member-7 i{
+    color: #25afc3;
+}
+
+.team .card-icono .member-7 .card-ver-mas a{
+    background-color: #25afc3;
+}
+
+.team .card-icono .member-7 .card-ver-mas a:hover{
+    background-color: #55dcf1 ;
+    color: #fff;
+}
+
+.team .card-icono .member-7 h4{
+    color: #2464a3;
 }
 
 /*--------------------------------------------------------------

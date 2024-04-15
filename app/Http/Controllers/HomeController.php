@@ -21,6 +21,8 @@ use App\Models\InstitucionEducativa;
 use App\Models\PropuestaAcademica;
 use App\Models\SituacionEconomicoFinanciera;
 use App\Models\ReporteEconomicoFinanciero;
+use App\Models\AvisoOficial;
+use App\Models\BoletinOficial;
 
 use App\Models\Delegacion;
 
@@ -77,7 +79,7 @@ class HomeController extends Controller
        $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
        //tomo los datos y las entidades que pertenecen a esa seccion
-       $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+       $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->orderBy('orden')->get();
 
        $eventos = Evento::whereIn('seccion_id', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
@@ -331,41 +333,131 @@ class HomeController extends Controller
         return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes'));
     }
 
+
+    /*****************   ------------------------------  BOLETIN OFICIAL  -------------------------- *****************/
+
     /**
      * Muestra los 4 ítems del boleín oficial: Avisos oficiales, Decretos, Ordenanzas, Resoluciones
      *
      * @return \Illuminate\Http\Response
      */
-    public function showBoletinOficial()
-    {
+    public function showBoletinOficial(){
+        $items= $this->getItemsBoletinOficial();
+        return view('transparenciaFiscal.boletin_oficial', compact('items'));
+    }
+
+    /**
+     * Tipos de archivos de boletin oficial
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getItemsBoletinOficial(){
         $items['avisos']= [
             "nombre"=>"Avisos Oficiales",
-            "slug" =>  "avisos-oficiales",
+            "slug" =>  "/avisos-oficiales",
             "icono" => "fas fa-info-circle"
         ];
         $items['decretos']= [
             "nombre" => "Decretos",
-            "slug" => "avisos-oficiales",
+            "slug" => "/boletin-oficial/decretos",
             "icono" => "bi bi-file-earmark-ruled-fill"
         ];
         $items['ordenanzas']= [
             "nombre" => "Ordenanzas",
-            "slug" => "avisos-oficiales",
+            "slug" => "https://hcd.tresarroyos.gov.ar/digesto/ordenanzas",
             "icono" => "fas fa-gavel"
         ];
         $items['resoluciones']= [
 
             "nombre" => "Resoluciones",
-            "slug" => "avisos-oficiales",
+            "slug" => "/boletin-oficial/resoluciones",
             "icono" =>  "fas fa-file-alt"
         ];
 
+        return $items;
+    }
+
+    /**
+     * Muestra Boletin Oficial - Avisos/Decretos o Resoluciones
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBusquedaBoletinOficial($tipo)
+    {
+        if($tipo == 'avisos'){
+            $this->showAvisosOficiales($tipo);
+
+        }else{
+            //obtengo los anios y meses para el filtro
+            $filtroDeBusqueda['anios'] = BoletinOficial::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+            $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'desc')->pluck('mes')->all();
+
+            $anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
+            $mes=3;// ultimo mes
+
+            $filtroDeBusqueda['mes'] = $mes;
+            $filtroDeBusqueda['anio'] = $anio;
+
+            return view('transparenciaFiscal.boletin_oficial', compact( 'filtroDeBusqueda',  'tipo'));
+        }
+
+    }
+
+
+    /**
+     * Muestra Boletin Oficial - Avisos/Decretos o Resoluciones
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBoletinOficialItem($tipo)
+    {
+        $items= $this->getItemsBoletinOficial();
+
+        //obtengo los anios y meses para el filtro
+        $filtroDeBusqueda['anios'] = BoletinOficial::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+        $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'desc')->pluck('mes')->all();
+        //anio a buscar segun si fue seleccionado un anio o el ultimo
+        if (isset($_POST['anio']) && (!empty($_POST['anio']))){
+			$anio=$_POST['anio']; // si definio anio a buscar
+		}else{
+			$anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
+		}
+
+        //mes a buscar segun si fue seleccionado un mes o el ultimo
+        if (isset($_POST['mes']) && (!empty($_POST['mes']))){
+			$mes=$_POST['mes']; // si definio anio a buscar
+		}else{
+			$mes=3;// ultimo mes
+		}
+
+        // var_dump($anio, $mes);die;
+        $filtroDeBusqueda['mes'] = $mes;
+        $filtroDeBusqueda['anio'] = $anio;
+
+
+        $boletinOficial = BoletinOficial::whereIn('anio', [$anio])->whereIn('mes', [$mes])->where('tipo', $tipo)->orderBy('orden', 'ASC')->get();
 
 
 
+        // $reportes['generales']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
 
 
-        return view('transparenciaFiscal.boletin_oficial', compact('items'));
+        return view('transparenciaFiscal.boletin_oficial', compact('items', 'filtroDeBusqueda', 'boletinOficial', 'tipo'));
+    }
+
+
+        /**
+     * Muestra Avisos Oficiales
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAvisosOficiales()
+    {
+        $tipo = 'avisos';
+        $items= $this->getItemsBoletinOficial();
+        $boletinOficial = AvisoOficial::whereIn('area', ['aviso'])->orderBy('fecha', 'ASC')->get();
+
+        return view('transparenciaFiscal.boletin_oficial', compact('items', 'boletinOficial', 'tipo'));
     }
 
 }

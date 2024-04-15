@@ -24,27 +24,26 @@
             </div>
 
             <div class="d-flex justify-content-center">
+                <nav class="navbar navbar-light bg-light col-lg-6 mb-4">
+                    <form class="container-fluid" action="transparencia-fiscal-filtro" method="POST">
+                        @csrf
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Busqueda por año</span>
+                        <select class="form-select" aria-label="Default select example" name="anio">
+                            <option selected><strong>{{$datosSituacion['anio']}}</strong></option>
+                            @foreach($datosSituacion['anios'] as $anio)
 
-            <nav class="navbar navbar-light bg-light col-lg-6 mb-4">
-                <form class="container-fluid" action="transparencia-fiscal-filtro" method="POST">
-                    @csrf
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Busqueda por año</span>
-                    <select class="form-select" aria-label="Default select example" name="anio">
-                        <option selected><strong>{{$datosSituacion['anio']}}</strong></option>
-                        @foreach($datosSituacion['anios'] as $anio)
+                            @if($anio != $datosSituacion['anio'])
+                                <option value="{{$anio}}">{{$anio}}</option>
+                                @endif
 
-                        @if($anio != $datosSituacion['anio'])
-                            <option value="{{$anio}}">{{$anio}}</option>
-                            @endif
-
-                        @endforeach
-                      </select>
-                    {{-- <input type="select" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"> --}}
-                    <button class="btn btn-outline-primary" type="submit">Buscar</button>
-                  </div>
-                </form>
-              </nav>
+                            @endforeach
+                        </select>
+                        {{-- <input type="select" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"> --}}
+                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                    </div>
+                    </form>
+                </nav>
             </div>
 
 
