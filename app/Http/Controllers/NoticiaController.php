@@ -18,6 +18,8 @@ use Flash;
 use Response;
 use App\Models\Categoria;
 
+use App\Municipalidad\FileManagement;
+
 class noticiaController extends AppBaseController
 {
     /** @var noticiaRepository $noticiaRepository*/
@@ -40,7 +42,7 @@ class noticiaController extends AppBaseController
         $noticias = $this->noticiaRepository->all();
 
         return view('cms.noticias.index')
-            ->with('noticias', $noticias);
+        ->with('noticias', $noticias);
     }
 
     /**
@@ -74,8 +76,21 @@ class noticiaController extends AppBaseController
 
                 $noticia->categorias()->attach($id_categoria);
             }
-        }
+            }
         else { $noticia->categorias()->attach(null);}
+
+        //subo las imagenes y las guardo en la bd
+        $path='/noticia_img/'.$noticia->id.'/';
+
+        if (!empty($input['imagenes'])){
+            foreach ($input['imagenes'] as $file) {
+                $name=FileManagement::uploadImage($file,$path);
+                $noticia->Imgs()->create([
+                    'img'=>$name,
+                    'leyenda'=>$noticia->titulo
+                ]);
+            }
+        }
 
         Flash::success('Noticia Guardada.');
 
@@ -147,6 +162,17 @@ class noticiaController extends AppBaseController
 
         $noticia->categorias()->sync($request['categorias']);
 
+        $path='/noticia_img/'.$noticia->id.'/';
+
+        if (!empty($request['imagenes'])){
+            foreach ($request['imagenes'] as $file) {
+                $name=FileManagement::uploadImage($file,$path);
+                $noticia->Imgs()->create([
+                    'img'=>$name,
+                    'leyenda'=>$noticia->titulo
+                ]);
+            }
+        }
         Flash::success('Noticia Guardada.');
 
         return redirect(route('noticias.index'));
@@ -192,4 +218,24 @@ class noticiaController extends AppBaseController
     // public function show(Noticia $noticia){
     //     return new NoticiaResource($noticia);
     // }
+    public function destroyImg($id){
+        $imagen = NoticiaImg::find($id);
+        $id_noticia=$imagen->noticia_id;
+        if (empty($imagen)) {
+            Flash::error('No se encontro la imagen');
+
+            return redirect(route('noticias.index'));
+        }
+
+        //borro el archivo
+        $dir="noticia_img/".$imagen->noticia_id."/";
+        $res=FileManagement::deleteImg($imagen->img,$dir);
+        $imagen->delete();
+
+        Flash::success('imagen eliminada.');
+
+        return redirect(route('noticias.edit',$id_noticia));
+
+    }
+
 }

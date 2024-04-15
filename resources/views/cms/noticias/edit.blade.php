@@ -17,7 +17,7 @@
 
         <div class="card">
 
-            {!! Form::model($noticia, ['route' => ['noticias.update', $noticia->id], 'method' => 'patch']) !!}
+            {!! Form::model($noticia, ['route' => ['noticias.update', $noticia->id], 'method' => 'patch','files' => true]) !!}
 
             <div class="card-body">
                 <div class="row">
@@ -29,9 +29,11 @@
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
                 <a href="{{ route('noticias.index') }}" class="btn btn-default">Cancel</a>
             </div>
-
             {!! Form::close() !!}
+            <div class="container">
 
+                @include('cms.noticias.imagenes')
+            </div>
         </div>
     </div>
 @endsection
