@@ -5,7 +5,7 @@
 
 {{-- <section id="museos"> --}}
 
-   <main id="main" class="margen-top-navbar">
+   <main id="main">
 
     <div id="cultura" class="portada-foto text-md-left text-sm-center ">
         <img class="foto-portada" src="assets/img/museos/mulazzi-portada3.jpg" alt="museo Mulazzi">
@@ -16,11 +16,11 @@
         <!-- ======= borde colorido ======= -->
         <div class="container-border">
             <div class="row">
-                <div class="col-4 border-1">
+                <div class="col-4 border-4">
                 </div>
                 <div class="col-4 border-2">
                 </div>
-                <div class="col-4 border-3">
+                <div class="col-4 border-5">
                 </div>
             </div>
         </div><!-- ======= fin borde colorido ======= -->

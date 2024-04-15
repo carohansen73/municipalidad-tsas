@@ -52,19 +52,21 @@
 
                         <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
                             <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                <div class="member-img">
-                                    @foreach($noti->imgs as $imag)
-                                        <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
-                                        @break
-                                    @endforeach
+                                <div class=" fluid-img">
 
-                                    {{--<div class="social">
-                                     <a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i></a>
-                                    <a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i></a>
-                                    </div>--}}
+                                        @foreach($noti->imgs as $imag)
+                                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
+                                            @break
+                                        @endforeach
+
+                                        {{--<div class="social">
+                                        <a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i></a>
+                                        <a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                                        </div>--}}
+
                                 </div>
                                 <div class="member-info">
-                                    <a href="/noticia/{{$noti->pathname}}"><h4>{{$noti->titulo}} </h4></a>
+                                    <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
                                     <span> {{$noti->fecha}}  </span>
                                 </div>
 
@@ -133,7 +135,7 @@
                                             @endforeach
                                         </div>
                                         <div class="member-info">
-                                            <a href="/noticia/{{$noti->pathname}}"><h4>{{$noti->titulo}} </h4></a>
+                                            <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
                                             <span> {{$noti->fecha}}  </span>
                                         </div>
                                     </div>

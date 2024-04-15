@@ -17,7 +17,7 @@ class CreateGaleriaPortadaTable extends Migration
             $table->id();
             $table->string('img');
             $table->unsignedBigInteger('seccion_id');
-            $table->foreign('secion_id')->references('id')->on('seccion_pagina');
+            $table->foreign('secion_id')->references('id')->on('seccion');
             $table->timestamps();
         });
     }

@@ -59,6 +59,15 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/noticia/{titulo}', 'showNews');
     Route::get('/noticias-categoria/{categoria}', 'showNoticiasPorCategoria');
 
+     /*TRANSPARENCIA FISCAL */
+    Route::get('/transparencia-fiscal', 'showTransparenciaFiscal');
+    Route::post('/transparencia-fiscal-filtro', 'showTransparenciaFiscal');
+    Route::get('/boletin-oficial', 'showBoletinOficial');
+    Route::get('/boletin-oficial/{tipo}', 'showBusquedaBoletinOficial');
+    Route::post('/filtro-boletin-oficial/{tipo}', 'showBoletinOficialItem');
+    Route::get('/avisos-oficiales', 'showAvisosOficiales');
+
+
 });
 
 /* Reclamos / Consultas*/
@@ -70,7 +79,7 @@ Route::controller(ReclamosController::class)->group(function () {
     Route::post('/ingresar-reclamo', 'store');
 });
 
-/* Noticias*/
+/* Noticias - API*/
 Route::controller(NoticiaController::class)->group(function () {
     // Route::get('/orders/{id}', 'show');
     Route::get('/filtro-noticias/all', 'all');
@@ -84,10 +93,15 @@ Route::resource('noticias', App\Http\Controllers\noticiaController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/cms-home', [App\Http\Controllers\CmsHomeController::class, 'index'])->name('cmsHome');
-
 Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->name('portal');
 
 
-
-
 Route::resource('categorias', App\Http\Controllers\categoriaController::class);
+
+
+Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
+Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
+
+
+
+Route::resource('archivos', App\Http\Controllers\ArchivosController::class);

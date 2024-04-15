@@ -206,16 +206,17 @@
     @if(isset($eventos) && (count($eventos) > 0))
 
         <!-- ======= borde colorido ======= -->
-        <div class="container-border">
+        {{-- <div class="container-border">
             <div class="row">
-                <div class="col-4 border-1">
+                <div class="col-4 border-4">
                 </div>
                 <div class="col-4 border-4">
                 </div>
-                <div class="col-4 border-3">
+                <div class="col-4 border-4">
                 </div>
             </div>
-        </div><!-- ======= fin borde colorido ======= -->
+        </div> --}}
+        <!-- ======= fin borde colorido ======= -->
         <!-- ======= Team Section ======= -->
         <section id="{{$nombreSeccion}}-eventos" class="team eventos">
             <div class="container" data-aos="fade-up">

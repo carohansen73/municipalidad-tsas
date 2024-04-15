@@ -4,20 +4,25 @@ namespace App\Http\Controllers;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
-use App\Models\SeccionMenu;
+use App\Models\MenuSeccion;
 use App\Models\Evento;
-use App\Models\SeccionPagina;
-use App\Models\SeccionTexto;
+use App\Models\Seccion;
+use App\Models\SeccionInformacion;
 use App\Models\Galeria;
 use App\Models\GaleriaPortada;
 use App\Models\Archivos;
 use App\Models\Museo;
+use App\Models\Categoria;
 use App\Models\Noticia;
 use App\Models\NoticiaImg;
 use App\Models\NoticiaCategoria;
 use App\Models\InstitucionEducativaNivel;
 use App\Models\InstitucionEducativa;
 use App\Models\PropuestaAcademica;
+use App\Models\SituacionEconomicoFinanciera;
+use App\Models\ReporteEconomicoFinanciero;
+use App\Models\AvisoOficial;
+use App\Models\BoletinOficial;
 
 use App\Models\Delegacion;
 
@@ -47,7 +52,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+        $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->take(1)->with('imgs')->get();
+        $noticias = Noticia::where('destacada', 1)->latest('fecha')->skip(1)->take(2)->with('imgs')->get();
+        $eventos = Evento::take(4)->with('seccion')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
+
+        $nombreSeccion = 'home';
+        return view('home.home', compact('noticias', 'noticiaPpal', 'eventos', 'nombreSeccion'));
     }
 
     public function portal()
@@ -69,15 +79,13 @@ class HomeController extends Controller
        $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
        //tomo los datos y las entidades que pertenecen a esa seccion
-       $secciones = SeccionPagina::whereIn('pertenece_a', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+       $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->orderBy('orden')->get();
 
-       $eventos = Evento::whereIn('seccion_id', SeccionMenu::where('path', $pathSeccion)->pluck('id')->toArray())->get();
+       $eventos = Evento::whereIn('seccion_id', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
 
-        //  $idSecciones = SeccionMenu::where('abreviatura', $pathSeccion)->pluck('id')->toArray();
-        // $secciones = SeccionPagina::whereIn('pertenece_a', $idSecciones)->get();
 
-        // hacer tabla con cecciones y a cual secciopn general pertenecen y con foto portada. EJ:
+        // hacer tabla con secciones y a cual seccion general pertenecen y con foto portada. EJ:
         // seccion organigrama pertenece a municipio
         //seccion educacion pertenece a municipio
         //seccion interes ciudadano pertenece a tramites y servicios
@@ -100,20 +108,20 @@ class HomeController extends Controller
         // $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
         //tomo los datos y las entidades que pertenecen a esa seccion
-        $textos = SeccionTexto::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->with('imgs')->get();
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->with('galeria')->get();
 
-        $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        // $noticias = Noticia::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
 
-        $archivos = Archivos::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        $archivos = Archivos::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
 
-        $portada = GaleriaPortada::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
         //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
 
         //despejo el nombre de la seccion
         $seccionArray = explode("/", $pathSeccion);
         $seccion = array_pop($seccionArray);
 
-        return view('sections.secciones', compact('textos', 'noticias', 'archivos', 'seccion', 'portada'));
+        return view('sections.secciones', compact('textos', 'archivos', 'seccion', 'portada'));
     }
 
      /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
@@ -225,55 +233,34 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showAllNews() /*paginar? o x js hacer api*/
+    public function showAllNews() /*paginar? */
     {
-        $noticias = Noticia::with('imgs')->get();
-        $categorias = NoticiaCategoria::all();
-        // foreach($noticias as $noti){
-        //     foreach($noti->imgs as $imag){
-        //         var_dump($imag->img);die;
-        //     }
+        $noticias = Noticia::with('imgs')->with('categorias')->get();
+        $categorias = Categoria::all();
 
-        // }
         return view('sections.noticias', compact('noticias', 'categorias'));
     }
 
 
     /**
-     * Muestra la noticia seleccionada
+     * Muestra una noticia
      *
      * @return \Illuminate\Http\Response
      */
     public function showNews($titulo)
     {
-        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios x -!!!!!!*/
-
-        // var_dump($titulo);die;
         $noticias = Noticia::with('imgs')->get();
-        $noticia = Noticia::where('pathname', $titulo)->with('imgs')->get();
+        $noticia = Noticia::where('slug', $titulo)->with('imgs')->with('categorias')->get();
 
         foreach($noticia as $noti){
-            $categoriaId = $noti->categoria->id;
+            foreach($noti->categorias as $cat){
+                $categoriaId = $cat->id;
+            }
         }
 
-        $categorias = NoticiaCategoria::all();
+        $categorias = Categoria::all();
         $ultimasNoticias = Noticia::latest()->take(3)->get();
-        $noticiasRelacionadas = Noticia::where('categoria_id', $categoriaId)->latest()->take(3)->get();
-
-
-
-        //  foreach($noticias as $noti){
-        //     //modifico el titulo para usarlo de path url
-        //     //pongo guiones en lugar de espacios
-        //     $cadena = strtolower($noti->titulo);
-        //     $cadenaConvert = strtr($cadena, " ", "-");
-        //     //SACO LOS CARACTERES ESPECIALES (PERO ME BORRA LETRAS CON ACENTOS Y Ñ, no saca . " :)->VER SI OTRO ME FUNCIONA MEJOR
-        //     $pathName = filter_var($cadenaConvert, FILTER_SANITIZE_URL);
-        //     var_dump($pathName);
-        //     foreach($noti->imgs as $imag){
-        //             var_dump($imag->img);die;
-        //     }
-        //  }
+        $noticiasRelacionadas = Noticia::whereIn('id', NoticiaCategoria::whereIn('categoria_id', [$categoriaId])->pluck('noticia_id'))->latest()->take(3)->get();
 
         return view('sections.noticia', compact('noticias', 'noticia', 'categoriaId', 'ultimasNoticias', 'noticiasRelacionadas', 'categorias'));
     }
@@ -286,18 +273,191 @@ class HomeController extends Controller
      */
     public function showNoticiasPorCategoria($categoriaNombre)
     {
-        /*IMPORTANTE!! Al almacenar noticias guardar en path el titulo sin acentos, Ñ, caracteres y reemplazando espacios por - !!!!!!*/
-
         // var_dump($titulo);die;
-        $noticias = Noticia::where('categoria_id', NoticiaCategoria::where('nombre', $categoriaNombre)->pluck('id'))->with('imgs')->get();
+        $noticias = Noticia::whereIn('id',
+            NoticiaCategoria::whereIn('categoria_id',
+            Categoria::whereIn('nombre', [$categoriaNombre])
+            ->pluck('id'))
+            ->pluck('noticia_id'))
+            ->with('imgs')
+            ->get();
 
-        $categorias = NoticiaCategoria::all();
+        $categorias = Categoria::all();
 
         // $ultimasNoticias = Noticia::latest()->take(3)->get();
         $ultimasNoticias = Noticia::orderBy('fecha', 'desc')->take(3)->get();
 
 
         return view('sections.noticias', compact('noticias',  'categorias', 'categoriaNombre', 'ultimasNoticias'));
+    }
+
+
+    /*****************   ------------------------------  TRANSPARENCIA FISCAL  -------------------------- *****************/
+
+    /**
+     * Muestra la Situación Económico Financiera y los Reportes Economico Financiero
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showTransparenciaFiscal()
+    {
+        // var_dump('lelgo');die;
+        /*SITUACION ECONOMICO FINANCIERA*/
+        //obtengo los anios para el filtro
+        $datosSituacion['anios'] = SituacionEconomicoFinanciera::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+
+        //anio a buscar segun si fue seleccionado un anio o el ultimo
+        if (isset($_POST['anio']) && (!empty($_POST['anio']))){
+			$anio=$_POST['anio']; // si definio anio a buscar
+		}else{
+			$anio=$datosSituacion['anios'][0]; // seria el anio actual
+		}
+
+
+        // aca obtengo las situacionesEconomicas separadas por cada ente descentralizado
+		$datosSituacion['anio']=$anio;
+		$datosSituacion['muni']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['muni'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['salud']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['salud'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['claro']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['claro'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['vial']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['vial'])->orderBy('periodo', 'desc')->get();
+
+        /*REPORTES ECONOMICOS*/
+
+        $reportes['generales']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre1']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [1])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre2']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [2])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre3']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [3])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre4']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [4])->orderBy('periodo', 'desc')->get();
+
+
+        return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes'));
+    }
+
+
+    /*****************   ------------------------------  BOLETIN OFICIAL  -------------------------- *****************/
+
+    /**
+     * Muestra los 4 ítems del boleín oficial: Avisos oficiales, Decretos, Ordenanzas, Resoluciones
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBoletinOficial(){
+        $items= $this->getItemsBoletinOficial();
+        return view('transparenciaFiscal.boletin_oficial', compact('items'));
+    }
+
+    /**
+     * Tipos de archivos de boletin oficial
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getItemsBoletinOficial(){
+        $items['avisos']= [
+            "nombre"=>"Avisos Oficiales",
+            "slug" =>  "/avisos-oficiales",
+            "icono" => "fas fa-info-circle"
+        ];
+        $items['decretos']= [
+            "nombre" => "Decretos",
+            "slug" => "/boletin-oficial/decretos",
+            "icono" => "bi bi-file-earmark-ruled-fill"
+        ];
+        $items['ordenanzas']= [
+            "nombre" => "Ordenanzas",
+            "slug" => "https://hcd.tresarroyos.gov.ar/digesto/ordenanzas",
+            "icono" => "fas fa-gavel"
+        ];
+        $items['resoluciones']= [
+
+            "nombre" => "Resoluciones",
+            "slug" => "/boletin-oficial/resoluciones",
+            "icono" =>  "fas fa-file-alt"
+        ];
+
+        return $items;
+    }
+
+    /**
+     * Muestra Boletin Oficial - Avisos/Decretos o Resoluciones
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBusquedaBoletinOficial($tipo)
+    {
+        if($tipo == 'avisos'){
+            $this->showAvisosOficiales($tipo);
+
+        }else{
+            //obtengo los anios y meses para el filtro
+            $filtroDeBusqueda['anios'] = BoletinOficial::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+            $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'desc')->pluck('mes')->all();
+
+            $anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
+            $mes=3;// ultimo mes
+
+            $filtroDeBusqueda['mes'] = $mes;
+            $filtroDeBusqueda['anio'] = $anio;
+
+            return view('transparenciaFiscal.boletin_oficial', compact( 'filtroDeBusqueda',  'tipo'));
+        }
+
+    }
+
+
+    /**
+     * Muestra Boletin Oficial - Avisos/Decretos o Resoluciones
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBoletinOficialItem($tipo)
+    {
+        $items= $this->getItemsBoletinOficial();
+
+        //obtengo los anios y meses para el filtro
+        $filtroDeBusqueda['anios'] = BoletinOficial::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+        $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'desc')->pluck('mes')->all();
+        //anio a buscar segun si fue seleccionado un anio o el ultimo
+        if (isset($_POST['anio']) && (!empty($_POST['anio']))){
+			$anio=$_POST['anio']; // si definio anio a buscar
+		}else{
+			$anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
+		}
+
+        //mes a buscar segun si fue seleccionado un mes o el ultimo
+        if (isset($_POST['mes']) && (!empty($_POST['mes']))){
+			$mes=$_POST['mes']; // si definio anio a buscar
+		}else{
+			$mes=3;// ultimo mes
+		}
+
+        // var_dump($anio, $mes);die;
+        $filtroDeBusqueda['mes'] = $mes;
+        $filtroDeBusqueda['anio'] = $anio;
+
+
+        $boletinOficial = BoletinOficial::whereIn('anio', [$anio])->whereIn('mes', [$mes])->where('tipo', $tipo)->orderBy('orden', 'ASC')->get();
+
+
+
+        // $reportes['generales']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
+
+
+        return view('transparenciaFiscal.boletin_oficial', compact('items', 'filtroDeBusqueda', 'boletinOficial', 'tipo'));
+    }
+
+
+        /**
+     * Muestra Avisos Oficiales
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAvisosOficiales()
+    {
+        $tipo = 'avisos';
+        $items= $this->getItemsBoletinOficial();
+        $boletinOficial = AvisoOficial::whereIn('area', ['aviso'])->orderBy('fecha', 'ASC')->get();
+
+        return view('transparenciaFiscal.boletin_oficial', compact('items', 'boletinOficial', 'tipo'));
     }
 
 }

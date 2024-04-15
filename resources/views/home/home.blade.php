@@ -95,71 +95,151 @@
     </div>
 </section><!-- End Hero -->
 
-    <!-- ======= Noticias/novedades Section ======= -->
+<!-- ======= Noticias/novedades Section ======= -->
     <section id="novedades" class="novedades">
         <div class="container" data-aos="fade-up">
-
             <div class="section-title">
-                <h2>Noticias y novedades</h2>
-                <p>Novedades</p>
 
-              </div>
+                <p>Noticias</p>
+                <h2><a href="portal-de-noticias">Ver Todas</a></h2>
+            </div>
             <div class="row">
-                <div class="container-image-1 col-lg-6"  data-aos="fade-right">
-                    <img src="assets/img/muni-sm/plaza-sm.jpg" class="image-1" alt="">
-                    <div class="novedad-1">
-                        <h4> CRESTA: LLAMADO A SELECCIÓN DOCENTE PARA LA FACULTAD DE CIENCIAS ECONÓMICAS DE LA UNLP</h4>
+                @foreach($noticiaPpal as $noti)
+                    <div class="container-image-1 col-lg-6"  data-aos="fade-right">
+                        @foreach($noti->imgs as $imag)
+                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="image-1" alt="">
+                            @break
+                        @endforeach
+                        <div class="novedad-1">
+                            <a href="/noticia/{{$noti->pathname}}"><h4>{{$noti->titulo}}</h4></a>
+                        </div>
                     </div>
-
-                </div>
+                @endforeach
 
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-                    <div class="image-2-box mt-5 mt-lg-0 " data-aos="zoom-in" data-aos-delay="150">
-                        <div class="container" data-aos="fade-up">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="assets/img/muni-sm/plaza-sm.jpg" class="image-2" alt="">
-                                </div>
-
-                                <div class="col-lg-6 novedad-text-box">
-                                    <h4>Cierre del Proyecto para la Infraestructura de Datos Espaciales del Parque Industrial</h4>
-                                    <div class="ver-mas-box">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                    @foreach($noticias as $noti)
+                        <div class="image-2-box mt-5 mt-lg-0 " data-aos="zoom-in" data-aos-delay="150">
+                            <div class="container" data-aos="fade-up">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        @foreach($noti->imgs as $imag)
+                                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="image-2" alt="">
+                                            @break
+                                        @endforeach
                                     </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image-2-box mt-lg-2  " data-aos="zoom-in" data-aos-delay="150">
-                        <div class="container" data-aos="fade-up">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="assets/img/muni-sm/prevision-sm.jpg" class="image-2" alt="">
-                                </div>
-
-                                <div class="col-lg-6 novedad-text-box">
-                                    <h4> MUESTRA ANUAL DE LA E.E.E N.º 2 EN LA ESTACIÓN</h4>
-                                    <div class="ver-mas-box">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                    <div class="col-lg-6 novedad-text-box">
+                                        <h4>{{$noti->titulo}}</h4>
+                                        <div class="ver-mas-box">
+                                            <a class="ver-mas-btn" href="/noticia/{{$noti->pathname}}">Ver mas</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
-
             <div class="link-ver-todas">
                 <p><a href="portal-de-noticias">Ver todas</a></p>
             </div>
-
-
         </div>
-        </section>
-    <!-- End Novedades Section -->
+    </section>
+<!-- End Noticias Section -->
+
+
+
+
+
+ {{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
+ @if(isset($eventos) && (count($eventos) > 0))
+
+ <!-- ======= Team Section ======= -->
+ <section id="{{$nombreSeccion}}-eventos" class="team ">
+     <div class="container" data-aos="fade-up">
+         <div class="section-title">
+             <p> Próximos eventos</p>
+                 {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
+         </div>
+
+         <div class="row">
+             @foreach($eventos as $evento)
+                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center">
+
+
+                     <div class="member" data-aos="fade-up" data-aos-delay="200">
+                         <div class="member-img">
+                             <img src="{{asset("storage/eventos/".$evento->seccion->path."/".$evento->img)}}" class="img-fluid" alt="">
+                             <div class="social">
+                                 <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$evento->seccion->path}}"
+                                     data-bs-whatever="@mdo">Ver</button>
+                                 </a>
+                             </div>
+                         </div>
+                         {{-- <div class="member-info">
+                         <h4>Sarah Jhonson</h4>
+                         <span>Product Manager</span>
+                         </div> --}}
+                     </div>
+                 </div>
+             @endforeach
+         </div>
+     </div>
+
+ <!-- Modal Eventos -->
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+ <div class="modal-content">
+     <div class="modal-header">
+
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="modal-body">
+         <img src="{{asset('')}}" class="modalimg" alt="">
+             {{-- <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             </div> --}}
+     </div>
+ </div>
+</div>
+</div>
+
+ </section>
+
+@endif
+ <!-- End EVENTOS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <main id="main">
 
@@ -255,8 +335,9 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
-                <h2>Servicios</h2>
-                <p>Servicios mas consultados</p>
+
+                <p>Servicios</p>
+                <h2>Servicios mas consultados</h2>
             </div>
 
             <div class="row">
@@ -299,7 +380,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-2">
                     <div class="icon"><i class="bi bi-clipboard-check"></i></div>
-                    <h4><a href="">Boletín Oficial</a></h4>
+                    <h4><a href="/boletin-oficial">Boletín Oficial</a></h4>
                     {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
                 </div>
                 </div>
@@ -307,7 +388,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
                 <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-house-check-fill"></i></div>
-                    <h4><a href="">Transparencia Fiscal</a></h4>
+                    <h4><a href="/transparencia-fiscal">Transparencia Fiscal</a></h4>
                     {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
                 </div>
                 </div>
@@ -830,5 +911,6 @@
 
   </main><!-- End #main -->
 
-
+  <!-- Modal para ver evento -->
+  <script src="{{ asset('assets/js/modalevento.js') }}"></script>
 @endsection

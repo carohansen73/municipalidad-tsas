@@ -57,14 +57,14 @@
         </div>
     </section>
     @endif
-    @if(count($text->imgs) >0 )
+    @if(count($text->galeria) >0 )
         <!-- =======  FOTOS REFERIDAS A ESE TEXTO======= -->
         <section id="secciones-galeria" class="pt-0 mt-0" style="padding-top: 0px!important;">
             <div class="container " data-aos="fade-up">
                 <div class="row">
-                    @foreach($text->imgs as $imag)
+                    @foreach($text->galeria as $imag)
 
-                            <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$imag->img)}}" alt="foto-1"></div>
+                        <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$imag->img)}}" alt="foto-1"></div>
 
                     @endforeach
                 </div>
@@ -115,7 +115,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
-                            @foreach($noti->imgs as $imag)
+                            @foreach($noti->galeria as $imag)
                                 <div class="img-noticia">
                                     <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
                                 </div>

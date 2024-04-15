@@ -22,7 +22,7 @@ class Evento extends Model
 
     public function seccion()
     {
-        return $this->belongsTo(SeccionMenu::class, 'seccion_id');
+        return $this->belongsTo(MenuSeccion::class, 'seccion_id');
     }
 
 
