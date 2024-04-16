@@ -1,4 +1,5 @@
-<div class="table-responsive">
+<div class="container">
+<div class="table-responsive ">
     <table  id="noticias-table" class="table table-striped" style="width:100%">
         <thead>
         <tr>
@@ -7,7 +8,7 @@
             <th>Categorias</th>
             <th>Publicada</th>
             <th>Destacada</th>
-            <th>Action</th>
+            <th>Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -22,8 +23,16 @@
                         {{$categoria->nombre}}
                     @endforeach
                 </td>
-                <td>{{ $noticia->publicada }}</td>
-                <td>{{ $noticia->destacada }}</td>
+                <td class="text-center">
+                    @if ($noticia->publicada)
+                        <i class="far fa-check-circle text-success"></i>
+                    @endif
+                </td>
+                <td class="text-center">
+                    @if ($noticia->destacada)
+                        <i class="far fa-check-circle text-success"></i>
+                    @endif
+                </td>
 
 
                 <td width="120">
@@ -44,10 +53,31 @@
         </tbody>
     </table>
 </div>
+</div>
 @push('page_scripts')
     <script type="text/javascript">
         $(document).ready( function () {
-            $('#noticias-table').DataTable();
+            $('#noticias-table').DataTable({
+                "language":{
+                    "search":"Buscador:",
+                    "emptyTable":"No se encontraron resultados",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty":"Mostrando 0 a 0 de 0 miembros",
+                    "infoFiltered":"(Filtrado de _MAX_ total miembros)",
+                    "infoPostFix":"",
+                    "Thousands":",",
+                    "lengthMenu":"Mostrar _MENU_ entradas",
+                    "loadingRecords":"Cargando...",
+                    "processing":"Procesando...",
+                    'zeroRecords':"No se encontraron resultados",
+                    "paginate":{
+                        "first":"Primero",
+                        "last":"Ultimo",
+                        "next":"Siguiente",
+                        "previous":"Anterior"
+                    }
+                }
+            });
         } );
     </script>
 @endpush

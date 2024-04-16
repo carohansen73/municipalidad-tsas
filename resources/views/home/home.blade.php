@@ -107,7 +107,7 @@
                 @foreach($noticiaPpal as $noti)
                     <div class="container-image-1 col-lg-6"  data-aos="fade-right">
                         @foreach($noti->imgs as $imag)
-                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="image-1" alt="">
+                            <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
                             @break
                         @endforeach
                         <div class="novedad-1">
@@ -122,8 +122,8 @@
                             <div class="container" data-aos="fade-up">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        @foreach($noti->imgs as $imag)
-                                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="image-2" alt="">
+                                        @foreach($noti->Imgs as $imag)
+                                            <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="image-2" alt="">
                                             @break
                                         @endforeach
                                     </div>
