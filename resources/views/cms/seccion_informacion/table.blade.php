@@ -9,7 +9,7 @@
 
         {{-- <th>Img 3</th>
             <th>Img 4</th> --}}
-                <th colspan="3">Action</th>
+                <th colspan="3">Accion</th>
             </tr>
             </thead>
             <tbody>
@@ -50,7 +50,7 @@
                 <th>Sector</th>
 
 
-                <th colspan="3">Action</th>
+                <th colspan="3">Acciones</th>
             </tr>
             </thead>
             <tbody>
