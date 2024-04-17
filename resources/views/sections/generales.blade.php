@@ -27,24 +27,6 @@
 
 
 
-  <!-- ======= TADI Section ======= -->
-  {{-- <section id="cta" class="cta">
-    <div class="container" data-aos="zoom-in">
-        <img class="foto-portada" src="assets/img/sections-portadas/portadas/{{$pathSeccion}}.jpg" alt="portada-de-la-seccion">
-      <div class="text-center">
-        <h3>Tres Arroyos Digital</h3>
-        <p> Ingresá a Tres Arroyos digital. Creá tu cuenta de TADi para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
-        <a class="cta-btn" href="http://municipalidad-tsas.test/tadi">Ingresá a TA-Di</a>
-      </div>
-
-    </div>
-  </section> --}}
-  <!-- End Cta Section -->
-
-
-
-
-
     <!-- ======= borde portada según color de sección ======= -->
     @if($nombreSeccion == "cultura")
         <div class="container-border">
@@ -94,6 +76,45 @@
         </div>
     @endif
     <!-- ======= fin borde colorido ======= -->
+
+
+
+
+
+    @if($nombreSeccion == "cultura")
+
+<nav class="navbar navbar-expand-lg navbar-light  cultura-nav" >
+    <div class="container-fluid p-0">
+
+        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> --}}
+        {{-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> --}}
+            <div class="navbar-nav">
+                {{-- <a class="nav-link active" aria-current="page" href="#">Home</a> --}}
+                @foreach($secciones as $seccion)
+
+                    @if($seccion->perteneceA->path == 'cultura')
+                        @if( $seccion->nombre == 'Centro Cultural La Estación')
+                        <div class="navlink-item">   <a class="nav-link " href="{{$seccion->link}}"> CCE</a></div>
+                        @elseif ($seccion->nombre == 'Elencos Municipales')
+                        <div class="navlink-item"> <a class="nav-link " href="{{$seccion->link}}"> Elencos</a></div>
+                        @elseif($seccion->nombre == 'Fiesta Provincial del Trigo')
+                        <div class="navlink-item"> <a class="nav-link " href="{{$seccion->link}}"> FDT </a></div>
+                        @elseif ($seccion->nombre == 'Feria Nacional de Artesanos')
+                        <div class="navlink-item">  <a class="nav-link " href="{{$seccion->link}}"> Artesanos </a></div>
+                        @else
+                        <div class="navlink-item">  <a class="nav-link" href="{{$seccion->link}}"> {{$seccion->nombre}} </a></div>
+                        @endif
+                    @endif
+                @endforeach
+            </div>
+        {{-- </div> --}}
+    </div>
+</nav>
+
+@endif
+
 {{-- FIN PORTADA --}}
 
     {{-- CARDS CON DIFERENTES ENTIDADES --}}

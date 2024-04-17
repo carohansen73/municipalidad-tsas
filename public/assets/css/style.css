@@ -613,6 +613,160 @@ h6 {
 }
 
 /*--------------------------------------------------------------
+# Navbar Cultura
+--------------------------------------------------------------*/
+
+@media (min-width: 991px) {
+    .cultura-nav {
+        position: absolute;
+        top: 280px;
+        left: 80px;
+        z-index: 4;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item a{
+        padding: 8 14 8 14;
+        color: #fafafa;
+        transition: all 0.3s ease 0s;
+        border-radius: 0% 15%;
+    }
+
+
+    .cultura-nav .navbar-nav .navlink-item,  .cultura-nav .navbar-nav .navlink-item a{
+        border-radius: 10% 10% 0% 0%;
+    }
+
+
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(1) {
+        background: #672483d1;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(2) {
+        background: #2463a3d2;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(3) {
+        background: #25aec3e3;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(4) {
+        background: #672483d1;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(5) {
+        background: #2463a3d2;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(6) {
+        background: #25aec3e3;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(7) {
+        background: #672483d1;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(8) {
+        background: #2463a3d2;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(9) {
+        background: #25aec3e3;
+    }
+}
+
+@media (max-width: 991px) {
+    .cultura-nav .navbar-nav{
+        display: flex;
+        flex-wrap: wrap;
+         flex-direction: row;
+        width: 100%;
+        box-shadow: 0px 0px 5px 0px rgba(99, 99, 99, 0.3);
+        margin: 5px;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item{
+        display: flex;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 100%;
+        color: #0c0c0c;
+        background: #ffffff;
+
+    }
+
+    .cultura-nav .navbar-nav .navlink-item a{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        color: #343434;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(230, 230, 230);
+
+    }
+
+    .cultura-nav .navlink-item a:hover{
+        color: rgba(255,255,255,.9);
+        background: #d63384;
+
+      }
+
+
+    .cultura-nav .navbar-nav .navlink-item:last-child {
+
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(2) {
+        /* background: whitesmoke; */
+    }
+
+    /* .cultura-nav .navbar-nav .navlink-item:nth-child(3) {
+        background: whitesmoke;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(4) {
+        background: whitesmoke;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(5) {
+        background: whitesmoke;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(6) {
+        background: #whitesmoke;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(7) {
+        background: #ffffffd2;
+    } */
+
+    /* .cultura-nav .navbar-nav .navlink-item:nth-child(8) {
+        background: #d7d7d7e3;
+    }
+
+    .cultura-nav .navbar-nav .navlink-item:nth-child(9) {
+        background: #25aec3e3;
+    } */
+}
+
+
+
+
+
+
+
+
+
+.cultura-nav .navlink-item a:hover{
+    color: rgba(255,255,255,.9);
+    background: #d63384;
+  }
+
+
+
+
+/*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
@@ -2896,7 +3050,7 @@ background-size: cover;
 .portada-foto h1{
     position: absolute;
     z-index: 4;
-    top: 200px;
+    top: 140px;
     padding: 30px 100px;
     color: #fff;
     font-weight: 700;
@@ -2906,12 +3060,8 @@ background-size: cover;
 
 @media (max-width: 991px) {
     .portada-foto h1{
-
         top: 100px;
         padding: 20px 50px;
-
-
-
     }
 }
 
