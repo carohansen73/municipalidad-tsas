@@ -115,7 +115,7 @@ class noticia extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function imgs()
+    public function Imgs()
     {
         return $this->hasMany(\App\Models\NoticiaImg::class, 'noticia_id');
     }

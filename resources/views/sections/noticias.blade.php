@@ -55,7 +55,7 @@
                                 <div class=" fluid-img">
 
                                         @foreach($noti->imgs as $imag)
-                                            <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
+                                            <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
                                             @break
                                         @endforeach
 
@@ -130,7 +130,7 @@
                                     <div class="member" data-aos="fade-up" data-aos-delay="100">
                                         <div class="member-img">
                                             @foreach($noti->imgs as $imag)
-                                                <img src="{{asset("storage/noticia_img/".$imag->img)}}" class="img-fluid" alt="">
+                                                <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
                                                 @break
                                             @endforeach
                                         </div>

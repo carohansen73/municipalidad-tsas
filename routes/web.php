@@ -87,12 +87,10 @@ Route::controller(NoticiaController::class)->group(function () {
     // Route::post('/ingresar-reclamo', 'store');
 });
 
-/* CMS*/
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/cms-home', [App\Http\Controllers\CmsHomeController::class, 'index'])->name('cmsHome');
 Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->name('portal');
 
-Route::resource('noticias', App\Http\Controllers\noticiaController::class);
 
 Route::resource('categorias', App\Http\Controllers\categoriaController::class);
 
@@ -103,3 +101,8 @@ Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionCo
 
 
 Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
+//rutas que requieren login
+Route::group(['middleware' => 'auth'], function () {
+    Route::delete('/delete-img/{id}', [App\Http\Controllers\noticiaController::class, 'destroyImg'])->name('deleteImg');;
+    Route::resource('noticias', App\Http\Controllers\noticiaController::class);
+});

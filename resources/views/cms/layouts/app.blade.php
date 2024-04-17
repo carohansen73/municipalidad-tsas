@@ -33,7 +33,8 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
           integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
           crossorigin="anonymous"/>
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css" />
     @stack('third_party_stylesheets')
 
     @stack('page_css')
@@ -142,7 +143,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/1.3/bootstrapSwitch.min.js"
         integrity="sha512-DAc/LqVY2liDbikmJwUS1MSE3pIH0DFprKHZKPcJC7e3TtAOzT55gEMTleegwyuIWgCfOPOM8eLbbvFaG9F/cA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js"></script>
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
 <script>
     $(function () {
         bsCustomFileInput.init();
@@ -152,10 +154,9 @@
         $(this).bootstrapSwitch('state', $(this).prop('checked'));
     });
 </script>
-1
+
 @stack('third_party_scripts')
-aca
+
 @stack('page_scripts')
-aca
 </body>
 </html>
