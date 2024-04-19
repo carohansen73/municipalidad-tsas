@@ -25,3 +25,18 @@
         <p>Archivos</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('reporteEconomico.index') }}"
+       class="nav-link {{ Request::is('reporteEconomico*') ? 'active' : '' }}">
+        <p>Reporte Economico</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('situacionFinanciera.index') }}"
+       class="nav-link {{ Request::is('situacionFinanciera*') ? 'active' : '' }}">
+        <p>Situacion Financiera</p>
+    </a>
+</li>
+

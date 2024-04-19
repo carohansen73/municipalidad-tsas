@@ -105,4 +105,8 @@ Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
 Route::group(['middleware' => 'auth'], function () {
     Route::delete('/delete-img/{id}', [App\Http\Controllers\noticiaController::class, 'destroyImg'])->name('deleteImg');;
     Route::resource('noticias', App\Http\Controllers\noticiaController::class);
+    Route::resource('reporteEconomico', App\Http\Controllers\ReporteEconomicoController::class);
+    Route::resource('situacionFinanciera', App\Http\Controllers\SituacionFinancieraController::class);
 });
+
+

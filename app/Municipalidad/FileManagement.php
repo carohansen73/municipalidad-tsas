@@ -34,4 +34,17 @@ class FileManagement
         return Storage::delete("/public/".$dir.$name);
 
     }
+    public static function uploadFile($file,$name, $dir) {
+        $path ="/public/".$dir;
+        $name .= uniqid() . '.' . $file->getClientOriginalExtension();
+        // Guardar la imagen en una ruta determinada
+        //Storage::put($path.$name, $file);
+        $path=$file->storeAs($path,$name);
+        // Respuesta, por ejemplo, un mensaje de éxito
+        return $name;
+    }
+    public static function deleteFile($name, $dir) {
+        return Storage::delete("/public/".$dir.$name);
+
+    }
 }
