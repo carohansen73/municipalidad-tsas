@@ -42,22 +42,28 @@ Route::controller(HomeController::class)->group(function () {
 /*SECCIONES UNITARIAS */
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
-    Route::get('/museos', 'showMuseos');
+    Route::get('/museos', 'showMuseums');
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
     /*SERVICIOS */
-    Route::get('/servicios', 'showListServicios');
+    Route::get('/servicios', 'showListServices');
 
     /*EDUCACION */
-    Route::get('/educacion', 'showSeccionEducation');
+    Route::get('/educacion', 'showSectionEducation');
     Route::get('/educacion/{id}', 'showEducationByLevel');
+
+     /*ORGANIGRAMA */
+     Route::get('/organigrama', 'showOrganigrama');
 
 
     /*NOTICIAS */
     Route::get('/portal-de-noticias', 'showAllNews');
     Route::get('/noticia/{titulo}', 'showNews');
     Route::get('/noticias-categoria/{categoria}', 'showNoticiasPorCategoria');
+
+    /*EVENTOS*/
+    Route::get('/proximos-eventos', 'showAllEvents');
 
      /*TRANSPARENCIA FISCAL */
     Route::get('/transparencia-fiscal', 'showTransparenciaFiscal');
@@ -92,11 +98,10 @@ Route::get('/cms-home', [App\Http\Controllers\CmsHomeController::class, 'index']
 Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->name('portal');
 
 
-Route::resource('categorias', App\Http\Controllers\categoriaController::class);
 
 
-Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
-Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
+
+
 
 
 
@@ -107,6 +112,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('noticias', App\Http\Controllers\noticiaController::class);
     Route::resource('reporteEconomico', App\Http\Controllers\ReporteEconomicoController::class);
     Route::resource('situacionFinanciera', App\Http\Controllers\SituacionFinancieraController::class);
+
+
+
+    Route::resource('categorias', App\Http\Controllers\categoriaController::class);
+    Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
+    Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
+    Route::resource('eventos', App\Http\Controllers\EventoController::class);
 });
+
 
 

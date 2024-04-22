@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 use App\Models\TramiteGuia;
 use App\Models\Area;
 use App\Models\TramiteTipo;
@@ -52,9 +53,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->take(1)->with('imgs')->get();
-        $noticias = Noticia::where('destacada', 1)->latest('fecha')->skip(1)->take(2)->with('imgs')->get();
-        $eventos = Evento::take(4)->with('seccion')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
+        $hoy = Carbon::today();
+        $hoy = $hoy->format('Y-m-d');
+
+        $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(1)->with('imgs')->get();
+        $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->skip(1)->take(2)->with('imgs')->get();
+        $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->take(4)->with('seccion')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
 
         $nombreSeccion = 'home';
         return view('home.home', compact('noticias', 'noticiaPpal', 'eventos', 'nombreSeccion'));
@@ -143,7 +147,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSeccionEducation()
+    public function showSectionEducation()
     {
         $niveles = InstitucionEducativaNivel::all();
         return view('sections.educacion', compact('niveles'));
@@ -163,6 +167,18 @@ class HomeController extends Controller
         return view('sections.establecimientos-educativos', compact('niveles', 'establecimientos'));
     }
 
+    /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
+
+    /**
+     * Muestra la seccion educacion, con los diferenets niveles educativos
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showOrganigrama()
+    {
+        $niveles = InstitucionEducativaNivel::all();
+        return view('sections.educacion', compact('niveles'));
+    }
 
 
   /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
@@ -172,7 +188,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showMuseos()
+    public function showMuseums()
     {
         $museos = Museo::all();
         return view('sections.museos', compact('museos'));
@@ -220,13 +236,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
     */
-    public function showListServicios(){
+    public function showListServices(){
         $SERVICIOS = 'SERVICIOS';
         return view('sections.servicios', compact('SERVICIOS'));
     }
 
 
     /*****************   ------------------------------  HOME -------------------------- *****************/
+
+    /*****************   ------------------------------  NOTICIAS -------------------------- *****************/
 
     /**
      * Muestra todas las noticias
@@ -235,7 +253,7 @@ class HomeController extends Controller
      */
     public function showAllNews() /*paginar? */
     {
-        $noticias = Noticia::with('imgs')->with('categorias')->get();
+        $noticias = Noticia::latest('fecha')->latest('id')->with('imgs')->with('categorias')->get();
         $categorias = Categoria::all();
 
         return view('sections.noticias', compact('noticias', 'categorias'));
@@ -279,6 +297,7 @@ class HomeController extends Controller
             Categoria::whereIn('nombre', [$categoriaNombre])
             ->pluck('id'))
             ->pluck('noticia_id'))
+            ->latest('fecha')->latest('id')
             ->with('imgs')
             ->get();
 
@@ -289,6 +308,20 @@ class HomeController extends Controller
 
 
         return view('sections.noticias', compact('noticias',  'categorias', 'categoriaNombre', 'ultimasNoticias'));
+    }
+
+    /**
+     * mUESTRA TODOS LOS PRÓXIMOS EVENTOS
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAllEvents()
+    {
+        $hoy = Carbon::today();
+        $hoy = $hoy->format('Y-m-d');
+        $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->with('seccion')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
+
+        return view('sections.eventos', compact('eventos'));
     }
 
 

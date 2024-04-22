@@ -84,7 +84,7 @@ class noticiaController extends AppBaseController
 
         if (!empty($input['imagenes'])){
             foreach ($input['imagenes'] as $file) {
-                $name=FileManagement::uploadImage($file,$path);
+                $name=FileManagement::uploadImage($file,$path, 720, 540);
                 $noticia->Imgs()->create([
                     'img'=>$name,
                     'leyenda'=>$noticia->titulo
@@ -165,7 +165,7 @@ class noticiaController extends AppBaseController
 
         if (!empty($request['imagenes'])){
             foreach ($request['imagenes'] as $file) {
-                $name=FileManagement::uploadImage($file,$path);
+                $name=FileManagement::uploadImage($file,$path, 720, 540);
                 $noticia->Imgs()->create([
                     'img'=>$name,
                     'leyenda'=>$noticia->titulo

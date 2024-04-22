@@ -30,7 +30,7 @@
 
             <div class="col-xl-2 col-md-2">
                 <a href="municipio">
-                    <div class="icon-box icon-1">
+                    <div class="icon-box icon-2">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
                     </div>
@@ -39,7 +39,7 @@
 
             <div class="col-xl-2 col-md-2">
                 <a href="atencion-al-vecino">
-                    <div class="icon-box icon-2">
+                    <div class="icon-box icon-1">
 
                     <i class="fas fa-phone"></i>
                         <h3>Atención al vecino</h3>
@@ -47,7 +47,7 @@
                 </a>
             </div>
 
-            <div class="col-xl-2 col-md-2">
+            {{-- <div class="col-xl-2 col-md-2">
                 <a href="ciudad-productiva">
                     <div class="icon-box icon-3">
 
@@ -55,7 +55,7 @@
                         <h3>Ciudad productiva</h3>
                     </div>
                 </a>
-            </div>
+            </div> --}}
             <div class="col-xl-2 col-md-2">
                 <a href="cultura">
                     <div class="icon-box icon-4">
@@ -104,33 +104,35 @@
                 <h2><a href="portal-de-noticias">Ver Todas</a></h2>
             </div>
             <div class="row">
-                @foreach($noticiaPpal as $noti)
-                    <div class="container-image-1 col-lg-6"  data-aos="fade-right">
+
+                    <div class="col-lg-6 container-image-1 "  data-aos="fade-right">
+                        @foreach($noticiaPpal as $noti)
                         @foreach($noti->imgs as $imag)
                             <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
                             @break
                         @endforeach
                         <div class="novedad-1">
-                            <a href="/noticia/{{$noti->pathname}}"><h4>{{$noti->titulo}}</h4></a>
+                            <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
                         </div>
+                        @endforeach
                     </div>
-                @endforeach
 
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+
+                <div class="col-lg-6 container-image-2" data-aos="fade-left" data-aos-delay="100">
                     @foreach($noticias as $noti)
-                        <div class="image-2-box mt-5 mt-lg-0 " data-aos="zoom-in" data-aos-delay="150">
+                        <div class="image-2-box mt-5  mt-lg-0 col-lg-12" data-aos="zoom-in" data-aos-delay="150">
                             <div class="container" data-aos="fade-up">
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-6 mb-lg-3 img-secondary">
                                         @foreach($noti->Imgs as $imag)
                                             <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="image-2" alt="">
                                             @break
                                         @endforeach
                                     </div>
-                                    <div class="col-lg-6 novedad-text-box">
+                                    <div class="col-lg-6 mb-0 novedad-text-box">
                                         <h4>{{$noti->titulo}}</h4>
                                         <div class="ver-mas-box">
-                                            <a class="ver-mas-btn" href="/noticia/{{$noti->pathname}}">Ver mas</a>
+                                            <a class="ver-mas-btn" href="/noticia/{{$noti->slug}}">Ver mas</a>
                                         </div>
                                     </div>
                                 </div>
@@ -158,17 +160,17 @@
      <div class="container" data-aos="fade-up">
          <div class="section-title">
              <p> Próximos eventos</p>
+             <h2><a href="/proximos-eventos">Ver Todos</a></h2>
                  {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
          </div>
 
          <div class="row">
              @foreach($eventos as $evento)
-                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center">
-
+                 <div class="col-lg-3 col-md-6 align-items-stretch">
 
                      <div class="member" data-aos="fade-up" data-aos-delay="200">
                          <div class="member-img">
-                             <img src="{{asset("storage/eventos/".$evento->seccion->path."/".$evento->img)}}" class="img-fluid" alt="">
+                             <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
                              <div class="social">
                                  <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$evento->seccion->path}}"
                                      data-bs-whatever="@mdo">Ver</button>
@@ -207,36 +209,6 @@
 
 @endif
  <!-- End EVENTOS -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
