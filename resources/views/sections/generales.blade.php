@@ -248,11 +248,12 @@
 
                 <div class="row">
                     @foreach($eventos as $evento)
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch justify-content-center">
+                        <div class="col-lg-3 col-md-6 align-items-stretch">
 
                             <div class="member" data-aos="fade-up" data-aos-delay="200">
                                 <div class="member-img">
-                                    <img src="{{asset("storage/eventos/".$nombreSeccion."/".$evento->img)}}" class="img-fluid" alt="">
+                                    {{-- <img src="{{asset("storage/eventos/".$nombreSeccion."/".$evento->img)}}" class="img-fluid" alt=""> --}}
+                                       <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
                                     <div class="social">
                                         <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$nombreSeccion}}""
                                             data-bs-whatever="@mdo">Ver</button>

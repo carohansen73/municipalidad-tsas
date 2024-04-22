@@ -30,6 +30,7 @@ class FileManagement
         // Respuesta, por ejemplo, un mensaje de éxito
         return $name;
     }
+
     public static function deleteImg( $name, $dir) {
         return Storage::delete("/public/".$dir.$name);
 

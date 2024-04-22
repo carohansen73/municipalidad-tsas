@@ -6,6 +6,13 @@
 </li>
 
 <li class="nav-item">
+    <a href="{{ route('eventos.index') }}"
+       class="nav-link {{ Request::is('eventos*') ? 'active' : '' }}">
+        <p>Eventos</p>
+    </a>
+</li>
+
+<li class="nav-item">
     <a href="{{ route('categorias.index') }}"
        class="nav-link {{ Request::is('categorias*') ? 'active' : '' }}">
         <p>Categorias</p>

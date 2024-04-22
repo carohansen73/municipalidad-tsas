@@ -57,7 +57,6 @@ class SeccionInformacionController extends AppBaseController
         $archivos=Archivos::whereIn('seccion_id', Seccion::where('nombre', $seccion)->pluck('id'))->get();
         $title = 'Seccion: '.$seccion;
 
-
         return view('cms.seccion_informacion.index')
             ->with('seccionInformacions', $seccionInformacions)
             ->with('seccion', $seccion)

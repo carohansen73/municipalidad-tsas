@@ -29,7 +29,7 @@ document.querySelectorAll('.btn-modal-evento').forEach(boton => {
         let seccion = e.delegateTarget.dataset.seccion;
 
         let inputImg = document.querySelector(".modalimg");
-        let src = "storage/eventos/"+"/"+seccion+"/"+imagen;
+        let src = "storage/eventos/"+imagen;
         inputImg.setAttribute("src", src);
         src = "";
     });
