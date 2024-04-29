@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\TramiteGuia;
 use App\Models\Area;
+use App\Models\Organigrama;
 use App\Models\TramiteTipo;
 use App\Models\MenuSeccion;
 use App\Models\Evento;
@@ -180,8 +181,14 @@ class HomeController extends Controller
      */
     public function showOrganigrama()
     {
-        $niveles = InstitucionEducativaNivel::all();
-        return view('sections.educacion', compact('niveles'));
+        $areas = Area::where('nivel', 1)->orderBy('orden')->with('organigrama')->with('relacion_areas')->get();
+
+
+            var_dump($areas);die;
+
+        // $empleados  = Organigrama::
+        // $niveles = InstitucionEducativaNivel::all();
+        return view('sections.organigrama', compact('areas'));
     }
 
 
