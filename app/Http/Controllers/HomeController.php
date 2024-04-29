@@ -76,14 +76,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showSections()
+    public function showMenuSection()
     {
         //busco la A LA Q INGRESÓ seccion con el path
        $pathSeccion = \Request::path();
        $nombreSeccion = str_replace("-"," ",$pathSeccion);
 
        //tomo los datos y las entidades que pertenecen a esa seccion
-       $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->orderBy('orden')->get();
+       $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->where('orden', '>=', 1)->orderBy('orden')->get();
 
        $eventos = Evento::whereIn('seccion_id', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
 
@@ -128,13 +128,17 @@ class HomeController extends Controller
         return view('sections.secciones', compact('textos', 'archivos', 'seccion', 'portada'));
     }
 
-     /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
 
-     /**
+
+
+
+    /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
+
+    /**
      * Muestra LAS DISTINTAS DELEGACIONES QUE FORMAN PARTE DEL PARTIDO DE TSAS
      *
      * @return \Illuminate\Http\Response
-     */
+    */
     public function showDelegaciones()
     {
         $delegaciones = Delegacion::all();
@@ -194,6 +198,33 @@ class HomeController extends Controller
         return view('sections.museos', compact('museos'));
     }
 
+    /**
+     * Seccion Fiesta del Trigo
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showFiestaDelTrigo(){
+        //busco la A LA Q INGRESÓ seccion con el path
+        $pathSeccion = \Request::path();
+
+        // $nombreSeccion = str_replace("-"," ",$pathSeccion);
+
+        //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->with('galeria')->get();
+
+        // $noticias = Noticia::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
+
+        $archivos = Archivos::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
+
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
+        //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
+
+        //despejo el nombre de la seccion
+        $seccionArray = explode("/", $pathSeccion);
+        $seccion = array_pop($seccionArray);
+
+        return view('sections.fdt', compact('textos', 'archivos', 'seccion', 'portada'));
+    }
     /***************** ------------------------------  ATENCION AL VECINO -------------------------- *****************/
 
     /**

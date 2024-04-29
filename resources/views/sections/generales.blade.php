@@ -80,20 +80,12 @@
 
 
 
-
-    @if($nombreSeccion == "cultura")
-
-<nav class="navbar navbar-expand-lg navbar-light  cultura-nav" >
-    <div class="container-fluid p-0">
-
-        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button> --}}
-        {{-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> --}}
+{{-- <!-- ======= secciones en navbar sobre la portada  ======= -->
+@if($nombreSeccion == "cultura")
+    <nav class="navbar navbar-expand-lg navbar-light  cultura-nav" >
+        <div class="container-fluid p-0">
             <div class="navbar-nav">
-                {{-- <a class="nav-link active" aria-current="page" href="#">Home</a> --}}
                 @foreach($secciones as $seccion)
-
                     @if($seccion->perteneceA->path == 'cultura')
                         @if( $seccion->nombre == 'Centro Cultural La Estación')
                         <div class="navlink-item">   <a class="nav-link " href="{{$seccion->link}}"> CCE</a></div>
@@ -109,11 +101,9 @@
                     @endif
                 @endforeach
             </div>
-        {{-- </div> --}}
-    </div>
-</nav>
-
-@endif
+        </div>
+    </nav>
+@endif --}}
 
 {{-- FIN PORTADA --}}
 
@@ -125,7 +115,9 @@
             @if($nombreSeccion == "cultura")
                 <section class="team mb-5">
                     <div class="container" data-aos="fade-up">
-                        <div class="row container-section-gral mb-5">
+                        <div class="row container-section-gral">
+                            {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-93af1cd1-6a74-46e4-94e5-52761e211fea" data-elfsight-app-lazy></div> --}}
                             @foreach($secciones as $seccion)
                                 @if($seccion->perteneceA->path == 'cultura')
                                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4">
@@ -137,7 +129,7 @@
                                             </a>
                                         <div class="member-info">
                                             @if($nombreSeccion == "cultura")
-                                                <h4 style="color: #d63384">
+                                                <h4 style="color: #9C024E">
                                             @else
                                                 <h4>
                                             @endif

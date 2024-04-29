@@ -1854,7 +1854,7 @@ section {
 }
 
 .counts .image {
-  background: url("../img/counts-img.jpg") center center no-repeat;
+  background: url("/storage/secciones/fdt/8.jpg") center center no-repeat;
   background-size: cover;
   min-height: 400px;
 }
@@ -2103,10 +2103,11 @@ section {
 /*--------------------------------------------------------------
 # CULTURA / EVENTOS (reutilizo estilo MUSEOS - Team)
 --------------------------------------------------------------*/
-section #cultura-eventos {
-    background-color: #d63384bb;
+section #cultura-eventos p{
+    /* background-color: #d63384bb; */
     /* background-color: whitesmoke; */
-    /* background-color: #662483; */
+    color: #662483;
+    color: #d63384;
 }
 
 .eventos p{
@@ -2258,6 +2259,67 @@ section #deportes-eventos{
     display: flex;
     justify-content: center;
 }
+
+/*--------------------------------------------------------------
+# SECCIONES
+--------------------------------------------------------------*/
+.box-contact{
+    display: flex;
+    flex-direction: column;
+   padding: 10px 10px 10px 20px;
+    border: 1px solid rgb(191, 191, 191);
+    border-radius: 10px;
+}
+
+.box-contact i{
+    color: #25afc3;
+
+}
+
+/* #section-information{
+    position: relative;
+} */
+
+/* .box-contact{
+     position: absolute;
+    right: 50;
+    top:150px;
+} */
+
+/* @media  (min-width: 1400px) {
+    #section-information .container-section-information .container:first-child{
+        max-width: 800px;
+        margin-left: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #section-information .container-section-information .container:first-child{
+        max-width: 570px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    #section-information .container-section-information .container:first-child{
+        max-width: 480px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    #section-information .container-section-information .container:first-child{
+        max-width: 360px;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 576px) {
+    #section-information .container-section-information .container:first-child{
+        max-width: 270px;
+        margin-left: auto;
+    }
+} */
 
 /*--------------------------------------------------------------
 # NOTICIAS utilizo team
@@ -3003,7 +3065,7 @@ input[type=number] { -moz-appearance:textfield; }
 # ESTILOS GENERALES
 --------------------------------------------------------------*/
 .margen-top-navbar{
-    margin-top: 73px;
+    margin-top: 83px;
 }
 
 @media (max-width: 991px) {
@@ -3471,25 +3533,6 @@ background-size: cover;
     width: 100%;
 }
 
-
-/* HTML:
-
-<div class="col-lg-12 bg-animated">
-<div class="bg"></div>
-<div class="bg bg-2"></div>
-<div class="bg bg-3"></div>
-<div class="row align-items-center">
-    <div class="col-6 justify-content-center">
-        <p>lalalalala </p>
-        <p>lalalalala </p>
-        <p>lalalalala </p>
-        <p>lalalalala </p>
-    </div>
-</div>
-</div> */
-
-
-
 .font-color-wh{
    color: #ffffff;
    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.922);
@@ -3529,3 +3572,5 @@ background-size: cover;
     background-color: rgb(13, 116, 189);
     border-color: rgb(13, 116, 189);
 }
+
+

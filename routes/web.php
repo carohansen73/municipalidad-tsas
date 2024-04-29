@@ -33,18 +33,20 @@ Route::controller(HomeController::class)->group(function () {
     // Route::get('/orders/{id}', 'show');
     Route::get('/', 'index');
 /*SECCIONES GENERALES (que contienen otras secciones) o hacer menu desplegable*/
-    Route::get('/municipio', 'showSections');
-    Route::get('/atencion-al-vecino', 'showSections');
-    Route::get('/ciudad-productiva', 'showSections');
-    Route::get('/cultura', 'showSections');
-    Route::get('/turismo', 'showSections');
-    Route::get('/deportes', 'showSections');
+    Route::get('/municipio', 'showMenuSection');
+    Route::get('/atencion-al-vecino', 'showMenuSection');
+    Route::get('/ciudad-productiva', 'showMenuSection');
+    Route::get('/cultura', 'showMenuSection');
+    Route::get('/turismo', 'showMenuSection');
+    Route::get('/deportes', 'showMenuSection');
 /*SECCIONES UNITARIAS */
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
     Route::get('/museos', 'showMuseums');
+    Route::get('/fiesta-del-trigo', 'showFiestaDelTrigo');
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/seccion/{nombre}', 'showSectionPlana');
+    // Route::get('/area/{nombre}', 'showSectionPlana');
 
     /*SERVICIOS */
     Route::get('/servicios', 'showListServices');
