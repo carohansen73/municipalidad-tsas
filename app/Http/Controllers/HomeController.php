@@ -27,6 +27,7 @@ use App\Models\AvisoOficial;
 use App\Models\BoletinOficial;
 
 use App\Models\Delegacion;
+use App\Http\Resources\OrganigramaResource;
 
 
 use Symfony\Component\Routing\Route;
@@ -181,14 +182,17 @@ class HomeController extends Controller
      */
     public function showOrganigrama()
     {
-        $areas = Area::where('nivel', 1)->orderBy('orden')->with('organigrama')->with('relacion_areas')->get();
-
-
-            var_dump($areas);die;
+        $areas = Area::where('nivel', 1)->orderBy('orden')->with('organigrama')->with('hijos')->get();
 
         // $empleados  = Organigrama::
         // $niveles = InstitucionEducativaNivel::all();
         return view('sections.organigrama', compact('areas'));
+    }
+
+
+    public function getOrganigramaByArea($id)
+    {
+        return OrganigramaResource::collection(Organigrama::where('area_id', $id)->get());
     }
 
 

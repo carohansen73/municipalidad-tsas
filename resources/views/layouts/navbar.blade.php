@@ -6,7 +6,7 @@
       <!--para usar logo en navbar -->
         {{-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{asset("assets/img/logos/logo-remove.png")}}" alt="" class="img-fluid"> Tres Arroyos</a> --}}
 
-        <a href="/" class="logo me-auto me-lg-0 font-color-bl"><img src="{{asset("assets/img/logos/Untitled-remove.png")}}" alt="" class="img-fluid"> Tres Arroyos</a>
+        <a href="/" class="logo me-auto me-lg-0 font-color-bl"><img src="{{asset("assets/img/logos/Untitled-remove.png")}}" alt="" class="img-fluid"></a>
         {{-- <img href="img/logos/.jpeg" alt="MiTresa" class="img-fluid"> --}}
 
 

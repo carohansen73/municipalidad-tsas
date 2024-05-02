@@ -108,6 +108,14 @@ a {
     color: rgb(89, 152, 197);
 }
 
+.a-dark-blue{
+    color: rgb(7, 85, 141);
+}
+
+.a-dark-blue:hover{
+    color: rgb(26, 120, 187);
+}
+
 a:hover {
   color: #ffd584;
   text-decoration: none;

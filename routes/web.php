@@ -57,6 +57,8 @@ Route::controller(HomeController::class)->group(function () {
 
      /*ORGANIGRAMA */
      Route::get('/organigrama', 'showOrganigrama');
+     Route::get('/organigrama/{id}', 'getOrganigramaByArea');
+
 
 
     /*NOTICIAS */

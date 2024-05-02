@@ -19,7 +19,7 @@ class Area extends Model
         'nivel',
         'orden',
         'visible',
-
+        'parent_id'
     ];
 
     /**
@@ -29,6 +29,26 @@ class Area extends Model
     {
         return $this->hasMany(\App\Models\Organigrama::class, 'area_id');
     }
+
+
+
+
+
+        /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function padre(){
+        return $this->belongsTo(Area::class);
+    }
+
+
+  /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function hijos(){
+        return $this->hasMany(\App\Models\Area::class, 'parent_id');
+    }
+
 
 
         /**
