@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\noticia;
+use App\Models\Noticia;
 
 class UpdatenoticiaRequest extends FormRequest
 {
@@ -24,8 +24,8 @@ class UpdatenoticiaRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = noticia::$rules;
-        
+        $rules = Noticia::$rules;
+
         return $rules;
     }
 }
