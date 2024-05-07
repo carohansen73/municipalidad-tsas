@@ -197,6 +197,17 @@ class HomeController extends Controller
 
 
   /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
+    /**
+     *Centro Cultural la Estacion
+     * @return \Illuminate\Http\Response
+     */
+    public function showCCE(){
+
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'cce')->pluck('id'))->get();
+        //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'cce')->pluck('id'))->with('galeria')->get();
+        return view('sections.cce', compact('portada', 'textos') );
+    }
 
     /**
      * Muestra información sobre el trámite seleccionado
@@ -236,6 +247,20 @@ class HomeController extends Controller
 
         return view('sections.fdt', compact('textos', 'archivos', 'seccion', 'portada'));
     }
+
+   /**
+     * Muestra la seccion de colectividades
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showColectividades()
+    {
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'colectividades')->pluck('id'))->get();
+          //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'colectividades')->pluck('id'))->with('galeria')->get();
+        return view('sections.colectividades', compact('portada', 'textos') );
+    }
+
     /***************** ------------------------------  ATENCION AL VECINO -------------------------- *****************/
 
     /**
