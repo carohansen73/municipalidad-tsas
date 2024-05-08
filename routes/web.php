@@ -114,8 +114,8 @@ Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->n
 Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
 //rutas que requieren login
 Route::group(['middleware' => 'auth'], function () {
-    Route::delete('/delete-img/{id}', [App\Http\Controllers\noticiaController::class, 'destroyImg'])->name('deleteImg');;
-    Route::resource('noticias', App\Http\Controllers\noticiaController::class);
+    Route::delete('/delete-img/{id}', [App\Http\Controllers\NoticiaController::class, 'destroyImg'])->name('deleteImg');;
+    Route::resource('noticias', App\Http\Controllers\NoticiaController::class);
     Route::resource('reporteEconomico', App\Http\Controllers\ReporteEconomicoController::class);
     Route::resource('situacionFinanciera', App\Http\Controllers\SituacionFinancieraController::class);
 

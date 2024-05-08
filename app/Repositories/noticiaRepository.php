@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\noticia;
+use App\Models\Noticia;
 use App\Repositories\BaseRepository;
 
 /**
@@ -42,6 +42,6 @@ class noticiaRepository extends BaseRepository
      **/
     public function model()
     {
-        return noticia::class;
+        return Noticia::class;
     }
 }
