@@ -10,6 +10,7 @@ use App\Models\MenuSeccion;
 use App\Models\Evento;
 use App\Models\Seccion;
 use App\Models\SeccionInformacion;
+use App\Models\SeccionContacto;
 use App\Models\Galeria;
 use App\Models\GaleriaPortada;
 use App\Models\Archivos;
@@ -119,15 +120,16 @@ class HomeController extends Controller
         // $noticias = Noticia::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
 
         $archivos = Archivos::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
-
         $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
+        $contacto = SeccionContacto::where('seccion_id', Seccion::where('link', $pathSeccion)->pluck('id'))->get();
+
         //al guardar nombre_agradable:  str_replace("_", " ", $archivo->nombre) y  str_replace("-", " ", $archivo->nombre)
 
         //despejo el nombre de la seccion
         $seccionArray = explode("/", $pathSeccion);
         $seccion = array_pop($seccionArray);
 
-        return view('sections.secciones', compact('textos', 'archivos', 'seccion', 'portada'));
+        return view('sections.secciones', compact('textos', 'archivos', 'seccion', 'portada', 'contacto'));
     }
 
 
@@ -206,7 +208,7 @@ class HomeController extends Controller
         $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'cce')->pluck('id'))->get();
         //tomo los datos y las entidades que pertenecen a esa seccion
         $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'cce')->pluck('id'))->with('galeria')->get();
-        return view('sections.cce', compact('portada', 'textos') );
+        return view('cultura.cce', compact('portada', 'textos') );
     }
 
     /**
@@ -217,7 +219,7 @@ class HomeController extends Controller
     public function showMuseums()
     {
         $museos = Museo::all();
-        return view('sections.museos', compact('museos'));
+        return view('cultura.museos', compact('museos'));
     }
 
     /**
@@ -245,7 +247,7 @@ class HomeController extends Controller
         $seccionArray = explode("/", $pathSeccion);
         $seccion = array_pop($seccionArray);
 
-        return view('sections.fdt', compact('textos', 'archivos', 'seccion', 'portada'));
+        return view('cultura.fdt', compact('textos', 'archivos', 'seccion', 'portada'));
     }
 
    /**
@@ -258,8 +260,23 @@ class HomeController extends Controller
         $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'colectividades')->pluck('id'))->get();
           //tomo los datos y las entidades que pertenecen a esa seccion
         $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'colectividades')->pluck('id'))->with('galeria')->get();
-        return view('sections.colectividades', compact('portada', 'textos') );
+        return view('cultura.colectividades', compact('portada', 'textos') );
     }
+
+      /**
+     * Muestra la seccion de colectividades
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showBibliotecas()
+    {
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'bibliotecas')->pluck('id'))->get();
+          //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'bibliotecas')->pluck('id'))->with('galeria')->get();
+        return view('cultura.bibliotecas', compact('portada', 'textos') );
+    }
+
+
 
     /***************** ------------------------------  ATENCION AL VECINO -------------------------- *****************/
 

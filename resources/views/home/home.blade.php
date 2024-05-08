@@ -427,7 +427,7 @@
         <div class="text-center">
           <h3>Mi Tresa</h3>
           <p> Ingresá a MiTresa. Registrate para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
-          <a class="cta-btn" href="http://municipalidad-tsas.test/tadi">Ingresá a MiTresa</a>
+          <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Ingresá a MiTresa</a>
         </div>
 
       </div>
@@ -825,11 +825,11 @@
 
         <div class="row mt-5">
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Nos encontramos en :</h4>
+                <h4>Nos encontramos en:</h4>
                 <p>Av. Rivadavia Nº 1, Tres Arroyos, Argentina</p>
               </div>
 
@@ -849,9 +849,33 @@
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+          <div class="col-lg-6 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="info">
+                <div class="address">
+                    <i class="fab fa-instagram"></i>
+                    <h4>Instagram:</h4>
+                    <p><a href="https://www.instagram.com/municipalidadtresarroyos/" class="a-blue" target="_blank"> <span style="font-size: 14px;">/municipalidadtresarroyos</span> </a></p>
+                </div>
+
+                <div class="email">
+                    <i class="fab fa-facebook-square"></i>
+                  <h4>Facebook:</h4>
+                  <p><a href="https://www.facebook.com/municipalidaddetresarroyos" class="a-blue" target="_blank"> <span style="font-size: 14px;">/municipalidaddetresarroyos</span> </a></p>
+
+                </div>
+
+                {{-- <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Telefono:</h4>
+                  <p>(02983) 439200</p>
+                </div> --}}
+
+              </div>
+
+            {{--
+                 <div class="col-lg-8 mt-5 mt-lg-0">
+                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Apellido y nombre" required>
@@ -873,9 +897,10 @@
               </div>
               <div class="text-center"><button type="submit">Enviar mensaje</button></div>
             </form>
+             </div>--}}
 
-          </div>
 
+            </div>
         </div>
 
       </div>

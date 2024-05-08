@@ -2568,7 +2568,7 @@ section #deportes-eventos{
 .contact .info i {
   font-size: 20px;
   background: #25afc3;
-  color: rgb(13, 116, 189);
+  color: #fff;
   float: left;
   width: 44px;
   height: 44px;
@@ -2596,7 +2596,7 @@ section #deportes-eventos{
 
 .contact .info .email,
 .contact .info .phone {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .contact .php-email-form {
@@ -3308,17 +3308,21 @@ background-size: cover;
 --------------------------------------------------------------*/
 #colectividades .portada-foto{
     background-image: url("/storage/secciones/port.jpg");
-   /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/municipio.jpg") fixed center center; */
-   height: 320px;
-   background-size: cover;
+    height: 320px;
+    background-size: cover;
 }
 
 #cce .portada-foto{
     background-image: url("../img/sections-portadas/cultura/cce.jpeg");
-   /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/municipio.jpg") fixed center center; */
-   height: 320px;
-   background-position: center;
-   background-size: cover;
+    height: 320px;
+    background-position: center;
+    background-size: cover;
+}
+
+#bibliotecas .portada-foto{
+    background-image: url("../img/sections-portadas/cultura/biblio3.jpg");
+    height: 320px;
+    background-size: cover;
 }
 
 /*--------------------------------------------------------------

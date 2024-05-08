@@ -54,7 +54,7 @@
 
 
             <div class="get-started-buttons">
-                <a  href="tadi" target="_blank" class="get-started-btn scrollto">
+                <a  href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="get-started-btn scrollto">
                     <div class="get-started-group font-color-bl">
                         {{-- <img src="{{asset("assets/img/logos/MiTr-remove2.png")}}" alt="" class="img-fluid mb-1 mi-tresa-1"> --}}
                         <img src="{{asset("assets/img/logos/MiTr-remove.png")}}" alt="" class="img-fluid mb-1 ">

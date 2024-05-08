@@ -66,46 +66,46 @@
 
   <!-- ======= FIESTA DEL TRIGO - VIDEO (About Section) ======= -->
     <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">
 
-        <div class="row">
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-
-
-
-
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C31NOxkp51o/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px); height:800px;">
-            </blockquote>
-            <script async src="//www.instagram.com/embed.js"></script>
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
 
 
 
-            {{-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> --}}
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-            <h3>Te mostramos lo que fué la 55º edición de la Fiesta Provincial del Trigo</h3>
-            <p class="fst-italic">
-              La fiesta de nuestras raíces, la más importante del sudoeste bonaerense se disfruta en Tres Arroyos.
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i>Gastronomía</li>
-              <li><i class="ri-check-double-line"></i> cerveza artesanal</li>
-              <li><i class="ri-check-double-line"></i> emprendedores</li>
-              <li><i class="ri-check-double-line"></i> artesanos.</li>
-              <li><i class="ri-check-double-line"></i> Artistas nacionales y locales</li>
-              <li><i class="ri-check-double-line"></i> comercios.</li>
-              <li><i class="ri-check-double-line"></i> exposiciones.</li>
-              <li><i class="ri-check-double-line"></i> premios.</li>
-              <li><i class="ri-check-double-line"></i> parque de juegos.</li>
-              <li><i class="ri-check-double-line"></i> espectáculos para toda la familia.</li>
-            </ul>
-            <p>
-                Noches inolvidables se vieven en la Fiesta Provincial del Trigo, junto a cientos de vecinos y vecinas tresarroyenses y turistas
-                que vienen a disfrutar de las espectaculares presentaciones en el escenario mayor, la gastronomia local, los patios de compras y de juegos
-                 que presenta la fiesta más importante del sudoeste.
-            </p>
-          </div>
-        </div>
+
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C31NOxkp51o/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px); height:800px;">
+                    </blockquote>
+                    <script async src="//www.instagram.com/embed.js"></script>
+
+
+
+                    {{-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> --}}
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+                    <h3>Te mostramos lo que fué la 55º edición de la Fiesta Provincial del Trigo</h3>
+                    <p class="fst-italic">
+                    La fiesta de nuestras raíces, la más importante del sudoeste bonaerense se disfruta en Tres Arroyos.
+                    </p>
+                    <ul>
+                    <li><i class="ri-check-double-line"></i>Gastronomía</li>
+                    <li><i class="ri-check-double-line"></i> cerveza artesanal</li>
+                    <li><i class="ri-check-double-line"></i> emprendedores</li>
+                    <li><i class="ri-check-double-line"></i> artesanos.</li>
+                    <li><i class="ri-check-double-line"></i> Artistas nacionales y locales</li>
+                    <li><i class="ri-check-double-line"></i> comercios.</li>
+                    <li><i class="ri-check-double-line"></i> exposiciones.</li>
+                    <li><i class="ri-check-double-line"></i> premios.</li>
+                    <li><i class="ri-check-double-line"></i> parque de juegos.</li>
+                    <li><i class="ri-check-double-line"></i> espectáculos para toda la familia.</li>
+                    </ul>
+                    <p>
+                        Noches inolvidables se vieven en la Fiesta Provincial del Trigo, junto a cientos de vecinos y vecinas tresarroyenses y turistas
+                        que vienen a disfrutar de las espectaculares presentaciones en el escenario mayor, la gastronomia local, los patios de compras y de juegos
+                        que presenta la fiesta más importante del sudoeste.
+                    </p>
+                </div>
+            </div>
 
       </div>
     </section>

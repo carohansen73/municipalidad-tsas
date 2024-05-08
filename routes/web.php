@@ -46,6 +46,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/museos', 'showMuseums');
     Route::get('/fiesta-del-trigo', 'showFiestaDelTrigo');
     Route::get('/colectividades', 'showColectividades');
+    Route::get('/bibliotecas', 'showBibliotecas');
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/seccion/{nombre}', 'showSectionPlana');
     // Route::get('/area/{nombre}', 'showSectionPlana');
