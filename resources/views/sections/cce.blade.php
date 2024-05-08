@@ -67,11 +67,12 @@
 
 
 
-<!-- Features (Contacto) -->
+<!-- Features (Talleres) -->
 <section id="features" class="features mt-5">
     <div class="container" data-aos="fade-up">
         <div class="section-title">
             <p>Talleres</p>
+            <h2>Dictados en el CCE</h2>
         </div>
         <p> Los interesados, pueden comunicarse al tel. 431 603,de lunes a viernes de 8 a 21 horas, o dirigirse personalmente al Centro Cultural La Estación, Av. Ituzaingó 320. <br>
         </p>
@@ -250,7 +251,7 @@
 
             </div>
             <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="100">
-
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                 <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
                     <i class="far fa-calendar-alt"></i>
                     <h4>VIERNES:</h4>
@@ -262,14 +263,19 @@
                         Tamara Campano<br>
                         15:30 a 17hs  <br>
                     </p>
-                    <p> <strong> Danza Vasca</strong><br>
-                        18 a 19:30hs  <br>
-                    </p>
                     <p> <strong> IMAGO MUNDI<br>
                         Taller de exploración de la imagen gráfica. (grabado)</strong><br>
                         18 a 20hs<br>
                         Romina Saint Denis Lara  <br>
                     </p>
+                </div>
+            </div>
+                    <div class="col-lg-6 mt-lg-4" data-aos="fade-left" data-aos-delay="100">
+                        <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
+                    <p> <strong> Danza Vasca</strong><br>
+                        18 a 19:30hs  <br>
+                    </p>
+
 
                     <p> <strong> Modelando historias</strong><br>
                         Taller integral de cerámica y yoga<br>
@@ -281,6 +287,95 @@
                         18:30 a 20:30hs <br>
                     </p>
 
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </section>
+  <!-- End Features Section -->
+
+  <!-- Features (Talleres en delegaciones) -->
+<section id="features" class="features mt-5">
+    <div class="container" data-aos="fade-up">
+
+        <h3> Talleres en las Delegaciones </h3>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4> CLAROMECÓ:</h4>
+                    <p> <strong>Taller literario</strong> <br>
+                        Dicta María Virginia Goicochea <br>
+                    </p>
+                    <p> <strong>  Teatro</strong> <br>
+                        Dicta Julia Czubaj
+                    </p>
+                    <p> <strong> Taller de Música</strong> <br>
+                        Dicta Sergio Pessina
+                    </p>
+                    <p> <strong>Folklore</strong> <br>
+                        Dicta Fausto Barú
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4> RETA:</h4>
+                    <p> <strong> Lectura y técnicas de estudio </strong> <br>
+                        Dicta Nicole Arias <br>
+                    </p>
+                    <p> <strong> Inglés</strong> <br>
+                        Dicta Marcela Vitetto <br>
+                    </p>
+                    <p> <strong> Canto </strong> <br>
+                        Dicta Huilén Fuente <br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>SAN FRANCISCO DE BELLOCQ:</h4>
+                    <p> <strong> Sana la Tierra</strong> <br>
+                        Dictan Federico Barroso Lelouche y Laura Parraquini <br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>ORENSE: </h4>
+                    <p> <strong> Porcelana fría</strong> <br>
+                        Dicta Alicia Duhalde <br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>COPETONAS:</h4>
+                    <p> <strong>Pintura </strong> <br>
+                        Dicta Carolina Solá <br>
+                    </p>
+                    <p> <strong> Cocina infantil </strong> <br>
+                        Dicta Marcela Bonini <br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>M. CASCALLARES:</h4>
+                    <p> <strong>Taller de arte</strong>
+                        Dicta María Azul Álvarez <br>
+                    </p>
                 </div>
             </div>
 

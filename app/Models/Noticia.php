@@ -23,7 +23,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
  * @property string $pathname
  * @property integer $usuario_id
  */
-class noticia extends Model
+class Noticia extends Model
 {
     //use SoftDeletes;
 
