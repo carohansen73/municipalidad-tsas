@@ -98,52 +98,112 @@
 <!-- ======= Noticias/novedades Section ======= -->
     <section id="novedades" class="novedades">
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
 
-                <p>Noticias</p>
-                <h2><a href="portal-de-noticias">Ver Todas</a></h2>
-            </div>
             <div class="row">
 
-                    <div class="col-lg-6 container-image-1 "  data-aos="fade-right">
-                        @foreach($noticiaPpal as $noti)
-                        @foreach($noti->imgs as $imag)
-                            <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
-                            @break
-                        @endforeach
-                        <div class="novedad-1">
-                            <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
+
+
+
+                <div class="col-lg-4 me-lg-5 container-image-2" data-aos="fade-left" data-aos-delay="100">
+                    {{-- <div class="section-title">
+                        <p>Eventos</p>
+                        <h2><a href="portal-de-noticias">Ver Todas</a></h2>
+                    </div> --}}
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper swiper-evento">
+                        <div class="swiper-wrapper">
+                            @foreach($eventos as $evento)
+                            <div class="swiper-slide"> <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt=""></div>
+                            @endforeach
                         </div>
-                        @endforeach
+                        <div class="swiper-pagination"></div>
+                        <div class="autoplay-progress">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="20"></circle>
+                            </svg>
+                            <span></span>
+                        </div>
                     </div>
 
 
-                <div class="col-lg-6 container-image-2" data-aos="fade-left" data-aos-delay="100">
-                    @foreach($noticias as $noti)
-                        <div class="image-2-box mt-5  mt-lg-0 col-lg-12" data-aos="zoom-in" data-aos-delay="150">
-                            <div class="container" data-aos="fade-up">
-                                <div class="row">
-                                    <div class="col-lg-6 mb-lg-3 img-secondary">
-                                        @foreach($noti->Imgs as $imag)
-                                            <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="image-2" alt="">
-                                            @break
-                                        @endforeach
-                                    </div>
-                                    <div class="col-lg-6 mb-0 novedad-text-box">
-                                        <h4>{{$noti->titulo}}</h4>
-                                        <div class="ver-mas-box">
-                                            <a class="ver-mas-btn" href="/noticia/{{$noti->slug}}">Ver mas</a>
+                        <!-- ======= Noticias2+ ======= -->
+                        {{-- @foreach($noticias as $noti)
+                            <div class="image-2-box mt-5  mt-lg-0 col-lg-12" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="container" data-aos="fade-up">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-lg-3 img-secondary">
+                                            @foreach($noti->Imgs as $imag)
+                                                <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="image-2" alt="">
+                                                @break
+                                            @endforeach
+                                        </div>
+                                        <div class="col-lg-6 mb-0 novedad-text-box">
+                                            <h4>{{$noti->titulo}}</h4>
+                                            <div class="ver-mas-box">
+                                                <a class="ver-mas-btn" href="/noticia/{{$noti->slug}}">Ver mas</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach --}}
                 </div>
+
+
+
+                <div class="col-lg-7 container-image-1 "  data-aos="fade-right">
+                    <div class="section-title pb-2">
+
+                        <p>Noticias</p>
+                        {{-- <h2><a href="portal-de-noticias">Ver Todas</a></h2> --}}
+                    </div>
+
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper swiper-noticia">
+                        <div class="swiper-wrapper">
+                            @foreach($noticias as $noti)
+
+                                <div class="swiper-slide">
+                                    @foreach($noti->imgs as $imag)
+                                <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
+
+                                    @break
+                                    @endforeach
+                                    <div class="swiper-slide subtitle ">
+                                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="autoplay-progress">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="20"></circle>
+                            </svg>
+                            <span></span>
+                        </div>
+                    </div>
+
+
+                    {{-- @foreach($noticiaPpal as $noti)
+                    @foreach($noti->imgs as $imag)
+                        <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
+                        @break
+                    @endforeach
+                    <div class="novedad-1">
+                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
+                    </div>
+                    @endforeach --}}
+                </div>
+
             </div>
-            <div class="link-ver-todas">
+
+
+            {{-- <div class="link-ver-todas">
                 <p><a href="portal-de-noticias">Ver todas</a></p>
-            </div>
+            </div> --}}
         </div>
     </section>
 <!-- End Noticias Section -->
@@ -302,6 +362,17 @@
     </section> --}}
     <!-- End Features Section -->
 
+
+
+
+
+
+
+
+
+
+
+
     <!-- ======= Servicios mas consultados ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
@@ -427,7 +498,7 @@
         <div class="text-center">
           <h3>Mi Tresa</h3>
           <p> Ingresá a MiTresa. Registrate para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
-          <a class="cta-btn" href="http://municipalidad-tsas.test/tadi">Ingresá a MiTresa</a>
+          <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Ingresá a MiTresa</a>
         </div>
 
       </div>
@@ -825,11 +896,11 @@
 
         <div class="row mt-5">
 
-          <div class="col-lg-4">
+          <div class="col-lg-6">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Nos encontramos en :</h4>
+                <h4>Nos encontramos en:</h4>
                 <p>Av. Rivadavia Nº 1, Tres Arroyos, Argentina</p>
               </div>
 
@@ -849,9 +920,33 @@
 
           </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+          <div class="col-lg-6 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="info">
+                <div class="address">
+                    <i class="fab fa-instagram"></i>
+                    <h4>Instagram:</h4>
+                    <p><a href="https://www.instagram.com/municipalidadtresarroyos/" class="a-blue" target="_blank"> <span style="font-size: 14px;">/municipalidadtresarroyos</span> </a></p>
+                </div>
+
+                <div class="email">
+                    <i class="fab fa-facebook-square"></i>
+                  <h4>Facebook:</h4>
+                  <p><a href="https://www.facebook.com/municipalidaddetresarroyos" class="a-blue" target="_blank"> <span style="font-size: 14px;">/municipalidaddetresarroyos</span> </a></p>
+
+                </div>
+
+                {{-- <div class="phone">
+                  <i class="bi bi-phone"></i>
+                  <h4>Telefono:</h4>
+                  <p>(02983) 439200</p>
+                </div> --}}
+
+              </div>
+
+            {{--
+                 <div class="col-lg-8 mt-5 mt-lg-0">
+                     <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Apellido y nombre" required>
@@ -873,15 +968,22 @@
               </div>
               <div class="text-center"><button type="submit">Enviar mensaje</button></div>
             </form>
+             </div>--}}
 
-          </div>
 
+            </div>
         </div>
 
       </div>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
+
+
+
+<!-- SWIPER carousel -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{{ asset('assets/js/swiper-carousel.js') }}"></script>
 
   <!-- Modal para ver evento -->
   <script src="{{ asset('assets/js/modalevento.js') }}"></script>
