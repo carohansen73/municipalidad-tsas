@@ -208,11 +208,198 @@
                 </div>
             </section><!-- End Team Section -->
         @endif
-
-
-
     </main><!-- End #main -->
 
+    @if ($nombreSeccion == "deportes")
+
+<!-- Features (Listado de talleres-Deportes) -->
+<section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <p>Talleres - Dirección de deportes</p>
+        </div>
+        <p class="fst-italic mb-0"> Desde la dirección de Deportes se dictan varios talleres gratuitos, abiertos a todo publico
+        </p>
+        <br>
+        <h3>Listado de talleres:
+        </h3>
+
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4> Polideportivo:</h4>
+                    <p>Newcom de 11 a 12.30 hs lunes y miercoles  <br>
+                        caminata: de 14 a 15 hs lunes y jueves<br>
+                        mini atletismo: de 17.30 a 18.30 hs lunes y miercoles  <br>
+                        yoga: de 9 a 10 martes y jueves  <br>
+                        iniciación deportiva: de 17.30 a 18.30 hs martes y jueves<br>
+                        mini voley: de 17 a 18 hs   <br>
+                        voley juvenil: de 21 a 22 hs <br>
+                        voley adultos: de 21 a 23 hs lunes y miercoles <br>
+                        mini handball: de 18 a 19 hs/ handball juvenil: de 19 a 21 hs  <br>
+                        handball adultos: de 21 a 22 hs martes y jueves <br>
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>Club colegiales:</h4>
+                    <p>zumba kids: de 17.30 a 18.30 lunes y miercoles  <br>
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>barrio olimpo: </h4>
+                    <p> yoga: de 10 a 11 hs lunes y miercoles <br>
+                        gimnasia adultos: de 14 a 15 hs lunes y miercoles
+                    </p>
+                  </div>
+
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>barrio benito machado: </h4>
+                    <p>yoga: de 17.30 a 18.30 lunes <br>
+                        gimnasia localizada: de 16.15 a 17.15 martes y jueves
+                    </p>
+                  </div>
+                  <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4> fonavi termina:</h4>
+                    <p>gimnasia adultos: de 10 a 11 hs miercoles y viernes
+                    </p>
+                  </div>
+                  <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4> envion (sarmiento 582):</h4>
+                    <p>zumba: de 18 a 19 hs los jueves
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>club de pelota: </h4>
+                    <p> gimnasia y recreación de adultos: de 9 a 11 los viernes
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+
+
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>la tranquera:</h4>
+                    <p> gimnasia localizada: de 10.30 a 11.30 lunes y viernes
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>centro de jubilados 27 de octubre:</h4>
+                    <p>yoga: de 14.30 a 15.30 hs martes y jueves
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>barrio villa italia: </h4>
+                    <p> zumba: de 10 a 11 hs martes y jueves  <br>
+                        gimnasia de adultos: de 14 a 15 hs martes y jueves <br>
+                        yoga: de 14 a 15 hs lunes y miercoles <br>
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>barrio boca: </h4>
+                    <p> yoga: de 10 a 11 hs martes y jueves
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>polideportivo:</h4>
+                    <p> atletismo apartir de 8 años de 19.15 a 20.30 hs, lunes, martes, miercoles, jueves y viernes
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>centro de jubilados de ts as: </h4>
+                    <p> gimnasia de adultos: de 8.30 a 9.30 hs martes y jueves <br>
+                        yoga : de 8.30 a 9.30 miercoles y viernes  <br>
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>barrio municipal: </h4>
+                    <p> 	ritmos para niños(puentes de la infancia) de 17 a 18 hs jueves <br>
+                        estimulacion temprana(puentes de la infancia) 9 a 9.30 viernes<br>
+                        Gimnasia adaptada  <br>
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-arrow-circle-right"></i>
+                    <h4>Otros: </h4>
+                    <p>natación (gebo) de 18 a 19 hs lunes y miercoles  <br>
+                        preparación física, natación, atletismo y futbol (polideportivo) de 17 a 18 hs <br>
+                        actividades recreativas(polideportivo) de 17 a 18 hs <br>
+                        atletismo y futbol (polideportivo) de 16.30 a 18.30 hs<br>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </section>
+  <!-- End Features Section -->
+
+    <!-- ======= OTROS CURSOS (About Section) ======= -->
+    <section id="about" class="about">
+        <div class="container " data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-4 content " data-aos="fade-left" data-aos-delay="100">
+                    <div class="content-box">
+                        <h3>Programas adaptados para personas con discapacidad</h3>
+                        <p class="fst-italic">
+                        Contamos con un programa de deporte adaptado para personas con capacidades diferentes los cuales son:
+                        </p>
+                        <ul>
+                            <li><i class="ri-check-double-line"></i>Natación </li>
+                            <li><i class="ri-check-double-line"></i> Atletismo </li>
+                            <li><i class="ri-check-double-line"></i> Futbol </li>
+                            <li><i class="ri-check-double-line"></i> Actividad fisica </li>
+                        </ul>
+                    {{-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> --}}
+                    </div>
+                </div>
+                <div class="col-lg-4 content" data-aos="fade-right" data-aos-delay="100">
+                    <div class="content-box">
+                    <h3>Escuelas municipales</h3>
+                    <p class="fst-italic">
+                        Tenemos varias escuelas municipales que nos representan en las provincias con excelentes logros y resultados:
+                    </p>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i>Escuela municipal de atletismo  </li>
+                        <li><i class="ri-check-double-line"></i> Escuela municipal de natación </li>
+                        <li><i class="ri-check-double-line"></i> Escuela municipal de newcom </li>
+                    </ul>
+                </div>
+                </div>
+                <div class="col-lg-4  content " data-aos="fade-right" data-aos-delay="100">
+                    <div class="content-box">
+                    <h3>Cursos </h3>
+                    <p class="fst-italic">
+                        Contamos con los siguientes cursos:
+                    </p>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i>Arbitraje de futbol </li>
+                        <li><i class="ri-check-double-line"></i> Salvataje para la escuela de guardavidas </li>
+                        <li><i class="ri-check-double-line"></i> Capacitación de newcom y curso de arbitraje </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+    @endif
 
 
     {{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
@@ -240,7 +427,7 @@
 
                 <div class="row">
                     @foreach($eventos as $evento)
-                        <div class="col-lg-3 col-md-6 align-items-stretch">
+                        <div class="col-lg-4 col-md-6 align-items-stretch">
 
                             <div class="member" data-aos="fade-up" data-aos-delay="200">
                                 <div class="member-img">

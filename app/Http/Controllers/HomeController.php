@@ -59,12 +59,13 @@ class HomeController extends Controller
         $hoy = Carbon::today();
         $hoy = $hoy->format('Y-m-d');
 
-        $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(1)->with('imgs')->get();
-        $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->skip(1)->take(2)->with('imgs')->get();
-        $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->take(4)->with('seccion')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
+        // $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(1)->with('imgs')->get();
+        // $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->skip(1)->take(2)->with('imgs')->get();
+        $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(4)->with('imgs')->get();
+        $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->take(4)->with('seccion')->get();
 
         $nombreSeccion = 'home';
-        return view('home.home', compact('noticias', 'noticiaPpal', 'eventos', 'nombreSeccion'));
+        return view('home.home', compact('noticias', 'eventos', 'nombreSeccion'));
     }
 
     public function portal()
@@ -87,10 +88,10 @@ class HomeController extends Controller
 
        //tomo los datos y las entidades que pertenecen a esa seccion
        $secciones = Seccion::whereIn('pertenece_a', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->where('orden', '>=', 1)->orderBy('orden')->get();
-
-       $eventos = Evento::whereIn('seccion_id', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->get();
-
-
+       //tomo el dia de hoy para buscar eventos q no hayan terminado
+       $hoy = Carbon::today();
+       $hoy = $hoy->format('Y-m-d');
+       $eventos = Evento::whereIn('seccion_id', MenuSeccion::where('path', $pathSeccion)->pluck('id')->toArray())->where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->get();
 
         // hacer tabla con secciones y a cual seccion general pertenecen y con foto portada. EJ:
         // seccion organigrama pertenece a municipio
