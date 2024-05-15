@@ -69,6 +69,9 @@
                 <li><i class="ri-check-double-line"></i> Biblioteca Popular Dr. José Campano <br><span style="color: #848484;"> Hipólito Yrigoyen 252 · 02983 42-6802</span></li>
                 <li><i class="ri-check-double-line"></i> Biblioteca Popular Ing. Luis Meister <br><span style="color: #848484;"> Berutti 710 · 2983-348492</span></li>
                 <li><i class="ri-check-double-line"></i> Biblioteca Junta Vecinal Barrio Villa Italia <br><span style="color: #848484;"> Víctor Manuel 686 - Barrio Villa Italia</span></li>
+                <li><i class="ri-check-double-line"></i> Biblioteca del CRESTA <br><span style="color: #848484;"> Maipú 270
+                                                                                - <a href=" http://www.cresta.edu.ar/biblioteca/" target="_blank"> Ir al sitio web </a> </span></li>
+
 
                 </ul>
 
@@ -224,7 +227,6 @@
                     </div>
                 </div>
             </div>
-
 
         </div>
 

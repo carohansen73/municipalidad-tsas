@@ -40,28 +40,33 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/turismo', 'showMenuSection');
     Route::get('/deportes', 'showMenuSection');
 /*SECCIONES UNITARIAS */
+    Route::get('/seccion/{nombre}', 'showSectionPlana');
+
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
+
+    // Route::get('/area/{nombre}', 'showSectionPlana');
+    // /*SERVICIOS */
+    // Route::get('/servicios/{tipo}', 'showListServices');
+
+    /*MUNICIPIO-TSAS */
+    Route::get('/la-ciudad', 'showLaCiudad');
+    Route::get('/educacion', 'showSectionEducation');
+    Route::get('/educacion/{id}', 'showEducationByLevel');
+    Route::get('/organigrama', 'showOrganigrama');
+    Route::get('/organigrama/{id}', 'getOrganigramaByArea');
+    Route::get('/delegaciones', 'showDelegaciones');
+    Route::get('/ente-vial', 'showEnteVial');
+
+    /* ATENCION AL VECINO */
+    Route::get('/serv/{tipo}', 'showEncuestas');
+
+    /*CULTURA */
     Route::get('/cce', 'showCCE');
     Route::get('/museos', 'showMuseums');
     Route::get('/fiesta-del-trigo', 'showFiestaDelTrigo');
     Route::get('/colectividades', 'showColectividades');
     Route::get('/bibliotecas', 'showBibliotecas');
-    Route::get('/delegaciones', 'showDelegaciones');
-    Route::get('/seccion/{nombre}', 'showSectionPlana');
-    // Route::get('/area/{nombre}', 'showSectionPlana');
-
-    /*SERVICIOS */
-    Route::get('/servicios', 'showListServices');
-
-    /*EDUCACION */
-    Route::get('/educacion', 'showSectionEducation');
-    Route::get('/educacion/{id}', 'showEducationByLevel');
-
-     /*ORGANIGRAMA */
-     Route::get('/organigrama', 'showOrganigrama');
-     Route::get('/organigrama/{id}', 'getOrganigramaByArea');
-
 
 
     /*NOTICIAS */

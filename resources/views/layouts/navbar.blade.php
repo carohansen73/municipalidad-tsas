@@ -16,7 +16,7 @@
 
             <ul>
 
-            <li><a class="nav-link scrollto" href="/municipio">Municipio</a></li>
+            <li><a class="nav-link scrollto" href="/municipio">Tres Arroyos</a></li>
             <li><a class="nav-link scrollto" href="/atencion-al-vecino" >At. vecino</a></li>
             {{-- <li><a class="nav-link scrollto" href="/ciudad-productiva" >Producción</a></li> --}}
             <li><a class="nav-link scrollto" href="/cultura" >Cultura</a></li>
@@ -69,7 +69,7 @@
                         Autogestión
                     </div>
                 </a>
-                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
+                <a href="/transparencia-fiscal" target="_blank" class="get-started-btn scrollto">
                     <div class="get-started-group font-color-bl">
                         <i class="fas fa-lock-open"></i>
                         {{-- <i class="fas fa-hand-holding-usd"></i> --}}

@@ -14,6 +14,7 @@ use App\Models\SeccionContacto;
 use App\Models\Galeria;
 use App\Models\GaleriaPortada;
 use App\Models\Archivos;
+use App\Models\Encuesta;
 use App\Models\Museo;
 use App\Models\Categoria;
 use App\Models\Noticia;
@@ -139,6 +140,20 @@ class HomeController extends Controller
 
     /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
 
+
+    /**
+     * Info de La Ciudad
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function showLaCiudad()
+    {
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'la-ciudad')->pluck('id'))->get();
+        //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'la-ciudad')->pluck('id'))->with('galeria')->get();
+        return view('sections.la-ciudad', compact('portada', 'textos'));
+    }
+
     /**
      * Muestra LAS DISTINTAS DELEGACIONES QUE FORMAN PARTE DEL PARTIDO DE TSAS
      *
@@ -175,8 +190,6 @@ class HomeController extends Controller
         return view('sections.establecimientos-educativos', compact('niveles', 'establecimientos'));
     }
 
-    /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
-
     /**
      * Muestra la seccion educacion, con los diferenets niveles educativos
      *
@@ -196,6 +209,20 @@ class HomeController extends Controller
     {
         return OrganigramaResource::collection(Organigrama::where('area_id', $id)->get());
     }
+
+    /**
+     * Info del Ente Vial
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function showEnteVial()
+    {
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'ente-vial')->pluck('id'))->get();
+        //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'ente-vial')->pluck('id'))->with('galeria')->get();
+        return view('sections.ente-vial', compact('portada', 'textos'));
+    }
+
 
 
   /*****************------------------------------  CULTURA Y EDUCACION --------------------------*****************/
@@ -316,14 +343,36 @@ class HomeController extends Controller
     }
 
     /**
+     * Muestra información sobre el trámite seleccionado
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showEncuestas($tipo){
+
+        $formularios = Encuesta::whereIn('tipo', [$tipo])->get();
+
+
+        return view('sections.formularios', compact('formularios', 'tipo'));
+    }
+
+
+    /**
      * Muestra el listado de servicios
      *
      * @return \Illuminate\Http\Response
     */
-    public function showListServices(){
-        $SERVICIOS = 'SERVICIOS';
-        return view('sections.servicios', compact('SERVICIOS'));
-    }
+    // public function showListServices($tipo){
+
+    //     $formularios = Encuestas::whereIn('tipo', [$tipo]);
+    //     foreach($formularios as $form){
+    //         var_dump($form->nombre);
+
+    //     }
+    //     die;
+    //     var_dump($formularios);die;
+    //     $SERVICIOS = 'SERVICIOS';
+    //     return view('sections.formularios', compact('SERVICIOS', 'formularios'));
+    // }
 
 
     /*****************   ------------------------------  HOME -------------------------- *****************/

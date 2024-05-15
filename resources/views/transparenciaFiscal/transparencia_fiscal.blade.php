@@ -116,7 +116,7 @@
 
 {{--  Generales  --}}
 
-            <h3 class="font-blue"> Generales</h3>
+            <h3 class="blue-font"> Generales</h3>
             <?php $medio=round((count($reportes['generales'])/2));
             $i=1; ?>
 

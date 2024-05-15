@@ -17,7 +17,8 @@
 
     <div class="section-title ">
         @if(isset($categoriaNombre))
-            <p>{{$categoriaNombre}}
+            <p>Portal de Noticias - TSAS
+            <h2>{{$categoriaNombre}}</h2>
         @else
             <p>Portal de Noticias</p>
         @endif
