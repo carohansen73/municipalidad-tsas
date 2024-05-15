@@ -150,7 +150,6 @@ class HomeController extends Controller
         return view('sections.delegaciones', compact('delegaciones'));
     }
 
-
     /**
      * Muestra la seccion educacion, con los diferenets niveles educativos
      *
