@@ -3416,6 +3416,13 @@ background-size: cover;
     background-size: cover;
 }
 
+#adultos .portada-foto{
+    background-image: url("/storage/secciones/adulto-mayor.jpeg");
+    height: 320px;
+    background-position: center;
+    background-size: cover;
+}
+
 
 /*--------------------------------------------------------------
 # MUNICIPIO / TRES ARROYOS
