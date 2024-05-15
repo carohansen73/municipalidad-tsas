@@ -176,7 +176,7 @@
                 <div class="col-md-6 d-md-flex align-items-md-stretch">
                   <div class="count-box">
                     <i class="bi bi-award"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="4" class="purecounter"></span>
+                    <span data-purecounter-start="0" data-purecounter-end="3700" data-purecounter-duration="4" class="purecounter"></span>
                     <p><strong>Entradas vendidas</strong> mas cientos de personas que pudieron disfrutar de los shows de manera gratuita</p>
                   </div>
                 </div>

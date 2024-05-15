@@ -427,23 +427,31 @@
 
                 <div class="row">
                     @foreach($eventos as $evento)
-                        <div class="col-lg-4 col-md-6 align-items-stretch">
-
-                            <div class="member" data-aos="fade-up" data-aos-delay="200">
-                                <div class="member-img">
-                                    {{-- <img src="{{asset("storage/eventos/".$nombreSeccion."/".$evento->img)}}" class="img-fluid" alt=""> --}}
-                                       <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
-                                    <div class="social">
-                                        <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$nombreSeccion}}""
-                                            data-bs-whatever="@mdo">Ver</button>
-                                        </a>
-                                    </div>
+                        <div class="col-lg-4 pe-4 col-md-6 align-items-stretch">
+                            <div class="evento-img">
+                                <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
+                                <div class="evento-categoria" @if($nombreSeccion == 'cultura') style="background:#d63384;"@endif>
+                                    <p class="mb-0">
+                                    {{$nombreSeccion}}
+                                    </p>
                                 </div>
-                                {{-- <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Product Manager</span>
-                                </div> --}}
                             </div>
+
+                            {{-- <div class="member" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="member-img">
+                                        <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
+                                        <div class="social">
+                                                <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$nombreSeccion}}""
+                                                    data-bs-whatever="@mdo">Ver</button>
+                                                </a>
+                                            </div>
+                                    </div>
+                                    <div class="evento-categoria">
+                                        <p>
+                                        {{$evento->seccion->nombre}}
+                                        </p>
+                                    </div>
+                            </div>--}}
                         </div>
                     @endforeach
                 </div>
