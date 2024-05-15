@@ -50,7 +50,7 @@
                                             @foreach($subarea->hijos as $subarea3)
                                                 <div class="ms-4">
                                                     @foreach($subarea3->organigrama as $org)
-                                                    <a href="" class="a-dark-blue  div-tramite-3" style="color=rgb(118 172 211);;" id="{{$subarea3->id}}">
+                                                    <a href="" class="dark-blue-font  div-tramite-3" style="color=rgb(118 172 211);;" id="{{$subarea3->id}}">
                                                         <div id="carrera-{{$subarea3->id}}" class="col-lg-12 div-mas-info" >
                                                             <span class="icon-closed"><i class="fas fa-angle-right"></i> {{$subarea3->nombre}}</span>
                                                             <span class="icon-open display-none"><i class="fas fa-angle-down"></i> {{$subarea3->nombre}}</span>

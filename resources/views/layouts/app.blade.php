@@ -200,11 +200,14 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>Suscribite a nuestro boletín de noticias</h4>
+                    <h4>Suscribite a nuestro canal de difusión</h4>
                     <p></p>
-                    <form action="" method="post">
+                    <div class="canal-difusion">
+                    <a href="https://whatsapp.com/channel/0029VaNtxbS77qVaO8CjH32K" target="_blank" class=""> Suscribirme </a>
+                    </div>
+                    {{-- <form action="" method="post">
                     <input type="email" name="email"><input type="submit" value="Subscribe">
-                    </form>
+                    </form> --}}
 
                 </div>
 

@@ -82,7 +82,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="https://mitresa.gobdigital.com.ar/web/default">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="https://www.tresarroyos.gov.ar/detalle/mostrar/7117">Ver mas</a>
+                                        <a class="ver-mas-btn" href="https://mitresa.gobdigital.com.ar/ciudadano/login">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
@@ -110,24 +110,24 @@
                                         {{-- <span>Chief Executive Officer</span> --}}
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                        <a class="ver-mas-btn" href="">Ver mas</a>
+                                        <a class="ver-mas-btn" href="https://mitresa.gobdigital.com.ar/ciudadano/login">Ver mas</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4 card-icono">
+                            {{-- <div class="col-lg-6 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4 card-icono">
                                 <div class="member  member-5" data-aos="fade-up" data-aos-delay="100">
                                     <div class=" d-flex align-items-stretch justify-content-center p-4">
                                         <i class="fas fa-home"></i>
                                     </div>
                                     <div class="card-icono-info d-flex align-items-stretch justify-content-center">
                                         <h4> Plan joven </h4>
-                                        {{-- <span>Chief Executive Officer</span> --}}
+
                                     </div>
                                     <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
                                         <a class="ver-mas-btn" href="https://planjoven.tresarroyos.gov.ar/" target="_blank">Ver mas</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="col-lg-6 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4 card-icono">
                                 <div class="member  member-6" data-aos="fade-up" data-aos-delay="100">
                                     <div class=" d-flex align-items-stretch justify-content-center p-4">

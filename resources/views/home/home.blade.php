@@ -124,8 +124,6 @@
                             <span></span>
                         </div>
                     </div>
-
-
                         <!-- ======= Noticias2+ ======= -->
                         {{-- @foreach($noticias as $noti)
                             <div class="image-2-box mt-5  mt-lg-0 col-lg-12" data-aos="zoom-in" data-aos-delay="150">
@@ -148,7 +146,6 @@
                             </div>
                         @endforeach --}}
                 </div>
-
 
 
                 <div class="col-lg-7 container-image-1 "  data-aos="fade-right">
@@ -212,60 +209,57 @@
 
 
 
- {{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
- @if(isset($eventos) && (count($eventos) > 0))
+{{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
+@if(isset($eventos) && (count($eventos) > 0))
 
- <!-- ======= Team Section ======= -->
- <section id="{{$nombreSeccion}}-eventos" class="team ">
-     <div class="container" data-aos="fade-up">
-         <div class="section-title">
-             <p> Próximos eventos</p>
-             <h2><a href="/proximos-eventos">Ver Todos</a></h2>
+<!-- ======= Team Section ======= -->
+<section id="{{$nombreSeccion}}-eventos" class="team ">
+    <div class="container" data-aos="fade-up">
+        <div class="section-title">
+            <p> Próximos eventos</p>
+            <h2><a href="/proximos-eventos">Ver Todos</a></h2>
                  {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
-         </div>
+        </div>
 
-         <div class="row">
-             @foreach($eventos as $evento)
-                 <div class="col-lg-3 col-md-6 align-items-stretch">
+        <div class="row">
+            @foreach($eventos as $evento)
+                <div class="col-lg-3 pe-4 col-md-6 align-items-stretch">
+                    <div class="evento-img">
+                        <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
+                        <div class="evento-categoria" @if($evento->seccion->nombre == 'Cultura, Educación y Derechos Humanos') style="background:#d63384;"@endif>
+                            <p class="mb-0">
+                                @if($evento->seccion->nombre == 'Cultura, Educación y Derechos Humanos')
+                                Cultura
+                                @else
+                                {{$evento->seccion->nombre}}
+                                 @endif
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
-                     <div class="member" data-aos="fade-up" data-aos-delay="200">
-                         <div class="member-img">
-                             <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
-                             <div class="social">
-                                 <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$evento->seccion->path}}"
-                                     data-bs-whatever="@mdo">Ver</button>
-                                 </a>
-                             </div>
-                         </div>
-                         {{-- <div class="member-info">
-                         <h4>Sarah Jhonson</h4>
-                         <span>Product Manager</span>
-                         </div> --}}
-                     </div>
-                 </div>
-             @endforeach
-         </div>
-     </div>
+    </div>
 
- <!-- Modal Eventos -->
-<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
- <div class="modal-content">
-     <div class="modal-header">
+    <!-- Modal Eventos -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{asset('')}}" class="modalimg" alt="">
+                        {{-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div> --}}
+                </div>
+            </div>
+        </div>
+    </div>
 
-         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-     </div>
-     <div class="modal-body">
-         <img src="{{asset('')}}" class="modalimg" alt="">
-             {{-- <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-             </div> --}}
-     </div>
- </div>
-</div>
-</div>
-
- </section>
+</section>
 
 @endif
  <!-- End EVENTOS -->

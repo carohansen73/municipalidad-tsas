@@ -55,19 +55,19 @@
                            <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
 
 
-                            <h4>{{$tram->titulo}}</h4>
-                            <p>{{$tram->descripcion}}</p>
+                            <h4>{!! $tram->titulo !!}</h4>
+                            <p>{!! $tram->descripcion !!}</p>
                         </div>
                     </a>
 
                     <div id="informacion-{{$tram->id}}" class="informacion-tramite display-none ms-lg-5">
-                        <h6 class="ms-5"><strong>Lugar donde se realiza</strong></h6><p class="ms-5">{{$tram->lugar}}</p>
-                        <h6 class="ms-5"><strong>Horario</strong></h6><p class="ms-5">{{$tram->horario}}</p>
-                        <h6 class="ms-5"><strong>Quien puede realizarlo</strong></h6><p class="ms-5">{{$tram->quien}}</p>
-                        <h6 class="ms-5"><strong>Requisitos</strong></h6><p class="ms-5">{{$tram->requisitos}}</p>
-                        <h6 class="ms-5"><strong>Costo</strong></h6><p class="ms-5">{{$tram->costo}}</p>
-                        <h6 class="ms-5"><strong>Contacto</strong></h6><p class="ms-5">{{$tram->contacto}}</p>
-                        <h6 class="ms-5"><strong>Links de interés</strong></h6><p class="ms-5">{{$tram->links}}</p>
+                        <h6 class="ms-5"><strong>Lugar donde se realiza</strong></h6><p class="ms-5">{!! $tram->lugar !!}</p>
+                        <h6 class="ms-5"><strong>Horario</strong></h6><p class="ms-5">{!! $tram->horario !!}</p>
+                        <h6 class="ms-5"><strong>Quien puede realizarlo</strong></h6><p class="ms-5">{!! $tram->quien !!}</p>
+                        <h6 class="ms-5"><strong>Requisitos</strong></h6><p class="ms-5">{!! $tram->requisitos !!}</p>
+                        <h6 class="ms-5"><strong>Costo</strong></h6><p class="ms-5">{!! $tram->costo !!}</p>
+                        <h6 class="ms-5"><strong>Contacto</strong></h6><p class="ms-5">{!! $tram->contacto !!}</p>
+                        <h6 class="ms-5"><strong>Links de interés</strong></h6><p class="ms-5">{!! $tram->links !!}</p>
                     </div>
 
 
