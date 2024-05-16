@@ -85,6 +85,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('/filtro-boletin-oficial/{tipo}', 'showBoletinOficialItem');
     Route::get('/avisos-oficiales', 'showAvisosOficiales');
 
+    Route::get('/adultos-mayores', 'showAdultosMayores');
 
 });
 

@@ -27,6 +27,8 @@ use App\Models\SituacionEconomicoFinanciera;
 use App\Models\ReporteEconomicoFinanciero;
 use App\Models\AvisoOficial;
 use App\Models\BoletinOficial;
+use App\Models\ResidenciaAdultos;
+use App\Models\CuidadorDomiciliario;
 
 use App\Models\Delegacion;
 use App\Http\Resources\OrganigramaResource;
@@ -164,7 +166,6 @@ class HomeController extends Controller
         $delegaciones = Delegacion::all();
         return view('sections.delegaciones', compact('delegaciones'));
     }
-
 
     /**
      * Muestra la seccion educacion, con los diferenets niveles educativos
@@ -304,6 +305,23 @@ class HomeController extends Controller
         return view('cultura.bibliotecas', compact('portada', 'textos') );
     }
 
+     /**
+     * Muestra la seccion de colectividades
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAdultosMayores()
+    {
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'adultos-mayores')->pluck('id'))->get();
+          //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'adultos-mayores')->pluck('id'))->with('galeria')->get();
+
+        // tomo los datos de trabajadores domiciliarios y residencias de mayores para mostrar
+        $trabajadores = CuidadorDomiciliario::where('habilitado', 0)->orderBy('apellido_y_nombre')->get();
+        $residencias = ResidenciaAdultos::where('habilitada', 0)->orderBy('nombre')->get();
+        //$residencias = ResidenciaAdultos::all();
+        return view('sections.adultos', compact('portada', 'textos','trabajadores', 'residencias'));
+    }
 
 
     /***************** ------------------------------  ATENCION AL VECINO -------------------------- *****************/
