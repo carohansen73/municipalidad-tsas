@@ -17,14 +17,22 @@
                         </div>
 
                         <p>
-                            (CAMBIAR - TEXTO DE EJEMPLO) <br>
-                            Diseñamos, gestionamos y evaluamos las políticas educativas que garantizan el <strong> derecho a aprender </strong>. <br>
-                            Nuestro enfoque son los derechos y deberes, con una perspectiva integral e integrada y una mirada ciudadana
-                            que compromete su accionar en beneficio del desarrollo personal y social de todas y todos las <strong> niñas, niños, adolescentes, jóvenes y adultos/as. </strong> <br>
+                            COMPROMETIDOS CON LA EDUCACION<br>
+                            En nuestra ciudad, creemos que <strong>la educación es la base del progreso </strong>y el desarrollo personal.
+                            Estamos dedicados a proporcionar a nuestros estudiantes las <strong> herramientas</strong> y <strong> recursos</strong> necesarios para alcanzar sus metas y contribuir positivamente a la sociedad.<br>
+                            <strong>  </strong> <br>
+                        </p>
+                        <p>
+                            PROPUESTAS EDUCATIVAS DE NUESTRA CIUDAD<br>
+                            Tres Arroyos cuenta comuna amplia variedad de instituciones de educación <strong>inicial, primaria y secundaria, </strong>de gestión tanto pública como privada,
+                            que se destacan por su compromiso con el desarrollo integral de los estudiantes.<br>
+                            También alberga instituciones de <strong>  educación superior </strong>que ofrecen una variedad de programas y oportunidades para los estudiantes que buscan
+                             avanzar en sus estudios y carreras.<br>
+                          <br>
                         </p>
 
                         <div class="row d-flex justify-content-center mt-4">
-                            <?php $estiloColor=4 ?>
+                            <?php $estiloColor=1 ?>
                             @foreach ($niveles as $nivel)
 
                                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-3 card-icono">
