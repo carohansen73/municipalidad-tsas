@@ -315,12 +315,12 @@ class HomeController extends Controller
         $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'adultos-mayores')->pluck('id'))->get();
           //tomo los datos y las entidades que pertenecen a esa seccion
         $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'adultos-mayores')->pluck('id'))->with('galeria')->get();
-
+        $contacto = SeccionContacto::where('seccion_id', Seccion::where('link', 'adultos-mayores')->pluck('id'))->get();
         // tomo los datos de trabajadores domiciliarios y residencias de mayores para mostrar
         $trabajadores = CuidadorDomiciliario::where('habilitado', 0)->orderBy('apellido_y_nombre')->get();
         $residencias = ResidenciaAdultos::where('habilitada', 0)->orderBy('nombre')->get();
         //$residencias = ResidenciaAdultos::all();
-        return view('sections.adultos', compact('portada', 'textos','trabajadores', 'residencias'));
+        return view('sections.adultos', compact('portada', 'textos','trabajadores', 'residencias', 'contacto'));
     }
 
 
