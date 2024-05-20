@@ -143,3 +143,85 @@
 </section>
   <!-- End LISTADO RESIDENCIAS -->
 
+  <!-- ======= Contact Section ======= -->
+
+@if(isset($contacto) && count($contacto) >0)
+    <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                {{-- <h2>Contacto</h2> --}}
+                <p>Contacto</p>
+            </div>
+            <div class="row mt-5">
+
+            <div class="col-lg-4">
+                <div class="info">
+                    @foreach ($contacto as $cont)
+                        @if($cont->direccion)
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Dirección:</h4>
+                                <p>{{$cont->direccion}}</p>
+                            </div>
+                        @endif
+                        @if($cont->email)
+                            <div class="email">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>{{$cont->email}}</p>
+                            </div>
+                        @endif
+                        @if($cont->telefono || $cont->wsp)
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Telefono:</h4>
+                                <p>{{$cont->telefono}}</p>
+                                <p>{{$cont->wsp}}</p>
+                            </div>
+                        @endif
+                        @if($cont->ig)
+                            <div class="email">
+                                <i class="fab fa-instagram"></i>
+                                <h4>Ig:</h4>
+                                <p>{{$cont->ig}}</p>
+                            </div>
+                        @endif
+                        @if($cont->fb)
+                            <div class="email">
+                                <i class="fab fa-facebook-square"></i>
+                                <h4>Fb:</h4>
+                                <p>{{$cont->fb}}</p>
+                            </div>
+                        @endif
+                        @if ($cont->pagina_web)
+                            <div class="email">
+                                <i class="fas fa-mouse-pointer"></i>
+                                <h4>Sitio web:</h4>
+                                <p><a href="{{$cont->pagina_web}}" class="a-blue" target="_blank"> <span style="font-size: 14px;"> {{$cont->pagina_web}} </span> </a></p>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        <div class="col-lg-8 mt-5 mt-lg-0">
+            @foreach ($contacto as $cont)
+            @if($cont->direccion)
+
+
+            <div>
+
+                <iframe style="border:0; width: 100%; height: 270px;" src="{{$cont->iframe_mapa}}" frameborder="0" allowfullscreen></iframe>
+              </div>
+              @endif
+              @endforeach
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  @endif
+  <!-- End Contact Section -->
+
