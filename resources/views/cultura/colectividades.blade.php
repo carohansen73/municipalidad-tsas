@@ -122,160 +122,159 @@
 <br><br><br>
 
 
- <!-- ======= Portfolio Section ======= -->
- <section id="portfolio" class="portfolio">
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title">
-        <h2>Las colectividades siempre presentes</h2>
-        <p>Tres Arroyos</p>
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">Todos</li>
-            <li data-filter=".filter-app">Actos</li>
-            <li data-filter=".filter-card">Fiesta de las Colectividades</li>
-            <li data-filter=".filter-web">Fiesta del Trigo</li>
-          </ul>
+        <div class="section-title">
+            <h2>Las colectividades siempre presentes</h2>
+            <p>Tres Arroyos</p>
         </div>
-      </div>
 
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/acto-malvinas.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">Todos</li>
+                <li data-filter=".filter-app">Actos</li>
+                <li data-filter=".filter-card">Fiesta de las Colectividades</li>
+                <li data-filter=".filter-web">Fiesta del Trigo</li>
+            </ul>
             </div>
-          </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/acto-malvinas.jpg")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                {{-- <h4>App 1</h4> --}}
+                <p>Acto en Conmemoración a la Guerra de Malvinas</p>
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/acto-malvinas.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Acto en Conmemoración a la Guerra de Malvinas"><i class="bx bx-plus"></i></a>
+                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/inauguracion_plazoleta2.jpg")}}" class="img-fluid" alt="">
-
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/fiesta-colectividades.jpg")}}" class="img-fluid" alt="">
-
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                {{-- <h4>Web 3</h4> --}}
+                <p>Fiesta del Trigo</p>
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
+                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/inauguracion_plazoleta2.jpg")}}" class="img-fluid" alt="">
+
+                    <div class="portfolio-info">
+                    {{-- <h4>App 2</h4> --}}
+                    <p>Acto por la inauguración de la plazoleta</p>
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/inauguracion_plazoleta2.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Acto por la inauguración de la plazoleta"><i class="bx bx-plus"></i></a>
+                        {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                    </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/fiesta-colectividades3.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/fiesta-colectividades.jpg")}}" class="img-fluid" alt="">
+
+                <div class="portfolio-info">
+                {{-- <h4>Card 2</h4> --}}
+                <p>Fiesta de las Colectividades</p>
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/fiesta-colectividades.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta de las Colectividades"><i class="bx bx-plus"></i></a>
+                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                </div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/fiesta-colectividades2.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                {{-- <h4>Web 2</h4> --}}
+                <p>Fiesta del Trigo</p>
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
+                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                </div>
+                </div>
             </div>
-          </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>App 3</h4> --}}
+                        <p>Acto por la inauguración de la plazoleta</p>
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Acto por la inauguración de la plazoleta"><i class="bx bx-plus"></i></a>
+                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/fiesta-colectividades3.jpg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Card 1</h4> --}}
+                        <p>Fiesta de las Colectividades</p>
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/fiesta-colectividades3.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta de las Colectividades"><i class="bx bx-plus"></i></a>
+                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/fiesta-colectividades2.jpg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Card 3</h4> --}}
+                        <p>Fiesta de las Colectividades</p>
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/fiesta-colectividades2.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta de las Colectividades"><i class="bx bx-plus"></i></a>
+                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    {{-- <h4>Web 3</h4> --}}
+                        <p>Fiesta del Trigo</p>
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
+                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-      </div>
-
     </div>
-  </section>
+</section>
  <!-- End Portfolio Section -->
 
 <!-- Features (Contacto) -->
