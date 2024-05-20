@@ -53,7 +53,7 @@
             La CCETA inicia en 1980 y es una organización de segundo grado sin fines de lucro.
         </p>
         <p>
-            Esta comisión promueve la protección y el resguardo del patrimonio tangible e intangible relacionado a las colectividades extranjeras presentes en tres arroyos.
+            Esta comisión promueve la protección y el resguardo del patrimonio tangible e intangible relacionado a las colectividades extranjeras presentes en Tres Arroyos.
         </p>
         <p>
             Las colectividades que integran la comisión son:
@@ -73,9 +73,9 @@
                 </div>
             </div>
         </section>
-        <p class="text-center">
+        {{-- <p class="text-center">
         Siria / México / Bolivia / Dinamarca / Países Bajos / Venezuela  </p>
-        <p class="text-center">Líbano / Italia / Francia / España / País Vasco / Israel </p>
+        <p class="text-center">Líbano / Italia / Francia / España / País Vasco / Israel </p> --}}
 
         </p>
         <div class="text-center justify-content-center mt-5 video-lg">
@@ -313,21 +313,44 @@
                     </p>
                 </div>
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <img class="foto-portada" src="{{asset("storage/secciones/pais_vasco.png")}}" alt="foto-1">
+                    <h4>País Vasco:</h4>
+                    <p> Instagram: Centro Vasco Hiru Erreka @centro_vasco_hiruerreka <br>
+                        Dirección: Pedro N Carrera 843 <br>
+                        Teléfono: 2983 - 402013 <br>
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <img class="foto-portada" src="{{asset("storage/secciones/paises_bajos.png")}}" alt="foto-1">
                     <h4>Países Bajos: </h4>
                     <p> Instagram: Comisión Orange @paisesbajoscolectividad <br>
                         Dirección: Maipú 475
                     </p>
                   </div>
-
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <img class="foto-portada" src="{{asset("storage/secciones/israel.png")}}" alt="foto-1">
+                    <h4>Israel:</h4>
+                    <p>
+                        Teléfono: 2983-415932 -  Sara Fichman
+                    </p>
+                </div>
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <img class="foto-portada" src="{{asset("storage/secciones/mexico.png")}}" alt="foto-1">
                     <h4>México: </h4>
                     <p>Instagram: Colectividad Mexicana @colectividadmexicanatsas</p>
-                  </div>
+                </div>
             </div>
 
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <img class="foto-portada" src="{{asset("storage/secciones/dinamarca.png")}}" alt="foto-1">
+                    <h4>Dinamarca:</h4>
+                    <p> Instagram: @sociedadprotestantedelsud <br>
+                        Dirección: 9 de julio nº 392 <br>
+                        Teléfono: 2983 463071 <br>
+                        Sitio web: <a href="https://sociedadprotestantedelsud.com/"  target="_blank">https://sociedadprotestantedelsud.com/</a>
+                    </p>
+                </div>
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <img class="foto-portada" src="{{asset("storage/secciones/francia.png")}}" alt="foto-1">
                     <h4> Francia:</h4>
@@ -345,14 +368,6 @@
                     </p>
                 </div>
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                    <img class="foto-portada" src="{{asset("storage/secciones/pais_vasco.png")}}" alt="foto-1">
-                    <h4>País Vasco:</h4>
-                    <p> Instagram: Centro Vasco Hiru Erreka @centro_vasco_hiruerreka <br>
-                        Dirección: Pedro N Carrera 843 <br>
-                        Teléfono: 2983 - 402013 <br>
-                    </p>
-                </div>
-                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <img class="foto-portada" src="{{asset("storage/secciones/italia.png")}}" alt="foto-1">
                     <h4>Italia:</h4>
                     <p> Instagram: Sociedad Italiana de Socorros Mutuos @socitaltres
@@ -360,6 +375,21 @@
                         Teléfono: 02983 42-5188
                     </p>
                 </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <img class="foto-portada" src="{{asset("storage/secciones/venezuela.png")}}" alt="foto-1">
+                    <h4>Venezuela:</h4>
+                    <p> Instagram: Colectividad Venezolana @colectividad_venezolanatsas
+                        Teléfono: 2983-386364 - Leithy Rojas
+                    </p>
+                </div>
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <img class="foto-portada" src="{{asset("storage/secciones/bolivia.png")}}" alt="foto-1">
+                    <h4>Bolivia:</h4>
+                    <p>
+                        Teléfono: 2983-695796 - Claudia Chaves
+                    </p>
+                </div>
+
             </div>
 
         </div>

@@ -20,6 +20,12 @@
         {!!Form::select('seccion_id', $secciones,null,['class' => 'form-control '])!!}
     </div>
 
+    <!-- Seccion Id Field -->
+    <div class="form-group col-sm-6 ps-0">
+        {!! Form::label('categoria_id', 'Categoria:') !!}
+        {!!Form::select('categoria_id', $categorias,null,['class' => 'form-control '])!!}
+    </div>
+
 
 <!-- Fecha Inicio Field -->
 <div class="row form-group col-sm-12">

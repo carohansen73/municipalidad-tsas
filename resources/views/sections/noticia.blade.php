@@ -166,6 +166,16 @@
                             <p style="font-size: 18px">Categorias</p>
                         </div>
                         <ul class="botonera-categorias">
+                            <li class="desplegable-categoria-2"  >
+                                <a href="/portal-de-noticias">
+                                    <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
+                                        <div>
+                                            <p> Todas </p>
+                                        </div>
+                                         <i class="fas fa-angle-right" ></i>
+                                    </div>
+                                </a>
+                            </li>
                         @foreach($categorias as $cat)
                             <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
                                 <a href="/noticias-categoria/{{$cat->nombre}}">

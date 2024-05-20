@@ -21,16 +21,16 @@
 
         <div class="row justify-content-center portada-titulo" data-aos="fade-up" data-aos-delay="150">
             <div class="col-xl-6 col-lg-8">
-            <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
+            <h1>Municipalidad de Tres Arroyos<span>.</span></h1> <br><br><br>
             {{-- <h2>Somos un equipo que trabaja para el bienestar de todos los ciudadanos.</h2> --}}
             </div>
         </div>
 
-        <div class="row gy-4 mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
+        <div class="row  mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
-            <div class="col-xl-2 col-md-2">
+            <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
-                    <div class="icon-box icon-2">
+                    <div class="icon-box icon-2 ">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
                     </div>
@@ -221,14 +221,22 @@
                 <div class="col-lg-3 pe-4 col-md-6 align-items-stretch">
                     <div class="evento-img">
                         <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
-                        <div class="evento-categoria" @if($evento->seccion->nombre == 'Cultura, Educación y Derechos Humanos') style="background:#d63384;"@endif>
-                            <p class="mb-0">
-                                @if($evento->seccion->nombre == 'Cultura, Educación y Derechos Humanos')
-                                Cultura
-                                @else
-                                {{$evento->seccion->nombre}}
-                                 @endif
-                            </p>
+                        <div class="evento-categoria"
+                            @if($evento->categoria->nombre == 'Cultura')
+                                style="background:#d63384;"
+                            @elseif($evento->categoria->nombre == 'Educación')
+                                style="background:rgb(13, 116, 189);"
+                            @elseif($evento->categoria->nombre == 'Generales')
+                                style="background: #662483;"
+                            @endif
+                            >
+                                <p class="mb-0">
+                                    @if($evento->categoria->nombre == 'Cultura, Educación y Derechos Humanos')
+                                    Cultura
+                                    @else
+                                    {{$evento->categoria->nombre}}
+                                    @endif
+                                </p>
                         </div>
                     </div>
                 </div>

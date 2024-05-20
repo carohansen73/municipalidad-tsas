@@ -403,7 +403,7 @@
 
 
     {{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
-    @if(isset($eventos) && (count($eventos) > 0))
+    @if(($nombreSeccion == "deportes" || $nombreSeccion == "cultura") && isset($eventos) && (count($eventos) > 0))
 
         <!-- ======= borde colorido ======= -->
         {{-- <div class="container-border">
