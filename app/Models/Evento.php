@@ -36,6 +36,7 @@ class Evento extends Model
 
     public $fillable = [
         'seccion_id',
+        'categoria_id',
         'nombre',
         'img',
         'fecha_inicio',
@@ -63,6 +64,7 @@ class Evento extends Model
      */
     public static $rules = [
         'seccion_id' => 'required|integer',
+        'categoria_id' => 'required|integer',
          'img' => 'required',
         'fecha_inicio' => 'required',
         'fecha_fin' => 'required'
@@ -74,5 +76,13 @@ class Evento extends Model
     public function seccion()
     {
         return $this->belongsTo(\App\Models\MenuSeccion::class, 'seccion_id');
+    }
+
+     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function categoria()
+    {
+        return $this->belongsTo(\App\Models\Categoria::class, 'categoria_id');
     }
 }

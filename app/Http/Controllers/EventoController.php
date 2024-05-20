@@ -12,6 +12,7 @@ use App\Models\Evento;
 use Flash;
 use Response;
 use App\Municipalidad\FileManagement;
+use App\Models\Categoria;
 
 class EventoController extends AppBaseController
 {
@@ -47,8 +48,9 @@ class EventoController extends AppBaseController
      */
     public function create()
     {
+        $categorias=Categoria::orderBy('nombre')->pluck('nombre','id')->all();
         $secciones=MenuSeccion::where('visible', 1)->orderBy('nombre')->pluck('nombre','id')->all();
-        return view('cms.eventos.create')->with('secciones', $secciones);
+        return view('cms.eventos.create')->with('secciones', $secciones)->with('categorias', $categorias);
     }
 
     /**
@@ -115,6 +117,7 @@ class EventoController extends AppBaseController
     {
         $evento = $this->eventoRepository->find($id);
         $secciones=MenuSeccion::where('visible', 1)->orderBy('nombre')->pluck('nombre','id')->all();
+        $categorias=Categoria::orderBy('nombre')->pluck('nombre','id')->all();
 
         if (empty($evento)) {
             Flash::error('Evento not found');
@@ -122,7 +125,7 @@ class EventoController extends AppBaseController
             return redirect(route('eventos.index'));
         }
 
-        return view('cms.eventos.edit')->with('evento', $evento)->with('secciones', $secciones);
+        return view('cms.eventos.edit')->with('evento', $evento)->with('secciones', $secciones)->with('categorias', $categorias);
     }
 
     /**

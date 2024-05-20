@@ -17,10 +17,11 @@
 
     <div class="section-title ">
         @if(isset($categoriaNombre))
-            <p>Portal de Noticias - TSAS
+            <p><a href="/portal-de-noticias">Portal de Noticias - TSAS</a></p>
             <h2>{{$categoriaNombre}}</h2>
         @else
-            <p>Portal de Noticias</p>
+            <p><a href="/portal-de-noticias">Portal de Noticias</a></p>
+
         @endif
         {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
     </div>
@@ -103,7 +104,16 @@
                                 <ul class="noticias-por-categoria{{$cat->id}} display-none">
                                 </ul>
                             @endforeach --}}
-
+                            <li class="desplegable-categoria-2"  >
+                                <a href="/portal-de-noticias">
+                                    <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
+                                        <div>
+                                            <p> Todas </p>
+                                        </div>
+                                         <i class="fas fa-angle-right" ></i>
+                                    </div>
+                                </a>
+                            </li>
 
                             {{-- ASI SIN AJAX JS--}}
                             @foreach($categorias as $cat)
@@ -122,7 +132,7 @@
                         </ul>
 
                         @if(isset($ultimasNoticias))
-                            <div class="section-title mb-3">
+                            <div class="section-title mb-3 mt-5">
                                 <p style="font-size: 18px">Últimas Noticias</p>
                             </div>
                             @foreach($ultimasNoticias as $noti)

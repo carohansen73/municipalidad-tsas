@@ -50,7 +50,6 @@
     <div class="container content" data-aos="fade-up">
         <h3>LISTADO DE BIBLIOTECAS POPULARES Y BARRIALES</h3>
         <div class="row pt-4">
-
             <div class="col-lg-6 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                 <ul>
                 <li><i class="ri-check-double-line"></i>  Biblioteca Popular Hugo Delgiorgio  <br> <span style="color: #848484;"> 20 de abril 1180 - Barrio Benito Machado</span></li>
@@ -61,20 +60,14 @@
             </ul>
             </div>
             <div class="col-lg-6  pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
-
-
                 <ul>
                 <li><i class="ri-check-double-line"></i>Biblioteca Popular D.F. Sarmiento <br><span style="color: #848484;"> Av. Moreno 334 - 02983 43-0721 </span> </li>
                 <li><i class="ri-check-double-line"></i> Biblioteca Popular Vicente P. Cacuri <br><span style="color: #848484;"> Hipólito Yrigoyen 165 · 02983 43-4209</span> </li>
                 <li><i class="ri-check-double-line"></i> Biblioteca Popular Dr. José Campano <br><span style="color: #848484;"> Hipólito Yrigoyen 252 · 02983 42-6802</span></li>
                 <li><i class="ri-check-double-line"></i> Biblioteca Popular Ing. Luis Meister <br><span style="color: #848484;"> Berutti 710 · 2983-348492</span></li>
                 <li><i class="ri-check-double-line"></i> Biblioteca Junta Vecinal Barrio Villa Italia <br><span style="color: #848484;"> Víctor Manuel 686 - Barrio Villa Italia</span></li>
-                <li><i class="ri-check-double-line"></i> Biblioteca del CRESTA <br><span style="color: #848484;"> Maipú 270
-                                                                                - <a href=" http://www.cresta.edu.ar/biblioteca/" target="_blank"> Ir al sitio web </a> </span></li>
-
-
+                <li><i class="ri-check-double-line"></i> Biblioteca del CRESTA <br><span style="color: #848484;"> Maipú 270 - <a href=" http://www.cresta.edu.ar/biblioteca/" target="_blank"> Ir al sitio web </a> </span></li>
                 </ul>
-
             </div>
         </div>
 
@@ -243,8 +236,7 @@
 
             <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
                 <h3>Un poco de historia</h3>
-<br>
-
+                <br>
                 <p>
                     La biblioteca mas antigua de la ciudad, es la Biblioteca Popular Domingo F. Sarmiento, fundada en 1899 bajo el nombre de "Centro de Comercio". <br>
                     En el año 1914 adquirió su actual denominación. <br> Es la segunda más longeva del país luego de una biblioteca de la provincia de San Juan.

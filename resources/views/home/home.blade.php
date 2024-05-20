@@ -21,16 +21,16 @@
 
         <div class="row justify-content-center portada-titulo" data-aos="fade-up" data-aos-delay="150">
             <div class="col-xl-6 col-lg-8">
-            <h1>Municipalidad de Tres Arroyos<span>.</span></h1>
-            <h2>Somos un equipo que trabaja para el bienestar de todos los ciudadanos.</h2>
+            <h1>Municipalidad de Tres Arroyos<span>.</span></h1> <br><br><br>
+            {{-- <h2>Somos un equipo que trabaja para el bienestar de todos los ciudadanos.</h2> --}}
             </div>
         </div>
 
-        <div class="row gy-4 mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
+        <div class="row  mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
-            <div class="col-xl-2 col-md-2">
+            <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
-                    <div class="icon-box icon-2">
+                    <div class="icon-box icon-2 ">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
                     </div>
@@ -102,88 +102,83 @@
             <div class="row">
 
 
+                {{-- <div class="col-lg-12" data-aos="fade-left" data-aos-delay="100"> --}}
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 container-image-2" data-aos="fade-left" data-aos-delay="100">
+                        {{-- <div class="section-title">
+                            <p>Eventos</p>
+                            <h2><a href="portal-de-noticias">Ver Todas</a></h2>
+                        </div> --}}
+                        <!-- Swiper -->
+                        <div class="today d-flex justify-content-center">
+                            <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
 
 
-                <div class="col-lg-4 me-lg-5 container-image-2" data-aos="fade-left" data-aos-delay="100">
-                    {{-- <div class="section-title">
-                        <p>Eventos</p>
-                        <h2><a href="portal-de-noticias">Ver Todas</a></h2>
-                    </div> --}}
-                    <!-- Swiper -->
-                    <div class="swiper mySwiper swiper-evento">
-                        <div class="swiper-wrapper">
-                            @foreach($eventos as $evento)
-                            <div class="swiper-slide"> <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt=""></div>
-                            @endforeach
-                        </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="autoplay-progress">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="20"></circle>
-                            </svg>
-                            <span></span>
+                            <div class="today-one"> <p> <strong>Hacete el PAP:</strong> del 13 al 17 de Mayo, en el Centro de Salud de Tres Arroyos. Turnos por orden de llegada. </p> </div>
+                            <div class="today-two"><p> <strong>Cerrado al tránsito: </strong>Av. Caseros y Catamarca - Por obra de bacheo.</p> </div>
+
                         </div>
                     </div>
-                        <!-- ======= Noticias2+ ======= -->
-                        {{-- @foreach($noticias as $noti)
-                            <div class="image-2-box mt-5  mt-lg-0 col-lg-12" data-aos="zoom-in" data-aos-delay="150">
-                                <div class="container" data-aos="fade-up">
-                                    <div class="row">
-                                        <div class="col-lg-6 mb-lg-3 img-secondary">
-                                            @foreach($noti->Imgs as $imag)
-                                                <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="image-2" alt="">
-                                                @break
-                                            @endforeach
-                                        </div>
-                                        <div class="col-lg-6 mb-0 novedad-text-box">
-                                            <h4>{{$noti->titulo}}</h4>
-                                            <div class="ver-mas-box">
-                                                <a class="ver-mas-btn" href="/noticia/{{$noti->slug}}">Ver mas</a>
+                            <!-- ======= Noticias2+ ======= -->
+                            {{-- @foreach($noticias as $noti)
+                                <div class="image-2-box mt-5  mt-lg-0 col-lg-12" data-aos="zoom-in" data-aos-delay="150">
+                                    <div class="container" data-aos="fade-up">
+                                        <div class="row">
+                                            <div class="col-lg-6 mb-lg-3 img-secondary">
+                                                @foreach($noti->Imgs as $imag)
+                                                    <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="image-2" alt="">
+                                                    @break
+                                                @endforeach
+                                            </div>
+                                            <div class="col-lg-6 mb-0 novedad-text-box">
+                                                <h4>{{$noti->titulo}}</h4>
+                                                <div class="ver-mas-box">
+                                                    <a class="ver-mas-btn" href="/noticia/{{$noti->slug}}">Ver mas</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach --}}
-                </div>
+                            @endforeach --}}
 
 
-                <div class="col-lg-7 container-image-1 "  data-aos="fade-right">
-                    <div class="section-title pb-2">
 
-                        <p>Noticias</p>
-                        {{-- <h2><a href="portal-de-noticias">Ver Todas</a></h2> --}}
-                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 container-image-1 "  data-aos="fade-right">
+                        {{-- <div class="section-title pb-2">
 
-                    <!-- Swiper -->
-                    <div class="swiper mySwiper swiper-noticia">
-                        <div class="swiper-wrapper">
-                            @foreach($noticias as $noti)
+                            <p>Noticias</p>
 
-                                <div class="swiper-slide">
-                                    @foreach($noti->imgs as $imag)
-                                <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
+                        </div> --}}
 
-                                    @break
-                                    @endforeach
-                                    <div class="swiper-slide subtitle ">
-                                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper swiper-noticia">
+                            <div class="swiper-wrapper">
+                                @foreach($noticias as $noti)
+
+                                    <div class="swiper-slide">
+                                        @foreach($noti->imgs as $imag)
+                                    <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
+
+                                        @break
+                                        @endforeach
+                                        <div class="swiper-slide subtitle ">
+                                            <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+                            {{-- <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div> --}}
+                            <div class="swiper-pagination"></div>
+                            <div class="autoplay-progress">
+                                <svg viewBox="0 0 48 48">
+                                    <circle cx="24" cy="24" r="20"></circle>
+                                </svg>
+                                <span></span>
+                            </div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-                        <div class="autoplay-progress">
-                            <svg viewBox="0 0 48 48">
-                                <circle cx="24" cy="24" r="20"></circle>
-                            </svg>
-                            <span></span>
-                        </div>
+
                     </div>
-
-
                     {{-- @foreach($noticiaPpal as $noti)
                     @foreach($noti->imgs as $imag)
                         <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
@@ -193,7 +188,7 @@
                         <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}}</h4></a>
                     </div>
                     @endforeach --}}
-                </div>
+                {{-- </div> --}}
 
             </div>
 
@@ -226,14 +221,22 @@
                 <div class="col-lg-3 pe-4 col-md-6 align-items-stretch">
                     <div class="evento-img">
                         <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
-                        <div class="evento-categoria" @if($evento->seccion->nombre == 'Cultura, Educación y Derechos Humanos') style="background:#d63384;"@endif>
-                            <p class="mb-0">
-                                @if($evento->seccion->nombre == 'Cultura, Educación y Derechos Humanos')
-                                Cultura
-                                @else
-                                {{$evento->seccion->nombre}}
-                                 @endif
-                            </p>
+                        <div class="evento-categoria"
+                            @if($evento->categoria->nombre == 'Cultura')
+                                style="background:#d63384;"
+                            @elseif($evento->categoria->nombre == 'Educación')
+                                style="background:rgb(13, 116, 189);"
+                            @elseif($evento->categoria->nombre == 'Generales')
+                                style="background: #662483;"
+                            @endif
+                            >
+                                <p class="mb-0">
+                                    @if($evento->categoria->nombre == 'Cultura, Educación y Derechos Humanos')
+                                    Cultura
+                                    @else
+                                    {{$evento->categoria->nombre}}
+                                    @endif
+                                </p>
                         </div>
                     </div>
                 </div>

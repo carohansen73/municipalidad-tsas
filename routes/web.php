@@ -85,6 +85,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('/filtro-boletin-oficial/{tipo}', 'showBoletinOficialItem');
     Route::get('/avisos-oficiales', 'showAvisosOficiales');
 
+    Route::get('/adultos-mayores', 'showAdultosMayores');
 
 });
 
@@ -127,7 +128,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-    Route::resource('categorias', App\Http\Controllers\categoriaController::class);
+    Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
     Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
     Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
