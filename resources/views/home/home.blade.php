@@ -364,12 +364,6 @@
 
 
 
-
-
-
-
-
-
     <!-- ======= Servicios mas consultados ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
@@ -490,15 +484,21 @@
 
     <!-- ======= TADI Section ======= -->
     <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
+        <div class="container" data-aos="zoom-in">
+            <div class="text-center">
+                <h3>Mi Tresa</h3>
+                <p> Ingresá a MiTresa. Registrate para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-auto">
+                    <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Ingresá a MiTresa </a>
+                    </div>
+                    <div class="col-auto">
+                    <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Descargá la App </a>
+                    </div>
 
-        <div class="text-center">
-          <h3>Mi Tresa</h3>
-          <p> Ingresá a MiTresa. Registrate para acceder a los servicios que provee el municipio de Tres Arroyos digitalmente.</p>
-          <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Ingresá a MiTresa</a>
+                </div>
+            </div>
         </div>
-
-      </div>
     </section>
     <!-- End Cta Section -->
 

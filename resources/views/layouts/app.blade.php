@@ -98,24 +98,25 @@
             <div class="row">
                 <div class="col-lg-4 col-4">
                     <div class="row telefono">
-                        <div class="col-auto telefono-icono">
-                            <i class="fas fa-phone"></i>
+                        <div class="col-auto telefono-icono bomberos">
+                            <img src="{{asset("assets/img/logos/bomberos.png")}}">
+                            {{-- <i class="fas fa-phone"></i> --}}
                         </div>
                         <div class="col-auto">
                             <p>Bomberos</p>
-                            <span>100</span>
+                            <span style="color: #db3232;">100</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-4">
                     <div class="row telefono">
-                        <div class="col-auto telefono-icono">
-                            <i class="fas fa-phone"></i>
+                        <div class="col-auto telefono-icono policia">
+                            <img src="{{asset("assets/img/logos/police2.png")}}">
                         </div>
                         <div class="col-auto">
                             <div><p>Policia</p></div>
-                            <div><span>101</span></div>
+                            <div><span style="color: rgb(13, 116, 189);">101</span></div>
 
                         </div>
                     </div>
@@ -123,12 +124,13 @@
 
                 <div class="col-lg-4 col-4">
                     <div class="row telefono">
-                        <div class="col-auto telefono-icono">
-                            <i class="fas fa-phone"></i>
+                        <div class="col-auto telefono-icono atencion">
+                            <img src="{{asset("assets/img/logos/atencion.png")}}">
                         </div>
                         <div class="col-auto">
                             <p>Atención al vecino</p>
-                            <span>147</span>
+                            <span style="color: #53c04d;
+                        }">147</span>
                         </div>
                     </div>
                 </div>
@@ -161,7 +163,8 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-info">
-                    <h3>Municipalidad de TsAs<span>.</span></h3>
+                    <img src="{{asset("assets/img/logos/tsas-manual.png")}}" alt="" class="img-fluid">
+                    <br>
                     <p>
                         Av. Rivadavia 1 - Tres Arroyos <br>
                         <strong>Tel:</strong> (02983) 439200 <br> <strong>Consultas frecuentes:</strong> (02983) 15600000<br>
