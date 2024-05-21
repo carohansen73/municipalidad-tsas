@@ -5,20 +5,20 @@
 
 {{-- <section id="museos"> --}}
 
-   <main id="main">
-
-    <div id="cultura" class="portada-foto text-md-left text-sm-center ">
-        <img class="foto-portada" src="assets/img/museos/mulazzi-portada3.jpg" alt="museo Mulazzi">
-        {{-- <div class="background-portada">   </div> --}}
-
-        <h1>Museos</h1>
+    <div id="museos">
+        <div class="portada-foto text-md-left text-sm-center ">
+            <div class="background-portada">   </div>
+                {{-- <h1>Museos</h1> --}}
+        </div>
     </div>
         <!-- ======= borde colorido ======= -->
         <div class="container-border">
             <div class="row">
-                <div class="col-4 border-4">
+                <div class="col-4 border-1">
                 </div>
-                <div class="col-4 border-2">
+                {{-- <div class="col-4 border-4">
+                </div> --}}
+                <div class="col-4 border-6">
                 </div>
                 <div class="col-4 border-5">
                 </div>
@@ -35,31 +35,54 @@
         <div class="container mb-5" data-aos="fade-up">
 
             <div class="section-title">
-                <p style="color: #d63384">Museos</p>
+                <p >Museos</p>
                 <h2>Descubrí los museos del partido de Tres Arroyos</h2>
             </div>
 
             <div class="row">
                 @foreach($museos as $museo)
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-4 col-md-6 col-sm-12 d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
-                            <img src="assets/img/museos/{{$museo->portada}}" class="img-fluid" alt="">
-                            <div class="social">
-                            {{-- <a href=""><i class="bi bi-twitter"></i></a> --}}
-                            <a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i></a>
-                            {{-- <a href=""><i class="bi bi-linkedin"></i></a> --}}
-                            </div>
+                            <a href="{{$museo->video}}" target="_blank">
+                            <video width="100%" height="100%" muted>
+                                <source src="assets/img/museos/{{$museo->portada}}" type="video/mp4">
+                                {{-- <source src="ruta_del_video.webm" type="video/webm"> --}}
+                                <!-- Texto alternativo -->
+                              </video>
+                            </a>
+                            {{-- <img src="assets/img/museos/{{$museo->portada}}" class="img-fluid" alt=""> --}}
+                            {{-- <div class="social">
+                                @if($museo->fb)
+                                    <a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i></a>
+                                @endif
+                                @if($museo->ig)
+                                    <a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i></a>
+                                @endif
+                                @if($museo->sitio_web)
+                                    <a href="{{$museo->sitio_web}}" target="_blank"><i class="bi bi-globe"></i></a>
+                                @endif
+                            </div> --}}
                         </div>
                         <div class="member-info">
-                                <h4 style="color: #d63384">{{$museo->nombre}}</h4>
+                            <h4 style="color: #000">{{$museo->nombre}}</h4>
 
-                            Referente:   <span> @if($museo->referente) {{$museo->referente}} @else - @endif </span>
-                            Telefono/wsp:<span>   {{$museo->wsp}}</span>
-                            Email:<span> @if($museo->email) {{$museo->email}} @else - @endif</span>
-                            Dirección:<span> {{$museo->direccion}}</span>
+                            @if($museo->referente) Referente: </strong> <span>{!! $museo->referente !!} </span>@endif
+                            @if($museo->wsp)Telefono/wsp:<span>   {{$museo->wsp}}</span> @endif
+                            @if($museo->email)Email:<span> {{$museo->email}} </span> @endif
+                            @if($museo->direccion)Dirección:<span> {!! $museo->direccion !!}</span> @endif
+
+                            Redes Sociales:
+                            @if($museo->fb)
+                                <span><a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i> {{$museo->fb}} </a> </span>
+                            @endif
+                            @if($museo->ig)
+                                <span><a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i> {{$museo->ig}} </a> </span>
+                            @endif
+                            @if($museo->sitio_web)
+                                <span><a href="{{$museo->sitio_web}}" target="_blank"><i class="bi bi-globe"></i> {{$museo->sitio_web}} </a> </span>
+                            @endif
 
                         </div>
                     </div>
@@ -115,4 +138,6 @@
 </main>
 
 </section>
+  <!-- Modal para ver evento -->
+  <script src="{{ asset('assets/js/play-video.js') }}"></script>
 
