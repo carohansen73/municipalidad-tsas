@@ -54,9 +54,9 @@
             <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
                 <li data-filter="*" class="filter-active">Todos</li>
-                    @if(isset($eventos) && (count($eventos) > 0))
-                        @foreach($eventos as $evento)
-                            <li data-filter=".filter-{{$evento->categoria->nombre}}">{{$evento->categoria->nombre}}</li>
+                    @if(isset($eventos) && (count($eventos) > 0) )
+                        @foreach($categorias as $categoria)
+                            <li data-filter=".filter-{{$categoria->nombre}}">{{$categoria->nombre}}</li>
                         @endforeach
                     @endif
 
