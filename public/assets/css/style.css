@@ -153,7 +153,7 @@ h6 {
 
 .back-to-top i {
   font-size: 28px;
-  color: rgb(13, 116, 189);
+  color: rgb(255, 255, 255);
   line-height: 0;
 }
 
@@ -1838,16 +1838,58 @@ section {
 
 }
 
-#portfolio-eventos .portfolio-item {
-    height: 326px;
-}
-
-
-
 #portfolio-eventos .portfolio-item img{
-    height: 326px;
     width: 100%;
 }
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    #portfolio-eventos .portfolio-item {
+        height: 340px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        height: 340px;
+    }
+}
+@media only screen and (max-width: 1200px) and (min-width: 991px) {
+    #portfolio-eventos .portfolio-item {
+        height: 320px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        height: 320px;
+    }
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+
+    #portfolio-eventos .portfolio-item {
+        height: 360px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        height: 360px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #portfolio-eventos .portfolio-item {
+        max-height: 400px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        max-height: 400px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
 
 .portfolio #portfolio-flters {
   padding: 0;
@@ -3035,12 +3077,10 @@ section #deportes-eventos{
 .telefonos-utiles{
     padding: 30px;
     margin-bottom: 60px;
-
 }
 .telefono-icono {
-
     border-radius: 50%;
-    padding: 30px;
+    padding: 24px;
     font-size: 18px;
 }
 
@@ -3048,29 +3088,43 @@ section #deportes-eventos{
     background-color: #db3232;
 }
 
-.bomberos span{
-
-}
-
 .policia{
     background-color: rgb(13, 116, 189);
 }
-.atencion{
-    /* background-color: #99CBD1; */
+
+.ambulancia{
     background-color: #53c04d;
 }
-
+.atencion{
+    /* background-color: #99CBD1; */
+    background-color: #7b319bb8;
+}
 
 .telefono-icono img{
-    height: 60px;
-
-
+    height: 50px;
 }
+
+@media (max-width: 992px) {
+    .telefono-icono img{
+        height: 36px;
+    }
+
+    .telefono-icono{
+        padding: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .telefono-icono{
+        padding: 14px;
+    }
+}
+
 .telefonos-utiles .telefono{
     display: flex;
-    /* flex-direction: column; */
+     flex-direction: column;
     align-items: center;
-    /* justify-content: start; */
+     justify-content: center;
 }
 
 .telefonos-utiles p{
@@ -3085,10 +3139,7 @@ section #deportes-eventos{
 }
 
 @media (max-width: 992px) {
-    .telefono-icono i{
-        padding: 16px;
-        font-size: 14px;
-    }
+
 
     .telefonos-utiles p{
         font-size: 14px;
@@ -3166,7 +3217,7 @@ section #deportes-eventos{
 
 #footer .footer-top .social-links a:hover {
   background: #25afc3;
-  color: rgb(13, 116, 189);
+  /* color: rgb(13, 116, 189); */
   text-decoration: none;
 }
 
@@ -3243,6 +3294,10 @@ section #deportes-eventos{
   color: #f5f5f5;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
+}
+
+#footer .footer-top .footer-newsletter a:hover{
+    background: #34c9e0;
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit]:hover {
