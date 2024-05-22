@@ -80,7 +80,7 @@
                                 <p>{{$evento->categoria->nombre}}</p>
                                 <div class="portfolio-links">
                                     <a href="{{asset("storage/eventos/".$evento->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$evento->nombre}}"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
                                 </div>
                             </div>
                         </div>

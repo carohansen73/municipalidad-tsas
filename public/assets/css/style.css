@@ -777,6 +777,52 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+#hero:before {
+    content: "";
+    /* background: rgba(0, 0, 0, 0.3); */
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #hero .container {
+    position: absolute;
+    /* padding-top: 74px; */
+    text-align: center;
+    margin-top: 292px;
+    top: -70px;
+    height: 100%;
+  }
+
+
+  #hero .row>*{
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+
+  #hero h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    /* color: #25afc3; */
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #hero h1 span {
+    color: #25afc3;
+  }
+
+  #hero h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+    margin-bottom: 100px;
+  }
+
 #hero {
   width: 100%;
   height: 600px;
@@ -787,76 +833,126 @@ h6 {
   top: 0 !important;
 }
 
+
+
+
+@media (min-width: 1400px) {
+    #hero {
+        max-height: 680px;
+        width: 100%;
+    }
+
+    #hero video{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top:0;
+    }
+}
+
+/* @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  } */
+
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px){
+    #hero {
+        max-height: 650px;
+        width: 100%;
+    }
+
+    #hero video{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top:0;
+    }
+
+    #hero .container {
+
+    margin-top: 42px;
+    top: 186px;
+    height: 100%;
+    }
+}
+
+  @media only screen and (max-width: 1200px) and (min-width: 991px) {
+    #hero {
+        max-height: 650px;
+        width: 100%;
+      }
+
+      #hero video{
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          top:0;
+      }
+
+      #hero .container {
+
+        margin-top: 42px;
+        top: 146px;
+        height: 100%;
+      }
+  }
+
 @media (max-width: 991px) {
     #hero {
-         width: 100%;
-        height: 250px;
+      max-height: 450px;
+      width: 100%;
     }
 
-    #hero #video{
+    #hero video{
         position: absolute;
         z-index: 0;
         width: 100%;
+        top:0;
     }
-}
+
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    #hero h2 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .menu-home{
+      display:none;
+    }
 
 
-@media (min-width: 991px) {
-    #hero #video{
+  }
+
+  @media (max-width: 500px) {
+    #hero {
+        min-height: 200px;
+        width: 100%;
+        height: 200px;
+      }
+
+      #hero video{
         position: absolute;
         z-index: 0;
         width: 100%;
-
+        min-height: 200px;
     }
-}
+
+
+    #hero h1 {
+        display:none;
+    }
+
+  }
 
 
 
-#hero:before {
-  content: "";
-  /* background: rgba(0, 0, 0, 0.3); */
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
 
-#hero .container {
-  position: absolute;
-  /* padding-top: 74px; */
-  text-align: center;
-  margin-top: 292px;
-  top: -70px;
-  height: 100%;
-}
-
-
-#hero .row>*{
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-#hero h1 {
-  margin: 0;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 64px;
-  /* color: #25afc3; */
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
-#hero h1 span {
-  color: #25afc3;
-}
-
-#hero h2 {
-  color: rgba(255, 255, 255, 0.9);
-  margin: 10px 0 0 0;
-  font-size: 24px;
-  margin-bottom: 100px;
-}
 
 /* #hero .icon-box {
   padding: 20px 5px;
@@ -1023,32 +1119,7 @@ h6 {
   border-color: rgb(13, 116, 189);
 } */
 
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
-}
 
-@media (max-width: 991px) {
-  #hero {
-    max-height: 250px;
-    height: auto;
-  }
-
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  #hero h2 {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .menu-home{
-    display:none;
-  }
-}
 
 #services .icon-box,
 #guia-tramites .icon-box{
@@ -3453,6 +3524,10 @@ input[type=number] { -moz-appearance:textfield; }
     .margen-top-navbar{
         margin-top: 62px;
     }
+}
+
+#header .navbar a{
+    font-weight: 600;
 }
 
 .portada{

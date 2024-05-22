@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="row  mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
+        <div class="row  mt-lg-5 mt-md-1 mt-sm-1 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
             <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
@@ -114,8 +114,8 @@
                             <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
 
 
-                            <div class="today-one"> <p> <strong>Hacete el PAP:</strong> del 13 al 17 de Mayo, en el Centro de Salud de Tres Arroyos. Turnos por orden de llegada. </p> </div>
-                            <div class="today-two"><p> <strong>Cerrado al tránsito: </strong>Av. Caseros y Catamarca - Por obra de bacheo.</p> </div>
+                            <div class="today-one"> <p> <strong>Ofrenda floral al Primer Teniente Hector R. Volponi:</strong> 23 de Mayo, 15:30hs en Güemes y Libertad. </p> </div>
+                            <div class="today-two"><p> <strong>Cerrado al tránsito: </strong>Av.Rivadavia 1 - Por obras de mantenimiento.</p> </div>
 
                         </div>
                     </div>
@@ -404,7 +404,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-chat-dots"></i></div>
-                    <h4><a href="">Consultas o Reclamos</a></h4>
+                    <h4><a href="https://mitresa.gobdigital.com.ar/web/default">Consultas o Reclamos</a></h4>
                     {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
                     </div>
                 </div>
@@ -438,17 +438,17 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-4">
                     <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
-                    <h4><a href="">Descargas</a></h4>
+                    <h4><a href="https://mitresa.gobdigital.com.ar/web/default">App MiTresa</a></h4>
                     {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
                 </div>
                 </div>
                 {{-- {* /fila *} --}}
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-1">
                 <div class="icon"><i class="bi bi-recycle"></i></div>
                 <h4><a href="">Gestión Ambiental</a></h4>
-                {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+
                 </div>
             </div>
 
@@ -456,7 +456,7 @@
                 <div class="icon-box icon-3">
                 <div class="icon"><i class="bi bi-egg-fried"></i></div>
                 <h4><a href="">Bromatología</a></h4>
-                {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+
                 </div>
             </div>
 
@@ -464,7 +464,7 @@
                 <div class="icon-box icon-4">
                 <div class="icon"><i class="bi bi-life-preserver"></i></div>
                 <h4><a href="">Guardavidas</a></h4>
-                {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+
                 </div>
             </div>
 
@@ -472,9 +472,9 @@
                 <div class="icon-box icon-2">
                 <div class="icon"><i class="bi bi-image"></i></div>
                 <h4><a href="">Imágenes</a></h4>
-                {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+
                 </div>
-            </div>
+            </div> --}}
       {{-- {* /fila *} --}}
 
         </div>
