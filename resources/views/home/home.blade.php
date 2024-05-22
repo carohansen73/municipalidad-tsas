@@ -113,9 +113,8 @@
                         <div class="today d-flex justify-content-center">
                             <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
 
-
+                            <div class="today-two"><p> <strong>Móvil Quirúrgico </strong>en el barrio Ruta 3 sur, frente al CAPS de Bolivar 1750. Turnos por órden de llegada.</p> </div>
                             <div class="today-one"> <p> <strong>Ofrenda floral al Primer Teniente Hector R. Volponi:</strong> 23 de Mayo, 15:30hs en Güemes y Libertad. </p> </div>
-                            <div class="today-two"><p> <strong>Cerrado al tránsito: </strong>Av.Rivadavia 1 - Por obras de mantenimiento.</p> </div>
 
                         </div>
                     </div>
@@ -218,9 +217,13 @@
 
         <div class="row">
             @foreach($eventos as $evento)
-                <div class="col-lg-3 pe-4 col-md-6 align-items-stretch">
-                    <div class="evento-img">
+                <div class="col-lg-3 pe-4 col-md-6 col-12 mb-3 align-items-stretch ">
+                    <div class=" evento-img">
+
                         <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
+
+                        <button  class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="eventos"
+                            data-bs-whatever="@mdo">ver</button>
                         <div class="evento-categoria"
                             @if($evento->categoria->nombre == 'Cultura')
                                 style="background:#d63384;"
@@ -228,6 +231,9 @@
                                 style="background:rgb(13, 116, 189);"
                             @elseif($evento->categoria->nombre == 'Generales')
                                 style="background: #662483;"
+                            @elseif($evento->categoria->nombre == 'Salud')
+                                style="background: #53c04d;"
+
                             @endif
                             >
                                 <p class="mb-0">
@@ -238,6 +244,7 @@
                                     @endif
                                 </p>
                         </div>
+
                     </div>
                 </div>
             @endforeach

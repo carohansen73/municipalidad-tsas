@@ -74,7 +74,7 @@
                         <div class="container " data-aos="fade-up">
                             <div class="row">
                                 @foreach($text->galeria as $imag)
-                                    <div class="col-lg-4">   <img class="foto-portada" src="{{asset("storage/secciones/".$imag->img)}}" alt="foto-1"></div>
+                                    <div class="col-lg-4 mb-3">   <img class="foto-portada img-fluid" src="{{asset("storage/secciones/".$imag->img)}}" alt="foto-1"></div>
                                 @endforeach
                             </div>
                         </div>

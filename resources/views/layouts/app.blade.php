@@ -207,11 +207,11 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Nuestros Servicios</h4>
                     <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">MiTresa</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Portal de Autogestion</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Gobierno Abierto</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Multas</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Reclamos</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://mitresa.gobdigital.com.ar/ciudadano/login">MiTresa</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://autogestion.tresarroyos.gov.ar/">Portal de Autogestion</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/transparencia-fiscal">Gobierno Abierto</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://mitresa.gobdigital.com.ar/ciudadano/login">Multas</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://mitresa.gobdigital.com.ar/ciudadano/login">Reclamos</a></li>
                     </ul>
                 </div>
 

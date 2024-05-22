@@ -69,7 +69,7 @@
                                  </div>
                                 <div class="member-info">
                                     <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
-                                    <span> {{$noti->fecha}}  </span>
+                                    <span> {{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
                                 </div>
 
                             </div>
@@ -147,7 +147,7 @@
                                         </div>
                                         <div class="member-info">
                                             <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
-                                            <span> {{$noti->fecha}}  </span>
+                                            <span>{{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
                                         </div>
                                     </div>
                                 </div>

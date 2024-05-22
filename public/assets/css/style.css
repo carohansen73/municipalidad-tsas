@@ -1641,8 +1641,8 @@ section {
 } */
 
 #home-eventos .container .row .member .member-img img{
-    width:100% ;
-    height: 326px;
+    /* width:100% ;
+    height: 326px; */
     object-fit: cover;
 }
 
@@ -1686,25 +1686,29 @@ section {
 
 
 /*prueba*/
-
-.evento-img {
-    position: relative;
-    width: 100% ;
-    /* border-radius: 10px;
-    box-shadow: 0 0 9px rgba(0, 0, 0, .1); */
-    margin: 0px  20px;
-    left: 0px;
+.evento-img>img{
+    object-fit: contain;
 }
 
-
-
+#home-eventos .evento-img img{
+    height: 326px;
+}
 
 .evento-img img{
     border-radius: 10px;
     box-shadow: 0 0 9px rgba(0, 0, 0, .1);
     margin: 0px  20px;
+    width: 100% ;
+    /* height: 420px; */
+    object-fit: cover;
 }
 
+.evento-img {
+    position: relative;
+    width: 100% ;
+    margin: 0px  20px;
+    left: 0px;
+}
 
 .evento-categoria{
     position: absolute;
@@ -1712,7 +1716,6 @@ section {
     left: -10px;
     background-color: #25afc3;
      z-index: 2;
-
     padding: 10px;
     width: auto;
     border-radius: 18px 0px 18px 0px;
@@ -1728,23 +1731,72 @@ section {
     color: #ffffff;
 }
 
-.evento-img>img{
-    object-fit: contain;
+.btn-modal-evento{
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    bottom: 0px;
+    color: rgb(13, 116, 189);
+    background-color: rgba(255, 255, 255, 0.846);
+    border-color: rgb(245, 245, 245);
+    box-shadow: 1px 1px 1px #c8c8c8b1;
 }
 
-#home-eventos .evento-img img{
-    height: 326px;
+.evento-img:hover .btn-modal-evento {
+    opacity: 1;
+    bottom: 15px;
 }
 
-.evento-img img{
-    width: 100% ;
-    height: 420px;
-    object-fit: cover;
+.btn-modal-evento:hover  {
+    bottom: 17px;
+    background-color: #2d71b4;
+    box-shadow: 1px 2px 2px #646464b1;
+}
+
+
+@media (min-width: 620px) {
+
+    .evento-img {
+        position: relative;
+        width: 100% ;
+        /* border-radius: 10px;
+        box-shadow: 0 0 9px rgba(0, 0, 0, .1); */
+        margin: 0px  20px;
+        left: 0px;
+    }
 
 }
 
 
+@media only screen and (max-width: 620px) and (min-width: 500px) {
+    .evento-img {
+        position: relative;
+        width: 90% ;
+        /* border-radius: 10px;
+        box-shadow: 0 0 9px rgba(0, 0, 0, .1); */
+        margin: 0px 20px;
+        left: 0px;
+        /* height: 420px; */
+    }
 
+    #home-eventos .evento-img img{
+        height: 420px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .evento-img img{
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 9px rgba(0, 0, 0, .1);
+        margin: 0px  20px;
+    }
+
+    .btn-modal-evento{
+        left: 40%;
+    }
+}
 
 
 /*--------------------------------------------------------------
