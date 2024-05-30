@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N26BR9CS5F"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N26BR9CS5F');
+        </script>
         <meta charset="UTF-8">
         {{-- <title>{{ config('app.name') }}</title> --}}
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>

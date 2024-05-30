@@ -113,8 +113,8 @@
                         <div class="today d-flex justify-content-center">
                             <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
 
-                            <div class="today-two"><p> <strong>Móvil Quirúrgico </strong>en el barrio Ruta 3 sur, frente al CAPS de Bolivar 1750. Turnos por órden de llegada.</p> </div>
-                            <div class="today-one"> <p> <strong>Ofrenda floral al Primer Teniente Hector R. Volponi:</strong> 23 de Mayo, 15:30hs en Güemes y Libertad. </p> </div>
+                            <div class="today-one"><p> <strong>Inscripción al FOMEPRO </strong>en la oficina de empleo y capacitación, Pedro N. Carrera 940. <br><a href="https://www.tresarroyos.gov.ar/seccion/empleo-emprendedores" target="_blank">Bases y condiciones</a></p>    </div>
+                            <div class="today-two"> <p> <strong>Móvil quirúrgico de castraciones:</strong> Barrio Benito Machado - 20 de Abril 1168 (frente al CAPS)</p> </div>
 
                         </div>
                     </div>
@@ -140,8 +140,6 @@
                                 </div>
                             @endforeach --}}
 
-
-
                     <div class="col-lg-8 col-md-8 col-sm-12 container-image-1 "  data-aos="fade-right">
                         {{-- <div class="section-title pb-2">
 
@@ -156,7 +154,7 @@
 
                                     <div class="swiper-slide">
                                         @foreach($noti->imgs as $imag)
-                                    <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
+                                        <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
 
                                         @break
                                         @endforeach
@@ -445,7 +443,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-4">
                     <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
-                    <h4><a href="https://mitresa.gobdigital.com.ar/web/default">App MiTresa</a></h4>
+                    <h4><a href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano">App MiTresa</a></h4>
                     {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
                 </div>
                 </div>
@@ -500,7 +498,7 @@
                     <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Ingresá a MiTresa </a>
                     </div>
                     <div class="col-auto">
-                    <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Descargá la App </a>
+                    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Descargá la App </a>
                     </div>
 
                 </div>

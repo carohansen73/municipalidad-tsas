@@ -29,10 +29,6 @@ class SituacionFinanciera extends Model
     const UPDATED_AT = 'updated_at';
 
 
-
-
-
-
     public $fillable = [
         'nombre',
         'area',

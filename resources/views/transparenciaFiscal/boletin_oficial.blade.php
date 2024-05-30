@@ -42,7 +42,7 @@
         {{-- DECRETOS Y RESOLUCIONES , FILTRO DE BUSQUEDA Y RESULTADOS--}}
 
         @if(isset($tipo) && isset($filtroDeBusqueda))  {{--Filtro de Busqueda--}}
-        <section class="team">
+        <section class="team pt-0">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title text-center ln-before">
