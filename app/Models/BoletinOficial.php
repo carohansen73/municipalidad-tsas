@@ -2,27 +2,80 @@
 
 namespace App\Models;
 
+use Eloquent as Model;
+// use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class BoletinOficial
+ * @package App\Models
+ * @version May 31, 2024, 12:16 pm UTC
+ *
+ * @property string $nombre
+ * @property string $descripcion
+ * @property string $titulo
+ * @property string $tipo
+ * @property integer $anio
+ * @property integer $orden
+ * @property boolean $publica
+ * @property integer $mes
+ */
 class BoletinOficial extends Model
 {
+    // use SoftDeletes;
+
     use HasFactory;
 
     public $table = 'tre_boletin';
 
-    protected $dates = ['deleted_at'];
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
 
+
+    // protected $dates = ['deleted_at'];
     public $fillable = [
-        'id',
         'nombre',
         'descripcion',
         'titulo',
         'tipo',
-        'mes',
         'anio',
         'orden',
-        'publica'
+        'publica',
+        'mes'
     ];
+
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'id' => 'integer',
+        'nombre' => 'string',
+        'descripcion' => 'string',
+        'titulo' => 'string',
+        'tipo' => 'string',
+        'anio' => 'integer',
+        'orden' => 'integer',
+        'publica' => 'boolean',
+        'mes' => 'integer'
+    ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        'nombre' => 'required|string|max:65',
+        'descripcion' => 'required|string|max:265',
+        'titulo' => 'required|string|max:45',
+        'tipo' => 'required|string|max:45',
+        'anio' => 'required|integer',
+        'orden' => 'required|integer',
+        'publica' => 'required|boolean',
+        'mes' => 'required|integer'
+    ];
+
 
 }

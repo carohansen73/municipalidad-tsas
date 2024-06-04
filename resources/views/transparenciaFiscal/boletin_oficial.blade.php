@@ -47,7 +47,7 @@
 
                 <div class="section-title text-center ln-before">
                     <p style="font-size: 24px;">{{$tipo}}</p>
-                    <h2>{{ $filtroDeBusqueda['mes'] / $filtroDeBusqueda['anio'] }}</h2>
+                    <h2> Boletin oficial</h2>
                 </div>
 
 
