@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N26BR9CS5F"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-N26BR9CS5F');
+        </script>
         <meta charset="UTF-8">
         {{-- <title>{{ config('app.name') }}</title> --}}
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -96,25 +105,25 @@
         {{-- Sub-footer --}}
         <div class="container telefonos-utiles mt-5">
             <div class="row">
-                <div class="col-lg-4 col-4">
+                <div class="col-lg-3 col-3">
                     <div class="row telefono">
                         <div class="col-auto telefono-icono bomberos">
                             <img src="{{asset("assets/img/logos/bomberos.png")}}">
                             {{-- <i class="fas fa-phone"></i> --}}
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto  text-center">
                             <p>Bomberos</p>
                             <span style="color: #db3232;">100</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-4">
+                <div class="col-lg-3 col-3">
                     <div class="row telefono">
                         <div class="col-auto telefono-icono policia">
                             <img src="{{asset("assets/img/logos/police2.png")}}">
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto  text-center">
                             <div><p>Policia</p></div>
                             <div><span style="color: rgb(13, 116, 189);">101</span></div>
 
@@ -122,15 +131,28 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-4">
+                <div class="col-lg-3 col-3">
+                    <div class="col d-flex justify-content-center ">
+                        <div class="telefono">
+                            <div class="col-auto telefono-icono ambulancia">
+                                <img src="{{asset("assets/img/logos/ambulancia.png")}}">
+                            </div>
+                            <div class="col-auto text-center">
+                                <p>Ambulancia</p>
+                                <p><span style="color: #53c04d;">107</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-3">
                     <div class="row telefono">
                         <div class="col-auto telefono-icono atencion">
                             <img src="{{asset("assets/img/logos/atencion.png")}}">
                         </div>
-                        <div class="col-auto">
+                        <div class="col-auto  text-center">
                             <p>Atención al vecino</p>
-                            <span style="color: #53c04d;
-                        }">147</span>
+                            <span style="color: #7b319bb8;">147</span>
                         </div>
                     </div>
                 </div>
@@ -171,10 +193,10 @@
                         <strong>Email:</strong> reclamos@tresarroyos.gov.ar<br>
                     </p>
                     <div class="social-links mt-3">
-                        {{-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> --}}
+                         <a href="https://twitter.com/TresArroyosMun" class="twitter"><i class="bx bxl-twitter"></i></a>
                         <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
                         <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-                        <a href="https://www.youtube.com/c/municipalidaddetresarroyos" target="_blank" class="youtube"><i class="bx bxl-youtube"></i></a>
+                        <a href="https://whatsapp.com/channel/0029VaNtxbS77qVaO8CjH32K" target="_blank" class="youtube"><i class="bx bxl-whatsapp"></i></a>
                         {{-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> --}}
                     </div>
                     </div>
@@ -194,11 +216,11 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Nuestros Servicios</h4>
                     <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">MiTresa</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Portal de Autogestion</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Gobierno Abierto</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Multas</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Reclamos</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://mitresa.gobdigital.com.ar/ciudadano/login">MiTresa</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://autogestion.tresarroyos.gov.ar/">Portal de Autogestion</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="/transparencia-fiscal">Gobierno Abierto</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://mitresa.gobdigital.com.ar/ciudadano/login">Multas</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://mitresa.gobdigital.com.ar/ciudadano/login">Reclamos</a></li>
                     </ul>
                 </div>
 
@@ -227,13 +249,13 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Creado por <a href="/">Centro de Computos</a>
             </div>
             </div>
         </footer><!-- End Footer -->
 
         <div id="preloader"></div>
-        {{-- <a href="" class="back-to-top d-flex align-items-center justify-content-center" style="margin-bottom: 96px;"><i class="bi bi-arrow-up-short"></i></a> --}}
+        <a href="https://whatsapp.com/channel/0029VaNtxbS77qVaO8CjH32K" target="_blank" class="back-to-top d-flex align-items-center justify-content-center" style="margin-bottom: 96px;"><i class="bx bxl-whatsapp"></i></a>
         <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="back-to-top d-flex align-items-center justify-content-center mb-5"><i class="bx bxl-instagram"></i></a>
         <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bxl-facebook"></i></a>
 

@@ -81,21 +81,30 @@
         {!! Form::label('imagenes', 'Cargar imagen:',['class'=>'custom-file-label']) !!}
         {!!Form::file('imagenes[]',['class' => 'custom-file-input ','id'=>'imagenes[]','accept'=>"image/*" ])!!}
     </div>
-
 </div>
 <div class="form-group col-sm-12">
     <div class="custom-file">
         {!! Form::label('imagenes', 'Cargar imagen:',['class'=>'custom-file-label']) !!}
         {!!Form::file('imagenes[]',['class' => 'custom-file-input ','id'=>'imagenes[]'])!!}
     </div>
-
 </div>
 <div class="form-group col-sm-12">
     <div class="custom-file">
         {!! Form::label('imagenes', 'Cargar imagen:',['class'=>'custom-file-label']) !!}
         {!!Form::file('imagenes[]',['class' => 'custom-file-input ','id'=>'imagenes[]'])!!}
     </div>
-
+</div>
+<div class="form-group col-sm-12">
+    <div class="custom-file">
+        {!! Form::label('imagenes', 'Cargar imagen:',['class'=>'custom-file-label']) !!}
+        {!!Form::file('imagenes[]',['class' => 'custom-file-input ','id'=>'imagenes[]'])!!}
+    </div>
+</div>
+<div class="form-group col-sm-12">
+    <div class="custom-file">
+        {!! Form::label('imagenes', 'Cargar imagen:',['class'=>'custom-file-label']) !!}
+        {!!Form::file('imagenes[]',['class' => 'custom-file-input ','id'=>'imagenes[]'])!!}
+    </div>
 </div>
 
 {{-- <div class="input-group mb-3">

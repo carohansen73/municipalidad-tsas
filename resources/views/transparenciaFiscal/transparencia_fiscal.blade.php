@@ -8,7 +8,7 @@
 
 
 
-@if(isset($datosSituacion) && (count($datosSituacion['muni']) > 0))
+{{-- @if(isset($datosSituacion) && (count($datosSituacion['muni']) > 0)) --}}
     <section id="secciones-archivos">
         <main  class="margen-top-navbar">
         <div class="container mb-5" data-aos="fade-up">
@@ -25,7 +25,7 @@
 
             <div class="d-flex justify-content-center">
                 <nav class="navbar navbar-light bg-light col-lg-6 mb-4">
-                    <form class="container-fluid" action="transparencia-fiscal-filtro" method="POST">
+                    <form class="container-fluid mt-3" action="transparencia-fiscal-filtro" method="POST">
                         @csrf
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">Busqueda por año</span>
@@ -53,9 +53,13 @@
                     <div class="list-group">
                         <ul class="list-group text-center" >
                             <li class="list-group-item list-group-title" aria-current="true"> {{-- <i class="fas fa-file-download"></i> --}} Administración Central  </li>
-                            @foreach ($datosSituacion['muni'] as $muni)
-                                <a href="{{url('/storage/archivos/situacion/'.$muni->nombre)}}" target="_blank" class="list-group-item only-item">  {{ $muni->titulo}} </a>
-                            @endforeach
+                            @if(isset($datosSituacion['muni']) && (count($datosSituacion['muni']) > 0))
+                                @foreach ($datosSituacion['muni'] as $muni)
+                                    <a href="{{url('/storage/archivos/situacion/'.$muni->nombre)}}" target="_blank" class="list-group-item only-item">  {{ $muni->titulo}} </a>
+                                @endforeach
+                            @else
+                                <span class="input-group-addon">No hay datos para el filtro aplicado</span>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -65,9 +69,13 @@
                     <div class="list-group">
                         <ul class="list-group text-center" >
                             <li class="list-group-item list-group-title" aria-current="true"> Dirección de Vialidad Rural  </li>
-                            @foreach ($datosSituacion['vial'] as $vial)
-                                <a href="{{url('/storage/archivos/situacion/'.$vial->nombre)}}" class="list-group-item only-item" target="_blank">  {{ $vial->titulo}} </a>
-                            @endforeach
+                            @if(isset($datosSituacion['vial']) && (count($datosSituacion['vial']) > 0))
+                                @foreach ($datosSituacion['vial'] as $vial)
+                                    <a href="{{url('/storage/archivos/situacion/'.$vial->nombre)}}" class="list-group-item only-item" target="_blank">  {{ $vial->titulo}} </a>
+                                @endforeach
+                            @else
+                                <span class="input-group-addon">No hay datos para el filtro aplicado</span>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -81,9 +89,13 @@
                     <div class="list-group">
                         <ul class="list-group text-center" >
                             <li class="list-group-item list-group-title" aria-current="true"> Claromecó Servicios Turísticos  </li>
-                            @foreach ($datosSituacion['claro'] as $claro)
-                                <a href="{{url('/storage/archivos/situacion/'.$claro->nombre)}}" target="_blank" class="list-group-item only-item">  {{ $claro->titulo}} </a>
-                            @endforeach
+                            @if(isset($datosSituacion['claro']) && (count($datosSituacion['claro']) > 0))
+                                @foreach ($datosSituacion['claro'] as $claro)
+                                    <a href="{{url('/storage/archivos/situacion/'.$claro->nombre)}}" target="_blank" class="list-group-item only-item">  {{ $claro->titulo}} </a>
+                                @endforeach
+                            @else
+                                <span class="input-group-addon">No hay datos para el filtro aplicado</span>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -93,9 +105,13 @@
                     <div class="list-group">
                         <ul class="list-group text-center" >
                             <li class="list-group-item list-group-title" aria-current="true"> Centro Municipal de Salud </li>
-                            @foreach ($datosSituacion['salud'] as $salud)
-                                <a href="{{url('/storage/archivos/situacion/'.$salud->nombre)}}" target="_blank" class="list-group-item only-item">  {{ $salud->titulo}} </a>
-                            @endforeach
+                            @if(isset($datosSituacion['salud']) && (count($datosSituacion['salud']) > 0))
+                                @foreach ($datosSituacion['salud'] as $salud)
+                                    <a href="{{url('/storage/archivos/situacion/'.$salud->nombre)}}" target="_blank" class="list-group-item only-item">  {{ $salud->titulo}} </a>
+                                @endforeach
+                            @else
+                                <span class="input-group-addon">No hay datos para el filtro aplicado</span>
+                            @endif
                         </ul>
                     </div>
                 </div>
@@ -111,7 +127,7 @@
 
             <div class="section-title ln-before text-center" style="padding-bottom:15px;">
                 <p style="font-size: 24px;">Reporte Económico Financiero</p>
-                <h2>{{$datosSituacion['anio']}}</h2>
+                <h2>{{$anioReportes}}</h2>
             </div>
 
 {{--  Generales  --}}
@@ -131,7 +147,7 @@
                                 <ul class="list-group">
                                 @endif
                                 <li class="list-group-item">
-                                    <a href="{{url('/storage/archivos/situacion/'.$reporte->nombre_arch)}}" target="_blank" >{{$reporte->titulo}}</a>
+                                    <a href="{{url('/storage/archivos/reportes_eco_fin/'.$reporte->nombre_arch)}}" target="_blank" >{{$reporte->titulo}}</a>
                                 </li>
                                 <?php $i++;?>
                             @endforeach
@@ -212,4 +228,4 @@
         </div>
         </main>
 </section>
-@endif
+{{-- @endif --}}

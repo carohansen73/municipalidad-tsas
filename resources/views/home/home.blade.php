@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="row  mt-5 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
+        <div class="row  mt-lg-5 mt-md-1 mt-sm-1 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
             <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
@@ -113,9 +113,8 @@
                         <div class="today d-flex justify-content-center">
                             <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
 
-
-                            <div class="today-one"> <p> <strong>Hacete el PAP:</strong> del 13 al 17 de Mayo, en el Centro de Salud de Tres Arroyos. Turnos por orden de llegada. </p> </div>
-                            <div class="today-two"><p> <strong>Cerrado al tránsito: </strong>Av. Caseros y Catamarca - Por obra de bacheo.</p> </div>
+                            <div class="today-one"><p> <strong>Inscripción al FOMEPRO </strong>en la oficina de empleo y capacitación, Pedro N. Carrera 940. <br><a href="https://www.tresarroyos.gov.ar/seccion/empleo-emprendedores" target="_blank">Bases y condiciones</a></p>    </div>
+                            <div class="today-two"> <p> <strong>Móvil quirúrgico de castraciones:</strong> Barrio Benito Machado - 20 de Abril 1168 (frente al CAPS)</p> </div>
 
                         </div>
                     </div>
@@ -141,8 +140,6 @@
                                 </div>
                             @endforeach --}}
 
-
-
                     <div class="col-lg-8 col-md-8 col-sm-12 container-image-1 "  data-aos="fade-right">
                         {{-- <div class="section-title pb-2">
 
@@ -157,7 +154,7 @@
 
                                     <div class="swiper-slide">
                                         @foreach($noti->imgs as $imag)
-                                    <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
+                                        <img src="{{asset("storage/noticia_img/".$noti->id."/".$imag->img)}}" class="image-1" alt="">
 
                                         @break
                                         @endforeach
@@ -218,9 +215,13 @@
 
         <div class="row">
             @foreach($eventos as $evento)
-                <div class="col-lg-3 pe-4 col-md-6 align-items-stretch">
-                    <div class="evento-img">
+                <div class="col-lg-3 pe-4 col-md-6 col-12 mb-3 align-items-stretch ">
+                    <div class=" evento-img">
+
                         <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
+
+                        <button  class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="eventos"
+                            data-bs-whatever="@mdo">ver</button>
                         <div class="evento-categoria"
                             @if($evento->categoria->nombre == 'Cultura')
                                 style="background:#d63384;"
@@ -228,6 +229,9 @@
                                 style="background:rgb(13, 116, 189);"
                             @elseif($evento->categoria->nombre == 'Generales')
                                 style="background: #662483;"
+                            @elseif($evento->categoria->nombre == 'Salud')
+                                style="background: #53c04d;"
+
                             @endif
                             >
                                 <p class="mb-0">
@@ -238,6 +242,7 @@
                                     @endif
                                 </p>
                         </div>
+
                     </div>
                 </div>
             @endforeach
@@ -404,7 +409,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-1">
                     <div class="icon"><i class="bi bi-chat-dots"></i></div>
-                    <h4><a href="">Consultas o Reclamos</a></h4>
+                    <h4><a href="https://mitresa.gobdigital.com.ar/web/default">Consultas o Reclamos</a></h4>
                     {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
                     </div>
                 </div>
@@ -438,17 +443,17 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-4">
                     <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
-                    <h4><a href="">Descargas</a></h4>
+                    <h4><a href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano">App MiTresa</a></h4>
                     {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
                 </div>
                 </div>
                 {{-- {* /fila *} --}}
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-1">
                 <div class="icon"><i class="bi bi-recycle"></i></div>
                 <h4><a href="">Gestión Ambiental</a></h4>
-                {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+
                 </div>
             </div>
 
@@ -456,7 +461,7 @@
                 <div class="icon-box icon-3">
                 <div class="icon"><i class="bi bi-egg-fried"></i></div>
                 <h4><a href="">Bromatología</a></h4>
-                {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+
                 </div>
             </div>
 
@@ -464,7 +469,7 @@
                 <div class="icon-box icon-4">
                 <div class="icon"><i class="bi bi-life-preserver"></i></div>
                 <h4><a href="">Guardavidas</a></h4>
-                {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+
                 </div>
             </div>
 
@@ -472,9 +477,9 @@
                 <div class="icon-box icon-2">
                 <div class="icon"><i class="bi bi-image"></i></div>
                 <h4><a href="">Imágenes</a></h4>
-                {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+
                 </div>
-            </div>
+            </div> --}}
       {{-- {* /fila *} --}}
 
         </div>
@@ -493,7 +498,7 @@
                     <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Ingresá a MiTresa </a>
                     </div>
                     <div class="col-auto">
-                    <a class="cta-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Descargá la App </a>
+                    <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Descargá la App </a>
                     </div>
 
                 </div>

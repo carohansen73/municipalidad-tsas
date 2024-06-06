@@ -54,9 +54,9 @@
             <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
                 <li data-filter="*" class="filter-active">Todos</li>
-                    @if(isset($eventos) && (count($eventos) > 0))
-                        @foreach($eventos as $evento)
-                            <li data-filter=".filter-{{$evento->categoria->nombre}}">{{$evento->categoria->nombre}}</li>
+                    @if(isset($eventos) && (count($eventos) > 0) )
+                        @foreach($categorias as $categoria)
+                            <li data-filter=".filter-{{$categoria->nombre}}">{{$categoria->nombre}}</li>
                         @endforeach
                     @endif
 
@@ -80,7 +80,7 @@
                                 <p>{{$evento->categoria->nombre}}</p>
                                 <div class="portfolio-links">
                                     <a href="{{asset("storage/eventos/".$evento->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$evento->nombre}}"><i class="bx bx-plus"></i></a>
-                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
                                 </div>
                             </div>
                         </div>

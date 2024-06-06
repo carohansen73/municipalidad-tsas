@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReclamosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiaController;
+use App\Http\Controllers\BoletinOficialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +79,7 @@ Route::controller(HomeController::class)->group(function () {
     /*EVENTOS*/
     Route::get('/proximos-eventos', 'showAllEvents');
 
-     /*TRANSPARENCIA FISCAL */
+    /*TRANSPARENCIA FISCAL */
     Route::get('/transparencia-fiscal', 'showTransparenciaFiscal');
     Route::post('/transparencia-fiscal-filtro', 'showTransparenciaFiscal');
     Route::get('/boletin-oficial', 'showBoletinOficial');
@@ -115,6 +116,12 @@ Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->n
 
 
 
+// Route::controller(BoletinOficialController::class)->group(function () {
+
+//     Route::post('admin-filtro-boletinOficial/', 'indexFiltered');
+
+// });
+
 
 
 
@@ -127,6 +134,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('reporteEconomico', App\Http\Controllers\ReporteEconomicoController::class);
     Route::resource('situacionFinanciera', App\Http\Controllers\SituacionFinancieraController::class);
 
+    Route::resource('boletinOficial', App\Http\Controllers\BoletinOficialController::class);
+
+    Route::post('admin-filtro-boletinOficial/', [App\Http\Controllers\BoletinOficialController::class, 'indexFiltered'])->name('filtro');
+
+
 
 
     Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
@@ -134,6 +146,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
 });
+
+
+
 
 
 

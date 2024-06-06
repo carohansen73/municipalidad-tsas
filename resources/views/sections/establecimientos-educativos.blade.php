@@ -175,7 +175,7 @@
                                     <h4 class="">Información del establecimiento </h4>
                                     <h6 class="d-flex align-items-center">
                                         <span style="font-size: 24px; padding-right:10px;"> <i class="fas fa-map-marker-alt"></i></span>
-                                        <strong>Dirección: </strong> <span style="font-size: 14px;"> {{$est->ubicacion}} </span> </h6>
+                                        <strong>Dirección:  </strong> <span style="font-size: 14px;"> {{ $est->ubicacion}} - {{$est->localidad}} </span> </h6>
                                     <h6 class="d-flex align-items-center">
                                         <span style="font-size: 24px; padding-right:10px;"> <i class="fas fa-at"></i></span>
                                         <strong>Email: </strong> <span style="font-size: 14px;"> {{$est->email}} </span>

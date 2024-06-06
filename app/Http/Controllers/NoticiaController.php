@@ -84,7 +84,7 @@ class noticiaController extends AppBaseController
 
         if (!empty($input['imagenes'])){
             foreach ($input['imagenes'] as $file) {
-                $name=FileManagement::uploadImage($file,$path, 720, 540);
+                $name=FileManagement::uploadImage($file,$path, 960, 680);
                 $noticia->Imgs()->create([
                     'img'=>$name,
                     'leyenda'=>$noticia->titulo
@@ -165,7 +165,7 @@ class noticiaController extends AppBaseController
 
         if (!empty($request['imagenes'])){
             foreach ($request['imagenes'] as $file) {
-                $name=FileManagement::uploadImage($file,$path, 720, 540);
+                $name=FileManagement::uploadImage($file,$path, 960, 680);
                 $noticia->Imgs()->create([
                     'img'=>$name,
                     'leyenda'=>$noticia->titulo
@@ -195,28 +195,36 @@ class noticiaController extends AppBaseController
 
             return redirect(route('noticias.index'));
         }
+        //primero elimino las fotos relacionadas a esta noticia
+        $this->destroyAllImgs($id);
 
+        //elimino la noticia
         $this->noticiaRepository->delete($id);
 
         Flash::success('Noticia eliminada.');
-
         return redirect(route('noticias.index'));
     }
-    public function all(){
-         return NoticiaResource::collection(Noticia::latest()->paginate());
-        // return $campana = 'hola';
+
+
+    public function destroyAllImgs($noticia_id){
+        //busco todas la simg relacionadas a la noticia que quiero eliminar
+        $imagenes = NoticiaImg::whereIn('noticia_id', [$noticia_id])->get();
+
+        //elimino una x una
+        if(!empty($imagenes)){
+            foreach($imagenes as $img){
+
+                 //borro el archivo
+                $dir="noticia_img/".$noticia_id."/";
+                $res=FileManagement::deleteImg($img->img,$dir);
+                $img->delete();
+            }
+        }
     }
 
-    public function getByCategory($id){
-        // var_dump($categoria);die;
-         return NoticiaResource::collection(Noticia::where('categoria_id', $id)->latest()->take(2)->get());
-        // $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
 
-    }
 
-    // public function show(Noticia $noticia){
-    //     return new NoticiaResource($noticia);
-    // }
+
     public function destroyImg($id){
         $imagen = NoticiaImg::find($id);
         $id_noticia=$imagen->noticia_id;
@@ -237,4 +245,15 @@ class noticiaController extends AppBaseController
 
     }
 
+
+    public function all(){
+        return NoticiaResource::collection(Noticia::latest()->paginate());
+       // return $campana = 'hola';
+    }
+
+    public function getByCategory($id){
+       // var_dump($categoria);die;
+        return NoticiaResource::collection(Noticia::where('categoria_id', $id)->latest()->take(2)->get());
+       // $noticias = Noticia::where('seccion_id', SeccionPagina::where('link', $pathSeccion)->pluck('id'))->get();
+    }
 }

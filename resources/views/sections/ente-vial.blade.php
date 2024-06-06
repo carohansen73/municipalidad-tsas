@@ -106,7 +106,7 @@
         <div class="row">
             {{-- @foreach($text->galeria as $imag) --}}
 
-                <div class="col-lg-4 mb-3">   <img class="foto-portada" src="{{asset("storage/secciones/ente-vial/retroexcavadora.jpg")}}" alt="foto-1"></div>
+                <div class="col-lg-4 mb-3">   <img class="foto-portada" src="{{asset("storage/secciones/ente-vial/trabajos.jpg")}}" alt="foto-1"></div>
                 <div class="col-lg-4 mb-3">   <img class="foto-portada" src="{{asset("storage/secciones/ente-vial/vial.jpeg" )}}" alt="foto-1"></div>
                 <div class="col-lg-4 mb-3">   <img class="foto-portada" src="{{asset("storage/secciones/ente-vial/maquina-champion-ente-vial.jpg")}}" alt="foto-1"></div>
 

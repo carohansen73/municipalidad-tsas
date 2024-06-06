@@ -76,7 +76,7 @@
                         Tenemos museos, teatro, instituciones culturales, arquitectura y monumentos esplendidos.</p>
                     <div class="position-relative mt-4">
                     <img src="{{asset("storage/secciones/la-ciudad/licensed-image.jpg")}}" class="img-fluid rounded-4" alt="">
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                    {{-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> --}}
                     </div>
                 </div>
             </div>

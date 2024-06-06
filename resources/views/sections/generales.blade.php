@@ -401,86 +401,91 @@
     {{-- PROXIMOS EVENTOS -->  (CULTURA / DEPORTES)--}}
     @if(($nombreSeccion == "deportes" || $nombreSeccion == "cultura") && isset($eventos) && (count($eventos) > 0))
 
-        <!-- ======= borde colorido ======= -->
-        {{-- <div class="container-border">
-            <div class="row">
-                <div class="col-4 border-4">
-                </div>
-                <div class="col-4 border-4">
-                </div>
-                <div class="col-4 border-4">
-                </div>
-            </div>
-        </div> --}}
-        <!-- ======= fin borde colorido ======= -->
-        <!-- ======= Team Section ======= -->
-        <section id="{{$nombreSeccion}}-eventos" class="team eventos">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <p> Próximos eventos</p>
-                        {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
-                </div>
 
-                <div class="row">
-                    @foreach($eventos as $evento)
-                        <div class="col-lg-4 pe-4 col-md-6 align-items-stretch">
-                            <div class="evento-img">
-                                <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
-                                <div class="evento-categoria" @if($nombreSeccion == 'cultura') style="background:#d63384;"@endif>
-                                    <p class="mb-0">
-                                    {{$nombreSeccion}}
-                                    </p>
-                                </div>
-                            </div>
+<!-- ======= Team Section ======= -->
+<section id="{{$nombreSeccion}}-eventos" class="team ">
+    <div class="container mt-5 mb-5" data-aos="fade-up">
+        <div class="section-title">
+            <p> Próximos eventos</p>
+            <h2><a href="/proximos-eventos">Ver Todos</a></h2>
+                 {{-- <h2>Descubrí los museos del partido de Tres Arroyos</h2> --}}
+        </div>
 
-                            {{-- <div class="member" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="member-img">
-                                        <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
-                                        <div class="social">
-                                                <a> <button type="button" class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="{{$nombreSeccion}}""
-                                                    data-bs-whatever="@mdo">Ver</button>
-                                                </a>
-                                            </div>
-                                    </div>
-                                    <div class="evento-categoria">
-                                        <p>
-                                        {{$evento->seccion->nombre}}
-                                        </p>
-                                    </div>
-                            </div>--}}
+        <div class="row">
+            @foreach($eventos as $evento)
+                <div class="col-lg-4 pe-4 col-md-6 col-12 mb-3 align-items-stretch ">
+                    <div class=" evento-img">
+
+                        <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
+
+                        <button  class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="eventos"
+                            data-bs-whatever="@mdo">ver</button>
+                        <div class="evento-categoria"
+                            @if($evento->categoria->nombre == 'Cultura')
+                                style="background:#d63384;"
+                            @elseif($evento->categoria->nombre == 'Educación')
+                                style="background:rgb(13, 116, 189);"
+                            @elseif($evento->categoria->nombre == 'Generales')
+                                style="background: #662483;"
+                            @elseif($evento->categoria->nombre == 'Salud')
+                                style="background: #53c04d;"
+                            @endif
+                            >
+                                <p class="mb-0">
+                                    @if($evento->categoria->nombre == 'Cultura, Educación y Derechos Humanos')
+                                    Cultura
+                                    @else
+                                    {{$evento->categoria->nombre}}
+                                    @endif
+                                </p>
                         </div>
-                    @endforeach
+
+                    </div>
                 </div>
-            </div>
+            @endforeach
+        </div>
 
+    </div>
 
-
-
-
-  <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img src="{{asset('')}}" class="modalimg" alt="">
-                    {{-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div> --}}
+    <!-- Modal Eventos -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{asset('')}}" class="modalimg" alt="">
+                        {{-- <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div> --}}
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+</section>
+
+
+
+@endif
+<!-- End cultura-eventos/ Noticias  Section -->
 
 
 
 
 
-        </section>
-        <!-- End cultura-eventos/ Noticias  Section -->
-    @endif
+
+
+
+
+
+
+
+
+
+
+
 </section>
 
   <!-- Template ocultar-mostrar información JS File -->

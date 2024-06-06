@@ -23,8 +23,8 @@ use App\Models\NoticiaCategoria;
 use App\Models\InstitucionEducativaNivel;
 use App\Models\InstitucionEducativa;
 use App\Models\PropuestaAcademica;
-use App\Models\SituacionEconomicoFinanciera;
-use App\Models\ReporteEconomicoFinanciero;
+use App\Models\SituacionFinanciera;
+use App\Models\ReporteEconomico;
 use App\Models\AvisoOficial;
 use App\Models\BoletinOficial;
 use App\Models\ResidenciaAdultos;
@@ -64,7 +64,7 @@ class HomeController extends Controller
 
         // $noticiaPpal = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(1)->with('imgs')->get();
         // $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->skip(1)->take(2)->with('imgs')->get();
-        $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(4)->with('imgs')->get();
+        $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(6)->with('imgs')->get();
         $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->take(4)->with('seccion')->get();
 
         $nombreSeccion = 'home';
@@ -472,8 +472,9 @@ class HomeController extends Controller
         $hoy = Carbon::today();
         $hoy = $hoy->format('Y-m-d');
         $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->with('seccion')->with('categoria')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
+        $categorias = Categoria::orderBy('nombre')->get();
 
-        return view('sections.eventos', compact('eventos'));
+        return view('sections.eventos', compact('eventos', 'categorias'));
     }
 
 
@@ -486,10 +487,11 @@ class HomeController extends Controller
      */
     public function showTransparenciaFiscal()
     {
-        // var_dump('lelgo');die;
+
         /*SITUACION ECONOMICO FINANCIERA*/
+
         //obtengo los anios para el filtro
-        $datosSituacion['anios'] = SituacionEconomicoFinanciera::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+        $datosSituacion['anios'] = SituacionFinanciera::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
 
         //anio a buscar segun si fue seleccionado un anio o el ultimo
         if (isset($_POST['anio']) && (!empty($_POST['anio']))){
@@ -501,21 +503,29 @@ class HomeController extends Controller
 
         // aca obtengo las situacionesEconomicas separadas por cada ente descentralizado
 		$datosSituacion['anio']=$anio;
-		$datosSituacion['muni']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['muni'])->orderBy('periodo', 'desc')->get();
-        $datosSituacion['salud']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['salud'])->orderBy('periodo', 'desc')->get();
-        $datosSituacion['claro']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['claro'])->orderBy('periodo', 'desc')->get();
-        $datosSituacion['vial']= SituacionEconomicoFinanciera::whereIn('anio', [$anio])->whereIn('area', ['vial'])->orderBy('periodo', 'desc')->get();
+		$datosSituacion['muni']= SituacionFinanciera::whereIn('anio', [$anio])->whereIn('area', ['muni'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['salud']= SituacionFinanciera::whereIn('anio', [$anio])->whereIn('area', ['salud'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['claro']= SituacionFinanciera::whereIn('anio', [$anio])->whereIn('area', ['claro'])->orderBy('periodo', 'desc')->get();
+        $datosSituacion['vial']= SituacionFinanciera::whereIn('anio', [$anio])->whereIn('area', ['vial'])->orderBy('periodo', 'desc')->get();
 
         /*REPORTES ECONOMICOS*/
 
-        $reportes['generales']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre1']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [1])->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre2']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [2])->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre3']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [3])->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre4']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', [4])->orderBy('periodo', 'desc')->get();
+        //anio a buscar segun si fue seleccionado un anio o el ultimo
+        if (isset($_POST['anio']) && (!empty($_POST['anio']))){
+			$anioReportes=$_POST['anio']; // si definio anio a buscar
+		}else{
+            $maxAnioReportes['anios'] = ReporteEconomico::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+			$anioReportes=$maxAnioReportes['anios'][0]; // seria el anio actual
+		}
+
+        $reportes['generales']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre1']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [1])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre2']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [2])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre3']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [3])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre4']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [4])->orderBy('periodo', 'desc')->get();
 
 
-        return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes'));
+        return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes', 'anioReportes'));
     }
 
 
@@ -600,7 +610,8 @@ class HomeController extends Controller
 
         //obtengo los anios y meses para el filtro
         $filtroDeBusqueda['anios'] = BoletinOficial::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
-        $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'desc')->pluck('mes')->all();
+        $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'asc')->pluck('mes')->all();
+
         //anio a buscar segun si fue seleccionado un anio o el ultimo
         if (isset($_POST['anio']) && (!empty($_POST['anio']))){
 			$anio=$_POST['anio']; // si definio anio a buscar
@@ -608,23 +619,26 @@ class HomeController extends Controller
 			$anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
 		}
 
-        //mes a buscar segun si fue seleccionado un mes o el ultimo
-        if (isset($_POST['mes']) && (!empty($_POST['mes']))){
-			$mes=$_POST['mes']; // si definio anio a buscar
-		}else{
-			$mes=3;// ultimo mes
+        //mes a buscar segun si fue seleccionado un mes o todos (si selecciona 0 o no selecciona mes)
+        if (isset($_POST['mes']) && (!empty($_POST['mes']) && $_POST['mes']>0) ){
+			$mes=$_POST['mes']; // si definio mes a buscar
+
+              // var_dump($anio, $mes);die;
+            $filtroDeBusqueda['mes'] = $mes;
+            $filtroDeBusqueda['anio'] = $anio;
+
+
+            $boletinOficial = BoletinOficial::whereIn('anio', [$anio])->whereIn('mes', [$mes])->where('tipo', $tipo)->orderBy('orden', 'ASC')->get();
+		}else{ //busca todos los meses del año
+            $filtroDeBusqueda['mes'] = 0;
+            $filtroDeBusqueda['anio'] = $anio;
+
+
+            $boletinOficial = BoletinOficial::whereIn('anio', [$anio])->where('tipo', $tipo)->orderBy('orden', 'ASC')->get();
 		}
 
-        // var_dump($anio, $mes);die;
-        $filtroDeBusqueda['mes'] = $mes;
-        $filtroDeBusqueda['anio'] = $anio;
 
-
-        $boletinOficial = BoletinOficial::whereIn('anio', [$anio])->whereIn('mes', [$mes])->where('tipo', $tipo)->orderBy('orden', 'ASC')->get();
-
-
-
-        // $reportes['generales']= ReporteEconomicoFinanciero::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
+        // $reportes['generales']= ReporteEconomico::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
 
 
         return view('transparenciaFiscal.boletin_oficial', compact('items', 'filtroDeBusqueda', 'boletinOficial', 'tipo'));

@@ -15,7 +15,13 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
 
             <ul>
-
+                <li><a class="nav-link scrollto" href="/">Inicio</a></li>
+                <li class="nav-link dropdown"><a ><span></span> Novedades<i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/proximos-eventos" style="text-shadow: none; ">Eventos</a></li>
+                        <li><a href="/portal-de-noticias" style="text-shadow: none; ">Noticias</a></li>
+                    </ul>
+                </li>
             <li><a class="nav-link scrollto" href="/municipio">Tres Arroyos</a></li>
             <li><a class="nav-link scrollto" href="/atencion-al-vecino" >At. vecino</a></li>
             {{-- <li><a class="nav-link scrollto" href="/ciudad-productiva" >Producción</a></li> --}}

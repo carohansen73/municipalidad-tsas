@@ -153,7 +153,7 @@ h6 {
 
 .back-to-top i {
   font-size: 28px;
-  color: rgb(13, 116, 189);
+  color: rgb(255, 255, 255);
   line-height: 0;
 }
 
@@ -777,6 +777,52 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+#hero:before {
+    content: "";
+    /* background: rgba(0, 0, 0, 0.3); */
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #hero .container {
+    position: absolute;
+    /* padding-top: 74px; */
+    text-align: center;
+    margin-top: 292px;
+    top: -70px;
+    height: 100%;
+  }
+
+
+  #hero .row>*{
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+
+  #hero h1 {
+    margin: 0;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+    /* color: #25afc3; */
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  #hero h1 span {
+    color: #25afc3;
+  }
+
+  #hero h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0 0 0;
+    font-size: 24px;
+    margin-bottom: 100px;
+  }
+
 #hero {
   width: 100%;
   height: 600px;
@@ -787,76 +833,126 @@ h6 {
   top: 0 !important;
 }
 
+
+
+
+@media (min-width: 1400px) {
+    #hero {
+        max-height: 680px;
+        width: 100%;
+    }
+
+    #hero video{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top:0;
+    }
+}
+
+/* @media (min-width: 1024px) {
+    #hero {
+      background-attachment: fixed;
+    }
+  } */
+
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px){
+    #hero {
+        max-height: 650px;
+        width: 100%;
+    }
+
+    #hero video{
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        top:0;
+    }
+
+    #hero .container {
+
+    margin-top: 42px;
+    top: 186px;
+    height: 100%;
+    }
+}
+
+  @media only screen and (max-width: 1200px) and (min-width: 991px) {
+    #hero {
+        max-height: 650px;
+        width: 100%;
+      }
+
+      #hero video{
+          position: absolute;
+          z-index: 0;
+          width: 100%;
+          top:0;
+      }
+
+      #hero .container {
+
+        margin-top: 42px;
+        top: 146px;
+        height: 100%;
+      }
+  }
+
 @media (max-width: 991px) {
     #hero {
-         width: 100%;
-        height: 250px;
+      max-height: 450px;
+      width: 100%;
     }
 
-    #hero #video{
+    #hero video{
         position: absolute;
         z-index: 0;
         width: 100%;
+        top:0;
     }
-}
+
+    #hero h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    #hero h2 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .menu-home{
+      display:none;
+    }
 
 
-@media (min-width: 991px) {
-    #hero #video{
+  }
+
+  @media (max-width: 500px) {
+    #hero {
+        min-height: 200px;
+        width: 100%;
+        height: 200px;
+      }
+
+      #hero video{
         position: absolute;
         z-index: 0;
         width: 100%;
-
+        min-height: 200px;
     }
-}
+
+
+    #hero h1 {
+        display:none;
+    }
+
+  }
 
 
 
-#hero:before {
-  content: "";
-  /* background: rgba(0, 0, 0, 0.3); */
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
 
-#hero .container {
-  position: absolute;
-  /* padding-top: 74px; */
-  text-align: center;
-  margin-top: 292px;
-  top: -70px;
-  height: 100%;
-}
-
-
-#hero .row>*{
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-#hero h1 {
-  margin: 0;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 64px;
-  /* color: #25afc3; */
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-}
-
-#hero h1 span {
-  color: #25afc3;
-}
-
-#hero h2 {
-  color: rgba(255, 255, 255, 0.9);
-  margin: 10px 0 0 0;
-  font-size: 24px;
-  margin-bottom: 100px;
-}
 
 /* #hero .icon-box {
   padding: 20px 5px;
@@ -1023,32 +1119,7 @@ h6 {
   border-color: rgb(13, 116, 189);
 } */
 
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
-}
 
-@media (max-width: 991px) {
-  #hero {
-    max-height: 250px;
-    height: auto;
-  }
-
-  #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  #hero h2 {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .menu-home{
-    display:none;
-  }
-}
 
 #services .icon-box,
 #guia-tramites .icon-box{
@@ -1569,35 +1640,7 @@ section {
 
 } */
 
-#home-eventos .container .row .member .member-img img{
-    width:100% ;
-    height: 326px;
-    object-fit: cover;
-}
 
-#home-eventos  .member .member-img>img{
-    object-fit: contain;
-}
-
-#cultura-eventos .container .row .member .member-img img{
-    width:100% ;
-    height: 420px;
-    object-fit: cover;
-}
-
-#cultura-eventos  .member .member-img>img{
-    object-fit: contain;
-}
-
-#deportes-eventos .container .row .member .member-img img{
-    width:100% ;
-     height: 420px;
-   object-fit: cover;
-}
-
-#deportes-eventos  .member .member-img>img{
-    object-fit: contain;
-}
 
 #eventos .container .row .member .member-img img{
     width:100% ;
@@ -1615,25 +1658,26 @@ section {
 
 
 /*prueba*/
-
-.evento-img {
-    position: relative;
-    width: 100% ;
-    /* border-radius: 10px;
-    box-shadow: 0 0 9px rgba(0, 0, 0, .1); */
-    margin: 0px  20px;
-    left: 0px;
+.evento-img>img{
+    object-fit: contain;
 }
-
-
 
 
 .evento-img img{
     border-radius: 10px;
     box-shadow: 0 0 9px rgba(0, 0, 0, .1);
     margin: 0px  20px;
+    width: 100% ;
+    /* height: 420px; */
+    object-fit: cover;
 }
 
+.evento-img {
+    position: relative;
+    width: 100% ;
+    margin: 0px  20px;
+    left: 0px;
+}
 
 .evento-categoria{
     position: absolute;
@@ -1641,7 +1685,6 @@ section {
     left: -10px;
     background-color: #25afc3;
      z-index: 2;
-
     padding: 10px;
     width: auto;
     border-radius: 18px 0px 18px 0px;
@@ -1657,23 +1700,133 @@ section {
     color: #ffffff;
 }
 
-.evento-img>img{
-    object-fit: contain;
+#cultura-eventos .evento-img img,
+#deportes-eventos .evento-img img{
+    width:100% ;
+    height: 344px;
 }
 
-#home-eventos .evento-img img{
-    height: 326px;
+.btn-modal-evento{
+    position: absolute;
+    opacity: 0;
+    left: 50%;
+    bottom: 0px;
+    color: rgb(13, 116, 189);
+    background-color: rgba(255, 255, 255, 0.846);
+    border-color: rgb(245, 245, 245);
+    box-shadow: 1px 1px 1px #c8c8c8b1;
 }
 
-.evento-img img{
-    width: 100% ;
-    height: 420px;
-    object-fit: cover;
+.evento-img:hover .btn-modal-evento {
+    opacity: 1;
+    bottom: 15px;
+}
+
+.btn-modal-evento:hover  {
+    bottom: 17px;
+    background-color: #2d71b4;
+    box-shadow: 1px 2px 2px #646464b1;
+}
+
+
+@media (min-width: 620px) {
+
+    .evento-img {
+        position: relative;
+        width: 100% ;
+        margin: 0px  20px;
+        left: 0px;
+    }
 
 }
 
 
 
+@media (min-width: 1400px) {
+    #home-eventos .evento-img img,
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img{
+        height: 404px;
+        width:100% ;
+    }
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+    #home-eventos .evento-img img,
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img{
+        height: 344px;
+        /* width:100% ; */
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 760px) {
+    #home-eventos .evento-img img,
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img{
+        height: 324px;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 760px) {
+    #home-eventos .evento-img img,
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img{
+        height: 504px;
+        /* width:100% ; */
+    }
+}
+
+
+
+@media only screen and (max-width: 760px) and (min-width: 600px) {
+    #home-eventos .evento-img img,
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img{
+        height: 504px;
+    }
+}
+
+@media only screen and (max-width: 700px) and (min-width: 500px) {
+    #home-eventos .evento-img img,
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img{
+        height: 400px;
+    }
+}
+
+
+@media only screen and (max-width: 620px) and (min-width: 500px) {
+
+    .evento-img {
+        position: relative;
+        width: 90% ;
+        /* border-radius: 10px;
+        box-shadow: 0 0 9px rgba(0, 0, 0, .1); */
+        margin: 0px 20px;
+        left: 0px;
+        /* height: 420px; */
+    }
+
+    /* #home-eventos .evento-img img{
+        height: 420px;
+    } */
+}
+
+@media (max-width: 500px) {
+    #cultura-eventos .evento-img img,
+    #deportes-eventos .evento-img img,
+    .evento-img img{
+        width: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 9px rgba(0, 0, 0, .1);
+        margin: 0px  20px;
+    }
+
+    .btn-modal-evento{
+        left: 40%;
+    }
+}
 
 
 /*--------------------------------------------------------------
@@ -1838,16 +1991,58 @@ section {
 
 }
 
-#portfolio-eventos .portfolio-item {
-    height: 326px;
-}
-
-
-
 #portfolio-eventos .portfolio-item img{
-    height: 326px;
     width: 100%;
 }
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    #portfolio-eventos .portfolio-item {
+        height: 340px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        height: 340px;
+    }
+}
+@media only screen and (max-width: 1200px) and (min-width: 991px) {
+    #portfolio-eventos .portfolio-item {
+        height: 320px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        height: 320px;
+    }
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+
+    #portfolio-eventos .portfolio-item {
+        height: 360px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        height: 360px;
+    }
+}
+
+@media (min-width: 1400px) {
+    #portfolio-eventos .portfolio-item {
+        max-height: 400px;
+    }
+
+    #portfolio-eventos .portfolio-item img{
+        max-height: 400px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
 
 .portfolio #portfolio-flters {
   padding: 0;
@@ -3035,12 +3230,10 @@ section #deportes-eventos{
 .telefonos-utiles{
     padding: 30px;
     margin-bottom: 60px;
-
 }
 .telefono-icono {
-
     border-radius: 50%;
-    padding: 30px;
+    padding: 24px;
     font-size: 18px;
 }
 
@@ -3048,29 +3241,43 @@ section #deportes-eventos{
     background-color: #db3232;
 }
 
-.bomberos span{
-
-}
-
 .policia{
     background-color: rgb(13, 116, 189);
 }
-.atencion{
-    /* background-color: #99CBD1; */
+
+.ambulancia{
     background-color: #53c04d;
 }
-
+.atencion{
+    /* background-color: #99CBD1; */
+    background-color: #7b319bb8;
+}
 
 .telefono-icono img{
-    height: 60px;
-
-
+    height: 50px;
 }
+
+@media (max-width: 992px) {
+    .telefono-icono img{
+        height: 36px;
+    }
+
+    .telefono-icono{
+        padding: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .telefono-icono{
+        padding: 14px;
+    }
+}
+
 .telefonos-utiles .telefono{
     display: flex;
-    /* flex-direction: column; */
+     flex-direction: column;
     align-items: center;
-    /* justify-content: start; */
+     justify-content: center;
 }
 
 .telefonos-utiles p{
@@ -3085,10 +3292,7 @@ section #deportes-eventos{
 }
 
 @media (max-width: 992px) {
-    .telefono-icono i{
-        padding: 16px;
-        font-size: 14px;
-    }
+
 
     .telefonos-utiles p{
         font-size: 14px;
@@ -3166,7 +3370,7 @@ section #deportes-eventos{
 
 #footer .footer-top .social-links a:hover {
   background: #25afc3;
-  color: rgb(13, 116, 189);
+  /* color: rgb(13, 116, 189); */
   text-decoration: none;
 }
 
@@ -3243,6 +3447,10 @@ section #deportes-eventos{
   color: #f5f5f5;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
+}
+
+#footer .footer-top .footer-newsletter a:hover{
+    background: #34c9e0;
 }
 
 #footer .footer-top .footer-newsletter form input[type=submit]:hover {
@@ -3398,6 +3606,10 @@ input[type=number] { -moz-appearance:textfield; }
     .margen-top-navbar{
         margin-top: 62px;
     }
+}
+
+#header .navbar a{
+    font-weight: 600;
 }
 
 .portada{
@@ -4004,7 +4216,7 @@ background-size: cover;
     box-shadow: 5px 5px 8px 5px rgba(132, 132, 132, 0.693);
 }
 
-.swiper-slide {
+.swiper-noticia .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -4014,7 +4226,7 @@ background-size: cover;
     border-radius: 5px;
 }
 
-.swiper-slide img {
+.swiper-noticia .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -4109,6 +4321,12 @@ background-size: cover;
     display: none;
   }
 
+  @media (min-width: 1400px)  {
+    .container-image-2, .container-image-1{
+        height: 580px;
+    }
+}
+
 @media only screen and (max-width: 1200px) and (min-width: 991px) {
     .swiper-noticia {
         margin: 0px 20px;
@@ -4119,6 +4337,12 @@ background-size: cover;
     .container-image-2, .container-image-1{
         display: flex;
         justify-content: center;
+    }
+}
+
+@media (max-width: 500px)  {
+    .container-image-2, .container-image-1{
+        height: 380px;
     }
 }
 
@@ -4148,20 +4372,24 @@ background-size: cover;
 
 .today-one{
     position: absolute;
-    top: 180;
+    top: 140;
     width: 60%;
-    padding: 0px 10px;
+    padding: 0px 0px;
 }
 
 .today-two{
     position: absolute;
     width: 60%;
-    top: 290;
-    padding: 0px 10px;
+    top: 250;
+    padding: 0px 0px;
 }
 @media (max-width: 500px) {
     .container-image-2{
         margin-bottom: 60px;
+    }
+
+    .today img{
+        height: 380px;
     }
 
 }
@@ -4173,6 +4401,7 @@ background-size: cover;
     .today{
         font-size: 13px;
         width: 100%;
+
     }
 
     .today img{
@@ -4194,21 +4423,25 @@ background-size: cover;
 @media only screen and (max-width: 991px) and (min-width: 768px) {
     .today{
         font-size: 13px;
+        height: 480px;
     }
 
 
     .today-one{
         width: 65%;
+        top: 180;
     }
 
     .today-two{
         width: 65%;
+        top: 290;
     }
 }
 @media only screen and (max-width: 1200px) and (min-width: 991px) {
     .today{
         margin: 0px 20px;
         font-size: 13px;
+        height: 480px;
     }
 
     .today-one{
@@ -4227,14 +4460,20 @@ background-size: cover;
         font-size: 14px;
     }
 
+    .today img{
+        height: 480px;
+    }
+
     .today-one{
         top: 180;
         width: 60%;
+        padding: 0px 10px;
     }
 
     .today-two{
         top: 290;
         width: 60%;
+        padding: 0px 10px;
     }
 }
 
@@ -4242,15 +4481,20 @@ background-size: cover;
 
     .today{
         font-size: 14px;
+        height: 580px;
+    }
+
+    .today img{
+        height: 580px;
     }
 
     .today-one{
-        top: 180;
+        top: 210;
         width: 50%;
     }
 
     .today-two{
-        top: 290;
+        top: 330;
         width: 50%;
     }
 }

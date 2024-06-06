@@ -46,4 +46,10 @@
         <p>Situacion Financiera</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('boletinOficial.index') }}"
+       class="nav-link {{ Request::is('boletinOficial*') ? 'active' : '' }}">
+        <p>Boletin Oficial</p>
+    </a>
+</li>
 
