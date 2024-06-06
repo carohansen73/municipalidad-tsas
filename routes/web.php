@@ -20,7 +20,8 @@ use App\Http\Controllers\NoticiaController;
 Route::get('/', function () {
     return view('home.home');
 });
-Auth::routes();
+Auth::routes(['register' => false, 'reset'=> false]);
+
 
 // Route::resource('tadi', 'TadiController');
 // Route::get('/tadi', 'TadiController@index')->name('tadi');

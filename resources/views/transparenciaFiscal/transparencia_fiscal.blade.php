@@ -151,7 +151,7 @@
                             <li class="list-group-item list-group-title" aria-current="true"> {{-- <i class="fas fa-file-download"></i> --}} Primer Trimestre  </li>
                             @if(isset($reportes['trimestre1']) && (count($reportes['trimestre1']) > 0))
                                 @foreach ($reportes['trimestre1'] as $reporte)
-                                    <a href="{{url('/storage/archivos/situacion/'.$reporte->nombre_arch)}}" target="_blank" class="list-group-item only-item">  {{ $reporte->titulo}} </a>
+                                    <a href="{{url('/storage/archivos/reportes_eco_fin/'.$reporte->nombre_arch)}}" target="_blank" class="list-group-item only-item">  {{ $reporte->titulo}} </a>
                                 @endforeach
                             @else
                             <li class="list-group-item"> No hay datos para el filtro aplicado </li>
@@ -166,7 +166,7 @@
                             <li class="list-group-item list-group-title" aria-current="true"> Segundo Trimestre  </li>
                             @if(isset($reportes['trimestre2']) && (count($reportes['trimestre1']) > 0))
                                 @foreach ($reportes['trimestre2'] as $reporte)
-                                    <a href="{{url('/storage/archivos/situacion/'.$reporte->nombre_arch)}}" class="list-group-item only-item" target="_blank">  {{ $reporte->titulo}} </a>
+                                    <a href="{{url('/storage/archivos/reportes_eco_fin/'.$reporte->nombre_arch)}}" class="list-group-item only-item" target="_blank">  {{ $reporte->titulo}} </a>
                                 @endforeach
                             @else
                             <li class="list-group-item"> No hay datos para el filtro aplicado </li>
@@ -184,7 +184,7 @@
                             <li class="list-group-item list-group-title" aria-current="true"> Tercer Trimestre </li>
                             @if(isset($reportes['trimestre3']) && (count($reportes['trimestre1']) > 0))
                                 @foreach ($reportes['trimestre3'] as $reporte)
-                                    <a href="{{url('/storage/archivos/situacion/'.$reporte->nombre_arch)}}" target="_blank" class="list-group-item only-item">  {{ $reporte->titulo}} </a>
+                                    <a href="{{url('/storage/archivos/reportes_eco_fin/'.$reporte->nombre_arch)}}" target="_blank" class="list-group-item only-item">  {{ $reporte->titulo}} </a>
                                 @endforeach
                             @else
                             <li class="list-group-item"> No hay datos para el filtro aplicado </li>
@@ -199,7 +199,7 @@
                             <li class="list-group-item list-group-title" aria-current="true"> Cuarto Trimestre</li>
                             @if(isset($reportes['trimestre4']) && (count($reportes['trimestre1']) > 0))
                                 @foreach ($reportes['trimestre4'] as $reporte)
-                                    <a href="{{url('/storage/archivos/situacion/'.$reporte->nombre_arch)}}" target="_blank" class="list-group-item only-item">  {{ $reporte->titulo}} </a>
+                                    <a href="{{url('/storage/archivos/reportes_eco_fin/'.$reporte->nombre_arch)}}" target="_blank" class="list-group-item only-item">  {{ $reporte->titulo}} </a>
                                 @endforeach
                             @else
                             <li class="list-group-item"> No hay datos para el filtro aplicado </li>
