@@ -18,8 +18,8 @@
             <td>{{ $evento->seccion->nombre }}</td>
             <td>{{ $evento->img }}</td>
             <td>{{ $evento->vigente }}</td>
-            <td>{{ $evento->fecha_inicio }}</td>
-            <td>{{ $evento->fecha_fin }}</td>
+            <td>{{ \Carbon\Carbon::parse($evento->fecha_inicio)->format('d-m-Y')}}</td>
+            <td>{{ \Carbon\Carbon::parse($evento->fecha_fin)->format('d-m-Y')}}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['eventos.destroy', $evento->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

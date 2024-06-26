@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\BoletinOficial;
+use App\Models\AvisoOficial;
+use App\Municipalidad\FileManagement;
 
 class BoletinOficialController extends AppBaseController
 {
@@ -17,9 +19,8 @@ class BoletinOficialController extends AppBaseController
     private $boletinOficialRepository;
 
     private $tipos=[
-        "Avisos",
-        "Decretos",
-        "Resoluciones"
+        "decretos" => "decretos",
+        "resoluciones"=> "resoluciones"
     ];
     private $anios=[];
 
@@ -65,25 +66,33 @@ class BoletinOficialController extends AppBaseController
      * */
     public function indexFiltered( )
     {
-        var_dump('llega');die;
-        var_dump($_POST['mes']);die;
+        $boletinOficials = [];
+
         if (isset($_POST['tipo']) && (!empty($_POST['tipo'])) && isset($_POST['mes']) && (!empty($_POST['mes'])) && isset($_POST['anio']) && (!empty($_POST['anio'])) ){
 			$tipo=$_POST['tipo'];
             $mes=$_POST['mes'];
             $anio=$_POST['anio'];
 
-            $boletinOficials = BoletinOficial::whereIn('tipo', [$tipo])->whereIn('mes', [$mes])->whereIn('anio', [$anio])->get();
+            if($tipo == 'avisos'){
+                $boletinOficials = AvisoOficial::whereMonth('fecha', $mes)->whereYear('fecha', $anio)->get();
+
+            }
+            else{
+                $boletinOficials = BoletinOficial::whereIn('tipo', [$tipo])->whereIn('mes', [$mes])->whereIn('anio', [$anio])->orderBy('orden')->get();
+            }
+
         }
 
         // $boletinOficials = BoletinOficial::whereIn('tipo', [$tipo])->where('anio', '>=', '2020')->orderBy('anio', 'desc')->orderBy( 'mes', 'desc')->get();
-        $boletinOficials = [];
+
         $template = 'table';
 
         // var_dump( $boletinOficials);die;
 
         return view('cms.boletin_oficial.index')
             ->with('boletinOficials', $boletinOficials)
-            ->with('template', $template);
+            ->with('template', $template)
+            ->with('tipo', $tipo);
     }
 
     /**
@@ -93,7 +102,10 @@ class BoletinOficialController extends AppBaseController
      */
     public function create()
     {
-        return view('cms.boletin_oficial.create');
+        return view('cms.boletin_oficial.create')
+        ->with('tipos', $this->tipos)
+        ->with('anios', $this->anios)
+        ->with('meses', $this->meses);
     }
 
     /**
@@ -107,7 +119,15 @@ class BoletinOficialController extends AppBaseController
     {
         $input = $request->all();
 
+        //subo el archivo
+        $file=$input["nombre"];
+        $name=$input["mes"]."-".$input["titulo"]."-";
+        $dir = "archivos/boletin_oficial/".$input["tipo"]."/".$input["anio"]."/";
+        $input["nombre"]=FileManagement::uploadFile($file, $name, $dir);
+
+        //guardo en bbdd
         $boletinOficial = $this->boletinOficialRepository->create($input);
+        /**/
 
         Flash::success('Boletin Oficial saved successfully.');
 
@@ -131,7 +151,7 @@ class BoletinOficialController extends AppBaseController
             return redirect(route('boletinOficial.index'));
         }
 
-        return view('cms.boletin_oficial.show')->with('boletinOficials', $boletinOficial);
+        return view('cms.boletin_oficial.show')->with('boletinOficial', $boletinOficial);
     }
 
     /**
@@ -151,7 +171,11 @@ class BoletinOficialController extends AppBaseController
             return redirect(route('boletinOficial.index'));
         }
 
-        return view('cms.boletin_oficial.edit')->with('boletinOficials', $boletinOficial);
+        return view('cms.boletin_oficial.edit')
+        ->with('boletinOficial', $boletinOficial)
+        ->with('tipos', $this->tipos)
+        ->with('anios', $this->anios)
+        ->with('meses', $this->meses);
     }
 
     /**
@@ -194,14 +218,17 @@ class BoletinOficialController extends AppBaseController
 
         if (empty($boletinOficial)) {
             Flash::error('Boletin Oficial not found');
-
             return redirect(route('boletinOficial.index'));
         }
 
+        //borro el archivo
+        $dir = "archivos/boletin_oficial/".$boletinOficial->tipo."/".$boletinOficial->anio."/";
+        FileManagement::deleteFile($boletinOficial->nombre,$dir);
+        //borro de la tabla
         $this->boletinOficialRepository->delete($id);
 
         Flash::success('Boletin Oficial deleted successfully.');
-
         return redirect(route('boletinOficial.index'));
     }
 }
+

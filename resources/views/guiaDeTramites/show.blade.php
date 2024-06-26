@@ -61,13 +61,13 @@
                     </a>
 
                     <div id="informacion-{{$tram->id}}" class="informacion-tramite display-none ms-lg-5">
-                        <h6 class="ms-5"><strong>Lugar donde se realiza</strong></h6><p class="ms-5">{!! $tram->lugar !!}</p>
-                        <h6 class="ms-5"><strong>Horario</strong></h6><p class="ms-5">{!! $tram->horario !!}</p>
-                        <h6 class="ms-5"><strong>Quien puede realizarlo</strong></h6><p class="ms-5">{!! $tram->quien !!}</p>
-                        <h6 class="ms-5"><strong>Requisitos</strong></h6><p class="ms-5">{!! $tram->requisitos !!}</p>
-                        <h6 class="ms-5"><strong>Costo</strong></h6><p class="ms-5">{!! $tram->costo !!}</p>
-                        <h6 class="ms-5"><strong>Contacto</strong></h6><p class="ms-5">{!! $tram->contacto !!}</p>
-                        <h6 class="ms-5"><strong>Links de interés</strong></h6><p class="ms-5">{!! $tram->links !!}</p>
+                        <h6 class="ms-5 blue-font"><strong>Lugar donde se realiza</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->lugar !!}</div>
+                        <h6 class="ms-5 blue-font"><strong>Horario</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->horario !!}</div>
+                        <h6 class="ms-5 blue-font"><strong>Quien puede realizarlo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->quien !!}</div>
+                        <h6 class="ms-5 blue-font"><strong>Requisitos</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->requisitos !!}</div>
+                        <h6 class="ms-5 blue-font"><strong>Costo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->costo !!}</div>
+                        <h6 class="ms-5 blue-font"><strong>Contacto</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->contacto !!}</div>
+                        <h6 class="ms-5 blue-font"><strong>Links de interés</strong></h6><div class="ms-5 ps-2 mb-3"><a href="{{url('/storage/archivos/guia_tramites/'.$tram->links)}}" target="_blank"> {!! $tram->links !!} </a> </div>
                     </div>
 
 

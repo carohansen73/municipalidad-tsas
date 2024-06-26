@@ -111,10 +111,15 @@
                         </div> --}}
                         <!-- Swiper -->
                         <div class="today d-flex justify-content-center">
-                            <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
 
+                            <video  id="video" src="{{asset("storage/videos/Registro-AppMiTresa.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
+                                Tu navegador no admite el elemento <code>video</code>.
+                            </video>
+
+
+                            {{-- <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
                             <div class="today-one"><p> <strong>Inscripción al FOMEPRO </strong>en la oficina de empleo y capacitación, Pedro N. Carrera 940. <br><a href="https://www.tresarroyos.gov.ar/seccion/empleo-emprendedores" target="_blank">Bases y condiciones</a></p>    </div>
-                            <div class="today-two"> <p> <strong>Móvil quirúrgico de castraciones:</strong> Barrio Benito Machado - 20 de Abril 1168 (frente al CAPS)</p> </div>
+                            <div class="today-two"> <p> <strong>Móvil quirúrgico de castraciones:</strong> Barrio Benito Machado - 20 de Abril 1168 (frente al CAPS)</p> </div> --}}
 
                         </div>
                     </div>
