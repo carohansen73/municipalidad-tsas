@@ -53,3 +53,11 @@
     </a>
 </li>
 
+
+<li class="nav-item">
+    <a href="{{ route('avisoOficial.index') }}"
+       class="nav-link {{ Request::is('avisoOficial*') ? 'active' : '' }}">
+        <p>Aviso Oficial</p>
+    </a>
+</li>
+

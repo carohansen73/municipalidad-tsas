@@ -3,8 +3,9 @@
     <table  id="noticias-table" class="table table-striped" style="width:100%">
         <thead>
         <tr>
-            <th>Titulo</th>
             <th>Fecha</th>
+            <th>Titulo</th>
+
             <th>Categorias</th>
             <th>Publicada</th>
             <th>Destacada</th>
@@ -14,10 +15,10 @@
         <tbody>
             @foreach($noticias as $noticia)
             <tr>
-
+                <td>{{ \Carbon\Carbon::parse($noticia->fecha)->format('Y-m-d')}}</td>
                <td>{{ $noticia->titulo }}</td>
 
-                <td>{{ $noticia->fecha }}</td>
+
                 <td>
                     @foreach ($noticia->categorias as $categoria )
                         {{$categoria->nombre}}

@@ -55,6 +55,7 @@
 
                     <nav class="navbar navbar-light bg-light col-lg-6 mb-4">
                         <form class="container-fluid" action="/filtro-boletin-oficial/{{$tipo}}" method="POST">
+
                             @csrf
                             {{--MES--}}
                             <div class="input-group">

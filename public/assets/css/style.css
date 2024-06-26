@@ -4392,6 +4392,11 @@ background-size: cover;
         height: 380px;
     }
 
+    /*SOLO PARA VIDEO- BORRAR PARA HOY!*/
+    .container-image-2, .today video{
+        height: 580px;
+    }
+
 }
 @media only screen and (max-width: 768px) and (min-width: 500px) {
     .container-image-2{

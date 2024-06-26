@@ -8,7 +8,7 @@
                     @if(isset($template) && $template == 'filtro')
                         <h1>Filtro de Busqueda - Boletin Oficial</h1>
                     @else
-                        <h1>Boletin Oficial</h1>
+                        <h1>Boletin Oficial @if(isset($tipo))- {{$tipo}} @endif</h1>
                     @endif
                 </div>
                 <div class="col-sm-6">

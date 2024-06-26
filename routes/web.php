@@ -135,9 +135,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('situacionFinanciera', App\Http\Controllers\SituacionFinancieraController::class);
 
     Route::resource('boletinOficial', App\Http\Controllers\BoletinOficialController::class);
-
     Route::post('admin-filtro-boletinOficial/', [App\Http\Controllers\BoletinOficialController::class, 'indexFiltered'])->name('filtro');
-
+    Route::resource('avisoOficial', App\Http\Controllers\AvisoOficialController::class);
 
 
 
@@ -146,6 +145,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
 });
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 
 
-            <form class="container-fluid" action="admin-filtro-boletinOficial/" method="POST">
+            <form class="container-fluid" action="{{route('filtro')}}" method="POST">
                 @csrf
 
                     <div class="input-group">

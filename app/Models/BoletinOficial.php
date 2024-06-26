@@ -51,7 +51,7 @@ class BoletinOficial extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'nombre' => 'string',
+        // 'nombre' => 'string',
         'descripcion' => 'string',
         'titulo' => 'string',
         'tipo' => 'string',
@@ -67,10 +67,10 @@ class BoletinOficial extends Model
      * @var array
      */
     public static $rules = [
-        'nombre' => 'required|string|max:65',
+        // 'nombre' => '',
         'descripcion' => 'required|string|max:265',
-        'titulo' => 'required|string|max:45',
-        'tipo' => 'required|string|max:45',
+        'titulo' => 'required|string',
+        'tipo' => 'required|string',
         'anio' => 'required|integer',
         'orden' => 'required|integer',
         'publica' => 'required|boolean',
