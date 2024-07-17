@@ -32,7 +32,6 @@
         <div class="row">
             <div class="col-4 border-1">
             </div>
-
             <div class="col-4 border-3">
             </div>
             <div class="col-4 border-6">
@@ -120,6 +119,26 @@
     </section>
     <!-- End About Section -->
 <br><br><br>
+<!-- ======= Fiesta de Colectividades 2024 ======= -->
+<div class="container p-4 section-information col-12 pt-5"  data-aos="fade-up">
+    <div class="">
+        <div class="section-title ps-0 pb-2">
+            <p >Fiesta de la colectividades 2024
+            </p>
+            <h2>14 y 15 de septiembre </h2>
+        </div>
+        <p>
+            Ingresá  a la<a href="https://www.youtube.com/watch?v=k2gkSoRtnoM" target="_blank"> cuenta oficial de Youtube </a>  de las colectividades y enterate de todo lo que se viene en la próxima fiesta de las colectividades.
+        </p>
+
+
+        <div class="text-center justify-content-center mt-5 video-lg">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/k2gkSoRtnoM?si=fSm5HKgLgGGwxLi4&amp;controls=0&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- ======= END Fiesta de Colectividades 2024 ======= -->
 
 
 <!-- ======= Portfolio Section ======= -->
@@ -127,8 +146,8 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
+            <p>Galería de imágenes</p>
             <h2>Las colectividades siempre presentes</h2>
-            <p>Tres Arroyos</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -186,6 +205,19 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>App 3</h4> --}}
+                        <p>Acto por la inauguración de la plazoleta</p>
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Acto por la inauguración de la plazoleta"><i class="bx bx-plus"></i></a>
+                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
@@ -202,33 +234,24 @@
             </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                {{-- <h4>Web 2</h4> --}}
-                <p>Fiesta del Trigo</p>
-                <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
-                    {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
-                </div>
-                </div>
-            </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+
+
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
                 <div class="portfolio-wrap">
-                    <img src="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" class="img-fluid" alt="">
+                    <img src="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
-                        {{-- <h4>App 3</h4> --}}
-                        <p>Acto por la inauguración de la plazoleta</p>
-                        <div class="portfolio-links">
-                            <a href="{{asset("storage/secciones/inauguracion_plazoleta.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Acto por la inauguración de la plazoleta"><i class="bx bx-plus"></i></a>
-                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
-                        </div>
+                    {{-- <h4>Web 2</h4> --}}
+                    <p>Fiesta del Trigo</p>
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/FDT-ActoInaugural2.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
+                        {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                    </div>
                     </div>
                 </div>
-            </div>
+                </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                 <div class="portfolio-wrap">
@@ -238,6 +261,21 @@
                         <p>Fiesta de las Colectividades</p>
                         <div class="portfolio-links">
                             <a href="{{asset("storage/secciones/fiesta-colectividades3.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta de las Colectividades"><i class="bx bx-plus"></i></a>
+                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    {{-- <h4>Web 3</h4> --}}
+                        <p>Fiesta del Trigo</p>
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
                             {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
                         </div>
                     </div>
@@ -258,19 +296,6 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                <div class="portfolio-wrap">
-                    <img src="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" class="img-fluid" alt="">
-                    <div class="portfolio-info">
-                    {{-- <h4>Web 3</h4> --}}
-                        <p>Fiesta del Trigo</p>
-                        <div class="portfolio-links">
-                            <a href="{{asset("storage/secciones/FDT-ActoInaugural.jpg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Fiesta del Trigo"><i class="bx bx-plus"></i></a>
-                            {{-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> --}}
-                        </div>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>

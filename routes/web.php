@@ -40,13 +40,14 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/cultura', 'showMenuSection');
     Route::get('/turismo', 'showMenuSection');
     Route::get('/deportes', 'showMenuSection');
+
 /*SECCIONES UNITARIAS */
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
 
-    // Route::get('/area/{nombre}', 'showSectionPlana');
+
     // /*SERVICIOS */
     // Route::get('/servicios/{tipo}', 'showListServices');
 
@@ -58,6 +59,8 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/organigrama/{id}', 'getOrganigramaByArea');
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/ente-vial', 'showEnteVial');
+    Route::get('/direccion-de-juventud', 'showJuventud');
+
 
     /* ATENCION AL VECINO */
     Route::get('/serv/{tipo}', 'showEncuestas');

@@ -1,43 +1,42 @@
-<div class="container">
-    <div class="table-responsive">
-        <table class="table" id="reporteEconomico-table">
-            <thead>
+<div class="table-responsive  p-2">
+    <table class="table" id="reporteEconomico-table">
+        <thead>
+        <tr>
+            <th>Titulo</th>
+        <th>Periodo</th>
+        <th>Anio</th>
+        <th>Sector</th>
+        <th >Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($reporteEconomicos as $reporteEconomico)
             <tr>
-                <th>Titulo</th>
-            <th>Periodo</th>
-            <th>Anio</th>
-            <th>Sector</th>
-            <th >Acciones</th>
+                <td>{{ $reporteEconomico->titulo }}</td>
+            <td>{{ $reporteEconomico->periodo }}</td>
+            <td>{{ $reporteEconomico->anio }}</td>
+            <td>{{ $reporteEconomico->sector }}</td>
+            <td width="120">
+                    {!! Form::open(['route' => ['reporteEconomico.destroy', $reporteEconomico->id], 'method' => 'delete']) !!}
+                    <div class='btn-group'>
+                    {{--  <a href="{{ route('reporteEconomico.show', [$reporteEconomico->id]) }}"
+                        class='btn btn-default btn-xs'>
+                            <i class="far fa-eye"></i>
+                        </a> --}}
+                        <a href="{{ route('reporteEconomico.edit', [$reporteEconomico->id]) }}"
+                        class='btn btn-default btn-xs'>
+                            <i class="far fa-edit"></i>
+                        </a>
+                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                    </div>
+                    {!! Form::close() !!}
+                </td>
             </tr>
-            </thead>
-            <tbody>
-            @foreach($reporteEconomicos as $reporteEconomico)
-                <tr>
-                    <td>{{ $reporteEconomico->titulo }}</td>
-                <td>{{ $reporteEconomico->periodo }}</td>
-                <td>{{ $reporteEconomico->anio }}</td>
-                <td>{{ $reporteEconomico->sector }}</td>
-                <td width="120">
-                        {!! Form::open(['route' => ['reporteEconomico.destroy', $reporteEconomico->id], 'method' => 'delete']) !!}
-                        <div class='btn-group'>
-                        {{--  <a href="{{ route('reporteEconomico.show', [$reporteEconomico->id]) }}"
-                            class='btn btn-default btn-xs'>
-                                <i class="far fa-eye"></i>
-                            </a> --}}
-                            <a href="{{ route('reporteEconomico.edit', [$reporteEconomico->id]) }}"
-                            class='btn btn-default btn-xs'>
-                                <i class="far fa-edit"></i>
-                            </a>
-                            {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
-                        </div>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div>
+        @endforeach
+        </tbody>
+    </table>
 </div>
+
 @push('page_scripts')
     <script type="text/javascript">
         $(document).ready( function () {

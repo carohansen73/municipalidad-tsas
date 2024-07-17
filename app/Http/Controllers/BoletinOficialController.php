@@ -192,14 +192,36 @@ class BoletinOficialController extends AppBaseController
 
         if (empty($boletinOficial)) {
             Flash::error('Boletin Oficial not found');
-
             return redirect(route('boletinOficial.index'));
         }
 
-        $boletinOficial = $this->boletinOficialRepository->update($request->all(), $id);
+        // $boletinOficial = $this->boletinOficialRepository->update($request->all(), $id);
+
+
+        //si entra es porque cambio el archivo
+        if ($request->file('nombre')) {
+            var_dump('entro');die;
+            //borro archivo anterior
+            if ($boletinOficial->nombre != null ) {
+
+                $dir = "archivos/boletin_oficial/".$boletinOficial->tipo."/".$boletinOficial->anio."/";
+                FileManagement::deleteFile($boletinOficial->nombre,$dir);
+            }
+            $boletinOficial->fill($request->all());
+            //guardo el nuevo archivo
+            var_dump($request->file('nombre'));die;
+
+            $file = $request->file('nombre');
+            $name = $request->mes."-".$request->titulo."-";
+            $dir = "archivos/boletin_oficial/".$boletinOficial->tipo."/".$boletinOficial->anio."/";
+            $boletinOficial->nombre=FileManagement::uploadFile($file, $name, $dir);
+
+        }else{//sino actualizo el resto de los datos
+            $boletinOficial->fill($request->all());
+        }
+        $boletinOficial->save();
 
         Flash::success('Boletin Oficial updated successfully.');
-
         return redirect(route('boletinOficial.index'));
     }
 

@@ -40,7 +40,7 @@
             {{-- FIN PORTADA --}}
 
 
-            <!-- ======= NOTICIAS Y LATERAL CON CATEGORIAS Y DESTACADAS O LAS QUE SIGUEN ======= -->
+
             {{-- <section id="noticias" class="team"> --}}
             <section id="noticia">
             <div class="container" data-aos="fade-up">
@@ -87,11 +87,22 @@
                                     {{--CARRUSEL DE NOTICIA PPAL --}}
                                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                                         <div class="carousel-inner">
-                                            @foreach($noti->imgs as $imag)
+                                            {{-- @foreach($noti->imgs as $imag)
+                                                <div class="carousel-item active">
+                                                    <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
+                                                </div>
+                                            @endforeach --}}
+                                            @foreach($imagenesPrimera as $imag)
                                                 <div class="carousel-item active">
                                                     <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
                                                 </div>
                                             @endforeach
+                                            @foreach($imagenes as $imag)
+                                                <div class="carousel-item ">
+                                                    <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
+                                                </div>
+                                            @endforeach
+
                                         </div>
 
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -106,6 +117,32 @@
                                     {{-- FIN GALERIA DE IMGS --}}
                                 </div>
 
+
+                                {{-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" src="..." alt="First slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="..." alt="Second slide">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="..." alt="Third slide">
+                                        </div>
+                                    </div>
+
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div> --}}
+
+
+                                <!-- =======  NOTICIAS RELACIONADAS(Abajo) ======= -->
 
                                 <div class="noticias-relacionadas">
                                     <div class="row">
@@ -140,7 +177,7 @@
 
 
 
-                    <!-- ======= ASIDE LATERAL CATEGORIAS /notis relacionadas ======= -->
+                    <!-- ======= ASIDE LATERAL CATEGORIAS / ultimas noticias ======= -->
                     <aside class="col-md-3 aside-lateral">
                         <div class="section-title mb-3">
                             <p style="font-size: 18px">Últimas Noticias</p>

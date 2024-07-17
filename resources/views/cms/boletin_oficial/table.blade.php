@@ -1,55 +1,54 @@
-<div class="container">
-    <div class="table-responsive">
-        <table class="table" id="boletinOficial-table">
-            <thead>
-                <tr>
-                    <th>Ord</th>
-                    <th>Titulo</th>
-                    <th>Archivo</th>
-                    <th>Descripcion</th>
-                    {{-- <th>Tipo</th> --}}
-                    <th>Fecha</th>
-                    {{-- <th>Anio</th> --}}
-                    <th>Publica</th>
+<div class="table-responsive  p-2">
+    <table class="table" id="boletinOficial-table">
+        <thead>
+            <tr>
+                <th>Ord</th>
+                <th>Titulo</th>
+                <th>Archivo</th>
+                <th>Descripcion</th>
+                {{-- <th>Tipo</th> --}}
+                <th>Fecha</th>
+                {{-- <th>Anio</th> --}}
+                <th>Publica</th>
 
-                    <th>Acciones</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody >
+            @foreach($boletinOficials as $boletinOficial)
+                <tr >
+                    <td class="text-center">{{ $boletinOficial->orden }}</td>
+                    <td class="text-center">{{ $boletinOficial->titulo }}</td>
+                    <td> <a href="{{url('/storage/archivos/boletin_oficial/'.$boletinOficial->tipo.'/'.$boletinOficial->anio.'/'.$boletinOficial->nombre)}}" target="_blank"> {{ $boletinOficial->nombre }} </a></td>
+                    <td>{{ $boletinOficial->descripcion }}</td>
+                    <td class="text-center">{{ $boletinOficial->mes }}/{{ $boletinOficial->anio }}</td>
+                    <td class="text-center">
+                        @if ($boletinOficial->publica)
+                            <i class="far fa-check-circle text-success"></i>
+                        @endif
+                    </td>
+
+                    <td class="text-center" width="120">
+                        {{-- {!! Form::open(['route' => ['boletinOficial.destroy', $boletinOficial->id], 'method' => 'delete']) !!} --}}
+                        <div class='btn-group'>
+                            <a href="{{ route('boletinOficial.show', [$boletinOficial->id]) }}"
+                            class='btn btn-default btn-xs'>
+                                <i class="far fa-eye"></i>
+                            </a>
+                            <a href="{{ route('boletinOficial.edit', [$boletinOficial->id]) }}"
+                            class='btn btn-default btn-xs'>
+                                <i class="far fa-edit"></i>
+                            </a>
+                            {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
+                        </div>
+                        {{-- {!! Form::close() !!} --}}
+                    </td>
                 </tr>
-            </thead>
-            <tbody >
-                @foreach($boletinOficials as $boletinOficial)
-                    <tr >
-                        <td class="text-center">{{ $boletinOficial->orden }}</td>
-                        <td class="text-center">{{ $boletinOficial->titulo }}</td>
-                        <td> <a href="{{url('/storage/archivos/boletin_oficial/'.$boletinOficial->tipo.'/'.$boletinOficial->anio.'/'.$boletinOficial->nombre)}}" target="_blank"> {{ $boletinOficial->nombre }} </a></td>
-                        <td>{{ $boletinOficial->descripcion }}</td>
-                        <td class="text-center">{{ $boletinOficial->mes }}/{{ $boletinOficial->anio }}</td>
-                        <td class="text-center">
-                            @if ($boletinOficial->publica)
-                                <i class="far fa-check-circle text-success"></i>
-                            @endif
-                        </td>
-
-                        <td class="text-center" width="120">
-                            {{-- {!! Form::open(['route' => ['boletinOficial.destroy', $boletinOficial->id], 'method' => 'delete']) !!} --}}
-                            <div class='btn-group'>
-                                <a href="{{ route('boletinOficial.show', [$boletinOficial->id]) }}"
-                                class='btn btn-default btn-xs'>
-                                    <i class="far fa-eye"></i>
-                                </a>
-                                <a href="{{ route('boletinOficial.edit', [$boletinOficial->id]) }}"
-                                class='btn btn-default btn-xs'>
-                                    <i class="far fa-edit"></i>
-                                </a>
-                                {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
-                            </div>
-                            {{-- {!! Form::close() !!} --}}
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+            @endforeach
+        </tbody>
+    </table>
 </div>
+
 @push('page_scripts')
     <script type="text/javascript">
         $(document).ready( function () {

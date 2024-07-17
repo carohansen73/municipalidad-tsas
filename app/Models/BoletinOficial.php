@@ -70,8 +70,8 @@ class BoletinOficial extends Model
         // 'nombre' => '',
         'descripcion' => 'required|string|max:265',
         'titulo' => 'required|string',
-        'tipo' => 'required|string',
-        'anio' => 'required|integer',
+        // 'tipo' => 'required|string',
+        //'anio' => 'required|integer',
         'orden' => 'required|integer',
         'publica' => 'required|boolean',
         'mes' => 'required|integer'

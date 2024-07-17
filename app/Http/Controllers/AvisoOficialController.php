@@ -40,7 +40,7 @@ class AvisoOficialController extends AppBaseController
     public function index(Request $request)
     {
 
-        $avisoOficials = AvisoOficial::orderBy('id', 'desc')->get();
+        $avisoOficials = AvisoOficial::orderBy('fecha', 'desc')->get();
 
         return view('cms.aviso_oficial.index')
             ->with('avisoOficials', $avisoOficials);

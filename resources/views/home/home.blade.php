@@ -30,16 +30,17 @@
 
             <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
-                    <div class="icon-box icon-2 ">
+                    <div class="icon-box icon-2">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
                     </div>
                 </a>
             </div>
 
+
             <div class="col-xl-2 col-md-2">
                 <a href="atencion-al-vecino">
-                    <div class="icon-box icon-1">
+                    <div class="icon-box icon-5">
 
                     <i class="fas fa-phone"></i>
                         <h3>Atención al vecino</h3>
@@ -47,40 +48,28 @@
                 </a>
             </div>
 
-            {{-- <div class="col-xl-2 col-md-2">
-                <a href="ciudad-productiva">
-                    <div class="icon-box icon-3">
-
-                        <i class="fas fa-city"></i>
-                        <h3>Ciudad productiva</h3>
-                    </div>
-                </a>
-            </div> --}}
             <div class="col-xl-2 col-md-2">
                 <a href="cultura">
                     <div class="icon-box icon-4">
-
-                        {{-- <i class="fas fa-book-reader"></i> --}}
-                        {{-- <i class="fas fa-music"></i> --}}
                         <i class="fas fa-theater-masks"></i>
-                        {{-- <i class="bi bi-chat-dots"></i> --}}
-                        {{-- <i class="bi bi-card-checklist"></i> --}}
-                          {{-- <i class="bi bi-chat-dots"></i> --}}
-                    {{-- <i class="fas fa-hand-holding-usd"></i> --}}
                         <h3>Cultura</h3>
                     </div>
                 </a>
             </div>
+
             <div class="col-xl-2 col-md-2">
                 <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">
-                    <div class="icon-box icon-5">
-                        {{-- <i class="fas fa-map-marked-alt"></i> --}}
+                    <div class="icon-box icon-3">
                         <i class="fas fa-camera-retro"></i>
-                        {{-- <i class="bi bi-laptop"></i> --}}
                         <h3>Turismo </h3>
                     </div>
                 </a>
             </div>
+
+
+
+
+
             <div class="col-xl-2 col-md-2">
                 <a href="deportes">
                     <div class="icon-box icon-6">
@@ -89,6 +78,16 @@
                     </div>
                 </a>
             </div>
+
+            <div class="col-xl-2 col-md-2">
+                <a href="https://tresarroyos.itconsultsa.com/login" target="_blank">
+                    <div class="icon-box icon-1">
+                        <i class="fas fa-laptop-medical"></i>
+                        <h3>Telemedicina</h3>
+                    </div>
+                </a>
+            </div>
+
 
         </div>
 
@@ -112,7 +111,7 @@
                         <!-- Swiper -->
                         <div class="today d-flex justify-content-center">
 
-                            <video  id="video" src="{{asset("storage/videos/Registro-AppMiTresa.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
+                            <video  id="video" src="{{asset("storage/videos/app-salud.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
                                 Tu navegador no admite el elemento <code>video</code>.
                             </video>
 
@@ -437,13 +436,22 @@
                 </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
                 <div class="icon-box icon-3">
                     <div class="icon"><i class="bi bi-car-front"></i></div>
                     <h4><a href="https://tresarroyos.gobdigital.com.ar/web/turnoFecha?m=2" target="_blank">Licencia de Conducir</a></h4>
-                    {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+
                 </div>
-                </div>
+                </div> --}}
+
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-2">
+                        <div class="icon"><i class="fas fa-laptop-medical"></i></div>
+                        <h4><a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></h4>
+                        {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
+                    </div>
+                    </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-4">

@@ -208,7 +208,9 @@
                     <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
                     <!--li><i class="bx bx-chevron-right"></i> <a href="#">Conocenos un poco</a></li-->
                     <li><i class="bx bx-chevron-right"></i> <a href="https://centrodesaludtsas.com.ar/" target="_blank">Salud</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></li>
                     <li><i class="bx bx-chevron-right"></i> <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li>
+
                     <!--li><i class="bx bx-chevron-right"></i> <a href="#">Multas</a></li-->
                     </ul>
                 </div>

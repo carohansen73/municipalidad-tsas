@@ -17,17 +17,21 @@
     {!! Form::number('orden', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Tipo Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('tipo', 'Tipo:') !!}
-    {!! Form::select('tipo',$tipos, null, ['class' => 'form-control']) !!}
-</div>
+@if(!isset($boletinOficial))
+    <!-- Tipo Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('tipo', 'Tipo:') !!}
+        {!! Form::select('tipo',$tipos, null, ['class' => 'form-control', 'required']) !!}
+    </div>
+@endif
 
-<!-- Anio Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('anio', 'Anio:') !!}
-    {!! Form::select('anio',$anios, null, ['class' => 'form-control']) !!}
-</div>
+@if(!isset($boletinOficial))
+    <!-- Anio Field -->
+    <div class="form-group col-sm-6">
+        {!! Form::label('anio', 'Anio:') !!}
+        {!! Form::select('anio',$anios, null, ['class' => 'form-control']) !!}
+    </div>
+@endif
 
 <!-- Mes Field -->
 <div class="form-group col-sm-6">
@@ -35,6 +39,8 @@
     {!! Form::select('mes',$meses, null, ['class' => 'form-control']) !!}
 </div>
 
+
+{{-- SI SE PUEDE ACTUALIZAR, SACAR EL REQUIRED, PORQUE SI NO seleccionas un nuevo archivo TOMA COMO QUE EL CAMPO ESTA VACIO! --}}
 
 @if(!isset($boletinOficial))
     <!-- Archivo (nombre Field) -->
