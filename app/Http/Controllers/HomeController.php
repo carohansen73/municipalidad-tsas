@@ -192,6 +192,20 @@ class HomeController extends Controller
         return view('sections.establecimientos-educativos', compact('niveles', 'establecimientos'));
     }
 
+        /**
+     * Muestra la seccion educacion, con los diferenets niveles educativos
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showSalud()
+    {
+
+        return view('sections.salud');
+    }
+
+
+
+
     /**
      * Muestra la seccion educacion, con los diferenets niveles educativos
      *

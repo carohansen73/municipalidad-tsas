@@ -66,10 +66,6 @@
                 </a>
             </div>
 
-
-
-
-
             <div class="col-xl-2 col-md-2">
                 <a href="deportes">
                     <div class="icon-box icon-6">
@@ -80,10 +76,10 @@
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <a href="https://tresarroyos.itconsultsa.com/login" target="_blank">
+                <a href="salud" target="_blank">
                     <div class="icon-box icon-1">
-                        <i class="fas fa-laptop-medical"></i>
-                        <h3>Telemedicina</h3>
+                        <i class="fas fa-plus-square"></i>
+                        <h3>Salud</h3>
                     </div>
                 </a>
             </div>

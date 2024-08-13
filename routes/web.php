@@ -21,7 +21,8 @@ use App\Http\Controllers\BoletinOficialController;
 Route::get('/', function () {
     return view('home.home');
 });
-Auth::routes();
+Auth::routes(['register' => false, 'reset'=> false]);
+
 
 // Route::resource('tadi', 'TadiController');
 // Route::get('/tadi', 'TadiController@index')->name('tadi');
@@ -40,14 +41,13 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/cultura', 'showMenuSection');
     Route::get('/turismo', 'showMenuSection');
     Route::get('/deportes', 'showMenuSection');
-
 /*SECCIONES UNITARIAS */
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
     Route::get('/guia-de-tramites', 'showGuiaTramites');
     Route::get('/tramite/{id}', 'showTramite');
 
-
+    // Route::get('/area/{nombre}', 'showSectionPlana');
     // /*SERVICIOS */
     // Route::get('/servicios/{tipo}', 'showListServices');
 
@@ -55,6 +55,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/la-ciudad', 'showLaCiudad');
     Route::get('/educacion', 'showSectionEducation');
     Route::get('/educacion/{id}', 'showEducationByLevel');
+    Route::get('/salud', 'showSalud');
     Route::get('/organigrama', 'showOrganigrama');
     Route::get('/organigrama/{id}', 'getOrganigramaByArea');
     Route::get('/delegaciones', 'showDelegaciones');
@@ -143,16 +144,28 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
-    Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
-    Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
+    Route::resource('seccionInformacion', App\Http\Controllers\SeccionInformacionController::class);
+    Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacion.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
+    Route::resource('user', App\Http\Controllers\UserController::class);
+
 });
 
 
 
 
 
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return '<h1>Cache facade value cleared</h1>';
+});
+//Clear Route cache:
+Route::get('/route-clear', function() {
+    $exitCode = Artisan::call('route:clear');
+    return '<h1>Route cache cleared</h1>';
+});
 
 
 
 
+Route::resource('rols', App\Http\Controllers\RolController::class);

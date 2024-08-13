@@ -42,14 +42,14 @@
 
 {{-- SI SE PUEDE ACTUALIZAR, SACAR EL REQUIRED, PORQUE SI NO seleccionas un nuevo archivo TOMA COMO QUE EL CAMPO ESTA VACIO! --}}
 
-@if(!isset($boletinOficial))
+{{-- @if(!isset($boletinOficial)) --}}
     <!-- Archivo (nombre Field) -->
     <div class="form-group col-sm-10">
         {!! Form::label('nombre', ' Archivo') !!}
         <div class="input-group">
             <span class="input-group-btn">
                 <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Seleccionar</span>
-                <input name="nombre" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"  accept="application/pdf" type="file" required>
+                <input name="nombre" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"  accept="application/pdf" type="file" >
             </span>
             @if (isset($boletinOficial) && ($boletinOficial->nombre))
                 <span class="form-control">{{$boletinOficial->nombre}}</span>
@@ -62,9 +62,9 @@
     </div>
 
     <div class="form-group col-sm-2 mt-lg-5">
-        @else
-        <div class="form-group col-sm-2">
-@endif
+        {{-- @else
+        <div class="form-group col-sm-2"> --}}
+{{-- @endif --}}
 
 <!-- Publica Field -->
 

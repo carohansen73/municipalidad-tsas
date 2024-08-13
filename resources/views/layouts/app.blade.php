@@ -208,8 +208,12 @@
                     <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
                     <!--li><i class="bx bx-chevron-right"></i> <a href="#">Conocenos un poco</a></li-->
                     <li><i class="bx bx-chevron-right"></i> <a href="https://centrodesaludtsas.com.ar/" target="_blank">Salud</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://centrodesalud.com.ar/noticia/anotate-para-donar" target="_blank">Doná sangre</a></li>
                     <li><i class="bx bx-chevron-right"></i> <a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="https://resultados.ibta.com.ar/shift/lis/ibta/elis/s01.iu.web.Login.cls?config=HOSPITAL" target="_blank">Laboratorio - resultados</a></li>
+
+
+                    {{-- <li><i class="bx bx-chevron-right"></i> <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">Turismo</a></li> --}}
 
                     <!--li><i class="bx bx-chevron-right"></i> <a href="#">Multas</a></li-->
                     </ul>

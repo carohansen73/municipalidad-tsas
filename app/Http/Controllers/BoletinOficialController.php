@@ -200,7 +200,7 @@ class BoletinOficialController extends AppBaseController
 
         //si entra es porque cambio el archivo
         if ($request->file('nombre')) {
-            var_dump('entro');die;
+
             //borro archivo anterior
             if ($boletinOficial->nombre != null ) {
 
@@ -209,7 +209,7 @@ class BoletinOficialController extends AppBaseController
             }
             $boletinOficial->fill($request->all());
             //guardo el nuevo archivo
-            var_dump($request->file('nombre'));die;
+
 
             $file = $request->file('nombre');
             $name = $request->mes."-".$request->titulo."-";
