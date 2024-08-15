@@ -192,6 +192,20 @@ class HomeController extends Controller
         return view('sections.establecimientos-educativos', compact('niveles', 'establecimientos'));
     }
 
+        /**
+     * Muestra la seccion educacion, con los diferenets niveles educativos
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showSalud()
+    {
+
+        return view('sections.salud');
+    }
+
+
+
+
     /**
      * Muestra la seccion educacion, con los diferenets niveles educativos
      *
@@ -224,6 +238,21 @@ class HomeController extends Controller
         $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'ente-vial')->pluck('id'))->with('galeria')->get();
         return view('sections.ente-vial', compact('portada', 'textos'));
     }
+
+
+        /**
+     * Info de Direccion de Juventud (y punto digital)
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function   showJuventud()
+    {
+        $portada = GaleriaPortada::where('seccion_id', Seccion::where('link', 'ente-vial')->pluck('id'))->get();
+        //tomo los datos y las entidades que pertenecen a esa seccion
+        $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'ente-vial')->pluck('id'))->with('galeria')->get();
+        return view('sections.juventud', compact('portada', 'textos'));
+    }
+
 
 
 
@@ -425,14 +454,19 @@ class HomeController extends Controller
         foreach($noticia as $noti){
             foreach($noti->categorias as $cat){
                 $categoriaId = $cat->id;
+
             }
+            $noticiaId = $noti->id;
         }
+
+        $imagenesPrimera = NoticiaImg::where('noticia_id', $noticiaId)->latest('id')->take(1)->get();
+        $imagenes = NoticiaImg::where('noticia_id', $noticiaId)->latest('id')->skip(1)->take(4)->get();
 
         $categorias = Categoria::all();
         $ultimasNoticias = Noticia::latest()->take(3)->get();
         $noticiasRelacionadas = Noticia::whereIn('id', NoticiaCategoria::whereIn('categoria_id', [$categoriaId])->pluck('noticia_id'))->latest()->take(3)->get();
 
-        return view('sections.noticia', compact('noticias', 'noticia', 'categoriaId', 'ultimasNoticias', 'noticiasRelacionadas', 'categorias'));
+        return view('sections.noticia', compact('noticias', 'noticia', 'categoriaId', 'ultimasNoticias', 'noticiasRelacionadas', 'categorias', 'imagenesPrimera', 'imagenes'));
     }
 
 
@@ -654,7 +688,7 @@ class HomeController extends Controller
     {
         $tipo = 'avisos';
         $items= $this->getItemsBoletinOficial();
-        $boletinOficial = AvisoOficial::whereIn('area', ['aviso'])->orderBy('fecha', 'ASC')->get();
+        $boletinOficial = AvisoOficial::whereIn('area', ['aviso'])->orderBy('fecha', 'desc')->get();
 
         return view('transparenciaFiscal.boletin_oficial', compact('items', 'boletinOficial', 'tipo'));
     }

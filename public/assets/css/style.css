@@ -134,6 +134,9 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.display-none{
+    display: none;
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -729,41 +732,7 @@ h6 {
         /* background: whitesmoke; */
     }
 
-    /* .cultura-nav .navbar-nav .navlink-item:nth-child(3) {
-        background: whitesmoke;
-    }
-
-    .cultura-nav .navbar-nav .navlink-item:nth-child(4) {
-        background: whitesmoke;
-    }
-
-    .cultura-nav .navbar-nav .navlink-item:nth-child(5) {
-        background: whitesmoke;
-    }
-
-    .cultura-nav .navbar-nav .navlink-item:nth-child(6) {
-        background: #whitesmoke;
-    }
-
-    .cultura-nav .navbar-nav .navlink-item:nth-child(7) {
-        background: #ffffffd2;
-    } */
-
-    /* .cultura-nav .navbar-nav .navlink-item:nth-child(8) {
-        background: #d7d7d7e3;
-    }
-
-    .cultura-nav .navbar-nav .navlink-item:nth-child(9) {
-        background: #25aec3e3;
-    } */
 }
-
-
-
-
-
-
-
 
 
 .cultura-nav .navlink-item a:hover{
@@ -1002,13 +971,10 @@ h6 {
 
 #hero .icon-1:hover{
     background-color: #53c04d;
-
 }
 
 #hero .icon-2 {
-    /* background-color: #f4c000; */
-     background-color: #25afc3;
-
+    background-color: #25afc3;
 }
 #hero .icon-2:hover {
   background-color: #34c9e0;
@@ -1017,11 +983,14 @@ h6 {
 
 
 #hero .icon-3 {
-    background-color: #f07e07;
+    background-color: #D04145 ;
+   /* background-color: #FFBB2D; */
+    /* background-color: #f07e07; */
     /* display: none; */
 }
 #hero .icon-3:hover {
-  background-color: #ea8f2e;
+  /* background-color: #ea8f2e; */
+  background-color: #ea4d52;
 }
 
 
@@ -1640,8 +1609,6 @@ section {
 
 } */
 
-
-
 #eventos .container .row .member .member-img img{
     width:100% ;
     height: 326px;
@@ -1730,17 +1697,13 @@ section {
 
 
 @media (min-width: 620px) {
-
     .evento-img {
         position: relative;
         width: 100% ;
         margin: 0px  20px;
         left: 0px;
     }
-
 }
-
-
 
 @media (min-width: 1400px) {
     #home-eventos .evento-img img,
@@ -1930,7 +1893,7 @@ section {
 .services .icon-3:hover i,
 .services .icon-3:hover a{
 
-    color:#f07e07 !important;
+    color: #f07e07 !important;
 }
 .services .icon-4:hover i,
 .services .icon-4:hover a{
@@ -2034,14 +1997,6 @@ section {
 
     }
 }
-
-
-
-
-
-
-
-
 
 
 .portfolio #portfolio-flters {
@@ -2507,20 +2462,16 @@ section {
 .member-info a{
     color: rgb(13, 116, 189);
 }
+
+
 /*--------------------------------------------------------------
 # MUSEOS (reutilizo estilo Team)
 --------------------------------------------------------------*/
-
 
 #museo .member-img img, #museo .member-img video {
     width: 100%;
     height: 200px;
 }
-
-
-
-
-
 
 @media (max-width: 500px) {
 
@@ -2562,17 +2513,6 @@ section {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .mapa{
     display: flex;
     justify-content: center;
@@ -2596,7 +2536,6 @@ section {
 section #cultura-eventos{
     /* background-color: #d63384bb; */
     background-color: #f7f7f7;
-
 }
 
 section #cultura-eventos p{
@@ -2623,14 +2562,12 @@ section #cultura-eventos p{
 
 .eventos .member-img,
 .eventos .member{
-
     border-radius: 10px;
     box-shadow: 10px 10px 20px rgba(8, 8, 8, 0.645);
 }
 
 section #deportes-eventos{
     background-color: #2464a3;
-
 }
 
 /*--------------------------------------------------------------
@@ -2883,8 +2820,6 @@ section #deportes-eventos{
     }
 }
 
-
-
 #noticias .aside-lateral .section-title{
    padding-bottom: 0px;
 }
@@ -2944,14 +2879,11 @@ section #deportes-eventos{
     object-fit: contain;
 }
 
-
-
 #noticia .aside-principal .img-noticia,
 #noticia .aside-principal .img-noticia img{
     width: 720px;
     /* height: 540px; */
 }
-
 
 #noticia .aside-principal .info-noticia{
     padding: 30px;
@@ -2983,16 +2915,53 @@ section #deportes-eventos{
 }
 
 #noticia .galeria-noticia .carousel{
-    max-height: 520px;
-    width: 60%;
+    height: 520px;
+    width: 90%;
 }
 
 #noticia .galeria-noticia img{
-    max-height: 520px;
-    /* height: 100%; */
+    height: 520px;
     width: 100%;
+    object-fit: cover;
 }
 
+#noticia .galeria-noticia>img{
+    width: 100%;
+    max-height: 520px;
+    object-fit: contain;
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 991px) {
+    #noticia .galeria-noticia .carousel{
+        height: 420px;
+    }
+
+    #noticia .galeria-noticia img{
+        height: 420px;
+    }
+}
+
+@media (max-width: 991px)  {
+    #noticia .galeria-noticia .carousel{
+        height: 320px;
+    }
+
+    #noticia .galeria-noticia img{
+        height: 320px;
+    }
+}
+
+@media (max-width: 500px)  {
+    #noticia .galeria-noticia .carousel{
+        height: 280px;
+        width: 95%;
+    }
+
+    #noticia .galeria-noticia img{
+        height: 280px;
+    }
+}
 
 /*noticias relacionadas (cards pequeños)*/
 
@@ -3035,6 +3004,54 @@ section #deportes-eventos{
     background-color: rgb(89, 152, 197);
 }
 /* fin noticias relacionadas (cards pequeños)*/
+
+/*--------------------------------------------------------------
+# JUVENTUD
+--------------------------------------------------------------*/
+/* #juventud .about .content ul i {
+    color: #9f008d;
+} */
+
+#juventud .about .content ul :nth-child(2) i, #juventud .features .container .row :nth-child(1) i{
+  color: #F15F38;
+}
+#juventud .about .content ul :nth-child(5) i, #juventud .features .container .row :nth-child(2) i {
+  color: #B7265D;
+}
+#juventud .about .content ul :nth-child(1) i {
+  color: #2FA4C9;
+}
+#juventud .about .content ul :nth-child(4) i, #juventud .features .container .row :nth-child(4) i {
+  color: #19A19D;
+}
+#juventud .about .content ul :nth-child(3) i, #juventud .features .container .row :nth-child(3) i {
+  color: #EDA72A;
+}
+
+
+/* #juventud .features .container .row :nth-child(2) i {
+    color: #F15F38;
+}
+#juventud .features .container .row :nth-child(2) i {
+    color: #F15F38;
+}
+
+#juventud .features .container .row :nth-child(2) i {
+    color: #F15F38;
+}
+
+#juventud .features .container .row :nth-child(2) i {
+    color: #F15F38;
+} */
+
+
+
+
+
+
+EDA72B
+
+
 
 /*--------------------------------------------------------------
 # Contact
@@ -3495,7 +3512,7 @@ section #deportes-eventos{
 #  FORM REGISTRO TADI
 --------------------------------------------------------------*/
 
-.register-button:hover {
+/* .register-button:hover {
   background: #ffcd6b;
 }
 
@@ -3508,13 +3525,11 @@ section #deportes-eventos{
   visibility: hidden;
 }
 
-.display-none{
-    display: none;
-}
+
 
 .input-error{
   border-color: #d03830;
-}
+} */
 
 /* .portada-tadi{
   margin-top: 73px;
@@ -3523,9 +3538,9 @@ section #deportes-eventos{
 /*--------------------------------------------------------------
 # LOGIN TADI
 --------------------------------------------------------------*/
-.login-section{
+/* .login-section{
   width: 30%;
-  /* background-color: whitesmoke; */
+
    background-color: #FFF;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   position: absolute;
@@ -3534,7 +3549,6 @@ section #deportes-eventos{
 
 }
 
-/*Animacion inputs*/
 .inputbox{
   position: relative;
   margin: 30px 0;
@@ -3591,7 +3605,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input[type=number] { -moz-appearance:textfield; }
+input[type=number] { -moz-appearance:textfield; } */
 
 /*FIN Animacion inputs*/
 
@@ -3713,33 +3727,17 @@ background-image: url("../img/sections-portadas/tsas2.jpg");
 background-size: cover;
 }
 
-#municipio .background-portada{
-    background: linear-gradient(#25aec33f, #25aec33f);
-}
-
-#atencion-al-vecino  .background-portada{
-    /* background: linear-gradient(#d634528b, #d634528b); */
-    background: linear-gradient(#53c04d57, #53c04d57);
-}
-
-#ciudad-productiva .background-portada{
-    background: linear-gradient(#f07f076b, #f07f076b);
-}
-
-#cultura  .background-portada{
-    background: linear-gradient(#d633845f, #d633845f);
-}
-
+#municipio .background-portada,
+#atencion-al-vecino  .background-portada,
+#cultura  .background-portada,
+#ciudad-productiva .background-portada,
 #deportes .background-portada{
-    background: linear-gradient(#2463a38d, #2463a38d);
+
+    background: linear-gradient(#03030357, #00000057);
 }
 
+#portada-secciones .background-portada,
 #delegaciones  .background-portada{
-    /* background: linear-gradient(#d634528b, #d634528b); */
-    background: linear-gradient(#f4bf0031, #f4bf0031);
-}
-
-#portada-secciones .background-portada{
     /* background: linear-gradient(#d634528b, #d634528b); */
     background: linear-gradient(#2727274f, #2727274f);
 }
@@ -3908,48 +3906,6 @@ background-size: cover;
     justify-content: center;
 }
 
-
-/*--------------------------------------------------------------
-# prueba background animado
---------------------------------------------------------------*/
-.bg-animated{
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-.bg {
-    animation: slide 7s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, white 50%, #ccc 50%);
-    bottom: 0;
-    left: -50%;
-    opacity: .4;
-    position: fixed;
-    right: -50%;
-    top: 0;
-    z-index: -1;
-}
-
-.bg-2 {
-    animation-direction: alternate-reverse;
-    animation-duration: 10s;
-}
-
-.bg-3 {
-    animation-duration: 12s;
-}
-
-@keyframes slide{
-    0% {
-        transform: translateX(-25%);
-    }
-    100% {
-        transform: translateX(25%);
-    }
-}
-
 /*--------------------------------------------------------------
 # CARDS CON ICONO Y VER MAS (uso en servicios)
 --------------------------------------------------------------*/
@@ -3998,32 +3954,6 @@ background-size: cover;
     color: #fff;
 }
 
-/* .team .card-icono .member-3 i{
-    color: #3aaa35;
-}
-
-.team .card-icono .member-3 .card-ver-mas a{
-    background-color: #3aaa35;
-}
-
-.team .card-icono .member-3 .card-ver-mas a:hover{
-    background-color: #53c04d ;
-    color: #fff;
-} */
-
-/* .team .card-icono .member-4 i{
-    color: #d63384;
-}
-
-.team .card-icono .member-4 .card-ver-mas a{
-    background-color: #d63384;
-}
-
-.team .card-icono .member-4 .card-ver-mas a:hover{
-    background-color: #d65395 ;
-    color: #fff;
-} */
-
 .team .card-icono .member-1 i{
     color: #662483;
 }
@@ -4050,20 +3980,6 @@ background-size: cover;
     background-color: #2464a3 ;
     color: #fff;
 }
-
-
-/* .team .card-icono .member-7 i{
-    color: #25afc3;
-}
-
-.team .card-icono .member-7 .card-ver-mas a{
-    background-color: #25afc3;
-}
-
-.team .card-icono .member-7 .card-ver-mas a:hover{
-    background-color: #55dcf1 ;
-    color: #fff;
-} */
 
 .team .card-icono .member-7 h4{
     color: #2464a3;
@@ -4192,7 +4108,6 @@ background-size: cover;
         height: 40%;
     }
 }
-
 
 
 /*--------------------------------------------------------------

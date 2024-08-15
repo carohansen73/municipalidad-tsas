@@ -1,5 +1,4 @@
-<div class="container">
-    <div class="table-responsive">
+    <div class="table-responsive  p-2">
         <table class="table table-striped" id="situacionFinanciera-table">
             <thead>
             <tr>
@@ -43,7 +42,7 @@
             </tbody>
         </table>
     </div>
-</div>
+
 @push('page_scripts')
     <script type="text/javascript">
         $(document).ready( function () {

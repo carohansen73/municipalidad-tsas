@@ -1,33 +1,32 @@
-<div class="container">
-    <div class="table-responsive">
-        <table class="table" id="boletinOficial-table">
-            <thead>
-                <tr>
-                    <th>Ord</th>
-                    <th>Titulo</th>
-                    <th>Archivo</th>
-                    <th>Descripcion</th>
-                    {{-- <th>Tipo</th> --}}
-                    <th>Fecha</th>
-                    {{-- <th>Anio</th> --}}
-                    <th>Publica</th>
+<div class="table-responsive  p-2">
+    <table class="table" id="boletinOficial-table">
+        <thead>
+            <tr>
+                <th>Ord</th>
+                <th>Titulo</th>
+                <th>Archivo</th>
+                <th>Descripcion</th>
+                {{-- <th>Tipo</th> --}}
+                <th>Fecha</th>
+                {{-- <th>Anio</th> --}}
+                <th>Publica</th>
 
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody >
-                @foreach($boletinOficials as $boletinOficial)
-                    <tr >
-                        <td class="text-center">{{ $boletinOficial->orden }}</td>
-                        <td class="text-center">{{ $boletinOficial->titulo }}</td>
-                        <td> <a href="{{url('/storage/archivos/boletin_oficial/'.$boletinOficial->tipo.'/'.$boletinOficial->anio.'/'.$boletinOficial->nombre)}}" target="_blank"> {{ $boletinOficial->nombre }} </a></td>
-                        <td>{{ $boletinOficial->descripcion }}</td>
-                        <td class="text-center">{{ $boletinOficial->mes }}/{{ $boletinOficial->anio }}</td>
-                        <td class="text-center">
-                            @if ($boletinOficial->publica)
-                                <i class="far fa-check-circle text-success"></i>
-                            @endif
-                        </td>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody >
+            @foreach($boletinOficials as $boletinOficial)
+                <tr >
+                    <td class="text-center">{{ $boletinOficial->orden }}</td>
+                    <td class="text-center">{{ $boletinOficial->titulo }}</td>
+                    <td> <a href="{{url('/storage/archivos/boletin_oficial/'.$boletinOficial->tipo.'/'.$boletinOficial->anio.'/'.$boletinOficial->nombre)}}" target="_blank"> {{ $boletinOficial->nombre }} </a></td>
+                    <td>{{ $boletinOficial->descripcion }}</td>
+                    <td class="text-center">{{ $boletinOficial->mes }}/{{ $boletinOficial->anio }}</td>
+                    <td class="text-center">
+                        @if ($boletinOficial->publica)
+                            <i class="far fa-check-circle text-success"></i>
+                        @endif
+                    </td>
 
                         <td class="text-center" width="120">
                             {!! Form::open(['route' => ['boletinOficial.destroy', $boletinOficial->id], 'method' => 'delete']) !!}

@@ -33,14 +33,14 @@
 @endpush
 
 {{-- SI SE PUEDE ACTUALIZAR, SACAR EL REQUIRED, PORQUE SI NO ACTUALIZAS TOMA COMO QUE EL CAMPO ESTA VACIO! --}}
-@if(!isset($avisoOficial))
+{{-- @if(!isset($avisoOficial)) --}}
  <!-- Nombre Field -->
     <div class="form-group col-sm-12">
         {!! Form::label('nombre', ' Archivo') !!}
         <div class="input-group">
             <span class="input-group-btn">
                 <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Seleccionar</span>
-                <input name="nombre" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"  accept="application/pdf" type="file" required>
+                <input name="nombre" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;"  accept="application/pdf" type="file" >
             </span>
             @if (isset($avisoOficial) && ($avisoOficial->nombre))
                 <span class="form-control">{{$avisoOficial->nombre}}</span>
@@ -51,4 +51,4 @@
         </div>
         <p class="help-block">El formato permitido es pdf.</p>
     </div>
-@endif
+{{-- @endif --}}
