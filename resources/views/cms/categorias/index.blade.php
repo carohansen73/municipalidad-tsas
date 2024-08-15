@@ -7,12 +7,14 @@
                 <div class="col-sm-6">
                     <h1>Categorias</h1>
                 </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('categorias.create') }}">
-                        Agregar
-                    </a>
-                </div>
+                @can('categorias.create')
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary float-right"
+                        href="{{ route('categorias.create') }}">
+                            Agregar
+                        </a>
+                    </div>
+                @endcan
             </div>
         </div>
     </section>

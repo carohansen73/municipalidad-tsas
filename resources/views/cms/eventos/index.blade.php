@@ -7,12 +7,13 @@
                 <div class="col-sm-6">
                     <h1>Eventos</h1>
                 </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('eventos.create') }}">
-                        Add New
-                    </a>
-                </div>
+                @can('eventos.create')
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary float-right" href="{{ route('eventos.create') }}">
+                            Agregar
+                        </a>
+                    </div>
+                @endcan
             </div>
         </div>
     </section>

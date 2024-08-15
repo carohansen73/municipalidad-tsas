@@ -141,9 +141,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::resource('categorias', App\Http\Controllers\CategoriaController::class);
-    Route::resource('seccionInformacions', App\Http\Controllers\SeccionInformacionController::class);
-    Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacions.indexSections');
+    Route::resource('seccionInformacion', App\Http\Controllers\SeccionInformacionController::class);
+    Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacion.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
+    Route::resource('user', App\Http\Controllers\UserController::class);
+
 });
 
 
@@ -154,3 +156,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
+
+
+Route::resource('rols', App\Http\Controllers\RolController::class);

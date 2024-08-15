@@ -8,7 +8,7 @@
                 <th>Descripcion</th>
                 <th>Area</th>
                 <th>Fecha</th>
-                <th>Action</th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
@@ -22,19 +22,18 @@
                         <td>  {{ \Carbon\Carbon::parse($avisoOficial->fecha)->format('d-m-Y')}} </td>
                         <td width="120">
                             {{-- PARA ELIMINAR DESCOMENTAR form::open, Form::button, Form::close --}}
-                            {{-- {!! Form::open(['route' => ['avisoOficial.destroy', $avisoOficial->id], 'method' => 'delete']) !!} --}}
+                            {!! Form::open(['route' => ['avisoOficial.destroy', $avisoOficial->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>
-                                <a href="{{ route('avisoOficial.show', [$avisoOficial->id]) }}"
-                                class='btn btn-default btn-xs'>
-                                    <i class="far fa-eye"></i>
-                                </a>
-                                <a href="{{ route('avisoOficial.edit', [$avisoOficial->id]) }}"
-                                class='btn btn-default btn-xs'>
-                                    <i class="far fa-edit"></i>
-                                </a>
-                                {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
+                                @can('avisoOficial.edit')
+                                    <a href="{{ route('avisoOficial.edit', [$avisoOficial->id]) }}" class='btn btn-default btn-xs'>
+                                        <i class="far fa-edit"></i>
+                                    </a>
+                                @endcan
+                                @can('avisoOficial.destroy')
+                                    {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Seguro que quiere eliminar?')"]) !!}
+                                @endcan
                             </div>
-                            {{-- {!! Form::close() !!} --}}
+                             {!! Form::close() !!}
                         </td>
                     </tr>
                 @endforeach

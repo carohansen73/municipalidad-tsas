@@ -8,7 +8,7 @@
         <th>Vigente</th>
         <th>Fecha Inicio</th>
         <th>Fecha Fin</th>
-            <th colspan="3">Action</th>
+            <th colspan="3">Acciones</th>
         </tr>
         </thead>
         <tbody>
@@ -23,15 +23,14 @@
                 <td width="120">
                     {!! Form::open(['route' => ['eventos.destroy', $evento->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('eventos.show', [$evento->id]) }}"
-                           class='btn btn-default btn-xs'>
-                            <i class="far fa-eye"></i>
-                        </a>
-                        <a href="{{ route('eventos.edit', [$evento->id]) }}"
-                           class='btn btn-default btn-xs'>
-                            <i class="far fa-edit"></i>
-                        </a>
-                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        @can('eventos.edit')
+                            <a href="{{ route('eventos.edit', [$evento->id]) }}" class='btn btn-default btn-xs'>
+                                <i class="far fa-edit"></i>
+                            </a>
+                        @endcan
+                        @can('eventos.destroy')
+                            {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        @endcan
                     </div>
                     {!! Form::close() !!}
                 </td>

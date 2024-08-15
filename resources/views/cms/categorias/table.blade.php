@@ -17,11 +17,14 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a> --}}
-                        <a href="{{ route('categorias.edit', [$categoria->id]) }}"
-                           class='btn btn-default btn-xs'>
-                            <i class="far fa-edit"></i>
-                        </a>
-                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro que desea elimiar?')"]) !!}
+                        @can('categorias.edit')
+                            <a href="{{ route('categorias.edit', [$categoria->id]) }}"  class='btn btn-default btn-xs'>
+                                <i class="far fa-edit"></i>
+                            </a>
+                        @endcan
+                        @can('categorias.destroy')
+                            {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro que desea elimiar?')"]) !!}
+                        @endcan
                     </div>
                     {!! Form::close() !!}
                 </td>

@@ -7,12 +7,14 @@
                 <div class="col-sm-6">
                     <h1>{{$title}}</h1>
                 </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('seccionInformacions.create') }}">
-                        + información/imágenes
-                    </a>
-                </div>
+                @can('seccionInformacion.create')
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary float-right"  href="{{ route('seccionInformacion.create') }}">
+                            + información/imágenes
+                        </a>
+                    </div>
+                @endcan
+
             </div>
         </div>
     </section>
@@ -45,12 +47,14 @@
                 <div class="col-sm-6">
                     <h1>Archivos</h1>
                 </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('archivos.create') }}">
-                        + archivo
-                    </a>
-                </div>
+                @can('archivos.create')
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary float-right"
+                        href="{{ route('archivos.create') }}">
+                            + archivo
+                        </a>
+                    </div>
+                @endcan
             </div>
         </div>
     </section>

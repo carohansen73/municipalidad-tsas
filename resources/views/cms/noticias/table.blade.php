@@ -39,12 +39,14 @@
                 <td width="120">
                         {!! Form::open(['route' => ['noticias.destroy', $noticia->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-
-                            <a href="{{ route('noticias.edit', [$noticia->id]) }}"
-                            class='btn btn-default btn-xs'>
-                                <i class="far fa-edit"></i>
-                            </a>
-                            {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro que desea eliminar?')"]) !!}
+                            @can('noticias.edit')
+                                <a href="{{ route('noticias.edit', [$noticia->id]) }}"  class='btn btn-default btn-xs'>
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            @endcan
+                            @can('noticias.destroy')
+                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Esta seguro que desea eliminar?')"]) !!}
+                            @endcan
                         </div>
                         {!! Form::close() !!}
                 </td>

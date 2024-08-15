@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -21,13 +23,6 @@ class User extends Authenticatable
         'apellido',
         'nombre',
         'email',
-        'domicilio',
-        'dni',
-        'nro_tramite',
-        'fecha_nacimiento',
-        'genero',
-        'telefono',
-        'dni',
         'password'
     ];
 
@@ -51,13 +46,6 @@ class User extends Authenticatable
         'apellido' => 'string',
         'nombre' => 'string',
         'email' => 'string',
-        'domicilio'=> 'string',
-        'dni'=> 'string',
-        'nro_tramite'=> 'string',
-        'fecha_nacimiento'=> 'string',
-        'genero' => 'string',
-        'telefono' => 'integer',
-        'dni' => 'integer',
         'email_verified_at' => 'datetime',
     ];
 
@@ -65,13 +53,8 @@ class User extends Authenticatable
         'apellido' => 'required|string|max:80',
         'nombre' => 'required|string|max:80',
         'email' => 'required|string|email|max:100',
-        'domicilio'=> 'required|string',
-        'dni' => 'required|numeric',
-        'nro_tramite' => 'required|numeric',
-        'fecha_nacimiento' => 'required|date_format:Y-m-d',
-        'genero' => 'required|string|max:2',
-        'telefono' => 'required|numeric',
-    ];
+        'password' => 'required|string|min:8',
+      ];
 
     public static $messages = [
         'apellido.required' => 'El apellido es obligatorio.',
