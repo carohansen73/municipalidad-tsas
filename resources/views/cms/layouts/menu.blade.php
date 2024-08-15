@@ -6,77 +6,77 @@
     </li>
 @endcan
 @can('eventos.index')
-<li class="nav-item">
-    <a href="{{ route('eventos.index') }}" class="nav-link {{ Request::is('eventos*') ? 'active' : '' }}">
-        <p>Eventos</p>
-    </a>
-</li>
+    <li class="nav-item">
+        <a href="{{ route('eventos.index') }}" class="nav-link {{ Request::is('eventos*') ? 'active' : '' }}">
+            <p>Eventos</p>
+        </a>
+    </li>
 @endcan
 @can('categorias.index')
-<li class="nav-item">
-    <a href="{{ route('categorias.index') }}" class="nav-link {{ Request::is('categorias*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('categorias.index') }}" class="nav-link {{ Request::is('categorias*') ? 'active' : '' }}">
         <p>Categorias</p>
     </a>
-</li>
+    </li>
 @endcan
 @can('seccionInformacion.index')
-<li class="nav-item">
-    <a href="{{ route('seccionInformacion.index') }}" class="nav-link {{ Request::is('seccionInformacion*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('seccionInformacion.index') }}" class="nav-link {{ Request::is('seccionInformacion*') ? 'active' : '' }}">
         <p>Secciones</p>
     </a>
-</li>
+    </li>
 @endcan
 @can('archivos.index')
-<li class="nav-item">
-    <a href="{{ route('archivos.index') }}" class="nav-link {{ Request::is('archivos*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('archivos.index') }}" class="nav-link {{ Request::is('archivos*') ? 'active' : '' }}">
         <p>Archivos</p>
     </a>
-</li>
+    </li>
 @endcan
 @can('reporteEconomico.index')
-<li class="nav-item">
-    <a href="{{ route('reporteEconomico.index') }}" class="nav-link {{ Request::is('reporteEconomico*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('reporteEconomico.index') }}" class="nav-link {{ Request::is('reporteEconomico*') ? 'active' : '' }}">
         <p>Reporte Economico</p>
     </a>
-</li>
+    </li>
 @endcan
 
 @can('situacionFinanciera.index')
-<li class="nav-item">
-    <a href="{{ route('situacionFinanciera.index') }}"  class="nav-link {{ Request::is('situacionFinanciera*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('situacionFinanciera.index') }}"  class="nav-link {{ Request::is('situacionFinanciera*') ? 'active' : '' }}">
         <p>Situacion Financiera</p>
     </a>
-</li>
+    </li>
 @endcan
 
 @can('boletinOficial.index')
-<li class="nav-item">
-    <a href="{{ route('boletinOficial.index') }}" class="nav-link {{ Request::is('boletinOficial*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('boletinOficial.index') }}" class="nav-link {{ Request::is('boletinOficial*') ? 'active' : '' }}">
         <p>Boletin Oficial</p>
     </a>
-</li>
+    </li>
 @endcan
 
 @can('avisoOficial.index')
-<li class="nav-item">
-    <a href="{{ route('avisoOficial.index') }}"  class="nav-link {{ Request::is('avisoOficial*') ? 'active' : '' }}">
+    <li class="nav-item">
+        <a href="{{ route('avisoOficial.index') }}"  class="nav-link {{ Request::is('avisoOficial*') ? 'active' : '' }}">
         <p>Aviso Oficial</p>
     </a>
-</li>
+    </li>
 @endcan
 
-{{-- @can('user.index') --}}
-<li class="nav-item">
-    <a href="{{ route('user.index') }}"  class="nav-link {{ Request::is('usuaios*') ? 'active' : '' }}">
+@can('user.index')
+    <li class="nav-item">
+        <a href="{{ route('user.index') }}"  class="nav-link {{ Request::is('usuaios*') ? 'active' : '' }}">
         <p>Usuarios</p>
     </a>
-</li>
-{{-- @endcan --}}
+    </li>
+@endcan
 
-{{-- @can('rols.index') --}}
-<li class="nav-item">
-    <a href="{{ route('rols.index') }}" class="nav-link {{ Request::is('rols*') ? 'active' : '' }}">
+@can('rols.index')
+    <li class="nav-item">
+        <a href="{{ route('rols.index') }}" class="nav-link {{ Request::is('rols*') ? 'active' : '' }}">
         <p>Roles</p>
     </a>
-</li>
-{{-- @endcan --}}
+    </li>
+@endcan

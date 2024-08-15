@@ -1,38 +1,44 @@
-    <div class="table-responsive  p-2">
+<div class="container">
+    <div class="table-responsive">
         <table class="table table-striped" id="situacionFinanciera-table">
             <thead>
             <tr>
                 <th>Nombre</th>
-                <th>Area</th>
-                <th>Anio</th>
-                <th>Periodo</th>
-                <th>Titulo</th>
+                <th>Apellido </th>
+                <th>Email</th>
+                <th>Rol</th>
                 <th >Acciones</th>
             </tr>
             </thead>
             <tbody>
-            @foreach($situacionFinancieras as $situacionFinanciera)
+            @foreach($usuarios as $user)
                 <tr>
-                    <td>{{ $situacionFinanciera->nombre }}</td>
-                    <td>{{ $situacionFinanciera->area }}</td>
-                    <td>{{ $situacionFinanciera->anio }}</td>
-                    <td>{{ $situacionFinanciera->periodo }}</td>
-                    <td>{{ $situacionFinanciera->titulo }}</td>
+                    <td>{{ $user->nombre }}</td>
+                    <td>{{ $user->apellido }}</td>
+                    <td>{{ $user->email }}</td>
+
+                    <td>
+                    @if (count($user->getRoleNames())>0)
+                    {{$user->getRoleNames()[0]}}
+
+                    @endif
+
+                    </td>
+
                     <td width="120">
-                        {!! Form::open(['route' => ['situacionFinanciera.destroy', $situacionFinanciera->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['user.destroy', $user->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             {{-- <a href="{{ route('situacionFinancieras.show', [$situacionFinanciera->id]) }}"
                             class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a> --}}
-                            @can('situacionFinanciera.edit')
-                                <a href="{{ route('situacionFinanciera.edit', [$situacionFinanciera->id]) }}"
-                                class='btn btn-default btn-xs'>
+                            @can('user.edit')
+                                <a href="{{ route('user.edit', [$user->id]) }}" class='btn btn-default btn-xs'>
                                     <i class="far fa-edit"></i>
                                 </a>
                             @endcan
-                            @can('situacionFinanciera.destroy')
-                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Seguro que quiere eliminar el archivo?')"]) !!}
+                            @can('user.destroy')
+                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Seguro que quiere eliminar el usuario?')"]) !!}
                             @endcan
                         </div>
                         {!! Form::close() !!}
@@ -42,7 +48,7 @@
             </tbody>
         </table>
     </div>
-
+</div>
 @push('page_scripts')
     <script type="text/javascript">
         $(document).ready( function () {

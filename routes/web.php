@@ -23,6 +23,8 @@ Route::get('/', function () {
 });
 Auth::routes(['register' => false, 'reset'=> false]);
 
+Auth::routes(['register' => false, 'reset'=> false]);
+
 
 // Route::resource('tadi', 'TadiController');
 // Route::get('/tadi', 'TadiController@index')->name('tadi');

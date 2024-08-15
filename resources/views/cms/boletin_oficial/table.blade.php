@@ -28,27 +28,26 @@
                         @endif
                     </td>
 
-                    <td class="text-center" width="120">
-                        {{-- {!! Form::open(['route' => ['boletinOficial.destroy', $boletinOficial->id], 'method' => 'delete']) !!} --}}
-                        <div class='btn-group'>
-                            <a href="{{ route('boletinOficial.show', [$boletinOficial->id]) }}"
-                            class='btn btn-default btn-xs'>
-                                <i class="far fa-eye"></i>
-                            </a>
-                            <a href="{{ route('boletinOficial.edit', [$boletinOficial->id]) }}"
-                            class='btn btn-default btn-xs'>
-                                <i class="far fa-edit"></i>
-                            </a>
-                            {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
-                        </div>
-                        {{-- {!! Form::close() !!} --}}
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+                        <td class="text-center" width="120">
+                            {!! Form::open(['route' => ['boletinOficial.destroy', $boletinOficial->id], 'method' => 'delete']) !!}
+                            <div class='btn-group'>
+                                @can('boletinOficial.edit')
+                                    <a href="{{ route('boletinOficial.edit', [$boletinOficial->id]) }}" class='btn btn-default btn-xs'>
+                                        <i class="far fa-edit"></i>
+                                    </a>
+                                @endcan
+                                @can('boletinOficial.destroy')
+                                    {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                                @endcan
+                            </div>
+                            {!! Form::close() !!}
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
-
 @push('page_scripts')
     <script type="text/javascript">
         $(document).ready( function () {

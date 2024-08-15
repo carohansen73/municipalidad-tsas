@@ -23,11 +23,14 @@
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a> --}}
-                        <a href="{{ route('archivos.edit', [$archivos->id]) }}"
-                           class='btn btn-default btn-xs'>
-                            <i class="far fa-edit"></i>
-                        </a>
-                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        @can('archivos.edit')
+                            <a href="{{ route('archivos.edit', [$archivos->id]) }}" class='btn btn-default btn-xs'>
+                                <i class="far fa-edit"></i>
+                            </a>
+                        @endcan
+                        @can('archivos.destroy')
+                            {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Seguro que desea eliminar el archivo?')"]) !!}
+                        @endcan
                     </div>
                     {!! Form::close() !!}
                 </td>

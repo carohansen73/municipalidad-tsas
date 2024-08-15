@@ -22,13 +22,13 @@
             {{--}} <td>{{ $seccionInformacion->img_3 }}</td>
                 <td>{{ $seccionInformacion->img_4 }}</td> --}}
                     <td width="120">
-                        {!! Form::open(['route' => ['seccionInformacions.destroy', $seccionInformacion->id], 'method' => 'delete']) !!}
+                        {!! Form::open(['route' => ['seccionInformacion.destroy', $seccionInformacion->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('seccionInformacions.show', [$seccionInformacion->id]) }}"
+                            <a href="{{ route('seccionInformacion.show', [$seccionInformacion->id]) }}"
                             class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('seccionInformacions.edit', [$seccionInformacion->id]) }}"
+                            <a href="{{ route('seccionInformacion.edit', [$seccionInformacion->id]) }}"
                             class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>
@@ -56,20 +56,23 @@
             <tbody>
             @foreach($secciones as $seccion)
                 <tr>
-                    <td> <a href="{{ route('seccionInformacions.indexSections', [$seccion->nombre]) }}"> {{ $seccion->nombre }}</a></td>
+                    <td> <a href="{{ route('seccionInformacion.indexSections', [$seccion->nombre]) }}"> {{ $seccion->nombre }}</a></td>
 
                     <td width="120">
-                        {{-- {!! Form::open(['route' => ['seccionInformacions.destroy', $seccionInformacion->id], 'method' => 'delete']) !!} --}}
+                        {!! Form::open(['route' => ['seccionInformacion.destroy', $seccion->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            {{-- <a href="{{ route('seccionInformacions.show', [$seccionInformacion->id]) }}"
+                            {{-- <a href="{{ route('seccionInformacion.show', [$seccionInformacion->id]) }}"
                             class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a> --}}
-                            <a href="{{ route('seccionInformacions.indexSections', [$seccion->nombre]) }}"
-                            class='btn btn-default btn-xs'>
-                                <i class="far fa-edit"></i>
-                            </a>
-                            {{-- {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!} --}}
+                            @can('seccionInformacion.edit')
+                                <a href="{{ route('seccionInformacion.indexSections', [$seccion->nombre]) }}" class='btn btn-default btn-xs'>
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            @endcan
+                            @can('seccionInformacion.destroy')
+                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                            @endcan
                         </div>
                         {!! Form::close() !!}
                     </td>

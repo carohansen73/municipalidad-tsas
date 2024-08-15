@@ -11,12 +11,14 @@
                         <h1>Boletin Oficial @if(isset($tipo))- {{$tipo}} @endif</h1>
                     @endif
                 </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('boletinOficial.create') }}">
-                       Agregar
-                    </a>
-                </div>
+                @can('boletinOficial.create')
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary float-right" href="{{ route('boletinOficial.create') }}">
+                            Agregar
+                        </a>
+                    </div>
+                @endcan
+
             </div>
         </div>
     </section>

@@ -5,11 +5,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Archivos</h1>
+                    <h1>Roles</h1>
                 </div>
-                @can('archivos.create')
+                @can('rols.create')
                     <div class="col-sm-6">
-                        <a class="btn btn-primary float-right" href="{{ route('archivos.create') }}">
+                        <a class="btn btn-primary float-right" href="{{ route('rols.create') }}">
                             Agregar
                         </a>
                     </div>
@@ -26,7 +26,7 @@
 
         <div class="card">
             <div class="card-body p-0">
-                @include('cms.archivos.table')
+                @include('cms.rols.table')
 
                 <div class="card-footer clearfix">
                     <div class="float-right">
