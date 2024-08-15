@@ -97,7 +97,7 @@ class SeccionInformacionController extends AppBaseController
 
         Flash::success('Seccion Informacion saved successfully.');
 
-        return redirect(route('seccionInformacions.index'));
+        return redirect(route('seccionInformacion.index'));
     }
 
     /**
@@ -114,7 +114,7 @@ class SeccionInformacionController extends AppBaseController
         if (empty($seccionInformacion)) {
             Flash::error('Seccion Informacion not found');
 
-            return redirect(route('seccionInformacions.index'));
+            return redirect(route('seccionInformacion.index'));
         }
 
         return view('cms.seccion_informacion.show')->with('seccionInformacion', $seccionInformacion);
@@ -135,7 +135,7 @@ class SeccionInformacionController extends AppBaseController
         if (empty($seccionInformacion)) {
             Flash::error('Seccion Informacion not found');
 
-            return redirect(route('seccionInformacions.index'));
+            return redirect(route('seccionInformacion.index'));
         }
 
         return view('cms.seccion_informacion.edit',compact('secciones', 'seccionInformacion'));
@@ -157,14 +157,14 @@ class SeccionInformacionController extends AppBaseController
         if (empty($seccionInformacion)) {
             Flash::error('Seccion Informacion not found');
 
-            return redirect(route('seccionInformacions.index'));
+            return redirect(route('seccionInformacion.index'));
         }
 
         $seccionInformacion = $this->seccionInformacionRepository->update($request->all(), $id);
 
         Flash::success('Seccion Informacion updated successfully.');
 
-        return redirect(route('seccionInformacions.index'));
+        return redirect(route('seccionInformacion.index'));
     }
 
     /**
@@ -183,13 +183,13 @@ class SeccionInformacionController extends AppBaseController
         if (empty($seccionInformacion)) {
             Flash::error('Seccion Informacion not found');
 
-            return redirect(route('seccionInformacions.index'));
+            return redirect(route('seccionInformacion.index'));
         }
 
         $this->seccionInformacionRepository->delete($id);
 
         Flash::success('Seccion Informacion deleted successfully.');
 
-        return redirect(route('seccionInformacions.index'));
+        return redirect(route('seccionInformacion.index'));
     }
 }
