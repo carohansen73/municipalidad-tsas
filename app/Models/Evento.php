@@ -65,7 +65,7 @@ class Evento extends Model
     public static $rules = [
         'seccion_id' => 'required|integer',
         'categoria_id' => 'required|integer',
-         'img' => 'required',
+        //  'img' => 'required',
         'fecha_inicio' => 'required',
         'fecha_fin' => 'required'
     ];

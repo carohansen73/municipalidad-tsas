@@ -3709,6 +3709,13 @@ input[type=number] { -moz-appearance:textfield; } */
     background-size: cover;
 }
 
+#juventud .portada-foto{
+    background-image: url("../img/sections-portadas/portadas/juventud.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/deportes.jpg") fixed center center; */
+    background-position: center;
+    background-size: cover;
+}
+
 
 .portada-foto .background-portada{
     position: absolute;
@@ -3765,11 +3772,11 @@ background-size: cover;
 .portada-foto h1{
     position: absolute;
     z-index: 4;
-    top: 140px;
+    top: 150px;
     padding: 30px 100px;
     color: #fff;
     font-weight: 700;
-    text-shadow: 10px 10px 30px rgb(0, 0, 0);
+    text-shadow: 10px 10px 30px rgb(6, 6, 6);
     text-transform: uppercase;
 }
 

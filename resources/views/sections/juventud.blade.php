@@ -8,14 +8,23 @@
 
 {{-- PORTADA --}}
 
-{{-- <div id="juventud">
+<div id="juventud">
     <div class="portada-foto text-md-left text-sm-center ">
         <div class="background-portada">   </div>
+
         @foreach ($textos as $text)
-            <h1>{{$text->seccion->nombre}}</h1>
+            @if($text->seccion->nombre == "Empleo - Emprendedores")
+                <h1>Oficina de Empleo y Capacitación</h1>
+                @else
+                <h1>{{$text->seccion->nombre}}</h1>
+            @endif
         @endforeach
+        {{-- <h1>Dirección de Políticas para la Juventud</h1> --}}
+
     </div>
 </div>
+
+{{--
     <!-- ======= borde colorido ======= -->
     <div class="container-border">
         <div class="row">
@@ -43,13 +52,13 @@
         <main id="main" class="margen-top-navbar">
             <div class="section-title">
                 <p>Dirección de Políticas para la Juventud</p>
-                {{-- <h2>Dictados en el CCE</h2> --}}
+
             </div>
             <div class="row">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="100">
+                <div class="col-lg-6 order-2 order-lg-1 d-flex justify-content-end pe-5" data-aos="fade-left" data-aos-delay="100">
                     <img src="{{asset("storage/secciones/juventud/descarga.jpg")}}" class="img-fluid" alt="">
                 </div>
-                <div class="col-lg-6 pt-4 pt-lg-0 order-1 order-lg-2 content d-flex justify-content-center" data-aos="fade-right" data-aos-delay="100">
+                <div class="col-lg-6 pt-4 pt-lg-0 order-1 order-lg-2 content d-flex justify-content-start align-items-center ps-5" data-aos="fade-right" data-aos-delay="100">
                    <div>
                         <br>
                         <ul>
@@ -91,6 +100,15 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="far fa-star"></i>
+                    <h4>Jóvenes que inspiran: </h4>
+                    <p> Programa destinado a visibilizar en redes distintos logros de nuestros jóvenes que se encuentren tanto en el distrito como cualquier lugar del país.
+                       <br>
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <i class="bi bi-chat-right-text"></i>
                     <h4> Jóvenes emprendedores:</h4>
                     <p> Contamos con un grupo de WhatsApp donde avisamos las charlas que se realizarán (ya dimos el taller de educación financiera en conjunto con la oficina de empleo y el banco nación).
@@ -109,16 +127,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fas fa-recycle"></i>
-                    <h4>Promotores ambientales: </h4>
-                    <p> En conjunto con la subsecretaria de gestión ambiental invitamos a los jóvenes a sumarse con el fin de promover el cambio del distrito siendo ellos los protagonistas
-                        del cuidado del ambiente. Para más info comunicarse al 2983-648571 o 2983-456538.
-                       <br>
-                    </p>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -135,13 +144,13 @@
             </div>
 
             <div class="row justify-content-center">
+
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                     <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
                         <i class="fas fa-mobile-alt"></i>
                         <h4> Conectando generaciones: </h4>
                         <p>  El punto digital brindará el taller destinado a adultos mayores en el que aprenderán desde 0 manejo de celular, aplicaciones tecnológicas y uso de homebanking.
                             (Comienza el Miércoles 05/06 a las 10:00, pueden inscribirse llamando al 2983456538.
-
                         <br>
                         </p>
                     </div>
@@ -160,7 +169,8 @@
                     <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                         <i class="fas fa-shield-alt"></i>
                         <h4>Cibercuidados para adolescentes:</h4>
-                        <p> Acercamos la propuesta a las instituciones educativas interesadas.
+                        <p> La finalidad es prevenir y reflexionar sobre problemáticas y conductas que se dan en las redes sociales y los juegos en línea.
+                            Se profundiza sobre 3 temas: ciberacoso, sexting y grooming.
                         <br>
                         </p>
                     </div>
@@ -169,9 +179,34 @@
                     <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                         <i class="fas fa-shield-alt"></i>
                         <h4>Cibercuidados para padres</h4>
-
+                        <p>El objetivo de la propuesta es acercar conocimientos sobre distintas plataformas, prácticas y problemáticas que surgen alrededor del uso de dispositivos,
+                            la navegación en internet y redes sociales de los jóvenes. También, buscamos brindar herramientas de prevención para que puedan detectar actitudes.
+                        </p>
                     </div>
                 </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                        <i class="fas fa-hand-holding-heart" style="color: #B7265D;"></i>
+                        <h4>Salud mental:</h4>
+                        <p> En conjunto con el área de prevención de adicciones y el centro comunitario llevamos adelante un taller que consta de 3 encuentros donde se trabajan con herramientas
+                            y dispositivos para acompañar a jóvenes de las escuelas secundarias.
+                        <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                        <i class="fas fa-hand-paper"></i>
+                        <h4>Ludopatía:</h4>
+                        <p> En conjunto con el área de prevención de adicciones se llevará adelante un taller de prevención dirigido a todas las escuelas secundarias.
+                            Se realizarán 2 encuentros con parte teórica y práctica a los que asistirán integrantes de cada centro de estudiantes
+                            y referentes de los equipos de orientación escolar.
+                            A su vez, se les entregarán kits para que puedan replicar la propuesta en cada establecimiento.
+                        <br>
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -190,8 +225,9 @@
         <p>  La Dirección cuenta con un espacio llamado <strong>“Punto Digital”. </strong>
             Tiene por objetivo democratizar el acceso a las Tecnologías de la Información y la Comunicación (TIC), a través de dispositivos de acceso libre y gratuito a internet,
              capacitaciones, talleres, asistencia en trámites y actividades culturales. <br>
-            En la Dirección también se realiza el <strong>examen teórico para la licencia de conducir</strong> de 07:00 a 14:00 hs.
-            Pueden solicitar sus turnos comunicándose por WhatsApp o acercándose (Brandsen 181).
+
+            En la Dirección también se realiza el <strong>examen teórico para la licencia de conducir</strong> de 08:00 a 13:00 hs.
+            Pueden solicitar sus turnos por la <strong>App MiTresa</strong>.
 
            <br>
         </p>
@@ -212,7 +248,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-title">
-        <p>Programas y talleres</p>
+        <p>Programas, talleres y eventos</p>
         {{-- <p>Tres Arroyos</p> --}}
       </div>
 

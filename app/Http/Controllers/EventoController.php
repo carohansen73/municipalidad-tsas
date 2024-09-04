@@ -76,9 +76,9 @@ class EventoController extends AppBaseController
             $evento->save();
             Flash::success('Evento creado con éxito.');
 
-             return redirect(route('eventos.index'));
+            return redirect(route('eventos.index'));
         }else{
-            Flash::success('No se pudo cargar el Evento.');
+            Flash::error('No se pudo crear el evento.');
 
             return redirect(route('eventos.index'));
         }

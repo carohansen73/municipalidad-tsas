@@ -443,19 +443,36 @@
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-2">
-                        <div class="icon"><i class="fas fa-laptop-medical"></i></div>
-                        <h4><a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></h4>
-                        {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
+                        <div class="icon"><i class="fas fa-desktop"></i></div>
+                        <h4><a href="https://mitresa.gobdigital.com.ar/web/default">Web MiTresa</a></h4>
                     </div>
                     </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-4">
-                    <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
-                    <h4><a href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano">App MiTresa</a></h4>
-                    {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
+                    <div class="icon-box icon-4">
+                        <div class="icon"><i class="bi bi-arrow-down-circle-fill"></i></div>
+                        <h4><a href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano">App MiTresa</a></h4>
+                        {{-- <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>  --}}
+                    </div>
                 </div>
+
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-1">
+                        <div class="icon"><i class="fas fa-laptop-medical"></i></div>
+                        <h4><a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></h4>
+                    </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="icon-box icon-3">
+                        <div class="icon"><i class="bi bi-life-preserver"></i></div>
+                        <h4><a href="https://guardavidas.tresarroyos.gov.ar/login">Guardavidas</a></h4>
+                    </div>
+                </div>
+
+
+
                 {{-- {* /fila *} --}}
 
                 {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
@@ -474,13 +491,6 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box icon-4">
-                <div class="icon"><i class="bi bi-life-preserver"></i></div>
-                <h4><a href="">Guardavidas</a></h4>
-
-                </div>
-            </div>
 
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                 <div class="icon-box icon-2">
