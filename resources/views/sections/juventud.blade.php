@@ -243,145 +243,271 @@
 
 
 
-   <!-- ======= Portfolio Section ======= -->
- <section id="portfolio" class="portfolio">
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
     <div class="container" data-aos="fade-up">
 
-      <div class="section-title">
-        <p>Programas, talleres y eventos</p>
-        {{-- <p>Tres Arroyos</p> --}}
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">Todos</li>
-            <li data-filter=".filter-acomp">Acompañar Juventudes</li>
-            <li data-filter=".filter-inspiran">Jovenes que Inspiran</li>
-            <li data-filter=".filter-niniez">Decisión niñez</li>
-          </ul>
+        <div class="section-title">
+            <p>Programas, talleres y eventos</p>
+            {{-- <p>Tres Arroyos</p> --}}
         </div>
-      </div>
 
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes.jfif")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              {{-- <h4>Talleres</h4> --}}
-              {{-- <p>App</p> --}}
-              <div class="portfolio-links">
-                <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+                <li data-filter="*" class="filter-active">Todos</li>
+                <li data-filter=".filter-acomp">Acompañar Juventudes</li>
+                <li data-filter=".filter-inspiran">Jovenes que Inspiran</li>
+                <li data-filter=".filter-niniez">Decisión niñez</li>
+                <li data-filter=".filter-tj">Tresa joven</li>
+            </ul>
             </div>
-          </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
-            <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jfif")}}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                {{-- <h4>Muestras</h4> --}}
-                {{-- <p>App</p> --}}
-                <div class="portfolio-links">
-                  <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                  <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes.jfif")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    {{-- <h4>Talleres</h4> --}}
+                    {{-- <p>App</p> --}}
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jfif")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              {{-- <h4>Presentacion</h4> --}}
-              {{-- <p>Web</p> --}}
-              <div class="portfolio-links">
-                <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jfif")}}" class="img-fluid" alt="">
-
-            <div class="portfolio-info">
-              {{-- <h4>App 2</h4> --}}
-
-              <div class="portfolio-links">
-                <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/juventud/jovenes_inspiran.jfif")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              {{-- <h4>Web 2</h4>
-              <p>Web</p> --}}
-              <div class="portfolio-links">
-                <a href="{{asset("storage/secciones/juventud/jovenes_inspiran.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/juventud/jovenes_inspiran2.jfif")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="{{asset("storage/secciones/juventud/jovenes_inspiran2.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
-          <div class="portfolio-wrap">
-            <img src="{{asset("storage/secciones/juventud/jovenes_inspiran3.jfif")}}" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <div class="portfolio-links">
-                <a href="{{asset("storage/secciones/juventud/jovenes_inspiran3.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
-                <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-niniez">
-            <div class="portfolio-wrap">
-              <img src="{{asset("storage/secciones/juventud/decision_ninies.jfif")}}" class="img-fluid" alt="">
-
-              <div class="portfolio-info">
-                {{-- <h4>Card 2</h4>
-                <p>Card</p> --}}
-                <div class="portfolio-links">
-                  <a href="{{asset("storage/secciones/juventud/decision_ninies.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                  <a href="https://www.instagram.com/p/C8moG7fpKyb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jfif")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                    {{-- <h4>Muestras</h4> --}}
+                    {{-- <p>App</p> --}}
+                    <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                    <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
                 </div>
-              </div>
+                </div>
             </div>
-          </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jfif")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Presentacion</h4> --}}
+                        {{-- <p>Web</p> --}}
+                        <div class="portfolio-links">
+                            <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                            <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jfif")}}" class="img-fluid" alt="">
+
+                <div class="portfolio-info">
+                {{-- <h4>App 2</h4> --}}
+
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran.jfif")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran2.jfif")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran2.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                    <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
+            <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran3.jfif")}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran3.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-niniez">
+                <div class="portfolio-wrap">
+                <img src="{{asset("storage/secciones/juventud/decision_ninies.jfif")}}" class="img-fluid" alt="">
+
+                <div class="portfolio-info">
+                    {{-- <h4>Card 2</h4>
+                    <p>Card</p> --}}
+                    <div class="portfolio-links">
+                    <a href="{{asset("storage/secciones/juventud/decision_ninies.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                    <a href="https://www.instagram.com/p/C8moG7fpKyb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_1.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_1.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_2.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_2.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_3.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_3.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_4.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_4.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_5.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_5.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_6.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_6.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-      </div>
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_7.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_7.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_8.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_8.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tj">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/tj_9.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                        {{-- <h4>Muestras</h4> --}}
+                        {{-- <p>App</p> --}}
+                        <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/tj_9.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/direccionjuventudtsas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
 
     </div>
-  </section>
- <!-- End Portfolio Section -->
+</section>
+<!-- End Portfolio Section -->
 
 

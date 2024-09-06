@@ -5,15 +5,8 @@
 
 {{--NOTICIAS / PORTADA --}}
 <section id="noticias" class="team">
-    <div class="container mb-5" data-aos="fade-up">
-   <main id="main" class="margen-top-navbar">
-
-    {{-- <div id="noticias-portada" class="portada-foto text-md-left text-sm-center ">
-        <img class="foto-portada" src="assets/img/museos/mulazzi-portada3.jpg" alt="museo Mulazzi">
-         <!-- <div class="background-portada">   </div> -->
-
-        <h1>Portal de noticias</h1>
-    </div> --}}
+<div class="container mb-5" data-aos="fade-up">
+<main id="main" class="margen-top-navbar">
 
     <div class="section-title ">
         @if(isset($categoriaNombre))
@@ -39,170 +32,128 @@
     </div><!-- ======= fin borde colorido ======= -->
 
 
-
-
     <!-- ======= NOTICIAS CENTRAL ======= -->
-    {{-- <section id="noticias" class="team"> --}}
-        <div class="container mb-5" data-aos="fade-up">
-            {{-- @csrf --}}
+    <div class="container mb-5" data-aos="fade-up">
+        {{-- @csrf --}}
 
-            <div class="row">
-                <!-- ======= ASIDE NOTICIAS ======= -->
-                <aside class="col-md-9 aside-principal">
-                    <div class="row">
-                        @foreach($noticias as $noti)
+        <div class="row">
+            <!-- ======= ASIDE NOTICIAS ======= -->
+            <aside class="col-md-9 aside-principal">
+                <div class="row">
+                    @foreach($noticias as $noti)
+                    <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class=" member-img">
+                                @foreach($noti->imgs as $imag)
+                                    <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
+                                    @break
+                                @endforeach
+                            </div>
+                            <div class="member-info">
+                                <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
+                                <span> {{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
+                            </div>
 
-                        <div class="col-lg-6 col-md-6 d-flex align-items-stretch">
-                            <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                 <div class=" member-img">
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <div>
+                    {{ $noticias->links() }}
+                </div>
+            </aside>
 
+            <!-- ======= ASIDE LATERAL  FILTRO DE BUSQUEDA- CATEGORIAS - ULTIMAS NOTICIAS======= -->
+            <aside class="col-md-3 aside-lateral">
+                {{--  --}}
+                 <form class="container-fluid mt-3" action="/portal-de-noticias" method="GET">
+                   {{-- @csrf {{ method_field('GET') }} --}}
+                   <div class="search-input position-relative">
+                        {{-- <input class="form-control me-2 btn-search" type="search" placeholder="Buscar" aria-label="Search" > --}}
+                        <input type="search" name="search" class="form-control form-control-md ps-5" placeholder="Buscar">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="left: 10px;" class="position-absolute top-50 translate-middle-y search-icon" width="25" height="25" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                        </svg>
+                   </div>
+
+                </form>
+                <hr>
+
+                <div class="section-title">
+                    <p >Categorias</p>
+                </div>
+                    <ul>
+                        {{-- SE USABA ASI CON AJAX JS
+                                @foreach($categorias as $cat)
+                            <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
+                                <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton" id="categoria_{{$cat->id}}">
+                                    <div id="categoria_{{$cat->id}}">
+                                        <p id="categoria_{{$cat->id}}">
+                                            <p><i class="fas fa-tags"></i> <a href="/noticias-categoria/{{$cat->nombre}}">  {{$cat->nombre}}  </a></p>
+                                        </p>
+                                    </div>
+
+                                    <button class="desplegable-categoria"  id="categoria_{{$cat->id}}">
+                                        <span class="icon-closed"> <i class="fas fa-angle-right" id="categoria_{{$cat->id}}"></i></span>
+                                        <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
+                                    </button>
+                                </div>
+                            </li>
+                            <ul class="noticias-por-categoria{{$cat->id}} display-none">
+                            </ul>
+                        @endforeach --}}
+                        <li class="desplegable-categoria-2"  >
+                            <a href="/portal-de-noticias">
+                                <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
+                                    <div>
+                                        <p> Todas </p>
+                                    </div>
+                                        <i class="fas fa-angle-right" ></i>
+                                </div>
+                            </a>
+                        </li>
+
+                        {{-- ASI SIN AJAX JS--}}
+                        @foreach($categorias as $cat)
+                            <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
+                                <a href="/noticias-categoria/{{$cat->nombre}}">
+                                    <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
+                                        <div>
+                                            <p>  {{$cat->nombre}} </p>
+                                        </div>
+                                            <i class="fas fa-angle-right" ></i>
+                                    </div>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    <hr>
+
+                    @if(isset($ultimasNoticias))
+                        <div class="section-title mb-3 mt-5">
+                            <p style="font-size: 18px">Últimas Noticias</p>
+                        </div>
+                        @foreach($ultimasNoticias as $noti)
+                            <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
+                                <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="member-img">
                                         @foreach($noti->imgs as $imag)
                                             <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
                                             @break
                                         @endforeach
-
-                                        {{--<div class="social">
-                                        <a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i></a>
-                                        <a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i></a>
-                                        </div>--}}
-
-                                 </div>
-                                <div class="member-info">
-                                    <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
-                                    <span> {{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
+                                    </div>
+                                    <div class="member-info">
+                                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
+                                        <span>{{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
+                                    </div>
                                 </div>
-
                             </div>
-                        </div>
                         @endforeach
-                    </div>
-                </aside>
-
-
-                <!-- ======= ASIDE LATERAL CATEGORIAS ======= -->
-                <aside class="col-md-3 aside-lateral">
-                    <div class="section-title">
-                        <p >Categorias</p>
-                    </div>
-                        <ul>
-                            {{-- SE USABA ASI CON AJAX JS
-                                 @foreach($categorias as $cat)
-                                <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
-                                    <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton" id="categoria_{{$cat->id}}">
-                                        <div id="categoria_{{$cat->id}}">
-                                            <p id="categoria_{{$cat->id}}">
-                                                <p><i class="fas fa-tags"></i> <a href="/noticias-categoria/{{$cat->nombre}}">  {{$cat->nombre}}  </a></p>
-                                            </p>
-                                        </div>
-
-                                        <button class="desplegable-categoria"  id="categoria_{{$cat->id}}">
-                                            <span class="icon-closed"> <i class="fas fa-angle-right" id="categoria_{{$cat->id}}"></i></span>
-                                            <span class="icon-open display-none"><i class="fas fa-angle-down"></i></span>
-                                        </button>
-                                    </div>
-                                </li>
-                                <ul class="noticias-por-categoria{{$cat->id}} display-none">
-                                </ul>
-                            @endforeach --}}
-                            <li class="desplegable-categoria-2"  >
-                                <a href="/portal-de-noticias">
-                                    <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
-                                        <div>
-                                            <p> Todas </p>
-                                        </div>
-                                         <i class="fas fa-angle-right" ></i>
-                                    </div>
-                                </a>
-                            </li>
-
-                            {{-- ASI SIN AJAX JS--}}
-                            @foreach($categorias as $cat)
-                                <li class="desplegable-categoria-2"  id="categoria_{{$cat->id}}">
-                                    <a href="/noticias-categoria/{{$cat->nombre}}">
-                                        <div class="d-flex justify-content-between align-content-center desplegable-categoria-boton">
-                                            <div>
-                                                <p>  {{$cat->nombre}} </p>
-                                            </div>
-                                             <i class="fas fa-angle-right" ></i>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-
-                        </ul>
-
-                        @if(isset($ultimasNoticias))
-                            <div class="section-title mb-3 mt-5">
-                                <p style="font-size: 18px">Últimas Noticias</p>
-                            </div>
-                            @foreach($ultimasNoticias as $noti)
-
-                                <div class="col-lg-12 col-md-12 d-flex align-items-stretch">
-                                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                        <div class="member-img">
-                                            @foreach($noti->imgs as $imag)
-                                                <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
-                                                @break
-                                            @endforeach
-                                        </div>
-                                        <div class="member-info">
-                                            <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
-                                            <span>{{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        @endif
-
-
-
+                    @endif
                 </aside>
             </div>
-
-
-
-
-
-
-
-{{--
-            <div class="section-title">
-                <p style="color: #d63384">Museos</p>
-                <h2>Descubrí los museos del partido de Tres Arroyos</h2>
-            </div>
-
-            <div class="row">
-                @foreach($museos as $museo)
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member" data-aos="fade-up" data-aos-delay="100">
-                        <div class="member-img">
-                            <img src="assets/img/museos/{{$museo->portada}}" class="img-fluid" alt="">
-                            <div class="social">
-
-                            <a href="https://www.facebook.com/{{$museo->fb}}" target="_blank"><i class="bi bi-facebook"></i></a>
-                            <a href="https://www.instagram.com/{{$museo->ig}}" target="_blank"><i class="bi bi-instagram"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="member-info">
-                                <h4 style="color: #d63384">{{$museo->nombre}}</h4>
-
-                            Referente:   <span> @if($museo->referente) {{$museo->referente}} @else - @endif </span>
-                            Telefono/wsp:<span>   {{$museo->wsp}}</span>
-                            Email:<span> @if($museo->email) {{$museo->email}} @else - @endif</span>
-                            Dirección:<span> {{$museo->direccion}}</span>
-
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div><!-- End container --> --}}
     </section>
-
-
-
 
 
 <!-- End Team Section -->

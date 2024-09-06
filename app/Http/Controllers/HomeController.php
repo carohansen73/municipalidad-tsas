@@ -432,9 +432,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showAllNews() /*paginar? */
+    public function showAllNews(Request $request)
     {
-        $noticias = Noticia::latest('fecha')->latest('id')->with('imgs')->with('categorias')->get();
+        if(isset($request) && !empty($request->search)){
+            $busqueda = $request->search;
+            $noticias = Noticia::where('titulo', 'LIKE', '%'.$busqueda.'%')->latest('fecha')->latest('id')->with('imgs')->with('categorias')->paginate(10);
+        }else{
+            $noticias = Noticia::latest('fecha')->latest('id')->with('imgs')->with('categorias')->paginate(10);
+        }
+
+
         $categorias = Categoria::all();
 
         return view('sections.noticias', compact('noticias', 'categorias'));
@@ -485,7 +492,7 @@ class HomeController extends Controller
             ->pluck('noticia_id'))
             ->latest('fecha')->latest('id')
             ->with('imgs')
-            ->get();
+            ->paginate(10);
 
         $categorias = Categoria::all();
 

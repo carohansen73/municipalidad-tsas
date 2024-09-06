@@ -146,6 +146,7 @@
 
                                 <div class="noticias-relacionadas">
                                     <div class="row">
+                                        <hr>
                                         <div class="section-title mb-3">
                                             <p style="font-size: 18px">Noticias relacionadas</p>
                                         </div>
@@ -199,6 +200,7 @@
                                 </div>
                             </div>
                         @endforeach
+                        <hr>
                         <div class="section-title mb-3 mt-3">
                             <p style="font-size: 18px">Categorias</p>
                         </div>
