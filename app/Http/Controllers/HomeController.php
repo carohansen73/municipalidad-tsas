@@ -29,6 +29,9 @@ use App\Models\AvisoOficial;
 use App\Models\BoletinOficial;
 use App\Models\ResidenciaAdultos;
 use App\Models\CuidadorDomiciliario;
+use App\Models\CiudadUniversitaria;
+use App\Models\CiudadUniversitariaDetalles;
+use App\Models\CiudadUniversitariaFotos;
 
 use App\Models\Delegacion;
 use App\Http\Resources\OrganigramaResource;
@@ -108,7 +111,7 @@ class HomeController extends Controller
 
 
     /**
-     * Secciones que unicamente continenen informacion - fotos y eventos
+     * Secciones que unicamente continenen informacion - fotos y eventos y comparten template
      *
      * @return \Illuminate\Http\Response
      */
@@ -138,6 +141,17 @@ class HomeController extends Controller
 
 
 
+
+
+    /**
+     * Informacion de boleta digital y registro al portal de autogestion para despapelizacion
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showInfoBoletaDigital(){
+
+        return view('sections.info-boleta-digital');
+    }
 
 
     /*****************------------------------------  MUNICIPIO / TSAS  --------------------------*****************/
@@ -252,6 +266,21 @@ class HomeController extends Controller
         $textos = SeccionInformacion::where('seccion_id', Seccion::where('link', 'ente-vial')->pluck('id'))->with('galeria')->get();
         return view('sections.juventud', compact('portada', 'textos'));
     }
+
+    /**
+     * Info de ciudades con universidades de la zona - juventud
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function showCiudadesUniversitarias()
+    {
+        $ciudades = CiudadUniversitaria::with('detalles')->with('fotos')->get();
+
+
+        return view('sections.ciudades-universitarias', compact('ciudades'));
+    }
+
+
 
 
 
@@ -623,9 +652,11 @@ class HomeController extends Controller
         if($tipo == 'avisos'){
             $this->showAvisosOficiales($tipo);
 
+
         }else{
             //obtengo los anios y meses para el filtro
             $filtroDeBusqueda['anios'] = BoletinOficial::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+
             $filtroDeBusqueda['meses'] = BoletinOficial::distinct()->orderBy('mes', 'desc')->pluck('mes')->all();
 
             $anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
@@ -656,15 +687,17 @@ class HomeController extends Controller
         //anio a buscar segun si fue seleccionado un anio o el ultimo
         if (isset($_POST['anio']) && (!empty($_POST['anio']))){
 			$anio=$_POST['anio']; // si definio anio a buscar
+
 		}else{
 			$anio=$filtroDeBusqueda['anios'][0]; // seria el anio actual
+
 		}
 
         //mes a buscar segun si fue seleccionado un mes o todos (si selecciona 0 o no selecciona mes)
         if (isset($_POST['mes']) && (!empty($_POST['mes']) && $_POST['mes']>0) ){
 			$mes=$_POST['mes']; // si definio mes a buscar
 
-              // var_dump($anio, $mes);die;
+            // var_dump($anio, $mes);die;
             $filtroDeBusqueda['mes'] = $mes;
             $filtroDeBusqueda['anio'] = $anio;
 

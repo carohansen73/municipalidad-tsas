@@ -23,8 +23,6 @@ Route::get('/', function () {
 });
 Auth::routes(['register' => false, 'reset'=> false]);
 
-Auth::routes(['register' => false, 'reset'=> false]);
-
 
 // Route::resource('tadi', 'TadiController');
 // Route::get('/tadi', 'TadiController@index')->name('tadi');
@@ -43,7 +41,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/cultura', 'showMenuSection');
     Route::get('/turismo', 'showMenuSection');
     Route::get('/deportes', 'showMenuSection');
-/*SECCIONES UNITARIAS */
+    /*SECCIONES UNITARIAS */
+    Route::get('/info-boleta', 'showInfoBoletaDigital');
+
     Route::get('/seccion/{nombre}', 'showSectionPlana');
 
     Route::get('/guia-de-tramites', 'showGuiaTramites');
@@ -63,6 +63,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/delegaciones', 'showDelegaciones');
     Route::get('/ente-vial', 'showEnteVial');
     Route::get('/direccion-de-juventud', 'showJuventud');
+    Route::get('/tresa-estudia', 'showCiudadesUniversitarias');
 
 
     /* ATENCION AL VECINO */
@@ -89,7 +90,9 @@ Route::controller(HomeController::class)->group(function () {
     Route::post('/transparencia-fiscal-filtro', 'showTransparenciaFiscal');
     Route::get('/boletin-oficial', 'showBoletinOficial');
     Route::get('/boletin-oficial/{tipo}', 'showBusquedaBoletinOficial');
+    Route::get('/filtro-boletin-oficial/{tipo?}', 'showBoletinOficial');
     Route::post('/filtro-boletin-oficial/{tipo}', 'showBoletinOficialItem');
+
     Route::get('/avisos-oficiales', 'showAvisosOficiales');
 
     Route::get('/adultos-mayores', 'showAdultosMayores');
