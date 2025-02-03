@@ -73,6 +73,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/cce', 'showCCE');
     Route::get('/museos', 'showMuseums');
     Route::get('/fiesta-del-trigo', 'showFiestaDelTrigo');
+    Route::get('/56-fiesta-del-trigo', 'show56FiestaDelTrigo');
     Route::get('/colectividades', 'showColectividades');
     Route::get('/bibliotecas', 'showBibliotecas');
 

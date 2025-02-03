@@ -337,6 +337,92 @@ class HomeController extends Controller
         return view('cultura.fdt', compact('textos', 'archivos', 'seccion', 'portada'));
     }
 
+
+     /**
+     * Seccion Fiesta del Trigo
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show56FiestaDelTrigo(){
+
+        $detalles = collect([
+            (object) ['id' => 1, 'titulo' => 'Miercoles 5 de marzo', 'descripcion' => '<ul><li><i class="ri-check-double-line"></i> 19:00hs. Rurales de la Danza </li> <li><i class="ri-check-double-line"></i> 20:00hs Colectividades extranjeras de Ts.As. </li> <li><i class="ri-check-double-line"></i> 21:00hs La Factos</li><li><i class="ri-check-double-line"></i> 22:00hs Javier Calamaro </li><ul>'],
+            (object) ['id' => 2, 'titulo' => 'Jueves 6 de marzo', 'descripcion' => '<ul><li> 19:00hs. Rurales de la Danza </li> <li>20:00hs Colectividades extranjeras de Ts.As. </li> <li> 21:00hs La Factos</li><li> 22:00hs Javier Calamaro </li><ul>'],
+            (object) ['id' => 3, 'titulo' => 'Viernes 7 de marzo', 'descripcion' => 'A partir del miércoles 6 a las 20:45hs, el escenario Juan Pesalaccia nos espera para poder disfrutar de los cuerpos de baile y bandas locales que, junto a la actuación de artistas nacionales harán de esta 55º Fiesta Provincial del Trigo una verdadera fiesta. Deslizá y mirá la grilla oficial de artistas que se harán presentes. <br><br> Recordamos que el acceso para el día miércoles 6 y jueves 7 es totalmente 𝗴𝗿𝗮𝘁𝘂𝗶𝘁𝗼. Y para el viernes 8, sábado 9 y domingo 10, siguen a la venta las entradas en sus distintos puntos. De manera virtual (tresarroyos.boleteriadigital.com.ar) y de manera presencial en Av. Ituzaingó 320 de lunes a viernes de 9 a 13hs.
+<br>'],
+            (object) ['id' => 4, 'titulo' => 'Sabado 8 de marzo', 'descripcion' => '<strong> Descripción  </strong> 4'],
+            (object) ['id' => 5, 'titulo' => 'Domingo 9 de marzo', 'descripcion' => 'Descripción 1'],
+
+        ]);
+
+        $licitaciones = collect([
+
+            (object) ['id' => 4, 'titulo' => 'licitaciones', 'descripcion' => 'El coordinador de la Fiesta Provincial del Trigo, Miguel Lopez de Ipiña, ratificó las licitaciones correspondientes al Patio Cervecero y Patio de Tierra, carros gastronómicos, fogones y kioscos. <br><br>
+
+
+                <ul>
+                    <li>
+                       <i class="ri-check-double-line"></i> <strong> Cervecros locales </strong> <br>
+                        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
+                        Pliego:  $47.000 <br>
+                        Canon: $330.000
+                    </li>
+                    <li>
+                      <i class="ri-check-double-line"></i>  <strong> Carros gastronómicos </strong> <br>
+                        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
+                        Pliego:  $47.000 <br>
+                        Canon: $425.000
+                    </li>
+                    <li>
+                      <i class="ri-check-double-line"></i>  <strong> Carros cerveceros </strong> <br>
+                        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
+                        Pliego:  $47.000 <br>
+                        Canon: $425.000
+                    </li>
+                    <li>
+                       <i class="ri-check-double-line"></i> <strong> Kioscos </strong> <br>
+                        En patio cervecero y Patio de Tierra. Jueves 22 de febrero - 20hs. <br>
+                        Pliego:  $36.000 <br>
+                        Canon: $330.000
+                    </li>
+                <ul>
+                  Los pliegos se encuentran en  Ituzaingó 210 de 9 a 13 horas y de 17 a 20 horas. Consultas por Whatsapp al 2983 387153, al 2983-431472 y a ftrigo@tresarroyos.gov.ar <br><br>']
+
+        ]);
+
+        $inscripciones = collect([
+            (object) ['id' => 1, 'titulo' => 'ABIERTA LA INSCRIPCIÓN PARA EL SALÓN "MARIQUITA SAND" ', 'descripcion' => 'La Dirección Municipal de Cultura y Educación de la Municipalidad de Tres Arroyos informa que se encuentran abiertas las inscripciones para participar del Salón Provincial de Artes Visuales en Pequeño Formato “Mariquita Sand”.<br><br>
+
+                    🖼️El tema es: “Campo Nuestro” y la categoría participante es Pintura. <br>
+
+                    Las obras se expondrán en el Centro Cultural La Estación en el marco de la 53º Fiesta Provincial del Trigo🌾<br><br>
+
+                    🔹Para participar deberán acercar su material a la Dir. de Cultura (Ituzaingó 320) de lunes a viernes de 7 a 14 horas. Informes al ☎️ 02983-425513.<br><br>
+
+                    ⚠️Fecha límite de inscripción: 28 de Febrero.'],
+            (object) ['id' => 2, 'titulo' => 'CONVOCATORIA ABIERTA PARA LOS ARTESANOS', 'descripcion' => 'Se encuentra abierta la convocatoria a todos aquellos artesanos locales, regionales y nacionales que deseen participar de la 53° Fiesta Provincial del Trigo a desarrollarse del 9 al 13 de marzo.
+
+                    ‼️Los/as interesados/as, deberán tener en cuenta los siguientes requisitos: <br>
+                    🔹En caso de vender alimentos, presentar fotocopia del Carnet de Manipulación de Alimentos y un producto para su fiscalización. Si no posee dicho carnet, comunicarse con las instituciones educativas correspondientes que dictan la capacitación. En el caso del Distrito de Tres Arroyos, ingresar al sitio web de CRESTA (http://www.cresta.edu.ar/extension/manipuladores/inscripcion-manipuladores/) <br>
+                    🔹No se permite la reventa. <br>
+                    🔹Al momento de inscribirse, deberán acercar un producto para fiscalizar; en el caso de los artesanos regionales o nacionales, deberán enviar fotos y videos del mismo al correo electrónico: cultura@tresarroyos.gov.ar o a través de WhatsApp: 2983 – 445968.<br>
+                    <br>
+                    ⚠️Inscripciones: personalmente, en la sede de la Dirección de Cultura y Educación, Av. Ituzaingó 320 de lunes a viernes de 07 a 14 horas o enviar un mail al correo electrónico: cultura@tresarroyos.gov.ar. <br> <br>
+
+                    ➡️Para consultas e información, comunicarse telefónicamente al tel. (02983) 42-5513; enviar un WhatsApp al tel. 2983 – 445968 o a través de mensaje directo en nuestras redes. <br>'],
+            (object) ['id' => 3, 'titulo' => 'CONVOCATORIA ABIERTA PARA ARTISTAS SOLISTAS/BANDAS', 'descripcion' => 'Hasta el día viernes 25/2, tenes tiempo de anotarte para formar parte de los shows de la 53° edición de la Fiesta Provincial del Trigo.
+
+                    ⏩Si sos un artista solista/banda, o formas parte de un cuerpo de danza, podés acercar tu información a la Dirección de Cultura y Educación (Av. Ituzaingó 320), o comunícate a través de sus redes sociales para obtener más información. @cultura.tresarroyos'],
+            (object) ['id' => 5, 'titulo' => 'CONVOCATORIA PARA FORMAR PARTE DEL DESFILE', 'descripcion' => 'Para formar parte del histórico desfile, comunícate con la secretaría de la Fiesta del Trigo (Av. Ituzaingó 210), de lunes a viernes en los horarios de 8 a 13hs, o de 17 a 20hs. O comunicandote al 432615.'],
+
+        ]);
+
+        return view('fdt.fdt', compact('detalles', 'licitaciones', 'inscripciones'));
+    }
+
+
+
+
    /**
      * Muestra la seccion de colectividades
      *

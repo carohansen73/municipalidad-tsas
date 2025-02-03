@@ -3512,6 +3512,10 @@ EDA72B
   border-radius: 4px;
 }
 
+.container-border .row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
 /*--------------------------------------------------------------
 #  FORM REGISTRO TADI
 --------------------------------------------------------------*/

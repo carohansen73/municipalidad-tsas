@@ -79,10 +79,13 @@
      *add/remove class del menu para desktop/mobile - (ver que lo haga cuando cambio el tamaño de la pantalla,  xq1 solo lo hace cuando cargo la pantalla de un tamaño u otro )
     */
     let navbar1 = select('#navbar')
-    if(window.innerWidth > 991) {
-        console.log(window.innerWidth)
-        navbar1.classList.add('navbar-desktop')
+    if(navbar1){
+        if(window.innerWidth > 991) {
+            console.log(window.innerWidth)
+            navbar1.classList.add('navbar-desktop')
+        }
     }
+
 
 
     /**
