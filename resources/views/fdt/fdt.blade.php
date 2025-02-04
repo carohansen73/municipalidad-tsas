@@ -11,8 +11,6 @@
 
     <div id="fdt">
         <div class="portada-foto text-md-left text-sm-center ">
-            {{-- <div class="background-portada">   </div> --}}
-            <p> </p>
         </div>
     </div>
 
@@ -121,7 +119,7 @@
 
 
     <!-- ======= GRILLA  ======= -->
-    <section id="fdt-grilla" class="about">
+    <section id="fdt-grilla" class="impact">
         <div class="container" data-aos="fade-up">
 
             <div class=" text-center">
@@ -157,32 +155,7 @@
 
 
 
- <!-- ======= ENTRADAS  ======= -->
- <section id="fdt-tickets" class="cta">
-    <div class="container" data-aos="zoom-in">
-        <div class="text-center">
-            <div class=" text-center">
-                <div class="bg-brushstroke bg-brushstroke-gr">
-                    <p>Tickets</p>
-                </div>
-            </div>
-            {{-- <h3>Tickets</h3> --}}
-            <p> Ahora podes adquirir lso tickets para presenciar los shows de tus artistas favoritos de manera online o presencial.</p>
-            <p> Para adquirirlas de manera presencial presentate en el centro cultural "La Estación", en Ituzaingó 210, de 9 a 13 horas y de 17 a 20 horas. <br>
-                Consultas por Whatsapp al 2983 387153, al 2983-431472 y a ftrigo@tresarroyos.gov.ar</p>
-            <div class="row d-flex justify-content-center">
-                <div class="col-auto">
-                <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Tickets</a>
-                </div>
-                {{-- <div class="col-auto">
-                <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Descargá la App </a>
-                </div> --}}
 
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ======= FIN ENTRADAS  ======= -->
 
 
 
@@ -216,7 +189,7 @@
 
             </div>
 
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center mt-2">
                 <div class="col-auto">
                 <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
                 </div>
@@ -240,15 +213,43 @@
     <!-- End Licitaciones -->
 
 
+     <!-- ======= ENTRADAS  ======= -->
+ <section id="fdt-tickets" class="impact">
+    <div class="container" data-aos="zoom-in">
+        <div class="text-center">
+            <div class=" text-center">
+                <div class="bg-brushstroke bg-brushstroke-yl">
+                    <p>Tickets</p>
+                </div>
+            </div>
+            {{-- <h3>Tickets</h3> --}}
+            <p> Ahora podes adquirir lso tickets para presenciar los shows de tus artistas favoritos de manera online o presencial.</p>
+            <p> Para adquirirlas de manera presencial presentate en el centro cultural "La Estación", en Ituzaingó 210, de 9 a 13 horas y de 17 a 20 horas. <br>
+                Consultas por Whatsapp al 2983 387153, al 2983-431472 y a ftrigo@tresarroyos.gov.ar</p>
+            <div class="row d-flex justify-content-center">
+                <div class="col-auto">
+                <a class="yl-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Tickets</a>
+                </div>
+                {{-- <div class="col-auto">
+                <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Descargá la App </a>
+                </div> --}}
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======= FIN ENTRADAS  ======= -->
+
+
 
 
     <!-- ======= INSCRIPCIONES  ======= -->
-    <section id="fdt-inscripciones" class="about">
+    <section id="fdt-inscripciones" class="impact">
         <div class="container" data-aos="fade-up">
 
             <div class=" text-center">
                 <div class="bg-brushstroke bg-brushstroke-yl">
-                    <p>Inscripciones</p>
+                    <p>Convocatorias</p>
                 </div>
             </div>
 

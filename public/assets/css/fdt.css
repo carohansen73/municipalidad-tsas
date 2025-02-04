@@ -34,26 +34,56 @@
     max-height: 40px;
 }
 
+#fdt-navbar .container-fluid{
+    padding-right: 24px;
+    padding-left: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    #fdt-navbar .logo-fdt img {
+        max-height: 50px;
+    }
+
+    #fdt-navbar .logo-fdt-muni  img {
+        max-height: 30px;
+    }
+
+    #fdt-navbar .logo-fdt{
+        margin-right: 0px;
+    }
+
+    #fdt-navbar .container-fluid{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
 
 
 /* BACKGROUNDS */
-
+/*  BANNER - PORTADA  */
 #fdt .portada-foto{
-   background-image: url("/storage/fdt/banner.png");
-   /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/municipio.jpg") fixed center center; */
+   background-image: url("/storage/fdt/banner.png")  ;
    height: 420px;
    background-size: cover;
-   /* background-position: center; */
+   background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+    #fdt .portada-foto{
+        height: 220px;
+    }
 }
 
 
-#fdt-grilla, #fdt-inscripciones{
+#fiesta-del-trigo .impact{
     background-image: url("/storage/fdt/fondos/fondo-recorte1.png");
     background-size: cover;
+    color: #FFF;
     /* background-color: #3a655c; */
 }
 
- #fiesta-del-trigo .bg-brushstroke-yl{
+/* TITULOS */
+#fiesta-del-trigo .bg-brushstroke-yl{
     display: inline-block;
     background-image: url("/storage/fdt/fondos/b1.png");
     background-repeat: no-repeat;
@@ -153,7 +183,8 @@
 
 /* ESTILOS BTNS */
 
-#fiesta-del-trigo .yl-btn  {
+#fiesta-del-trigo .yl-btn,
+#fdt-navbar .yl-btn{
     font-family: "Raleway", sans-serif;
     font-weight: 600;
     font-size: 16px;
@@ -162,16 +193,15 @@
     padding: 8px 28px;
     border-radius: 4px;
     transition: 0.5s;
-    margin-top: 10px;
+    margin: 10px;
     background: #cd9e4d;
     border:  2px solid #cd9e4d;
     color: #fff;
 }
 
 #fiesta-del-trigo .yl-btn:hover {
-    border: 2px solid #e2b768;
-    background: #e2b768;
-
+    border: 2px solid #ebcc93;
+    background: #ebcc93;
 }
 
 #fiesta-del-trigo .gr-btn {
@@ -194,14 +224,14 @@
     background: #52867b;
 }
 
-.fdt-line-up #portfolio-flters li:hover,
-.fdt-line-up #portfolio-flters li.filter-active {
+#fdt-line-up #portfolio-flters li:hover,
+#fdt-line-up #portfolio-flters li.filter-active {
   color: #FFF;
   background: #cd9e4d;
 }
 
 /* ICONOS */
 
-#fiesta-del-trigo .about .content ul i {
+#fiesta-del-trigo .impact .content ul i {
     color: #cd9e4d;
 }
