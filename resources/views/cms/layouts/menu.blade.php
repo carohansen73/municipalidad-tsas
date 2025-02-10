@@ -65,6 +65,34 @@
     </li>
 @endcan
 
+
+@can('lineUps.index')
+<li class="nav-item">
+    <a href="{{ route('lineUps.index') }}" class="nav-link {{ Request::is('lineUps*') ? 'active' : '' }}">
+        <p>Line Up</p>
+    </a>
+</li>
+@endcan
+
+@can('grillas.index')
+<li class="nav-item">
+    <a href="{{ route('grillas.index') }}"
+       class="nav-link {{ Request::is('grillas*') ? 'active' : '' }}">
+        <p>Grilla</p>
+    </a>
+</li>
+@endcan
+
+@can('convocatorias.index')
+<li class="nav-item">
+    <a href="{{ route('convocatorias.index') }}"
+       class="nav-link {{ Request::is('convocatorias*') ? 'active' : '' }}">
+        <p>Convocatorias</p>
+    </a>
+</li>
+@endcan
+
+
 @can('user.index')
     <li class="nav-item">
         <a href="{{ route('user.index') }}"  class="nav-link {{ Request::is('usuaios*') ? 'active' : '' }}">

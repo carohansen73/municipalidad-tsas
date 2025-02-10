@@ -110,8 +110,21 @@
     color: #fff;
 }
 
-#fdt-licitaciones .bg-cinta, #fdt-inscripciones .bg-cinta{
+#fdt-licitaciones .bg-cinta, #fdt-convocatorias .bg-cinta{
   margin-bottom: 40px;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #fiesta-del-trigo .bg-brushstroke p{
+        font-size: 24px;
+    }
+
+    #fiesta-del-trigo .impact .bg-brushstroke{
+        margin-top: 20px;
+
+    }
 }
 
 /*  modifico estilo CTA */
@@ -172,7 +185,7 @@
 /* Cuerpo del acordeón */
 #fiesta-del-trigo .accordion-body {
     background-color: transparent !important;
-    color: white !important;
+    color: white;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -203,6 +216,23 @@
     border: 2px solid #ebcc93;
     background: #ebcc93;
 }
+
+#fiesta-del-trigo .yl-tr-btn,
+#fdt-navbar .yl-tr-btn{
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin: 10px;
+
+    border:  2px solid #cd9e4d;
+    color: #cd9e4d;
+}
+
 
 #fiesta-del-trigo .gr-btn {
     font-family: "Raleway", sans-serif;
@@ -235,3 +265,43 @@
 #fiesta-del-trigo .impact .content ul i {
     color: #cd9e4d;
 }
+
+#fiesta-del-trigo .btn-wsp,
+#fiesta-del-trigo .btn-email{
+    margin: 4px;
+
+}
+
+#fiesta-del-trigo .btn-wsp .detail,
+#fiesta-del-trigo .btn-email .detail{
+    color:#f2f2f2;
+    text-decoration: underline #f2f2f2;
+    font-size: 14px;
+}
+
+
+#fiesta-del-trigo .btn-wsp i{
+    background-color: #cd9e4d;
+    border-radius: 50%;
+    padding: 6px;
+}
+
+#fiesta-del-trigo .btn-email i{
+    background-color: #cd9e4d;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+#fiesta-del-trigo .btn-wsp:hover i,
+#fiesta-del-trigo .btn-email:hover i{
+   background-color:  #ebcc93;
+}
+
+#fiesta-del-trigo .btn-wsp:hover .detail,
+#fiesta-del-trigo .btn-email:hover .detail {
+    color:#ffffff;
+    text-decoration: underline #ffffff;
+}
+/* PRUEBA NUEVO CONVOCATORIAS */
+
+

@@ -32,6 +32,9 @@ use App\Models\CuidadorDomiciliario;
 use App\Models\CiudadUniversitaria;
 use App\Models\CiudadUniversitariaDetalles;
 use App\Models\CiudadUniversitariaFotos;
+use App\Models\LineUp;
+use App\Models\Grilla;
+use App\Models\Convocatorias;
 
 use App\Models\Delegacion;
 use App\Http\Resources\OrganigramaResource;
@@ -345,15 +348,16 @@ class HomeController extends Controller
      */
     public function show56FiestaDelTrigo(){
 
-        $detalles = collect([
-            (object) ['id' => 1, 'titulo' => 'Miercoles 5 de marzo', 'descripcion' => '<ul><li><i class="ri-check-double-line"></i> 19:00hs. Rurales de la Danza </li> <li><i class="ri-check-double-line"></i> 20:00hs Colectividades extranjeras de Ts.As. </li> <li><i class="ri-check-double-line"></i> 21:00hs La Factos</li><li><i class="ri-check-double-line"></i> 22:00hs Javier Calamaro </li><ul>'],
-            (object) ['id' => 2, 'titulo' => 'Jueves 6 de marzo', 'descripcion' => '<ul><li> 19:00hs. Rurales de la Danza </li> <li>20:00hs Colectividades extranjeras de Ts.As. </li> <li> 21:00hs La Factos</li><li> 22:00hs Javier Calamaro </li><ul>'],
-            (object) ['id' => 3, 'titulo' => 'Viernes 7 de marzo', 'descripcion' => 'A partir del miércoles 6 a las 20:45hs, el escenario Juan Pesalaccia nos espera para poder disfrutar de los cuerpos de baile y bandas locales que, junto a la actuación de artistas nacionales harán de esta 55º Fiesta Provincial del Trigo una verdadera fiesta. Deslizá y mirá la grilla oficial de artistas que se harán presentes. <br><br> Recordamos que el acceso para el día miércoles 6 y jueves 7 es totalmente 𝗴𝗿𝗮𝘁𝘂𝗶𝘁𝗼. Y para el viernes 8, sábado 9 y domingo 10, siguen a la venta las entradas en sus distintos puntos. De manera virtual (tresarroyos.boleteriadigital.com.ar) y de manera presencial en Av. Ituzaingó 320 de lunes a viernes de 9 a 13hs.
-<br>'],
-            (object) ['id' => 4, 'titulo' => 'Sabado 8 de marzo', 'descripcion' => '<strong> Descripción  </strong> 4'],
-            (object) ['id' => 5, 'titulo' => 'Domingo 9 de marzo', 'descripcion' => 'Descripción 1'],
+        $lineUp = LineUp::orderBy('fecha')->get()->map(function ($item) {
+            $item->fecha = $item->fecha->format('Y-m-d'); // Formatea solo la fecha
+            return $item;
+        });
+        $fechas = $lineUp->pluck('fecha')->unique()->sort();
 
-        ]);
+        $convocatorias = Convocatorias::all();
+
+
+
 
         $licitaciones = collect([
 
@@ -410,14 +414,12 @@ class HomeController extends Controller
                     ⚠️Inscripciones: personalmente, en la sede de la Dirección de Cultura y Educación, Av. Ituzaingó 320 de lunes a viernes de 07 a 14 horas o enviar un mail al correo electrónico: cultura@tresarroyos.gov.ar. <br> <br>
 
                     ➡️Para consultas e información, comunicarse telefónicamente al tel. (02983) 42-5513; enviar un WhatsApp al tel. 2983 – 445968 o a través de mensaje directo en nuestras redes. <br>'],
-            (object) ['id' => 3, 'titulo' => 'CONVOCATORIA ABIERTA PARA ARTISTAS SOLISTAS/BANDAS', 'descripcion' => 'Hasta el día viernes 25/2, tenes tiempo de anotarte para formar parte de los shows de la 53° edición de la Fiesta Provincial del Trigo.
-
-                    ⏩Si sos un artista solista/banda, o formas parte de un cuerpo de danza, podés acercar tu información a la Dirección de Cultura y Educación (Av. Ituzaingó 320), o comunícate a través de sus redes sociales para obtener más información. @cultura.tresarroyos'],
+            (object) ['id' => 3, 'titulo' => 'Convocatoria para puestos de venta (vendedores ambulantes y reventa)', 'descripcion' => 'Tel.: 2983-432615. <br><br> De lunes a viernes de 8 a 13 y de 16 a 20h.'],
             (object) ['id' => 5, 'titulo' => 'CONVOCATORIA PARA FORMAR PARTE DEL DESFILE', 'descripcion' => 'Para formar parte del histórico desfile, comunícate con la secretaría de la Fiesta del Trigo (Av. Ituzaingó 210), de lunes a viernes en los horarios de 8 a 13hs, o de 17 a 20hs. O comunicandote al 432615.'],
 
         ]);
 
-        return view('fdt.fdt', compact('detalles', 'licitaciones', 'inscripciones'));
+        return view('fdt.fdt', compact('lineUp', 'fechas', 'convocatorias',  'licitaciones', 'inscripciones'));
     }
 
 

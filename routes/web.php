@@ -154,6 +154,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacion.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
     Route::resource('user', App\Http\Controllers\UserController::class);
+    /* Fiesta del Trigo */
+    Route::resource('lineUps', App\Http\Controllers\LineUpController::class);
+    Route::resource('grillas', App\Http\Controllers\GrillaController::class);
 
 });
 
@@ -175,3 +178,9 @@ Route::get('/route-clear', function() {
 
 
 Route::resource('rols', App\Http\Controllers\RolController::class);
+
+
+
+
+
+Route::resource('convocatorias', App\Http\Controllers\ConvocatoriasController::class);

@@ -23,6 +23,7 @@ class FileManagement
 
         // Generar un nombre único para la imagen
         $path ="/public/".$dir;
+
         $name = uniqid() . '.' . $file->getClientOriginalExtension();
         // Guardar la imagen en una ruta determinada
         //$image->save(storage_path('public\noticia_img\ ' . $path));
