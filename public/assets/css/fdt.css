@@ -62,11 +62,18 @@
 /* BACKGROUNDS */
 /*  BANNER - PORTADA  */
 #fdt .portada-foto{
-   background-image: url("/storage/fdt/banner.png")  ;
+   background-image: url("/storage/fdt/banner.jpg")  ;
    height: 420px;
    background-size: cover;
    background-position: center;
 }
+
+@media screen and (min-width: 1400px) {
+    #fdt .portada-foto{
+        height: 540px;
+    }
+}
+
 
 @media screen and (max-width: 768px) {
     #fdt .portada-foto{
@@ -303,5 +310,6 @@
     text-decoration: underline #ffffff;
 }
 /* PRUEBA NUEVO CONVOCATORIAS */
+
 
 

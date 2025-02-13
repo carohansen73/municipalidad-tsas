@@ -359,38 +359,40 @@ class HomeController extends Controller
 
 
 
+
+
         $licitaciones = collect([
 
-            (object) ['id' => 4, 'titulo' => 'licitaciones', 'descripcion' => 'El coordinador de la Fiesta Provincial del Trigo, Miguel Lopez de Ipiña, ratificó las licitaciones correspondientes al Patio Cervecero y Patio de Tierra, carros gastronómicos, fogones y kioscos. <br><br>
+            (object) ['id' => 4, 'titulo' => 'licitaciones', 'descripcion' => '<u>Valor Pliegos de Bases y Condiciones: </u><br>
 
 
                 <ul>
                     <li>
-                       <i class="ri-check-double-line"></i> <strong> Cervecros locales </strong> <br>
-                        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
-                        Pliego:  $47.000 <br>
-                        Canon: $330.000
+                       <i class="ri-check-double-line"></i> <strong> Fogones  </strong> <br>
+                       $ 216.000.-
                     </li>
                     <li>
                       <i class="ri-check-double-line"></i>  <strong> Carros gastronómicos </strong> <br>
-                        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
-                        Pliego:  $47.000 <br>
-                        Canon: $425.000
+                       $ 108.000.-
                     </li>
                     <li>
-                      <i class="ri-check-double-line"></i>  <strong> Carros cerveceros </strong> <br>
-                        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
-                        Pliego:  $47.000 <br>
-                        Canon: $425.000
+                      <i class="ri-check-double-line"></i>  <strong> Puestos cerveceros </strong> <br>
+                       $ 108.000.-
                     </li>
                     <li>
-                       <i class="ri-check-double-line"></i> <strong> Kioscos </strong> <br>
-                        En patio cervecero y Patio de Tierra. Jueves 22 de febrero - 20hs. <br>
-                        Pliego:  $36.000 <br>
-                        Canon: $330.000
+                       <i class="ri-check-double-line"></i> <strong> Kioscos  </strong> <br>
+                       $ 83.000.-
                     </li>
-                <ul>
-                  Los pliegos se encuentran en  Ituzaingó 210 de 9 a 13 horas y de 17 a 20 horas. Consultas por Whatsapp al 2983 387153, al 2983-431472 y a ftrigo@tresarroyos.gov.ar <br><br>']
+                      <li>
+                       <i class="ri-check-double-line"></i> <strong> Carros ferneteros   </strong> <br>
+                       $ 108.100.-
+                    </li>
+                </ul>
+                 <u>Venta de Pliegos de Bases y Condiciones: </u> <br>
+                 Desde de el <strong> 11 al 18 de febrero </strong> de 2025 (en Ituzaingó 320 C.C.E.) <br><br>
+                <u> Apertura de sobres: </u> <br>
+                 <strong> Miércoles 19 de febrero 10:00 Hs.</strong> (en Ituzaingó 320 C.C.E.) <br><br>
+                 Para consultas a través del WhatsApp <strong> 2983-417777 </strong> <br> o al mail:  <strong> ftrigo@tresarroyos.gov.ar  </strong>']
 
         ]);
 

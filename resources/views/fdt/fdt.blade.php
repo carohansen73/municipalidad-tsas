@@ -81,8 +81,9 @@
 
 
 
-     <!-- ======= ENTRADAS  ======= -->
-     <section id="fdt-tickets" class="impact">
+     <!-- ======= ENTRADAS  PROXIMAMENTE! ======= --> <!-- HABILITAR TMB BTN NAVBAR -->
+
+     {{-- <section id="fdt-tickets" class="impact">
         <div class="container" data-aos="zoom-in">
             <div class="text-center">
                 <div class=" text-center">
@@ -99,15 +100,11 @@
                         <div class="col-auto">
                         <a class="yl-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Tickets</a>
                         </div>
-                        {{-- <div class="col-auto">
-                        <a class="cta-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Descargá la App </a>
-                        </div> --}}
-
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- ======= FIN ENTRADAS  ======= -->
 
 
@@ -151,7 +148,78 @@
 
     </section> --}}
 
-    <!-- ======= GRILLA  ======= -->
+    <!-- ======= END GRILLA  ======= -->
+
+
+                <!-- ======= CONVOCATORIAS  ======= -->
+                <section id="fdt-convocatorias" class="impact">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class=" text-center">
+                            <div class="bg-brushstroke bg-brushstroke-yl">
+                                <p>Convocatorias</p>
+                            </div>
+                        </div>
+
+                        <div class="content mt-3">
+                            <div class="accordion" id="accordionPanelsStayOpenExample">
+                                @foreach($convocatorias as $detalle)
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading{{$detalle->id}}">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{$detalle->id}}" aria-expanded="true" aria-controls="panelsStayOpen-{{$detalle->id}}">
+                                            <p class="text-uppercase mb-0"> <strong >  {!! $detalle->titulo !!} </strong> </p>
+                                        </button>
+                                    </h2>
+                                    <div id="panelsStayOpen-collapse{{$detalle->id}}" class="accordion-collapse collapse" aria-labelledby="heading{{$detalle->id}}" data-bs-parent="#accordionPanelsStayOpenExample">
+                                        <div class="accordion-body ps-md-5 row ms-0 me-0 justify-content-around">
+
+                                            <div class="col-lg-6 pt-3">
+                                                {!! $detalle->descripcion !!}
+
+                                                @if($detalle->telefono)
+                                                    <p class="d-flex align-items-center mb-0">
+                                                       <a class="btn-wsp" href="https://wa.me/549{{ str_replace('-', '', $detalle->telefono) }}?text=Hola,%20quiero%20más%20información%20sobre%20la%20convocatoria." target="_blank">
+                                                            <span style="font-size: 20px; padding-right:6px; color: #FFF;"> <i class="bx bxl-whatsapp"></i></span>
+                                                             <span class="detail">
+                                                            {{$detalle->telefono}}
+                                                            </span>
+                                                        </a>
+                                                    </p>
+                                                @endif
+
+                                                @if($detalle->email)
+                                                    <p class="d-flex align-items-center mb-2">
+                                                        <a class="btn-email" href="mailto:ftrigo@tresarroyos.gov.ar?subject=Consulta%20sobre%20convocatoria&body=Hola,%20quisiera%20saber%20más%20sobre...">
+                                                        <span style="font-size: 20px; padding-right:6px; color: #FFF;"><i class="bi bi-envelope"></i></span>
+                                                      <span class="detail"> {{$detalle->email}} </span>
+                                                        </a>
+                                                    </p>
+                                                @endif
+
+                                                <div class="col-auto mt-2 mb-2">
+                                                    @if ($detalle->archivo)
+                                                        <a class="yl-btn ms-0"  href="{{url('/storage/fdt/'.$detalle->archivo)}}" target="_blank">  Más info. </a>
+                                                    @endif
+                                                    @if ($detalle->link)
+                                                        <a class="yl-btn" href="{{$detalle->link}}" target="_blank">Inscripción online</a>
+                                                    @endif
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <img src="{{asset("storage/fdt/".$detalle->img)}}" class="img-fluid" alt="{{$detalle->titulo}}">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                  <!-- End convocatorias -->
 
 
 
@@ -190,195 +258,29 @@
 
                 </div>
 
-                <div class="row d-flex justify-content-center mt-2">
+                {{-- btns para cada pliego
+                    <div class="row d-flex justify-content-center mt-2">
                     <div class="col-auto">
-                    <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
+                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
                     </div>
                     <div class="col-auto">
-                    <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros gastronómicos </a>
+                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros gastronómicos </a>
                     </div>
                     <div class="col-auto">
                         <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Kioscos </a>
-                        </div>
-                        <div class="col-auto">
+                    </div>
+                    <div class="col-auto">
                         <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Cervecros locales </a>
-                        </div>
-                        <div class="col-auto">
-                            <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros cerveceros</a>
-                            </div>
+                    </div>
+                    <div class="col-auto">
+                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros cerveceros</a>
+                    </div>
+                </div> --}}
 
-                </div>
             </div>
         </div>
     </section>
     <!-- End Licitaciones -->
-      <!-- ======= CONVOCATORIAS  ======= -->
-      {{-- <section id="fdt-convocatorias" class="impact">
-        <div class="container" data-aos="fade-up">
-
-            <div class=" text-center">
-                <div class="bg-brushstroke bg-brushstroke-yl">
-                    <p>Convocatorias</p>
-                </div>
-            </div>
-
-            <div class=" content">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-                    @foreach($inscripciones as $detalle)
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="heading{{$detalle->id}}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{$detalle->id}}" aria-expanded="true" aria-controls="panelsStayOpen-{{$detalle->id}}">
-                                <strong>  {!! $detalle->titulo !!} </strong>
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapse{{$detalle->id}}" class="accordion-collapse collapse" aria-labelledby="heading{{$detalle->id}}" data-bs-parent="#accordionPanelsStayOpenExample">
-                            <div class="accordion-body ps-md-5 row ms-0 me-0 justify-content-around">
-
-                                <div class="col-lg-6 pt-3">
-                                {!! $detalle->descripcion !!}
-                                <div class="col-auto mt-2">
-                                    <a class="yl-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Inscripción online</a>
-                                </div>
-                                </div>
-                                <div class="col-lg-4">
-                                    <img src="{{asset("storage/fdt/convoc1.jpeg")}}" class="img-fluid" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-
-    </section> --}}
-      <!-- End convocatorias -->
-
-            <!-- ======= CONVOCATORIAS  ======= -->
-            <section id="fdt-convocatorias" class="impact">
-                <div class="container" data-aos="fade-up">
-
-                    <div class=" text-center">
-                        <div class="bg-brushstroke bg-brushstroke-yl">
-                            <p>Convocatorias</p>
-                        </div>
-                    </div>
-
-                    <div class="content mt-3">
-                        <div class="accordion" id="accordionPanelsStayOpenExample">
-                            @foreach($convocatorias as $detalle)
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="heading{{$detalle->id}}">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{$detalle->id}}" aria-expanded="true" aria-controls="panelsStayOpen-{{$detalle->id}}">
-                                        <p class="text-uppercase mb-0"> <strong >  {!! $detalle->titulo !!} </strong> </p>
-                                    </button>
-                                </h2>
-                                <div id="panelsStayOpen-collapse{{$detalle->id}}" class="accordion-collapse collapse" aria-labelledby="heading{{$detalle->id}}" data-bs-parent="#accordionPanelsStayOpenExample">
-                                    <div class="accordion-body ps-md-5 row ms-0 me-0 justify-content-around">
-
-                                        <div class="col-lg-6 pt-3">
-                                            {!! $detalle->descripcion !!}
-
-                                            @if($detalle->telefono)
-                                                <p class="d-flex align-items-center mb-0">
-                                                   <a class="btn-wsp" href="https://wa.me/549{{ str_replace('-', '', $detalle->telefono) }}?text=Hola,%20quiero%20más%20información%20sobre%20la%20convocatoria." target="_blank">
-                                                        <span style="font-size: 20px; padding-right:6px; color: #FFF;"> <i class="bx bxl-whatsapp"></i></span>
-                                                         <span class="detail">
-                                                        {{$detalle->telefono}}
-                                                        </span>
-                                                    </a>
-                                                </p>
-                                            @endif
-
-                                            @if($detalle->email)
-                                                <p class="d-flex align-items-center mb-2">
-                                                    <a class="btn-email" href="mailto:ftrigo@tresarroyos.gov.ar?subject=Consulta%20sobre%20convocatoria&body=Hola,%20quisiera%20saber%20más%20sobre...">
-                                                    <span style="font-size: 20px; padding-right:6px; color: #FFF;"><i class="bi bi-envelope"></i></span>
-                                                  <span class="detail"> {{$detalle->email}} </span>
-                                                    </a>
-                                                </p>
-                                            @endif
-
-                                            <div class="col-auto mt-2 mb-2">
-                                                @if ($detalle->archivo)
-                                                    <a class="yl-btn ms-0"  href="{{url('/storage/fdt/'.$detalle->archivo)}}" target="_blank">  Más info. </a>
-                                                @endif
-                                                @if ($detalle->link)
-                                                    <a class="yl-btn" href="{{$detalle->link}}" target="_blank">Inscripción online</a>
-                                                @endif
-                                            </div>
-
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <img src="{{asset("storage/fdt/".$detalle->img)}}" class="img-fluid" alt="{{$detalle->titulo}}">
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-              <!-- End convocatorias -->
-
-
-
-
-
-
-
-
-
-    <!-- ======= GRILLA  ======= -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- El coordinador de la Fiesta Provincial del Trigo, Miguel Lopez de Ipiña, ratificó las licitaciones correspondientes al Patio Cervecero y Patio de Tierra, carros gastronómicos, fogones y kioscos. <br><br>
-
-El miércoles 21 de febrero 19 horas será el turno de los cerveceros locales, carros cerveceros y carros gastronómicos; el mismo día a las 20 horas será para fogones y el jueves 22 de febrero a las 20 horas, el turno de los kioscos.<br><br>
-
-Los pliegos se encuentran en  Ituzaingó 210 de 9 a 13 horas y de 17 a 20 horas. Consultas por Whatsapp al 2983 387153, al 2983-431472 y a ftrigo@tresarroyos.gov.ar <br><br>
-<ul>
-    <li>
-        <strong> Cervecros locales </strong> <br>
-        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
-        Pliego:  $47.000 <br>
-        Canon: $330.000
-    </li>
-    <li>
-        <strong> Carros gastronómicos </strong> <br>
-        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
-        Pliego:  $47.000 <br>
-        Canon: $425.000
-    </li>
-    <li>
-        <strong> Carros cerveceros </strong> <br>
-        En patio cervecero y Patio de Tierra. Miercoles 21 de febrero - 19hs. <br>
-        Pliego:  $47.000 <br>
-        Canon: $425.000
-    </li>
-    <li>
-        <strong> Kioscos </strong> <br>
-        En patio cervecero y Patio de Tierra. Jueves 22 de febrero - 20hs. <br>
-        Pliego:  $36.000 <br>
-        Canon: $330.000
-    </li>
-<ul> --}}
 
 
 
@@ -387,21 +289,6 @@ Los pliegos se encuentran en  Ituzaingó 210 de 9 a 13 horas y de 17 a 20 horas.
 
 
 </div>   <!-- ======= fin id fiesta-del-trigo  ======= -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!-- Template ocultar-mostrar información JS File -->

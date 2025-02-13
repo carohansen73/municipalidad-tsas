@@ -157,11 +157,9 @@ Route::group(['middleware' => 'auth'], function () {
     /* Fiesta del Trigo */
     Route::resource('lineUps', App\Http\Controllers\LineUpController::class);
     Route::resource('grillas', App\Http\Controllers\GrillaController::class);
+    Route::resource('convocatorias', App\Http\Controllers\ConvocatoriasController::class);
 
 });
-
-
-
 
 
 Route::get('/clear-cache', function() {
@@ -178,9 +176,3 @@ Route::get('/route-clear', function() {
 
 
 Route::resource('rols', App\Http\Controllers\RolController::class);
-
-
-
-
-
-Route::resource('convocatorias', App\Http\Controllers\ConvocatoriasController::class);

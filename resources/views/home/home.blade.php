@@ -30,7 +30,7 @@
 
             <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
-                    <div class="icon-box icon-2">
+                    <div class="icon-box icon-6">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
                     </div>
@@ -58,6 +58,15 @@
             </div>
 
             <div class="col-xl-2 col-md-2">
+                <a href="/56-fiesta-del-trigo">
+                    <div class="icon-box icon-7">
+                        <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1" alt="">
+                        <h3>Fiesta del Trigo</h3>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xl-2 col-md-2">
                 <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">
                     <div class="icon-box icon-3">
                         <i class="fas fa-camera-retro"></i>
@@ -67,23 +76,13 @@
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <a href="deportes">
-                    <div class="icon-box icon-6">
-                        <i class="fas fa-biking"></i>
-                        <h3>Deportes</h3>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-xl-2 col-md-2">
                 <a href="salud" target="_blank">
-                    <div class="icon-box icon-1">
+                    <div class="icon-box icon-2">
                         <i class="fas fa-plus-square"></i>
                         <h3>Salud</h3>
                     </div>
                 </a>
             </div>
-
 
         </div>
 
