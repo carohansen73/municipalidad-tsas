@@ -22,12 +22,22 @@
                         <li><a href="/portal-de-noticias" style="text-shadow: none; ">Noticias</a></li>
                     </ul>
                 </li>
-            <li><a class="nav-link scrollto" href="/municipio">Tres Arroyos</a></li>
-            <li><a class="nav-link scrollto" href="/atencion-al-vecino" >At. vecino</a></li>
+                <li class="nav-link dropdown"><a ><span></span> Tres Arroyos <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/proximos-eventos" style="text-shadow: none; "> Tres Arroyos </a></li>
+                        <li><a href="/atencion-al-vecino" style="text-shadow: none; "> Atención al vecino </a></li>
+                        <li><a href="/salud" style="text-shadow: none; "> Salud </a></li>
+                        <li><a href="/deportes" style="text-shadow: none; "> Deportes </a></li>
+                        <li><a href="/56-fiesta-del-trigo" style="text-shadow: none; "> Fiesta del Trigo </a></li>
+                    </ul>
+                </li>
+
+            {{-- <li><a class="nav-link scrollto" href="/municipio">Tres Arroyos</a></li> --}}
+            {{-- <li><a class="nav-link scrollto" href="/atencion-al-vecino" >At. vecino</a></li> --}}
             {{-- <li><a class="nav-link scrollto" href="/ciudad-productiva" >Producción</a></li> --}}
             <li><a class="nav-link scrollto" href="/cultura" >Cultura</a></li>
             <li><a class="nav-link scrollto" href="https://turismo.tresarroyos.gov.ar/" target="_blank" >Turismo</a></li>
-            <li><a class="nav-link scrollto" href="/deportes" >Deportes</a></li>
+            {{-- <li><a class="nav-link scrollto" href="/deportes" >Deportes</a></li> --}}
 
 
             {{-- <li class="dropdown"><a href="#"><span>Trámites y Servicios</span> <i class="bi bi-chevron-down"></i></a>

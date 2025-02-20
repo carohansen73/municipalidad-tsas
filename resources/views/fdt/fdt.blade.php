@@ -81,37 +81,47 @@
 
 
 
+
      <!-- ======= ENTRADAS  PROXIMAMENTE! ======= --> <!-- HABILITAR TMB BTN NAVBAR -->
 
-     {{-- <section id="fdt-tickets" class="impact">
+     <section id="fdt-tickets" class="tickets">
         <div class="container" data-aos="zoom-in">
             <div class="text-center">
                 <div class=" text-center">
-                    <div class="bg-brushstroke bg-brushstroke-yl">
+                    {{-- <div class="bg-brushstroke bg-brushstroke-yl">
                         <p>Tickets</p>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class=" content p-3">
+                <div class=" content mt-5">
 
-                    <p> Ahora podes adquirir lso tickets para presenciar los shows de tus artistas favoritos de manera online o presencial.</p>
-                    <p> Para adquirirlas de manera presencial presentate en el centro cultural "La Estación", en Ituzaingó 210, de 9 a 13 horas y de 17 a 20 horas. <br>
-                        Consultas por Whatsapp al 2983 387153, al 2983-431472 y a ftrigo@tresarroyos.gov.ar</p>
+                    <p> <strong> ¡Conseguí tus tickets y viví la Fiesta! </strong>  </p>
+
+                    <p> Ahora podés comprar las entradas para disfrutar en vivo de tus artistas favoritos, de forma online o presencial. </p>
+                    <p><strong>Venta presencial:</strong>
+                       (A partir del <strong>lunes 17 de febrero</strong>).
+                       Acercate al Centro Cultural La Estación (Ituzaingó 320).
+                     </p>
+
+                     <p><strong>🕘 Horarios de venta presencial:</strong><br>
+                        🔹 <strong>Del 17 al 19 de febrero:</strong> Horario corrido de 8 a 22 hs.<br>
+                        🔹 <strong>A partir del 20 de febrero:</strong> De 8 a 12 y de 16 a 20 hs.
+                     </p>
+                        <strong> Consultas: </strong>
+                            {{-- WhatsApp: 2983-387153 | 2983-431472 <br> --}}
+                            WhatsApp: 2983-417777 <br>
+                            Email: ftrigo@tresarroyos.gov.ar</p>
+                        {{-- <p><strong> También podés comprar tus tickets online 👇 </strong> </p> --}}
+                         <p style="color: #2f464c;"><strong> Venta online a partir del jueves 20/02. </strong> </p>
                     <div class="row d-flex justify-content-center">
                         <div class="col-auto">
-                        <a class="yl-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Tickets</a>
+                        <a class="gr-btn" href="https://tresarroyos.boleteriadigital.com.ar/" target="_blank">Boleteria online</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- ======= FIN ENTRADAS  ======= -->
-
-
-
-
-
-
 
 
 
@@ -149,6 +159,66 @@
     </section> --}}
 
     <!-- ======= END GRILLA  ======= -->
+
+
+
+
+    <!-- ======= Licitaciones  ======= -->
+    <section id="fdt-licitaciones" class="about">
+        <div class="container" data-aos="fade-up">
+
+            <div class=" text-center">
+                <div class="bg-brushstroke bg-brushstroke-gr">
+                    <p>Licitaciones</p>
+                </div>
+            </div>
+
+            <div class="content p-3">
+                <div class="row  mt-3">
+                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+
+                        <img class="img-fluid" src="{{asset("storage/fdt/1.png")}}" alt="foto-1">
+                        {{-- <img class="img-fluid" src="{{asset("storage/secciones/fdt/1.jpg")}}" alt="foto-1"> --}}
+
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right" data-aos-delay="100">
+
+                        @foreach($licitaciones as $lic)
+                            {!! $lic->descripcion !!}
+                        @endforeach
+
+
+
+                    </div>
+
+
+                </div>
+
+                {{-- btns para cada pliego
+                    <div class="row d-flex justify-content-center mt-2">
+                    <div class="col-auto">
+                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
+                    </div>
+                    <div class="col-auto">
+                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros gastronómicos </a>
+                    </div>
+                    <div class="col-auto">
+                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Kioscos </a>
+                    </div>
+                    <div class="col-auto">
+                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Cervecros locales </a>
+                    </div>
+                    <div class="col-auto">
+                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros cerveceros</a>
+                    </div>
+                </div> --}}
+
+            </div>
+        </div>
+    </section>
+    <!-- End Licitaciones -->
+
+
 
 
                 <!-- ======= CONVOCATORIAS  ======= -->
@@ -227,60 +297,9 @@
 
 
 
-    <!-- ======= Licitaciones  ======= -->
-    <section id="fdt-licitaciones" class="about">
-        <div class="container" data-aos="fade-up">
-
-            <div class=" text-center">
-                <div class="bg-brushstroke bg-brushstroke-yl">
-                    <p>Licitaciones</p>
-                </div>
-            </div>
-
-            <div class="content p-3">
-                <div class="row  mt-3">
-                    <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-
-                        <img class="img-fluid" src="{{asset("storage/fdt/1.png")}}" alt="foto-1">
-                        {{-- <img class="img-fluid" src="{{asset("storage/secciones/fdt/1.jpg")}}" alt="foto-1"> --}}
-
-                    </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right" data-aos-delay="100">
-
-                        @foreach($licitaciones as $lic)
-                            {!! $lic->descripcion !!}
-                        @endforeach
 
 
 
-                    </div>
-
-
-                </div>
-
-                {{-- btns para cada pliego
-                    <div class="row d-flex justify-content-center mt-2">
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros gastronómicos </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Kioscos </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Cervecros locales </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros cerveceros</a>
-                    </div>
-                </div> --}}
-
-            </div>
-        </div>
-    </section>
-    <!-- End Licitaciones -->
 
 
 

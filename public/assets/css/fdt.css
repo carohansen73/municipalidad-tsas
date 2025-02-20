@@ -66,6 +66,7 @@
    height: 420px;
    background-size: cover;
    background-position: center;
+
 }
 
 @media screen and (min-width: 1400px) {
@@ -81,18 +82,57 @@
     }
 }
 
-
-#fiesta-del-trigo .impact{
-    background-image: url("/storage/fdt/fondos/fondo-recorte1.png");
+#fiesta-del-trigo .tickets{
+    background-image: url("/storage/fdt/fondos/bg-tickets.png");
     background-size: cover;
     color: #FFF;
-    /* background-color: #3a655c; */
+    background-position: center top;
+}
+
+#fiesta-del-trigo .tickets .content{
+    padding-top: 100px;
+    color: #424242;
+}
+
+
+@media screen and (min-width: 991px) {
+    #fiesta-del-trigo .tickets .content{
+        padding-top: 120px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #fiesta-del-trigo .tickets .content{
+        padding-top: 160px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    #fiesta-del-trigo .tickets .content{
+        padding-top: 200px;
+    }
+}
+
+@media screen and (min-width: 1940px) {
+    #fiesta-del-trigo .tickets .content{
+        padding-top: 300px;
+    }
+}
+
+
+
+#fiesta-del-trigo .impact{
+    background-image: url("/storage/fdt/fondos/bg-gr-1.jpg");
+    background-color: #3a655c;
+    background-size: cover;
+    color: #FFF;
+    background-position: center top;
 }
 
 /* TITULOS */
 #fiesta-del-trigo .bg-brushstroke-yl{
     display: inline-block;
-    background-image: url("/storage/fdt/fondos/b1.png");
+    background-image: url("/storage/fdt/fondos/yl1.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -259,6 +299,26 @@
 #fiesta-del-trigo .gr-btn:hover {
     border: 2px solid #52867b;
     background: #52867b;
+}
+
+#fiesta-del-trigo .vl-btn {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    margin-top: 10px;
+    border: 2px solid #721b74;
+    background: #721b74;
+    color: #fff;
+}
+
+#fiesta-del-trigo .vl-btn:hover {
+    border: 2px solid #872789;
+    background: #872789;
 }
 
 #fdt-line-up #portfolio-flters li:hover,

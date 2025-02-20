@@ -241,7 +241,7 @@ h6 {
   /* background: rgba(244, 244, 244, 0.967); */
    background: rgba(255, 255, 255, 0.967);
 
-  box-shadow:  0px 0px 6px 6px rgba(39, 39, 40, 0.394);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 #header .logo {
@@ -470,7 +470,7 @@ h6 {
   padding: 10px 20px;
   font-size: 14px;
   text-transform: none;
-  color: rgb(13, 116, 189);
+  color: #343434;
   font-weight: 400;
 }
 
@@ -481,7 +481,8 @@ h6 {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  background-color: #25afc3;
+  background-color: #cecece;
+  transform: translateY(-2px);
 }
 
 .navbar .dropdown:hover>ul {

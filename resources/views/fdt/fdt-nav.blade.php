@@ -28,9 +28,9 @@
 
         </ul>
 
-        {{-- <div class="d-flex align-items-center ms-2">
-        <a class="yl-btn nav-link disabled " href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank" alt="Proximamente">Tickets</a>
-        </div> --}}
+        <div class="d-flex align-items-center ms-2">
+        <a class="yl-btn nav-link" href="https://tresarroyos.boleteriadigital.com.ar/" target="_blank" >Tickets</a>
+        </div>
 
 
       </div>
