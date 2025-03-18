@@ -6,7 +6,9 @@
       <!--para usar logo en navbar -->
         {{-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{asset("assets/img/logos/logo-remove.png")}}" alt="" class="img-fluid"> Tres Arroyos</a> --}}
 
-        <a href="/" class="logo me-auto me-lg-0 font-color-bl"><img src="{{asset("assets/img/logos/tsas-manual.png")}}" alt="" class="img-fluid"></a>
+        <a href="/" class="logo me-auto me-lg-0 font-color-bl"><img src="{{asset("assets/img/logos/logo-muni-azul-claro.png")}}" alt="" class="img-fluid" id="logo-img"
+            data-logo-azul="{{ asset('assets/img/logos/logo-muni-azul-claro.png') }}"
+            data-logo-blanco="{{ asset('assets/img/logos/logo-blanco.png') }}"></a>
         {{-- <img href="img/logos/.jpeg" alt="MiTresa" class="img-fluid"> --}}
 
 
@@ -15,28 +17,28 @@
         <nav id="navbar" class="navbar order-last order-lg-0">
 
             <ul>
-                <li><a class="nav-link scrollto" href="/">Inicio</a></li>
-                <li class="nav-link dropdown"><a ><span></span> Novedades<i class="bi bi-chevron-down"></i></a>
+                <li><a class="nav-link scrollto animation-sub" href="/">Inicio</a></li>
+                <li class="nav-link dropdown"><a class="nav-link scrollto animation-sub"><span></span> Novedades<i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="/proximos-eventos" style="text-shadow: none; ">Eventos</a></li>
-                        <li><a href="/portal-de-noticias" style="text-shadow: none; ">Noticias</a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/proximos-eventos" style="text-shadow: none; ">Eventos</a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/portal-de-noticias" style="text-shadow: none; ">Noticias</a></li>
                     </ul>
                 </li>
-                <li class="nav-link dropdown"><a ><span></span> Tres Arroyos <i class="bi bi-chevron-down"></i></a>
+                <li class="nav-link dropdown animation-sub"><a class="nav-link scrollto animation-sub"><span></span> Tres Arroyos <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="/proximos-eventos" style="text-shadow: none; "> Tres Arroyos </a></li>
-                        <li><a href="/atencion-al-vecino" style="text-shadow: none; "> Atención al vecino </a></li>
-                        <li><a href="/salud" style="text-shadow: none; "> Salud </a></li>
-                        <li><a href="/deportes" style="text-shadow: none; "> Deportes </a></li>
-                        <li><a href="/56-fiesta-del-trigo" style="text-shadow: none; "> Fiesta del Trigo </a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/municipio" style="text-shadow: none; "> Municipio </a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/atencion-al-vecino" style="text-shadow: none; "> Atención al vecino </a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/salud" style="text-shadow: none; "> Salud </a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/deportes" style="text-shadow: none; "> Deportes </a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/56-fiesta-del-trigo" style="text-shadow: none; "> Fiesta del Trigo </a></li>
                     </ul>
                 </li>
 
             {{-- <li><a class="nav-link scrollto" href="/municipio">Tres Arroyos</a></li> --}}
             {{-- <li><a class="nav-link scrollto" href="/atencion-al-vecino" >At. vecino</a></li> --}}
             {{-- <li><a class="nav-link scrollto" href="/ciudad-productiva" >Producción</a></li> --}}
-            <li><a class="nav-link scrollto" href="/cultura" >Cultura</a></li>
-            <li><a class="nav-link scrollto" href="https://turismo.tresarroyos.gov.ar/" target="_blank" >Turismo</a></li>
+            <li><a class="nav-link scrollto animation-sub" href="/cultura" >Cultura</a></li>
+            <li><a class="nav-link scrollto animation-sub" href="https://turismo.tresarroyos.gov.ar/" target="_blank" >Turismo</a></li>
             {{-- <li><a class="nav-link scrollto" href="/deportes" >Deportes</a></li> --}}
 
 
@@ -69,38 +71,35 @@
 
 
 
-            <div class="get-started-buttons">
-                <a  href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="get-started-btn scrollto">
-                    <div class="get-started-group font-color-bl">
-                        {{-- <img src="{{asset("assets/img/logos/MiTr-remove2.png")}}" alt="" class="img-fluid mb-1 mi-tresa-1"> --}}
-                        <img src="{{asset("assets/img/logos/MiTr-remove.png")}}" alt="" class="img-fluid mb-1 ">
-                        {{-- <i class="fas fa-laptop-house"></i> --}}
-                        MiTresa
-                    </div>
-                </a>
+                <div class="get-started-buttons">
+                    <a  href="https://mitresa.gobdigital.com.ar/web/default" target="_blank" class="get-started-btn scrollto">
+                        <div class="get-started-group font-color-bl">
+                            {{-- <img src="{{asset("assets/img/logos/MiTr-remove2.png")}}" alt="" class="img-fluid mb-1 mi-tresa-1"> --}}
+                            <img src="{{asset("assets/img/logos/MiTr-remove.png")}}" alt="" class="img-fluid mb-1 ">
+                            {{-- <i class="fas fa-laptop-house"></i> --}}
+                            MiTresa
+                        </div>
+                    </a>
 
-                <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
-                    <div class="get-started-group font-color-bl">
-                        <i class="fas fa-laptop"></i>
-                        Autogestión
-                    </div>
-                </a>
-                <a href="/transparencia-fiscal" target="_blank" class="get-started-btn scrollto">
-                    <div class="get-started-group font-color-bl">
-                        <i class="fas fa-lock-open"></i>
-                        {{-- <i class="fas fa-hand-holding-usd"></i> --}}
-                    Gobierno <br> abierto
-                    </div>
-                </a>
-            </div>
+                    <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">
+                        <div class="get-started-group font-color-bl">
+                            <i class="fas fa-laptop"></i>
+                            Autogestión
+                        </div>
+                    </a>
+                    <a href="/transparencia-fiscal" target="_blank" class="get-started-btn scrollto">
+                        <div class="get-started-group font-color-bl">
+                            <i class="fas fa-lock-open"></i>
+                            {{-- <i class="fas fa-hand-holding-usd"></i> --}}
+                        Gobierno <br> abierto
+                        </div>
+                    </a>
+                </div>
 
             </ul>
 
 
             <i class="bi bi-list mobile-nav-toggle"></i>
-
-
-
 
         </nav>
 

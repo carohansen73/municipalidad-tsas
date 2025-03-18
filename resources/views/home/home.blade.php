@@ -105,11 +105,11 @@
                         </div> --}}
                         <!-- Swiper -->
                         <div class="today d-flex justify-content-center">
-
-                            <video  id="video" src="{{asset("storage/videos/app-salud.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
+                            <a href="/56-fiesta-del-trigo">
+                            <video  id="video" src="{{asset("storage/videos/reel_general_fdt.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
                                 Tu navegador no admite el elemento <code>video</code>.
                             </video>
-
+                            </a>
 
                             {{-- <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
                             <div class="today-one"><p> <strong>Inscripción al FOMEPRO </strong>en la oficina de empleo y capacitación, Pedro N. Carrera 940. <br><a href="https://www.tresarroyos.gov.ar/seccion/empleo-emprendedores" target="_blank">Bases y condiciones</a></p>    </div>

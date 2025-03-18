@@ -187,31 +187,37 @@
                             {!! $lic->descripcion !!}
                         @endforeach
 
-
+                        <div class="row d-flex  mt-2">
+                            <div class="col-auto">
+                                <a class="gr-btn" href="https://tresarroyos.gov.ar/storage/fdt/pliego_KIOSCOS_LIC._n2.pdf" target="_blank">Kioscos </a>
+                            </div>
+                        </div>
 
                     </div>
 
 
                 </div>
 
+
+
+
+
                 {{-- btns para cada pliego
-                    <div class="row d-flex justify-content-center mt-2">
+
                     <div class="col-auto">
                         <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
                     </div>
                     <div class="col-auto">
                         <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros gastronómicos </a>
                     </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank">Kioscos </a>
-                    </div>
+
                     <div class="col-auto">
                         <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Cervecros locales </a>
                     </div>
                     <div class="col-auto">
                         <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros cerveceros</a>
                     </div>
-                </div> --}}
+                 --}}
 
             </div>
         </div>

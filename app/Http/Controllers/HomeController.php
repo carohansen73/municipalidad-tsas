@@ -575,18 +575,21 @@ class HomeController extends Controller
     public function showNews($titulo)
     {
         $noticias = Noticia::with('imgs')->get();
-        $noticia = Noticia::where('slug', $titulo)->with('imgs')->with('categorias')->get();
+        $noticia = Noticia::where('slug', $titulo)->with(['imgs', 'categorias'])->first();
 
-        foreach($noticia as $noti){
-            foreach($noti->categorias as $cat){
-                $categoriaId = $cat->id;
 
-            }
-            $noticiaId = $noti->id;
+        // Incrementar vistas si el usuario no la ha visto recientemente
+        $sessionKey = 'viewed_noticia_' . $noticia->id;
+        if (!session()->has($sessionKey)) {
+            $noticia->increment('views');
+            session()->put($sessionKey, true);
         }
 
-        $imagenesPrimera = NoticiaImg::where('noticia_id', $noticiaId)->latest('id')->take(1)->get();
-        $imagenes = NoticiaImg::where('noticia_id', $noticiaId)->latest('id')->skip(1)->take(4)->get();
+        // Obtener la primera categoría (si existe)
+        $categoriaId = $noticia->categorias->first()->id ?? null;
+
+        $imagenesPrimera = NoticiaImg::where('noticia_id', $noticia->id)->latest('id')->take(1)->get();
+        $imagenes = NoticiaImg::where('noticia_id', $noticia->id)->latest('id')->skip(1)->take(4)->get();
 
         $categorias = Categoria::all();
         $ultimasNoticias = Noticia::latest()->take(3)->get();

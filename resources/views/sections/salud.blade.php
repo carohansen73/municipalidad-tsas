@@ -63,7 +63,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex align-items-stretch justify-content-center p-4 card-ver-mas">
-                                            <a class="ver-mas-btn" href="https://tresarroyos.itconsultsa.com/login">Ingresar</a>
+                                            <a class="ver-mas-btn" href="https://telemedicina.cmsta.gob.ar/">Ingresar</a>
                                         </div>
                                     </div>
                                 </div>

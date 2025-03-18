@@ -56,7 +56,8 @@ class Noticia extends Model
         'publicada',
         'destacada',
         'pathname',
-        'usuario_id'
+        'usuario_id',
+        'views'
     ];
 
     /**
@@ -73,7 +74,8 @@ class Noticia extends Model
         'publicada' => 'boolean',
         'destacada' => 'boolean',
         //'pathname' => 'string',
-        'usuario_id' => 'integer'
+        'usuario_id' => 'integer',
+        'views' => 'integer'
     ];
 
     /**

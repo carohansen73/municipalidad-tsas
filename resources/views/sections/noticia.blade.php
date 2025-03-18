@@ -50,37 +50,44 @@
                     <!-- =======  NOTICIA PRINCIPAL ======= -->
                     <aside class="col-md-9 aside-principal">
                         <div class="row">
-                            @foreach($noticia as $noti)
-                                @foreach($noti->imgs as $imag)
+                            @if($noticia)
+                                @if($noticia->imgs->isNotEmpty())
                                     <div class="img-noticia">
-                                        <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
+                                        <img src="{{asset("storage/noticia_img/".$noticia->id."/".$noticia->imgs->first()->img)}}" class="img-fluid" alt="">
                                     </div>
-                                    @break
-                                @endforeach
+                                @endif
+
                                 <div class="info-noticia">
-                                    <h4>{{$noti->titulo}} </h4>
+                                    <h4>{{$noticia->titulo}} </h4>
                                     <div class="detalles-noticia">
                                         <div class="row">
                                             <div class="col-auto">
-                                                <p><i class="fas fa-clock"></i>  {{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}}  </p>
+                                                <p><i class="fas fa-clock"></i>  {{ \Carbon\Carbon::parse($noticia->fecha)->format('d-m-Y')}}  </p>
                                             </div>
-                                            @foreach($noti->categorias as $categ)
+                                            @foreach($noticia->categorias as $categ)
                                             <div class="col-auto">
                                                 <p><i class="fas fa-tags"></i> <a href="/noticias-categoria/{{$categ->nombre}}">  {{$categ->nombre}}  </a></p>
                                             </div>
                                             @endforeach
-                                            <!-- Your share button code FB COMPARTIR -->
-                                            <div class="col">
-                                                <div class="fb-share-button"
-                                                    data-href="http://municipalidad-tsas.test/noticia/{{$noti->slug}}"
-                                                    data-layout="button">
+
+                                            <!-- Your share button code FB COMPARTIR  NO ANDAAA-->
+                                            <div class="col-auto ps-2 pe-2">
+                                                <p><i class="fas fa-eye"></i> {{ $noticia->views }} vistas</p>
+                                            </div>
+
+                                             <!-- VIEWS -->
+                                            <div class="col-auto">
+                                                <div class="fb-share-button">
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                                                    target="_blank" style="color: rgb(13, 116, 189);">
+                                                        <i class="fab fa-facebook"></i> Compartir
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
 
-                                    <p> {!! $noti->descripcion!!} </p>
+                                    <p> {!! $noticia->descripcion!!} </p>
 
                                 </div>
                                 <div class="galeria-noticia">
@@ -143,35 +150,36 @@
 
 
                                 <!-- =======  NOTICIAS RELACIONADAS(Abajo) ======= -->
+                                @if($noticiasRelacionadas->isNotEmpty())
 
-                                <div class="noticias-relacionadas">
-                                    <div class="row">
-                                        <hr>
-                                        <div class="section-title mb-3">
-                                            <p style="font-size: 18px">Noticias relacionadas</p>
-                                        </div>
-
-                                        @foreach($noticiasRelacionadas as $noti)
-
-                                            <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
-                                                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                                    <div class="member-img">
-                                                        @foreach($noti->imgs as $imag)
-                                                            <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
-                                                            @break
-                                                        @endforeach
-                                                    </div>
-                                                    <div class="member-info">
-                                                        <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
-                                                        <span>{{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
-                                                    </div>
-                                                </div>
+                                    <div class="noticias-relacionadas">
+                                        <div class="row">
+                                            <hr>
+                                            <div class="section-title mb-3">
+                                                <p style="font-size: 18px">Noticias relacionadas</p>
                                             </div>
 
-                                        @endforeach
+                                            @foreach($noticiasRelacionadas as $noti)
+                                                <div class="col-lg-4 col-md-4 d-flex align-items-stretch">
+                                                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                                        <div class="member-img">
+                                                            @foreach($noti->imgs as $imag)
+                                                                <img src="{{asset("storage/noticia_img/".$imag->noticia_id."/".$imag->img)}}" class="img-fluid" alt="">
+                                                                @break
+                                                            @endforeach
+                                                        </div>
+                                                        <div class="member-info">
+                                                            <a href="/noticia/{{$noti->slug}}"><h4>{{$noti->titulo}} </h4></a>
+                                                            <span>{{ \Carbon\Carbon::parse($noti->fecha)->format('d-m-Y')}} </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endif
+                            @endif
                         </div>
                     </aside>
 

@@ -89,12 +89,13 @@
 
 
     /**
-    * Toggle .header-scrolled navbar sin fondo hasta que se hace scroll
+    * Toggle .header-scrolled navbar sin fondo hasta que se hace scroll, cambio color de la fuente y logo
     */
     let selectHeader = select('#header')
     let locationPath = window.location.pathname;
     let itemsNavbar = select('.navbar-desktop .nav-link, .get-started-buttons a .get-started-group , .logo , .navbar .mobile-nav-toggle', true);
     let portadaConImg = select('.portada-foto');
+    let logoImg = select("#logo-img");
 
     // if (selectHeader && (locationPath == '/' || locationPath == '/cultura' || locationPath == '/museos' || locationPath == '/municipio' || locationPath == '/ciudad-productiva' || locationPath == '/deportes' || locationPath == '/atencion-al-vecino')) {
     if (selectHeader && (portadaConImg || locationPath == '/') ){
@@ -108,8 +109,10 @@
 
             })
 
-
-
+            // Cambio el logo a la versión azul
+            if (logoImg) {
+                logoImg.src = logoImg.dataset.logoAzul;
+            }
 
             // let selectedLetters = select('.navbar li a');
 
@@ -120,9 +123,12 @@
                 itemn.classList.add('font-color-wh')
             })
 
-
             selectHeader.classList.remove('header-scrolled')
 
+            // Cambio el logo a la versión blanca
+            if (logoImg) {
+                logoImg.src = logoImg.dataset.logoBlanco;
+            }
 
 
             // select('.navbar li a').classList.add('font-color-wh')
