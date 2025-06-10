@@ -23,20 +23,6 @@
             integrity="sha512-EzrsULyNzUc4xnMaqTrB4EpGvudqpetxG/WNjCpG6ZyyAGxeB6OBF9o246+mwx3l/9Cn838iLIcrxpPHTiygAA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
-        <!-- iCheck -->
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css"
-            integrity="sha512-8vq2g5nHE062j3xor4XxPeZiPjmRDh6wlufQlfC6pdQ/9urJkU07NM0tEREeymP++NczacJ/Q59ul+/K2eYvcg=="
-            crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-            integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
-            crossorigin="anonymous"/>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
-            integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
-            crossorigin="anonymous"/> --}}
-
         {{-- template estilo --}}
         {{--ARRIBA--}}
         <base href="{BASE_URL}">
@@ -73,31 +59,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
         <!-- Estilo del Template -->
-        {{-- @stack('page_css')
-        <link href="../assets/css/style.css" rel="stylesheet"> --}}
-        {{-- @stack('css/style.css') --}}
-
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        {{-- <link rel="stylesheet" href="css/style.css"> --}}
+        <link rel="stylesheet" href="{{ asset('assets/css/tmp-tsas.css') }}">
 
-        {{-- @yield('css') --}}
 
-        <!-- BUTTON SHARE FACEBOOK
-            You can use Open Graph tags to customize link previews.
-            Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-            {{-- <meta property="og:url"           content="https://www.your-domain.com/your-page.html" content="http://municipalidad-tsas.test/" /> --}}
-            {{-- <meta property="og:type"          content="website" /> --}}
-            {{-- <meta property="og:title"         content="Your Website Title" content="Municipalidad de Tres Arroyos" /> --}}
-            {{-- <meta property="og:description"   content="Your description" />
-            <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" /> --}}
+
+
+
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
-        <!-- barra de navegacion -->
-        {{-- @include('layouts.navbar') --}}
-
-
-
     <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             {{-- <section class="content"> --}}

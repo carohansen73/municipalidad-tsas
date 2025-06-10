@@ -1,12 +1,14 @@
-
 @push('third_party_stylesheets')
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endpush
 
 @push('third_party_scripts')
+
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
 @endpush
+
 
 <!-- Nombre Field -->
 <div class="form-group col-sm-6">
@@ -15,16 +17,22 @@
 </div>
 
 <!-- Seccion Id Field -->
-    <div class="form-group col-sm-6 ps-0">
-        {!! Form::label('seccion_id', 'Seccion:') !!}
-        {!!Form::select('seccion_id', $secciones,null,['class' => 'form-control '])!!}
-    </div>
+<div class="form-group col-lg-3 col-sm-6 ps-0">
+    {!! Form::label('seccion_id', 'Seccion:') !!}
+    {!!Form::select('seccion_id', $secciones,null,['class' => 'form-control '])!!}
+</div>
 
-    <!-- Seccion Id Field -->
-    <div class="form-group col-sm-6 ps-0">
-        {!! Form::label('categoria_id', 'Categoria:') !!}
-        {!!Form::select('categoria_id', $categorias,null,['class' => 'form-control '])!!}
-    </div>
+<!-- Seccion Id Field -->
+<div class="form-group col-lg-3 col-sm-6 ps-0">
+    {!! Form::label('categoria_id', 'Categoria:') !!}
+    {!!Form::select('categoria_id', $categorias,null,['class' => 'form-control '])!!}
+</div>
+
+    <!-- Descripcion Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    {!! Form::label('descripcion', 'Descripcion:') !!}
+    {!! Form::textarea('descripcion', null, ['class' => 'form-control','id'=>"descripcion"]) !!}
+</div>
 
 
 <!-- Fecha Inicio Field -->
@@ -34,6 +42,7 @@
         {!! Form::text('fecha_inicio', null, ['class' => 'form-control','id'=>'fecha_inicio']) !!}
     </div>
 
+
     @push('page_scripts')
         <script type="text/javascript">
             $('#fecha_inicio').datetimepicker({
@@ -41,7 +50,23 @@
                 useCurrent: true,
                 sideBySide: true
             })
+            $('#fecha_fin').datetimepicker({
+                format: 'YYYY-MM-DD',
+                useCurrent: true,
+                sideBySide: true
+            })
+            //select2
+            $(document).ready(function() {
+                $('.js-example-basic-multiple').select2();
+                $('#descripcion').summernote({
+                    tabsize: 2,
+                    height: 300
+                });
+            });
+            //summernote
+
         </script>
+
     @endpush
 
     <!-- Fecha Fin Field -->
@@ -50,15 +75,7 @@
         {!! Form::text('fecha_fin', null, ['class' => 'form-control','id'=>'fecha_fin']) !!}
     </div>
 
-    @push('page_scripts')
-        <script type="text/javascript">
-            $('#fecha_fin').datetimepicker({
-                format: 'YYYY-MM-DD',
-                useCurrent: true,
-                sideBySide: true
-            })
-        </script>
-    @endpush
+
 </div>
 
 
@@ -95,7 +112,7 @@
 <div class="form-group col-sm-12">
     <div class="col-md-6">
 
-        <img src="{{ asset('storage/eventos/' . $evento->img) }}" alt="..." class="thumbnail" width="280" height="210">
+        <img src="{{ asset('storage/eventos/' . $evento->img) }}" alt="..." class="thumbnail" width="360" height="auto">
 
     </div>
 

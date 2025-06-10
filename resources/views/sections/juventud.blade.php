@@ -45,13 +45,13 @@
 
 
 
-<!-- ======= FIESTA DEL TRIGO - VIDEO (About Section) ======= -->
+<!-- ======= (About Section) ======= -->
 <div id="juventud">
-<section  class="about">
+<section  class="about bg-grey">
     <div class="container" data-aos="fade-up">
-        <main id="main" class="margen-top-navbar">
+        <main id="main" >
             <div class="section-title">
-                <p>Dirección de Políticas para la Juventud</p>
+                <p style="color: #444444;">Dirección de Políticas para la Juventud</p>
 
             </div>
             <div class="row">
@@ -71,6 +71,27 @@
                         </ul>
                     </div>
                 </div>
+
+                <p>  La Dirección cuenta con un espacio llamado <strong>“Punto Digital”. </strong>
+                    que tiene por objetivo democratizar el acceso a las Tecnologías de la Información y la Comunicación (TIC),
+                    a través de dispositivos de acceso libre y gratuito a internet, capacitaciones, talleres, asistencia
+                    en trámites como por ejemplo la validación de identidad en Mi Argentina y actividades culturales. <br>
+
+                    Además, posee una <b> plataforma de aprendizaje virtual (PAV) </b> donde los vecinos y vecinas pueden acceder a
+                    <b> cursos gratuitos con certificación.
+                        <a class="" href="https://cursos.argentina.gob.ar/" target="_blank">https://cursos.argentina.gob.ar/</a>
+                    </b>
+                    <br>
+                    En el área también se realiza el <strong> examen teórico para la licencia de conducir</strong>.
+                    Pueden solicitar sus turnos por la <strong> App MiTresa o WhatsApp 2983-456538</strong>.
+                    <br>
+                    El horario de atención es de 07:00 a 15:00 hs y para trámites de Mi Argentina de 08:00 a 14:30 hs
+
+
+
+
+                   <br>
+                </p>
             </div>
         </main>
     </div>
@@ -78,21 +99,153 @@
 </div>
 <!-- End About Section -->
 
+
+ <!-- ======= FIESTA DEL TRIGO - VIDEO (About Section) ======= -->
+ <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+
+                <img src="{{asset("storage/secciones/juventud/jea.jpg")}}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+                <h3 style="color: rgb(13, 116, 189);">JUVENTUD EN ACCIÓN (J.E.A)</h3>
+                <p class="fst-italic"> ¡Llegó tu momento de decidir! </p>
+
+                <p> Por primera vez en Tres Arroyos, vas a poder ser parte de un programa donde  <strong> vos y otros jóvenes </strong> van a tener la oportunidad de  <strong> proponer ideas,
+                    decidir en qué se usan los recursos públicos</strong> y aportar soluciones reales para mejorar la vida en tu ciudad. 💡🌎
+                </p>
+                <p> No importa si estás en una institución o no,  <strong>¡acá lo que importa es tu voz y tus ganas de cambiar las cosas! </strong> 🙌</p>
+                <p>
+                ⚡️ Si tenés ideas, proyectos o simplemente querés ser parte de algo grande...
+                </p>
+                <p> 👉 <strong> <a class="" href="https://forms.gle/mXLy941nSqmsaYP39" target="_blank">Inscribite acá y sumate</a></strong> </p>
+
+                <p> 🎥 ¿Querés saber cómo presentar tu propuesta? Mirá estos videos: </p>
+                <ul>
+                    <li> <a class="" href="https://www.youtube.com/watch?v=MbfIjmTLxhw" target="_blank">Cómo hacer un video pitch</a></strong> </li>
+                    <li> <a class="" href="https://www.youtube.com/watch?v=Nu-bbrdYrpY" target="_blank">Estrategias de marketing para tu proyecto</a></strong> </li>
+                </ul>
+                <p> <strong>¡Animate a participar y hacé la diferencia! 💥</strong> </p>
+            </div>
+        </div>
+
+        <div class="row d-flex  mt-2">
+            <div class="col-auto">
+                <a class="btn btn-sm blue-button" href={{url('/storage/secciones/juventud/BasesYCondiciones-JEA.pdf')}} target="_blank">Bases y condiciones</a>
+            </div>
+            <div class="col-auto">
+                <a class="btn  btn-sm blue-button" href={{url('/storage/secciones/juventud/nominaDeJovenes-JEA.docx')}} target="_blank">Nómina de jóvenes</a>
+            </div>
+            <div class="col-auto">
+                <a class="btn  btn-sm blue-button" href={{url('/storage/secciones/juventud/PlantillaPresupuesto-JEA.docx')}} target="_blank">Plantilla presupuesto</a>
+            </div>
+            <div class="col-auto">
+                <a class="btn  btn-sm blue-button" href={{url('/storage/secciones/juventud/Modelo-JEA.docx')}} target="_blank">Modelo JEA</a>
+            </div>
+        </div>
+
+        {{-- <div class="row"> --}}
+            <div  class="portfolio mt-4">
+                <div class="container" data-aos="fade-up">
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="col-lg-3 col-md-6 portfolio-item ">
+                    <div class="portfolio-wrap">
+                        <img src="{{asset("storage/secciones/juventud/jead.jpeg")}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="{{asset("storage/secciones/juventud/jead.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                                {{-- <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 portfolio-item ">
+                    <div class="portfolio-wrap">
+                        <img src="{{asset("storage/secciones/juventud/jead2.jpeg")}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="{{asset("storage/secciones/juventud/jead2.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 portfolio-item ">
+                    <div class="portfolio-wrap">
+                        <img src="{{asset("storage/secciones/juventud/jead3.jpeg")}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="{{asset("storage/secciones/juventud/jead3.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 portfolio-item ">
+                    <div class="portfolio-wrap">
+                        <img src="{{asset("storage/secciones/juventud/jead4.jpeg")}}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <div class="portfolio-links">
+                                <a href="{{asset("storage/secciones/juventud/jead4.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+</section>
+<!-- End About Section -->
+
+
+
+
 <!-- Features (Talleres) -->
 <div id="juventud">
-<section  class="features mt-5">
+<section  class="features pt-5 bg-grey">
     <div class="container" data-aos="fade-up">
-        <div class="section-title">
+        <div class="section-title pb-1">
             <p>Programas</p>
             {{-- <h2>Dictados en el CCE</h2> --}}
         </div>
 
         <div class="row justify-content-center">
+             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fab fa-periscope"></i>
+                    <h4> Dirección abierta para la juventud:</h4>
+                    <p> A partir del mes de Mayo, la Dirección abrirá 2 sábados por mes para que los jóvenes y sus familias
+                        puedan acercarse a conocer el espacio y disfrutar de los juegos disponibles como: Xbox 360, play 5,
+                        uno, etc.
+                       <br>
+                    </p>
+                </div>
+            </div>
+
+                  <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fas fa-rainbow"></i>
+                    <h4> Primavera segura:</h4>
+                    <p>Trabajamos en conjunto con UCESTA (Unión de Centros de Estudiantes de Tres Arroyos) y áreas municipales
+                        para concientizar a la juventud previo a la fecha. Entrega de kit y charla en instituciones educativas.
+                        Presencia en Claromecó (predancing y noche) con puesto de hidratación.
+                       <br>
+                    </p>
+                </div>
+            </div>
+
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                 <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
                     <i class="bi bi-hand-thumbs-up"></i>
                     <h4> Acompañar Juventudes:</h4>
-                    <p> Buscamos acompañar el compromiso de los jóvenes promoviendo actividades que sean un medio para lograr un objetivo como grupo. Si están interesados pueden contactarnos por WhatsApp o redes.
+                    <p> Buscamos acompañar el compromiso de los jóvenes promoviendo actividades que sean un medio para lograr
+                        un objetivo como grupo. Si están interesados pueden contactarnos por WhatsApp o redes.
 
                        <br>
                     </p>
@@ -119,10 +272,9 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="bi bi-music-note-list"></i>
-                    <h4>Maravillosa música:</h4>
-                    <p> Se trata de un concurso de bandas juveniles de la Provincia de Buenos Aires. Cuenta con 2 categorías para participar: estudiantil
-                        (13 a 25 años con al menos un integrante en secundaria) o libre (13 a 35 años). INSCRIPCIONES ABIERTAS. Para más info acercarse a la dirección o comunicarse por WhatsApp.
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h4>A Toda Playa:</h4>
+                    <p> Punto de encuentro gratuito con música, juegos y biblioteca móvil en las localidades balnearias del Distrito (Reta, Claromecó y Orense).
                        <br>
                     </p>
                 </div>
@@ -136,31 +288,21 @@
 
 <!-- Features (Talleres) -->
 <div id="juventud">
-    <section  class="features mt-5">
+    <section  class="features pt-5">
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
+            <div class="section-title pb-1">
                 <p>Talleres</p>
                 {{-- <h2>Dictados en el CCE</h2> --}}
             </div>
 
             <div class="row justify-content-center">
-
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                     <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
                         <i class="fas fa-mobile-alt"></i>
                         <h4> Conectando generaciones: </h4>
-                        <p>  El punto digital brindará el taller destinado a adultos mayores en el que aprenderán desde 0 manejo de celular, aplicaciones tecnológicas y uso de homebanking.
-                            (Comienza el Miércoles 05/06 a las 10:00, pueden inscribirse llamando al 2983456538.
-                        <br>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="fas fa-icons"></i>
-                        <h4> Canva para artesanas y emprendedoras: </h4>
-                        <p>
-                            Canva para artesanas y emprendedoras en conjunto con el frente de mujeres y diversidades (Martes de 09:00 a 10:30 o Jueves de 15:00 a 16:30). Para más información comunicarse al 2983-609374.
+                        <p>  El punto digital brinda el taller destinado a adultos mayores en el que aprenderán desde 0
+                            manejo de celular, aplicaciones tecnológicas y uso de homebanking. Los interesados pueden
+                            comunicarse por WhatsApp 2983-456538.
                         <br>
                         </p>
                     </div>
@@ -186,16 +328,6 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                     <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
-                        <i class="fas fa-hand-holding-heart" style="color: #B7265D;"></i>
-                        <h4>Salud mental:</h4>
-                        <p> En conjunto con el área de prevención de adicciones y el centro comunitario llevamos adelante un taller que consta de 3 encuentros donde se trabajan con herramientas
-                            y dispositivos para acompañar a jóvenes de las escuelas secundarias.
-                        <br>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
-                    <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                         <i class="fas fa-hand-paper"></i>
                         <h4>Ludopatía:</h4>
                         <p> En conjunto con el área de prevención de adicciones se llevará adelante un taller de prevención dirigido a todas las escuelas secundarias.
@@ -214,37 +346,8 @@
 <!-- End Features Section -->
 
 
-
-<!-- Features (Talleres) -->
-<section id="features" class="features mt-5">
-    <div class="container" data-aos="fade-up">
-        <div class="section-title">
-            <p>La Dirección de Juventud</p>
-            {{-- <h2>Dictados en el CCE</h2> --}}
-        </div>
-        <p>  La Dirección cuenta con un espacio llamado <strong>“Punto Digital”. </strong>
-            Tiene por objetivo democratizar el acceso a las Tecnologías de la Información y la Comunicación (TIC), a través de dispositivos de acceso libre y gratuito a internet,
-             capacitaciones, talleres, asistencia en trámites y actividades culturales. <br>
-
-            En la Dirección también se realiza el <strong>examen teórico para la licencia de conducir</strong> de 08:00 a 13:00 hs.
-            Pueden solicitar sus turnos por la <strong>App MiTresa</strong>.
-
-           <br>
-        </p>
-
-    </div>
-</section>
-<!-- End Features Section -->
-
-
-
-
-
-
-
-
 <!-- ======= Portfolio Section ======= -->
-<section id="portfolio" class="portfolio">
+<section id="portfolio" class="portfolio bg-grey">
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -255,11 +358,11 @@
         <div class="row" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">Todos</li>
+                <li data-filter="*" class="filter-active">*</li>
                 <li data-filter=".filter-acomp">Acompañar Juventudes</li>
                 <li data-filter=".filter-inspiran">Jovenes que Inspiran</li>
-                <li data-filter=".filter-niniez">Decisión niñez</li>
                 <li data-filter=".filter-tj">Tresa joven</li>
+                <li data-filter=".filter-atp">A Toda Playa</li>
             </ul>
             </div>
         </div>
@@ -271,12 +374,12 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
                 <div class="portfolio-wrap">
-                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes.jfif")}}" class="img-fluid" alt="">
+                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes.jpeg")}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                     {{-- <h4>Talleres</h4> --}}
                     {{-- <p>App</p> --}}
                     <div class="portfolio-links">
-                        <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
                         <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                     </div>
@@ -285,12 +388,12 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
                 <div class="portfolio-wrap">
-                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jfif")}}" class="img-fluid" alt="">
+                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jpeg")}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                     {{-- <h4>Muestras</h4> --}}
                     {{-- <p>App</p> --}}
                     <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                    <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes2.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
                     <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                     </div>
                 </div>
@@ -299,12 +402,12 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
                 <div class="portfolio-wrap">
-                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jfif")}}" class="img-fluid" alt="">
+                    <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jpeg")}}" class="img-fluid" alt="">
                     <div class="portfolio-info">
                         {{-- <h4>Presentacion</h4> --}}
                         {{-- <p>Web</p> --}}
                         <div class="portfolio-links">
-                            <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                            <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes3.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                             <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
@@ -313,13 +416,13 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-acomp">
             <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jfif")}}" class="img-fluid" alt="">
+                <img src="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jpeg")}}" class="img-fluid" alt="">
 
                 <div class="portfolio-info">
                 {{-- <h4>App 2</h4> --}}
 
                 <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="{{asset("storage/secciones/juventud/acompaniar_juventudes4.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                     <a href="https://www.instagram.com/p/C67a7GpJevw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
                 </div>
@@ -328,10 +431,10 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
             <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran.jfif")}}" class="img-fluid" alt="">
+                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran.jpeg")}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                 <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                     <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
                 </div>
@@ -340,10 +443,10 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
             <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran2.jfif")}}" class="img-fluid" alt="">
+                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran2.jpeg")}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                 <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran2.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran2.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
                     <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
                 </div>
@@ -352,28 +455,85 @@
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-inspiran">
             <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran3.jfif")}}" class="img-fluid" alt="">
+                <img src="{{asset("storage/secciones/juventud/jovenes_inspiran3.jpeg")}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                 <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran3.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                    <a href="{{asset("storage/secciones/juventud/jovenes_inspiran3.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
                     <a href="https://www.instagram.com/p/C8YBJx4p88p/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
                 </div>
                 </div>
             </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-niniez">
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atp">
                 <div class="portfolio-wrap">
-                <img src="{{asset("storage/secciones/juventud/decision_ninies.jfif")}}" class="img-fluid" alt="">
-
-                <div class="portfolio-info">
-                    {{-- <h4>Card 2</h4>
-                    <p>Card</p> --}}
+                    <img src="{{asset("storage/secciones/juventud/j1.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
                     <div class="portfolio-links">
-                    <a href="{{asset("storage/secciones/juventud/decision_ninies.jfif")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
-                    <a href="https://www.instagram.com/p/C8moG7fpKyb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{{asset("storage/secciones/juventud/j1.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/DEVR10hRVX-/?img_index=1" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/j2.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/j2.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/DEVR10hRVX-/?img_index=1" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/j3.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/j3.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/DEVR10hRVX-/?img_index=1" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/j4.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/j4.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/DEVR10hRVX-/?img_index=1" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/j5.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/j5.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/DEVR10hRVX-/?img_index=1" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-atp">
+                <div class="portfolio-wrap">
+                    <img src="{{asset("storage/secciones/juventud/j6.jpeg")}}" class="img-fluid" alt="">
+                    <div class="portfolio-info">
+                    <div class="portfolio-links">
+                        <a href="{{asset("storage/secciones/juventud/j6.jpeg")}}" data-gallery="portfolioGallery" class="portfolio-lightbox" ><i class="bx bx-plus"></i></a>
+                        <a href="https://www.instagram.com/p/DEVR10hRVX-/?img_index=1" target="_blank" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                    </div>
                 </div>
             </div>
 

@@ -1,131 +1,184 @@
+@extends('layouts.app-tsas')
 
-@extends('layouts.app')
-<!-- barra de navegacion -->
 @include('layouts.navbar')
 
 @section('content')
-{{-- PORTADA --}}
-
-<div id="la-ciudad">
-    <div class="portada-foto text-md-left text-sm-center ">
-        <div class="background-portada">   </div>
-        {{-- <img class="logos-portada" src="assets/img/sections-portadas/logos/logos.png" alt=""> --}}
-        @foreach ($textos as $text)
-            @if($text->seccion->nombre == "Empleo - Emprendedores")
-                <h1>Oficina de Empleo y Capacitación</h1>
-                @else
-                <h1>{{$text->seccion->nombre}}</h1>
-            @endif
-        @endforeach
-        {{-- @endif --}}
-    </div>
-</div>
-    <!-- ======= borde colorido ======= -->
-    <div class="container-border">
-        <div class="row">
-            <div class="col-4 border-5">
-            </div>
-
-            <div class="col-4 border-1">
-            </div>
-            <div class="col-4 border-6">
-            </div>
-        </div>
-    </div>
-    <!-- ======= fin borde colorido ======= -->
-{{-- FIN PORTADA --}}
 
 
-<!-- ======= About Us Section ======= -->
-<section id="about" class="about-impact">
+    {{-- <body id="page-top"> --}}
 
-    <div class="container" data-aos="fade-up">
-
-        <div class="section-header">
-            <h2>  Bienvenidos a <span class="title-detail" > Tres Arroyos </span></h2>
-            <p class="fst-italic">Donde hay lugar para todos</p>
-        </div>
-
-        <div class="row gy-4">
-            <div class="col-lg-6 ">
-                {{-- <h3> <span class="title-detail" > Somos </span></h3> --}}
-                <img src="{{asset("storage/secciones/la-ciudad/3arroyos.jpg")}}" class="img-fluid rounded-4 mb-4" alt="">
-
-                <p>Somos cuna de deportistas y clubes de alto nivel, como también instituciones que trabajan incansablemente por el bien común. Eso nos caracteriza, como tresarroyenses.</p>
-                <p> <strong>Somos</strong> un distrito de cooperativas y emprendedores, el espíritu de trabajo articulado y de comunidad está presente en nuestro gen tresarroyense.</p>
-                <p> Somos todas las colectividades, que han hecho de nuestra ciudad <strong> su  hogar </strong> para toda la vida. Tenemos circuitos para que conozcas <strong>nuestras raíces </strong>a través de ellos.
-                </p>
-            </div>
-            <div class="col-lg-6 ">
-                <div class="content ps-0 ps-lg-5">
-                    {{-- <p class="fst-italic">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                    magna aliqua.
-                    </p>
-                    <ul>
-                    <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                    <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul> --}}
-                    <p>
-                    Desde el interior de la provincia, proyectamos nuestra fuerza productiva, a costa del <strong>esfuerzo</strong>, trabajo continuo y un parque industrial reconocido en todo el país,
-                    con más de <strong>80</strong> empresas radicadas, llevando a Tres Arroyos al mundo. </p>
-                    <p> Somos reconocidos como la capital nacional del <strong>trigo</strong> y por eso festejamos todos los años la <strong>Fiesta Provincial del Trigo</strong>. </p>
-                    <p> Somos el <strong>campo</strong>, la industria, el comercio y el <strong>trabajo</strong> de cada uno de nuestros vecinos. </p>
-                    <p> Somos un distrito hermoso para recorrer, nuestras <strong>playas extensas</strong>, pueblos rurales, muchísima naturaleza e <strong> historias</strong> por conocer.
-                        Tenemos museos, teatro, instituciones culturales, arquitectura y monumentos esplendidos.</p>
-                    <div class="position-relative mt-4">
-                    <img src="{{asset("storage/secciones/la-ciudad/licensed-image.jpg")}}" class="img-fluid rounded-4" alt="">
-                    {{-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> --}}
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 ">
+                <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Bienvenidos a Tres Arroyos</h1>
+                        <hr class="divider" />
                     </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Donde hay lugar para todos</p>
+                        <!-- <a class="btn btn-primary btn-xl" href="#about">Conocenos</a> -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <!-- <h2 class="text-white mt-0">We've got what you need!</h2> -->
+                        <!-- <hr class="divider divider-light" /> -->
+                        {{-- <div class="main-icon text-white fs-1 m-2">
+                           <i class="fas fa-city"></i>
+                        </div> --}}
+
+                        <p class="text-white-75 mb-4">Desde el interior de la provincia, proyectamos nuestra fuerza
+                            productiva, a costa del esfuerzo, trabajo continuo y un parque industrial reconocido en
+                            todo el país, con más de 80 empresas radicadas, llevando a Tres Arroyos al mundo.
+                        </p>
+                        <!-- <a class="btn btn-light btn-xl" href="#services">Conocé más!</a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container px-4 px-lg-5">
+                <!-- <h2 class="text-center mt-0">Nosotros Somos</h2>
+                <hr class="divider" /> -->
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="fas fa-seedling fs-1 text-primary"></i></div>
+
+                            <!-- <h3 class="h4 mb-2">Sturdy Themes</h3> -->
+                            <p class="text-muted mb-0">Somos reconocidos como la capital nacional del trigo y por eso
+                                festejamos todos los años la <b>Fiesta Provincial del Trigo</b>.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="fas fa-tractor fs-1 text-primary"></i></div>
+
+                            <p class="text-muted mb-0">Somos el <b>campo, la industria, el comercio y el trabajo </b> de
+                                cada uno de nuestros vecinos.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="fas fa-tree fs-1 text-primary"></i></div>
+
+                            <p class="text-muted mb-0">Somos un distrito hermoso para recorrer, nuestras <b> playas
+                                extensas, pueblos rurales </b> , muchísima naturaleza e historias por conocer.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="fas fa-theater-masks fs-1 text-primary"></i></div>
+
+                            <p class="text-muted mb-0">Tenemos <b> museos, teatro, </b> instituciones culturales,
+                                arquitectura y monumentos esplendidos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action-->
+        <section class="page-section bg-dark text-white">
+            <div class="container col-lg-8 px-4 px-lg-5 ">
+                <div class="row">
+                    <div class="col-lg-4 d-flex align-items-center">
+
+                            {{-- <i class="bi-heart fs-xlarge text-primary"></i> --}}
+                            <img class="img-fluid" src="{{asset("storage/secciones/la-ciudad/MdTsAs_isologo-07.png")}}" alt="..." />
+
+
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Somos cuna de <b>deportistas y clubes de alto nivel</b>, como también instituciones que
+                        trabajan incansablemente por el bien común. Eso nos caracteriza, como tresarroyenses. <br>
+
+                        Somos un distrito de <b>cooperativas y emprendedores</b>, el espíritu de trabajo articulado y de
+                        comunidad está presente en nuestro gen tresarroyense. <br>
+
+                        Somos todas las <b>colectividades</b>, que han hecho de nuestra ciudad su hogar para toda la vida.
+                        Tenemos circuitos para que conozcas nuestras raíces a través de ellos.</p>
+                    </div>
+
+                </div>
+
+                <!-- <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a> -->
+            </div>
+        </section>
+
+          <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 col-sm-6">
+                        <a class="portfolio-box" title="Project Name">
+                            <img class="img-fluid" src="{{asset("storage/secciones/la-ciudad/ciudadanos.jpg")}}" alt="..." />
+
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Somos</div>
+                                <div class="project-name">140 años de historia
+                                    construida por muchos
+                                    vecinos ilustres.
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <a class="portfolio-box" title="Project Name">
+                            <img class="img-fluid" src="{{asset("storage/secciones/la-ciudad/tierra.jpg")}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Somos</div>
+                                <div class="project-name">la tierra que inspiró
+                                    el Martin Fierro.</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <a class="portfolio-box" title="Project Name">
+                            <img class="img-fluid" src="{{asset("storage/secciones/la-ciudad/cabanias.jpg")}}" alt="..." />
+
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Somos</div>
+                                <div class="project-name">Dardo Rocha
+                                    y Salvador Cabañas…</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <a class="portfolio-box" title="Project Name">
+                            <img class="img-fluid" src="{{asset("storage/secciones/la-ciudad/tsass.jpg")}}" alt="..." />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Somos</div>
+                                <div class="project-name">Tres Arroyos</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
 
-    </div>
-</section><!-- End About Us Section -->
 
 
-
-
-
-
-
-
-
-
-
-<section id="project-squares" class="p-0 mt-5">
-    {{-- <div class="container "> --}}
-    {{-- <div class="container">
-        <div class="col-lg-12">
-            <div class="col-lg-6">
-                <p>Somos 140 años de historia construida por muchos vecinos ilustres. </p>
-            </div>
-            <div class="col-lg-6">
-                <p> Somos Dardo Rocha y Salvador Cabañas…</p>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="col-lg-6">
-                <p>Somos la tierra que inspiró el Martin Fierro. </p>
-            </div>
-            <div class="col-lg-6">
-                <p>Somos Tres Arroyos. </p>
-            </div>
-        </div>
-    </div> --}}
-    <div class="grid-container ">
-        <div class="item item-1 order-lg-1 order-sm-2 "> <div class="text-item"> <p >   <strong> Somos </strong> <br> 140 años de historia <br> construida por muchos  <br> vecinos ilustres. </p></div></div>
-        <div class="item item-2 order-2 order-sm-3 "> <div class="text-item"> <p> <strong> Somos </strong> <br> Dardo Rocha <br> y Salvador Cabañas…</p></div></div>
-        <div class="item item-3 order-3 order-sm-1 "> <div class="text-item"> <br><p><strong> Somos </strong> <br> la tierra que inspiró <br> el Martin Fierro.   <br></p></div></div>
-        <div class="item item-4 order-4 order-sm-4 "> <div class="text-item"> <p ><strong> <br>Somos <br> Tres Arroyos.</strong>  </p></div></div>
-
-    </div>
-{{-- </div> --}}
-
-</section>
-
-
-{{-- PORTADA --}}
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<!-- * *                               SB Forms JS                               * *-->
+<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 

@@ -85,6 +85,7 @@ Route::controller(HomeController::class)->group(function () {
 
     /*EVENTOS*/
     Route::get('/proximos-eventos', 'showAllEvents');
+    Route::get('/eventos-chat_bot', 'showAllEventsForChatBot');
 
     /*TRANSPARENCIA FISCAL */
     Route::get('/transparencia-fiscal', 'showTransparenciaFiscal');

@@ -640,6 +640,23 @@ class HomeController extends Controller
         return view('sections.eventos', compact('eventos', 'categorias'));
     }
 
+      /**
+     * MUESTRA TODOS LOS PRÓXIMOS EVENTOS EN TEXTO UNICAMENTE ( PARA CHATBOT )
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showAllEventsForChatBot()
+    {
+        $hoy = Carbon::today();
+        $hoy = $hoy->format('Y-m-d');
+        $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->with('seccion')->with('categoria')->get(); //ver que me traiga prox eventos y si ya paso la fecha que no lo traiga
+        $categorias = Categoria::orderBy('nombre')->get();
+
+        return view('sections.eventos-chatbot', compact('eventos', 'categorias'));
+    }
+
+
+
 
     /*****************   ------------------------------  TRANSPARENCIA FISCAL  -------------------------- *****************/
 

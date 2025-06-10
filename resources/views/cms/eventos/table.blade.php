@@ -14,22 +14,31 @@
         <tbody>
             @foreach($eventos as $evento)
                 <tr>
-                    <td>{{ $evento->nombre }}</td>
+                    <td>
+                        @can('eventos.edit')
+                            <a href="{{ route('eventos.edit', [$evento->id]) }}" >
+                                {{ $evento->nombre }}
+                            </a>
+                        @else
+                            {{ $evento->nombre }}
+                        @endcan
+
+                    </td>
                 <td>{{ $evento->seccion->nombre }}</td>
                 <td>{{ $evento->img }}</td>
                 <td>{{ $evento->vigente }}</td>
                 <td>{{ \Carbon\Carbon::parse($evento->fecha_inicio)->format('Y-m-d')}}</td>
                 <td>{{ \Carbon\Carbon::parse($evento->fecha_fin)->format('Y-m-d')}}</td>
-                    <td width="120">
+                    <td class="text-center" width="120">
                         {!! Form::open(['route' => ['eventos.destroy', $evento->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             @can('eventos.edit')
-                                <a href="{{ route('eventos.edit', [$evento->id]) }}" class='btn btn-default btn-xs'>
+                                <a href="{{ route('eventos.edit', [$evento->id]) }}" class='btn btn-default btn-sm'>
                                     <i class="far fa-edit"></i>
                                 </a>
                             @endcan
                             @can('eventos.destroy')
-                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                                {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm', 'onclick' => "return confirm('Are you sure?')"]) !!}
                             @endcan
                         </div>
                         {!! Form::close() !!}

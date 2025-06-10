@@ -67,7 +67,7 @@
                         <h6 class="ms-5 blue-font"><strong>Requisitos</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->requisitos !!}</div>
                         <h6 class="ms-5 blue-font"><strong>Costo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->costo !!}</div>
                         <h6 class="ms-5 blue-font"><strong>Contacto</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->contacto !!}</div>
-                        <h6 class="ms-5 blue-font"><strong>Links de interés</strong></h6><div class="ms-5 ps-2 mb-3"><a href="{{url('/storage/archivos/guia_tramites/'.$tram->links)}}" target="_blank"> {!! $tram->links !!} </a> </div>
+                        <h6 class="ms-5 blue-font"><strong>Links de interés</strong></h6><div class="ms-5 ps-2 mb-3"><a href="{{$tram->links}}" target="_blank"> {!! $tram->links !!} </a> </div>
                     </div>
 
 

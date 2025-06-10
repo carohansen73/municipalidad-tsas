@@ -142,6 +142,13 @@ h6 {
 .display-none{
     display: none;
 }
+
+.bg-grey{
+    background-color: whitesmoke;
+}
+
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -1039,9 +1046,15 @@ h6 {
   text-align: center;
 } */
 
+/*
 #hero .menu-home .icon-box:not(.icon-7){
     padding: 30px 0px;
+} */
+
+#hero .menu-home .icon-box{
+    padding: 30px 0px;
 }
+
 
 #hero .icon-box i {
   font-size: 32px;
@@ -1757,7 +1770,6 @@ section {
 .evento-img img{
     border-radius: 10px;
     box-shadow: 0 0 9px rgba(0, 0, 0, .1);
-    margin: 0px  20px;
     width: 100% ;
     /* height: 420px; */
     object-fit: cover;
@@ -1766,29 +1778,36 @@ section {
 .evento-img {
     position: relative;
     width: 100% ;
-    margin: 0px  20px;
-    left: 0px;
+    margin: 0;
+    /* margin: 0px  20px; */
+
 }
 
 .evento-categoria{
     position: absolute;
-    top: 20px;
-    left: -10px;
-    background-color: #25afc3;
+    top: 10px;
+    left: 10px;
+    background-color: whitesmoke;
      z-index: 2;
-    padding: 10px;
-    width: auto;
-    border-radius: 18px 0px 18px 0px;
+    padding: 5px 10px;
+    max-width: auto;
+    border-radius: 4px;
     box-shadow: 0 0 9px rgba(0, 0, 0, .1);
     /* object-fit: cover; */
 }
 
 #cultura-eventos .evento-img .evento-categoria p{
-    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
 }
 
 #home-eventos .evento-img .evento-categoria p{
-    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
 }
 
 #cultura-eventos .evento-img img,
@@ -1891,7 +1910,7 @@ section {
         /* border-radius: 10px;
         box-shadow: 0 0 9px rgba(0, 0, 0, .1); */
         margin: 0px 20px;
-        left: 0px;
+
         /* height: 420px; */
     }
 
@@ -2569,6 +2588,13 @@ section {
   font-size: 13px;
   font-weight: 400;
   color: #aaaaaa;
+}
+
+.date-span{
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaaaaa;
 }
 
 .team .member .member-info p {
@@ -3612,14 +3638,14 @@ EDA72B
 .blue-button {
   background: rgb(13, 116, 189);
   border: 0;
-  padding: 10px 24px;
+  padding: 6px 10px;
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
 }
 
 .blue-button:hover {
-  background: rgb(89, 152, 197);
+  background: rgb(27, 133, 209) !important;
 }
 
 .register-button {

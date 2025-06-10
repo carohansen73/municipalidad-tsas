@@ -58,10 +58,11 @@
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <a href="/56-fiesta-del-trigo">
+                <a href="/direccion-de-juventud">
                     <div class="icon-box icon-7">
-                        <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1" alt="">
-                        <h3>Fiesta del Trigo</h3>
+                        {{-- <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1" alt=""> --}}
+                        <i class="bi bi-hand-thumbs-up"></i>
+                        <h3>Juventud</h3>
                     </div>
                 </a>
             </div>
@@ -105,11 +106,11 @@
                         </div> --}}
                         <!-- Swiper -->
                         <div class="today d-flex justify-content-center">
-                            <a href="/56-fiesta-del-trigo">
-                            <video  id="video" src="{{asset("storage/videos/reel_general_fdt.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
+                            {{-- <a href="/56-fiesta-del-trigo"> --}}
+                            <video  id="video" src="{{asset("storage/videos/banner_a.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
                                 Tu navegador no admite el elemento <code>video</code>.
                             </video>
-                            </a>
+                            {{-- </a> --}}
 
                             {{-- <img src="{{asset("storage/hoy/today2.png")}}" class="img-fluid" alt="">
                             <div class="today-one"><p> <strong>Inscripción al FOMEPRO </strong>en la oficina de empleo y capacitación, Pedro N. Carrera 940. <br><a href="https://www.tresarroyos.gov.ar/seccion/empleo-emprendedores" target="_blank">Bases y condiciones</a></p>    </div>
@@ -214,25 +215,14 @@
 
         <div class="row">
             @foreach($eventos as $evento)
-                <div class="col-lg-3 pe-4 col-md-6 col-12 mb-3 align-items-stretch ">
+                <div class="col-lg-3 col-md-6 col-12 mb-3  ">
                     <div class=" evento-img">
 
                         <img src="{{asset("storage/eventos/".$evento->img)}}" class="img-fluid" alt="">
 
                         <button  class="btn btn-modal-evento" data-bs-toggle="modal" data-bs-target="#exampleModal4" data-imagenevento="{{$evento->img}}" data-seccion="eventos"
                             data-bs-whatever="@mdo">ver</button>
-                        <div class="evento-categoria"
-                            @if($evento->categoria->nombre == 'Cultura')
-                                style="background:#d63384;"
-                            @elseif($evento->categoria->nombre == 'Educación')
-                                style="background:rgb(13, 116, 189);"
-                            @elseif($evento->categoria->nombre == 'Generales')
-                                style="background: #662483;"
-                            @elseif($evento->categoria->nombre == 'Salud')
-                                style="background: #53c04d;"
-
-                            @endif
-                            >
+                        <div class="evento-categoria">
                                 <p class="mb-0">
                                     @if($evento->categoria->nombre == 'Cultura, Educación y Derechos Humanos')
                                     Cultura
@@ -387,59 +377,6 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="icon-box icon-4">
-                    <div class="icon"><i class="bi bi-calendar3"></i></div>
-                    <h4><a href="https://aplicaciones.tresarroyos.gov.ar/graficas/calendario.pdf" target="_blank" alt="Vencimientos 2023">Calendario de Vencimientos</a></h4>
-                    {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-                    <a href="guia-de-tramites">
-                          <div class="icon-box icon-2">
-                    <div class="icon"><i class="bi bi-card-checklist"></i></div>
-                    <h4><a href="guia-de-tramites">Guía de Trámites</a></h4>
-                    {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
-                    </div>
-                </a>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="icon-box icon-1">
-                    <div class="icon"><i class="bi bi-chat-dots"></i></div>
-                    <h4><a href="https://mitresa.gobdigital.com.ar/web/default">Consultas o Reclamos</a></h4>
-                    {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
-                    </div>
-                </div>
-
-                {{-- {* /fila *} --}}
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-2">
-                    <div class="icon"><i class="bi bi-clipboard-check"></i></div>
-                    <h4><a href="/boletin-oficial">Boletín Oficial</a></h4>
-                    {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
-                </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box icon-1">
-                    <div class="icon"><i class="bi bi-house-check-fill"></i></div>
-                    <h4><a href="/transparencia-fiscal">Transparencia Fiscal</a></h4>
-                    {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
-                </div>
-                </div>
-
-                {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box icon-3">
-                    <div class="icon"><i class="bi bi-car-front"></i></div>
-                    <h4><a href="https://tresarroyos.gobdigital.com.ar/web/turnoFecha?m=2" target="_blank">Licencia de Conducir</a></h4>
-
-                </div>
-                </div> --}}
-
-
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-2">
                         <div class="icon"><i class="fas fa-desktop"></i></div>
@@ -455,13 +392,61 @@
                     </div>
                 </div>
 
-
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-1">
                         <div class="icon"><i class="fas fa-laptop-medical"></i></div>
                         <h4><a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></h4>
                     </div>
                 </div>
+
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-2">
+                        <div class="icon"><i class="bi bi-clipboard-check"></i></div>
+                        <h4><a href="/boletin-oficial">Boletín Oficial</a></h4>
+                        {{-- {* <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p> *} --}}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box icon-1">
+                        <div class="icon"><i class="bi bi-house-check-fill"></i></div>
+                        <h4><a href="/transparencia-fiscal">Transparencia Fiscal</a></h4>
+                        {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="icon-box icon-4">
+                    <div class="icon"><i class="bi bi-calendar3"></i></div>
+                    <h4><a href="https://aplicaciones.tresarroyos.gov.ar/graficas/calendario.pdf" target="_blank" alt="Vencimientos 2023">Calendario de Vencimientos</a></h4>
+                    {{-- {* <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p> *} --}}
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="guia-de-tramites">
+                          <div class="icon-box icon-2">
+                    <div class="icon"><i class="bi bi-card-checklist"></i></div>
+                    <h4><a href="guia-de-tramites">Guía de Trámites</a></h4>
+                    {{-- {* <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p> *} --}}
+                    </div>
+                    </a>
+                </div>
+
+                {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                <div class="icon-box icon-3">
+                    <div class="icon"><i class="bi bi-car-front"></i></div>
+                    <h4><a href="https://tresarroyos.gobdigital.com.ar/web/turnoFecha?m=2" target="_blank">Licencia de Conducir</a></h4>
+
+                </div>
+                </div> --}}
+
+
+
+
+
+
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box icon-3">
@@ -470,34 +455,47 @@
                     </div>
                 </div>
 
-
-
-                {{-- {* /fila *} --}}
-
-                {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-1">
-                <div class="icon"><i class="bi bi-recycle"></i></div>
-                <h4><a href="">Gestión Ambiental</a></h4>
-
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="icon-box icon-2">
+                        <div class="icon">
+                            <i class="bi bi-universal-access" data-bs-toggle="modal" data-bs-target="#qrModal"></i>
+                        </div>
+                        <h4><a href="#" data-bs-toggle="modal" data-bs-target="#qrModal">Área Discapacidad</a></h4>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon-box icon-3">
-                <div class="icon"><i class="bi bi-egg-fried"></i></div>
-                <h4><a href="">Bromatología</a></h4>
+                <!-- Modal para mostrar el QR de Discapacidad -->
+                    <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="qrModalLabel"> Área Discapacidad: Contacto Inmediato. <br> Obtené un turno para tramitar el CUD.</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <img src="{{asset("storage/secciones/discapacidad/whatsapp_qr.png")}}" alt="QR de WhatsApp" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{{--
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box icon-3">
+                            <div class="icon"><i class="fas fa-landmark"></i></div>
+                            <h4><a href="https://forms.gle/BTWBeLuhKzmWEeGFA" target="_blank">Mayores Contribuyentes</a></h4>
+                        </div>
+                    </div> --}}
 
-                </div>
-            </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box icon-1">
+                        <div class="icon"><i class="bi bi-chat-dots"></i></div>
+                        <h4><a href="https://mitresa.gobdigital.com.ar/web/default">Consultas o Reclamos</a></h4>
+                        {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+                        </div>
+                    </div>
 
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-box icon-2">
-                <div class="icon"><i class="bi bi-image"></i></div>
-                <h4><a href="">Imágenes</a></h4>
-
-                </div>
-            </div> --}}
       {{-- {* /fila *} --}}
 
         </div>

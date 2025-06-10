@@ -38,6 +38,7 @@ class Evento extends Model
         'seccion_id',
         'categoria_id',
         'nombre',
+        'descripcion',
         'img',
         'fecha_inicio',
         'fecha_fin'
@@ -52,6 +53,7 @@ class Evento extends Model
         'id' => 'integer',
         'seccion_id' => 'integer',
         'nombre' => 'string',
+        'descripcion' => 'string',
         'img' => 'string',
         'fecha_inicio' => 'date',
         'fecha_fin' => 'date'
@@ -65,6 +67,7 @@ class Evento extends Model
     public static $rules = [
         'seccion_id' => 'required|integer',
         'categoria_id' => 'required|integer',
+        'descripcion' => 'nullable',
         //  'img' => 'required',
         'fecha_inicio' => 'required',
         'fecha_fin' => 'required'

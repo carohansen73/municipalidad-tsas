@@ -82,34 +82,26 @@
                 <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
                     <i class="far fa-calendar-alt"></i>
                     <h4> Lunes:</h4>
-                    <p> <strong> PEMTA - Taller de Radio </strong><br>
-                        Karina Arias<br>
-                        15 a 17hs<br>
-                    </p>
-                    <p> <strong> Guitarra y Ukelele  </strong> <br>
-                        Cristian San Román<br>
-                        18 a 20hs<br>
-                    </p>
-                    <p> <strong> Tango Infanto-juvenil  </strong> <br>
-                        18 a 19hs<br>
-                       Karina Yañez<br>
-                    </p>
-                    <p> <strong> Tango adultos  </strong> <br>
-                        19 a 20hs<br>
-                        Karina Yañez<br>
-                    </p>
-                    <p> <strong> Dibujo y Pintura </strong> <br>
-                        Para Adultos. Cada 15 días<br>
-                        Maximiliano Soriano<br>
-                        18:30 a 20:30hs<br>
-                    </p>
-                    <p> <strong> Arte-sanos de la palabra  </strong> <br>
-                        Sofía De Ben Dalmonego<br>
-                        18 a 20hs<br>
-                    </p>
-                    <p> <strong> Folklore </strong><br>
-                        Jorge Mauri.<br>
 
+                    <p> <strong>Modelando historias - taller de cerámica. </strong><br>
+                        De 10 a 12h.<br>
+                        Dicta: Julia Sequeira.<br>
+                    </p>
+                    <p> <strong>Teatro para niños/as.   </strong> <br>
+                        De 17:30 a 19h.<br>
+                        Dicta: Camila Taraborelli.<br>
+                    </p>
+                    <p> <strong> Tango para principiantes.  </strong> <br>
+                        De 18 a 19h.<br>
+                        Dicta: Karina Yáñez.<br>
+                    </p>
+                    <p> <strong> Tango nivel avanzado.  </strong> <br>
+                        De 19 a 20:30h.<br>
+                        Dicta: Karina Yáñez.<br>
+                    </p>
+                    <p> <strong> Encuadernación. </strong> <br>
+                        De 19 a 20h.<br>
+                        Dicta: Daiana Oliver.<br>
                     </p>
                 </div>
             </div>
@@ -117,41 +109,33 @@
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <i class="far fa-calendar-alt"></i>
                     <h4> Martes:</h4>
-                    <p> <strong> Italiano (Arancelado)  </strong> <br>
-                        Mariana Caso<br>
-                         9 a 10:30hs<br>
+                    <p> <strong> Crochet.  </strong> <br>
+                        De 9 a 11h.<br>
+                        Dicta: Leticia Sánchez.<br>
                     </p>
-                    <p> <strong> Crochet (Arancelado) </strong> <br>
-                        Leticia Sánchez<br>
-                        9 a 10:30hs<br>
+                    <p> <strong> Folklore para niños. </strong> <br>
+                        De 18 a 19h.<br>
+                        Dicta: Inés Conti.<br>
                     </p>
-                    <p> <strong> Radioteatro </strong> <br>
-                        Karina Arias<br>
-                        15 a 16:30hs<br>
+                    <p> <strong> Folklore juveniles. </strong> <br>
+                        De 19 a 20:30h<br>
+                        Dicta: Inés Conti.<br>
                     </p>
-                    <p> <strong> Danza Clásica (Arancelado) </strong> <br>
-                        Tamara Campano<br>
-                        14 a 15:30hs<br>
+                    <p> <strong> Pintura para adultos. </strong> <br>
+                        De 18:30 a 20:30h.<br>
+                        Dicta: Karen Montes de Oca.<br>
                     </p>
-                    <p> <strong> Teatro<br>
-                        Beto Pereyra </strong> <br>
-                        18 a 20hs<br>
+                    <p> <strong> Orquesta.</strong><br>
+                        De 19 a 21h.  <br>
+                        Dicta: Belén Altamirano.<br>
                     </p>
-                    <p> <strong> Folklore Inicial (niños) </strong><br>
-                        Inés Conti<br>
-                        18 a 19hs<br>
+                    <p> <strong> Euskera- Idioma Vasco. </strong><br>
+                        De 19 a 20h.<br>
+                        Dicta: Alfredo Laborde.<br>
                     </p>
-                    <p> <strong> Folklore Juveniles </strong> <br>
-                        19 a 21hs<br>
-                    </p>
-                    <p> <strong> Técnicas y lenguaje del muralismo </strong> <br>
-                        Juan Urquiaga<br>
-                        18 a 20hs<br>
-                    </p>
-                    <p> <strong> Euskera - Idioma Vasco </strong> <br>
-                        Alfredo Laborde<br>
-                        19 a 20:30hs<br>
-
+                    <p> <strong> Cocina infantil. </strong> <br>
+                        De 18 a 20h.<br>
+                        Dicta: Amalia Ghiraldi.<br>
                     </p>
                 </div>
             </div>
@@ -160,49 +144,31 @@
                 <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
                     <i class="far fa-calendar-alt"></i>
                     <h4>MIÉRCOLES:</h4>
-                    <p> <strong> Bordado </strong> <br>
-                        Rocío Centeno <br>
-                        8:30 a 10:30hs<br>
+                    <p> <strong> Comprendiendo el cuerpo- taller de movilidad, entrenamiento y conciencia corporal. </strong> <br>
+                        De 10 a 12h. <br>
+                        Dicta: Mariana Amuchastegui.<br>
                     </p>
-                    <p> <strong> Danza Contemporánea (Arancelado) </strong> <br>
-                        Tamara Campano   <br>
-                        15:30 a 17hs <br>
+                    <p> <strong> Iniciación musical folclórica. </strong> <br>
+                        De 17:30 a 19h.   <br>
+                        Dicta: Karen Montes de Oca. <br>
                     </p>
-                    <p> <strong>Orquesta </strong> <br>
-                        Belén Altamirano     <br>
-                        18 a 20hs  <br>
+                    <p> <strong>Maquillaje </strong> <br>
+                        De 15:30 a 17:30h.     <br>
+                        Dicta: Florencia Mohr.  <br>
                     </p>
-                    <p> <strong>Teatro Adultos (Arancelado) </strong> <br>
-                        Jorge Pereyra         <br>
-                        20:15 a 22hs<br>
+                    <p> <strong>Exploración creativa- taller de arte para niños. </strong> <br>
+                        De 18 a 20h.<br>
+                        Dicta: Romina Saint-Denis Lara.<br>
                     </p>
-
-                    <p> <strong> Cultura Hip Hop </strong> <br>
-                        Adolescentes      <br>
-                        Camila Otaegui       <br>
-                        19 a 20hs<br>
+                    <p> <strong> Fotografía nivel inicial. </strong> <br>
+                        De 19 a 20:30h.<br>
+                        Dicta: Ornella Ugalde. <br>
                     </p>
-                    <p> <strong> Cultura Hip Hop </strong> <br>
-                        Adultos       <br>
-                        20 a 21hs<br>
-                    </p>
-                    <p> <strong> Estimulación Cognitiva (Arancelado) </strong> <br>
-                        Laura Caruso                  <br>
-                        17:30 a 19hs<br>
-                    </p>
-
-                    <p> <strong> Apoyo escolar  inglés - Primaria </strong> <br>
-                        17:30 a 18:30 <br>
-                    </p>
-                    <p> <strong> Apoyo escolar  inglés - Secundaria </strong> <br>
-                        18:30 a 19:30 hs <br>
-                    </p>
-                    <p> <strong> Teatro de títeres (Est. Cognitiva) </strong> <br>
-                        Soledad Lorenzo y Analía Mirasso <br>
-                        19:45 a 21:15<br>
+                    <p> <strong> Estimulación Cognitiva. </strong> <br>
+                        De 16:30 a 17:30h.<br>
+                        Dicta: Laura Caruso.<br>
                     </p>
                 </div>
-
             </div>
 
 
@@ -211,82 +177,58 @@
                     <i class="far fa-calendar-alt"></i>
                     <h4>JUEVES: </h4>
 
-                    <p> <strong> Danza Clásica (Arancelado) </strong> <br>
-                        Tamara Campano <br>
-                        14 a 15:30hs<br>
+                    <p> <strong>Teatro para adultos. </strong> <br>
+                        De 17:30 a 19:30h.<br>
+                        Dicta: Camila Taraborelli.<br>
                     </p>
-                    <p> <strong> Experimentación con plantas</strong><br>
-                        Betina Fernández <br>
-                        14:30 a 16:30hs<br>
+                    <p> <strong> Folklore para adultos.</strong><br>
+                        De 18 a 19h. <br>
+                        Dicta: Inés Conti.<br>
                     </p>
-                    <p> <strong> Huerta Urbana </strong> <br>
-                        Vanesa Gassman     <br>
-                        14 a 16hs    <br>
+                    <p> <strong> Folklore juveniles. </strong> <br>
+                        19 a 20:30h.<br>
+                        Dicta: Inés Conti.<br>
                     </p>
-                    <p> <strong> Dibujo y Pintura (Niños) </strong> <br>
-                        Maximiliano Soriano <br>
-                        18:30 a 19:30hs<br>
+                    <p> <strong> Fotografía nivel avanzado. </strong> <br>
+                        De 19 a 20:30h. <br>
+                        Dicta: Ornella Ugalde.<br>
                     </p>
-                    <p> <strong> Folklore Adultos </strong> <br>
-                        Ines Conti      <br>
-                        18 a 19:30hs <br>
-                    </p>
-                    <p> <strong> Folklore Juveniles </strong> <br>
-                        19:30 a 21hs<br>
-                    </p>
-                    <p> <strong> Desafiar la imagen (fotografía taller ludo/creativo) </strong> <br>
-                        Ornella Ugalde <br>
-                        19 a 21hs<br>
-                    </p>
-                    <p> <strong> Creación de cuadernos y libretas </strong> <br>
-                        Daiana Oliver <br>
-                         18 a 20hs<br>
-                    </p>
-                    <p> <strong> Alimentación Saludable </strong> <br>
-                        Amalia Ghiraldi <br>
-                        17 a 19hs<br>
+                    <p> <strong>Alimentación Saludable. </strong> <br>
+                        De 16:30 a 18:30h. <br>
+                        Dicta: Amalia Ghiraldi. <br>
                     </p>
                 </div>
 
 
             </div>
-            <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="100">
+            {{-- <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-left" data-aos-delay="100"> --}}
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
                 <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
                     <i class="far fa-calendar-alt"></i>
                     <h4>VIERNES:</h4>
-                    <p> <strong> Amigos de la lírica (Arancelado)</strong><br>
-                        Belén Altamirano<br>
-                        14 a 16hs   <br>
+                    <p> <strong> Coro.</strong><br>
+                        De 14 a 16h.<br>
+                        Dicta: Belén Altamirano. <br>
                     </p>
-                    <p> <strong> Danza Contemporánea (Arancelado)</strong><br>
-                        Tamara Campano<br>
-                        15:30 a 17hs  <br>
+                    <p> <strong> Arte-sanos de la palabra / taller de escritura.</strong><br>
+                        De 18 a 20h. <br>
+                        Dicta: Sofía De Ben Dalmonego.<br>
                     </p>
-                    <p> <strong> IMAGO MUNDI<br>
-                        Taller de exploración de la imagen gráfica. (grabado)</strong><br>
-                        18 a 20hs<br>
-                        Romina Saint Denis Lara  <br>
+                    <p> <strong> Danza Vasca. </strong><br>
+                        De 18 a 20h.<br>
+                        Coordina el Centro Vasco Hiru Erreka.<br>
                     </p>
                 </div>
             </div>
-                    <div class="col-lg-6 mt-lg-4" data-aos="fade-left" data-aos-delay="100">
-                        <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
-                    <p> <strong> Danza Vasca</strong><br>
-                        18 a 19:30hs  <br>
-                    </p>
 
-
-                    <p> <strong> Modelando historias</strong><br>
-                        Taller integral de cerámica y yoga<br>
-                        Julia Sequeira<br>
-                        18 a 20hs     <br>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="icon-box mt-5 " data-aos="zoom-in" data-aos-delay="150">
+                    <i class="far fa-calendar-alt"></i>
+                    <h4>SABADO (Cada 15 días):</h4>
+                    <p> <strong> Taller de Collage.</strong><br>
+                        De 10 a 12h. <br>
+                        Dicta: Agustina De La Cal. <br>
                     </p>
-                    <p> <strong> Esto es Cine</strong><br>
-                        Tomas Torres<br>
-                        18:30 a 20:30hs <br>
-                    </p>
-
                 </div>
             </div>
 
@@ -296,7 +238,7 @@
   <!-- End Features Section -->
 
   <!-- Features (Talleres en delegaciones) -->
-<section id="features" class="features mt-5">
+{{-- <section id="features" class="features mt-5">
     <div class="container" data-aos="fade-up">
 
         <h3> Talleres en las Delegaciones </h3>
@@ -381,7 +323,7 @@
 
         </div>
     </div>
-  </section>
+  </section> --}}
   <!-- End Features Section -->
 
    <!-- ======= Portfolio Section ======= -->
