@@ -50,7 +50,7 @@
 
             <div class="col-xl-2 col-md-2">
                 <a href="cultura">
-                    <div class="icon-box icon-4">
+                    <div class="icon-box icon-3">
                         <i class="fas fa-theater-masks"></i>
                         <h3>Cultura</h3>
                     </div>
@@ -69,16 +69,17 @@
 
             <div class="col-xl-2 col-md-2">
                 <a href="https://turismo.tresarroyos.gov.ar/" target="_blank">
-                    <div class="icon-box icon-3">
+                    <div class="icon-box icon-2">
                         <i class="fas fa-camera-retro"></i>
                         <h3>Turismo </h3>
                     </div>
                 </a>
             </div>
 
+
             <div class="col-xl-2 col-md-2">
                 <a href="salud" target="_blank">
-                    <div class="icon-box icon-2">
+                    <div class="icon-box icon-1">
                         <i class="fas fa-plus-square"></i>
                         <h3>Salud</h3>
                     </div>
@@ -395,7 +396,7 @@
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-1">
                         <div class="icon"><i class="fas fa-laptop-medical"></i></div>
-                        <h4><a href="https://tresarroyos.itconsultsa.com/login" target="_blank">Telemedicina</a></h4>
+                         <h4><a href="https://telemedicina.cmsta.gob.ar" target="_blank">Telemedicina</a></h4>
                     </div>
                 </div>
 
@@ -442,12 +443,6 @@
                 </div>
                 </div> --}}
 
-
-
-
-
-
-
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box icon-3">
                         <div class="icon"><i class="bi bi-life-preserver"></i></div>
@@ -491,6 +486,14 @@
                         <div class="icon-box icon-1">
                         <div class="icon"><i class="bi bi-chat-dots"></i></div>
                         <h4><a href="https://mitresa.gobdigital.com.ar/web/default">Consultas o Reclamos</a></h4>
+                        {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box icon-4">
+                        <div class="icon"><i class="fas fa-house-user"></i></div>
+                        <h4><a href="https://loteo.tresarroyos.gov.ar/">Un Lote Para mi Familia</a></h4>
                         {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
                         </div>
                     </div>

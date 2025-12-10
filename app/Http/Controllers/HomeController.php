@@ -356,16 +356,9 @@ class HomeController extends Controller
 
         $convocatorias = Convocatorias::all();
 
-
-
-
-
-
         $licitaciones = collect([
 
             (object) ['id' => 4, 'titulo' => 'licitaciones', 'descripcion' => '<u>Valor Pliegos de Bases y Condiciones: </u><br>
-
-
                 <ul>
                     <li>
                        <i class="ri-check-double-line"></i> <strong> Fogones  </strong> <br>
@@ -423,8 +416,6 @@ class HomeController extends Controller
 
         return view('fdt.fdt', compact('lineUp', 'fechas', 'convocatorias',  'licitaciones', 'inscripciones'));
     }
-
-
 
 
    /**

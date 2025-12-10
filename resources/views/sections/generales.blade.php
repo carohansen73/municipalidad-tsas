@@ -116,65 +116,41 @@
                 <section class="team mb-5">
                     <div class="container" data-aos="fade-up">
                         <div class="row container-section-gral">
-                            {{-- <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-                            <div class="elfsight-app-93af1cd1-6a74-46e4-94e5-52761e211fea" data-elfsight-app-lazy></div> --}}
                             @foreach($secciones as $seccion)
-                                @if($seccion->perteneceA->path == 'cultura')
-                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4">
-                                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                            <a href="{{$seccion->link}}">
-                                            <div class="seccion-gral-img">
+                            @if($seccion->orden <= 2)
+                                <div class="col-lg-6 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-5">
+                                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                        <a href="{{$seccion->link}}">
+                                            <div class="seccion-gral-img-xg">
                                                 <img src="assets/img/sections-portadas/{{$seccion->portada}}" class="img-fluid" alt="">
                                             </div>
-                                            </a>
-                                        <div class="member-info">
-                                            @if($nombreSeccion == "cultura")
-                                                <h4 style="color: #9C024E">
-                                            @else
-                                                <h4>
-                                            @endif
-                                            {{$seccion->nombre}}</h4>
-                                            {{-- <span>Chief Executive Officer</span> --}}
-                                            </div>
-                                        </div>
+                                        </a>
+                                        {{-- <div class="member-info">
+                                            <h4 style="color: #9C024E">{{$seccion->nombre}}</h4>
+                                        </div> --}}
                                     </div>
-                                @endif
-                            @endforeach
-                        </div>
-
-
-                        {{-- educacion --}}
-                        {{-- <div class="section-title">
-                            <p style="color: #662483">Educación</p>
-                        </div>
-                        <div class="row container-section-gral mb-5">
-                            @foreach($secciones as $seccion)
-                                @if($seccion->perteneceA->nombre == 'Educacion')
-                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4">
-                                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                            <a href="{{$seccion->link}}" target="_blank">
+                                </div>
+                            @else
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch justify-content-center mb-lg-4">
+                                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                        <a href="{{$seccion->link}}">
                                             <div class="seccion-gral-img">
                                                 <img src="assets/img/sections-portadas/{{$seccion->portada}}" class="img-fluid" alt="">
                                             </div>
                                         </a>
                                         <div class="member-info">
-                                            @if($nombreSeccion == "cultura y educacion")
-                                                <h4 style="color: #662483">
-                                            @else
-                                                <h4>
-                                            @endif
-                                            {{$seccion->nombre}}</h4>
-
-                                            </div>
+                                            <h4 style="color: #9C024E">{{$seccion->nombre}}</h4>
                                         </div>
                                     </div>
-                                @endif
-                            @endforeach
-                        </div> --}}
+                                </div>
+                            @endif
 
+                            @endforeach
+                        </div>
                     </div>
-                </section><!-- End Team Section -->
+                </section>
             @endif
+            <!-- End CULTURA Section -->
 
 
 {{-- ENTIDADES -- OTRAS SECCIONES!! -----  (VER COMO ACOMODO EL CODIGO P NO REPETIR)--}}

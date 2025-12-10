@@ -41,24 +41,24 @@
     <!-- ======= fin borde colorido ======= -->
 {{-- FIN PORTADA --}}
 
-<!-- ======= Fiesta de Colectividades 2024 ======= -->
+<!-- ======= Fiesta de Colectividades 2025 ======= -->
 <div class="container p-4 section-information col-12 pt-5 mt-5"  data-aos="fade-up">
     <div class="">
         <div class="section-title ps-0 pb-2">
-            <p >Fiesta de la colectividades 2024
+            <p >Fiesta de las colectividades 2025
             </p>
-            <h2>14 y 15 de septiembre </h2>
+            <h2>11 y 12 de octubre </h2>
         </div>
         <p>
-            Ingresá  a la<a href="https://www.youtube.com/watch?v=k2gkSoRtnoM" target="_blank"> cuenta oficial de Youtube </a>  de las colectividades y enterate de todo lo que se viene en la próxima fiesta de las colectividades.
+            Ingresá  a la<a href="https://www.youtube.com/watch?v=G5zqstY6074" target="_blank"> cuenta oficial de Youtube </a>  de las colectividades y enterate de todo lo que se viene en la próxima fiesta de las colectividades.
         </p>
 
         <div class="row">
-            <div class=" col-lg-5 text-center justify-content-center mt-5 video-lg">
+            {{-- <div class=" col-lg-5 text-center justify-content-center mt-5 video-lg">
                 <img src="{{asset("storage/secciones/fiesta-post.jpg")}}" class="img-fluid" alt="">
-            </div>
-            <div class=" col-lg-7 text-center justify-content-center mt-5 video-lg">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/k2gkSoRtnoM?si=fSm5HKgLgGGwxLi4&amp;controls=0&amp;start=3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div> --}}
+            <div class=" col-lg-12 text-center justify-content-center mt-5 ">
+                <iframe width="960" height="520" src="https://www.youtube.com/embed/G5zqstY6074?si=G6c4tRmY55Eyatr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>

@@ -152,7 +152,7 @@ class noticiaController extends AppBaseController
         $noticia = $this->noticiaRepository->find($id);
 
         if (empty($noticia)) {
-            Flash::error('No se encontro la noticiad');
+            Flash::error('No se encontro la noticia');
 
             return redirect(route('noticias.index'));
         }

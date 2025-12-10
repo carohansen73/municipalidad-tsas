@@ -46,8 +46,8 @@
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta name="_token" content="{{ csrf_token() }}">
-        <title>Municipalidad TsAs</title>
-        <meta content="" name="description">
+        <title>Municipalidad de Tres Arroyos</title>
+        <meta content="Pagina oficial de la Municipalidad de Tres Arroyos" name="description">
         <meta content="" name="keywords">
 
         <!-- Swiper carousels -->

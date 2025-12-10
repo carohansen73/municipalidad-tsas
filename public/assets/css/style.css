@@ -1146,7 +1146,7 @@ h6 {
 /*Agrego icon 7 para FDT*/
 
 #hero .icon-7 {
-    background-color: #cd9e4d; ;
+    background-color: #dd9c2d;
 }
 
 #hero .icon-7:hover {
@@ -2814,6 +2814,17 @@ section #deportes-eventos{
     width: 380px;
 }
 
+.team .member .seccion-gral-img-xg  img{
+    position: relative;
+    overflow: hidden;
+}
+
+.team .member .seccion-gral-img-xg img:hover {
+    opacity: 1;
+    transform: scale(1.20);
+    transition-duration: 3s;
+ }
+
 /*
 .container-section-gral{
     display: flex;
@@ -3869,6 +3880,14 @@ input[type=number] { -moz-appearance:textfield; } */
     background-size: cover;
 }
 
+ #artistas-locales-portada .portada-foto{
+     background-image: url("../img/sections-portadas/portadas/artistas.jpg");
+    /* background: linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url("../img/sections-portadas/portadas/municipio.jpg") fixed center center; */
+    height: 320px;
+    background-size: cover;
+    background-position: center center;
+}
+
 
 .portada-foto .background-portada{
     position: absolute;
@@ -3936,7 +3955,7 @@ background-size: cover;
 @media (max-width: 991px) {
     .portada-foto h1{
         bottom: 260px;
-        left: 15%;
+        /* left: 15%; */
         padding: 20px 50px;
     }
 }
@@ -3984,6 +4003,12 @@ background-size: cover;
     background-color: #2464a3;
     height: 10px;
 }
+
+.container-border .border-7{
+    background-color: #D04145;;
+    height: 10px;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -4636,3 +4661,138 @@ background-size: cover;
     }
   }
 
+/*  ---------------  CULTURA - ARTISTAS LOCALES  ------------  */
+
+#artistas-locales .section-title p{
+    color: #D04145;
+}
+
+#artistas-locales .section-title h2::after {
+
+  background: #e1494e;
+}
+
+#artistas-locales .member {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#artistas-locales .member-img{
+    /* width: 100%; */
+    /* height: 250px;  */
+
+      width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#artistas-locales .member-img img:hover {
+    opacity: 1;
+    transform: scale(1.20);
+    transition-duration: 3s;
+}
+
+
+.filter-container{
+    background-color: #efefef;
+    border: 1px solid #dadada;
+    border-radius: 8px;
+}
+
+.btn-red{
+    background: #D04145;
+    color: #fff;
+}
+
+.btn-red:hover {
+    border-color: #e1494e;
+    background: #e1494e;
+    color: #fff;
+}
+
+#artistas-locales input:focus,
+#artistas-locales select:focus,
+#artistas-locales textarea:focus {
+  border-color: #e1494e !important;
+   box-shadow: 0 0 0 .25rem #e1494e7b !important;
+  outline: none;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-atencion {
+  animation: pulse 1.5s infinite;
+  padding: 15px  30px;
+}
+
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #ff4d4d;
+  }
+  50% {
+    box-shadow: 0 0 15px #ff4d4d;
+  }
+  100% {
+    box-shadow: 0 0 5px #ff4d4d;
+  }
+}
+
+.btn-brillante {
+  animation: glow 1.8s infinite;
+    padding: 15px  30px;
+}
+
+#artista-local .rounded-img {
+    width: 100%;
+    aspect-ratio: 1/1; /* Mantiene la imagen cuadrada */
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#artista-local .rounded-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+.detail-red{
+    color: #D04145;
+}
+
+.font-red{
+    color: #D04145;
+}
+
+#artistas-locales .social-links i{
+    background-color: #D04145;
+    border-radius: 50%;
+    padding: 8px;
+    color: #FFF;
+    font-size: 24px;
+}
+
+#artistas-locales .social-links i:hover{
+    background-color: #040404;
+}
