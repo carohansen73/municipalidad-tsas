@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-N26BR9CS5F"></script>
@@ -11,8 +11,12 @@
         gtag('config', 'G-N26BR9CS5F');
         </script>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {{-- Google search console --}}
+        <meta name="google-site-verification" content="ZKF6WNLeZ16WGXhf7RaQ7iEvs6NVOP9QV4iwehnQdHk" />
         {{-- <title>{{ config('app.name') }}</title> --}}
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        {{-- <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'> --}}
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -23,42 +27,42 @@
             integrity="sha512-EzrsULyNzUc4xnMaqTrB4EpGvudqpetxG/WNjCpG6ZyyAGxeB6OBF9o246+mwx3l/9Cn838iLIcrxpPHTiygAA=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
-        <!-- iCheck -->
-        {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/icheck-bootstrap/3.0.1/icheck-bootstrap.min.css"
-            integrity="sha512-8vq2g5nHE062j3xor4XxPeZiPjmRDh6wlufQlfC6pdQ/9urJkU07NM0tEREeymP++NczacJ/Q59ul+/K2eYvcg=="
-            crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-            integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
-            crossorigin="anonymous"/>
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
-            integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
-            crossorigin="anonymous"/> --}}
-
         {{-- template estilo --}}
         {{--ARRIBA--}}
         <base href="{BASE_URL}">
         {{--ABAJO--}}
         {{-- <base href="{{ env('APP_URL') }}/"> --}}
         {{----}}
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
         <meta name="_token" content="{{ csrf_token() }}">
         <title>Municipalidad de Tres Arroyos</title>
-        <meta content="Pagina oficial de la Municipalidad de Tres Arroyos" name="description">
+        <meta name="description" content="Pagina oficial de la Municipalidad de Tres Arroyos">
         <meta content="" name="keywords">
 
         <!-- Swiper carousels -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
         <!-- Favicons -->
-        <link href="../assets/img/logo.png" rel="icon">
-        <link href="../assets/img/logo.png" rel="apple-touch-icon">
+        <!-- Favicon principal -->
+        <link rel="icon" href="{{ asset('favicon.ico') }}">
+
+        <!-- PNG fallback -->
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+
+        <!-- Apple -->
+        <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+
+        <!-- PWA / Android -->
+        <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
+        {{-- <link href="../assets/img/logo.png" rel="icon">
+        <link href="../assets/img/logo.png" rel="apple-touch-icon"> --}}
+        <!-- End Favicons -->
 
         <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
         <!-- Vendor CSS Files -->
         <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
@@ -68,17 +72,15 @@
         <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
         <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
         <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        {{-- CSS Personalizado  --}}
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        <!-- Estilo del Template -->
-        {{-- @stack('page_css')
-        <link href="../assets/css/style.css" rel="stylesheet"> --}}
-        {{-- @stack('css/style.css') --}}
 
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        {{-- <link rel="stylesheet" href="css/style.css"> --}}
+
+
 
         {{-- @yield('css') --}}
 
@@ -92,6 +94,7 @@
             <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" /> --}}
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
+        <div id="preloader"></div>
         <div class="wrapper">
         <!-- barra de navegacion -->
         {{-- @include('layouts.navbar') --}}
@@ -112,7 +115,7 @@
                 <div class="col-lg-3 col-3">
                     <div class="row telefono">
                         <div class="col-auto telefono-icono bomberos">
-                            <img src="{{asset("assets/img/logos/bomberos.png")}}">
+                            <img src="{{asset("assets/img/logos/bomberos.png")}}" alt="Bomberos">
                             {{-- <i class="fas fa-phone"></i> --}}
                         </div>
                         <div class="col-auto  text-center">
@@ -125,7 +128,7 @@
                 <div class="col-lg-3 col-3">
                     <div class="row telefono">
                         <div class="col-auto telefono-icono policia">
-                            <img src="{{asset("assets/img/logos/police2.png")}}">
+                            <img src="{{asset("assets/img/logos/police2.png")}}" alt="Policia">
                         </div>
                         <div class="col-auto  text-center">
                             <div><p>Policia</p></div>
@@ -139,7 +142,7 @@
                     <div class="col d-flex justify-content-center ">
                         <div class="telefono">
                             <div class="col-auto telefono-icono ambulancia">
-                                <img src="{{asset("assets/img/logos/ambulancia.png")}}">
+                                <img src="{{asset("assets/img/logos/ambulancia.png")}}" alt="Ambulancia">
                             </div>
                             <div class="col-auto text-center">
                                 <p>Ambulancia</p>
@@ -152,7 +155,7 @@
                 <div class="col-lg-3 col-3">
                     <div class="row telefono">
                         <div class="col-auto telefono-icono atencion">
-                            <img src="{{asset("assets/img/logos/atencion.png")}}">
+                            <img src="{{asset("assets/img/logos/atencion.png")}}" alt="Atencion al Vecino">
                         </div>
                         <div class="col-auto  text-center">
                             <p>Atención al vecino</p>
@@ -274,22 +277,22 @@
             </div>
         </footer><!-- End Footer -->
 
-        <div id="preloader"></div>
+
         <a href="https://wa.me/5492983509001" target="_blank" class="back-to-top d-flex align-items-center justify-content-center" style="margin-bottom: 96px;"><i class="bx bxl-whatsapp"></i></a>
         <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="back-to-top d-flex align-items-center justify-content-center mb-5"><i class="bx bxl-instagram"></i></a>
         <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bxl-facebook"></i></a>
 
         <!-- Vendor JS Files -->
-        <script  src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
-        <script  src="{{ asset('assets/vendor/aos/aos.js')}}"></script>
-        <script  src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script  src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-        <script  src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-        <script  src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-        <script  src="{{ asset('assets/vendor/php-email-form/validate.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/aos/aos.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+        <script defer src="{{ asset('assets/vendor/php-email-form/validate.js')}}"></script>
 
         <!-- Template Main JS File -->
-        <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script defer src="{{ asset('assets/js/main.js') }}"></script>
 
         <!-- Swiper js -->
         {{-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}

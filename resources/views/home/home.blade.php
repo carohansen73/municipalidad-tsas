@@ -7,9 +7,40 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center justify-content-center ">
 
-          <video  id="video" src="assets/img/video/video-tsas.mp4" autoplay="autoplay" loop="loop" muted="muted">
+          {{-- <video  id="video" src="assets/img/video/video-tsas.mp4" autoplay="autoplay" loop="loop" muted="muted">
             Tu navegador no admite el elemento <code>video</code>.
-        </video>
+        </video> --}}
+
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="{{asset("assets/img/sections-portadas/home/portada2.jpg")}}" loading="lazy"  class="d-block w-100" alt="portada municipalidad" >
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="{{asset("assets/img/sections-portadas/home/portada7.jpg")}}" loading="lazy"  class="d-block w-100" alt="portadaplaza san martin">
+                </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <img src="{{asset("assets/img/sections-portadas/home/portada6.jpg")}}" loading="lazy"  class="d-block w-100" alt="portada claromeco">
+                </div>
+
+                 <div class="carousel-item" data-bs-interval="5000">
+                    <img src="{{asset("assets/img/sections-portadas/home/portada10.jpg")}}" loading="lazy"  class="d-block w-100" alt="portadaplaza san martin">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="{{asset("assets/img/sections-portadas/home/portada8.jpg")}}" loading="lazy"  class="d-block w-100" alt="portadaplaza san martin">
+                </div>
+
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
     <div class="container" data-aos="fade-up">
 
@@ -58,11 +89,11 @@
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <a href="/direccion-de-juventud">
-                    <div class="icon-box icon-7">
+                <a href="https://mitresa.gobdigital.com.ar/web/turnos?t=1" target="_blank">
+                    <div class="icon-box icon-4">
                         {{-- <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1" alt=""> --}}
-                        <i class="bi bi-hand-thumbs-up"></i>
-                        <h3>Juventud</h3>
+                        <i class="fas fa-solid fa-car"></i>
+                        <h3>Licencia de Conducir</h3>
                     </div>
                 </a>
             </div>
