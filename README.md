@@ -63,3 +63,9 @@ If you discover any security-related issues, create an issue using the issue tra
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## CLEAR CACHE ON SERVER
+Directorio,Contenido,Acción
+bootstrap/cache/,"Configuración, rutas y servicios optimizados.",Borrar todo el contenido.
+storage/framework/views/,Vistas (Blade) compiladas.,Borrar todo el contenido.
+storage/framework/cache/data/,Caché de la aplicación (si usas el driver file).,Borrar todo el contenido.

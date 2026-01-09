@@ -121,7 +121,9 @@ Route::controller(NoticiaController::class)->group(function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/cms-home', [App\Http\Controllers\CmsHomeController::class, 'index'])->name('cmsHome');
 Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->name('portal');
-
+/*Sorteo de inscripciones para la Corvina Negra*/
+Route::get('/sorteo-corvina-negra', [App\Http\Controllers\EspecialesController::class, 'showInscription'])->name('sorteo.corvina');
+Route::post('/sorteo/inscribirse', [App\Http\Controllers\EspecialesController::class, 'register'])->name('sorteo.register');
 
 
 
@@ -163,16 +165,26 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-Route::get('/clear-cache', function() {
-    $exitCode = Artisan::call('cache:clear');
-    return '<h1>Cache facade value cleared</h1>';
-});
+// Route::get('/clear-cache', function() {
+//     $exitCode = Artisan::call('cache:clear');
+//     return '<h1>Cache facade value cleared</h1>';
+// });
 //Clear Route cache:
 Route::get('/route-clear', function() {
     $exitCode = Artisan::call('route:clear');
     return '<h1>Route cache cleared</h1>';
 });
 
+
+Route::get('/clear-cache', function () {
+
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+
+    return 'CACHE LIMPIADA ✔';
+});
 
 
 

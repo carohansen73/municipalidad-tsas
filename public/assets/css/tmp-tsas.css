@@ -192,3 +192,61 @@ header.masthead h1, header.masthead .h1 {
 .fs-xlarge {
     font-size: 200px;
 }
+
+
+/* CSS PARA EL SORTEO DE ENTRADAS PARA LA CORVINA NEGRA */
+
+header.masthead#masthead-corvina {
+  padding-top: 3rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, rgba(66, 71, 92, 0.8) 0%, rgba(66, 71, 92, 0.8) 100%), url("../img/corvina/pesca.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+
+
+.mont {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+header.masthead#masthead-corvina span.mont{
+    display: inline;
+    background-color: #198754;
+    padding: 0em 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+header.masthead#masthead-corvina .logo-img img{
+    width: 100%;
+}
+
+header.masthead#masthead-corvina hr.divider, #about-corvina hr.divider {
+  height: 0.2rem;
+  max-width: 3.25rem;
+    /* margin-right: 5px;
+    margin-top: 0; */
+  background-color: #198754;
+  opacity: 1;
+}
+
+#about-corvina .btn.btn-success:hover{
+    background-color: #2aa56c;
+}
+
+#about-corvina img{
+    width: 300px;
+}
+
+@media (min-width: 992px) {
+    #about-corvina img{
+        width: 400px;
+    }
+}
