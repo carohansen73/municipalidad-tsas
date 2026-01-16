@@ -5,6 +5,7 @@ use App\Http\Controllers\ReclamosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\BoletinOficialController;
+use App\Http\Controllers\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,7 +95,6 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/boletin-oficial/{tipo}', 'showBusquedaBoletinOficial');
     Route::get('/filtro-boletin-oficial/{tipo?}', 'showBoletinOficial');
     Route::post('/filtro-boletin-oficial/{tipo}', 'showBoletinOficialItem');
-
     Route::get('/avisos-oficiales', 'showAvisosOficiales');
 
     Route::get('/adultos-mayores', 'showAdultosMayores');
@@ -126,17 +126,11 @@ Route::get('/sorteo-corvina-negra', [App\Http\Controllers\EspecialesController::
 Route::post('/sorteo/inscribirse', [App\Http\Controllers\EspecialesController::class, 'register'])->name('sorteo.register');
 
 
-
-
 // Route::controller(BoletinOficialController::class)->group(function () {
 
 //     Route::post('admin-filtro-boletinOficial/', 'indexFiltered');
 
 // });
-
-
-
-
 
 Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
 //rutas que requieren login
@@ -162,7 +156,25 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('grillas', App\Http\Controllers\GrillaController::class);
     Route::resource('convocatorias', App\Http\Controllers\ConvocatoriasController::class);
 
+    /* Sorteo Corvina Negra */
+    Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');
+
+
+    /* Roles y Permisos - Spatie - Exclusivo Admins */
+    Route::resource('rols', App\Http\Controllers\RolController::class);
+
+    Route::get('/permisos/create', [PermissionController::class, 'create'])
+        ->name('permisos.create');
+
+    Route::post('/permisos', [PermissionController::class, 'store'])
+        ->name('permisos.store');
+
 });
+
+/* Roles y Permisos - Spatie - Exclusivo Admins */
+// Route::middleware(['auth', 'role:Admin'])->group(function () {
+
+// });
 
 
 // Route::get('/clear-cache', function() {
@@ -188,4 +200,7 @@ Route::get('/clear-cache', function () {
 
 
 
-Route::resource('rols', App\Http\Controllers\RolController::class);
+
+
+
+

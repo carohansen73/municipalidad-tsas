@@ -92,6 +92,16 @@
 </li>
 @endcan
 
+@can('sorteo.index')
+<li class="nav-item">
+    <a href="{{ route('sorteo.index') }}"
+       class="nav-link {{ Request::is('sorteo*') ? 'active' : '' }}">
+        <p>Sorteo Corvina Negra</p>
+    </a>
+</li>
+@endcan
+
+
 
 @can('user.index')
     <li class="nav-item">
@@ -108,3 +118,11 @@
     </a>
     </li>
 @endcan
+
+@role('Admin')
+<li class="nav-item">
+    <a href="{{ route('permisos.create') }}" class="nav-link">
+        <p>Permisos</p>
+    </a>
+</li>
+@endrole
