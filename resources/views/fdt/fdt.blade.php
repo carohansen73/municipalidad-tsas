@@ -14,12 +14,30 @@
         </div>
     </div>
 
-    {{--
-    <section id="fdt-descripcion" class="fdt-descripcion">
+{{-- VIVI LA EXPERIENCIA --}}
 
-        <img class="foto-portada" src="{{asset("storage/secciones/fdt/1.jpg")}}" alt="foto-1">
+    <section class="trigo-section">
+        <div class="trigo-noise"></div>
 
-    </section> --}}
+        <div class="trigo-content container" data-aos="fade-up">
+
+
+            <div class="text-center">
+                <div class="bg-brushstroke ">
+                    <p> VIVÍ LA EXPERIENCIA</p>
+                </div>
+            </div>
+
+            <div class="trigo-video mt-2">
+                <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fmunicipalidaddetresarroyos%2Fvideos%2F1562791877764376%2F&show_text=false&width=560&t=0"
+                 style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
 
 
     {{-- LINE UP --}}
