@@ -21,7 +21,7 @@ class Grilla extends Model
 
     use HasFactory;
 
-    public $table = 'fest_grilla';
+    public $table = 'fdt_grilla';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

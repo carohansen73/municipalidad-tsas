@@ -23,7 +23,7 @@ class Convocatorias extends Model
 
     use HasFactory;
 
-    public $table = 'fest_convocatoria';
+    public $table = 'fdt_convocatoria';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

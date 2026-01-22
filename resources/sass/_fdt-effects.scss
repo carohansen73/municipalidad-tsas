@@ -1,0 +1,115 @@
+/* EFECTO 1: BANNER QUE SE DESLIZA con fecha - HERO */
+
+// .marquee-section {
+//     color: #efa428;
+//     width: 100%;
+//     height: 80px;
+//     overflow: hidden;
+//     //   background: var(--color-background);
+//     background: #000000;
+//     border-top: 1px solid rgba(255,255,255,0.1);
+//     border-bottom: 1px solid rgba(255,255,255,0.1);
+// }
+
+// .marquee-horizontal {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     padding: 1.5rem 0;
+// }
+
+// .marquee-track {
+//     display: flex;
+//     gap: 3rem;
+//     width: max-content;
+//     font-size: clamp(14px, 2vw, 22px);
+//     font-weight: 700;
+//     letter-spacing: 0.3rem;
+//     text-transform: uppercase;
+//     will-change: transform;
+// }
+
+.marquee-section {
+    overflow: hidden;
+    width: 100%;
+    background: #111;
+    // color: #fff;
+    padding: 1rem 0;
+     color: #efa428;
+}
+
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: scroll-left 20s linear infinite;
+    }
+
+    .marquee-track p {
+        white-space: nowrap;
+        font-size: clamp(14px, 2vw, 22px);
+        font-weight: 700;
+        letter-spacing: 0.3rem;
+        padding-right: 2rem;
+         text-transform: uppercase;
+    }
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* EFECTO 2:  */
+
+
+/* CSS */
+
+/* TICKETS */
+.tickets .card{
+    border: none;
+    background-color: #f4d298;
+
+}
+
+.tickets .card p{
+    color: #2f464c;
+    font-weight: 500;
+    font-family: Anton Regular, sans-serif;
+}
+
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-contacto h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Anton Regular, sans-serif;
+    color: #2f464c;
+}
+
+.card-contacto .card-title{
+    display: inline;
+    background-color: #cd9e4d;
+    padding: 0.3em 0.4em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+
+

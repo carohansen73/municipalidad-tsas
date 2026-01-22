@@ -38,7 +38,8 @@ use App\Models\Convocatorias;
 
 use App\Models\Delegacion;
 use App\Http\Resources\OrganigramaResource;
-use App\Models\FdtTickets;
+
+
 use Symfony\Component\Routing\Route;
 
 
@@ -72,13 +73,8 @@ class HomeController extends Controller
         $noticias = Noticia::where('destacada', 1)->latest('fecha')->latest('id')->take(6)->with('imgs')->get();
         $eventos = Evento::where('fecha_fin', ">=", $hoy)->orderBy('fecha_fin')->take(4)->with('seccion')->get();
 
-        /* Para mostrar licencia de conducir */
-        // $areas = Area::all();
-        // $tipo = TramiteTipo::where('id', $id)->get();
-        $tramite = TramiteGuia::where('titulo', 'like', '%licencia de conducir%')->get();
-
         $nombreSeccion = 'home';
-        return view('home.home', compact('noticias', 'eventos', 'nombreSeccion', 'tramite'));
+        return view('home.home', compact('noticias', 'eventos', 'nombreSeccion'));
     }
 
     public function portal()
@@ -359,11 +355,17 @@ class HomeController extends Controller
         $fechas = $lineUp->pluck('fecha')->unique()->sort();
 
         $convocatorias = Convocatorias::all();
-        $tickets = FdtTickets::activa()->first();
+
+
+
+
+
 
         $licitaciones = collect([
 
             (object) ['id' => 4, 'titulo' => 'licitaciones', 'descripcion' => '<u>Valor Pliegos de Bases y Condiciones: </u><br>
+
+
                 <ul>
                     <li>
                        <i class="ri-check-double-line"></i> <strong> Fogones  </strong> <br>
@@ -419,8 +421,10 @@ class HomeController extends Controller
 
         ]);
 
-        return view('fdt.fdt', compact('lineUp', 'fechas', 'convocatorias',  'licitaciones', 'inscripciones', 'tickets'));
+        return view('fdt.fdt', compact('lineUp', 'fechas', 'convocatorias',  'licitaciones', 'inscripciones'));
     }
+
+
 
 
    /**

@@ -89,7 +89,7 @@
             </div>
 
             <div class="col-xl-2 col-md-2">
-                <a href="https://mitresa.gobdigital.com.ar/web/turnos?t=1" target="_blank">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  >
                     <div class="icon-box icon-4">
                         {{-- <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1" alt=""> --}}
                         <i class="fas fa-solid fa-car"></i>
@@ -121,6 +121,7 @@
 
     </div>
 </section><!-- End Hero -->
+
 
 <!-- ======= Noticias/novedades Section ======= -->
     <section id="novedades" class="novedades">
@@ -1033,10 +1034,63 @@
 
 
 
+
+
+<!-- Modal Licencia de Conducir -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Licencia de conducir</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- ======= Features Section ======= -->
+                <section id="tramites" class="features">
+                    <div class="container" data-aos="fade-up">
+
+                        <div class="row">
+                            @foreach($tramite as $tram)
+                            <div class="col-lg-12 item-tramite" data-aos="fade-left" data-aos-delay="100">
+                                <a href="">
+                                    <div id="{{$tram->id}}" class="icon-box  div-tramite" data-aos="zoom-in" data-aos-delay="150">
+                                    <span class="icon-closed"><i class="fas fa-angle-right" style="font-size:20px;"></i></span>
+                                    <span class="icon-open display-none"><i class="fas fa-angle-down" style="font-size:20px;"></i></span>
+                                        <h4 class="m-2 ms-4">{!! $tram->titulo !!}</h4>
+                                        <p class="m-2">{!! $tram->descripcion !!}</p>
+                                    </div>
+                                </a>
+                                <div id="informacion-{{$tram->id}}" class="informacion-tramite display-none ms-lg-5">
+                                    <h6 class="ms-5 blue-font"><strong>Lugar donde se realiza</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->lugar !!}</div>
+                                    <h6 class="ms-5 blue-font"><strong>Horario</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->horario !!}</div>
+                                    <h6 class="ms-5 blue-font"><strong>Quien puede realizarlo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->quien !!}</div>
+                                    <h6 class="ms-5 blue-font"><strong>Requisitos</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->requisitos !!}</div>
+                                    <h6 class="ms-5 blue-font"><strong>Costo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->costo !!}</div>
+                                    <h6 class="ms-5 blue-font"><strong>Contacto</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->contacto !!}</div>
+                                    <h6 class="ms-5 blue-font"><strong>Links de interés</strong></h6><div class="ms-5 ps-2 mb-3"><a href="{{$tram->links}}" target="_blank"> {!! $tram->links !!} </a> </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section><!-- End Features Section -->
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="https://mitresa.gobdigital.com.ar/web/turnos?t=1" target="_blank" type="button" class="btn btn-primary">Solicitar turno en MiTresa</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- SWIPER carousel -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{ asset('assets/js/swiper-carousel.js') }}"></script>
 
   <!-- Modal para ver evento -->
   <script src="{{ asset('assets/js/modalevento.js') }}"></script>
+{{-- JS de Licencia de conducir --}}
+  <script src="{{ asset('assets/js/hide-show-information.js') }}"></script>
 @endsection

@@ -21,7 +21,7 @@ class LineUp extends Model
 
     use HasFactory;
 
-    public $table = 'fest_line_up';
+    public $table = 'fdt_line_up';
 
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

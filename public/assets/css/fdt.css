@@ -83,41 +83,44 @@
 }
 
 #fiesta-del-trigo .tickets{
-    background-image: url("/storage/fdt/fondos/bg-tickets.png");
+    background-image: url("/storage/fdt/fondos/bg-tickets2.jpg");
     background-size: cover;
     color: #FFF;
     background-position: center top;
 }
 
 #fiesta-del-trigo .tickets .content{
-    padding-top: 100px;
     color: #424242;
+}
+
+#fiesta-del-trigo .tickets .title img{
+    max-width: 200px;
 }
 
 
 @media screen and (min-width: 991px) {
-    #fiesta-del-trigo .tickets .content{
-        padding-top: 120px;
+    #fiesta-del-trigo .tickets .title img{
+        max-width: 300px;
     }
 }
 
-@media screen and (min-width: 1400px) {
+/* @media screen and (min-width: 1400px) {
     #fiesta-del-trigo .tickets .content{
         padding-top: 160px;
     }
-}
+} */
 
-@media screen and (min-width: 1700px) {
+/* @media screen and (min-width: 1700px) {
     #fiesta-del-trigo .tickets .content{
         padding-top: 200px;
     }
-}
+} */
 
-@media screen and (min-width: 1940px) {
+/* @media screen and (min-width: 1940px) {
     #fiesta-del-trigo .tickets .content{
         padding-top: 300px;
     }
-}
+} */
 
 
 
@@ -375,10 +378,8 @@
 
 
 
-
-
 /* ESTILO 2026 */
-.trigo-section {
+.experiencia-section {
   position: relative;
   width: 100%;
   padding: 80px 0;
@@ -387,25 +388,24 @@
 }
 
 /* Capa de ruido */
-.trigo-noise {
+.experiencia-noise {
   position: absolute;
   inset: 0;
   background-image: url('/storage/fdt/fondos/noiseda.jpg');
   background-repeat: repeat;
-  /* opacity: 0.18; */
   pointer-events: none;
   z-index: 1;
 }
 
 /* Contenido */
-.trigo-content {
+.experiencia-content {
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
 /* Video responsive */
-.trigo-video {
+.experiencia-video {
   position: relative;
   max-width: 95%;
   margin: 0 auto;
@@ -415,9 +415,14 @@
   overflow: hidden;
 }
 
-.trigo-video iframe {
+.experiencia-video iframe {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+
+.experiencia-video iframe {
+  transform-style: preserve-3d;
 }

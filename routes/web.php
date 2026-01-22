@@ -155,6 +155,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('lineUps', App\Http\Controllers\LineUpController::class);
     Route::resource('grillas', App\Http\Controllers\GrillaController::class);
     Route::resource('convocatorias', App\Http\Controllers\ConvocatoriasController::class);
+    Route::resource('tickets', App\Http\Controllers\FdtTicketsController::class)
+            ->except('destroy');
+
+    Route::patch(
+            'tickets/{ticket}/activar',
+            [App\Http\Controllers\FdtTicketsController::class, 'activar']
+        )->name('tickets.activar');
 
     /* Sorteo Corvina Negra */
     Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');

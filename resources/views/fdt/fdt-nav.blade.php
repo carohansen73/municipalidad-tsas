@@ -29,7 +29,7 @@
         </ul>
 
         <div class="d-flex align-items-center ms-2">
-        <a class="yl-btn nav-link" href="https://tresarroyos.boleteriadigital.com.ar/" target="_blank" >Tickets</a>
+        <a class="yl-btn " id="tickets-btn" href="https://tresarroyos.boleteriadigital.com.ar/" target="_blank" >Tickets</a>
         </div>
 
 

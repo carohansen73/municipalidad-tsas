@@ -59,6 +59,7 @@
 
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!-- Vendor CSS Files -->
         <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
@@ -72,24 +73,20 @@
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-
-
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/css/fdt.css') }}">
-
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"?v=2.0.0>
+        <link rel="stylesheet" href="{{ asset('assets/css/fdt.css') }}"?v=2.0.0>
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}"?v=2.0.0>
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
-        <!-- barra de navegacion -->
-        {{-- @include('fdt.fdt-navbar') --}}
+
+
 
 
 
     <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            {{-- <section class="content"> --}}
-                @yield('content')
-            {{-- </section> --}}
+            @yield('content')
         </div>
 
 
@@ -277,6 +274,16 @@
 
         <!-- Template Main JS File -->
         <script src="{{ asset('assets/js/main.js') }}"></script>
+
+        <!-- EFECTOS -->
+        <!-- GSAP -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+
+        <!-- ScrollTrigger -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+        <!-- Js personalizado  -->
+        <script src="{{ asset('assets/js/fdt-effects.js') }}"></script>
 
         <!-- Swiper js -->
         {{-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}
