@@ -11,22 +11,17 @@ class AddActivaToFdtLineUpTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::table('fdt_line_up', function (Blueprint $table) {
-            //
+            $table->boolean('activa')->default(true)->after('img');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+    public function down(): void
     {
         Schema::table('fdt_line_up', function (Blueprint $table) {
-            //
+            $table->dropColumn('activa');
         });
     }
 }

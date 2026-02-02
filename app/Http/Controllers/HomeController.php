@@ -38,6 +38,7 @@ use App\Models\Convocatorias;
 
 use App\Models\Delegacion;
 use App\Http\Resources\OrganigramaResource;
+use App\Models\FdtLicitacion;
 use App\Models\FdtTickets;
 use Symfony\Component\Routing\Route;
 
@@ -352,47 +353,24 @@ class HomeController extends Controller
      */
     public function show56FiestaDelTrigo(){
 
-        $lineUp = LineUp::orderBy('fecha')->get()->map(function ($item) {
-            $item->fecha = $item->fecha->format('Y-m-d'); // Formatea solo la fecha
-            return $item;
-        });
+        $lineUp = LineUp::where('activa', true)
+            ->orderBy('fecha')
+            ->get()
+            ->map(function ($item) {
+                $item->fecha = $item->fecha->format('Y-m-d'); // Formatea solo la fecha
+                return $item;
+            });
+
         $fechas = $lineUp->pluck('fecha')->unique()->sort();
 
-        $convocatorias = Convocatorias::all();
         $tickets = FdtTickets::activa()->first();
 
-        $licitaciones = collect([
+        $licitaciones = FdtLicitacion::with('archivos')->get();
 
-            (object) ['id' => 4, 'titulo' => 'licitaciones', 'descripcion' => '<u>Valor Pliegos de Bases y Condiciones: </u><br>
-                <ul>
-                    <li>
-                       <i class="ri-check-double-line"></i> <strong> Fogones  </strong> <br>
-                       $ 216.000.-
-                    </li>
-                    <li>
-                      <i class="ri-check-double-line"></i>  <strong> Carros gastronómicos </strong> <br>
-                       $ 108.000.-
-                    </li>
-                    <li>
-                      <i class="ri-check-double-line"></i>  <strong> Puestos cerveceros </strong> <br>
-                       $ 108.000.-
-                    </li>
-                    <li>
-                       <i class="ri-check-double-line"></i> <strong> Kioscos  </strong> <br>
-                       $ 83.000.-
-                    </li>
-                      <li>
-                       <i class="ri-check-double-line"></i> <strong> Carros ferneteros   </strong> <br>
-                       $ 108.100.-
-                    </li>
-                </ul>
-                 <u>Venta de Pliegos de Bases y Condiciones: </u> <br>
-                 Desde de el <strong> 11 al 18 de febrero </strong> de 2025 (en Ituzaingó 320 C.C.E.) <br><br>
-                <u> Apertura de sobres: </u> <br>
-                 <strong> Miércoles 19 de febrero 10:00 Hs.</strong> (en Ituzaingó 320 C.C.E.) <br><br>
-                 Para consultas a través del WhatsApp <strong> 2983-417777 </strong> <br> o al mail:  <strong> ftrigo@tresarroyos.gov.ar  </strong>']
 
-        ]);
+
+
+        $convocatorias = Convocatorias::all();
 
         $inscripciones = collect([
             (object) ['id' => 1, 'titulo' => 'ABIERTA LA INSCRIPCIÓN PARA EL SALÓN "MARIQUITA SAND" ', 'descripcion' => 'La Dirección Municipal de Cultura y Educación de la Municipalidad de Tres Arroyos informa que se encuentran abiertas las inscripciones para participar del Salón Provincial de Artes Visuales en Pequeño Formato “Mariquita Sand”.<br><br>

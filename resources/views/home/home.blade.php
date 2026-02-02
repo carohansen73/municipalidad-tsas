@@ -139,7 +139,7 @@
                         </div> --}}
                         <!-- Swiper -->
                         <div class="today d-flex justify-content-center">
-                            {{-- <a href="/56-fiesta-del-trigo"> --}}
+                            {{-- <a href="/fiesta-del-trigo"> --}}
                             <video  id="video" src="{{asset("storage/videos/banner_a.mp4")}}" autoplay="autoplay" loop="loop" muted="muted">
                                 Tu navegador no admite el elemento <code>video</code>.
                             </video>
@@ -1046,34 +1046,34 @@
             </div>
             <div class="modal-body">
                 <!-- ======= Features Section ======= -->
-                <section id="tramites" class="features">
-                    <div class="container" data-aos="fade-up">
+                    <section id="tramites" class="features">
+                        <div class="container" data-aos="fade-up">
 
-                        <div class="row">
-                            @foreach($tramite as $tram)
-                            <div class="col-lg-12 item-tramite" data-aos="fade-left" data-aos-delay="100">
-                                <a href="">
-                                    <div id="{{$tram->id}}" class="icon-box  div-tramite" data-aos="zoom-in" data-aos-delay="150">
-                                    <span class="icon-closed"><i class="fas fa-angle-right" style="font-size:20px;"></i></span>
-                                    <span class="icon-open display-none"><i class="fas fa-angle-down" style="font-size:20px;"></i></span>
-                                        <h4 class="m-2 ms-4">{!! $tram->titulo !!}</h4>
-                                        <p class="m-2">{!! $tram->descripcion !!}</p>
+                            <div class="row">
+                                @foreach($tramite as $tram)
+                                <div class="col-lg-12 item-tramite" data-aos="fade-left" data-aos-delay="100">
+                                    <a href="">
+                                        <div id="{{$tram->id}}" class="icon-box  div-tramite" data-aos="zoom-in" data-aos-delay="150">
+                                        <span class="icon-closed"><i class="fas fa-angle-right" style="font-size:20px;"></i></span>
+                                        <span class="icon-open display-none"><i class="fas fa-angle-down" style="font-size:20px;"></i></span>
+                                            <h4 class="m-2 ms-4">{!! $tram->titulo !!}</h4>
+                                            <p class="m-2">{!! $tram->descripcion !!}</p>
+                                        </div>
+                                    </a>
+                                    <div id="informacion-{{$tram->id}}" class="informacion-tramite display-none ms-lg-5">
+                                        <h6 class="ms-5 blue-font"><strong>Lugar donde se realiza</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->lugar !!}</div>
+                                        <h6 class="ms-5 blue-font"><strong>Horario</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->horario !!}</div>
+                                        <h6 class="ms-5 blue-font"><strong>Quien puede realizarlo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->quien !!}</div>
+                                        <h6 class="ms-5 blue-font"><strong>Requisitos</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->requisitos !!}</div>
+                                        <h6 class="ms-5 blue-font"><strong>Costo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->costo !!}</div>
+                                        <h6 class="ms-5 blue-font"><strong>Contacto</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->contacto !!}</div>
+                                        <h6 class="ms-5 blue-font"><strong>Links de interés</strong></h6><div class="ms-5 ps-2 mb-3"><a href="{{$tram->links}}" target="_blank"> {!! $tram->links !!} </a> </div>
                                     </div>
-                                </a>
-                                <div id="informacion-{{$tram->id}}" class="informacion-tramite display-none ms-lg-5">
-                                    <h6 class="ms-5 blue-font"><strong>Lugar donde se realiza</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->lugar !!}</div>
-                                    <h6 class="ms-5 blue-font"><strong>Horario</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->horario !!}</div>
-                                    <h6 class="ms-5 blue-font"><strong>Quien puede realizarlo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->quien !!}</div>
-                                    <h6 class="ms-5 blue-font"><strong>Requisitos</strong></h6><div class="ms-5 mb-3 ps-2">{!! $tram->requisitos !!}</div>
-                                    <h6 class="ms-5 blue-font"><strong>Costo</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->costo !!}</div>
-                                    <h6 class="ms-5 blue-font"><strong>Contacto</strong></h6><div class="ms-5 ps-2 mb-3">{!! $tram->contacto !!}</div>
-                                    <h6 class="ms-5 blue-font"><strong>Links de interés</strong></h6><div class="ms-5 ps-2 mb-3"><a href="{{$tram->links}}" target="_blank"> {!! $tram->links !!} </a> </div>
                                 </div>
+                                @endforeach
                             </div>
-                            @endforeach
                         </div>
-                    </div>
-                </section><!-- End Features Section -->
+                    </section><!-- End Features Section -->
 
             </div>
             <div class="modal-footer">

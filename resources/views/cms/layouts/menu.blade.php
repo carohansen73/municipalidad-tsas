@@ -66,39 +66,61 @@
 @endcan
 
 
-@can('lineUps.index')
-<li class="nav-item">
-    <a href="{{ route('lineUps.index') }}" class="nav-link {{ Request::is('lineUps*') ? 'active' : '' }}">
-        <p>Line Up</p>
-    </a>
-</li>
-@endcan
 
-@can('tickets.index')
-<li class="nav-item">
-    <a href="{{ route('tickets.index') }}" class="nav-link {{ Request::is('tickets*') ? 'active' : '' }}">
-        <p> Tickets </p>
+<li class="nav-item has-treeview {{ Request::is('avisoOficial*','lineUps*','tickets*') ? 'menu-open' : '' }}">
+    <a href="#" class="nav-link">
+        <p class="">
+            Fiesta del Trigo
+            <i class="right fas fa-angle-left"></i>
+        </p>
     </a>
-</li>
-@endcan
 
-@can('grillas.index')
-<li class="nav-item">
-    <a href="{{ route('grillas.index') }}"
-       class="nav-link {{ Request::is('grillas*') ? 'active' : '' }}">
-        <p>Grilla</p>
-    </a>
-</li>
-@endcan
+    <ul class="nav nav-treeview">
 
-@can('convocatorias.index')
-<li class="nav-item">
-    <a href="{{ route('convocatorias.index') }}"
-       class="nav-link {{ Request::is('convocatorias*') ? 'active' : '' }}">
-        <p>Convocatorias</p>
-    </a>
+        @can('lineUps.index')
+        <li class="nav-item">
+            <a href="{{ route('lineUps.index') }}" class="nav-link {{ Request::is('lineUps*') ? 'active' : '' }}">
+                <p>Line Up</p>
+            </a>
+        </li>
+        @endcan
+
+        @can('tickets.index')
+        <li class="nav-item">
+            <a href="{{ route('tickets.index') }}" class="nav-link {{ Request::is('tickets*') ? 'active' : '' }}">
+                <p> Tickets </p>
+            </a>
+        </li>
+        @endcan
+
+        @can('licitaciones.index')
+        <li class="nav-item">
+            <a href="{{ route('licitaciones.index') }}" class="nav-link {{ Request::is('licitaciones*') ? 'active' : '' }}">
+                <p> Licitaciones </p>
+            </a>
+        </li>
+        @endcan
+
+        @can('grillas.index')
+        <li class="nav-item">
+            <a href="{{ route('grillas.index') }}"
+            class="nav-link {{ Request::is('grillas*') ? 'active' : '' }}">
+                <p>Grilla</p>
+            </a>
+        </li>
+        @endcan
+
+        @can('convocatorias.index')
+        <li class="nav-item">
+            <a href="{{ route('convocatorias.index') }}"
+            class="nav-link {{ Request::is('convocatorias*') ? 'active' : '' }}">
+                <p>Convocatorias</p>
+            </a>
+        </li>
+        @endcan
+    </ul>
 </li>
-@endcan
+
 
 @can('sorteo.index')
 <li class="nav-item">
@@ -134,3 +156,5 @@
     </a>
 </li>
 @endrole
+
+

@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
@@ -14,10 +13,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $artista
  * @property string $fecha
  * @property string $img
+ * @property boolean $activa
  */
 class LineUp extends Model
 {
-
 
     use HasFactory;
 
@@ -26,15 +25,13 @@ class LineUp extends Model
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
-
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'artista',
         'fecha',
-        'img'
+        'img',
+        'activa',
     ];
 
     /**
@@ -46,7 +43,8 @@ class LineUp extends Model
         'id' => 'integer',
         'artista' => 'string',
         'fecha' => 'date',
-        'img' => 'string'
+        'img' => 'string',
+        'activa' => 'boolean',
     ];
 
     /**

@@ -30,7 +30,7 @@
                         <li><a class="nav-link scrollto animation-sub" href="/atencion-al-vecino" style="text-shadow: none; "> Atención al vecino </a></li>
                         <li><a class="nav-link scrollto animation-sub" href="/salud" style="text-shadow: none; "> Salud </a></li>
                         <li><a class="nav-link scrollto animation-sub" href="/deportes" style="text-shadow: none; "> Deportes </a></li>
-                        <li><a class="nav-link scrollto animation-sub" href="/56-fiesta-del-trigo" style="text-shadow: none; "> Fiesta del Trigo </a></li>
+                        <li><a class="nav-link scrollto animation-sub" href="/fiesta-del-trigo" style="text-shadow: none; "> Fiesta del Trigo </a></li>
                         <li><a class="nav-link scrollto animation-sub" href="https://loteo.tresarroyos.gov.ar/" style="text-shadow: none;"> Lote Para mi Familia </a></li>
                     </ul>
                 </li>

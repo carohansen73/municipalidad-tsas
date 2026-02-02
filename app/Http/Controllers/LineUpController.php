@@ -168,4 +168,17 @@ class LineUpController extends AppBaseController
 
         return redirect(route('lineUps.index'));
     }
+
+    /**
+     * Activar una edición (y desactivar las demás)
+     */
+    public function activar(Request $request, LineUp $lineup)
+    {
+        $lineup->activa = $request->has('activa');
+        $lineup->save();
+
+        flash('Estado actualizado')->success();
+
+        return back();
+    }
 }

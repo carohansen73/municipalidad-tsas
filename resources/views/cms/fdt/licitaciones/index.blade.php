@@ -7,14 +7,14 @@
                 <div class="col-sm-6">
                     <h1>Tickets</h1>
                 </div>
-                @can('tickets.create')
+                {{-- @can('licitaciones.create') --}}
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
-                       href="{{ route('tickets.create') }}">
-                        Crear nueva edición
+                       href="{{ route('licitaciones.create') }}">
+                        Crear nueva licitación
                     </a>
                 </div>
-                @endcan
+                {{-- @endcan --}}
             </div>
         </div>
     </section>
@@ -23,19 +23,17 @@
 
         @include('flash::message')
 
-
         <div class="clearfix"></div>
-
-        <div class="alert alert-info">
-            <strong>Importante:</strong> solo puede haber <b>una edición activa</b> por año.
-            Al activar una edición, las demás se desactivan automáticamente.
-        </div>
-
+       <div class="alert alert-info">
+                    <strong>Importante:</strong> solo puede haber <b>una licitación activa</b>.
+                    Al activar una licitación, las demás se desactivan automáticamente.
+                </div>
         <div class="card">
+
             <div class="card-body p-0">
 
 
-                @include('cms.fdt.tickets.table')
+                @include('cms.fdt.licitaciones.table')
 
                 <div class="card-footer clearfix">
                     <div class="float-right">

@@ -284,50 +284,23 @@
             <div class="content p-3">
                 <div class="row  mt-3">
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-
                         <img class="img-fluid" src="{{asset("storage/fdt/1.png")}}" alt="foto-1">
-                        {{-- <img class="img-fluid" src="{{asset("storage/secciones/fdt/1.jpg")}}" alt="foto-1"> --}}
-
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content " data-aos="fade-right" data-aos-delay="100">
-
                         @foreach($licitaciones as $lic)
                             {!! $lic->descripcion !!}
-                        @endforeach
-
-                        <div class="row d-flex  mt-2">
-                            <div class="col-auto">
-                                <a class="gr-btn" href="https://tresarroyos.gov.ar/storage/fdt/pliego_KIOSCOS_LIC._n2.pdf" target="_blank">Kioscos </a>
+                            <div class="row d-flex  mt-2">
+                                @foreach ($lic->archivos as $archivo)
+                                    <div class="col-auto">
+                                        <a class="gr-btn"  href="{{ asset('storage/' . $archivo->archivo) }}" target="_blank">{{ $archivo->titulo }} </a>
+                                    </div>
+                                @endforeach
                             </div>
-                        </div>
-
+                        @endforeach
                     </div>
-
-
                 </div>
-
-
-
-
-
-                {{-- btns para cada pliego
-
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://mitresa.gobdigital.com.ar/web/default" target="_blank"> Fogones </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros gastronómicos </a>
-                    </div>
-
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Cervecros locales </a>
-                    </div>
-                    <div class="col-auto">
-                        <a class="gr-btn" href="https://play.google.com/store/apps/details?id=com.GDAMiTresa.Ciudadano" target="_blank">Carros cerveceros</a>
-                    </div>
-                 --}}
-
             </div>
+
         </div>
     </section>
     <!-- End Licitaciones -->

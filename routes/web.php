@@ -5,6 +5,7 @@ use App\Http\Controllers\ReclamosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\BoletinOficialController;
+use App\Http\Controllers\FdtLicitacionArchivoController;
 use App\Http\Controllers\PermissionController;
 
 /*
@@ -74,7 +75,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/cce', 'showCCE');
     Route::get('/museos', 'showMuseums');
     Route::get('/fiesta-del-trigo', 'showFiestaDelTrigo');
-    Route::get('/56-fiesta-del-trigo', 'show56FiestaDelTrigo');
+    Route::get('/fiesta-del-trigo', 'show56FiestaDelTrigo');
     Route::get('/colectividades', 'showColectividades');
     Route::get('/bibliotecas', 'showBibliotecas');
 
@@ -151,10 +152,17 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacion.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
     Route::resource('user', App\Http\Controllers\UserController::class);
+
     /* Fiesta del Trigo */
     Route::resource('lineUps', App\Http\Controllers\LineUpController::class);
+     Route::patch(
+            'lineUps/{lineup}/activar',
+            [App\Http\Controllers\LineUpController::class, 'activar']
+        )->name('lineup.activar');
+
     Route::resource('grillas', App\Http\Controllers\GrillaController::class);
     Route::resource('convocatorias', App\Http\Controllers\ConvocatoriasController::class);
+
     Route::resource('tickets', App\Http\Controllers\FdtTicketsController::class)
             ->except('destroy');
 
@@ -162,6 +170,26 @@ Route::group(['middleware' => 'auth'], function () {
             'tickets/{ticket}/activar',
             [App\Http\Controllers\FdtTicketsController::class, 'activar']
         )->name('tickets.activar');
+
+    Route::resource('licitaciones', App\Http\Controllers\FdtLicitacionController::class)
+        ->parameters([
+            'licitaciones' => 'licitacion'
+        ]);
+    Route::patch(
+            'licitaciones/{licitacion}/activar',
+            [App\Http\Controllers\FdtLicitacionController::class, 'activar']
+        )->name('licitaciones.activar');
+    Route::post(
+            '/licitaciones/{licitacion}/archivos',
+            [FdtLicitacionArchivoController::class, 'store']
+        )->name('licitaciones.archivos.store');
+
+// Route::delete(
+//     '/licitaciones/archivos/{archivo}',
+//     [LicitacionArchivoController::class, 'destroy']
+// )->name('licitaciones.archivos.destroy');
+
+
 
     /* Sorteo Corvina Negra */
     Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');
