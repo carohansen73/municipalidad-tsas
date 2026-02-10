@@ -59,11 +59,20 @@
 
         <div class="row  mt-lg-5 mt-md-1 mt-sm-1 justify-content-center menu-home " data-aos="zoom-in" data-aos-delay="250">
 
-            <div class="col-xl-2 col-md-2 ">
+            {{-- <div class="col-xl-2 col-md-2 ">
                 <a href="municipio">
                     <div class="icon-box icon-6">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Tres Arroyos</h3>
+                    </div>
+                </a>
+            </div> --}}
+
+            <div class="col-xl-2 col-md-2 ">
+                <a href="/fiesta-del-trigo">
+                    <div class="icon-box icon-7 pb-2">
+                        <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1 trigo-icon" alt="">
+                        <h3>Fiesta del Trigo</h3>
                     </div>
                 </a>
             </div>
@@ -475,12 +484,12 @@
                 </div>
                 </div> --}}
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                <!--div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box icon-3">
                         <div class="icon"><i class="bi bi-life-preserver"></i></div>
                         <h4><a href="https://guardavidas.tresarroyos.gov.ar/login">Guardavidas</a></h4>
                     </div>
-                </div>
+                </div-->
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-2">
@@ -522,13 +531,12 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                    {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box icon-4">
                         <div class="icon"><i class="fas fa-house-user"></i></div>
                         <h4><a href="https://loteo.tresarroyos.gov.ar/">Un Lote Para mi Familia</a></h4>
-                        {{-- {* <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p> *} --}}
                         </div>
-                    </div>
+                    </div> --}}
 
 
       {{-- {* /fila *} --}}

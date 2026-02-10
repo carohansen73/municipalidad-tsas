@@ -9,27 +9,31 @@
 {{-- PORTADA --}}
 <div id="fiesta-del-trigo">
 
-    <div id="fdt">
-        <div class="portada-foto text-md-left text-sm-center ">
-        </div>
-    </div>
+    <div class="hero-wrapper">
 
-    {{-- Scroll trigger --}}
-    <div class="marquee-section">
-        {{-- <div class="marquee-horizontal"> --}}
-            <div class="marquee-track">
-                <p class="mb-0 pe-4 me-5">
-                    <span class="pe-2"> Fiesta Provincial del Trigo </span> <span class="pe-2"> • </span>
-                    <span class="pe-2">  5, 6, 7 y 8 de marzo </span> <span class="pe-2"> • </span>
-                    <span class="pe-2"> Tres Arroyos </span>
-                </p>
-                <p class="mb-0 pe-4 me-5">
-                    <span class="pe-2"> Fiesta Provincial del Trigo </span> <span class="pe-2"> • </span>
-                    <span class="pe-2">  5, 6, 7 y 8 de marzo </span> <span class="pe-2"> • </span>
-                    <span class="pe-2"> Tres Arroyos </span>
-                </p>
+        <div class="hero-sticky">
+            <div id="fdt">
+                <div class="portada-foto text-md-left text-sm-center ">
+                </div>
             </div>
-        {{-- </div> --}}
+
+
+            {{-- Scroll trigger --}}
+            <div class="marquee-section">
+                <div class="marquee-track">
+                    <p class="mb-0 pe-4 me-5">
+                        <span class="pe-2"> Fiesta Provincial del Trigo </span> <span class="pe-2"> • </span>
+                        <span class="pe-2">  5, 6, 7 y 8 de marzo </span> <span class="pe-2"> • </span>
+                        <span class="pe-2"> Tres Arroyos </span>
+                    </p>
+                    <p class="mb-0 pe-4 me-5">
+                        <span class="pe-2"> Fiesta Provincial del Trigo </span> <span class="pe-2"> • </span>
+                        <span class="pe-2">  5, 6, 7 y 8 de marzo </span> <span class="pe-2"> • </span>
+                        <span class="pe-2"> Tres Arroyos </span>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
 {{-- VIVI LA EXPERIENCIA --}}

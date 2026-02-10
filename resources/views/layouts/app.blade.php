@@ -73,7 +73,7 @@
         <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
         <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
         {{-- CSS Personalizado  --}}
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"?v=4.1.0>
 
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">

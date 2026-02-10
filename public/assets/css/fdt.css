@@ -26,7 +26,7 @@
 
 #fdt-navbar .logo-fdt img {
     max-height: 60px;
-    border-right: 2px solid #cd9e4d;
+    border-right: 2px solid #4e877b;
 }
 
 
@@ -60,9 +60,36 @@
 
 
 /* BACKGROUNDS */
+.bg-fdt{
+    position: fixed;
+    inset: 0;
+     background: url("/storage/fdt/bg.jpeg") center / cover no-repeat;
+    z-index: -1;
+}
+
+.wrapper{
+     position: relative;
+    z-index: 1;
+}
+
+#fdt-licitaciones{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#fdt-line-up{
+    background-color: #0000007a;
+}
+
+.telefonos-utiles{
+    background-color: #ffffff;
+}
+
+
 /*  BANNER - PORTADA  */
 #fdt .portada-foto{
-   background-image: url("/storage/fdt/banner.jpg")  ;
+/*   background-image: url("/storage/fdt/banner.jpg")  ;*/
+   background-image: url("/storage/fdt/banner57.jpeg");
+
    height: 420px;
    background-size: cover;
    background-position: center;
@@ -103,25 +130,6 @@
         max-width: 300px;
     }
 }
-
-/* @media screen and (min-width: 1400px) {
-    #fiesta-del-trigo .tickets .content{
-        padding-top: 160px;
-    }
-} */
-
-/* @media screen and (min-width: 1700px) {
-    #fiesta-del-trigo .tickets .content{
-        padding-top: 200px;
-    }
-} */
-
-/* @media screen and (min-width: 1940px) {
-    #fiesta-del-trigo .tickets .content{
-        padding-top: 300px;
-    }
-} */
-
 
 
 #fiesta-del-trigo .impact{
@@ -176,6 +184,7 @@
 
     }
 }
+
 
 /*  modifico estilo CTA */
 #fiesta-del-trigo .cta {
@@ -324,6 +333,10 @@
     background: #872789;
 }
 
+#fdt-line-up #portfolio-flters li{
+    color: #ffffff;
+}
+
 #fdt-line-up #portfolio-flters li:hover,
 #fdt-line-up #portfolio-flters li.filter-active {
   color: #FFF;
@@ -426,3 +439,5 @@
 .experiencia-video iframe {
   transform-style: preserve-3d;
 }
+
+
