@@ -8,6 +8,15 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 @endpush
 
+@push('page_css')
+<style>
+.bootstrap-datetimepicker-widget {
+    color: #000;
+}
+</style>
+@endpush
+
+
  @include('adminlte-templates::common.errors')
  @if ($errors->any())
     <div class="alert alert-danger">
@@ -168,8 +177,12 @@
     });
 
     $('#fecha_inicio_online').datetimepicker({
-        format: 'YYYY-MM-DD',
-        useCurrent: false
+        format: 'YYYY-MM-DD HH:mm',
+        sideBySide: true,
+        useCurrent: false,
+        showTodayButton: true,
+        showClear: true,
+        showClose: true
     });
 
      $(document).ready(function() {

@@ -213,7 +213,7 @@
                         <h4>Uso interno</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBlTfCFQKjt6NCLKJsBUvWyJdQc_odUCCUd-gMFKZ5zGr9RQ/viewform?usp=sharing">Gestión playas 2024/2025</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href=" https://tresarroyos.gov.ar/sorteo-corvina-negra">Sorteo inscripciones Corvina Negra 2026</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href=" https://tresarroyos.gov.ar/sorteos-empleados">Sorteos para empleados municipales 2026</a></li>
                         </ul>
                     </div>
                     <div class="footer-newsletter">

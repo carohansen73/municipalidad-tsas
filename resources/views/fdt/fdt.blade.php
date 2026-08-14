@@ -9,9 +9,9 @@
 {{-- PORTADA --}}
 <div id="fiesta-del-trigo">
 
-    <div class="hero-wrapper">
+    {{-- <div class="hero-wrapper"> --}}
 
-        <div class="hero-sticky">
+        {{-- <div class="hero-sticky"> --}}
             <div id="fdt">
                 <div class="portada-foto text-md-left text-sm-center ">
                 </div>
@@ -33,8 +33,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
+        {{-- </div>
+    </div> --}}
 
 {{-- VIVI LA EXPERIENCIA --}}
 
@@ -42,7 +42,7 @@
         <div class="experiencia-noise"></div>
         <div class="experiencia-content container" data-aos="fade-up">
             <div class="text-center">
-                <div class="bg-brushstroke">
+                <div class="bg-brushstroke experiencia-title">
                     <p> VIVÍ LA EXPERIENCIA</p>
                 </div>
             </div>
@@ -164,7 +164,7 @@
                         <div class="card-body d-flex flex-column pt-4 pb-4">
                               <p class="card-text">
                                 <i class="far fa-calendar-alt me-1"></i>
-                               A partir del {{ \Carbon\Carbon::parse($tickets->fecha_inicio_online)->format('d-m-Y') }}
+                               A partir del {{ \Carbon\Carbon::parse($tickets->fecha_inicio_online)->format('d-m-Y H:i') }}
                             </p>
                             <p class="card-text small mb-4">
                                 Comprá tus entradas de forma rápida y segura desde cualquier dispositivo.

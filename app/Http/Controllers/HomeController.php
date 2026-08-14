@@ -643,17 +643,28 @@ class HomeController extends Controller
     {
 
         /*SITUACION ECONOMICO FINANCIERA*/
+        $aniosSituacion = SituacionFinanciera::distinct()->pluck('anio')->toArray();
+        $aniosReportes = ReporteEconomico::distinct()->pluck('anio')->toArray();
+
+        $datosSituacion['anios'] = collect(array_merge($aniosSituacion, $aniosReportes))
+            ->unique()
+            ->sortDesc()
+            ->values()
+            ->all();
+
 
         //obtengo los anios para el filtro
-        $datosSituacion['anios'] = SituacionFinanciera::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
+        // $datosSituacion['anios'] = SituacionFinanciera::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
 
-        //anio a buscar segun si fue seleccionado un anio o el ultimo
+        // Max año para mostrar al principio, si no filtro aun x año
+        $maxSituacion = SituacionFinanciera::max('anio');
+        $maxReporte = ReporteEconomico::max('anio');
+        $anio = max($maxSituacion, $maxReporte);
+
+        // Año filtrado o ultimo año con reportes
         if (isset($_POST['anio']) && (!empty($_POST['anio']))){
 			$anio=$_POST['anio']; // si definio anio a buscar
-		}else{
-			$anio=$datosSituacion['anios'][0]; // seria el anio actual
 		}
-
 
         // aca obtengo las situacionesEconomicas separadas por cada ente descentralizado
 		$datosSituacion['anio']=$anio;
@@ -665,21 +676,17 @@ class HomeController extends Controller
         /*REPORTES ECONOMICOS*/
 
         //anio a buscar segun si fue seleccionado un anio o el ultimo
-        if (isset($_POST['anio']) && (!empty($_POST['anio']))){
-			$anioReportes=$_POST['anio']; // si definio anio a buscar
-		}else{
-            $maxAnioReportes['anios'] = ReporteEconomico::distinct()->orderBy('anio', 'desc')->pluck('anio')->all();
-			$anioReportes=$maxAnioReportes['anios'][0]; // seria el anio actual
-		}
+        // if (isset($_POST['anio']) && (!empty($_POST['anio']))){
+		// 	$anio=$_POST['anio']; // si definio anio a buscar
+		// }
 
-        $reportes['generales']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre1']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [1])->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre2']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [2])->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre3']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [3])->orderBy('periodo', 'desc')->get();
-        $reportes['trimestre4']= ReporteEconomico::whereIn('anio', [$anioReportes])->where('periodo', [4])->orderBy('periodo', 'desc')->get();
+        $reportes['generales']= ReporteEconomico::whereIn('anio', [$anio])->where('periodo', 0)->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre1']= ReporteEconomico::whereIn('anio', [$anio])->where('periodo', [1])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre2']= ReporteEconomico::whereIn('anio', [$anio])->where('periodo', [2])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre3']= ReporteEconomico::whereIn('anio', [$anio])->where('periodo', [3])->orderBy('periodo', 'desc')->get();
+        $reportes['trimestre4']= ReporteEconomico::whereIn('anio', [$anio])->where('periodo', [4])->orderBy('periodo', 'desc')->get();
 
-
-        return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes', 'anioReportes'));
+        return view('transparenciaFiscal.transparencia_fiscal', compact('datosSituacion', 'reportes', 'anio'));
     }
 
 

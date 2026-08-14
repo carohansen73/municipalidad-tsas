@@ -27,7 +27,7 @@ class FdtTickets extends Model
 
     protected $casts = [
         'fecha_inicio_presencial' => 'date',
-        'fecha_inicio_online' => 'date',
+        'fecha_inicio_online' => 'datetime',
         'activa' => 'boolean',
     ];
 

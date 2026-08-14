@@ -33,7 +33,7 @@ class UpdateFdtTicketsRequest extends FormRequest
             'lugar_presencial' => 'nullable|string|max:255',
             'horarios_presencial' => 'nullable|string',
 
-            'fecha_inicio_online' => 'nullable|date',
+            'fecha_inicio_online' => 'nullable|date_format:Y-m-d H:i',
             'url_venta_online' => 'nullable|url',
 
             'whatsapp' => 'nullable|string|max:50',

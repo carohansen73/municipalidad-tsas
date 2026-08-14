@@ -60,17 +60,15 @@
 
 
 /* BACKGROUNDS */
-.bg-fdt{
-    position: fixed;
-    inset: 0;
-     background: url("/storage/fdt/bg.jpeg") center / cover no-repeat;
-    z-index: -1;
+body {
+    background: url("/storage/fdt/bg.jpeg") center / cover no-repeat fixed !important;
+    background-color: transparent !important;
 }
 
-.wrapper{
+/* .wrapper{
      position: relative;
     z-index: 1;
-}
+} */
 
 #fdt-licitaciones{
     background-color: rgba(255, 255, 255, 0.8);
@@ -105,7 +103,7 @@
 
 @media screen and (max-width: 768px) {
     #fdt .portada-foto{
-        height: 220px;
+        height: 420px;
     }
 }
 

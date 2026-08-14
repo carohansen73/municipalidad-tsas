@@ -7,6 +7,7 @@ use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\BoletinOficialController;
 use App\Http\Controllers\FdtLicitacionArchivoController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\SitemapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,19 +19,13 @@ use App\Http\Controllers\PermissionController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 Route::get('/', function () {
     return view('home.home');
 });
 Auth::routes(['register' => false, 'reset'=> false]);
 
-
-// Route::resource('tadi', 'TadiController');
-// Route::get('/tadi', 'TadiController@index')->name('tadi');
-
-/* TADi*/
-Route::get('/tadi', [App\Http\Controllers\TadiController::class, 'index'])->name('tadi');
 
 /*HOME Y SECCIONES DE LA PAGINA QUE VE EL CIUDADANO*/
 Route::controller(HomeController::class)->group(function () {
@@ -120,10 +115,10 @@ Route::controller(NoticiaController::class)->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/cms-home', [App\Http\Controllers\CmsHomeController::class, 'index'])->name('cmsHome');
+
 Route::get('/portal', [App\Http\Controllers\HomeController::class, 'portal'])->name('portal');
 /*Sorteo de inscripciones para la Corvina Negra*/
-Route::get('/sorteo-corvina-negra', [App\Http\Controllers\EspecialesController::class, 'showInscription'])->name('sorteo.corvina');
+Route::get('/sorteos-empleados', [App\Http\Controllers\EspecialesController::class, 'showInscription'])->name('sorteo.empleados');
 Route::post('/sorteo/inscribirse', [App\Http\Controllers\EspecialesController::class, 'register'])->name('sorteo.register');
 
 
@@ -133,9 +128,10 @@ Route::post('/sorteo/inscribirse', [App\Http\Controllers\EspecialesController::c
 
 // });
 
-Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
+
 //rutas que requieren login
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/cms-home', [App\Http\Controllers\CmsHomeController::class, 'index'])->name('cmsHome');
     Route::delete('/delete-img/{id}', [App\Http\Controllers\NoticiaController::class, 'destroyImg'])->name('deleteImg');;
     Route::resource('noticias', App\Http\Controllers\NoticiaController::class);
     Route::resource('reporteEconomico', App\Http\Controllers\ReporteEconomicoController::class);
@@ -152,6 +148,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-section/{seccion}', [App\Http\Controllers\SeccionInformacionController::class, 'indexSection'])->name('seccionInformacion.indexSections');
     Route::resource('eventos', App\Http\Controllers\EventoController::class);
     Route::resource('user', App\Http\Controllers\UserController::class);
+    Route::resource('archivos', App\Http\Controllers\ArchivosController::class);
 
     /* Fiesta del Trigo */
     Route::resource('lineUps', App\Http\Controllers\LineUpController::class);
@@ -184,15 +181,13 @@ Route::group(['middleware' => 'auth'], function () {
             [FdtLicitacionArchivoController::class, 'store']
         )->name('licitaciones.archivos.store');
 
+          /* Sorteo Corvina Negra */
+    Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');
+
 // Route::delete(
 //     '/licitaciones/archivos/{archivo}',
 //     [LicitacionArchivoController::class, 'destroy']
 // )->name('licitaciones.archivos.destroy');
-
-
-
-    /* Sorteo Corvina Negra */
-    Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');
 
 
     /* Roles y Permisos - Spatie - Exclusivo Admins */
@@ -206,32 +201,40 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+
+// Instructivo ojos en alerta
+Route::get('/instructivo', function () {
+    return view('seguridad/instructivo');
+})->name('instructivo');
+
+
+
 /* Roles y Permisos - Spatie - Exclusivo Admins */
 // Route::middleware(['auth', 'role:Admin'])->group(function () {
 
 // });
 
 
-// Route::get('/clear-cache', function() {
-//     $exitCode = Artisan::call('cache:clear');
-//     return '<h1>Cache facade value cleared</h1>';
-// });
+
+
+
+
 //Clear Route cache:
-Route::get('/route-clear', function() {
-    $exitCode = Artisan::call('route:clear');
-    return '<h1>Route cache cleared</h1>';
-});
+// Route::get('/route-clear', function() {
+//     $exitCode = Artisan::call('route:clear');
+//     return '<h1>Route cache cleared</h1>';
+// });
 
 
-Route::get('/clear-cache', function () {
+// Route::get('/clear-cache', function () {
 
-    Artisan::call('cache:clear');
-    Artisan::call('config:clear');
-    Artisan::call('view:clear');
-    Artisan::call('route:clear');
+//     Artisan::call('cache:clear');
+//     Artisan::call('config:clear');
+//     Artisan::call('view:clear');
+//     Artisan::call('route:clear');
 
-    return 'CACHE LIMPIADA ✔';
-});
+//     return 'CACHE LIMPIADA ✔';
+// });
 
 
 

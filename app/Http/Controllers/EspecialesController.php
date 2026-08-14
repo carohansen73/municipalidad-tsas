@@ -28,7 +28,7 @@ class EspecialesController extends Controller
      */
     public function showInscription()
     {
-        return view('especiales.sorteo-corvina');
+        return view('especiales.sorteos-empleados');
     }
 
 

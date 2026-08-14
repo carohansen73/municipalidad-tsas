@@ -68,15 +68,23 @@
                 </a>
             </div> --}}
 
-            <div class="col-xl-2 col-md-2 ">
+            {{-- <div class="col-xl-2 col-md-2 ">
                 <a href="/fiesta-del-trigo">
                     <div class="icon-box icon-7 pb-2">
                         <img src="{{asset("storage/fdt/trigo-sf-r.png")}}" class="image-1 trigo-icon" alt="">
                         <h3>Fiesta del Trigo</h3>
                     </div>
                 </a>
-            </div>
+            </div> --}}
 
+             <div class="col-xl-2 col-md-2 ">
+                <a href="" data-bs-toggle="modal" data-bs-target="#instructivoModal">
+                    <div class="icon-box icon-6 pb-2">
+                        <i class="fas fa-eye"></i>
+                        <h3>Ojos en alerta</h3>
+                    </div>
+                </a>
+            </div>
 
             <div class="col-xl-2 col-md-2">
                 <a href="atencion-al-vecino">
@@ -130,6 +138,9 @@
 
     </div>
 </section><!-- End Hero -->
+
+
+
 
 
 <!-- ======= Noticias/novedades Section ======= -->
@@ -395,11 +406,6 @@
     </section> --}}
     <!-- End Features Section -->
 
-
-
-
-
-
     <!-- ======= Servicios mas consultados ======= -->
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
@@ -484,12 +490,12 @@
                 </div>
                 </div> --}}
 
-                <!--div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-2" data-aos="zoom-in" data-aos-delay="300">
                     <div class="icon-box icon-3">
                         <div class="icon"><i class="bi bi-life-preserver"></i></div>
                         <h4><a href="https://guardavidas.tresarroyos.gov.ar/login">Guardavidas</a></h4>
                     </div>
-                </div-->
+                </div>
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-md-2" data-aos="zoom-in" data-aos-delay="100">
                     <div class="icon-box icon-2">
@@ -531,19 +537,20 @@
                         </div>
                     </div>
 
-                    {{-- <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box icon-4">
-                        <div class="icon"><i class="fas fa-house-user"></i></div>
-                        <h4><a href="https://loteo.tresarroyos.gov.ar/">Un Lote Para mi Familia</a></h4>
+
+                    <!-- OJOS EN ALERTA -->
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box icon-1">
+                        <div class="icon"><i class="fas fa-eye"></i></div>
+                        <h4><a type="button" data-bs-toggle="modal" data-bs-target="#instructivoModal">Ojos en alerta</a></h4>
                         </div>
-                    </div> --}}
+                    </div>
 
 
-      {{-- {* /fila *} --}}
+
+            </div>
 
         </div>
-
-      </div>
     </section><!-- End Services Section -->
 
     <!-- ======= TADI Section ======= -->
@@ -1041,6 +1048,41 @@
   </main><!-- End #main -->
 
 
+
+
+   <!-- Modal ojos en alerta -->
+<div class="modal fade" id="instructivoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content" style="height: 90vh;">
+            <div class="modal-header py-2">
+                <h5 class="modal-title">Ojos en Alerta — Instructivo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body p-0">
+                <iframe id="instructivoFrame"
+                        src=""
+                        style="width:100%; height:100%; border:none;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('instructivoModal').addEventListener('show.bs.modal', function () {
+        const iframe = document.getElementById('instructivoFrame');
+
+            iframe.src = "{{ route('instructivo') }}";
+
+    });
+
+    // Opcional: al cerrar el modal, cortar el audio/video que esté sonando
+    document.getElementById('instructivoModal').addEventListener('hidden.bs.modal', function () {
+        const iframe = document.getElementById('instructivoFrame');
+        iframe.src = iframe.src; // fuerza recarga, corta todo audio/video en curso
+    });
+
+</script>
 
 
 

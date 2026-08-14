@@ -14,7 +14,8 @@
                     <div class="d-flex  col-lg-10 align-items-center justify-content-center">
                         <div class="col-lg-8  pt-5 mt-3 ">
                             <h2 class="mont text-white font-weight-bold mb-1">PARTICIPÁ DEL SORTEO <h2>
-                            <h1 class="mont text-white font-weight-bold"> <span class="mont text-highlight">24 HORAS DE LA CORVINA NEGRA</span> </h1>
+                            {{-- <h1 class="mont text-white font-weight-bold"> <span class="mont text-highlight">24 HORAS DE LA CORVINA NEGRA</span> </h1> --}}
+                            <h1 class="mont text-white font-weight-bold"> <span class="mont text-highlight">6 HORAS A LA CORVINA DE MAYOR PESO</span> </h1>
                             <p class="mont text-white-75 mt-3 mb-1">EXCLUSIVO PARA EMPLEADOS MUNICIPALES</p>
                             <hr class="divider" />
                         </div>
@@ -43,7 +44,7 @@
 
                         <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                             <div class="col-lg-12">
-                                <p class="text-muted ">Sorteamos <strong>5 entradas </strong> entre quienes se inscriban. Completá el formulario y ya estás participando.</p>
+                                <p class="text-muted ">Sorteamos <strong>inscripciones </strong> entre los que se registren. Completá el formulario y ya estás participando.</p>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         {{ $errors->first() }}
@@ -84,7 +85,7 @@
                     </div>
                        <!-- Imagen / Flyer -->
                     <div class="col-lg-6 text-center p-2 order-2 order-lg-1">
-                        <img src="{{asset("assets/img/corvina/logo.png")}}" alt="concurso de las 24hs de la Corvina Negra" >
+                        <img src="{{asset("assets/img/corvina/6h.jpg")}}" alt="concurso de las 24hs de la Corvina Negra" >
                     </div>
                 </div>
             </div>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructivo — Ojos en Alerta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand:#005CC6;
+    --brand-dark:#003c82;
+    --ink:#12202e;
+    --muted:#5b6b7a;
+    --bg:#eef2f6;
+    --panel:#ffffff;
+    --ok:#1a9e6b;
+    --lock:#c94b4b;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;background:var(--bg);font-family:'Roboto',sans-serif;color:var(--ink);overflow-y:auto;overflow-x:hidden;}
+  h1,h2,h3,.brand-font{font-family:'Poppins',sans-serif;}
+
+  .app{
+    max-width:1100px;
+    height:100dvh;
+    height:100vh;
+    margin:0 auto;
+    padding:10px 14px 8px;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+
+  header.top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:8px;
+    flex:none;
+    flex-wrap:wrap;
+  }
+  header.top .title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  header.top .title .eye{
+    width:28px;height:28px;flex:none;
+  }
+  header.top h1{
+    font-size:16px;
+    margin:0;
+    color:var(--brand-dark);
+    letter-spacing:.2px;
+  }
+  header.top .sub{
+    font-size:11.5px;
+    color:var(--muted);
+    margin-top:1px;
+  }
+
+  .progress-wrap{
+    flex:1;
+    min-width:180px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .progress-bar{
+    flex:1;
+    height:7px;
+    background:#dbe4ee;
+    border-radius:8px;
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    background:linear-gradient(90deg,var(--brand),#2fb7e0);
+    width:0%;
+    transition:width .35s ease;
+  }
+  .progress-label{
+    font-size:12px;
+    color:var(--muted);
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+
+  .stage{
+    background:var(--panel);
+    border-radius:16px;
+    box-shadow:0 4px 24px rgba(18,32,46,.08);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    min-height:0;
+  }
+
+  .media-frame{
+    position:relative;
+    width:100%;
+    flex:1 1 auto;
+    min-height:0;
+    background:#0b1420;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .media-frame img, .media-frame video{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#0b1420;
+  }
+  .slide-badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:rgba(11,20,32,.55);
+    color:#fff;
+    font-size:11.5px;
+    padding:3px 9px;
+    border-radius:20px;
+    letter-spacing:.3px;
+    backdrop-filter:blur(2px);
+  }
+  .video-tag{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:rgba(0,92,198,.85);
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:20px;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+  }
+
+  .caption-area{
+    flex:none;
+    max-height:26vh;
+    overflow-y:auto;
+    padding:12px 20px 10px;
+    border-top:1px solid #eef1f5;
+  }
+  .caption-text{
+    font-size:14.5px;
+    line-height:1.45;
+    color:var(--ink);
+    margin:0 0 10px;
+    min-height:20px;
+  }
+  .caption-text.empty{
+    color:var(--muted);
+    font-style:italic;
+  }
+
+  .narration-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'Roboto',sans-serif;
+    font-size:13px;
+    font-weight:700;
+    border:none;
+    border-radius:10px;
+    padding:8px 14px;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    transition:transform .12s ease, background .15s ease, opacity .15s ease;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-ghost{
+    background:#eaf1fb;
+    color:var(--brand-dark);
+  }
+  .btn-ghost:hover{background:#dcebfb;}
+  .btn-primary{
+    background:var(--brand);
+    color:#fff;
+  }
+  .btn-primary:hover{background:var(--brand-dark);}
+  .btn:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+  }
+  .btn-toggle.on{
+    background:var(--brand);
+    color:#fff;
+  }
+
+  nav.controls{
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:10px 20px;
+    border-top:1px solid #eef1f5;
+    flex-wrap:wrap;
+  }
+  .dots{
+    display:flex;
+    gap:4px;
+    flex-wrap:wrap;
+    max-width:260px;
+  }
+  .dot{
+    width:7px;height:7px;border-radius:50%;
+    background:#d7dfe8;
+    cursor:pointer;
+  }
+  .dot.visited{background:#9fc4ee;}
+  .dot.current{background:var(--brand); width:18px; border-radius:5px;}
+
+  .nav-buttons{display:flex; gap:8px;}
+
+  footer.hint{
+    flex:none;
+    text-align:center;
+    font-size:10.5px;
+    color:var(--muted);
+    margin-top:6px;
+    line-height:1.4;
+  }
+
+  /* Final slide */
+  .final-panel{
+    flex:1;
+    min-height:0;
+    overflow-y:auto;
+    padding:18px 22px 10px;
+  }
+  .final-panel h2{
+    color:var(--brand-dark);
+    font-size:18px;
+    margin:0 0 6px;
+  }
+  .final-panel p{
+    color:var(--muted);
+    font-size:13px;
+    margin:0 0 12px;
+    line-height:1.45;
+  }
+  .field-list{
+    list-style:none;
+    margin:0 0 14px;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px 14px;
+  }
+  .field-list li{
+    background:#f3f7fc;
+    border:1px solid #e2ecf7;
+    border-radius:9px;
+    padding:7px 11px;
+    font-size:12.5px;
+    color:var(--ink);
+  }
+  .lock-msg{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    color:var(--lock);
+    background:#fdecec;
+    border:1px solid #f6cccc;
+    padding:9px 13px;
+    border-radius:10px;
+    margin-bottom:12px;
+  }
+  .lock-msg.ok{
+    color:var(--ok);
+    background:#e9f8f1;
+    border-color:#c9ecda;
+  }
+  .form-cta{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .form-cta .btn-primary{
+    font-size:14px;
+    padding:12px 20px;
+  }
+
+  @media (max-width:640px){
+    .app{ padding:8px 10px 6px; }
+    header.top{ gap:8px; margin-bottom:6px; }
+    header.top .sub{ display:none; }
+    header.top h1{font-size:14px;}
+    header.top .title .eye{width:22px;height:22px;}
+    .progress-wrap{ min-width:120px; }
+    .progress-label{ font-size:10.5px; }
+    .field-list{grid-template-columns:1fr;}
+    .caption-area{ padding:9px 14px 8px; max-height:32vh; }
+    .caption-text{font-size:13.5px; margin-bottom:8px;}
+    nav.controls{ padding:8px 14px; }
+    .btn{ font-size:12px; padding:8px 12px; }
+    .dots{ display:none; }
+    footer.hint{ display:none; }
+    .final-panel{ padding:14px 16px 8px; }
+  }
+
+  @media (max-height:640px){
+    .caption-area{ max-height:22vh; }
+    footer.hint{ display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div class="title">
+      <svg class="eye" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="38" rx="42" ry="30" fill="none" stroke="#005CC6" stroke-width="7"/>
+        <circle cx="50" cy="38" r="16" fill="#005CC6"/>
+        <path d="M50 68 L36 92 L64 92 Z" fill="#2fb7e0"/>
+      </svg>
+      <div>
+        <h1>OJOS EN ALERTA — Instructivo</h1>
+        <div class="sub">Municipalidad de Tres Arroyos · recorrido de capacitación</div>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">0/28 vistas</div>
+    </div>
+  </header>
+
+  <div class="stage">
+    <div class="media-frame" id="mediaFrame">
+      <span class="slide-badge" id="slideBadge">1 / 28</span>
+    </div>
+
+    <div class="caption-area" id="captionArea">
+      <p class="caption-text" id="captionText"></p>
+      <div class="narration-row">
+        <button class="btn btn-ghost btn-toggle on" id="autoToggle" title="Activar o desactivar la narración automática">🔊 Narración automática: ON</button>
+        <button class="btn btn-ghost" id="replayBtn">▶ Escuchar de nuevo</button>
+      </div>
+    </div>
+
+    <nav class="controls">
+      <div class="nav-buttons">
+        <button class="btn btn-ghost" id="prevBtn">← Anterior</button>
+        <button class="btn btn-primary" id="nextBtn">Siguiente →</button>
+        <button class="btn btn-primary" id="formBtn" style="display:none;" disabled>Completar formulario</button>
+        <button class="btn btn-ghost" id="finalizarBtn" style="display:none;" disabled>Finalizar</button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </nav>
+  </div>
+
+  <footer class="hint">
+    Podés navegar libremente hacia adelante y atrás. El formulario final se habilita una vez que recorriste todas las diapositivas.
+  </footer>
+
+</div>
+
+<script>
+/* ============ CONFIGURACIÓN: EDITÁ ACÁ EL LINK DEL FORMULARIO ============ */
+const GOOGLE_FORM_URL = "https://forms.gle/a8JSWE9BHtoEzGoA7";
+/* =========================================================================== */
+
+const TOTAL = 28;
+
+// type: 'image' | 'video'
+// src: file path inside assets/
+// caption: texto que se muestra y se narra (null = sin narración)
+// ownAudio: true = el video tiene su propio audio relevante (no se narra con voz sintética)
+const slides = [
+  { n:1,  type:'image', src:'assets/img/slide-01.jpg', caption:null },
+  { n:2,  type:'image', src:'assets/img/slide-02.jpg', audioSrc:'assets/audio/slide-02.mp3',
+    caption:'Para que el programa Ojos en Alerta pueda funcionar correctamente, la Secretaría de Seguridad cuenta con varios recursos: nuevas tecnologías, cámaras distribuidas estratégicamente y de alta calidad, incorporación de vehículos y personal a la Patrulla Municipal de Prevención, y equipos de comunicación con las fuerzas policiales y los agentes municipales.' },
+  { n:3,  type:'image', src:'assets/img/slide-03.jpg', noAudio:true, timedAdvance:4000,
+    caption:'Hoy contamos con gran capacidad de respuesta.' },
+  { n:4,  type:'image', src:'assets/img/slide-04.jpg', audioSrc:'assets/audio/slide-04.mp3',
+    caption:'El sistema Ojos en Alerta se apoya en el personal de calle, contando con vehículos de la Patrulla Municipal de Prevención y móviles policiales en todo el distrito.' },
+  { n:5,  type:'image', src:'assets/img/slide-05.jpg', audioSrc:'assets/audio/slide-05.mp3',
+    caption:'El personal de la PMP cuenta con agentes que recorren las 24 horas la ciudad, trabajando conjuntamente con los efectivos policiales que se encuentran en el distrito.' },
+  { n:6,  type:'image', src:'assets/img/slide-06.jpg', audioSrc:'assets/audio/slide-06.mp3',
+    caption:'El COM —Centro de Operaciones y Monitoreo— cuenta con un moderno sistema de video observación, compuesto por cámaras de alta resolución y un software de última generación.' },
+  { n:7,  type:'image', src:'assets/img/slide-07.jpg', audioSrc:'assets/audio/slide-07.mp3',
+    caption:'Las alertas son atendidas por el personal del COM, el cual se encuentra en funcionamiento las 24 horas, los 365 días del año.' },
+  { n:8,  type:'image', src:'assets/img/slide-08.jpg', audioSrc:'assets/audio/slide-08.mp3',
+    caption:'Gracias a todos estos elementos se puede poner en funcionamiento este sistema… pero NO ALCANZA.' },
+  { n:9,  type:'image', src:'assets/img/slide-09.jpg', audioSrc:'assets/audio/slide-09.mp3', autoNext:true,
+    caption:'Nuestro objetivo es…' },
+  { n:10, type:'image', src:'assets/img/slide-10.jpg', audioSrc:'assets/audio/slide-10.mp3', autoNext:true,
+    caption:'Detectar y combatir todos los delitos que puedan suceder en la vía pública.' },
+  { n:11, type:'image', src:'assets/img/slide-11.jpg', audioSrc:'assets/audio/slide-11.mp3', autoNext:true,
+    caption:'Hoy el 60% de los delitos no se denuncian.' },
+  { n:12, type:'image', src:'assets/img/slide-12.jpg', audioSrc:'assets/audio/slide-12.mp3',
+    caption:'¿Por qué los vecinos no denuncian?' },
+  { n:13, type:'image', src:'assets/img/slide-13.jpg', noAudio:true,
+    caption:'Porque no confían en los tiempos de respuesta.' },
+  { n:14, type:'image', src:'assets/img/slide-14.jpg', noAudio:true,
+    caption:'Porque el vecino muchas veces no desea aportar sus datos personales.' },
+  { n:15, type:'image', src:'assets/img/slide-15.jpg', noAudio:true,
+    caption:'Por falta de compromiso ciudadano.' },
+  { n:17, type:'video', src:'assets/video/slide-17.mp4', audioSrc:'assets/audio/slide-17.mp3', muteVideo:true,
+    caption:'Cuando te enterás de que a un vecino le robaron y luego recordás haber visto situaciones sospechosas en tu barrio —un auto que no es habitual o movimientos extraños— podés dar aviso a Ojos en Alerta para prevenir estas situaciones.' },
+  { n:18, type:'image', src:'assets/img/slide-18.jpg', audioSrc:'assets/audio/slide-18.mp3',
+    caption:'Las alertas son recibidas por el COM: los operadores recepcionan y derivan personal para los eventos recibidos. Los datos son confidenciales y es seguro para el adherente al programa.' },
+  { n:19, type:'image', src:'assets/img/slide-19.jpg', noAudio:true,
+    caption:'El equipo del COM recepciona cada alerta y coordina la respuesta en el momento.' },
+  { n:20, type:'video', src:'assets/video/slide-20.mp4', audioSrc:'assets/audio/slide-20.mp3', muteVideo:true,
+    caption:'¿Qué vemos nosotros desde el Centro de Operaciones y Monitoreo?' },
+  { n:21, type:'video', src:'assets/video/slide-21.mp4', audioSrc:'assets/audio/slide-21.mp3', muteVideo:true,
+    caption:'¿Qué ven tus ojos? Como vecino, como comerciante, tu mirada nos ayuda a mejorar nuestro trabajo. Ante cualquier situación que nos informes, los operadores del COM pueden individualizar la alerta y enviar rápidamente personal al lugar.' },
+  { n:22, type:'video', src:'assets/video/slide-22.mp4', audioSrc:'assets/audio/slide-22.mp3', muteVideo:true,
+    caption:'Ojos en Alerta también es un elemento que ayuda ante situaciones de violencia de género.' },
+  { n:23, type:'image', src:'assets/img/slide-23.jpg', audioSrc:'assets/audio/slide-23.mp3',
+    caption:'En nuestra ciudad, Ojos en Alerta comenzó a dar resultados: gracias a este programa se identificó, persiguió y detuvo rápidamente a un delincuente.' },
+  { n:24, type:'video', src:'assets/video/slide-24.mp4', ownAudio:true,
+    caption:'¿Cómo funciona Ojos en Alerta?' },
+  { n:25, type:'image', src:'assets/img/slide-25.jpg', audioSrc:'assets/audio/slide-25.mp3',
+    caption:'Funciona como un chat de WhatsApp, como el que tendrías con cualquier contacto de tu agenda: privado, seguro y resguardando tu identidad. A través de este chat podés enviar audios, videos, imágenes, texto y también tu geolocalización en tiempo real.' },
+  { n:26, type:'image', src:'assets/img/slide-26.jpg', noAudio:true,
+    caption:'Cuando ingresás al programa te enviamos un tutorial para colocarlo como acceso directo, así podés encontrarlo más fácil y rápido.' },
+  { n:27, type:'image', src:'assets/img/slide-27.jpg', noAudio:true,
+    caption:'Y si sos comerciante y te adherís a este programa, te identificás con una calcomanía que te entregamos para tu negocio.' },
+  { n:28, type:'video', src:'assets/video/slide-28.mp4', ownAudio:true,
+    caption:'Testimonio de Facundo Arana sobre Ojos en Alerta.' },
+  { n:29, type:'final', src:'assets/img/slide-29.jpg', audioSrc:'assets/audio/slide-29.mp3', caption:null },
+];
+
+/* ============================ MOTOR DEL VISOR ============================ */
+
+let current = 0;
+const visited = new Set();
+let autoNarration = true;
+let formFlowState = 'idle'; // 'idle' | 'opened' | 'done'
+
+const mediaFrame = document.getElementById('mediaFrame');
+const slideBadge = document.getElementById('slideBadge');
+const captionArea = document.getElementById('captionArea');
+const captionText = document.getElementById('captionText');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const dotsWrap = document.getElementById('dots');
+const progressFill = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+const autoToggle = document.getElementById('autoToggle');
+const replayBtn = document.getElementById('replayBtn');
+const formBtn = document.getElementById('formBtn');
+const finalizarBtn = document.getElementById('finalizarBtn');
+
+// construir puntitos
+slides.forEach((s, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot';
+  d.dataset.i = i;
+  d.title = 'Diapositiva ' + s.n;
+  d.addEventListener('click', () => {
+    if(i > current && audioBusy) return;
+    goTo(i);
+  });
+  dotsWrap.appendChild(d);
+});
+
+let currentAudio = null;
+let currentVideoEl = null;
+let groupTimers = [];
+let inGroupTransition = false;
+let audioBusy = false;
+
+function setAudioBusy(val){
+  audioBusy = val;
+  updateNextButtonState();
+}
+
+function updateNextButtonState(){
+  nextBtn.disabled = (current === TOTAL - 1) || audioBusy;
+  nextBtn.title = audioBusy ? 'Esperá a que termine el audio para continuar' : '';
+}
+
+function idxOfN(n){
+  return slides.findIndex(x => x.n === n);
+}
+
+function clearGroupTimers(){
+  groupTimers.forEach(id => clearTimeout(id));
+  groupTimers = [];
+}
+
+// Diapositivas cuyo audio narra, en un solo tramo, a varias diapositivas
+// seguidas. La clave es el número de la diapositiva "dueña" del audio.
+const AUDIO_GROUPS = {
+  12: [12, 13, 14, 15],
+  18: [18, 19],
+  25: [25, 26, 27],
+};
+
+// Reparte la duración real del audio entre las diapositivas del grupo
+// (proporcional al largo del texto de cada una) y programa el avance
+// automático por todas ellas, deteniéndose en la última.
+function scheduleGroupAdvance(memberNs){
+  clearGroupTimers();
+  const idxs = memberNs.map(idxOfN);
+  if(idxs.some(i => i < 0)) return;
+  const dur = (currentAudio && currentAudio.duration && isFinite(currentAudio.duration))
+    ? currentAudio.duration * 1000
+    : 20000;
+  const lens = idxs.map(i => (slides[i].caption || '').length || 1);
+  const total = lens.reduce((a,b) => a+b, 0);
+  let acc = 0;
+  for(let k = 0; k < idxs.length - 1; k++){
+    acc += lens[k];
+    const t = dur * (acc/total);
+    const targetIdx = idxs[k+1];
+    groupTimers.push(setTimeout(() => goTo(targetIdx, {fromAuto:true}), t));
+  }
+}
+
+function startAudio(s){
+  currentAudio = new Audio(s.audioSrc);
+  setAudioBusy(true);
+  currentAudio.addEventListener('ended', () => {
+    setAudioBusy(false);
+    if(s.muteVideo && currentVideoEl){
+      currentVideoEl.muted = false;
+    }
+    if(s.autoNext){
+      goTo(current + 1, {fromAuto:true});
+    }
+  });
+  currentAudio.addEventListener('error', () => setAudioBusy(false));
+  if(AUDIO_GROUPS[s.n]){
+    currentAudio.addEventListener('loadedmetadata', () => scheduleGroupAdvance(AUDIO_GROUPS[s.n]), { once:true });
+  }
+  currentAudio.play().catch(() => setAudioBusy(false));
+  return currentAudio;
+}
+
+function speak(text){
+  if(!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  if(!text) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'es-AR';
+  u.rate = 1;
+  const voices = window.speechSynthesis.getVoices();
+  const esVoice = voices.find(v => v.lang && v.lang.toLowerCase().startsWith('es'));
+  if(esVoice) u.voice = esVoice;
+  u.onstart = () => setAudioBusy(true);
+  u.onend = () => setAudioBusy(false);
+  u.onerror = () => setAudioBusy(false);
+  window.speechSynthesis.speak(u);
+}
+
+function stopSpeak(){
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
+function stopAudio(){
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+}
+
+function stopAllNarration(){
+  stopSpeak();
+  stopAudio();
+  setAudioBusy(false);
+}
+
+// Reproduce la narración de una diapositiva: prioriza el audio grabado
+// por el secretario; si no hay, usa la voz sintética del navegador como
+// respaldo; si la diapositiva está marcada noAudio, no reproduce nada
+// (ya se narró junto con una diapositiva anterior del mismo bloque).
+function playNarration(s){
+  if(s.noAudio) return;
+  stopAllNarration();
+  if(s.audioSrc){
+    startAudio(s);
+  } else if(s.caption && !s.ownAudio){
+    setAudioBusy(true);
+    setTimeout(() => speak(s.caption), 250);
+  }
+}
+
+function replayNarration(s){
+  if(s.noAudio) return;
+  if(s.audioSrc){
+    stopAllNarration();
+    clearGroupTimers();
+    startAudio(s);
+  } else if(s.caption){
+    speak(s.caption);
+  }
+}
+
+function render(){
+  if(inGroupTransition){
+    stopSpeak();
+  } else {
+    stopAllNarration();
+  }
+  inGroupTransition = false;
+  const s = slides[current];
+  visited.add(current);
+
+  slideBadge.textContent = (current+1) + ' / ' + TOTAL;
+
+  // limpiar media frame (salvo el badge)
+  mediaFrame.querySelectorAll('img,video,.video-tag').forEach(el => el.remove());
+  currentVideoEl = null;
+
+  if(s.type === 'image' || s.type === 'final'){
+    captionArea.style.display = 'block';
+    const img = document.createElement('img');
+    img.src = s.src;
+    img.alt = 'Diapositiva ' + s.n;
+    mediaFrame.appendChild(img);
+  } else if(s.type === 'video'){
+    captionArea.style.display = 'block';
+    const tag = document.createElement('span');
+    tag.className = 'video-tag';
+    tag.textContent = 'VIDEO';
+    mediaFrame.appendChild(tag);
+    const vid = document.createElement('video');
+    vid.src = s.src;
+    vid.controls = true;
+    vid.playsInline = true;
+    vid.autoplay = true;
+    vid.muted = !!s.muteVideo;
+    mediaFrame.appendChild(vid);
+    currentVideoEl = vid;
+    if(s.ownAudio){
+      setAudioBusy(true);
+      vid.addEventListener('ended', () => setAudioBusy(false));
+      vid.addEventListener('error', () => setAudioBusy(false));
+    }
+    const playPrompt = document.createElement('button');
+    playPrompt.className = 'btn btn-primary';
+    playPrompt.textContent = '▶ Reproducir video';
+    playPrompt.style.position = 'absolute';
+    playPrompt.style.zIndex = '5';
+    playPrompt.style.display = 'none';
+    playPrompt.addEventListener('click', () => {
+      vid.play();
+      playPrompt.style.display = 'none';
+    });
+    mediaFrame.appendChild(playPrompt);
+    const attemptPlay = vid.play();
+    if(attemptPlay && attemptPlay.catch){
+      attemptPlay.catch(() => {
+        // el navegador bloqueó el autoplay: mostramos un botón para iniciarlo manualmente
+        playPrompt.style.display = 'inline-flex';
+      });
+    }
+  }
+
+  if(s.type === 'final'){
+    captionArea.style.display = 'none';
+    if(autoNarration) playNarration(s);
+  } else if(s.caption){
+    captionText.textContent = s.caption;
+    captionText.classList.remove('empty');
+    replayBtn.style.display = (s.noAudio || s.ownAudio) ? 'none' : 'inline-flex';
+    if(autoNarration){
+      playNarration(s);
+    }
+  } else {
+    captionText.textContent = '';
+    captionText.classList.add('empty');
+    replayBtn.style.display = 'none';
+  }
+
+  if(s.timedAdvance){
+    groupTimers.push(setTimeout(() => goTo(current + 1, {fromAuto:true}), s.timedAdvance));
+  }
+
+  prevBtn.disabled = current === 0;
+  updateNextButtonState();
+  nextBtn.textContent = 'Siguiente →';
+  formBtn.style.display = (current === TOTAL - 1) ? 'inline-flex' : 'none';
+  finalizarBtn.style.display = (current === TOTAL - 1) ? 'inline-flex' : 'none';
+  updateFormButton();
+
+  updateProgress();
+}
+
+function updateProgress(){
+  const pct = Math.round((visited.size / TOTAL) * 100);
+  progressFill.style.width = pct + '%';
+  progressLabel.textContent = visited.size + '/' + TOTAL + ' vistas';
+  dotsWrap.querySelectorAll('.dot').forEach((d,i) => {
+    d.classList.toggle('visited', visited.has(i));
+    d.classList.toggle('current', i === current);
+  });
+}
+
+function updateFormButton(){
+  if(current !== TOTAL - 1) return;
+  const allSeen = visited.size >= TOTAL;
+  if(formFlowState === 'idle'){
+    formBtn.textContent = 'Completar formulario';
+    formBtn.disabled = !allSeen;
+    formBtn.title = allSeen ? '' : 'Recorré todas las diapositivas para habilitarlo';
+  } else if(formFlowState === 'opened'){
+    formBtn.textContent = '✅ Finalizar';
+    formBtn.disabled = false;
+    formBtn.title = '';
+  } else if(formFlowState === 'done'){
+    formBtn.textContent = '✅ ¡Listo!';
+    formBtn.disabled = true;
+    formBtn.title = '';
+  }
+  if(!finalizarBtn.dataset.done){
+    finalizarBtn.textContent = 'Finalizar';
+    finalizarBtn.disabled = !allSeen;
+    finalizarBtn.title = allSeen ? '' : 'Recorré todas las diapositivas para habilitarlo';
+  }
+}
+
+function goTo(i, opts){
+  opts = opts || {};
+  if(!opts.fromAuto) clearGroupTimers();
+  if(i < 0 || i >= TOTAL) return;
+  if(opts.fromAuto) inGroupTransition = true;
+  current = i;
+  render();
+}
+
+prevBtn.addEventListener('click', () => goTo(current - 1));
+nextBtn.addEventListener('click', () => goTo(current + 1));
+replayBtn.addEventListener('click', () => {
+  replayNarration(slides[current]);
+});
+autoToggle.addEventListener('click', () => {
+  autoNarration = !autoNarration;
+  autoToggle.classList.toggle('on', autoNarration);
+  autoToggle.textContent = (autoNarration ? '🔊 Narración automática: ON' : '🔇 Narración automática: OFF');
+  if(!autoNarration){
+    stopAllNarration();
+    clearGroupTimers();
+  }
+});
+
+formBtn.addEventListener('click', () => {
+  if(formBtn.disabled) return;
+  if(formFlowState === 'idle'){
+    if(!GOOGLE_FORM_URL || GOOGLE_FORM_URL.indexOf('REEMPLAZAR') !== -1){
+      alert('Todavía falta cargar el link del Google Form.\n\nAbrí el archivo index.html con un editor de texto, buscá la línea que dice GOOGLE_FORM_URL cerca del principio del <script>, y pegá ahí el link de tu formulario (el que se comparte para responder, no el de edición).');
+      return;
+    }
+    window.open(GOOGLE_FORM_URL, '_blank');
+    formFlowState = 'opened';
+  } else if(formFlowState === 'opened'){
+    formFlowState = 'done';
+  }
+  updateFormButton();
+});
+
+finalizarBtn.addEventListener('click', () => {
+  if(finalizarBtn.disabled) return;
+  finalizarBtn.dataset.done = '1';
+  finalizarBtn.textContent = '✅ ¡Listo!';
+  finalizarBtn.disabled = true;
+  formBtn.disabled = true;
+});
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'ArrowRight' && !nextBtn.disabled) goTo(current + 1);
+  if(e.key === 'ArrowLeft') goTo(current - 1);
+});
+
+// cargar voces (Chrome las carga async)
+if('speechSynthesis' in window){
+  window.speechSynthesis.onvoiceschanged = () => {};
+}
+
+render();
+</script>
+</body>
+</html>

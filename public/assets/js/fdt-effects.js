@@ -1,19 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", waitForPreloader);
 
-    /* HERO - Barra con la fecha */
+function waitForPreloader(){
+     const check = setInterval(() => {
+        if (!document.querySelector('#preloader')) {
+            clearInterval(check);
+            initAnimations();
+        }
+    }, 50);
+}
 
-    // gsap.registerPlugin(ScrollTrigger);
+function initAnimations() {
 
-    // gsap.to(".marquee-track", {
-    //     xPercent: -50,
-    //     ease: "none",
-    //     scrollTrigger: {
-    //         trigger: ".marquee-section",
-    //         start: "top bottom",
-    //         end: "bottom top",
-    //         scrub: true
-    //     }
-    // });
+    gsap.registerPlugin(ScrollTrigger);
+
 
     /* NAV - Btn tickets e items */
 
@@ -39,18 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* VIVI LA EXPERIENCIA */
 
-    gsap.from(".bg-brushstroke", {
-            scale: 3,
+    gsap.from(".experiencia-title", {
+            scale: 0.8,
             opacity: 0,
+            duration: 1.2,
             ease: "power3.out",
-            duration: 2.5,
+            immediateRender: false,
             scrollTrigger: {
-                trigger: ".bg-brushstroke",
-                start: 200,
+                trigger: ".experiencia-title",
+                start: "top 80%",
+                toggleActions: "play none none none",
             }
 
         });
-
 
     gsap.from("#line-up", {
             x: -500,
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1.5,
             scrollTrigger: {
                 trigger: "#line-up",
-                start: 400,
+                start: "top 80%",
             }
         });
 
@@ -93,12 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "bounce.out",
         scrollTrigger: {
                 trigger: ".card-contacto",
-                start: "top 60%"
+                start: "top 80%"
             }
     });
 
 
-
-
-
-});
+};
