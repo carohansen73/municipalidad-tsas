@@ -1,0 +1,704 @@
+/* =========================================================
+   Actividades y Talleres — vista pública
+   Prioridad: accesibilidad (adultos mayores) por sobre estética,
+   pero con un estilo prolijo, moderno y liviano.
+========================================================= */
+
+:root {
+    /* Derivado del celeste #25afc3 que ya predomina en el resto del sitio
+       (navbar, botón "volver arriba", estados activos), oscurecido para
+       cumplir contraste AA como texto/botón. */
+    --taller-primary: rgb(13, 116, 189);
+    --taller-primary-dark: #2464a3;
+    --taller-primary-tint: #e3f6f8;
+    --taller-accent: #25afc3;
+    --taller-text: #1a1a1a;
+    --taller-text-muted: #4a4a4a;
+    --taller-bg: #ffffff;
+    --taller-bg-section: #f4f8f9;
+    --taller-border: #d7e3e5;
+    --taller-badge-gratuita-bg: #1b5e20;
+    --taller-badge-arancelada-bg: #8a4b00;
+    --taller-focus: #0b3d91;
+
+    /* Franjas horarias */
+    --franja-manana-text: #1b5e20;
+    --franja-manana-icono: #2e7d32;
+    --franja-manana-tint: #eaf6ea;
+    --franja-tarde-text: #7a5c00;
+    --franja-tarde-icono: #b58900;
+    --franja-tarde-tint: #fff6d9;
+    --franja-vespertino-text: #662483;
+    --franja-vespertino-icono: #662483;
+    --franja-vespertino-tint: #f2e9f7;
+}
+
+.talleres-page {
+    background-color: var(--taller-bg-section);
+    color: var(--taller-text);
+    font-size: 16px;
+    line-height: 1.55;
+    padding-bottom: 3rem;
+}
+
+.talleres-page * {
+    box-sizing: border-box;
+}
+
+.talleres-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 0;
+}
+
+.talleres-banner {
+    display: block;
+    width: 100%;
+    /* La imagen fuente mide 1200px de ancho: si la estiramos más allá de
+       eso se ve pixelada. La topeamos ahí y la centramos, así sigue
+       ocupando el ancho completo en cualquier pantalla de hasta 1200px
+       (la gran mayoría) sin perder nitidez en monitores más anchos. */
+    max-width: 1200px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+}
+
+.talleres-titulo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--taller-primary-dark);
+    margin-bottom: 0.35rem;
+}
+
+.talleres-subtitulo {
+    font-size: 1rem;
+    color: var(--taller-text-muted);
+    margin-bottom: 1.5rem;
+    max-width: 70ch;
+}
+
+/* Foco visible siempre, sin depender de hover */
+.talleres-page a:focus-visible,
+.talleres-page button:focus-visible,
+.talleres-page input:focus-visible,
+.talleres-page select:focus-visible,
+.talleres-page summary:focus-visible {
+    outline: 3px solid var(--taller-focus);
+    outline-offset: 2px;
+}
+
+.talleres-label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--taller-text);
+    margin-bottom: 0.35rem;
+}
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.talleres-buscador {
+    background-color: var(--taller-bg);
+    border: 1px solid var(--taller-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.talleres-buscador-caja {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.talleres-buscador-caja i {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.05rem;
+    color: var(--taller-primary-dark);
+    pointer-events: none;
+}
+
+.talleres-input {
+    width: 100%;
+    min-height: 2.75rem;
+    font-size: 1rem;
+    padding: 0.6rem 1rem 0.6rem 2.6rem;
+    border: 1px solid var(--taller-border);
+    border-radius: 10px;
+    color: var(--taller-text);
+    background-color: var(--taller-bg);
+}
+
+.talleres-input::placeholder {
+    color: var(--taller-text-muted);
+    opacity: 1;
+}
+
+/* =========================================================
+   LAYOUT: FILTROS A LA IZQUIERDA / TALLERES A LA DERECHA
+========================================================= */
+
+.talleres-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+@media (min-width: 900px) {
+    .talleres-layout {
+        grid-template-columns: 260px 1fr;
+    }
+}
+
+/* =========================================================
+   BOTÓN "FILTROS" — dispara el modal, solo existe en mobile/tablet
+========================================================= */
+
+.talleres-filtros-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--taller-text);
+    background-color: var(--taller-bg);
+    border: 1px solid var(--taller-border);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    padding: 0.6rem 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.talleres-filtros-trigger i {
+    color: var(--taller-primary-dark);
+    font-size: 1.1rem;
+}
+
+@media (min-width: 900px) {
+    .talleres-filtros-trigger {
+        display: none;
+    }
+}
+
+/* Mientras el modal de filtros está abierto, no se puede scrollear la página de atrás */
+.talleres-modal-abierto {
+    overflow: hidden;
+}
+
+/* =========================================================
+   FILTROS — sidebar en desktop, modal full-screen en mobile
+========================================================= */
+
+.talleres-sidebar {
+    background-color: var(--taller-bg);
+    border: 1px solid var(--taller-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile/tablet (<900px): modal full-screen por encima de todo */
+.talleres-sidebar {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 900px) {
+    .talleres-sidebar {
+        position: sticky;
+        top: 1rem;
+        inset: auto;
+        z-index: auto;
+        border: 1px solid var(--taller-border);
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        display: block;
+        padding: 1.25rem;
+        /* Con 3 grupos de filtros puede ser más alto que la pantalla:
+           le damos scroll propio para que ninguna opción quede inalcanzable. */
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+
+    /* En desktop los filtros están siempre visibles, sin importar el
+       estado (abierto/cerrado) que haya quedado del modal en mobile.
+       Necesita !important: el user-agent stylesheet resuelve [hidden]
+       con más prioridad que una regla normal aunque tenga más especificidad. */
+    .talleres-sidebar[hidden] {
+        display: block !important;
+    }
+}
+
+.talleres-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: 0 0 auto;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--taller-border);
+}
+
+/* El .btn-close de Bootstrap es chico por default (~24px): lo agrandamos
+   a un área táctil de 44px sin tocar el ícono en sí. */
+#talleres-filtros-cerrar {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.talleres-sidebar-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 1.25rem;
+}
+
+.talleres-sidebar-footer {
+    flex: 0 0 auto;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--taller-border);
+    background-color: var(--taller-bg);
+}
+
+.talleres-sidebar-aplicar {
+    width: 100%;
+    min-height: 48px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--taller-primary);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.talleres-sidebar-aplicar:hover,
+.talleres-sidebar-aplicar:focus-visible {
+    background-color: var(--taller-primary-dark);
+}
+
+@media (min-width: 900px) {
+    /* En desktop no hay modal: sin header con cerrar, sin footer con "Filtrar" */
+    .talleres-sidebar-header {
+        padding: 0 0 1rem;
+        border-bottom: none;
+    }
+
+    .talleres-sidebar-body {
+        padding: 0;
+        overflow: visible;
+    }
+
+    .talleres-sidebar-footer,
+    #talleres-filtros-cerrar {
+        display: none;
+    }
+}
+
+.talleres-sidebar-titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--taller-primary-dark);
+    margin-bottom: 0;
+}
+
+@media (min-width: 900px) {
+    .talleres-sidebar-titulo {
+        margin-bottom: 1rem;
+    }
+}
+
+/* =========================================================
+   FILTROS APLICADOS (chips) — solo mobile, sobre el listado de resultados
+========================================================= */
+
+.talleres-chips {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+.talleres-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--taller-primary-tint);
+    border: 1px solid var(--taller-primary);
+    border-radius: 999px;
+    padding: 0.3rem 0.5rem 0.3rem 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--taller-primary-dark);
+}
+
+.talleres-chip-quitar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: var(--taller-primary-dark);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.talleres-chip-quitar:hover,
+.talleres-chip-quitar:focus-visible {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.talleres-chips-limpiar {
+    min-height: 44px;
+    padding: 0 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--taller-primary-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (min-width: 900px) {
+    /* Los chips son un recurso mobile: en desktop la selección ya se ve
+       directamente marcada en el sidebar, siempre visible. */
+    .talleres-chips {
+        display: none;
+    }
+}
+
+.filtro-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.filtro-grupo:last-child {
+    margin-bottom: 0;
+}
+
+.filtro-grupo-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--taller-text);
+    margin-bottom: 0.5rem;
+}
+
+.filtro-opciones {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.filtro-opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    padding: 0.35rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--taller-text);
+    cursor: pointer;
+}
+
+.filtro-opcion:hover,
+.filtro-opcion:focus-within {
+    background-color: var(--taller-primary-tint);
+}
+
+.filtro-opcion input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    accent-color: var(--taller-primary);
+}
+
+/* =========================================================
+   FRANJAS HORARIAS
+========================================================= */
+
+.talleres-franja {
+    margin-bottom: 2rem;
+}
+
+/* Cada franja define su propio tema de color; las cards adentro lo heredan */
+.talleres-franja--manana {
+    --franja-text: var(--franja-manana-text);
+    --franja-icono: var(--franja-manana-icono);
+    --franja-tint: var(--franja-manana-tint);
+}
+
+.talleres-franja--tarde {
+    --franja-text: var(--franja-tarde-text);
+    --franja-icono: var(--franja-tarde-icono);
+    --franja-tint: var(--franja-tarde-tint);
+}
+
+.talleres-franja--vespertino {
+    --franja-text: var(--franja-vespertino-text);
+    --franja-icono: var(--franja-vespertino-icono);
+    --franja-tint: var(--franja-vespertino-tint);
+}
+
+.talleres-franja-titulo {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--franja-text, var(--taller-primary-dark));
+    background-color: var(--franja-tint, var(--taller-bg));
+    border: 1px solid var(--taller-border);
+    border-left: 5px solid var(--franja-icono, var(--taller-primary));
+    border-radius: 10px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.talleres-franja-titulo i[aria-hidden] {
+    font-size: 1.1rem;
+}
+
+.talleres-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.talleres-sin-resultados {
+    background-color: var(--taller-bg);
+    border: 1px solid var(--taller-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* =========================================================
+   CARD DE TALLER (horizontal, una por fila, estilo liviano)
+========================================================= */
+
+/* Asegura que [hidden] (usado por el filtrado en JS) gane siempre,
+   aunque .taller-card / .talleres-franja definan su propio "display" */
+.taller-card[hidden],
+.talleres-franja[hidden] {
+    display: none;
+}
+
+.taller-card {
+    background-color: var(--franja-tint, var(--taller-bg));
+    border: 1px solid var(--taller-border);
+    border-left: 4px solid var(--franja-icono, var(--taller-primary));
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: box-shadow 0.15s ease;
+}
+
+.taller-card:hover,
+.taller-card:focus-within {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+}
+
+@media (min-width: 480px) {
+    .taller-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.taller-card-imagen {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    background-color: var(--franja-icono, var(--taller-primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@media (min-width: 480px) {
+    .taller-card-imagen {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+.taller-card-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.taller-card-imagen i {
+    font-size: 2.1rem;
+    color: #ffffff;
+}
+
+.taller-card-info {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.taller-card-nombre {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--taller-text);
+    margin-bottom: 0.5rem;
+}
+
+.taller-card-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.taller-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--taller-bg);
+    border: 1px solid var(--taller-border);
+    border-radius: 999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--taller-text);
+}
+
+.taller-pill i {
+    color: var(--franja-icono, var(--taller-primary-dark));
+    font-size: 0.85rem;
+}
+
+.taller-card-datos {
+    list-style: none;
+    margin: 0 0 0.6rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.taller-card-datos li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+}
+
+.taller-card-datos i {
+    color: var(--franja-icono, var(--taller-primary-dark));
+    margin-top: 0.15rem;
+    width: 1.1rem;
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.taller-badge {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    padding: 0.1rem 0.55rem;
+}
+
+.taller-badge-gratuita {
+    background-color: var(--taller-badge-gratuita-bg);
+}
+
+.taller-badge-arancelada {
+    background-color: var(--taller-badge-arancelada-bg);
+}
+
+/* =========================================================
+   "VER MÁS" (details/summary nativo, accesible sin JS)
+========================================================= */
+
+.taller-card-detalle {
+    margin-top: 0.4rem;
+}
+
+.taller-card-boton {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    min-width: 44px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: var(--taller-primary);
+    border-radius: 10px;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+}
+
+.taller-card-boton::-webkit-details-marker {
+    display: none;
+}
+
+.taller-card-boton:hover,
+.taller-card-boton:focus-visible {
+    background-color: var(--taller-primary-dark);
+}
+
+.taller-card-boton .txt-abierto {
+    display: none;
+}
+
+.taller-card-detalle[open] .taller-card-boton .txt-cerrado {
+    display: none;
+}
+
+.taller-card-detalle[open] .taller-card-boton .txt-abierto {
+    display: inline;
+}
+
+.taller-card-detalle-contenido {
+    margin-top: 0.65rem;
+    padding: 0.85rem 1rem;
+    background-color: var(--taller-bg);
+    border: 1px solid var(--taller-border);
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+.taller-card-detalle-contenido p {
+    margin-bottom: 0.5rem;
+}
+
+.taller-card-detalle-contenido p:last-child {
+    margin-bottom: 0;
+}

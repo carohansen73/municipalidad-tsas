@@ -28,6 +28,9 @@ use App\Models\ReporteEconomico;
 use App\Models\AvisoOficial;
 use App\Models\BoletinOficial;
 use App\Models\ResidenciaAdultos;
+use App\Models\Actividad;
+use App\Models\Publico;
+use App\Models\CategoriaActividad;
 use App\Models\CuidadorDomiciliario;
 use App\Models\CiudadUniversitaria;
 use App\Models\CiudadUniversitariaDetalles;
@@ -443,6 +446,104 @@ class HomeController extends Controller
         $residencias = ResidenciaAdultos::where('habilitada', 0)->orderBy('nombre')->get();
         //$residencias = ResidenciaAdultos::all();
         return view('sections.adultos', compact('portada', 'textos','trabajadores', 'residencias', 'contacto'));
+    }
+
+    /**
+     * Listado público de Actividades y Talleres, agrupado por franja horaria
+     * (mañana / tarde / vespertino) a partir de los horarios de cada actividad.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showTalleres()
+    {
+        $actividades = Actividad::activo()
+            ->whereHas('taller', function ($query) {
+                $query->activo();
+            })
+            ->with(['taller.categoria', 'taller.publico', 'institucion', 'horarios'])
+            ->get();
+
+        $franjas = [
+            'manana' => [],
+            'tarde' => [],
+            'vespertino' => [],
+        ];
+
+        // getFranjaHorariaAttribute() devuelve 'mañana' (con ñ); acá lo normalizamos
+        // a una clave ASCII para usarla en ids/atributos HTML sin problemas.
+        $normalizarFranja = [
+            'mañana' => 'manana',
+            'tarde' => 'tarde',
+            'vespertino' => 'vespertino',
+        ];
+
+        // Orden real de la semana (lunes primero), para mostrar los horarios
+        // de cada card agrupados por día en vez de mezclados por hora.
+        $ordenDias = [
+            'lunes' => 0,
+            'martes' => 1,
+            'miercoles' => 2,
+            'jueves' => 3,
+            'viernes' => 4,
+            'sabado' => 5,
+            'domingo' => 6,
+        ];
+
+        foreach ($actividades as $actividad) {
+            $horariosPorFranja = $actividad->horarios->groupBy('franja_horaria');
+
+            foreach ($horariosPorFranja as $franjaOriginal => $horarios) {
+                $franja = $normalizarFranja[$franjaOriginal] ?? null;
+
+                if ($franja === null || !array_key_exists($franja, $franjas)) {
+                    continue;
+                }
+
+                $franjas[$franja][] = [
+                    'actividad' => $actividad,
+                    'horarios' => $horarios->sortBy(function ($horario) use ($ordenDias) {
+                        return sprintf(
+                            '%d-%s',
+                            $ordenDias[$horario->dia_semana] ?? 99,
+                            $horario->hora_inicio->format('H:i')
+                        );
+                    })->values(),
+                ];
+            }
+        }
+
+        // Dentro de cada franja, ordenamos las cards por el horario de inicio
+        // más temprano que tengan en toda la semana (no por el orden de la
+        // lista, que ahora está ordenada por día y no por hora).
+        foreach ($franjas as $franja => $items) {
+            usort($items, function ($a, $b) {
+                $minA = $a['horarios']->min(function ($horario) {
+                    return $horario->hora_inicio->format('H:i');
+                });
+                $minB = $b['horarios']->min(function ($horario) {
+                    return $horario->hora_inicio->format('H:i');
+                });
+
+                return $minA <=> $minB;
+            });
+
+            $franjas[$franja] = $items;
+        }
+
+        $publicos = Publico::orderBy('nombre')->get();
+        $categorias = CategoriaActividad::orderBy('nombre')->get();
+
+        $diasSemana = [
+            'lunes' => 'Lunes',
+            'martes' => 'Martes',
+            'miercoles' => 'Miércoles',
+            'jueves' => 'Jueves',
+            'viernes' => 'Viernes',
+            'sabado' => 'Sábado',
+            'domingo' => 'Domingo',
+        ];
+
+        return view('sections.talleres', compact('franjas', 'publicos', 'categorias', 'diasSemana'));
     }
 
 

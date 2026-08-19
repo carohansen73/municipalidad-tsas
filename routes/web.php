@@ -8,6 +8,7 @@ use App\Http\Controllers\BoletinOficialController;
 use App\Http\Controllers\FdtLicitacionArchivoController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\TallerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +96,8 @@ Route::controller(HomeController::class)->group(function () {
 
     Route::get('/adultos-mayores', 'showAdultosMayores');
 
+    Route::get('/actividades-y-talleres', 'showTalleres');
+
 });
 
 /* Reclamos / Consultas*/
@@ -180,6 +183,10 @@ Route::group(['middleware' => 'auth'], function () {
             '/licitaciones/{licitacion}/archivos',
             [FdtLicitacionArchivoController::class, 'store']
         )->name('licitaciones.archivos.store');
+
+    /* Actividades y Talleres */
+    Route::resource('talleres', TallerController::class)
+        ->only(['index', 'create', 'store']);
 
           /* Sorteo Corvina Negra */
     Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');

@@ -122,6 +122,16 @@
 </li>
 
 
+@can('talleres.index')
+<li class="nav-item">
+    <a href="{{ route('talleres.index') }}"
+       class="nav-link {{ Request::is('talleres*') ? 'active' : '' }}">
+        <p>Actividades y Talleres</p>
+    </a>
+</li>
+@endcan
+
+
 @can('sorteo.index')
 <li class="nav-item">
     <a href="{{ route('sorteo.index') }}"
