@@ -51,24 +51,16 @@
     padding: 1.5rem 1rem 0;
 }
 
-.talleres-banner {
+.talleres-banner-img {
     display: block;
     width: 100%;
-    /* La imagen fuente mide 1200px de ancho: si la estiramos más allá de
-       eso se ve pixelada. La topeamos ahí y la centramos, así sigue
-       ocupando el ancho completo en cualquier pantalla de hasta 1200px
-       (la gran mayoría) sin perder nitidez en monitores más anchos. */
-    max-width: 1200px;
-    height: auto;
     margin: 0 auto 1.5rem;
+    position:absolute;
+    inset:0;
+    height:100%;
+    object-fit:cover;
 }
 
-.talleres-titulo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--taller-primary-dark);
-    margin-bottom: 0.35rem;
-}
 
 .talleres-subtitulo {
     font-size: 1rem;
@@ -440,6 +432,7 @@
 
 .talleres-franja {
     margin-bottom: 2rem;
+    padding: 0;
 }
 
 /* Cada franja define su propio tema de color; las cards adentro lo heredan */
@@ -701,4 +694,43 @@
 
 .taller-card-detalle-contenido p:last-child {
     margin-bottom: 0;
+}
+
+
+/* NUEVO BANNER */
+.talleres-banner-section {
+    position:relative;
+    color:#fff;
+    padding:40px 0;
+    overflow:hidden;
+    background:#171614;
+}
+
+.talleres-banner-contenido {
+    position:relative;
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 1.5rem 1rem 0;
+}
+
+.talleres-banner-titulo {
+    font-weight:700;
+    font-size:clamp(28px,4vw,48px);
+    text-transform: uppercase;
+    line-height:1;
+    letter-spacing:-.025em;
+    margin:0;
+    margin-top: 5px;
+    display: inline-block;
+    background-color:var(--taller-primary);
+    padding:0.5rem
+}
+
+.talleres-banner-subtitulo {
+    font-size:12px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:  rgba(255,255,255,.82);
+    font-weight:700;
+    margin-bottom:16px;
 }

@@ -3,26 +3,35 @@
 @include('layouts.navbar')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/css/talleres.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/talleres.css') }}?v={{ @filemtime(public_path('assets/css/talleres.css')) }}">
 @endsection
 
 @section('content')
 
 <main id="main-talleres" class="talleres-page margen-top-navbar">
 
-    <img
-        src="{{ asset('assets/img/sections-portadas/talleres/TalleresYActividades.png') }}"
-        alt="Actividades y Talleres — para adultos mayores, adultos, jóvenes e infantiles"
-        class="talleres-banner"
-    >
+    <section class="talleres-banner-section">
+        <img
+            src="{{ asset('assets/img/sections-portadas/talleres/talleres.jpg') }}"
+            alt="Actividades y Talleres — para adultos mayores, adultos, jóvenes e infantiles"
+            class="talleres-banner-img"
+
+        >
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,22,20,.55) 0%,rgba(23,22,20,.75) 100%);"></div>
+
+        <div class="talleres-banner-contenido">
+            <div class="talleres-banner-subtitulo">Adultos mayores - adultos - juveniles - infantiles</div>
+            <h1 class="talleres-banner-titulo">Actividades</h1> <br>
+             <h1 class="talleres-banner-titulo">  y </h1> <br>
+                <h1 class="talleres-banner-titulo"> Talleres</h1>
+            <p style="color:rgba(255,255,255,.82);font-size:clamp(16px,1.5vw,20px);max-width:56ch;margin:22px 0 0;line-height:1.55;"> Talleres, cursos y actividades gratuitas y aranceladas que dicta la Municipalidad
+            en distintas instituciones de la ciudad.</p>
+        </div>
+
+    </section>
 
     <div class="talleres-container">
 
-        <h1 class="talleres-titulo">Actividades y Talleres</h1>
-        <p class="talleres-subtitulo">
-            Talleres, cursos y actividades gratuitas y aranceladas que dicta la Municipalidad
-            en distintas instituciones de la ciudad.
-        </p>
 
         {{-- ===================== BUSCADOR ===================== --}}
         <form class="talleres-buscador" role="search" id="talleres-buscador-form" onsubmit="return false;">
@@ -305,5 +314,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('assets/js/talleres.js') }}"></script>
+    <script src="{{ asset('assets/js/talleres.js') }}?v={{ @filemtime(public_path('assets/js/talleres.js')) }}"></script>
 @endsection
