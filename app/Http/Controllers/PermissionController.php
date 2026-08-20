@@ -11,6 +11,8 @@ class PermissionController extends Controller
 {
     public function create()
     {
+        $this->authorize('create', Permission::class);
+
         $roles = Role::all();
 
         return view('cms.permissions.create', compact('roles'));
@@ -18,6 +20,8 @@ class PermissionController extends Controller
 
     public function store(Request $request)
     {
+        $this->authorize('create', Permission::class);
+
         $request->validate([
             'name' => 'required|string|max:255|unique:permissions,name',
             'descripcion' => 'required|string|max:255',

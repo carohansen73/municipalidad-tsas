@@ -46,6 +46,8 @@ class BoletinOficialController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', BoletinOficial::class);
+
         // $boletinOficials = $this->boletinOficialRepository->all();
         // $boletinOficials = BoletinOficial::where('anio', '>=', '2020')->orderBy('anio', 'desc')->orderBy( 'mes', 'desc')->get();
 
@@ -66,6 +68,8 @@ class BoletinOficialController extends AppBaseController
      * */
     public function indexFiltered( )
     {
+        $this->authorize('viewAny', BoletinOficial::class);
+
         $boletinOficials = [];
 
         if (isset($_POST['tipo']) && (!empty($_POST['tipo'])) && isset($_POST['mes']) && (!empty($_POST['mes'])) && isset($_POST['anio']) && (!empty($_POST['anio'])) ){
@@ -102,6 +106,8 @@ class BoletinOficialController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', BoletinOficial::class);
+
         return view('cms.boletin_oficial.create')
         ->with('tipos', $this->tipos)
         ->with('anios', $this->anios)
@@ -117,6 +123,8 @@ class BoletinOficialController extends AppBaseController
      */
     public function store(CreateBoletinOficialRequest $request)
     {
+        $this->authorize('create', BoletinOficial::class);
+
         $input = $request->all();
 
         //subo el archivo
@@ -151,6 +159,8 @@ class BoletinOficialController extends AppBaseController
             return redirect(route('boletinOficial.index'));
         }
 
+        $this->authorize('view', $boletinOficial);
+
         return view('cms.boletin_oficial.show')->with('boletinOficial', $boletinOficial);
     }
 
@@ -170,6 +180,8 @@ class BoletinOficialController extends AppBaseController
 
             return redirect(route('boletinOficial.index'));
         }
+
+        $this->authorize('update', $boletinOficial);
 
         return view('cms.boletin_oficial.edit')
         ->with('boletinOficial', $boletinOficial)
@@ -194,6 +206,8 @@ class BoletinOficialController extends AppBaseController
             Flash::error('Boletin Oficial not found');
             return redirect(route('boletinOficial.index'));
         }
+
+        $this->authorize('update', $boletinOficial);
 
         // $boletinOficial = $this->boletinOficialRepository->update($request->all(), $id);
 
@@ -240,6 +254,8 @@ class BoletinOficialController extends AppBaseController
             Flash::error('Boletin Oficial not found');
             return redirect(route('boletinOficial.index'));
         }
+
+        $this->authorize('delete', $boletinOficial);
 
         //borro el archivo
         $dir = "archivos/boletin_oficial/".$boletinOficial->tipo."/".$boletinOficial->anio."/";

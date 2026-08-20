@@ -34,6 +34,8 @@ class SeccionInformacionController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', SeccionInformacion::class);
+
         $secciones=Seccion::where('link', 'like', 'seccion/%')->orderBy('nombre')->get();
 
         $title = 'Secciones';
@@ -52,6 +54,7 @@ class SeccionInformacionController extends AppBaseController
      */
     public function indexSection(Request $request, $seccion)
     {
+        $this->authorize('viewAny', SeccionInformacion::class);
 
         $seccionInformacions = SeccionInformacion::whereIn('seccion_id', Seccion::where('nombre', $seccion)->pluck('id'))->get();
         $archivos=Archivos::whereIn('seccion_id', Seccion::where('nombre', $seccion)->pluck('id'))->get();
@@ -71,6 +74,8 @@ class SeccionInformacionController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', SeccionInformacion::class);
+
         // $secciones=Seccion::where('link', 'like', 'seccion/%')->orWhere('link', 'like', 'proximamente%')->orderBy('nombre')->pluck('nombre','id')->all();
          $secciones=Seccion::where('link', 'like', 'seccion/%')->orderBy('nombre')->pluck('nombre','id')->all();
         return view('cms.seccion_informacion.create',compact('secciones'));
@@ -85,6 +90,7 @@ class SeccionInformacionController extends AppBaseController
      */
     public function store(CreateSeccionInformacionRequest $request)
     {
+        $this->authorize('create', SeccionInformacion::class);
 
         $input = $request->all();
 
@@ -117,6 +123,8 @@ class SeccionInformacionController extends AppBaseController
             return redirect(route('seccionInformacion.index'));
         }
 
+        $this->authorize('view', $seccionInformacion);
+
         return view('cms.seccion_informacion.show')->with('seccionInformacion', $seccionInformacion);
     }
 
@@ -137,6 +145,8 @@ class SeccionInformacionController extends AppBaseController
 
             return redirect(route('seccionInformacion.index'));
         }
+
+        $this->authorize('update', $seccionInformacion);
 
         return view('cms.seccion_informacion.edit',compact('secciones', 'seccionInformacion'));
     }
@@ -159,6 +169,8 @@ class SeccionInformacionController extends AppBaseController
 
             return redirect(route('seccionInformacion.index'));
         }
+
+        $this->authorize('update', $seccionInformacion);
 
         $seccionInformacion = $this->seccionInformacionRepository->update($request->all(), $id);
 
@@ -185,6 +197,8 @@ class SeccionInformacionController extends AppBaseController
 
             return redirect(route('seccionInformacion.index'));
         }
+
+        $this->authorize('delete', $seccionInformacion);
 
         $this->seccionInformacionRepository->delete($id);
 

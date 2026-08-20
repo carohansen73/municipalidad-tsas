@@ -17,6 +17,8 @@ class RolController extends AppBaseController
 
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Role::class);
+
         $rols = Role::all();
 
         return view('cms.rols.index')
@@ -30,6 +32,8 @@ class RolController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Role::class);
+
         $permisos= Permission::orderBy('orden','asc')->get();
         return view('cms.rols.create',compact('permisos'));
     }
@@ -37,6 +41,8 @@ class RolController extends AppBaseController
 
     public function store(Request $request)
     {
+        $this->authorize('create', Role::class);
+
         $input['name'] = $request->name;
 
         $rol = Role::create($input);
@@ -59,6 +65,8 @@ class RolController extends AppBaseController
             return redirect(route('rols.index'));
         }
 
+        $this->authorize('view', $rol);
+
         return view('cms.rols.show')->with('rol', $rol);
     }
 
@@ -78,6 +86,9 @@ class RolController extends AppBaseController
 
             return redirect(route('rols.index'));
         }
+
+        $this->authorize('update', $rol);
+
         $permisos= Permission::orderBy('orden','asc')->get();
 
 
@@ -94,6 +105,8 @@ class RolController extends AppBaseController
 
             return redirect(route('rols.index'));
         }
+
+        $this->authorize('update', $rol);
 
         //$rol->update($request->all());
         $rol->syncPermissions($request->permissions);
@@ -112,6 +125,8 @@ class RolController extends AppBaseController
 
             return redirect(route('rols.index'));
         }
+
+        $this->authorize('delete', $rol);
 
        $rol->delete();
 

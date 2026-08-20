@@ -39,6 +39,7 @@ class AvisoOficialController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', AvisoOficial::class);
 
         $avisoOficials = AvisoOficial::orderBy('fecha', 'desc')->get();
 
@@ -53,6 +54,8 @@ class AvisoOficialController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', AvisoOficial::class);
+
         return view('cms.aviso_oficial.create')
         ->with('areas', $this->areas);
     }
@@ -66,6 +69,8 @@ class AvisoOficialController extends AppBaseController
      */
     public function store(CreateAvisoOficialRequest $request)
     {
+        $this->authorize('create', AvisoOficial::class);
+
         $input = $request->all();
 
         //subo el archivo
@@ -99,6 +104,8 @@ class AvisoOficialController extends AppBaseController
             return redirect(route('avisoOficials.index'));
         }
 
+        $this->authorize('view', $avisoOficial);
+
         return view('cms.aviso_oficial.show')->with('avisoOficial', $avisoOficial);
     }
 
@@ -118,6 +125,8 @@ class AvisoOficialController extends AppBaseController
 
             return redirect(route('avisoOficial.index'));
         }
+
+        $this->authorize('update', $avisoOficial);
 
         return view('cms.aviso_oficial.edit')->with('avisoOficial', $avisoOficial)->with('areas', $this->areas);
     }
@@ -141,6 +150,7 @@ class AvisoOficialController extends AppBaseController
             return redirect(route('avisoOficial.index'));
         }
 
+        $this->authorize('update', $avisoOficial);
 
        //si entra es porque cambio el archivo
        if ($request->file('nombre')) {
@@ -195,6 +205,9 @@ class AvisoOficialController extends AppBaseController
 
             return redirect(route('avisoOficial.index'));
         }
+
+        $this->authorize('delete', $avisoOficial);
+
         //borro el archivo (storage)
         $dir = "archivos/boletin_oficial/avisos/";
         FileManagement::deleteFile($avisoOficial->nombre,$dir);

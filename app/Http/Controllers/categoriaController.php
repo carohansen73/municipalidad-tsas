@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCategoriaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
+use App\Models\Categoria;
 use App\Repositories\CategoriaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,6 +30,8 @@ class CategoriaController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Categoria::class);
+
         $categorias = $this->categoriaRepository->all();
 
         return view('cms.categorias.index')
@@ -42,6 +45,8 @@ class CategoriaController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Categoria::class);
+
         return view('cms.categorias.create');
     }
 
@@ -54,6 +59,8 @@ class CategoriaController extends AppBaseController
      */
     public function store(CreateCategoriaRequest $request)
     {
+        $this->authorize('create', Categoria::class);
+
         $input = $request->all();
 
         $categoria = $this->categoriaRepository->create($input);
@@ -80,6 +87,8 @@ class CategoriaController extends AppBaseController
             return redirect(route('categorias.index'));
         }
 
+        $this->authorize('view', $categoria);
+
         return view('cms.categorias.show')->with('categoria', $categoria);
     }
 
@@ -99,6 +108,8 @@ class CategoriaController extends AppBaseController
 
             return redirect(route('categorias.index'));
         }
+
+        $this->authorize('update', $categoria);
 
         return view('cms.categorias.edit')->with('categoria', $categoria);
     }
@@ -120,6 +131,8 @@ class CategoriaController extends AppBaseController
 
             return redirect(route('categorias.index'));
         }
+
+        $this->authorize('update', $categoria);
 
         $categoria = $this->categoriaRepository->update($request->all(), $id);
 
@@ -146,6 +159,8 @@ class CategoriaController extends AppBaseController
 
             return redirect(route('categorias.index'));
         }
+
+        $this->authorize('delete', $categoria);
 
         $this->categoriaRepository->delete($id);
 

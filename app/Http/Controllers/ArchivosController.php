@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateArchivosRequest;
 use App\Http\Requests\UpdateArchivosRequest;
+use App\Models\Archivos;
 use App\Repositories\ArchivosRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,6 +30,8 @@ class ArchivosController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Archivos::class);
+
         $archivos = $this->archivosRepository->all();
 
         return view('cms.archivos.index')
@@ -42,6 +45,8 @@ class ArchivosController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Archivos::class);
+
         return view('cms.archivos.create');
     }
 
@@ -54,6 +59,8 @@ class ArchivosController extends AppBaseController
      */
     public function store(CreateArchivosRequest $request)
     {
+        $this->authorize('create', Archivos::class);
+
         $input = $request->all();
 
         $archivos = $this->archivosRepository->create($input);
@@ -80,6 +87,8 @@ class ArchivosController extends AppBaseController
             return redirect(route('archivos.index'));
         }
 
+        $this->authorize('view', $archivos);
+
         return view('cms.archivos.show')->with('archivos', $archivos);
     }
 
@@ -99,6 +108,8 @@ class ArchivosController extends AppBaseController
 
             return redirect(route('archivos.index'));
         }
+
+        $this->authorize('update', $archivos);
 
         return view('cms.archivos.edit')->with('archivos', $archivos);
     }
@@ -120,6 +131,8 @@ class ArchivosController extends AppBaseController
 
             return redirect(route('archivos.index'));
         }
+
+        $this->authorize('update', $archivos);
 
         $archivos = $this->archivosRepository->update($request->all(), $id);
 
@@ -146,6 +159,8 @@ class ArchivosController extends AppBaseController
 
             return redirect(route('archivos.index'));
         }
+
+        $this->authorize('delete', $archivos);
 
         $this->archivosRepository->delete($id);
 

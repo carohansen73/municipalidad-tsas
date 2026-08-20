@@ -26,6 +26,8 @@ class UserController extends Controller
 
     public function index()
     {
+        $this->authorize('viewAny', User::class);
+
         $usuarios=User::all();
         return view('cms.usuarios.index')->with('usuarios', $usuarios);
     }
@@ -37,6 +39,8 @@ class UserController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', User::class);
+
         $rols = Role::pluck('name','name')->all();
         return view('cms.usuarios.create',compact('rols'));
     }
@@ -49,6 +53,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', User::class);
+
         if ($request->validate($this->rules)){
             $user=$request->all();
             $user['password']= Hash::make($user['password']);
@@ -85,6 +91,8 @@ class UserController extends Controller
 
             return redirect(route('user.index'));
         }
+        $this->authorize('update', $user);
+
         $rols = Role::pluck('name','name')->all();
         //le asigno el rol a la variable usuario para que laravel colective muestre el valor asignado
         if (count($user->getRoleNames())>0){
@@ -111,6 +119,8 @@ class UserController extends Controller
 
             return redirect(route('user.index'));
         }
+
+        $this->authorize('update', $usuario);
 
         $input=$request->all();
         $rules=$this->rules;
@@ -151,6 +161,8 @@ class UserController extends Controller
 
             return redirect(route('user.index'));
         }
+
+        $this->authorize('delete', $usuario);
 
         $usuario->delete();
 

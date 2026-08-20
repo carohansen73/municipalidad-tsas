@@ -33,6 +33,8 @@ class EventoController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Evento::class);
+
         $eventos = Evento::latest('fecha_inicio')->latest('id')->get();
         $secciones=MenuSeccion::where('visible', 1)->orderBy('nombre')->pluck('nombre','id')->all();
 
@@ -48,6 +50,8 @@ class EventoController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Evento::class);
+
         $categorias=Categoria::orderBy('nombre')->pluck('nombre','id')->all();
         $secciones=MenuSeccion::where('visible', 1)->orderBy('nombre')->pluck('nombre','id')->all();
         return view('cms.eventos.create')->with('secciones', $secciones)->with('categorias', $categorias);
@@ -62,6 +66,8 @@ class EventoController extends AppBaseController
      */
     public function store(CreateEventoRequest $request)
     {
+        $this->authorize('create', Evento::class);
+
         //subo las imagenes y las guardo en la bd
         $path='/eventos/';
 
@@ -103,6 +109,8 @@ class EventoController extends AppBaseController
             return redirect(route('eventos.index'));
         }
 
+        $this->authorize('view', $evento);
+
         return view('cms.eventos.show')->with('evento', $evento);
     }
 
@@ -124,6 +132,8 @@ class EventoController extends AppBaseController
 
             return redirect(route('eventos.index'));
         }
+
+        $this->authorize('update', $evento);
 
         return view('cms.eventos.edit')->with('evento', $evento)->with('secciones', $secciones)->with('categorias', $categorias);
     }
@@ -147,6 +157,8 @@ class EventoController extends AppBaseController
 
             return redirect(route('eventos.index'));
         }
+
+        $this->authorize('update', $evento);
 
         $evento->fill($request->all());
 
@@ -195,6 +207,8 @@ class EventoController extends AppBaseController
 
             return redirect(route('eventos.index'));
         }
+
+        $this->authorize('delete', $evento);
 
         $path='/eventos/';
         //borro la img anterior

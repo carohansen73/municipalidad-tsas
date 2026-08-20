@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSituacionFinancieraRequest;
 use App\Http\Requests\UpdateSituacionFinancieraRequest;
+use App\Models\SituacionFinanciera;
 use App\Repositories\SituacionFinancieraRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -46,6 +47,8 @@ class SituacionFinancieraController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', SituacionFinanciera::class);
+
         $situacionFinancieras = $this->situacionFinancieraRepository->all();
 
         return view('cms.situacion_financiera.index')
@@ -59,6 +62,8 @@ class SituacionFinancieraController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', SituacionFinanciera::class);
+
         return view('cms.situacion_financiera.create')
         ->with('periodos',$this->periodos)
         ->with('areas',$this->areas)
@@ -74,6 +79,8 @@ class SituacionFinancieraController extends AppBaseController
      */
     public function store(CreateSituacionFinancieraRequest $request)
     {
+        $this->authorize('create', SituacionFinanciera::class);
+
         $input = $request->all();
         //subo el archivo
         $file=$input["nombre"];
@@ -104,6 +111,8 @@ class SituacionFinancieraController extends AppBaseController
             return redirect(route('situacionFinanciera.index'));
         }
 
+        $this->authorize('view', $situacionFinanciera);
+
         return view('cms.situacion_financiera.show')->with('situacionFinanciera', $situacionFinanciera);
     }
 
@@ -123,6 +132,8 @@ class SituacionFinancieraController extends AppBaseController
 
             return redirect(route('situacionFinanciera.index'));
         }
+
+        $this->authorize('update', $situacionFinanciera);
 
         return view('cms.situacion_financiera.edit')
         ->with('periodos',$this->periodos)
@@ -148,6 +159,9 @@ class SituacionFinancieraController extends AppBaseController
 
             return redirect(route('situacionFinanciera.index'));
         }
+
+        $this->authorize('update', $situacionFinanciera);
+
         $input=$request->all();
         //si se carga modifico el archivo
         if (isset($request->nombre)) {
@@ -186,6 +200,9 @@ class SituacionFinancieraController extends AppBaseController
 
             return redirect(route('situacionFinanciera.index'));
         }
+
+        $this->authorize('delete', $situacionFinanciera);
+
         //borro el archivo
         FileManagement::deleteFile($situacionFinanciera->nombre,"archivos/situacion/");
         //borro de la tabla

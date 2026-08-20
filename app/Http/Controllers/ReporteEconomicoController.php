@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateReporteEconomicoRequest;
 use App\Http\Requests\UpdateReporteEconomicoRequest;
+use App\Models\ReporteEconomico;
 use App\Repositories\ReporteEconomicoRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -46,6 +47,8 @@ class ReporteEconomicoController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', ReporteEconomico::class);
+
         $reporteEconomicos = $this->reporteEconomicoRepository->all();
 
         return view('cms.reporte_economico.index')
@@ -59,6 +62,8 @@ class ReporteEconomicoController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', ReporteEconomico::class);
+
         return view('cms.reporte_economico.create')
             ->with('periodos',$this->periodos)
             ->with('anios',$this->anios)
@@ -74,6 +79,8 @@ class ReporteEconomicoController extends AppBaseController
      */
     public function store(CreateReporteEconomicoRequest $request)
     {
+        $this->authorize('create', ReporteEconomico::class);
+
         $input = $request->all();
 
         //subo el archivo
@@ -105,6 +112,8 @@ class ReporteEconomicoController extends AppBaseController
             return redirect(route('reporteEconomico.index'));
         }
 
+        $this->authorize('view', $reporteEconomico);
+
         return view('cms.reporte_economico.show')->with('reporteEconomico', $reporteEconomico);
     }
 
@@ -124,6 +133,8 @@ class ReporteEconomicoController extends AppBaseController
 
             return redirect(route('reporteEconomico.index'));
         }
+
+        $this->authorize('update', $reporteEconomico);
 
         return view('cms.reporte_economico.edit')
             ->with('reporteEconomico', $reporteEconomico)
@@ -149,6 +160,8 @@ class ReporteEconomicoController extends AppBaseController
 
             return redirect(route('reporteEconomico.index'));
         }
+
+        $this->authorize('update', $reporteEconomico);
 
         $input=$request->all();
         //si se carga modifico el archivo
@@ -189,6 +202,9 @@ class ReporteEconomicoController extends AppBaseController
 
             return redirect(route('reporteEconomico.index'));
         }
+
+        $this->authorize('delete', $reporteEconomico);
+
         //borro el archivo
         FileManagement::deleteFile($reporteEconomico->nombre_arch,"archivos/reportes_eco_fin/");
         //borro de la tabla

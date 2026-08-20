@@ -39,6 +39,8 @@ class noticiaController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Noticia::class);
+
         $noticias = Noticia::latest('fecha')->latest('id')->get();
 
         return view('cms.noticias.index')
@@ -52,6 +54,8 @@ class noticiaController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Noticia::class);
+
         $categorias=Categoria::pluck('nombre','id')->all();
         return view('cms.noticias.create',compact('categorias'));
     }
@@ -65,6 +69,8 @@ class noticiaController extends AppBaseController
      */
     public function store(CreatenoticiaRequest $request)
     {
+        $this->authorize('create', Noticia::class);
+
         $input = $request->all();
         $input['usuario_id']=\Auth::user()->id;
         //dd($input);
@@ -113,6 +119,8 @@ class noticiaController extends AppBaseController
             return redirect(route('noticias.index'));
         }
 
+        $this->authorize('view', $noticia);
+
         return view('cms.noticias.show')->with('noticia', $noticia);
 
     }
@@ -135,6 +143,8 @@ class noticiaController extends AppBaseController
             return redirect(route('noticias.index'));
         }
 
+        $this->authorize('update', $noticia);
+
         //return view('cms.noticias.edit')->with('noticia', $noticia);
         return view('cms.noticias.edit',compact(['noticia','categorias']));
     }
@@ -156,6 +166,8 @@ class noticiaController extends AppBaseController
 
             return redirect(route('noticias.index'));
         }
+
+        $this->authorize('update', $noticia);
 
         $noticia = $this->noticiaRepository->update($request->all(), $id);
 
@@ -195,6 +207,9 @@ class noticiaController extends AppBaseController
 
             return redirect(route('noticias.index'));
         }
+
+        $this->authorize('delete', $noticia);
+
         //primero elimino las fotos relacionadas a esta noticia
         $this->destroyAllImgs($id);
 
@@ -233,6 +248,9 @@ class noticiaController extends AppBaseController
 
             return redirect(route('noticias.index'));
         }
+
+        $noticia = $this->noticiaRepository->find($imagen->noticia_id);
+        $this->authorize('update', $noticia);
 
         //borro el archivo
         $dir="noticia_img/".$imagen->noticia_id."/";
