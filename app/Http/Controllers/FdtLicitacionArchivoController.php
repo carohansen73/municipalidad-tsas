@@ -38,6 +38,8 @@ class FdtLicitacionArchivoController extends Controller
      */
     public function store(StoreFdtLicitacionArchivoRequest $request, FdtLicitacion $licitacion)
     {
+        $this->authorize('create', FdtLicitacionArchivo::class);
+
         // Valido las reglas
         $validated= $request->validated(); //ahora es un array
 

@@ -31,6 +31,8 @@ class LineUpController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', LineUp::class);
+
         $lineUps = $this->lineUpRepository->all();
 
         return view('cms.line_ups.index')
@@ -44,6 +46,8 @@ class LineUpController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', LineUp::class);
+
         return view('cms.line_ups.create');
     }
 
@@ -56,6 +60,7 @@ class LineUpController extends AppBaseController
      */
     public function store(CreateLineUpRequest $request)
     {
+        $this->authorize('create', LineUp::class);
 
         $path='/fdt/';
 
@@ -95,6 +100,8 @@ class LineUpController extends AppBaseController
             return redirect(route('lineUps.index'));
         }
 
+        $this->authorize('view', $lineUp);
+
         return view('cms.line_ups.show')->with('lineUp', $lineUp);
     }
 
@@ -114,6 +121,8 @@ class LineUpController extends AppBaseController
 
             return redirect(route('lineUps.index'));
         }
+
+        $this->authorize('update', $lineUp);
 
         return view('cms.line_ups.edit')->with('lineUp', $lineUp);
     }
@@ -135,6 +144,8 @@ class LineUpController extends AppBaseController
 
             return redirect(route('lineUps.index'));
         }
+
+        $this->authorize('update', $lineUp);
 
         $lineUp = $this->lineUpRepository->update($request->all(), $id);
 
@@ -162,6 +173,8 @@ class LineUpController extends AppBaseController
             return redirect(route('lineUps.index'));
         }
 
+        $this->authorize('delete', $lineUp);
+
         $this->lineUpRepository->delete($id);
 
         Flash::success('Line Up deleted successfully.');
@@ -174,6 +187,8 @@ class LineUpController extends AppBaseController
      */
     public function activar(Request $request, LineUp $lineup)
     {
+        $this->authorize('update', $lineup);
+
         $lineup->activa = $request->has('activa');
         $lineup->save();
 

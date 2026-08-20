@@ -14,6 +14,8 @@ class FdtLicitacionController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', FdtLicitacion::class);
+
         $licitaciones = FdtLicitacion::withCount('archivos')
             ->orderByDesc('created_at')
             ->get();
@@ -28,6 +30,8 @@ class FdtLicitacionController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', FdtLicitacion::class);
+
          return view('cms.fdt.licitaciones.create');
     }
 
@@ -39,6 +43,8 @@ class FdtLicitacionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', FdtLicitacion::class);
+
         $request->validate([
             'titulo' => 'required|string|max:255',
             'descripcion' => 'required|string',
@@ -78,6 +84,8 @@ class FdtLicitacionController extends Controller
      */
     public function edit(FdtLicitacion $licitacion)
     {
+        $this->authorize('update', $licitacion);
+
         // Traigo la licitación + archivos
         $licitacion->load('archivos');
 
@@ -94,6 +102,8 @@ class FdtLicitacionController extends Controller
      */
     public function update(Request $request,  FdtLicitacion $licitacion)
     {
+        $this->authorize('update', $licitacion);
+
         $validated = $request->validate([
             'titulo' => 'required|string|max:255',
             'descripcion' => 'required|string',

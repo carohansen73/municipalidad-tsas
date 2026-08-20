@@ -31,6 +31,8 @@ class ConvocatoriasController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Convocatorias::class);
+
         $convocatorias = $this->convocatoriasRepository->all();
 
         return view('cms.convocatorias.index')
@@ -44,6 +46,8 @@ class ConvocatoriasController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Convocatorias::class);
+
         return view('cms.convocatorias.create');
     }
 
@@ -56,6 +60,8 @@ class ConvocatoriasController extends AppBaseController
      */
     public function store(CreateConvocatoriasRequest $request)
     {
+        $this->authorize('create', Convocatorias::class);
+
         $convocatoria = new Convocatorias($request->all());
         $path='/fdt/';
 
@@ -94,6 +100,8 @@ class ConvocatoriasController extends AppBaseController
             return redirect(route('convocatorias.index'));
         }
 
+        $this->authorize('view', $convocatorias);
+
         return view('cms.convocatorias.show')->with('convocatorias', $convocatorias);
     }
 
@@ -113,6 +121,8 @@ class ConvocatoriasController extends AppBaseController
 
             return redirect(route('convocatorias.index'));
         }
+
+        $this->authorize('update', $convocatorias);
 
         return view('cms.convocatorias.edit')->with('convocatorias', $convocatorias);
     }
@@ -138,6 +148,8 @@ class ConvocatoriasController extends AppBaseController
 
             return redirect(route('convocatorias.index'));
         }
+
+        $this->authorize('update', $convocatoria);
 
         $input=$request->all();
         $path='/fdt/';
@@ -189,6 +201,8 @@ class ConvocatoriasController extends AppBaseController
 
             return redirect(route('convocatorias.index'));
         }
+
+        $this->authorize('delete', $convocatorias);
 
         $this->convocatoriasRepository->delete($id);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateGrillaRequest;
 use App\Http\Requests\UpdateGrillaRequest;
+use App\Models\Grilla;
 use App\Repositories\GrillaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -29,6 +30,8 @@ class GrillaController extends AppBaseController
      */
     public function index(Request $request)
     {
+        $this->authorize('viewAny', Grilla::class);
+
         $grillas = $this->grillaRepository->all();
 
         return view('cms.grillas.index')
@@ -42,6 +45,8 @@ class GrillaController extends AppBaseController
      */
     public function create()
     {
+        $this->authorize('create', Grilla::class);
+
         return view('cms.grillas.create');
     }
 
@@ -54,6 +59,8 @@ class GrillaController extends AppBaseController
      */
     public function store(CreateGrillaRequest $request)
     {
+        $this->authorize('create', Grilla::class);
+
         $input = $request->all();
 
         $grilla = $this->grillaRepository->create($input);
@@ -80,6 +87,8 @@ class GrillaController extends AppBaseController
             return redirect(route('grillas.index'));
         }
 
+        $this->authorize('view', $grilla);
+
         return view('cms.grillas.show')->with('grilla', $grilla);
     }
 
@@ -99,6 +108,8 @@ class GrillaController extends AppBaseController
 
             return redirect(route('grillas.index'));
         }
+
+        $this->authorize('update', $grilla);
 
         return view('cms.grillas.edit')->with('grilla', $grilla);
     }
@@ -120,6 +131,8 @@ class GrillaController extends AppBaseController
 
             return redirect(route('grillas.index'));
         }
+
+        $this->authorize('update', $grilla);
 
         $grilla = $this->grillaRepository->update($request->all(), $id);
 
@@ -146,6 +159,8 @@ class GrillaController extends AppBaseController
 
             return redirect(route('grillas.index'));
         }
+
+        $this->authorize('delete', $grilla);
 
         $this->grillaRepository->delete($id);
 

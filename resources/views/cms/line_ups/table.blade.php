@@ -42,11 +42,15 @@
                             class='btn btn-default btn-xs'>
                                 <i class="far fa-eye"></i>
                             </a>
+                            @can('lineUps.edit')
                             <a href="{{ route('lineUps.edit', [$lineUp->id]) }}"
                             class='btn btn-default btn-xs'>
                                 <i class="far fa-edit"></i>
                             </a>
+                            @endcan
+                            @can('lineUps.destroy')
                             {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                            @endcan
                         </div>
                         {!! Form::close() !!}
                     </td>

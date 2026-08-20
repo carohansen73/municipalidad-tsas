@@ -16,6 +16,8 @@ class FdtTicketsController extends Controller
      */
     public function index()
     {
+        $this->authorize('viewAny', FdtTickets::class);
+
         $tickets = FdtTickets::orderByDesc('edicion_anio')->get();
 
         return view('cms.fdt.tickets.index', compact('tickets'));
@@ -28,6 +30,8 @@ class FdtTicketsController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', FdtTickets::class);
+
         return view('cms.fdt.tickets.create');
     }
 
@@ -39,6 +43,8 @@ class FdtTicketsController extends Controller
      */
     public function store(StoreFdtTicketsRequest $request)
     {
+        $this->authorize('create', FdtTickets::class);
+
         $data = $request->validate([
             'edicion_anio' => 'required|digits:4|unique:fdt_tickets,edicion_anio',
             'descripcion' => 'nullable|string|max:5000',
@@ -73,6 +79,8 @@ class FdtTicketsController extends Controller
      */
     public function show(FdtTickets $ticket)
     {
+        $this->authorize('view', $ticket);
+
         // return view('admin.fdt_tickets.edit', compact('fdtTicket'));
     }
 
@@ -84,6 +92,8 @@ class FdtTicketsController extends Controller
      */
     public function edit(FdtTickets $ticket)
     {
+        $this->authorize('update', $ticket);
+
         return view('cms.fdt.tickets.edit')
             ->with('tickets', $ticket);
     }
@@ -97,6 +107,7 @@ class FdtTicketsController extends Controller
      */
     public function update(UpdateFdtTicketsRequest $request, FdtTickets $ticket)
     {
+        $this->authorize('update', $ticket);
 
         $ticket->update($request->validated());
 
@@ -110,6 +121,8 @@ class FdtTicketsController extends Controller
      */
     public function activar(FdtTickets $ticket)
     {
+        $this->authorize('update', $ticket);
+
         DB::transaction(function () use ($ticket) {
             FdtTickets::where('activa', true)->update(['activa' => false]);
             $ticket->update(['activa' => true]);
@@ -127,6 +140,8 @@ class FdtTicketsController extends Controller
      */
     public function destroy(FdtTickets $fdtTickets)
     {
+        $this->authorize('delete', $fdtTickets);
+
         //
     }
 }
