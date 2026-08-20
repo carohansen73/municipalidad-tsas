@@ -61,6 +61,7 @@
     <script type="text/javascript">
         $(document).ready( function () {
             $('#noticias-table').DataTable({
+                "order": [[0, "desc"]],
                 "language":{
                     "search":"Buscador:",
                     "emptyTable":"No se encontraron resultados",

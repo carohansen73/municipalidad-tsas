@@ -39,7 +39,7 @@ class noticiaController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $noticias = $this->noticiaRepository->all();
+        $noticias = Noticia::latest('fecha')->latest('id')->get();
 
         return view('cms.noticias.index')
         ->with('noticias', $noticias);

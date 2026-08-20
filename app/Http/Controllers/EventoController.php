@@ -33,7 +33,7 @@ class EventoController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $eventos = $this->eventoRepository->all();
+        $eventos = Evento::latest('fecha_inicio')->latest('id')->get();
         $secciones=MenuSeccion::where('visible', 1)->orderBy('nombre')->pluck('nombre','id')->all();
 
         return view('cms.eventos.index')

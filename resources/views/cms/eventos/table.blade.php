@@ -53,6 +53,7 @@
     <script type="text/javascript">
         $(document).ready( function () {
             $('#eventos-table').DataTable({
+                "order": [[4, "desc"]],
                 "language":{
                     "search":"Buscador:",
                     "emptyTable":"No se encontraron resultados",
