@@ -1,4 +1,7 @@
 @php
+    $taller = $taller ?? null;
+    $modoEdicion = $taller !== null;
+
     $modalidades = [
         'gratuita' => 'Gratuita',
         'arancelada' => 'Arancelada',
@@ -13,19 +16,13 @@
         'sabado' => 'Sábado',
         'domingo' => 'Domingo',
     ];
+
+    // En el alta arrancamos con un solo lugar en blanco; al editar, uno por cada
+    // actividad (lugar) que ya tenga cargada el taller.
+    $lugaresExistentes = $modoEdicion ? $taller->actividades : collect();
 @endphp
 
-@include('adminlte-templates::common.errors')
-
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+{{-- Los errores ya se muestran una vez en create.blade.php / edit.blade.php --}}
 
 <div class="col-sm-12 mb-3">
     <h2>Datos generales</h2>
@@ -55,6 +52,17 @@
     ]) !!}
 </div>
 
+@if ($modoEdicion)
+    {{-- Activo (solo se puede tocar desde editar, en el alta siempre nace activo) --}}
+    <div class="form-group col-sm-4">
+        {!! Form::label('activo', 'Taller activo:') !!}
+        <div>
+            {!! Form::hidden('activo', 0) !!}
+            {!! Form::checkbox('activo', 1, null) !!} Activo
+        </div>
+    </div>
+@endif
+
 {{-- Descripcion --}}
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('descripcion', 'Descripción:') !!}
@@ -69,16 +77,34 @@
 
 <div class="col-sm-12">
     <div id="lugares-container">
-        <div class="lugar-item card card-secondary mb-3" data-lugar-index="0">
-            <div class="card-body">
-                @include('cms.talleres.partials.lugar-fields', [
-                    'index' => 0,
-                    'instituciones' => $instituciones,
-                    'modalidades' => $modalidades,
-                    'diasSemana' => $diasSemana,
-                ])
+        @forelse ($lugaresExistentes as $index => $actividad)
+            <div class="lugar-item card card-secondary mb-3" data-lugar-index="{{ $index }}">
+                <div class="card-body">
+                    @include('cms.talleres.partials.lugar-fields', [
+                        'index' => $index,
+                        'actividad' => $actividad,
+                        'deleteUrl' => route('talleres.actividades.destroy', [$taller, $actividad]),
+                        'instituciones' => $instituciones,
+                        'modalidades' => $modalidades,
+                        'diasSemana' => $diasSemana,
+                        'modoEdicion' => $modoEdicion,
+                    ])
+                </div>
             </div>
-        </div>
+        @empty
+            <div class="lugar-item card card-secondary mb-3" data-lugar-index="0">
+                <div class="card-body">
+                    @include('cms.talleres.partials.lugar-fields', [
+                        'index' => 0,
+                        'actividad' => null,
+                        'instituciones' => $instituciones,
+                        'modalidades' => $modalidades,
+                        'diasSemana' => $diasSemana,
+                        'modoEdicion' => $modoEdicion,
+                    ])
+                </div>
+            </div>
+        @endforelse
     </div>
 
     <button type="button" id="btn-add-lugar" class="btn btn-outline-primary mb-3">
@@ -92,9 +118,11 @@
         <div class="card-body">
             @include('cms.talleres.partials.lugar-fields', [
                 'index' => '__LUGAR__',
+                'actividad' => null,
                 'instituciones' => $instituciones,
                 'modalidades' => $modalidades,
                 'diasSemana' => $diasSemana,
+                'modoEdicion' => $modoEdicion,
             ])
         </div>
     </div>
@@ -105,6 +133,7 @@
     @include('cms.talleres.partials.horario-fields', [
         'lugarIndex' => '__LUGAR__',
         'index' => '__HORARIO__',
+        'horario' => null,
         'diasSemana' => $diasSemana,
     ])
 </template>
@@ -113,6 +142,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         var lugarIndex = $('#lugares-container .lugar-item').length;
+        var csrfToken = '{{ csrf_token() }}';
 
         function toggleCosto($lugarItem) {
             var modalidad = $lugarItem.find('.lugar-modalidad').val();
@@ -126,7 +156,7 @@
             }
         }
 
-        // Estado inicial del campo costo en el lugar ya renderizado
+        // Estado inicial del campo costo en los lugares ya renderizados
         $('#lugares-container .lugar-item').each(function () {
             toggleCosto($(this));
         });
@@ -142,9 +172,27 @@
             lugarIndex++;
         });
 
-        // Quitar lugar
+        // Quitar lugar: si ya existe en la base (tiene URL de borrado), se elimina
+        // de una al tocar el botón, con confirmación. Si es un lugar recién agregado
+        // en esta misma sesión de edición (todavía no guardado), solo se saca del form.
         $(document).on('click', '.btn-remove-lugar', function () {
-            $(this).closest('.lugar-item').remove();
+            var $boton = $(this);
+            var deleteUrl = $boton.data('delete-url');
+
+            if (deleteUrl) {
+                if (!confirm('¿Eliminar este lugar y sus horarios? Esta acción no se puede deshacer.')) {
+                    return;
+                }
+
+                var $form = $('<form>', { method: 'POST', action: deleteUrl });
+                $form.append($('<input>', { type: 'hidden', name: '_token', value: csrfToken }));
+                $form.append($('<input>', { type: 'hidden', name: '_method', value: 'DELETE' }));
+                $('body').append($form);
+                $form.submit();
+                return;
+            }
+
+            $boton.closest('.lugar-item').remove();
         });
 
         // Mostrar/ocultar costo según la modalidad elegida

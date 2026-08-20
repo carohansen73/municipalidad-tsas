@@ -17,17 +17,7 @@
 @endpush
 
 
- @include('adminlte-templates::common.errors')
- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-
+{{-- Los errores ya se muestran una vez en create.blade.php / edit.blade.php --}}
 
 <div class="col-sm-12 mb-3">
     <h2> General </h2>

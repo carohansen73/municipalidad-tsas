@@ -217,7 +217,7 @@
                                 >
                                     <div class="taller-card-imagen">
                                         @if ($actividad->imagen)
-                                            <img src="{{ asset('storage/' . $actividad->imagen) }}" alt="Foto de {{ $taller->nombre }}">
+                                            <img src="{{ asset('storage/talleres/actividades/' . $actividad->imagen) }}" alt="Foto de {{ $taller->nombre }}">
                                         @else
                                             <i class="{{ $categoria->icono ?? 'fas fa-users' }}" aria-hidden="true"></i>
                                         @endif

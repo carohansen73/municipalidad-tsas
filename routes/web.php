@@ -186,7 +186,15 @@ Route::group(['middleware' => 'auth'], function () {
 
     /* Actividades y Talleres */
     Route::resource('talleres', TallerController::class)
-        ->only(['index', 'create', 'store']);
+        ->parameters([
+            'talleres' => 'taller'
+        ])
+        ->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+
+    Route::delete(
+            'talleres/{taller}/actividades/{actividad}',
+            [TallerController::class, 'destroyActividad']
+        )->name('talleres.actividades.destroy');
 
           /* Sorteo Corvina Negra */
     Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');

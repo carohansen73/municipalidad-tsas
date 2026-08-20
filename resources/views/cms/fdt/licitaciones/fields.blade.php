@@ -8,17 +8,6 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 @endpush
 
- @include('adminlte-templates::common.errors')
-
- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 {{-- Titulo --}}
 <div class="form-group col-sm-12">
