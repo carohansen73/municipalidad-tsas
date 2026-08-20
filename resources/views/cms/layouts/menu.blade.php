@@ -122,14 +122,33 @@
 </li>
 
 
-@can('talleres.index')
-<li class="nav-item">
-    <a href="{{ route('talleres.index') }}"
-       class="nav-link {{ Request::is('talleres*') ? 'active' : '' }}">
-        <p>Actividades y Talleres</p>
+<li class="nav-item has-treeview {{ Request::is('talleres*','instituciones*') ? 'menu-open' : '' }}">
+    <a href="#" class="nav-link">
+        <p class="">
+            Actividades y Talleres
+            <i class="right fas fa-angle-left"></i>
+        </p>
     </a>
+
+    <ul class="nav nav-treeview">
+
+        @can('talleres.index')
+        <li class="nav-item">
+            <a href="{{ route('talleres.index') }}" class="nav-link {{ Request::is('talleres*') ? 'active' : '' }}">
+                <p>Talleres</p>
+            </a>
+        </li>
+        @endcan
+
+        @can('instituciones.index')
+        <li class="nav-item">
+            <a href="{{ route('instituciones.index') }}" class="nav-link {{ Request::is('instituciones*') ? 'active' : '' }}">
+                <p>Instituciones</p>
+            </a>
+        </li>
+        @endcan
+    </ul>
 </li>
-@endcan
 
 
 @can('sorteo.index')

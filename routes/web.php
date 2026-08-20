@@ -7,6 +7,7 @@ use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\BoletinOficialController;
 use App\Http\Controllers\FdtLicitacionArchivoController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\InstitucionController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\TallerController;
 
@@ -196,6 +197,12 @@ Route::group(['middleware' => 'auth'], function () {
             [TallerController::class, 'destroyActividad']
         )->name('talleres.actividades.destroy');
 
+    Route::resource('instituciones', InstitucionController::class)
+        ->parameters([
+            'instituciones' => 'institucion'
+        ])
+        ->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+
           /* Sorteo Corvina Negra */
     Route::get('/sorteo', [App\Http\Controllers\SorteoController::class, 'index'])->name('sorteo.index');
 
@@ -239,23 +246,6 @@ Route::get('/instructivo', function () {
 //     $exitCode = Artisan::call('route:clear');
 //     return '<h1>Route cache cleared</h1>';
 // });
-
-// TEMPORAL - diagnóstico rutas de talleres. Borrar este bloque (y volver a subir
-// routes/web.php) apenas se confirme si la ruta está registrada o no.
-Route::get('/chequeo-rutas-talleres', function () {
-    Artisan::call('route:clear');
-
-    $filas = collect(\Illuminate\Support\Facades\Route::getRoutes())
-        ->filter(function ($ruta) {
-            return strpos($ruta->uri(), 'talleres') !== false;
-        })
-        ->map(function ($ruta) {
-            return implode(' ', $ruta->methods()) . ' -> ' . $ruta->uri() . ' (' . ($ruta->getName() ?? 'sin nombre') . ')';
-        });
-
-    return '<pre>' . e($filas->implode(PHP_EOL)) . '</pre>';
-});
-
 
 // Route::get('/clear-cache', function () {
 
