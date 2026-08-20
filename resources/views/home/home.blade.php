@@ -553,7 +553,7 @@
         </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= TADI Section ======= -->
+    <!-- ======= Mi Tresa Section ======= -->
     <section id="cta" class="cta">
         <div class="container" data-aos="zoom-in">
             <div class="text-center">

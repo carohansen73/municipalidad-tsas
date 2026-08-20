@@ -108,7 +108,6 @@
 
 
       <!-- div class="get-started-buttons">
-        <a href="tadi" target="_blank" class="get-started-btn scrollto"> TaDi </a>
         <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Guia Trámites</a>
         <a href="https://autogestion.tresarroyos.gov.ar/" target="_blank" class="get-started-btn scrollto">Autogestión</a>
       </div -->

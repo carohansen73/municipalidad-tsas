@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ReclamosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\BoletinOficialController;
@@ -99,15 +98,6 @@ Route::controller(HomeController::class)->group(function () {
 
     Route::get('/actividades-y-talleres', 'showTalleres');
 
-});
-
-/* Reclamos / Consultas*/
-// Route::resource('/reclamos', [App\Http\Controllers\TadiController::class]);
-Route::controller(ReclamosController::class)->group(function () {
-    // Route::get('/orders/{id}', 'show');
-    Route::get('/reclamos', 'index');
-    Route::get('/nuevo-reclamo', 'create');
-    Route::post('/ingresar-reclamo', 'store');
 });
 
 /* Noticias - API*/
