@@ -240,6 +240,22 @@ Route::get('/instructivo', function () {
 //     return '<h1>Route cache cleared</h1>';
 // });
 
+// TEMPORAL - diagnóstico rutas de talleres. Borrar este bloque (y volver a subir
+// routes/web.php) apenas se confirme si la ruta está registrada o no.
+Route::get('/chequeo-rutas-talleres', function () {
+    Artisan::call('route:clear');
+
+    $filas = collect(\Illuminate\Support\Facades\Route::getRoutes())
+        ->filter(function ($ruta) {
+            return strpos($ruta->uri(), 'talleres') !== false;
+        })
+        ->map(function ($ruta) {
+            return implode(' ', $ruta->methods()) . ' -> ' . $ruta->uri() . ' (' . ($ruta->getName() ?? 'sin nombre') . ')';
+        });
+
+    return '<pre>' . e($filas->implode(PHP_EOL)) . '</pre>';
+});
+
 
 // Route::get('/clear-cache', function () {
 

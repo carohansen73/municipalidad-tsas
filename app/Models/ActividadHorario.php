@@ -29,13 +29,13 @@ class ActividadHorario extends Model
     }
 
     /**
-     * 'mañana' (08:00-12:30), 'tarde' (13:00-18:00) o 'vespertino' (18:00-21:00) según hora_inicio.
+     * 'mañana' (08:00-12:59), 'tarde' (13:00-18:00) o 'vespertino' (18:00-21:00) según hora_inicio.
      */
     public function getFranjaHorariaAttribute()
     {
         $hora = $this->hora_inicio->format('H:i');
 
-        if ($hora >= '08:00' && $hora <= '12:30') {
+        if ($hora >= '08:00' && $hora < '13:00') {
             return 'mañana';
         }
 

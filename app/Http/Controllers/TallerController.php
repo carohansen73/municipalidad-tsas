@@ -268,7 +268,7 @@ class TallerController extends Controller
     {
         $this->authorize('delete', $taller);
 
-        abort_unless($actividad->taller_id === $taller->id, 404);
+        abort_unless((int) $actividad->taller_id === (int) $taller->id, 404);
 
         if ($actividad->imagen) {
             FileManagement::deleteImg($actividad->imagen, '/talleres/actividades/');
