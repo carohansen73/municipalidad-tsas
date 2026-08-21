@@ -200,6 +200,7 @@
 
                         </div> --}}
 
+                        {{-- Carrusel Swiper (noticias) — inicializado por public/assets/js/swiper-carousel.js via .mySwiper. Probar después de actualizar Swiper. --}}
                         <!-- Swiper -->
                         <div class="swiper mySwiper swiper-noticia">
                             <div class="swiper-wrapper">
@@ -350,6 +351,7 @@
     <!-- End About Section -->
 
     <!-- ======= Clients Section ======= -->
+    {{-- Sección comentada/inactiva: aunque tiene markup de Swiper (.clients-slider), no se renderiza, no hace falta probarla. --}}
     {{-- <section id="clients" class="clients">
       <div class="container" data-aos="zoom-in">
 
@@ -781,6 +783,7 @@
     <!-- End Counts Section -->
 
     <!-- ======= Testimonials Section ======= -->
+    {{-- Sección comentada/inactiva: aunque tiene markup de Swiper (.testimonials-slider), no se renderiza, no hace falta probarla. --}}
     {{-- <section id="testimonials" class="testimonials">
       <div class="container" data-aos="zoom-in">
 
@@ -1137,7 +1140,7 @@
 
 <!-- SWIPER carousel -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="{{ asset('assets/js/swiper-carousel.js') }}"></script>
+<script src="{{ asset('assets/js/swiper-carousel.js') }}?v={{ @filemtime(public_path('assets/js/swiper-carousel.js')) }}"></script>
 
   <!-- Modal para ver evento -->
   <script src="{{ asset('assets/js/modalevento.js') }}"></script>

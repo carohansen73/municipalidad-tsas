@@ -144,8 +144,6 @@
 
         <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
-        <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
         {{-- CSS Personalizado  --}}
 
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"?v=4.1.0>
@@ -582,21 +580,18 @@
 
         <script defer src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
 
-        <script defer src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-
         <script defer src="{{ asset('assets/vendor/php-email-form/validate.js')}}"></script>
+
+        {{-- El carrusel real que usa esta librería está en home/home.blade.php (.mySwiper) — probar ahí después de cualquier cambio a Swiper. --}}
+        <!-- Swiper js -->
+
+        <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 
         <!-- Template Main JS File -->
 
-        <script defer src="{{ asset('assets/js/main.js') }}"></script>
-
-
-
-        <!-- Swiper js -->
-
-        {{-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> --}}
+        <script defer src="{{ asset('assets/js/main.js') }}?v={{ @filemtime(public_path('assets/js/main.js')) }}"></script>
 
         @yield('js')
 
