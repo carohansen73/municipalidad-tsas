@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CspReportController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\BoletinOficialController;
@@ -21,6 +22,8 @@ use App\Http\Controllers\TallerController;
 |
 */
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+
+Route::post('/csp-report', [CspReportController::class, 'store'])->name('csp.report');
 
 Route::get('/', function () {
     return view('home.home');
