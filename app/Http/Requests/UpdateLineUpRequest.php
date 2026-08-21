@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\LineUp;
 
 class UpdateLineUpRequest extends FormRequest
 {
@@ -24,8 +23,10 @@ class UpdateLineUpRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = LineUp::$rules;
-        
-        return $rules;
+        return [
+            'artista' => 'nullable|string|max:191',
+            'fecha' => 'required',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:5120',
+        ];
     }
 }

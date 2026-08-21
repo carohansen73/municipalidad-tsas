@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Evento;
 
 class UpdateEventoRequest extends FormRequest
 {
@@ -24,8 +23,13 @@ class UpdateEventoRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Evento::$rules;
-        
-        return $rules;
+        return [
+            'seccion_id' => 'required|integer',
+            'categoria_id' => 'required|integer',
+            'descripcion' => 'nullable',
+            'fecha_inicio' => 'required',
+            'fecha_fin' => 'required',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:5120',
+        ];
     }
 }

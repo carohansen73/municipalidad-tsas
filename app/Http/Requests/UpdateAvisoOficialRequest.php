@@ -24,8 +24,8 @@ class UpdateAvisoOficialRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = AvisoOficial::$rules;
-        
-        return $rules;
+        return array_merge(AvisoOficial::$rules, [
+            'nombre' => 'nullable|file|mimes:pdf|max:10240',
+        ]);
     }
 }

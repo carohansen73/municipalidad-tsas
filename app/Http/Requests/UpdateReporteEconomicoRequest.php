@@ -24,8 +24,8 @@ class UpdateReporteEconomicoRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = ReporteEconomico::$rules;
-        unset($rules['nombre_arch']);
-        return $rules;
+        return array_merge(ReporteEconomico::$rules, [
+            'nombre_arch' => 'nullable|file|mimes:pdf|max:10240',
+        ]);
     }
 }

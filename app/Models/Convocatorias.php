@@ -59,20 +59,4 @@ class Convocatorias extends Model
         'img' => 'string'
     ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'titulo' => 'required|string|max:191',
-        'descripcion' => 'nullable|string',
-        'telefono' => 'nullable|string|max:30',
-        'email' => 'nullable|string|max:100',
-        'archivo'  => 'nullable',
-        'link'  => 'nullable',
-        'img' => 'nullable'
-    ];
-
-
 }

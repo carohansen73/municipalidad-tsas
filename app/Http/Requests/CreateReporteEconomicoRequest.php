@@ -24,6 +24,8 @@ class CreateReporteEconomicoRequest extends FormRequest
      */
     public function rules()
     {
-        return ReporteEconomico::$rules;
+        return array_merge(ReporteEconomico::$rules, [
+            'nombre_arch' => 'required|file|mimes:pdf|max:10240',
+        ]);
     }
 }

@@ -24,6 +24,8 @@ class CreateAvisoOficialRequest extends FormRequest
      */
     public function rules()
     {
-        return AvisoOficial::$rules;
+        return array_merge(AvisoOficial::$rules, [
+            'nombre' => 'required|file|mimes:pdf|max:10240',
+        ]);
     }
 }

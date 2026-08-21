@@ -24,8 +24,8 @@ class UpdateSituacionFinancieraRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = SituacionFinanciera::$rules;
-        unset($rules['nombre']);
-        return $rules;
+        return array_merge(SituacionFinanciera::$rules, [
+            'nombre' => 'nullable|file|mimes:pdf|max:10240',
+        ]);
     }
 }

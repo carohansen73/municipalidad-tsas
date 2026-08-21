@@ -24,8 +24,8 @@ class UpdateBoletinOficialRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = BoletinOficial::$rules;
-        
-        return $rules;
+        return array_merge(BoletinOficial::$rules, [
+            'nombre' => 'nullable|file|mimes:pdf|max:10240',
+        ]);
     }
 }

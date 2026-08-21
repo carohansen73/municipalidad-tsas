@@ -79,24 +79,6 @@ class Noticia extends Model
     ];
 
     /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'titulo' => 'required|string|max:180',
-        'descripcion' => 'required|string',
-        'fecha' => 'required',
-        'categoria' => 'nullable|string|max:50',
-        'publicada' => 'required|boolean',
-        'destacada' => 'required|boolean',
-        //'pathname' => 'required|string|max:191',
-        //'usuario_id' => 'required',
-        'created_at' => 'nullable',
-        'updated_at' => 'nullable'
-    ];
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
     public function usuario()

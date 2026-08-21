@@ -24,6 +24,8 @@ class CreateSituacionFinancieraRequest extends FormRequest
      */
     public function rules()
     {
-        return SituacionFinanciera::$rules;
+        return array_merge(SituacionFinanciera::$rules, [
+            'nombre' => 'required|file|mimes:pdf|max:10240',
+        ]);
     }
 }

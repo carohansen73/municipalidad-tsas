@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Noticia;
 
 class UpdatenoticiaRequest extends FormRequest
 {
@@ -24,8 +23,17 @@ class UpdatenoticiaRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Noticia::$rules;
-
-        return $rules;
+        return [
+            'titulo' => 'required|string|max:180',
+            'descripcion' => 'required|string',
+            'fecha' => 'required',
+            'categoria' => 'nullable|string|max:50',
+            'publicada' => 'required|boolean',
+            'destacada' => 'required|boolean',
+            'created_at' => 'nullable',
+            'updated_at' => 'nullable',
+            'imagenes' => 'nullable|array',
+            'imagenes.*' => 'image|mimes:jpg,jpeg,png,jfif|max:5120',
+        ];
     }
 }

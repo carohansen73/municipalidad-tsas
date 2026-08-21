@@ -24,6 +24,8 @@ class CreateBoletinOficialRequest extends FormRequest
      */
     public function rules()
     {
-        return BoletinOficial::$rules;
+        return array_merge(BoletinOficial::$rules, [
+            'nombre' => 'required|file|mimes:pdf|max:10240',
+        ]);
     }
 }

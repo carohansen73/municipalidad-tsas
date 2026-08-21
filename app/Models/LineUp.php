@@ -47,16 +47,4 @@ class LineUp extends Model
         'activa' => 'boolean',
     ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'artista' => 'nullable|string|max:191',
-        'fecha' => 'required',
-        'img' => 'required'
-    ];
-
-
 }

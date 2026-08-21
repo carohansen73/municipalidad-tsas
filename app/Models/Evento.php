@@ -60,20 +60,6 @@ class Evento extends Model
     ];
 
     /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'seccion_id' => 'required|integer',
-        'categoria_id' => 'required|integer',
-        'descripcion' => 'nullable',
-        //  'img' => 'required',
-        'fecha_inicio' => 'required',
-        'fecha_fin' => 'required'
-    ];
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
     public function seccion()

@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Convocatorias;
 
 class UpdateConvocatoriasRequest extends FormRequest
 {
@@ -24,8 +23,14 @@ class UpdateConvocatoriasRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = Convocatorias::$rules;
-        
-        return $rules;
+        return [
+            'titulo' => 'required|string|max:191',
+            'descripcion' => 'nullable|string',
+            'telefono' => 'nullable|string|max:30',
+            'email' => 'nullable|string|max:100',
+            'link' => 'nullable',
+            'archivo' => 'nullable|file|mimes:pdf|max:10240',
+            'img' => 'nullable|image|mimes:jpg,jpeg,png,jfif|max:5120',
+        ];
     }
 }

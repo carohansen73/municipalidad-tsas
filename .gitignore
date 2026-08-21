@@ -17,3 +17,4 @@ yarn-error.log
 /config/*
 CLAUDE.md
 PLAN-MEJORAS.md
+/storage/app/public/*
