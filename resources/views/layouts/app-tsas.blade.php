@@ -11,6 +11,9 @@
         gtag('config', 'G-N26BR9CS5F');
         </script>
         <meta charset="UTF-8">
+
+        @include('layouts.partials.preloader-styles')
+
         {{-- <title>{{ config('app.name') }}</title> --}}
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
