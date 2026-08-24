@@ -26,6 +26,13 @@ class SecurityHeaders
             "default-src 'self'; report-uri /csp-report;"
         );
 
+        // HSTS: max-age corto (1 día) a propósito, mientras se confirma que
+        // todo el sitio anda bien 100% en HTTPS. Solo se manda si la visita
+        // ya llegó por HTTPS (si no, el navegador lo ignoraría igual).
+        if ($request->secure()) {
+            $response->headers->set('Strict-Transport-Security', 'max-age=86400');
+        }
+
         return $response;
     }
 }
