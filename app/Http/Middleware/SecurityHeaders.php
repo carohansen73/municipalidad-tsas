@@ -33,6 +33,14 @@ class SecurityHeaders
             $response->headers->set('Strict-Transport-Security', 'max-age=86400');
         }
 
+        // Evita que el navegador "adivine" el tipo de un archivo distinto al
+        // que declara el servidor.
+        $response->headers->set('X-Content-Type-Options', 'nosniff');
+
+        // Anti-clickjacking: nadie puede embeber el sitio en un <iframe>
+        // salvo el propio sitio mismo.
+        $response->headers->set('X-Frame-Options', 'SAMEORIGIN');
+
         return $response;
     }
 }
