@@ -70,7 +70,7 @@
         <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
         <!-- Bootstrap Icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"?v=4.1.0>
         <link rel="stylesheet" href="{{ asset('assets/css/fdt-v2_1_1.css') }}"?v=4.1.0>
@@ -267,7 +267,7 @@
 
             <!-- EFECTOS -->
             <!-- GSAP -->
-            <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js" integrity="sha384-UoFnwgbUNlK0Rwou15cSoyrXQvKrOUxV8AkCoGKSSd0sxVeJ95ARU8uGMkMZhzpB" crossorigin="anonymous"></script>
 
             <!-- ScrollTrigger -->
             <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>

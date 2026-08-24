@@ -33,8 +33,8 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
           integrity="sha512-aEe/ZxePawj0+G2R+AaIxgrQuKT68I28qh+wgLrcAJOz3rxCP+TwrK5SPN+E5I+1IQjNtcfvb96HDagwrKRdBw=="
           crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css" integrity="sha384-zxIWrl6qlRc1gf8mdRhQEZUap0s1QKZYh7n91f2nDSoExwY+xIrewx7nOxbdsIkB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap4.css" integrity="sha384-/f/y1+hWFuiuHDH/T7rgK0IZWt22Gac7oGAOWib8RwFCEZKBlenh8ANA8gUhN7aC" crossorigin="anonymous" />
     @stack('third_party_stylesheets')
 
     @stack('page_css')
@@ -119,7 +119,7 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js" integrity="sha384-5YGbMGKt6FT8M0uuh4B/XI6Z6kdMlWoPpV/huy99XHCZIpM4fdDizDnGtmfNH93z" crossorigin="anonymous"></script>
 
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"
@@ -134,7 +134,7 @@
         integrity="sha512-GDey37RZAxFkpFeJorEUwNoIbkTwsyC736KNSYucu1WJWFK9qTdzYub8ATxktr6Dwke7nbFaioypzbDOQykoRg=="
         crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js" integrity="sha384-Q9RsZ4GMzjlu4FFkJw4No9Hvvm958HqHmXI9nqo5Np2dA/uOVBvKVxAvlBQrDhk4" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
         integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
@@ -143,8 +143,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/1.3/bootstrapSwitch.min.js"
         integrity="sha512-DAc/LqVY2liDbikmJwUS1MSE3pIH0DFprKHZKPcJC7e3TtAOzT55gEMTleegwyuIWgCfOPOM8eLbbvFaG9F/cA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js"></script>
-        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap4.js" integrity="sha384-tJ448Sy1A8376G9iNusO/XiGeGcRABZZdM2nVeSjvusMOaUCRjHPX79ccFAy7/BU" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js" integrity="sha384-CW3wbDbKT03pLXOkjDEwgNW5bUjsSNSRUEyCoSbd7fxh0FmF6zUFojMK48SYuREM" crossorigin="anonymous"></script>
 <script>
     $(function () {
         bsCustomFileInput.init();

@@ -58,7 +58,7 @@
         <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 
         <!-- Bootstrap Icons -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
         <!-- Estilo del Template -->
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
