@@ -75,7 +75,7 @@
         <!-- Bootstrap Icons -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"?v=4.1.0>
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ @filemtime(public_path('assets/css/style.css')) }}">
         <link rel="stylesheet" href="{{ asset('assets/css/fdt-v2_1_1.css') }}"?v=4.1.0>
         <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}"?v=4.1.0>
     </head>
@@ -277,6 +277,8 @@
 
             <!-- Js personalizado  -->
             <script src="{{ asset('assets/js/fdt-effects.js') }}"></script>
+
+            @include('layouts.partials.asistente-widget')
 
         </body>
 

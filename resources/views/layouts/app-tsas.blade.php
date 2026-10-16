@@ -64,7 +64,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
         <!-- Estilo del Template -->
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ @filemtime(public_path('assets/css/style.css')) }}">
         <link rel="stylesheet" href="{{ asset('assets/css/tmp-tsas.css') }}?v=2.0.0">
 
 
@@ -252,7 +252,6 @@
         </footer><!-- End Footer -->
 
         <div id="preloader"></div>
-        <a href="https://wa.me/5492983509001" target="_blank" class="back-to-top d-flex align-items-center justify-content-center" style="margin-bottom: 96px;"><i class="bx bxl-whatsapp"></i></a>
         <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="back-to-top d-flex align-items-center justify-content-center mb-5"><i class="bx bxl-instagram"></i></a>
         <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bxl-facebook"></i></a>
 
@@ -270,6 +269,8 @@
 
         <!-- Template Main JS File -->
         <script src="{{ asset('assets/js/main.js') }}?v={{ @filemtime(public_path('assets/js/main.js')) }}"></script>
+
+        @include('layouts.partials.asistente-widget')
 
     </body>
 

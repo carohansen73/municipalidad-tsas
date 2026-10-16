@@ -148,7 +148,7 @@
 
         {{-- CSS Personalizado  --}}
 
-        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"?v=4.1.0>
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}?v={{ @filemtime(public_path('assets/css/style.css')) }}">
 
 
 
@@ -560,8 +560,6 @@
 
 
 
-        <a href="https://wa.me/5492983509001" target="_blank" class="back-to-top d-flex align-items-center justify-content-center" style="margin-bottom: 96px;"><i class="bx bxl-whatsapp"></i></a>
-
         <a href="https://www.instagram.com/municipalidadtresarroyos/" target="_blank" class="back-to-top d-flex align-items-center justify-content-center mb-5"><i class="bx bxl-instagram"></i></a>
 
         <a href="https://www.facebook.com/municipalidaddetresarroyos" target="_blank" class="back-to-top d-flex align-items-center justify-content-center"><i class="bx bxl-facebook"></i></a>
@@ -596,6 +594,8 @@
         <script defer src="{{ asset('assets/js/main.js') }}?v={{ @filemtime(public_path('assets/js/main.js')) }}"></script>
 
         @yield('js')
+
+        @include('layouts.partials.asistente-widget')
 
     </body>
 
